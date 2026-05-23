@@ -1,0 +1,48 @@
+{
+  "slug": "batumi-hotel-website-audit",
+  "title": "Batumi Hotel Website Audit",
+  "date": "2025-02-15",
+  "sector": "hospitality",
+  "overallScore": 42,
+  "executiveSummary": "This Batumi seafront hotel website has strong visual appeal but struggles with the fundamentals that drive direct bookings. Mobile performance is critically slow, the booking flow requires too many steps, and the site is nearly invisible in local search results. The good news: these are fixable problems with clear, prioritized actions.",
+  "scores": {
+    "brand": 68,
+    "speed": 28,
+    "seo": 35,
+    "content": 52,
+    "accessibility": 41,
+    "conversion": 30
+  },
+  "findings": [
+    {
+      "category": "speed",
+      "title": "4.2-second mobile load time",
+      "description": "The homepage loads in 4.2 seconds on a simulated 4G connection — well above the 2.5-second threshold for good LCP. Unoptimized hero images (2.1 MB combined) and render-blocking JavaScript are the primary culprits. 53% of mobile visitors will leave before the page finishes loading.",
+      "recommendedFix": "Convert hero images to WebP/AVIF with responsive srcset, defer non-critical JavaScript, and implement lazy loading for below-the-fold images. Target under 2 seconds."
+    },
+    {
+      "category": "conversion",
+      "title": "Booking flow requires 5 steps",
+      "description": "The booking path from homepage to confirmation requires 5 page transitions: home → rooms → room detail → booking form → payment → confirmation. Each extra step loses approximately 20% of users. Competitors on booking.com complete the same flow in 2–3 steps.",
+      "recommendedFix": "Reduce to 3 steps: room selection → details & payment → confirmation. Add a 'Book Now' sticky bar on mobile that persists during scroll."
+    },
+    {
+      "category": "seo",
+      "title": "No Google Business Profile integration",
+      "description": "The hotel has a Google Business Profile but the website doesn't link to it, and the profile has inconsistent NAP (Name, Address, Phone) data. There are no structured data markup (Schema.org Hotel) on any page. The site doesn't appear in the local pack for 'hotel Batumi' queries.",
+      "recommendedFix": "Add Hotel schema markup to every room page, ensure NAP consistency across all listings, and link the Google Business Profile from the site footer."
+    },
+    {
+      "category": "content",
+      "title": "Room pages lack multilingual content",
+      "description": "Room descriptions are only available in English and Georgian, but the hotel's analytics show 40% of visitors have Russian-language browsers. Russian-speaking visitors bounce at 78% vs. 45% for English speakers.",
+      "recommendedFix": "Add Russian translations for all room pages, navigation, and booking flow. Consider Turkish as a secondary addition given growing visitor demographics."
+    },
+    {
+      "category": "accessibility",
+      "title": "Low contrast on key CTAs",
+      "description": "The 'Book Now' button uses white text on a light background (contrast ratio 2.1:1), well below the WCAG AA requirement of 4.5:1. Room images lack alt text entirely. No skip-navigation link is present.",
+      "recommendedFix": "Increase button contrast to at least 4.5:1 (use dark text or a darker button background), add descriptive alt text to all room images, and add a skip-to-content link at the top of the page."
+    }
+  ]
+}

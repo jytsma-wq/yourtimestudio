@@ -1,0 +1,42 @@
+{
+  "slug": "batumi-dental-clinic-audit",
+  "title": "Batumi Dental Clinic Website Audit",
+  "date": "2025-03-10",
+  "sector": "medical",
+  "overallScore": 38,
+  "executiveSummary": "This Batumi dental clinic has a professional offline reputation but a weak digital presence. The website lacks doctor profiles, has no multilingual content for medical tourists, and is invisible in local search. Patient trust starts online — and this site doesn't build it.",
+  "scores": {
+    "brand": 55,
+    "speed": 45,
+    "seo": 22,
+    "content": 30,
+    "accessibility": 48,
+    "conversion": 25
+  },
+  "findings": [
+    {
+      "category": "seo",
+      "title": "No structured data for medical business",
+      "description": "The site lacks MedicalBusiness and LocalBusiness schema markup. Google cannot display rich results like doctor profiles, specialties, or ratings in search. The clinic is missing from the local medical pack entirely.",
+      "recommendedFix": "Add MedicalBusiness schema with doctor specialties, add LocalBusiness schema with geo-coordinates, and ensure Google Business Profile is linked and verified."
+    },
+    {
+      "category": "content",
+      "title": "No doctor profiles or treatment pages",
+      "description": "Patients want to know who will treat them. The site has a single 'Our Team' page with names only — no qualifications, specializations, or patient-facing descriptions. Medical tourists in particular need this information before booking.",
+      "recommendedFix": "Create individual doctor profile pages with qualifications, experience, treatment specialties, and professional photos. Add treatment description pages for each service category."
+    },
+    {
+      "category": "conversion",
+      "title": "No online consultation booking",
+      "description": "The only contact method is a phone number and a generic email. International patients and busy professionals prefer online booking. The site loses potential patients who visit outside business hours.",
+      "recommendedFix": "Add a consultation request form with doctor selection, preferred date/time, and automatic email confirmation. Integrate with the clinic's scheduling system for real-time availability."
+    },
+    {
+      "category": "content",
+      "title": "Monolingual Georgian content only",
+      "description": "With 40% of Batumi medical tourists from Russian-speaking countries and a growing international patient base, having content only in Georgian excludes the majority of potential patients. Russian and English content is essential for medical tourism.",
+      "recommendedFix": "Add Russian and English translations for all patient-facing content. Prioritize doctor profiles, treatment descriptions, and the booking flow. Ensure medical terminology is professionally translated."
+    }
+  ]
+}

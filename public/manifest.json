@@ -1,0 +1,26 @@
+{
+  "name": "Yourtimestudio",
+  "short_name": "Yourtimestudio",
+  "description": "Founder-led websites for direct bookings, local SEO, and qualified inquiries in Batumi, Georgia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#315BFF",
+  "icons": [
+    {
+      "src": "/brand/yourtimestudio-mark.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

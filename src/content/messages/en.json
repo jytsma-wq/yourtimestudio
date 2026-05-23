@@ -1,0 +1,1331 @@
+{
+  "metadata": {
+    "title": "Yourtimestudio - Direct-booking websites for Batumi hotels, clinics, and studios",
+    "description": "Founder-led web design, local SEO, booking flows, and photography direction for service businesses in Batumi, Georgia."
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "hospitality": "Hospitality",
+    "medical": "Medical",
+    "beauty": "Beauty",
+    "audits": "Website Audits",
+    "work": "Work",
+    "insights": "Insights",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Founder-led Batumi web studio",
+    "title": "Direct-booking websites for Batumi hotels, clinics, and studios",
+    "subtitle": "I build fast multilingual websites with local SEO, booking flows, and photography direction for Batumi businesses that cannot afford to look generic.",
+    "cta_primary": "Request a website audit",
+    "cta_secondary": "See sector plans",
+    "getQuote": "Get quote",
+    "proof_band": [
+      "Founder-led",
+      "Photographer-supported",
+      "Multilingual",
+      "Hostinger-ready"
+    ],
+    "sectionLabel": "Founder-led Batumi web studio.",
+    "title1": "Direct booking websites for",
+    "title2": "hotels, clinics & studios",
+    "typewriter": {
+      "hotel": "Booking-ready hotel websites",
+      "clinic": "Trust-focused clinic websites",
+      "salon": "Appointment-focused beauty websites"
+    },
+    "cards": {
+      "hospitality": {
+        "name": "Hospitality",
+        "tagline": "Direct booking engines",
+        "priceFrom": "From $1,800"
+      },
+      "medical": {
+        "name": "Medical",
+        "tagline": "International patient sites",
+        "priceFrom": "From $1,500"
+      },
+      "beauty": {
+        "name": "Beauty",
+        "tagline": "Online booking systems",
+        "priceFrom": "From $700"
+      }
+    },
+    "stats": {
+      "clients": {
+        "value": "3",
+        "label": "core sectors"
+      },
+      "languages": {
+        "value": "4",
+        "label": "languages planned"
+      },
+      "industries": {
+        "value": "3",
+        "label": "sectors"
+      },
+      "countries": {
+        "value": "1",
+        "label": "photography partner"
+      }
+    },
+    "meta_brand": "Yourtimestudio / Batumi",
+    "meta_services": "Direct booking / Local SEO / Multilingual UX",
+    "feature_direction": "Feature direction",
+    "issue": "Issue 01",
+    "appointment_flow": "Appointment flow"
+  },
+  "sectors": {
+    "heading": "Sector solutions",
+    "subtitle": "Websites built for how your business actually works — not generic templates.",
+    "hospitality": {
+      "title": "Hospitality",
+      "subtitle": "Direct booking websites for hotels, guesthouses, and aparthotels",
+      "pain": "OTA commissions eating your margins? Your website can't compete with booking.com?",
+      "deliverables": [
+        "Room & offer management",
+        "Direct booking integration",
+        "Multilingual guest paths",
+        "Speed-optimized booking flow"
+      ],
+      "cta": "See hospitality solutions",
+      "tagline": "Stop paying OTA commissions",
+      "priceFrom": "From $2,499 — includes direct booking engine"
+    },
+    "medical": {
+      "title": "Medical",
+      "subtitle": "Trust-first websites for clinics, dental practices, and aesthetic centers",
+      "pain": "Patients can't find your doctors? Your site doesn't build trust before the first consultation?",
+      "deliverables": [
+        "Doctor & treatment profiles",
+        "Consultation flow",
+        "Multilingual clarity",
+        "Structured data for medical SEO"
+      ],
+      "cta": "See medical solutions",
+      "tagline": "Build patient trust before the first visit",
+      "priceFrom": "From $1,500 — includes doctor profiles & booking"
+    },
+    "beauty": {
+      "title": "Beauty",
+      "subtitle": "Booking-led websites for salons, medspas, and studios",
+      "pain": "Appointments scattered across Instagram DMs? No clear service menu or pricing online?",
+      "deliverables": [
+        "Service menu clarity",
+        "Appointment flow",
+        "Pricing visibility",
+        "Promo system & repeat business"
+      ],
+      "cta": "See beauty solutions",
+      "tagline": "Fill your appointment book, not your DMs",
+      "priceFrom": "From $700 — includes service menu & online booking"
+    },
+    "sectionLabel": "What we do.",
+    "kicker": "Three departments",
+    "departmentLabel": "Department"
+  },
+  "audit": {
+    "heading": "Website audits",
+    "subtitle": "Your signature lead magnet. Get a detailed scorecard on brand clarity, speed, local SEO, content structure, accessibility, and conversion UX.",
+    "cta": "Request a free audit",
+    "categories": {
+      "brand": "Brand clarity",
+      "speed": "Performance & speed",
+      "seo": "Local SEO",
+      "content": "Content structure",
+      "accessibility": "Accessibility",
+      "conversion": "Conversion UX"
+    },
+    "sectionLabel": "How we audit.",
+    "panel_kicker": "Transparent rubric",
+    "scorecard_title": "Website scorecard",
+    "manual_review": "Manual review",
+    "note": "No fake scores, no automated fluff. The report explains what is blocking trust, search visibility, and bookings, then lists the fixes in priority order."
+  },
+  "founder": {
+    "heading": "Founder-led, with specialist photography support",
+    "body": "I run Yourtimestudio as a one-person web studio in Batumi. I handle strategy, UX, code, SEO, and launch directly; a professional photographer supports projects that need original visual work.",
+    "cta": "About the studio",
+    "sectionLabel": "How I work.",
+    "founder": {
+      "sectionLabel": "How I work.",
+      "heading": "One accountable builder. Specialist support where it matters.",
+      "bio": "Yourtimestudio is my founder-led web studio in Batumi. You work directly with me on strategy, design, code, SEO, and launch. When the project needs original visuals, I bring in a professional photographer instead of relying on generic stock images.",
+      "location": "Based in Batumi",
+      "since": "Selected projects",
+      "cta": "Start your project",
+      "statClients": "Core sectors",
+      "statLanguages": "Languages planned",
+      "statAvailable": "Taking selected projects",
+      "imageAlt": "Yourtimestudio founder workspace"
+    },
+    "features": {
+      "sectionLabel": "Why this model works.",
+      "heading": "Small studio, senior attention",
+      "items": [
+        {
+          "title": "One direct contact",
+          "desc": "You speak with the person planning, designing, coding, and launching the site."
+        },
+        {
+          "title": "Photography-ready",
+          "desc": "Pages are planned around strong original images, with a professional photographer available when needed."
+        },
+        {
+          "title": "Performance first",
+          "desc": "Lean Next.js pages, optimized media, and clear Core Web Vitals targets from the start."
+        },
+        {
+          "title": "Local SEO built in",
+          "desc": "Business schema, service pages, and local search copy are planned before launch."
+        }
+      ],
+      "intro": "A small studio only works when the responsibilities are visible. These are the parts I own directly, and where specialist help enters the project."
+    }
+  },
+  "pricing": {
+    "heading": "Pricing",
+    "subtitle": "Typical investment ranges for a one-person specialist studio.",
+    "beauty": {
+      "name": "Beauty Presence",
+      "best_fit": "Small beauty salons, medspas, nail and hair studios",
+      "setup": "$700–$1,200",
+      "monthly": "$59–$99/mo",
+      "includes": [
+        "5–8 pages",
+        "Service menu",
+        "Pricing area",
+        "Local SEO basics",
+        "GBP support",
+        "Contact/WhatsApp flow"
+      ],
+      "best_upsells": [
+        "Promo landing pages",
+        "Review capture system",
+        "Instagram content system"
+      ]
+    },
+    "medical": {
+      "name": "Clinic Trust Platform",
+      "best_fit": "Dental, aesthetic, wellness, specialist clinics",
+      "setup": "$1,500–$2,750",
+      "monthly": "$99–$189/mo",
+      "includes": [
+        "8–16 pages",
+        "Doctor/treatment templates",
+        "Multilingual structure",
+        "Consultation form",
+        "Structured data",
+        "Reviews/FAQ layer"
+      ],
+      "best_upsells": [
+        "Content production",
+        "Treatment article cluster",
+        "Lead qualification workflow"
+      ]
+    },
+    "hospitality": {
+      "name": "Hotel Direct Platform",
+      "best_fit": "Boutique hotels, aparthotels, guesthouses, villa operators",
+      "setup": "$2,000–$4,000",
+      "monthly": "$129–$249/mo",
+      "includes": [
+        "10–20 pages",
+        "Room templates & offers",
+        "Multilingual UX",
+        "Direct booking integration",
+        "Performance and CRO checks",
+        "PMS/booking integration support"
+      ],
+      "best_upsells": [
+        "Professional photography",
+        "PMS/booking integrations",
+        "Local attraction content",
+        "Paid search landing pages"
+      ]
+    },
+    "cta": "Get started",
+    "setup_label": "setup",
+    "monthly_label": "ongoing",
+    "best_for_label": "Best for",
+    "includes_label": "What's included",
+    "best_upsells_label": "Best upsells",
+    "most_popular": "Most popular",
+    "see_full_pricing": "See full pricing →",
+    "guarantee": "No surprises. You receive a detailed proposal with scope, timeline, and transparent pricing before any work begins. Cancel the monthly plan with 30 days' notice — your website remains yours.",
+    "comparison_heading": "Feature comparison",
+    "comparison": {
+      "pages": "Custom pages",
+      "service_menu": "Service menu",
+      "local_seo": "Local SEO",
+      "multilingual": "Multilingual support",
+      "booking_integration": "Booking integration",
+      "doctor_profiles": "Doctor / specialist profiles",
+      "structured_data": "Structured data (schema)",
+      "review_system": "Review management",
+      "consultation_form": "Consultation booking",
+      "promo_pages": "Promotional landing pages",
+      "performance_optimization": "Performance optimization",
+      "gbp_support": "Google Business Profile",
+      "analytics": "Analytics & CRO",
+      "priority_support": "Priority support",
+      "custom_integrations": "Custom integrations"
+    },
+    "calculator_heading": "Estimate your project",
+    "calculator_subtitle": "Get an instant estimate based on your needs.",
+    "calculator_sector": "Your sector",
+    "calculator_sector_beauty": "Beauty",
+    "calculator_sector_medical": "Medical",
+    "calculator_sector_hospitality": "Hospitality",
+    "calculator_pages": "Number of pages",
+    "calculator_addons": "Add-ons",
+    "calculator_multilingual": "Multilingual support",
+    "calculator_booking": "Booking system",
+    "calculator_seo": "SEO package",
+    "calculator_priority": "Priority support",
+    "calculator_setup": "Estimated setup",
+    "calculator_monthly": "Estimated monthly",
+    "calculator_cta": "Get a precise quote",
+    "sectionLabel": "Investment.",
+    "feature_label": "Feature"
+  },
+  "pricingPage": {
+    "add_ons_heading": "Add-ons & extras",
+    "add_ons_subtitle": "Every business is different. These add-ons let you customize your package as you grow.",
+    "add_ons": [
+      {
+        "name": "Custom features",
+        "description": "Custom integrations, advanced booking logic, member portals, or anything unique to your business.",
+        "price": "From $250"
+      },
+      {
+        "name": "Additional pages",
+        "description": "Need more pages beyond your package? Each additional page is designed and built to the same standard.",
+        "price": "$75–$150/page"
+      },
+      {
+        "name": "Priority support",
+        "description": "Same-day response time, weekend availability, and a dedicated Slack channel for urgent needs.",
+        "price": "$49/mo extra"
+      }
+    ],
+    "process_heading": "How it works",
+    "process_subtitle": "A clear, five-step process from first conversation to launched website.",
+    "process_steps": [
+      {
+        "title": "Audit",
+        "description": "I review your current web presence, competitors, and market position to identify opportunities."
+      },
+      {
+        "title": "Fit call",
+        "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
+      },
+      {
+        "title": "Proposal",
+        "description": "You receive a detailed proposal with scope, timeline, and transparent pricing. No hidden fees."
+      },
+      {
+        "title": "Build",
+        "description": "I design, develop, and test your site with regular check-ins. You see progress every step of the way."
+      },
+      {
+        "title": "Launch",
+        "description": "Your site goes live with full SEO setup, performance optimization, and ongoing support included."
+      }
+    ],
+    "faq_heading": "Pricing FAQ",
+    "faq_items": [
+      {
+        "q": "Is the setup fee a one-time cost?",
+        "a": "Yes. The setup fee covers design, development, content strategy, and launch. There are no hidden costs or surprise invoices."
+      },
+      {
+        "q": "Can I cancel the monthly plan?",
+        "a": "The monthly plan covers hosting, maintenance, security updates, and support. You can cancel with 30 days' notice — your website remains yours."
+      },
+      {
+        "q": "What if I need something between packages?",
+        "a": "Most projects start with a package and add customizations. I will propose exactly what you need during the fit call - nothing more, nothing less."
+      },
+      {
+        "q": "Do you offer payment plans?",
+        "a": "Yes. For larger projects, I can split the setup fee into two or three installments. We'll agree on this during the proposal stage."
+      }
+    ]
+  },
+  "aboutPage": {
+    "heading": "About the studio",
+    "story_heading": "The story",
+    "story_body_1": "Yourtimestudio is a focused one-person web studio in Batumi. I work directly on strategy, UX, code, SEO, launch, and support instead of passing the project through layers of account management.",
+    "story_body_2": "For projects that need stronger visuals, I plan the website around an original shot list and bring in a professional photographer. The goal is simple: a site that feels specific to your business, not like a template with new colors.",
+    "approach_heading": "Sector-specific, not generic",
+    "approach_body": "I don't build generic websites. I build sector-specific systems that help hotels get direct bookings, clinics build patient trust, and beauty businesses fill their appointment books. That specialization means every decision — from information architecture to SEO strategy — is grounded in how your business actually works.",
+    "why_batumi_heading": "Why Batumi?",
+    "why_batumi_body_1": "Batumi is growing as a hospitality, medical, and service-business market, but many local websites still make booking, trust, and multilingual communication harder than they need to be.",
+    "why_batumi_body_2": "That gap is where I work: practical websites that make the business easier to find, easier to understand, and easier to contact.",
+    "process_heading": "How I work",
+    "process_steps": [
+      {
+        "title": "Audit",
+        "description": "I review your current web presence, competitors, and market position to identify opportunities."
+      },
+      {
+        "title": "Fit call",
+        "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
+      },
+      {
+        "title": "Proposal",
+        "description": "You receive a detailed proposal with scope, timeline, and transparent pricing. No hidden fees."
+      },
+      {
+        "title": "Build",
+        "description": "I design, develop, and test your site with regular check-ins. You see progress every step of the way."
+      },
+      {
+        "title": "Launch",
+        "description": "Your site goes live with full SEO setup, performance optimization, and ongoing support included."
+      }
+    ],
+    "tools_heading": "Tools & stack",
+    "tools_subtitle": "Built with modern, reliable technology for speed, security, and maintainability.",
+    "tools": [
+      {
+        "name": "Next.js",
+        "category": "framework"
+      },
+      {
+        "name": "TypeScript",
+        "category": "language"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "styling"
+      },
+      {
+        "name": "Hostinger",
+        "category": "hosting"
+      },
+      {
+        "name": "Prisma",
+        "category": "database"
+      },
+      {
+        "name": "React Hook Form",
+        "category": "forms"
+      },
+      {
+        "name": "Zod",
+        "category": "validation"
+      },
+      {
+        "name": "next-intl",
+        "category": "i18n"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "animation"
+      },
+      {
+        "name": "Radix UI",
+        "category": "components"
+      }
+    ],
+    "cta_text": "Ready to see what your website could become?",
+    "cta_button": "Start with a free audit",
+    "image_alt": "Yourtimestudio founder",
+    "image_caption": "Founder-led web studio based in Batumi, Georgia"
+  },
+  "contactPage": {
+    "heading": "Get in touch",
+    "subtitle": "Tell me about your project and I'll get back to you within one business day.",
+    "form": {
+      "name": "Your name",
+      "name_required": "Name is required",
+      "business": "Business name",
+      "business_optional": "optional",
+      "business_required": "Business name is required",
+      "email": "Email address",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
+      "phone": "Phone / WhatsApp",
+      "phone_optional": "optional",
+      "sector": "Your sector",
+      "sector_optional": "optional",
+      "sector_required": "Please select a sector",
+      "sector_placeholder": "Select your sector",
+      "website": "Current website URL",
+      "website_optional": "optional",
+      "website_invalid": "Please enter a valid URL (e.g. https://example.com)",
+      "budget": "Monthly budget range",
+      "budget_optional": "optional",
+      "budget_placeholder": "Select budget range",
+      "language": "Preferred language",
+      "language_optional": "optional",
+      "language_required": "Please select a preferred language",
+      "language_placeholder": "Select preferred language",
+      "message": "Tell me about your project",
+      "message_required": "Please tell me about your project",
+      "message_optional": "optional",
+      "submit": "Send inquiry",
+      "sending": "Sending...",
+      "error_title": "Something went wrong",
+      "error_default": "Could not send your inquiry. Please try again or email me directly.",
+      "success_redirect": "Redirecting...",
+      "success_title": "Thank you",
+      "success_body": "Your inquiry has been received. I'll get back to you within one business day.",
+      "success_meta": "Typical response time: under 24 hours"
+    },
+    "sectors": [
+      "Hospitality",
+      "Medical",
+      "Beauty",
+      "Other"
+    ],
+    "budgets": [
+      "Under $500",
+      "$500–$1,000",
+      "$1,000–$2,500",
+      "$2,500+"
+    ],
+    "languages": [
+      "English",
+      "Georgian",
+      "Russian",
+      "Turkish"
+    ],
+    "info_heading": "Other ways to reach me",
+    "info_email_label": "Email",
+    "info_email": "hello@yourtimestudio.com",
+    "info_whatsapp_label": "WhatsApp",
+    "info_whatsapp": "",
+    "info_area_label": "Service area",
+    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond.",
+    "info_whatsapp_fallback": "Use the form and include your WhatsApp number"
+  },
+  "thankYouPage": {
+    "heading": "Thank you for your inquiry",
+    "body": "I've received your message and will get back to you within one business day. In the meantime, you might find these resources useful.",
+    "browse_insights": "Browse insights",
+    "see_pricing": "See pricing",
+    "insights_description": "Read articles about web strategy, local SEO, and sector-specific digital advice.",
+    "pricing_description": "Compare packages and find the right fit for your business."
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How long does a typical project take?",
+        "a": "Most projects are completed in 3–6 weeks, depending on scope and how quickly content is provided. The audit and proposal phase takes 1–2 weeks, then build and launch takes 2–4 weeks."
+      },
+      {
+        "q": "Do you work with businesses outside Batumi?",
+        "a": "Yes. I focus on Batumi-based businesses in hospitality, medical, and beauty, and I can support projects across Georgia when the website needs multilingual content for international visitors."
+      },
+      {
+        "q": "What if I already have a website?",
+        "a": "I start every engagement with a website audit. If your existing site can be improved, I'll tell you exactly what needs fixing. If it makes more sense to rebuild, I'll explain why with clear reasoning — no pressure either way."
+      },
+      {
+        "q": "Can you help with content and photos?",
+        "a": "I handle content strategy, copywriting, and image optimization as part of every project. For high-end photography and video, I partner with local professionals. I never use generic stock photos as primary visuals."
+      },
+      {
+        "q": "What's included in the monthly fee?",
+        "a": "Hosting management, security updates, performance monitoring, minor content updates, and priority support. Think of it as a retainer that keeps your site fast, secure, and current — without surprise invoices."
+      },
+      {
+        "q": "Do you offer SEO services?",
+        "a": "Technical SEO, local SEO setup (Google Business Profile), structured data implementation, and performance optimization are included in every project. For ongoing content SEO and paid advertising, I can recommend trusted partners."
+      }
+    ],
+    "sectionLabel": "Questions."
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "subtitle": "Tell me about your project and I'll get back to you within one business day.",
+    "form": {
+      "name": "Your name",
+      "business": "Business name",
+      "email": "Email address",
+      "phone": "Phone / WhatsApp (optional)",
+      "sector": "Your sector",
+      "website": "Current website URL",
+      "budget": "Monthly budget range (optional)",
+      "language": "Preferred language",
+      "message": "Tell me about your project",
+      "submit": "Send inquiry",
+      "sending": "Sending..."
+    },
+    "sectors": [
+      "Hospitality",
+      "Medical",
+      "Beauty",
+      "Other"
+    ],
+    "budgets": [
+      "Under $500",
+      "$500–$1,000",
+      "$1,000–$2,500",
+      "$2,500+"
+    ],
+    "languages": [
+      "English",
+      "Georgian",
+      "Russian",
+      "Turkish"
+    ]
+  },
+  "process": {
+    "sectionLabel": "How we work.",
+    "heading": "From first call to launched website",
+    "subtitle": "A clear, four-step process so you always know what happens next.",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "We audit your current presence, understand your goals, and map out the project scope."
+      },
+      {
+        "title": "Design",
+        "description": "Sector-specific design that converts visitors into bookings, patients, or appointments."
+      },
+      {
+        "title": "Build",
+        "description": "Clean, fast development with regular check-ins. You see progress every step."
+      },
+      {
+        "title": "Launch",
+        "description": "Your site goes live with full SEO, performance optimization, and ongoing support."
+      }
+    ],
+    "cta": "Start with a fit call"
+  },
+  "about": {
+    "heading": "About the studio",
+    "story": "I'm a Dutch developer who grew up on Aruba and now builds websites in Batumi. The Caribbean taught me that hospitality is in the details — and that quality matters more than volume. I bring that same approach to every project: focused, precise, and personal.",
+    "approach": "I don't build generic websites. I build sector-specific systems that help hotels get direct bookings, clinics build patient trust, and beauty businesses fill their appointment books. That specialization means every decision — from information architecture to SEO strategy — is grounded in how your business actually works.",
+    "why_batumi": "Batumi is one of Georgia's fastest-growing hospitality and medical destinations. With over 2.7 million visits to the Adjara region and the highest hotel occupancy in the country, this city needs websites that perform — not just look good.",
+    "process": [
+      "Audit your current web presence",
+      "Fit call to understand your goals",
+      "Custom proposal with clear scope",
+      "Build, test, and launch",
+      "Ongoing support and optimization"
+    ],
+    "cta": "Start with a free audit"
+  },
+  "cookieConsent": {
+    "aria_label": "Cookie consent",
+    "message": "We use privacy-friendly analytics to understand how visitors use our site. No advertising cookies, no data sold to third parties.",
+    "privacy_link": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "results": {
+    "sectionLabel": "Launch system.",
+    "heading": "What every project has to cover",
+    "items": {
+      "strategy": {
+        "title": "Clear offer structure",
+        "body": "Pages, service hierarchy, and calls to action mapped before design work starts."
+      },
+      "copy": {
+        "title": "Conversion copy",
+        "body": "Headlines and page sections written around bookings, inquiries, and patient or guest trust."
+      },
+      "photography": {
+        "title": "Visual direction",
+        "body": "Shot lists and image priorities so the site can use real local visuals instead of generic stock."
+      },
+      "deployment": {
+        "title": "Hostinger-ready launch",
+        "body": "Build output, redirects, metadata, analytics consent, and basic technical SEO checked before handoff."
+      }
+    },
+    "subtitle": "The deliverable is not just a prettier homepage. It is a practical launch package built around visibility, trust, and inquiry flow.",
+    "kicker": "Delivery standards"
+  },
+  "ctaBand": {
+    "heading": "Ready to improve your web presence?",
+    "primary": "Request a website audit",
+    "secondary": "Contact me",
+    "sectionLabel": "Get in touch.",
+    "subtitle": "Tell us about your project and we will get back to you within one business day."
+  },
+  "auditDescriptions": {
+    "brand": "Is your brand message instantly clear to visitors?",
+    "speed": "Does your site load fast on any device and connection?",
+    "seo": "Can locals and tourists find you on Google?",
+    "content": "Is your information structured for easy scanning?",
+    "accessibility": "Can everyone use your site regardless of ability?",
+    "conversion": "Does your site guide visitors toward booking or contact?"
+  },
+  "footer": {
+    "tagline": "Batumi web studio for hospitality, medical, and beauty businesses.",
+    "solutions": "Solutions",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "All rights reserved.",
+    "social_heading": "Follow us",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook"
+  },
+  "thank_you": {
+    "heading": "Thank you for your inquiry",
+    "body": "I've received your message and will get back to you within one business day. In the meantime, you might find these resources useful.",
+    "cta": "Browse insights"
+  },
+  "legal": {
+    "privacy_heading": "Privacy Policy",
+    "terms_heading": "Terms of Service"
+  },
+  "legalPage": {
+    "privacy": {
+      "heading": "Privacy Policy",
+      "last_updated": "Last updated: March 2025",
+      "intro": "Yourtimestudio (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.",
+      "data_collection_heading": "1. Data We Collect",
+      "data_collection_body": "We may collect the following types of personal data:\n\n• Contact information: name, email address, phone number, and business name when you submit a form or contact us.\n• Website data: your current website URL when provided during an audit request or inquiry.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device data: browser type, operating system, and screen resolution for optimizing your experience.",
+      "cookies_heading": "2. Cookies & Tracking",
+      "cookies_body": "We use essential cookies to ensure the website functions properly. We may also use analytics cookies to understand how visitors interact with our site. You can control cookie preferences through your browser settings at any time. We do not use advertising cookies or sell data to third-party advertisers.",
+      "third_party_heading": "3. Third-Party Services",
+      "third_party_body": "We may use the following third-party services that process your data:\n\n• Hosting providers (e.g., Hostinger) for serving our website securely.\n• Form processing tools to manage inquiries and audit requests.\n• Analytics services to understand website traffic and performance.\n\nEach third-party service operates under its own privacy policy. We only share data necessary for the service to function.",
+      "data_rights_heading": "4. Your Rights",
+      "data_rights_body": "You have the right to:\n\n• Access the personal data we hold about you.\n• Request correction or deletion of your data.\n• Object to processing of your data for specific purposes.\n• Request a copy of your data in a portable format.\n\nTo exercise these rights, contact us using the details below.",
+      "data_security_heading": "5. Data Security",
+      "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
+      "contact_heading": "6. Contact Information",
+      "contact_body": "If you have questions about this privacy policy or how we handle your data, please contact us:\n\nEmail: hello@yourtimestudio.com\nLocation: Batumi, Adjara, Georgia"
+    },
+    "terms": {
+      "heading": "Terms of Service",
+      "last_updated": "Last updated: March 2025",
+      "intro": "These Terms of Service govern your use of the Yourtimestudio website and services. By accessing our website or engaging our services, you agree to these terms.",
+      "services_heading": "1. Services",
+      "services_body": "Yourtimestudio provides web design, development, and digital consulting services specializing in hospitality, medical, and beauty sector websites in Batumi, Georgia. Our services include but are not limited to:\n\n• Website design and development\n• Search engine optimization (SEO)\n• Website auditing and performance analysis\n• Ongoing website maintenance and support\n• Content strategy and copywriting\n\nThe specific scope, deliverables, and timeline for each project are defined in individual project proposals agreed upon by both parties.",
+      "payment_heading": "2. Payment Terms",
+      "payment_body": "• Setup fees are one-time charges due before the start of development, unless a payment plan is agreed upon in writing.\n• Monthly fees cover hosting, maintenance, security updates, and support. These are billed in advance on a recurring basis.\n• Payment plans for larger projects may be arranged during the proposal stage and must be agreed upon in writing.\n• All prices are in USD unless otherwise specified. Georgian VAT may apply where required by law.\n• Late payments may result in suspension of services until the outstanding balance is settled.",
+      "ip_heading": "3. Intellectual Property",
+      "ip_body": "• Upon full payment, you receive ownership of the custom website design and content created specifically for your project.\n• Yourtimestudio retains ownership of pre-existing tools, frameworks, code libraries, and methodologies used in the development process.\n• You are responsible for ensuring that all content, images, and materials you provide do not infringe on third-party intellectual property rights.\n• Yourtimestudio may showcase the completed project in its portfolio unless otherwise agreed in writing.",
+      "liability_heading": "4. Limitation of Liability",
+      "liability_body": "• Yourtimestudio provides services on an \"as is\" basis without warranties of any kind, either express or implied.\n• We are not liable for any indirect, incidental, special, or consequential damages arising from the use of our services.\n• Our total liability for any claim shall not exceed the total fees paid by you for the specific service giving rise to the claim.\n• We are not responsible for losses resulting from third-party service failures (e.g., hosting outages, payment gateway issues).\n• We are not liable for any loss of revenue, data, or business opportunities resulting from the use of our services.",
+      "termination_heading": "5. Termination",
+      "termination_body": "• Either party may terminate the service agreement with 30 days' written notice.\n• Upon termination, you retain ownership of all paid deliverables. Yourtimestudio will provide a reasonable handover period.\n• Outstanding fees remain due upon termination regardless of the reason for termination.",
+      "governing_heading": "6. Governing Law",
+      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.\n\nFor questions about these terms, contact us at hello@yourtimestudio.com."
+    }
+  },
+  "sectorPages": {
+    "hospitality": {
+      "hero": {
+        "eyebrow": "Hospitality",
+        "title": "Websites that fill rooms — not OTA commission sheets",
+        "subtitle": "Your Batumi hotel, guesthouse, or aparthotel deserves a website that drives direct bookings, speaks your guests' language, and loads fast enough to capture impulse searches."
+      },
+      "pains": {
+        "heading": "The challenges you're facing",
+        "items": [
+          {
+            "title": "OTA commission leakage",
+            "description": "Every booking through Booking.com or Agoda costs you 15–25%. Your website should be the most profitable channel — not the most expensive."
+          },
+          {
+            "title": "Slow booking flow",
+            "description": "Guests abandon sites that take more than 3 seconds to load. If your booking engine isn't fast and frictionless, you're losing revenue every day."
+          },
+          {
+            "title": "No multilingual content",
+            "description": "Batumi welcomes Georgian, Russian, Turkish, and international visitors. If your site only speaks one language, you're invisible to most of your market."
+          },
+          {
+            "title": "Poor mobile experience",
+            "description": "Over 60% of travel searches happen on mobile. A site that isn't optimized for phones is a site that doesn't convert."
+          }
+        ]
+      },
+      "deliverables": {
+        "heading": "What I deliver",
+        "items": [
+          {
+            "title": "Room & offer pages",
+            "description": "Beautiful, fast-loading room pages with photo galleries, amenity lists, and clear rate presentation — built to convert browsers into bookers."
+          },
+          {
+            "title": "Direct booking integration",
+            "description": "Seamless booking engine integration that lets guests check availability and book directly on your site, with no redirect or commission."
+          },
+          {
+            "title": "Multilingual guest paths",
+            "description": "Full content in Georgian, Russian, and English — so every guest finds what they need in their language, from room details to local tips."
+          },
+          {
+            "title": "OTA-compliant rate display",
+            "description": "Rate parity handled correctly: your best rate is always visible, and your direct-booking advantage is clear without violating OTA terms."
+          },
+          {
+            "title": "Speed optimization",
+            "description": "Sub-2-second load times across all pages. Image optimization, lazy loading, and performance monitoring built in from day one."
+          },
+          {
+            "title": "Analytics & CRO",
+            "description": "Conversion tracking, booking funnel analytics, and ongoing recommendations so you can see exactly what's working and what to improve."
+          }
+        ]
+      },
+      "outcomes": {
+        "heading": "What this looks like in practice",
+        "items": [
+          {
+            "title": "A guest finds your hotel on Google in their language, checks rooms, and books directly — no OTA commission.",
+            "description": "A Russian-speaking traveler searches 'отель в Батуми', lands on your Russian-language page, browses rooms with clear pricing, and books in under 2 minutes. You keep the full revenue."
+          },
+          {
+            "title": "Your seasonal offers reach guests before they check Booking.com.",
+            "description": "A targeted landing page for your summer package loads instantly on mobile, shows the rate advantage, and links straight to the booking engine — capturing demand before the OTAs do."
+          },
+          {
+            "title": "Repeat guests book directly because they remember your site works.",
+            "description": "Returning visitors find your site fast, clean, and easy to navigate. No pop-ups, no confusion — just a direct path to booking their favorite room."
+          }
+        ]
+      },
+      "faq": {
+        "heading": "Hospitality website FAQ",
+        "items": [
+          {
+            "q": "Can you integrate with Booking.com and other OTAs?",
+            "a": "Yes. I build OTA-compliant websites that work alongside your channel manager. Your direct-booking advantage is highlighted without violating rate parity agreements. Think of your site as the channel where you pay zero commission."
+          },
+          {
+            "q": "What payment processing do you support?",
+            "a": "I integrate with popular payment gateways including Stripe, TBC, and Bank of Georgia. The right choice depends on your guest demographics and existing banking relationships — I'll recommend the best fit during our consultation."
+          },
+          {
+            "q": "How do you handle seasonal pricing?",
+            "a": "Your booking engine handles rate logic — I ensure the website presents rates clearly and updates in real time. Seasonal offers, last-minute deals, and package pricing are all built into the page structure so guests always see current, accurate rates."
+          },
+          {
+            "q": "Do you support multi-property websites?",
+            "a": "Yes. If you operate multiple properties, I can build a unified site with property-specific sections, shared booking infrastructure, and centralized content management. Each property maintains its own identity while benefiting from shared SEO authority."
+          },
+          {
+            "q": "Can I update room content myself?",
+            "a": "Absolutely. Every hospitality site includes a content management system that lets you update room descriptions, photos, amenities, and offers without any technical knowledge. I also provide training and ongoing support."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to improve your hospitality website?",
+        "primary": "Request a website audit",
+        "secondary": "See pricing"
+      }
+    },
+    "medical": {
+      "hero": {
+        "eyebrow": "Medical",
+        "title": "Websites that build patient trust before the first consultation",
+        "subtitle": "Your Batumi clinic, dental practice, or aesthetic center needs a website that makes patients feel confident — clear doctor profiles, multilingual clarity, and a seamless path from research to appointment."
+      },
+      "pains": {
+        "heading": "The challenges you're facing",
+        "items": [
+          {
+            "title": "Low patient trust online",
+            "description": "Patients choose clinics they trust. If your website doesn't convey professionalism, expertise, and care, they'll find one that does — usually a competitor."
+          },
+          {
+            "title": "No doctor profiles",
+            "description": "Patients want to know who will treat them. Without detailed doctor profiles, qualifications, and specializations, your website can't build the trust that leads to bookings."
+          },
+          {
+            "title": "Missing consultation flow",
+            "description": "If a patient can't easily request or book a consultation, that trust you've built goes nowhere. A clear, simple path from interest to appointment is essential."
+          },
+          {
+            "title": "No multilingual clarity",
+            "description": "Batumi's medical tourism serves Georgian, Russian, and international patients. Content in only one language means you're invisible to a significant portion of your potential patients."
+          }
+        ]
+      },
+      "deliverables": {
+        "heading": "What I deliver",
+        "items": [
+          {
+            "title": "Doctor & treatment profiles",
+            "description": "Detailed, professional profiles for every specialist — qualifications, experience, areas of expertise, and patient-facing descriptions that build confidence."
+          },
+          {
+            "title": "Consultation booking",
+            "description": "A clean, simple consultation request flow that works on every device. Patients choose a doctor, select a time, and submit — with confirmation sent automatically."
+          },
+          {
+            "title": "Multilingual medical content",
+            "description": "Accurate, professional content in Georgian, Russian, and English — translated with medical terminology precision, not machine-translation guesswork."
+          },
+          {
+            "title": "Structured data (MedicalBusiness schema)",
+            "description": "Schema.org MedicalBusiness markup that helps Google understand your clinic, doctors, and services — improving your visibility in local medical search results."
+          },
+          {
+            "title": "Review management",
+            "description": "A review collection and display system that builds social proof. New patient reviews appear on your site, and negative feedback is flagged for your attention before it goes public."
+          },
+          {
+            "title": "FAQ system",
+            "description": "A searchable FAQ section with structured data that answers common patient questions — reducing phone inquiries and improving your SEO with FAQ rich results."
+          }
+        ]
+      },
+      "outcomes": {
+        "heading": "What this looks like in practice",
+        "items": [
+          {
+            "title": "A patient reads about your specialists in their language, trusts the presentation, and books a consultation.",
+            "description": "A Russian-speaking patient finds your clinic on Google, reads a detailed profile of the specialist in Russian, reviews available treatments, and books a consultation — all in a single session."
+          },
+          {
+            "title": "Your clinic appears in Google's local medical results with rich information.",
+            "description": "Structured data markup means Google shows your doctors, specialties, and patient ratings directly in search results — giving patients the confidence to click through before they even visit your site."
+          },
+          {
+            "title": "Fewer phone calls, more online consultations.",
+            "description": "With a clear FAQ system and online booking, patients find answers and book appointments without calling your reception — freeing your staff to focus on in-person care."
+          }
+        ]
+      },
+      "faq": {
+        "heading": "Medical website FAQ",
+        "items": [
+          {
+            "q": "How do you handle patient data privacy?",
+            "a": "All consultation forms use encrypted transmission, and I build with GDPR and Georgian data protection requirements in mind. Patient data is never stored on the website itself — it goes directly to your secure practice management system or email."
+          },
+          {
+            "q": "Can you create multilingual medical content?",
+            "a": "Yes. I work with professional medical translators to ensure accuracy in Georgian, Russian, and English. Medical terminology is precise — I never rely on machine translation for clinical content."
+          },
+          {
+            "q": "Do you integrate with insurance or practice management systems?",
+            "a": "I can integrate with most practice management and scheduling systems through APIs or embeddable widgets. During our consultation, I'll review your current tech stack and recommend the best integration approach."
+          },
+          {
+            "q": "What appointment systems do you support?",
+            "a": "I build custom booking flows or integrate with systems you already use — whether that's a simple calendar, a clinic management platform, or a third-party scheduling tool. The right approach depends on your practice size and workflow."
+          },
+          {
+            "q": "How do you ensure medical content accuracy?",
+            "a": "I structure content based on information you provide about your practice and specialists. All medical claims, treatment descriptions, and doctor qualifications are reviewed and approved by you before publication. I provide the framework — you provide the clinical authority."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to improve your medical website?",
+        "primary": "Request a website audit",
+        "secondary": "See pricing"
+      }
+    },
+    "beauty": {
+      "hero": {
+        "eyebrow": "Beauty",
+        "title": "Websites that fill your appointment book — not your Instagram DMs",
+        "subtitle": "Your Batumi salon, medspa, or studio deserves a website that showcases your services, displays pricing clearly, and lets clients book in seconds — all from their phone."
+      },
+      "pains": {
+        "heading": "The challenges you're facing",
+        "items": [
+          {
+            "title": "No online booking",
+            "description": "If clients can only book through DMs, phone calls, or walk-ins, you're losing appointments. Online booking captures demand 24/7 — even when you're with a client."
+          },
+          {
+            "title": "Scattered contact channels",
+            "description": "Instagram DMs, WhatsApp, phone calls, walk-ins — when bookings come from everywhere, things fall through the cracks. A single booking system eliminates the chaos."
+          },
+          {
+            "title": "No service menu visibility",
+            "description": "If potential clients can't see your full service menu and pricing online, they'll choose a salon that shows them exactly what they want — and what it costs."
+          },
+          {
+            "title": "No repeat business system",
+            "description": "First-time clients are expensive to acquire. Without a system for follow-ups, promotions, and easy rebooking, you're always chasing new clients instead of nurturing existing ones."
+          }
+        ]
+      },
+      "deliverables": {
+        "heading": "What I deliver",
+        "items": [
+          {
+            "title": "Service menu system",
+            "description": "A clear, organized service menu with descriptions, duration, and pricing — searchable by category and presented beautifully on every device."
+          },
+          {
+            "title": "Online appointment flow",
+            "description": "Clients pick a service, choose a stylist or therapist, select a time slot, and confirm — all in under a minute, from any device."
+          },
+          {
+            "title": "Pricing visibility",
+            "description": "Transparent pricing that builds trust and reduces time-wasting inquiries. Clients know what to expect before they walk in."
+          },
+          {
+            "title": "Promo management",
+            "description": "Seasonal offers, first-visit discounts, and loyalty promotions — all managed from a simple dashboard and displayed prominently on your site."
+          },
+          {
+            "title": "Instagram & social integration",
+            "description": "Your best Instagram posts embedded in your site, social proof that updates automatically, and clear links to all your social channels."
+          },
+          {
+            "title": "Review capture",
+            "description": "A simple system that encourages happy clients to leave reviews — building the social proof that brings in new clients week after week."
+          }
+        ]
+      },
+      "outcomes": {
+        "heading": "What this looks like in practice",
+        "items": [
+          {
+            "title": "A client sees your service menu, picks a treatment, and books an appointment — all from their phone.",
+            "description": "A potential client finds your salon on Google, browses your service menu with clear pricing, picks a treatment, and books a slot with their preferred stylist — all in under two minutes, without a single DM or phone call."
+          },
+          {
+            "title": "Your Instagram followers become website visitors become booked clients.",
+            "description": "Your Instagram bio links to a website that actually converts. Followers see your work, check your prices, and book immediately — instead of scrolling past because messaging feels like too much effort."
+          },
+          {
+            "title": "Seasonal promos drive repeat bookings automatically.",
+            "description": "A returning client sees your seasonal offer on the homepage, clicks to book their favorite treatment at a special rate, and confirms in seconds — no manual outreach required."
+          }
+        ]
+      },
+      "faq": {
+        "heading": "Beauty website FAQ",
+        "items": [
+          {
+            "q": "What booking systems do you integrate with?",
+            "a": "I work with popular booking platforms like Fresha, Booksy, and custom solutions. If you already use a booking system, I'll integrate it seamlessly. If you don't have one, I'll recommend the best fit for your salon size and service type."
+          },
+          {
+            "q": "Can you connect my Instagram to my website?",
+            "a": "Yes. I embed your Instagram feed directly into your site so your latest work is always visible. This creates automatic social proof — your website always shows fresh content without any manual updates."
+          },
+          {
+            "q": "How do you handle service pricing display?",
+            "a": "Pricing is displayed clearly on your service menu with starting prices, duration, and any relevant notes. You can update prices anytime through the content management system — no technical knowledge required."
+          },
+          {
+            "q": "Can I manage promotions and seasonal offers?",
+            "a": "Absolutely. The promo management system lets you create, schedule, and remove offers from a simple dashboard. Seasonal packages, first-visit discounts, and loyalty rewards can all be set up in minutes."
+          },
+          {
+            "q": "How do you help me get more reviews?",
+            "a": "I build a review capture system that sends automated follow-up messages to clients after their appointment, making it easy to leave a Google or Facebook review. The best reviews are also displayed on your website for social proof."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Ready to improve your beauty website?",
+        "primary": "Request a website audit",
+        "secondary": "See pricing"
+      }
+    }
+  },
+  "auditPage": {
+    "hero": {
+      "eyebrow": "Website audits",
+      "title": "Find out exactly what's holding your website back",
+      "subtitle": "Get a detailed scorecard covering brand clarity, speed, local SEO, content structure, accessibility, and conversion UX."
+    },
+    "rubric": {
+      "heading": "What we evaluate",
+      "subtitle": "Every audit scores your site across six critical dimensions.",
+      "items": {
+        "brand": {
+          "name": "Brand Clarity",
+          "points": [
+            "First impression & visual identity",
+            "Consistent messaging across pages",
+            "Differentiation from competitors"
+          ]
+        },
+        "speed": {
+          "name": "Performance & Speed",
+          "points": [
+            "Page load time on mobile & desktop",
+            "Core Web Vitals (LCP, FID, CLS)",
+            "Image & asset optimization"
+          ]
+        },
+        "seo": {
+          "name": "Local SEO",
+          "points": [
+            "Google Business Profile setup",
+            "Local keyword targeting",
+            "Structured data & meta tags"
+          ]
+        },
+        "content": {
+          "name": "Content Structure",
+          "points": [
+            "Information hierarchy & navigation",
+            "Headline structure & readability",
+            "Multilingual content organization"
+          ]
+        },
+        "accessibility": {
+          "name": "Accessibility",
+          "points": [
+            "WCAG 2.1 compliance basics",
+            "Color contrast & text legibility",
+            "Keyboard navigation & screen reader support"
+          ]
+        },
+        "conversion": {
+          "name": "Conversion UX",
+          "points": [
+            "Booking & contact flow clarity",
+            "Call-to-action placement",
+            "Trust signals & credible proof"
+          ]
+        }
+      }
+    },
+    "howItWorks": {
+      "heading": "How it works",
+      "steps": [
+        {
+          "title": "Submit your URL",
+          "description": "Fill out the form below with your website address and basic business info."
+        },
+        {
+          "title": "I analyze your site",
+          "description": "I manually review your site across all six categories using real devices and local search conditions."
+        },
+        {
+          "title": "You get a detailed report",
+          "description": "Receive a prioritized action plan with specific fixes you can implement right away."
+        }
+      ]
+    },
+    "sampleFindings": {
+      "heading": "Common findings by sector",
+      "items": {
+        "hospitality": {
+          "sector": "Hospitality",
+          "finding": "Common issue: hotel sites hide room value, booking paths, and local search signals behind slow image-heavy pages."
+        },
+        "medical": {
+          "sector": "Medical",
+          "finding": "Common issue: clinic sites often miss doctor profiles, service schema, and clear paths for international patients."
+        },
+        "beauty": {
+          "sector": "Beauty",
+          "finding": "Common issue: salons and studios rely on social DMs while their websites do not make booking obvious enough."
+        }
+      }
+    },
+    "form": {
+      "heading": "Request your free audit",
+      "subtitle": "Fill in the details below and I'll deliver your scorecard within 3 business days.",
+      "name": "Your name",
+      "business": "Business name",
+      "email": "Email address",
+      "sector": "Your sector",
+      "website": "Website URL",
+      "message": "Anything else I should know? (optional)",
+      "submit": "Request free audit",
+      "sending": "Sending...",
+      "success": "Your audit request has been received. I'll be in touch within 3 business days.",
+      "error": "Something went wrong. Please try again or email me directly.",
+      "sectors": [
+        "Hospitality",
+        "Medical",
+        "Beauty",
+        "Other"
+      ]
+    },
+    "detail": {
+      "cta": "Get your website audited",
+      "executive_summary": "Executive Summary",
+      "scoring": "Scoring Breakdown",
+      "findings": "Detailed Findings",
+      "recommended_fix": "Recommended fix",
+      "score_out_of": "/100"
+    }
+  },
+  "workPage": {
+    "heading": "Work directions",
+    "subtitle": "Demo briefs and project directions until real client work is ready to publish.",
+    "items": [
+      {
+        "sector": "Hospitality",
+        "title": "Boutique hotel booking concept",
+        "description": "A direct-booking website direction for a Batumi seafront hotel: rooms, trust signals, multilingual SEO, and fewer OTA dependencies."
+      },
+      {
+        "sector": "Medical",
+        "title": "Dental clinic trust platform",
+        "description": "A multilingual clinic direction with doctor profiles, treatment pages, patient FAQs, and structured data for medical search."
+      },
+      {
+        "sector": "Beauty",
+        "title": "Studio appointment flow",
+        "description": "A booking-led beauty website direction that moves demand from social DMs into a clearer service menu and appointment path."
+      }
+    ],
+    "comingSoon": "Demo brief"
+  },
+  "insightsPage": {
+    "heading": "Insights in progress",
+    "subtitle": "Planned practical guides for Batumi hospitality, medical, and beauty websites.",
+    "comingSoon": "Planned guide",
+    "clusters": {
+      "hospitality": {
+        "label": "Hospitality",
+        "posts": [
+          {
+            "title": "Direct booking pages for Batumi hotels",
+            "description": "A practical guide to room pages, trust signals, booking calls to action, and local SEO for hotel websites."
+          },
+          {
+            "title": "Speed checklist for hotel sites",
+            "description": "A launch checklist for image weight, mobile layout, Core Web Vitals, and booking-path clarity."
+          }
+        ]
+      },
+      "medical": {
+        "label": "Medical",
+        "posts": [
+          {
+            "title": "How patients evaluate clinics online",
+            "description": "A guide to doctor profiles, treatment pages, pricing clarity, and inquiry forms for clinic websites."
+          },
+          {
+            "title": "Multilingual medical content that builds trust",
+            "description": "How to structure English, Georgian, Russian, and Turkish content without making the site confusing."
+          }
+        ]
+      },
+      "beauty": {
+        "label": "Beauty",
+        "posts": [
+          {
+            "title": "Local SEO for Batumi beauty studios",
+            "description": "A guide to service pages, Google Business Profile basics, reviews, and local search intent."
+          },
+          {
+            "title": "From social DMs to online bookings",
+            "description": "How to move appointment demand into a clearer website flow while still using social media for discovery."
+          }
+        ]
+      }
+    },
+    "detail": {
+      "cta": "Want a website that works this hard for you?",
+      "ctaLink": "Get a free website audit"
+    }
+  },
+  "caseStudies": {
+    "sectionLabel": "Demo briefs.",
+    "heading": "Example directions, not fake client claims",
+    "viewLink": "View brief",
+    "moreNote": "These are sample briefs until client work is ready to publish. Ask for the direction closest to your business.",
+    "discussProject": "Discuss a similar project",
+    "seeBrief": "See the brief",
+    "studies": {
+      "hospitality": {
+        "vertical": "Hospitality",
+        "title": "Boutique hotel direct booking concept",
+        "result": "Booking flow blueprint"
+      },
+      "medical": {
+        "vertical": "Medical",
+        "title": "Dental clinic multilingual trust site",
+        "result": "Patient inquiry structure"
+      },
+      "beauty": {
+        "vertical": "Beauty",
+        "title": "Beauty studio appointment website",
+        "result": "Appointment flow prototype"
+      }
+    }
+  },
+  "blog": {
+    "sectionLabel": "Guides in progress.",
+    "heading": "Industry guides for hotels, clinics & studios",
+    "subtitle": "Practical notes on booking flows, trust, local SEO, and visual direction for Batumi businesses.",
+    "description": "Planned guides based on the same audit framework used for client projects.",
+    "allArticles": "View planned guides",
+    "articles": {
+      "0": {
+        "title": "Direct booking pages for Batumi hotels",
+        "date": "Planned",
+        "readTime": "Guide"
+      },
+      "1": {
+        "title": "Clinic trust pages for international patients",
+        "date": "Planned",
+        "readTime": "Guide"
+      },
+      "2": {
+        "title": "Online booking flows for beauty studios",
+        "date": "Planned",
+        "readTime": "Guide"
+      }
+    },
+    "categories": {
+      "hospitality": "Hospitality",
+      "medical": "Medical",
+      "beauty": "Beauty"
+    },
+    "fieldNotes": "Field notes",
+    "featuredDescription": "Practical notes on room pages, trust signals, booking calls to action, image weight, and local search intent for Batumi hotels."
+  },
+  "trustedBy": {
+    "label": "Built around the systems local businesses actually need",
+    "client0": "Direct booking",
+    "client1": "Appointment flows",
+    "client2": "Local SEO",
+    "client3": "Original photography",
+    "client4": "Multilingual pages",
+    "client5": "Hostinger deployment"
+  },
+  "ui": {
+    "skipToContent": "Skip to content",
+    "home": "Home",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation",
+    "openNavigationMenu": "Open navigation menu",
+    "toggleColorTheme": "Toggle color theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "dismissAnnouncement": "Dismiss announcement",
+    "backToTop": "Back to top",
+    "contact": "Contact",
+    "contactViaWhatsApp": "Contact via WhatsApp",
+    "sendEmail": "Send email",
+    "call": "Call",
+    "chatOnWhatsApp": "Chat on WhatsApp",
+    "location": "Batumi, Adjara, Georgia",
+    "locationArea": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond."
+  },
+  "announcement": {
+    "text": "Free website audit this month - limited spots",
+    "cta": "Claim yours"
+  },
+  "availability": {
+    "available": "Available for projects",
+    "unavailable": "Currently booked"
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "body": "The page you're looking for doesn't exist or has been moved. Let's get you back to something useful.",
+    "home": "Go home",
+    "audit": "Request an audit",
+    "contact": "Contact us"
+  }
+}

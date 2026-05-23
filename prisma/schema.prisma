@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id                String   @id @default(cuid())
+  name              String
+  businessName      String?
+  email             String
+  phone             String?
+  sector            String?   // hospitality, medical, beauty, other
+  websiteUrl        String?
+  budgetRange       String?
+  preferredLanguage String?   // en, ka, ru
+  message           String
+  source            String   @default("contact_form") // contact_form, audit_form, cta
+  status            String   @default("new") // new, contacted, proposal_sent, won, lost
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model AuditRequest {
+  id           String   @id @default(cuid())
+  name         String
+  businessName String
+  email        String
+  phone        String?
+  sector       String
+  websiteUrl   String   // The URL to audit
+  message      String?
+  status       String   @default("pending") // pending, in_progress, completed, sent
+  score        Int?     // Overall audit score 0-100
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  sector    String?
+  createdAt DateTime @default(now())
+}

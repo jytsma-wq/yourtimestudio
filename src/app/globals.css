@@ -1,0 +1,687 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer utilities {
+  @variant dark (&:is(.dark *));
+}
+
+@theme inline {
+  /* Semantic color mappings for Tailwind */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-manrope);
+  --font-serif: var(--font-fraunces);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Extended editorial semantic tokens */
+  --color-teal: var(--teal);
+  --color-navy: var(--navy);
+  --color-stone: var(--stone);
+  --color-rose: var(--rose);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-newsprint: var(--newsprint);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  /* Border radius — Warm Precision scale */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows — Warm Precision */
+  --shadow-sm: 0 1px 2px rgba(26, 35, 50, 0.05);
+  --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.08);
+  --shadow-lg: 0 8px 24px rgba(26, 35, 50, 0.12);
+  --shadow-premium: 0 1px 0 rgba(20, 24, 32, 0.08);
+  --shadow-premium-lg: 0 10px 28px rgba(20, 24, 32, 0.08);
+  --shadow-premium-xl: 0 24px 64px rgba(20, 24, 32, 0.12);
+
+  /* Spacing — Warm Precision */
+  --spacing-container: var(--container-padding);
+  --spacing-section: var(--section-padding);
+}
+
+:root {
+  /* ─── Base radius ─── */
+  --radius: 0.5rem;
+
+  /* ─── Surfaces ─── */
+  --background: #fafafa;                              /* clean paper */
+  --foreground: #18181b;                              /* neutral ink */
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  /* ─── Primary — Neutral ink ─── */
+  --primary: #18181b;
+  --primary-foreground: #f8fafc;
+
+  /* ─── Secondary — Cool editorial wash ─── */
+  --secondary: #eef2f1;
+  --secondary-foreground: #18181b;
+
+  /* ─── Muted ─── */
+  --muted: #eef2f1;
+  --muted-foreground: #66736f;
+
+  /* ─── Accent — Bay teal ─── */
+  --accent: #0f766e;
+  --accent-foreground: #ffffff;
+
+  /* ─── Destructive ─── */
+  --destructive: oklch(0.5649 0.1651 29.81);          /* #c44536 error red */
+  --destructive-foreground: #ffffff;
+
+  /* ─── Borders & Inputs ─── */
+  --border: #d9dfdd;
+  --input: #d9dfdd;
+  --ring: #0f766e;
+
+  /* ─── Charts ─── */
+  --chart-1: #0f766e;
+  --chart-2: #1f3a5f;
+  --chart-3: #66736f;
+  --chart-4: #b4532a;
+  --chart-5: #18181b;
+
+  /* ─── Sidebar ─── */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #eef2f1;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #d9dfdd;
+  --sidebar-ring: #0f766e;
+
+  /* ─── Modern editorial extended tokens ─── */
+  --teal: #0f766e;
+  --navy: #1f3a5f;
+  --stone: #66736f;
+  --rose: #b4532a;
+  --ink: #18181b;
+  --paper: #fafafa;
+  --newsprint: #eef2f1;
+  --surface-warm: #fafafa;
+  --surface-subtle: #eef2f1;
+  --text-secondary: #66736f;
+  --text-tertiary: #7b8582;
+
+  /* ─── Spacing ─── */
+  --container-padding: 24px;
+  --section-padding: 80px;
+  --container-max-width: 1280px;
+  --hero-max-width: 1440px;
+
+  /* ─── Typography ─── */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-5xl: 48px;
+  --font-size-6xl: 64px;
+
+  --line-height-display: 1.1;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.5;
+  --line-height-body-long: 1.75;
+
+  --letter-spacing-tight: 0;
+  --letter-spacing-heading: 0;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+
+  /* ─── Motion ─── */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0.0, 0, 0.2, 1);
+}
+
+/* ─── Dark Mode Tokens ─── */
+.dark {
+  /* ─── Surfaces ─── */
+  --background: #080b14;
+  --foreground: #eef2ff;
+  --card: #111827;
+  --card-foreground: #eef2ff;
+  --popover: #111827;
+  --popover-foreground: #eef2ff;
+
+  /* ─── Primary — teal on dark ─── */
+  --primary: #2dd4bf;
+  --primary-foreground: #ffffff;
+
+  /* ─── Secondary ─── */
+  --secondary: #182235;
+  --secondary-foreground: #eef2ff;
+
+  /* ─── Muted ─── */
+  --muted: #182235;
+  --muted-foreground: #a8b3cf;
+
+  /* ─── Accent ─── */
+  --accent: #2dd4bf;
+  --accent-foreground: #042f2e;
+
+  /* ─── Destructive ─── */
+  --destructive: oklch(0.6350 0.1750 29.81);          /* lighter error for dark bg */
+  --destructive-foreground: #ffffff;
+
+  /* ─── Borders & Inputs ─── */
+  --border: rgba(255,255,255,0.12);
+  --input: rgba(255,255,255,0.16);
+  --ring: #2dd4bf;
+
+  /* ─── Charts ─── */
+  --chart-1: #2dd4bf;
+  --chart-2: #8fb8ff;
+  --chart-3: #a8b3cf;
+  --chart-4: #f2a075;
+  --chart-5: #eef2ff;
+
+  /* ─── Sidebar ─── */
+  --sidebar: #080b14;
+  --sidebar-foreground: #eef2ff;
+  --sidebar-primary: #2dd4bf;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #182235;
+  --sidebar-accent-foreground: #eef2ff;
+  --sidebar-border: rgba(255,255,255,0.12);
+  --sidebar-ring: #2dd4bf;
+
+  /* ─── Modern editorial extended tokens (dark) ─── */
+  --teal: #2dd4bf;
+  --navy: #8fb8ff;
+  --stone: #a8b3cf;
+  --rose: #f2a075;
+  --ink: #080b14;
+  --paper: #eef2ff;
+  --newsprint: #182235;
+  --surface-warm: #080b14;
+  --surface-subtle: #182235;
+  --text-secondary: #a8b3cf;
+  --text-tertiary: #7f8aa6;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    /* Fallback for browsers that don't support color-mix() */
+    outline-color: var(--ring);
+  }
+
+  /* Use fine-grained color mixing when supported */
+  @supports (color-mix(in oklch, var(--ring) 50%, transparent)) {
+    * {
+      outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+    }
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ─── Warm Precision Typography Utilities ─── */
+  h1, h2 {
+    font-family: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  }
+
+  h1 {
+    font-variation-settings: "SOFT" 25, "WONK" 0, "opsz" 72;
+    letter-spacing: 0;
+    line-height: var(--line-height-display);
+  }
+
+  h2 {
+    font-variation-settings: "SOFT" 15, "WONK" 0, "opsz" 36;
+    letter-spacing: 0;
+  }
+
+  h3, h4, h5, h6 {
+    letter-spacing: 0;
+    line-height: var(--line-height-heading);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Selection color — intentionally designed */
+  ::selection {
+    background-color: color-mix(in oklch, var(--teal) 20%, transparent);
+    color: var(--foreground);
+  }
+
+  .dark ::selection {
+    background-color: color-mix(in oklch, var(--teal) 30%, transparent);
+    color: var(--foreground);
+  }
+
+  /* Branded keyboard focus rings */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* ─── Section Label — crisp uppercase preheader above headings ─── */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 650;
+  color: var(--foreground);
+  opacity: 0.68;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ─── Premium shadow utilities ─── */
+.shadow-premium { box-shadow: var(--shadow-premium); }
+.shadow-premium-lg { box-shadow: var(--shadow-premium-lg); }
+.shadow-premium-xl { box-shadow: var(--shadow-premium-xl); }
+
+/* Editorial layout utilities */
+.editorial-container {
+  width: min(100% - 32px, var(--container-max-width));
+  margin-inline: auto;
+}
+
+.editorial-rule {
+  border-top: 1px solid var(--border);
+}
+
+.editorial-kicker {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.uppercase {
+  letter-spacing: 0.08em;
+}
+
+.editorial-display {
+  font-family: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  font-variation-settings: "SOFT" 20, "WONK" 0;
+  letter-spacing: 0;
+  line-height: 1.05;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+#hero h1.editorial-display,
+h1.editorial-display {
+  font-variation-settings: "SOFT" 25, "WONK" 0, "opsz" 72;
+}
+
+section h2.editorial-display,
+h2.editorial-display {
+  font-variation-settings: "SOFT" 15, "WONK" 0, "opsz" 36;
+}
+
+.editorial-sans-display {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: 0;
+  line-height: 1.05;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+:lang(ka) .editorial-display,
+:lang(ka) .editorial-sans-display,
+:lang(ka) h1,
+:lang(ka) h2 {
+  line-height: 1.16;
+}
+
+:lang(ka) .editorial-kicker,
+:lang(ru) .editorial-kicker,
+:lang(tr) .editorial-kicker {
+  white-space: normal;
+}
+
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+.paper-texture > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── FAQ Accordion open state accent ─── */
+[data-state="open"] > [data-slot="accordion-item"],
+[data-state="open"][data-slot="accordion-item"] {
+  border-left: 2px solid var(--teal);
+  padding-left: 0.75rem;
+  background: color-mix(in oklch, var(--teal) 4%, transparent);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+/* ─── Hero grain texture — subtle SVG noise for depth ─── */
+.hero-grain {
+  position: relative;
+}
+.hero-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  z-index: 1;
+}
+.hero-grain > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Infinite marquee animation ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Spotlight card hover effect ─── */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    color-mix(in oklch, var(--teal) 6%, transparent),
+    transparent 60%
+  );
+  z-index: 1;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+.spotlight-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Animated SVG underline on hero accent word ─── */
+@keyframes draw-underline {
+  from { stroke-dashoffset: 200; }
+  to { stroke-dashoffset: 0; }
+}
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+.accent-underline svg {
+  position: absolute;
+  left: -4px;
+  bottom: -4px;
+  width: calc(100% + 8px);
+  height: 14px;
+  overflow: visible;
+}
+.accent-underline svg path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-underline 1.2s ease-out 0.6s forwards;
+}
+
+/* ─── Section number background decoration ─── */
+.section-numbered {
+  position: relative;
+}
+.section-numbered::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -0.2em;
+  left: -0.15em;
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.04;
+  pointer-events: none;
+  color: var(--foreground);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  z-index: 0;
+}
+.section-numbered > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Dot-grid pattern for CTA band ─── */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Cursor spotlight — global mouse follower ─── */
+/* ─── Section dot navigator ─── */
+.section-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.section-nav-dot.active {
+  background: var(--teal);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--teal) 20%, transparent);
+  transform: scale(1.3);
+}
+.section-nav-dot:hover {
+  background: var(--teal);
+  transform: scale(1.2);
+}
+
+/* ─── Magnetic button spring-back ─── */
+.magnetic-btn {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── FAQ styled numbers ─── */
+.faq-number {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--teal);
+  margin-right: 0.5em;
+  min-width: 2em;
+  flex-shrink: 0;
+}
+
+/* ─── Hero ambient gradient orbs ─── */
+/* ─── Floating chip animations (founder section) ─── */
+@keyframes float-chip {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-chip-1 { animation: float-chip 3s ease-in-out infinite; }
+.float-chip-2 { animation: float-chip 3.5s ease-in-out 0.5s infinite; }
+.float-chip-3 { animation: float-chip 4s ease-in-out 1s infinite; }
+
+/* ─── Custom branded scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--teal) 40%, transparent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--teal) 60%, transparent);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--teal) 40%, transparent);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--teal) 60%, transparent);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--teal) 40%, transparent) transparent;
+}
+
+.dark * {
+  scrollbar-color: color-mix(in oklch, var(--teal) 40%, transparent) transparent;
+}
+
+/* ─── Duotone colour wash on images on hover ─── */
+.duotone-wash {
+  position: relative;
+  overflow: hidden;
+}
+.duotone-wash::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+.duotone-wash:hover::after {
+  opacity: 0.35;
+}
+.duotone-wash > * {
+  position: relative;
+  z-index: 2;
+}
+.duotone-wash-navy::after {
+  background: var(--navy);
+}
+.duotone-wash-stone::after {
+  background: var(--stone);
+}
+.duotone-wash-rose::after {
+  background: var(--rose);
+}
+
+/* ─── Typewriter cursor blink ─── */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background: var(--teal);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 0.8s ease-in-out infinite;
+}
+
+/* ─── Animated checkmark draw for success state ─── */
+@keyframes draw-check {
+  to { stroke-dashoffset: 0; }
+}
