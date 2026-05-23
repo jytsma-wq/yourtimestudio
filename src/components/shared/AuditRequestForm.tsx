@@ -68,7 +68,7 @@ export function AuditRequestForm() {
   if (status === 'success') {
     return (
       <div className="bg-card border border-border rounded-none p-8 text-center" role="status">
-        <CheckCircle2 className="size-12 text-navy mx-auto mb-4" />
+        <CheckCircle2 className="size-12 text-brand-sage-green-darken mx-auto mb-4" />
         <p className="text-lg font-medium mb-2">{t('success')}</p>
       </div>
     );
@@ -187,7 +187,7 @@ export function AuditRequestForm() {
       <Button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full rounded-none bg-teal hover:bg-teal/90 text-background font-medium text-base h-12"
+        className="w-full rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base h-12"
       >
         {status === 'sending' ? (
           <>

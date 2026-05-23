@@ -98,10 +98,10 @@ export function BeforeAfter({
       </div>
 
       {/* Labels */}
-      <div className="absolute top-2 left-2 bg-ink/60 text-paper text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
+      <div className="absolute top-2 left-2 bg-ink/60 text-brand-cream text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
         Before
       </div>
-      <div className="absolute top-2 right-2 bg-ink/60 text-paper text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
+      <div className="absolute top-2 right-2 bg-ink/60 text-brand-cream text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
         After
       </div>
 
@@ -111,10 +111,10 @@ export function BeforeAfter({
         style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
       >
         {/* Vertical line */}
-        <div className="w-0.5 h-full bg-paper/80 mx-auto" />
+        <div className="w-0.5 h-full bg-brand-cream/80 mx-auto" />
 
         {/* Circular handle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-paper shadow-lg flex items-center justify-center pointer-events-auto cursor-col-resize">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-cream shadow-lg flex items-center justify-center pointer-events-auto cursor-col-resize">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 10L4 10M4 10L6 8M4 10L6 12" stroke="var(--ink)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M13 10L16 10M16 10L14 8M16 10L14 12" stroke="var(--ink)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

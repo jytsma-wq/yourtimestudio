@@ -70,7 +70,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-teal"
+                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.color && (
                       <span className={`inline-block size-1.5 rounded-full ${link.color}`} />
@@ -92,7 +92,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-teal"
+                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.label}
                   </Link>
@@ -111,7 +111,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-teal"
+                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.label}
                   </Link>
@@ -134,7 +134,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-teal"
+                        className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                       >
                         <Icon className="size-4" aria-hidden="true" />
                         {link.label}
@@ -159,7 +159,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <Link
                   href="/"
                   locale={loc}
-                  className={`transition-colors hover:text-teal ${locale === loc ? 'text-teal font-semibold' : ''}`}
+                  className={`transition-colors hover:text-brand-serene-coral-darken ${locale === loc ? 'text-brand-serene-coral-darken font-semibold' : ''}`}
                 >
                   {localeLabels[loc]}
                 </Link>

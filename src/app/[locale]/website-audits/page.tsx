@@ -80,7 +80,7 @@ export default async function WebsiteAuditsPage({
 
         {/* Hero */}
         <div className="max-w-3xl mb-16 md:mb-20">
-          <p className="editorial-kicker text-teal mb-3">
+          <p className="editorial-kicker text-brand-serene-coral-darken mb-3">
             {t('hero.eyebrow')}
           </p>
           <h1 className="editorial-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
@@ -109,10 +109,10 @@ export default async function WebsiteAuditsPage({
             return (
               <div
                 key={item.key}
-                className="bg-card border border-border rounded-none p-6 flex flex-col items-start gap-3"
+                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col items-start gap-3 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
               >
-                <div className="size-10 flex items-center justify-center border border-border bg-teal/10">
-                  <Icon className="size-5 text-teal" />
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10">
+                  <Icon className="size-5 text-brand-serene-coral-darken" />
                 </div>
                 <h3 className="font-semibold text-base">
                   {t(`rubric.items.${item.key}.name`)}
@@ -123,7 +123,7 @@ export default async function WebsiteAuditsPage({
                       key={i}
                       className="text-muted-foreground text-sm leading-[1.75] flex items-start gap-2"
                     >
-                      <span className="text-teal mt-1.5 shrink-0">•</span>
+                      <span className="text-brand-serene-coral-darken mt-1.5 shrink-0">•</span>
                       <span>{t(`rubric.items.${item.key}.points.${i}`)}</span>
                     </li>
                   ))}
@@ -147,10 +147,10 @@ export default async function WebsiteAuditsPage({
             const Icon = step.icon;
             return (
               <div key={index} className="text-left flex-1">
-                <div className="size-10 flex items-center justify-center border border-border bg-teal/10 mb-4">
-                  <Icon className="size-5 text-teal" />
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 mb-4">
+                  <Icon className="size-5 text-brand-serene-coral-darken" />
                 </div>
-                <div className="text-teal font-semibold text-sm mb-2">
+                <div className="text-brand-serene-coral-darken font-semibold text-sm mb-2">
                   Step {index + 1}
                 </div>
                 <h3 className="font-semibold text-lg mb-2">
@@ -178,21 +178,21 @@ export default async function WebsiteAuditsPage({
             const Icon = finding.icon;
             const colorClass =
               finding.color === 'navy'
-                ? 'bg-navy/10 text-navy'
+                ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                 : finding.color === 'stone'
-                  ? 'bg-stone/10 text-stone'
-                  : 'bg-rose/10 text-rose';
+                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+                  : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
             const tagBgClass =
               finding.color === 'navy'
-                ? 'bg-navy/10 text-navy'
+                ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                 : finding.color === 'stone'
-                  ? 'bg-stone/10 text-stone'
-                  : 'bg-rose/10 text-rose';
+                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+                  : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
 
             return (
               <div
                 key={finding.key}
-                className="bg-card border border-border rounded-none p-6 flex flex-col gap-4"
+                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col gap-4 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>

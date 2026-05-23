@@ -15,7 +15,7 @@ interface HeroAccentUnderlineProps {
  */
 export function HeroAccentUnderline({ children, className = '' }: HeroAccentUnderlineProps) {
   return (
-    <span className={`accent-underline text-navy ${className}`}>
+    <span className={`accent-underline text-brand-sage-green-darken ${className}`}>
       {children}
       <svg
         viewBox="0 0 200 12"

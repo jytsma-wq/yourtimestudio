@@ -16,7 +16,7 @@ export function WhatsAppFAB() {
     <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3 md:bottom-8 md:right-8">
       <a
         href={`mailto:${siteConfig.contact.email}`}
-        className="hidden md:flex size-12 items-center justify-center rounded-full bg-card text-foreground shadow-lg ring-1 ring-border transition-all duration-300 hover:scale-110 hover:text-teal hover:shadow-xl active:scale-95"
+        className="hidden md:flex size-12 items-center justify-center rounded-full bg-card text-foreground shadow-lg ring-1 ring-border transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
         aria-label={ui('sendEmail')}
       >
         <Mail className="size-5" />
@@ -25,7 +25,7 @@ export function WhatsAppFAB() {
       {hasPhone && (
         <a
           href={`tel:${siteConfig.contact.whatsapp.replace(/\s/g, '')}`}
-          className="hidden size-12 items-center justify-center rounded-full bg-navy text-background shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 md:flex"
+          className="hidden size-12 items-center justify-center rounded-full bg-brand-sage-green-darken text-background shadow-lg transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100 md:flex"
           aria-label={ui('call')}
         >
           <Phone className="size-5" />
@@ -37,9 +37,9 @@ export function WhatsAppFAB() {
         target={hasWhatsAppLink ? '_blank' : undefined}
         rel={hasWhatsAppLink ? 'noopener noreferrer' : undefined}
         aria-label={ui('chatOnWhatsApp')}
-        className="relative flex size-14 items-center justify-center rounded-full bg-teal text-background shadow-xl ring-1 ring-border transition-all duration-300 hover:scale-110 hover:bg-teal/90 hover:shadow-2xl active:scale-95"
+        className="relative flex size-14 items-center justify-center rounded-full bg-brand-serene-coral text-brand-charcoal shadow-xl ring-1 ring-border transition duration-150 ease-out hover:scale-[1.02] hover:bg-brand-serene-coral/90 hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
       >
-        <span className="absolute inset-0 rounded-full bg-teal opacity-25 motion-safe:animate-ping" />
+        <span className="absolute inset-0 rounded-full bg-brand-serene-coral opacity-25 motion-safe:animate-ping" />
         <MessageCircle className="relative z-10 size-6" />
       </a>
     </div>

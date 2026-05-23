@@ -14,7 +14,7 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
   const t = await getTranslations('ctaBand');
 
   return (
-    <Section variant="accent" className="border-t border-navy/20 py-16 md:py-20" id="cta">
+    <Section variant="accent" className="border-t border-brand-sage-green/20 py-16 md:py-20" id="cta">
       <div className="mx-auto max-w-4xl text-left">
         <p className="section-label text-background">{t('sectionLabel')}</p>
         <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl mb-5 text-background">
@@ -29,7 +29,7 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
           <Button
             asChild
             size="lg"
-            className="bg-background text-navy font-semibold text-base px-8 h-12 rounded-none hover:bg-background/90"
+            className="bg-background text-brand-sage-green-darken font-semibold text-base px-8 h-12 rounded-none hover:bg-background/90"
           >
             <Link href="/website-audits">
               {t('primary')}

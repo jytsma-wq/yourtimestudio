@@ -42,9 +42,9 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
   const t = useTranslations('pricing');
 
   function FeatureIcon({ value }: { value: 'yes' | 'no' | 'partial' }) {
-    if (value === 'yes') return <Check className="size-4 text-navy" />;
+    if (value === 'yes') return <Check className="size-4 text-brand-sage-green-darken" />;
     if (value === 'no') return <X className="size-4 text-muted-foreground" />;
-    return <Minus className="size-4 text-teal" />;
+    return <Minus className="size-4 text-brand-serene-coral-darken" />;
   }
 
   return (
@@ -62,7 +62,7 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
               {['beauty', 'medical', 'hospitality'].map(key => (
                 <th key={key} className="text-center py-3 px-4 text-sm font-semibold">
                   <span className={`inline-block size-2 mr-2 ${
-                    key === 'beauty' ? 'bg-rose' : key === 'medical' ? 'bg-stone' : 'bg-navy'
+                    key === 'beauty' ? 'bg-brand-serene-coral' : key === 'medical' ? 'bg-brand-sage-green-darken' : 'bg-brand-sage-green-darken'
                   }`} />
                   {t(`${key}.name`)}
                 </th>
@@ -71,7 +71,7 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
           </thead>
           <tbody>
             {featureKeys.map(key => (
-              <tr key={key} className="border-b border-border/50 hover:bg-surface-subtle/50 transition-colors">
+              <tr key={key} className="border-b border-border/50 hover:bg-brand-gray-100/50 transition-colors">
                 <td className="py-3 px-4 text-sm text-foreground sticky left-0 bg-card will-change-transform z-10">
                   {t(`comparison.${key}`)}
                 </td>

@@ -146,9 +146,9 @@ export async function SectorPageTemplate({
 
   // Map sector key to the Tailwind bg class for the CTA band
   const ctaBgClass: Record<SectorKey, string> = {
-    hospitality: 'bg-navy',
-    medical: 'bg-stone',
-    beauty: 'bg-rose',
+    hospitality: 'bg-brand-sage-green-darken',
+    medical: 'bg-brand-sage-green-darken',
+    beauty: 'bg-brand-serene-coral-darken',
   };
 
   return (

@@ -170,7 +170,7 @@ export function ContactForm() {
           <p className="text-muted-foreground leading-[1.75] max-w-md mx-auto mb-2">
             {t('form.success_body')}
           </p>
-          <p className="text-sm text-teal font-medium">{t('form.success_meta')}</p>
+          <p className="text-sm text-brand-serene-coral-darken font-medium">{t('form.success_meta')}</p>
         </motion.div>
       ) : (
         <motion.div
@@ -431,7 +431,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full sm:w-auto rounded-none bg-teal hover:bg-teal/90 text-background min-w-[180px]"
+                className="w-full sm:w-auto rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white min-w-[180px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

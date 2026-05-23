@@ -9,20 +9,20 @@ import { Link } from '@/lib/i18n/navigation';
 import auditData from '@/content/audits/batumi-hotel-website-audit.json';
 
 function getScoreColor(score: number): string {
-  if (score >= 70) return 'text-navy';
-  if (score >= 50) return 'text-teal';
+  if (score >= 70) return 'text-brand-sage-green-darken';
+  if (score >= 50) return 'text-brand-serene-coral-darken';
   return 'text-destructive';
 }
 
 function getScoreBg(score: number): string {
-  if (score >= 70) return 'bg-navy/10';
-  if (score >= 50) return 'bg-teal/10';
+  if (score >= 70) return 'bg-brand-sage-green-darken/10';
+  if (score >= 50) return 'bg-brand-serene-coral/10';
   return 'bg-destructive/10';
 }
 
 function getScoreBarColor(score: number): string {
-  if (score >= 70) return 'bg-navy';
-  if (score >= 50) return 'bg-teal';
+  if (score >= 70) return 'bg-brand-sage-green-darken';
+  if (score >= 50) return 'bg-brand-serene-coral';
   return 'bg-destructive';
 }
 
@@ -60,10 +60,10 @@ export default async function AuditDetailPage({
   const audit = auditData;
   const sectorTagColor =
     audit.sector === 'hospitality'
-      ? 'bg-navy/10 text-navy'
+      ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
       : audit.sector === 'medical'
-        ? 'bg-stone/10 text-stone'
-        : 'bg-rose/10 text-rose';
+        ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+        : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
 
   return (
     <>
@@ -158,13 +158,13 @@ export default async function AuditDetailPage({
             const catKey = finding.category;
             const tagColor =
               catKey === 'speed'
-                ? 'bg-teal/10 text-teal'
+                ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken'
                 : catKey === 'seo'
-                  ? 'bg-navy/10 text-navy'
+                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                   : catKey === 'conversion'
-                    ? 'bg-rose/10 text-rose'
+                    ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken'
                     : catKey === 'content'
-                      ? 'bg-stone/10 text-stone'
+                      ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                       : catKey === 'accessibility'
                         ? 'bg-muted text-muted-foreground'
                         : 'bg-muted text-muted-foreground';
@@ -172,7 +172,7 @@ export default async function AuditDetailPage({
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-none p-6"
+                className="bg-card bg-paper-texture border border-border rounded-none p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Badge className={`${tagColor} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
@@ -183,8 +183,8 @@ export default async function AuditDetailPage({
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {finding.description}
                 </p>
-                <div className="bg-surface-subtle rounded-none border border-border p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-teal mb-1.5">
+                <div className="bg-brand-gray-100 rounded-none border border-border p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-serene-coral-darken mb-1.5">
                     {t('detail.recommended_fix')}
                   </p>
                   <p className="text-sm leading-relaxed">{finding.recommendedFix}</p>
@@ -204,7 +204,7 @@ export default async function AuditDetailPage({
           <Button
             asChild
             size="lg"
-            className="rounded-none bg-teal hover:bg-teal/90 text-background font-medium text-base px-8 h-12 mt-6"
+            className="rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base px-8 h-12 mt-6"
           >
             <Link href="/website-audits">
               {t('detail.cta')}

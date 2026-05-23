@@ -48,7 +48,7 @@ export async function CaseStudiesSection({ number }: { number?: string }) {
                 </div>
                 <div className="p-5 md:p-6">
                   <div className="inline-flex items-center gap-2">
-                    <LayoutTemplate className="size-4 text-teal" />
+                    <LayoutTemplate className="size-4 text-brand-serene-coral-darken" />
                     <span className="text-sm font-semibold text-background">
                       {t(`studies.${key}.result`)}
                     </span>

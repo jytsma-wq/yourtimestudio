@@ -37,7 +37,7 @@ export async function ResultsBand({ locale: _locale, number }: ResultsBandProps)
               key={key}
               className="bg-ink p-5"
             >
-              <CheckCircle2 className="size-5 text-teal mb-4" />
+              <CheckCircle2 className="size-5 text-brand-serene-coral-darken mb-4" />
               <h3 className="text-sm font-semibold text-background">
                 {t(`items.${key}.title`)}
               </h3>

@@ -6,8 +6,8 @@ export async function LocationCard() {
 
   return (
     <div className="bg-card border border-border rounded-xl shadow-premium p-4 flex items-start gap-3">
-      <div className="w-9 h-9 rounded-lg bg-teal/10 flex items-center justify-center shrink-0">
-        <MapPin className="size-4 text-teal" />
+      <div className="w-9 h-9 rounded-lg bg-brand-serene-coral/10 flex items-center justify-center shrink-0">
+        <MapPin className="size-4 text-brand-serene-coral-darken" />
       </div>
       <div>
         <p className="text-sm font-semibold text-foreground">{ui('location')}</p>

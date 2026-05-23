@@ -29,7 +29,7 @@ export async function ProcessSection({ locale, number }: ProcessSectionProps) {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm font-semibold text-foreground hover:text-navy hover:border-navy"
+            className="mt-8 inline-flex items-center gap-2 border-b border-transparent pb-1 text-sm font-semibold text-foreground no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-sage-green-darken"
           >
             {t('cta')}
             <ArrowRight className="size-4" />
@@ -46,10 +46,10 @@ export async function ProcessSection({ locale, number }: ProcessSectionProps) {
                     <span className="font-sans text-3xl font-semibold text-muted-foreground">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <Icon className="size-5 text-teal md:hidden" />
+                    <Icon className="size-5 text-brand-serene-coral-darken md:hidden" />
                   </div>
-                  <div className="hidden size-12 items-center justify-center border border-border bg-surface-subtle md:flex">
-                    <Icon className="size-5 text-teal" />
+                  <div className="hidden size-12 items-center justify-center border border-border bg-brand-gray-100 md:flex">
+                    <Icon className="size-5 text-brand-serene-coral-darken" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground">{t(`steps.${i}.title`)}</h3>

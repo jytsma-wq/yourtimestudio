@@ -31,7 +31,7 @@ export async function TrustedByStrip() {
               key={i}
               className="mx-8 shrink-0 font-sans text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
             >
-              {name} <span className="ml-8 text-teal">/</span>
+              {name} <span className="ml-8 text-brand-serene-coral-darken">/</span>
             </span>
           ))}
         </div>

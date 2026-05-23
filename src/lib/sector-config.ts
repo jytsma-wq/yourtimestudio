@@ -20,13 +20,13 @@ export type SectorKey = 'hospitality' | 'medical' | 'beauty';
 export interface SectorMeta {
   /** Machine key matching translation namespace */
   key: SectorKey;
-  /** Semantic Tailwind text class (e.g. 'text-navy') */
+  /** Semantic Tailwind text class (e.g. 'text-brand-sage-green-darken') */
   textClass: string;
-  /** Semantic Tailwind dot/background class (e.g. 'bg-navy') */
+  /** Semantic Tailwind dot/background class (e.g. 'bg-brand-sage-green-darken') */
   dotClass: string;
-  /** Semantic Tailwind background-tint class (e.g. 'bg-navy/10') */
+  /** Semantic Tailwind background-tint class (e.g. 'bg-brand-sage-green-darken/10') */
   bgLight: string;
-  /** Semantic Tailwind border class (e.g. 'border-navy/20') */
+  /** Semantic Tailwind border class (e.g. 'border-brand-sage-green/20') */
   borderClass: string;
   /** CSS custom-property name for inline styles (e.g. 'var(--navy)') */
   cssVar: string;
@@ -51,10 +51,10 @@ export const sectorKeys: SectorKey[] = ['hospitality', 'medical', 'beauty'];
 export const sectors: Record<SectorKey, SectorMeta> = {
   hospitality: {
     key: 'hospitality',
-    textClass: 'text-navy',
-    dotClass: 'bg-navy',
-    bgLight: 'bg-navy/10',
-    borderClass: 'border-navy/20',
+    textClass: 'text-brand-sage-green-darken',
+    dotClass: 'bg-brand-sage-green-darken',
+    bgLight: 'bg-brand-sage-green-darken/10',
+    borderClass: 'border-brand-sage-green/20',
     cssVar: 'var(--navy)',
     href: '/hospitality-web-design-batumi',
     image: '/images/verticals-hospitality.jpg',
@@ -65,10 +65,10 @@ export const sectors: Record<SectorKey, SectorMeta> = {
   },
   medical: {
     key: 'medical',
-    textClass: 'text-stone',
-    dotClass: 'bg-stone',
-    bgLight: 'bg-stone/10',
-    borderClass: 'border-stone/20',
+    textClass: 'text-brand-sage-green-darken',
+    dotClass: 'bg-brand-sage-green-darken',
+    bgLight: 'bg-brand-sage-green-darken/10',
+    borderClass: 'border-brand-sage-green/20',
     cssVar: 'var(--stone)',
     href: '/medical-websites-batumi',
     image: '/images/verticals-medical.jpg',
@@ -79,10 +79,10 @@ export const sectors: Record<SectorKey, SectorMeta> = {
   },
   beauty: {
     key: 'beauty',
-    textClass: 'text-rose',
-    dotClass: 'bg-rose',
-    bgLight: 'bg-rose/10',
-    borderClass: 'border-rose/20',
+    textClass: 'text-brand-serene-coral-darken',
+    dotClass: 'bg-brand-serene-coral',
+    bgLight: 'bg-brand-serene-coral/10',
+    borderClass: 'border-brand-serene-coral/20',
     cssVar: 'var(--rose)',
     href: '/beauty-salon-websites-batumi',
     image: '/images/verticals-beauty.jpg',

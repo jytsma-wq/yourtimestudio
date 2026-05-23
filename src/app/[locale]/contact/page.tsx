@@ -76,14 +76,14 @@ export default async function ContactPage({
 
             {/* Email */}
             <div className="flex items-start gap-3">
-              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
-                <Mail className="size-5 text-teal" />
+              <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
+                <Mail className="size-5 text-brand-serene-coral-darken" />
               </div>
               <div>
                 <p className="text-sm font-medium">{t('info_email_label')}</p>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-muted-foreground text-sm hover:text-teal transition-colors"
+                  className="text-muted-foreground text-sm hover:text-brand-serene-coral-darken transition-colors"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -91,8 +91,8 @@ export default async function ContactPage({
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
-                <MessageCircle className="size-5 text-teal" />
+              <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
+                <MessageCircle className="size-5 text-brand-serene-coral-darken" />
               </div>
               <div>
                 <p className="text-sm font-medium">{t('info_whatsapp_label')}</p>
@@ -100,7 +100,7 @@ export default async function ContactPage({
                   href={whatsappHref}
                   target={hasWhatsApp ? '_blank' : undefined}
                   rel={hasWhatsApp ? 'noopener noreferrer' : undefined}
-                  className="text-muted-foreground text-sm hover:text-teal transition-colors"
+                  className="text-muted-foreground text-sm hover:text-brand-serene-coral-darken transition-colors"
                 >
                   {whatsappLabel}
                 </a>
@@ -109,8 +109,8 @@ export default async function ContactPage({
 
             {/* Service Area */}
             <div className="flex items-start gap-3">
-              <div className="size-10 flex items-center justify-center border border-border bg-stone/10 shrink-0">
-                <MapPin className="size-5 text-stone" />
+              <div className="size-10 flex items-center justify-center border border-border bg-brand-sage-green-darken/10 shrink-0">
+                <MapPin className="size-5 text-brand-sage-green-darken" />
               </div>
               <div>
                 <p className="text-sm font-medium">{t('info_area_label')}</p>

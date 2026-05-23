@@ -12,9 +12,9 @@ const sectorIcons: Record<string, React.ElementType> = {
 };
 
 const sectorColors: Record<string, string> = {
-  Hospitality: 'bg-navy/10 text-navy',
-  Medical: 'bg-stone/10 text-stone',
-  Beauty: 'bg-rose/10 text-rose',
+  Hospitality: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  Medical: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  Beauty: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken',
 };
 
 export default async function WorkPage({
@@ -62,7 +62,7 @@ export default async function WorkPage({
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-none p-6 flex flex-col gap-4 relative"
+                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col gap-4 relative shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>

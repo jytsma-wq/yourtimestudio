@@ -21,7 +21,7 @@ export default async function NotFound() {
             {/* URL bar */}
             <rect x="70" y="19" width="110" height="10" rx="3" fill="var(--border)" opacity="0.5" />
             {/* 404 text */}
-            <text x="100" y="90" textAnchor="middle" fontFamily="var(--font-fraunces), Georgia, serif" fontSize="42" fontWeight="bold" fill="var(--teal)">404</text>
+            <text x="100" y="90" textAnchor="middle" className="text-h1 font-semibold" fill="var(--teal)">404</text>
             {/* Crack lines */}
             <path d="M85 70 L92 80 L88 90 L95 100" stroke="var(--foreground)" strokeWidth="1.5" opacity="0.3" strokeLinecap="round">
               <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
@@ -48,7 +48,7 @@ export default async function NotFound() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-background font-medium">
+          <Button asChild size="lg" className="bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium">
             <Link href="/">
               <Home className="size-4 mr-2" />
               {t('home')}

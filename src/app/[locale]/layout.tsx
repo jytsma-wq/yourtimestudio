@@ -3,7 +3,6 @@ import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Fraunces, Manrope } from 'next/font/google';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
@@ -17,20 +16,6 @@ import { SectionNav } from '@/components/shared/SectionNav';
 import { ContactStrip } from '@/components/shared/ContactStrip';
 import { PageTransition } from '@/components/shared/PageTransition';
 import { siteConfig } from '@/lib/site-config';
-
-const manrope = Manrope({
-  variable: '--font-manrope',
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
-  display: 'swap',
-});
-
-const fraunces = Fraunces({
-  variable: '--font-fraunces',
-  subsets: ['latin', 'latin-ext'],
-  display: 'swap',
-  weight: 'variable',
-  axes: ['opsz', 'SOFT'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -84,7 +69,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${fraunces.variable} antialiased bg-background text-foreground`}
+        className="antialiased bg-background text-foreground"
       >
         <Script id="theme-init" strategy="beforeInteractive">
           {`(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})()`}
@@ -92,7 +77,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-teal focus:text-background focus:rounded-md focus:text-sm focus:font-semibold"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-serene-coral focus:text-brand-charcoal focus:rounded-md focus:text-sm focus:font-semibold"
           >
             {ui('skipToContent')}
           </a>

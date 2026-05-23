@@ -36,14 +36,14 @@ export function ContactStrip() {
           href={whatsappHref}
           target={hasWhatsAppLink ? '_blank' : undefined}
           rel={hasWhatsAppLink ? 'noopener noreferrer' : undefined}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-teal transition-colors hover:text-teal/80"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-serene-coral-darken transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken/80 hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
           aria-label={ui('contactViaWhatsApp')}
         >
           <MessageCircle className="size-4" />
         </a>
         <a
           href={`mailto:${siteConfig.contact.email}`}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-teal transition-colors"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
           aria-label={ui('sendEmail')}
         >
           <Mail className="size-4" />

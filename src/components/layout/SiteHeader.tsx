@@ -113,7 +113,7 @@ export default function SiteHeader() {
         {visible && (
           <motion.div
             layoutId="nav-indicator"
-            className="absolute bottom-0 left-2 right-2 h-px bg-teal"
+            className="absolute bottom-0 left-2 right-2 h-px bg-brand-serene-coral"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -136,7 +136,7 @@ export default function SiteHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-normal text-foreground hover:text-teal transition-colors"
+          className="flex items-center gap-2.5 text-lg font-semibold tracking-normal text-foreground hover:text-brand-serene-coral-darken transition-colors"
         >
           <Image
             src="/brand/yourtimestudio-mark.png"
@@ -170,7 +170,7 @@ export default function SiteHeader() {
                     variant="ghost"
                     size="sm"
                     className={`gap-1 rounded-none font-sans text-xs font-bold uppercase transition-colors ${
-                      active ? 'text-teal' : 'text-muted-foreground hover:text-teal'
+                      active ? 'text-brand-serene-coral-darken' : 'text-muted-foreground hover:text-brand-serene-coral-darken'
                     }`}
                   >
                     {t(item.key)}
@@ -202,7 +202,7 @@ export default function SiteHeader() {
                               <div className="flex-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`size-2 rounded-full ${sector.dotClass}`} />
-                                  <span className="text-sm font-semibold text-foreground group-hover:text-teal transition-colors">
+                                  <span className="text-sm font-semibold text-foreground group-hover:text-brand-serene-coral-darken transition-colors">
                                     {sectorT(`${key}.title`)}
                                   </span>
                                 </div>
@@ -217,7 +217,7 @@ export default function SiteHeader() {
                       <div className="mt-3 pt-3 border-t border-border">
                         <Link
                           href="/website-audits"
-                          className="flex items-center gap-2 text-sm font-medium text-navy hover:text-teal transition-colors"
+                          className="flex items-center gap-2 text-sm font-medium text-brand-sage-green-darken hover:text-brand-serene-coral-darken transition-colors"
                         >
                           {t('audits')} <ArrowRight className="size-3" />
                         </Link>
@@ -241,8 +241,8 @@ export default function SiteHeader() {
                   asChild
                     className={`rounded-none font-sans text-xs font-bold uppercase transition-colors ${
                     active
-                      ? 'text-teal'
-                      : 'text-muted-foreground hover:text-teal'
+                      ? 'text-brand-serene-coral-darken'
+                      : 'text-muted-foreground hover:text-brand-serene-coral-darken'
                   }`}
                 >
                   <Link href={item.href}>{t(item.key)}</Link>
@@ -267,7 +267,7 @@ export default function SiteHeader() {
             size="icon"
             onClick={toggleTheme}
             aria-label={themeReady ? (dark ? ui('switchToLight') : ui('switchToDark')) : ui('toggleColorTheme')}
-            className="text-muted-foreground hover:text-teal transition-colors"
+            className="text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
           >
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </Button>
@@ -318,8 +318,8 @@ export default function SiteHeader() {
                           href={child.href}
                           className={`flex items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
                             isActive(child.href)
-                              ? 'text-teal bg-accent/10'
-                              : 'text-foreground hover:text-teal hover:bg-accent/5'
+                              ? 'text-brand-serene-coral-darken bg-accent/10'
+                              : 'text-foreground hover:text-brand-serene-coral-darken hover:bg-accent/5'
                           }`}
                         >
                           {child.color && (
@@ -341,8 +341,8 @@ export default function SiteHeader() {
                     href={item.href}
                     className={`flex items-center px-6 py-2.5 text-sm font-medium transition-colors ${
                       isActive(item.href)
-                        ? 'text-teal bg-accent/10'
-                        : 'text-foreground hover:text-teal hover:bg-accent/5'
+                        ? 'text-brand-serene-coral-darken bg-accent/10'
+                        : 'text-foreground hover:text-brand-serene-coral-darken hover:bg-accent/5'
                     }`}
                   >
                     {t(item.key)}
@@ -355,7 +355,7 @@ export default function SiteHeader() {
           {/* Mobile CTA + language switcher */}
           <div className="border-t border-border px-6 py-4 mt-auto space-y-3">
             <SheetClose asChild>
-              <Button asChild className="w-full bg-teal text-background hover:bg-teal/90 font-medium">
+              <Button asChild className="w-full bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium">
                 <Link href="/contact">{t('contact')}</Link>
               </Button>
             </SheetClose>
@@ -366,7 +366,7 @@ export default function SiteHeader() {
       {/* Scroll progress bar */}
       <div className="h-0.5 bg-border/50">
         <div
-          className="h-full bg-teal transition-[width] duration-150 ease-out"
+          className="h-full bg-brand-serene-coral transition-[width] duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>

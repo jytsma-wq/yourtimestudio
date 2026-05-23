@@ -53,9 +53,10 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                       placeholder="blur"
                       blurDataURL={sector.blur}
                     />
+                    <div className="absolute inset-0 bg-brand-cream/10 mix-blend-overlay pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-5 right-5 text-paper">
-                      <p className="editorial-kicker text-paper">{String(idx + 1).padStart(2, '0')} / {t(`${sectorKey}.title`)}</p>
+                    <div className="absolute bottom-5 left-5 right-5 text-brand-cream">
+                      <p className="editorial-kicker text-brand-cream">{String(idx + 1).padStart(2, '0')} / {t(`${sectorKey}.title`)}</p>
                       <p className="mt-2 text-2xl font-semibold leading-tight">{t(`${sectorKey}.tagline`)}</p>
                     </div>
                   </div>
@@ -85,7 +86,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                         </ul>
                         <Link
                           href={sector.href}
-                          className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold ${sector.textClass} hover:opacity-70 transition-opacity`}
+                          className={`mt-6 inline-flex items-center gap-2 border-b border-transparent text-sm font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral ${sector.textClass}`}
                         >
                           {t(`${sectorKey}.cta`)}
                           <ArrowRight className="size-4" />

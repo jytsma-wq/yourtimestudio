@@ -102,16 +102,16 @@ export default async function PricingPage({
           {addOns.map((addon) => (
             <div
               key={addon.name}
-              className="bg-card border border-border rounded-none p-6 transition-shadow duration-300 hover:shadow-md"
+              className="bg-card bg-paper-texture border border-border rounded-none p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
             >
-              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 mb-4">
-                <addon.Icon className="size-5 text-teal" />
+              <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 mb-4">
+                <addon.Icon className="size-5 text-brand-serene-coral-darken" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
               <p className="text-muted-foreground text-sm mb-4 leading-[1.75]">
                 {addon.description}
               </p>
-              <p className="text-teal font-semibold text-lg">{addon.price}</p>
+              <p className="text-brand-serene-coral-darken font-semibold text-lg">{addon.price}</p>
             </div>
           ))}
         </div>
@@ -138,12 +138,12 @@ export default async function PricingPage({
             <div className="space-y-8">
               {processSteps.map((step, i) => (
                 <div key={step.title} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
-                    <step.Icon className="size-5 text-teal" />
+                  <div className="relative z-10 size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
+                    <step.Icon className="size-5 text-brand-serene-coral-darken" />
                   </div>
                   <div className="pt-2">
                     <h3 className="text-lg font-semibold mb-1">
-                      <span className="text-teal mr-2">0{i + 1}</span>
+                      <span className="text-brand-serene-coral-darken mr-2">0{i + 1}</span>
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-[1.75]">

@@ -63,16 +63,16 @@ export default async function AboutPage({
   ];
 
   const categoryColors: Record<string, string> = {
-    framework: 'bg-navy/10 text-navy border-navy/20',
-    language: 'bg-teal/10 text-teal border-teal/20',
-    styling: 'bg-rose/10 text-rose border-rose/20',
-    hosting: 'bg-stone/10 text-stone border-stone/20',
-    database: 'bg-navy/10 text-navy border-navy/20',
-    forms: 'bg-teal/10 text-teal border-teal/20',
-    validation: 'bg-rose/10 text-rose border-rose/20',
-    i18n: 'bg-stone/10 text-stone border-stone/20',
-    animation: 'bg-teal/10 text-teal border-teal/20',
-    components: 'bg-navy/10 text-navy border-navy/20',
+    framework: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
+    language: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
+    styling: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
+    hosting: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
+    database: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
+    forms: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
+    validation: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
+    i18n: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
+    animation: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
+    components: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
   };
 
   return (
@@ -107,8 +107,8 @@ export default async function AboutPage({
             />
             <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-              <p className="text-paper text-xl md:text-2xl font-semibold">Yourtimestudio</p>
-              <p className="text-paper text-sm mt-1">{t('image_caption')}</p>
+              <p className="text-brand-cream text-xl md:text-2xl font-semibold">Yourtimestudio</p>
+              <p className="text-brand-cream text-sm mt-1">{t('image_caption')}</p>
             </div>
           </div>
         </div>
@@ -166,8 +166,8 @@ export default async function AboutPage({
             <div className="space-y-8">
               {processSteps.map((step, i) => (
                 <div key={i} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-teal/10 border border-teal/30 shrink-0">
-                    <span className="text-teal font-semibold text-sm">{step.number}</span>
+                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-brand-serene-coral/10 border border-brand-serene-coral/30 shrink-0">
+                    <span className="text-brand-serene-coral-darken font-semibold text-sm">{step.number}</span>
                   </div>
                   <div className="pt-2">
                     <h3 className="text-lg font-semibold mb-1">{step.title}</h3>
@@ -215,7 +215,7 @@ export default async function AboutPage({
           <Button
             asChild
             size="lg"
-            className="bg-teal hover:bg-teal/90 text-background"
+            className="bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white"
           >
             <Link href="/website-audits">
               {t('cta_button')}

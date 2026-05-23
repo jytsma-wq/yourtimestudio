@@ -11,15 +11,15 @@ const clusterIcons: Record<string, React.ElementType> = {
 };
 
 const clusterColors: Record<string, string> = {
-  hospitality: 'bg-navy/10 text-navy',
-  medical: 'bg-stone/10 text-stone',
-  beauty: 'bg-rose/10 text-rose',
+  hospitality: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  medical: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  beauty: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken',
 };
 
 const clusterDotColors: Record<string, string> = {
-  hospitality: 'bg-navy',
-  medical: 'bg-stone',
-  beauty: 'bg-rose',
+  hospitality: 'bg-brand-sage-green-darken',
+  medical: 'bg-brand-sage-green-darken',
+  beauty: 'bg-brand-serene-coral-darken',
 };
 
 const clusterKeys = ['hospitality', 'medical', 'beauty'] as const;
@@ -83,7 +83,7 @@ export default async function InsightsPage({
                   {posts.map((post) => (
                     <div
                       key={post.title}
-                      className="bg-card border border-border rounded-xl p-6 flex flex-col gap-3 h-full"
+                      className="bg-card bg-paper-texture border border-border rounded-xl p-6 flex flex-col gap-3 h-full shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
                     >
                       <Badge className={`${colorClass} border-0 text-xs font-semibold uppercase tracking-wide w-fit`}>
                         {label}

@@ -31,7 +31,7 @@ export function AnnouncementBar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 bg-teal text-background text-center text-xs sm:text-sm py-2 px-4 transform-gpu transition-transform duration-300 ${
+      className={`sticky top-0 z-50 bg-brand-serene-coral text-brand-charcoal text-center text-xs sm:text-sm py-2 px-4 transform-gpu transition-transform duration-300 ${
         hidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
@@ -41,13 +41,13 @@ export function AnnouncementBar() {
         </span>
         <a
           href="/website-audits"
-          className="underline font-semibold hover:text-background transition-colors whitespace-nowrap leading-tight"
+          className="border-b border-transparent font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-charcoal whitespace-nowrap leading-tight"
         >
           {t('cta')}
         </a>
         <button
           onClick={handleDismiss}
-          className="absolute right-0 text-background hover:text-background transition-colors"
+          className="absolute right-0 text-brand-charcoal hover:text-brand-charcoal transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
           aria-label={ui('dismissAnnouncement')}
         >
           <X className="size-3.5" />

@@ -48,9 +48,9 @@ export default async function ThankYouPage({
       <Section>
         <div className="max-w-2xl mx-auto text-center">
           {/* Success indicator */}
-          <div className="size-16 flex items-center justify-center bg-teal/10 border border-border mx-auto mb-8">
+          <div className="size-16 flex items-center justify-center bg-brand-serene-coral/10 border border-border mx-auto mb-8">
             <svg
-              className="size-8 text-teal"
+              className="size-8 text-brand-serene-coral-darken"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -80,8 +80,8 @@ export default async function ThankYouPage({
               className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
               <Link href="/insights">
-                <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
-                  <BookOpen className="size-4 text-teal" />
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
+                  <BookOpen className="size-4 text-brand-serene-coral-darken" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('browse_insights')}</p>
@@ -96,8 +96,8 @@ export default async function ThankYouPage({
               className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
               <Link href="/pricing">
-                <div className="size-10 flex items-center justify-center border border-border bg-navy/10 shrink-0">
-                  <DollarSign className="size-4 text-navy" />
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-sage-green-darken/10 shrink-0">
+                  <DollarSign className="size-4 text-brand-sage-green-darken" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('see_pricing')}</p>

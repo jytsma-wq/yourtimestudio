@@ -24,14 +24,14 @@ export async function PricingCards({ locale }: PricingCardsProps) {
         >
           {pkg.prominent && (
             <div className="relative z-10 flex justify-center -mb-3">
-              <span className="bg-stone text-background text-xs font-medium px-3 py-1 border border-border flex items-center gap-1">
+              <span className="bg-brand-sage-green-darken text-background text-xs font-medium px-3 py-1 border border-border flex items-center gap-1">
                 <Star className="size-3" />
                 {tPricing('most_popular')}
               </span>
             </div>
           )}
           <div
-            className={`bg-card border border-border rounded-none border-t-2 ${pkg.accentClass} h-full transition-shadow duration-300 hover:shadow-md ${
+            className={`bg-card bg-paper-texture border border-border rounded-none border-t-2 ${pkg.accentClass} h-full shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl ${
               pkg.prominent ? 'md:shadow-lg ring-1 ring-border' : ''
             }`}
           >
@@ -87,7 +87,7 @@ export async function PricingCards({ locale }: PricingCardsProps) {
               variant={pkg.prominent ? 'default' : 'outline'}
               className={`w-full ${
                 pkg.prominent
-                  ? 'bg-teal hover:bg-teal/90 text-background rounded-none'
+                  ? 'bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white rounded-none'
                   : 'rounded-none'
               }`}
             >

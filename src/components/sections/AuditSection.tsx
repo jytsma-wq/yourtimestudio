@@ -57,10 +57,10 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
           </Button>
         </div>
 
-        <div className="border border-border bg-card">
+        <div className="border border-border bg-card bg-paper-texture shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl">
           <div className="grid grid-cols-[1fr_auto] gap-4 border-b border-border p-5 md:p-6">
             <div>
-              <p className="editorial-kicker text-teal">{t('panel_kicker')}</p>
+              <p className="editorial-kicker text-brand-serene-coral-darken">{t('panel_kicker')}</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">{t('scorecard_title')}</h3>
             </div>
             <p className="text-right font-sans text-3xl font-semibold text-muted-foreground">/100</p>
@@ -74,7 +74,7 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
                   <div className="flex items-center gap-3 md:block">
                     <p className="font-sans text-sm font-semibold text-muted-foreground">{cat.score}</p>
                     <div className="mt-0 flex size-10 items-center justify-center border border-border bg-background md:mt-4">
-                      <Icon className="size-5 text-navy" />
+                      <Icon className="size-5 text-brand-sage-green-darken" />
                     </div>
                   </div>
                   <div>

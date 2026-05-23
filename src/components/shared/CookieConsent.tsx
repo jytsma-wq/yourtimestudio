@@ -57,13 +57,13 @@ export function CookieConsent() {
       <div className="bg-card border border-border rounded-xl shadow-lg p-4">
         <div className="flex flex-col gap-4">
           <div className="flex items-start gap-3">
-            <Cookie className="size-5 text-teal shrink-0 mt-0.5" aria-hidden="true" />
+            <Cookie className="size-5 text-brand-serene-coral-darken shrink-0 mt-0.5" aria-hidden="true" />
             <div className="flex-1">
               <p className="text-sm text-foreground leading-relaxed">
                 {t('message')}{' '}
                 <Link
                   href="/privacy"
-                  className="text-teal hover:underline font-medium"
+                  className="border-b border-transparent font-medium text-brand-serene-coral-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
                 >
                   {t('privacy_link')}
                 </Link>
@@ -82,7 +82,7 @@ export function CookieConsent() {
             <Button
               size="sm"
               onClick={handleAccept}
-              className="bg-teal hover:bg-teal/90 text-background text-sm"
+              className="bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white text-sm"
             >
               {t('accept')}
             </Button>

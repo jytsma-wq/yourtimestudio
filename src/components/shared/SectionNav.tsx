@@ -65,7 +65,7 @@ export function SectionNav() {
           }}
           onMouseEnter={() => setHoveredDot(section.id)}
           onMouseLeave={() => setHoveredDot(null)}
-          className="relative group"
+          className="relative group transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
           aria-label={`Navigate to ${section.label}`}
         >
           <span
@@ -75,7 +75,7 @@ export function SectionNav() {
           />
           {/* Tooltip */}
           <span
-            className={`absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-foreground text-background text-xs font-medium px-2.5 py-1 shadow-lg transition-all duration-200 pointer-events-none ${
+            className={`absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-foreground text-background text-xs font-medium px-2.5 py-1 shadow-lg transition duration-150 ease-out pointer-events-none ${
               hoveredDot === section.id
                 ? 'opacity-100 translate-x-0'
                 : 'opacity-0 translate-x-2'

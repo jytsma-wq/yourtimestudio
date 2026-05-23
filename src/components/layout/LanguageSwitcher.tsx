@@ -37,7 +37,7 @@ export default function LanguageSwitcher() {
         <Button
           variant="outline"
           size="sm"
-          className="h-8 gap-1.5 rounded-md border-border/60 bg-background/50 px-2.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-teal/40 hover:text-teal hover:bg-teal/5"
+          className="h-8 gap-1.5 rounded-md border-border/60 bg-background/50 px-2.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-brand-serene-coral/40 hover:text-brand-serene-coral-darken hover:bg-brand-serene-coral/5"
         >
           <span className="text-xs font-bold tracking-wider uppercase">{localeAbbreviations[locale]}</span>
           <span className="text-xs text-muted-foreground">▼</span>
@@ -50,8 +50,8 @@ export default function LanguageSwitcher() {
             onClick={() => handleSwitch(loc)}
             className={`flex items-center justify-between gap-2 rounded-md px-2.5 py-2 text-sm transition-colors ${
               locale === loc
-                ? 'bg-teal/10 text-teal font-semibold'
-                : 'text-foreground hover:bg-accent/5 hover:text-teal'
+                ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken font-semibold'
+                : 'text-foreground hover:bg-accent/5 hover:text-brand-serene-coral-darken'
             }`}
           >
             <span className="flex items-center gap-2">
@@ -60,7 +60,7 @@ export default function LanguageSwitcher() {
               </span>
               <span>{localeLabels[loc]}</span>
             </span>
-            {locale === loc && <Check className="size-3.5 text-teal" />}
+            {locale === loc && <Check className="size-3.5 text-brand-serene-coral-darken" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

@@ -18,9 +18,9 @@ interface SectionProps {
  *
  * Variants:
  *   default — warm off-white (bg-background)
- *   subtle  — slightly tinted beige (bg-surface-subtle) — for alternating rhythm
+ *   subtle  — slightly tinted beige (bg-brand-gray-100) — for alternating rhythm
  *   dark    — deep navy (bg-foreground) — for case studies, CTAs on dark
- *   accent  — navy (bg-navy) — for primary CTA bands
+ *   accent  — navy (bg-brand-sage-green-darken) — for primary CTA bands
  */
 export function Section({
   children,
@@ -38,9 +38,9 @@ export function Section({
         'py-16 md:py-24 px-4 md:px-8 relative paper-texture',
         number && 'section-numbered',
         variant === 'default' && 'bg-background',
-        variant === 'subtle' && 'bg-surface-subtle',
+        variant === 'subtle' && 'bg-brand-gray-100',
         variant === 'dark' && 'bg-foreground text-background',
-        variant === 'accent' && 'bg-navy text-background',
+        variant === 'accent' && 'bg-brand-sage-green-darken text-background',
         border && 'border-t border-border',
         className
       )}

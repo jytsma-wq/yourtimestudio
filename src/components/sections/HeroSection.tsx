@@ -25,7 +25,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
     <section
       id="hero"
       data-section-name={t('sectionLabel')}
-      className="bg-background paper-texture px-4 pt-12 pb-10 sm:pt-14 md:px-8 lg:pt-12 lg:pb-12 relative overflow-hidden"
+      className="bg-background bg-linen-texture px-4 pt-12 pb-10 sm:pt-14 md:px-8 lg:pt-12 lg:pb-12 relative overflow-hidden"
     >
       <div className="mx-auto w-full max-w-[calc(100vw-2rem)] md:max-w-[calc(100vw-4rem)] lg:max-w-7xl">
         <div className="mb-8 hidden items-center justify-between border-y border-border py-3 text-xs text-muted-foreground md:flex">
@@ -39,7 +39,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
             <p className="section-label">{t('sectionLabel')}</p>
             <h1 className="editorial-display max-w-[22rem] text-[clamp(2.4rem,8.8vw,5.25rem)] sm:max-w-full sm:text-6xl lg:text-[4.65rem] xl:text-[5.25rem] text-foreground text-balance">
               {t('title1')}
-              <span className="block text-navy">{t('title2')}</span>
+              <span className="block text-brand-sage-green-darken">{t('title2')}</span>
             </h1>
             <p className="mt-6 max-w-[22rem] text-base md:max-w-2xl md:text-xl text-muted-foreground leading-[1.75]">
               {t('subtitle')}
@@ -48,7 +48,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
             <div className="mt-8 grid max-w-[22rem] gap-2 sm:max-w-none sm:grid-cols-2">
               {proofKeys.map((key) => (
                 <div key={key} className="flex items-center gap-2 border-t border-border py-3 text-sm text-muted-foreground">
-                  <CheckCircle2 className="size-4 shrink-0 text-navy" />
+                  <CheckCircle2 className="size-4 shrink-0 text-brand-sage-green-darken" />
                   <span>{t(key)}</span>
                 </div>
               ))}
@@ -93,8 +93,9 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
                   blurDataURL={sectors.hospitality.blur}
                   priority
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent p-5 text-paper">
-                  <p className="editorial-kicker text-paper">{t('feature_direction')}</p>
+                <div className="absolute inset-0 bg-brand-cream/15 mix-blend-overlay pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent p-5 text-brand-cream">
+                  <p className="editorial-kicker text-brand-cream">{t('feature_direction')}</p>
                   <p className="mt-2 max-w-sm text-2xl font-semibold leading-tight">
                     {t('typewriter.hotel')}
                   </p>
@@ -102,7 +103,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
               </div>
 
               <div className="absolute -left-2 top-4 w-40 border border-border bg-background p-3 shadow-premium-lg float-chip-1 sm:-left-4 sm:top-8 sm:w-44">
-                <p className="editorial-kicker text-teal">{t('issue')}</p>
+                <p className="editorial-kicker text-brand-serene-coral-darken">{t('issue')}</p>
                 <p className="mt-2 text-sm font-semibold leading-snug">
                   {t('cards.medical.tagline')}
                 </p>
@@ -120,7 +121,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
                     blurDataURL={sectors.beauty.blur}
                   />
                 </div>
-                <p className="editorial-kicker text-rose">{t('appointment_flow')}</p>
+                <p className="editorial-kicker text-brand-serene-coral-darken">{t('appointment_flow')}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{t('cards.beauty.priceFrom')}</p>
               </div>
             </div>
