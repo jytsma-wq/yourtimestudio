@@ -89,22 +89,22 @@ export default async function PricingPage({
       </Section>
 
       <Section variant="subtle">
-        <div className="text-center mb-12">
+        <div className="mb-12 grid gap-4 md:grid-cols-[0.75fr_1.25fr] md:items-end">
           <h2 className="editorial-display text-3xl md:text-4xl mb-4">
             {tp('add_ons_heading')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-[1.75]">
+          <p className="text-muted-foreground text-lg max-w-2xl leading-[1.75]">
             {tp('add_ons_subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border max-w-4xl mx-auto">
           {addOns.map((addon) => (
             <div
               key={addon.name}
-              className="bg-card border border-border rounded-xl p-6 transition-shadow duration-300 hover:shadow-md"
+              className="bg-card border border-border rounded-none p-6 transition-shadow duration-300 hover:shadow-md"
             >
-              <div className="size-10 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 mb-4">
                 <addon.Icon className="size-5 text-teal" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
@@ -122,23 +122,23 @@ export default async function PricingPage({
       </Section>
 
       <Section>
-        <div className="text-center mb-12">
+        <div className="mb-12 grid gap-4 md:grid-cols-[0.75fr_1.25fr] md:items-end">
           <h2 className="editorial-display text-3xl md:text-4xl mb-4">
             {tp('process_heading')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-[1.75]">
+          <p className="text-muted-foreground text-lg max-w-2xl leading-[1.75]">
             {tp('process_subtitle')}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">
-            <div className="absolute left-6 top-8 bottom-8 w-px bg-border hidden md:block" />
+            <div className="absolute left-5 top-8 bottom-8 w-px bg-border hidden md:block" />
 
             <div className="space-y-8">
               {processSteps.map((step, i) => (
                 <div key={step.title} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-teal/10 border border-teal/30 shrink-0">
+                  <div className="relative z-10 size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
                     <step.Icon className="size-5 text-teal" />
                   </div>
                   <div className="pt-2">
@@ -158,7 +158,7 @@ export default async function PricingPage({
       </Section>
 
       <Section variant="subtle">
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {tp('faq_heading')}
           </h2>

@@ -81,8 +81,8 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
           </div>
 
           <div className="min-w-0">
-            <div className="relative mx-auto max-w-xl">
-              <div className="relative aspect-[4/5] overflow-hidden border border-foreground/15 bg-card shadow-premium-xl">
+            <div className="relative mx-auto w-full max-w-xl">
+              <div className="relative aspect-[16/9] overflow-hidden border border-foreground/15 bg-card shadow-premium-xl sm:aspect-[4/5]">
                 <Image
                   src={sectors.hospitality.image}
                   alt={t('cards.hospitality.name')}
@@ -101,14 +101,14 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
                 </div>
               </div>
 
-              <div className="absolute -left-4 top-8 hidden w-44 border border-border bg-background p-3 shadow-premium-lg sm:block">
+              <div className="absolute -left-2 top-4 w-40 border border-border bg-background p-3 shadow-premium-lg float-chip-1 sm:-left-4 sm:top-8 sm:w-44">
                 <p className="editorial-kicker text-teal">{t('issue')}</p>
                 <p className="mt-2 text-sm font-semibold leading-snug">
                   {t('cards.medical.tagline')}
                 </p>
               </div>
 
-              <div className="absolute -right-4 bottom-8 hidden w-52 border border-border bg-background p-3 shadow-premium-lg sm:block">
+              <div className="absolute -right-2 bottom-4 w-44 border border-border bg-background p-3 shadow-premium-lg float-chip-2 sm:-right-4 sm:bottom-8 sm:w-52">
                 <div className="relative mb-3 aspect-[4/3] overflow-hidden">
                   <Image
                     src={sectors.beauty.image}
@@ -127,7 +127,7 @@ export async function HeroSection({ locale: _locale }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="mt-10 grid border-y border-border md:grid-cols-3">
+        <div className="mt-10 grid border-y border-border md:grid-cols-[1.15fr_0.85fr]">
           {statKeys.map((key, i) => (
             <div key={key} className="border-border py-5 md:border-r md:px-6 last:md:border-r-0">
               <div className="text-3xl md:text-4xl font-semibold text-foreground">

@@ -21,7 +21,7 @@ export async function CaseStudiesSection({ number }: { number?: string }) {
         </h2>
       </div>
 
-      <StaggerContainer className="grid gap-px overflow-hidden border border-background/12 bg-background/12 md:grid-cols-3">
+      <StaggerContainer className="grid gap-px overflow-hidden border border-background/12 bg-background/12 md:grid-cols-[1.15fr_0.85fr] md:auto-rows-fr">
         {sectorKeys.map((key) => {
           const sector = sectors[key];
           const year = sectorYears[key];

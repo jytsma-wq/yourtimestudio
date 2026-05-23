@@ -4,10 +4,12 @@ import { motion, type Variants } from 'framer-motion';
 
 /* ─── Reusable animation variants ─── */
 
-export const fadeInUp: Variants = {
+export const createFadeInUp = (delay = 0): Variants => ({
   hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0, 0.2, 1] } },
-};
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0, 0.2, 1], delay } },
+});
+
+export const fadeInUp: Variants = createFadeInUp();
 
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },
@@ -19,10 +21,20 @@ export const slideInLeft: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0, 0.2, 1] } },
 };
 
+export const createSlideInLeft = (delay = 0): Variants => ({
+  hidden: { opacity: 0, x: -28 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0, 0.2, 1], delay } },
+});
+
 export const slideInRight: Variants = {
   hidden: { opacity: 0, x: 28 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0, 0.2, 1] } },
 };
+
+export const createSlideInRight = (delay = 0): Variants => ({
+  hidden: { opacity: 0, x: 28 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0, 0.2, 1], delay } },
+});
 
 export const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -42,11 +54,10 @@ export const staggerItem: Variants = {
 export function FadeInUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
-      variants={fadeInUp}
+      variants={createFadeInUp(delay)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ delay }}
       className={className}
     >
       {children}
@@ -57,11 +68,10 @@ export function FadeInUp({ children, className, delay = 0 }: { children: React.R
 export function SlideInLeft({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
-      variants={slideInLeft}
+      variants={createSlideInLeft(delay)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ delay }}
       className={className}
     >
       {children}
@@ -72,11 +82,10 @@ export function SlideInLeft({ children, className, delay = 0 }: { children: Reac
 export function SlideInRight({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
-      variants={slideInRight}
+      variants={createSlideInRight(delay)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ delay }}
       className={className}
     >
       {children}

@@ -14,17 +14,17 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
   const t = await getTranslations('ctaBand');
 
   return (
-    <Section variant="accent" className="border-t border-navy/20" id="cta">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="section-label justify-center text-background">{t('sectionLabel')}</p>
+    <Section variant="accent" className="border-t border-navy/20 py-16 md:py-20" id="cta">
+      <div className="mx-auto max-w-4xl text-left">
+        <p className="section-label text-background">{t('sectionLabel')}</p>
         <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl mb-5 text-background">
           {t('heading')}
         </h2>
-        <p className="text-background text-lg max-w-xl mx-auto leading-relaxed mb-10">
+        <p className="text-background text-lg max-w-xl leading-relaxed mb-10">
           {t('subtitle')}
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-start">
         <MagneticButton>
           <Button
             asChild

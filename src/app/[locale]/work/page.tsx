@@ -54,7 +54,7 @@ export default async function WorkPage({
       </Section>
 
       <Section variant="subtle">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border">
           {items.map((item, index) => {
             const Icon = sectorIcons[item.sector] || Building2;
             const colorClass = sectorColors[item.sector] || 'bg-muted text-muted-foreground';
@@ -62,13 +62,13 @@ export default async function WorkPage({
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4 relative"
+                className="bg-card border border-border rounded-none p-6 flex flex-col gap-4 relative"
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${colorClass}`}>
+                  <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>
                     <Icon className="size-4.5" />
                   </div>
-                  <Badge className={`${colorClass} border-0 text-xs font-semibold uppercase tracking-wide`}>
+                  <Badge className={`${colorClass} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
                     {item.sector}
                   </Badge>
                 </div>

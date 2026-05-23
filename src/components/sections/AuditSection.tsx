@@ -37,7 +37,7 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
   return (
     <Section variant="subtle" number={number}>
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="lg:sticky lg:top-28">
+        <div className="lg:sticky lg:top-28 dot-grid-bg">
           <p className="section-label">{t('sectionLabel')}</p>
           <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl text-foreground">
             {t('heading')}

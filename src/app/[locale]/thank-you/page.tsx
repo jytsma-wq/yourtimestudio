@@ -48,7 +48,7 @@ export default async function ThankYouPage({
       <Section>
         <div className="max-w-2xl mx-auto text-center">
           {/* Success indicator */}
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 border border-teal/30 mx-auto mb-8">
+          <div className="size-16 flex items-center justify-center bg-teal/10 border border-border mx-auto mb-8">
             <svg
               className="size-8 text-teal"
               fill="none"
@@ -77,10 +77,10 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
               <Link href="/insights">
-                <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-teal/10 shrink-0">
+                <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
                   <BookOpen className="size-4 text-teal" />
                 </div>
                 <div className="text-left">
@@ -93,10 +93,10 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
               <Link href="/pricing">
-                <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-navy/10 shrink-0">
+                <div className="size-10 flex items-center justify-center border border-border bg-navy/10 shrink-0">
                   <DollarSign className="size-4 text-navy" />
                 </div>
                 <div className="text-left">

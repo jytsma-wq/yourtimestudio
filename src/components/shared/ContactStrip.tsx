@@ -36,14 +36,14 @@ export function ContactStrip() {
           href={whatsappHref}
           target={hasWhatsAppLink ? '_blank' : undefined}
           rel={hasWhatsAppLink ? 'noopener noreferrer' : undefined}
-          className="text-teal transition-colors hover:text-teal/80"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-teal transition-colors hover:text-teal/80"
           aria-label={ui('contactViaWhatsApp')}
         >
           <MessageCircle className="size-4" />
         </a>
         <a
           href={`mailto:${siteConfig.contact.email}`}
-          className="text-muted-foreground hover:text-teal transition-colors"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-teal transition-colors"
           aria-label={ui('sendEmail')}
         >
           <Mail className="size-4" />

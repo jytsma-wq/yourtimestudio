@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Menu, ChevronDown, Sun, Moon, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -95,8 +95,33 @@ export default function SiteHeader() {
   ];
 
   function isActive(href: string): boolean {
-    if (href === '/' || href === '#') return false;
-    return pathname === href;
+    if (href === '#') return false;
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+
+  const activeNavKey = navItems.find((item) => (
+    item.children
+      ? item.children.some((child) => isActive(child.href))
+      : isActive(item.href)
+  ))?.key ?? null;
+  const indicatorNavKey = hoveredNav ?? activeNavKey;
+
+  function renderNavIndicator(visible: boolean) {
+    return (
+      <AnimatePresence initial={false}>
+        {visible && (
+          <motion.div
+            layoutId="nav-indicator"
+            className="absolute bottom-0 left-2 right-2 h-px bg-teal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+          />
+        )}
+      </AnimatePresence>
+    );
   }
 
   return (
@@ -127,6 +152,11 @@ export default function SiteHeader() {
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-1" aria-label={ui('mainNavigation')}>
           {navItems.map((item) => {
+            const active = item.children
+              ? item.children.some((child) => isActive(child.href))
+              : isActive(item.href);
+            const showIndicator = indicatorNavKey === item.key;
+
             if (item.children) {
               // Solutions dropdown — mega-menu with hover panel
               return (
@@ -139,18 +169,14 @@ export default function SiteHeader() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="gap-1 rounded-none font-sans text-xs font-bold uppercase text-muted-foreground hover:text-teal transition-colors"
+                    className={`gap-1 rounded-none font-sans text-xs font-bold uppercase transition-colors ${
+                      active ? 'text-teal' : 'text-muted-foreground hover:text-teal'
+                    }`}
                   >
                     {t(item.key)}
                     <ChevronDown className={`size-3.5 opacity-50 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
                   </Button>
-                  {hoveredNav === item.key && (
-                    <motion.div
-                      layoutId="nav-indicator"
-                      className="absolute bottom-0 left-2 right-2 h-px bg-teal"
-                      transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                    />
-                  )}
+                  {renderNavIndicator(showIndicator)}
                   {solutionsOpen && (
                     <div
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border shadow-lg p-4 z-50"
@@ -214,20 +240,14 @@ export default function SiteHeader() {
                   size="sm"
                   asChild
                     className={`rounded-none font-sans text-xs font-bold uppercase transition-colors ${
-                    isActive(item.href)
+                    active
                       ? 'text-teal'
                       : 'text-muted-foreground hover:text-teal'
                   }`}
                 >
                   <Link href={item.href}>{t(item.key)}</Link>
                 </Button>
-                {hoveredNav === item.key && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute bottom-0 left-2 right-2 h-px bg-teal"
-                    transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                  />
-                )}
+                {renderNavIndicator(showIndicator)}
               </div>
             );
           })}

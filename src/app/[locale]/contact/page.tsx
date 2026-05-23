@@ -60,10 +60,10 @@ export default async function ContactPage({
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-12">
           {/* Contact Form - takes 2 columns */}
-          <div id="contact-form" className="scroll-mt-24 lg:col-span-2">
-            <div className="bg-card border border-border rounded-xl p-6 md:p-8">
+          <div id="contact-form" className="scroll-mt-24 lg:col-span-1">
+            <div className="bg-card border border-border rounded-none p-6 md:p-8">
               <ContactForm />
             </div>
           </div>
@@ -76,7 +76,7 @@ export default async function ContactPage({
 
             {/* Email */}
             <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal/10 shrink-0">
+              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
                 <Mail className="size-5 text-teal" />
               </div>
               <div>
@@ -91,7 +91,7 @@ export default async function ContactPage({
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal/10 shrink-0">
+              <div className="size-10 flex items-center justify-center border border-border bg-teal/10 shrink-0">
                 <MessageCircle className="size-5 text-teal" />
               </div>
               <div>
@@ -109,7 +109,7 @@ export default async function ContactPage({
 
             {/* Service Area */}
             <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-stone/10 shrink-0">
+              <div className="size-10 flex items-center justify-center border border-border bg-stone/10 shrink-0">
                 <MapPin className="size-5 text-stone" />
               </div>
               <div>

@@ -31,8 +31,8 @@ export function AnnouncementBar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 bg-teal text-background text-center text-xs sm:text-sm py-2 px-4 transition-all duration-300 ${
-        hidden ? 'h-0 py-0 overflow-hidden opacity-0' : 'h-auto opacity-100'
+      className={`sticky top-0 z-50 bg-teal text-background text-center text-xs sm:text-sm py-2 px-4 transform-gpu transition-transform duration-300 ${
+        hidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-1 pr-8 sm:flex-row sm:gap-3 relative">

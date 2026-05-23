@@ -79,7 +79,7 @@ export default async function AuditDetailPage({
         {/* Header */}
         <div className="mb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Badge className={`${sectorTagColor} border-0 font-semibold text-xs uppercase tracking-wide`}>
+            <Badge className={`${sectorTagColor} rounded-none border-0 font-semibold text-xs uppercase tracking-wide`}>
               {audit.sector.charAt(0).toUpperCase() + audit.sector.slice(1)}
             </Badge>
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
@@ -124,7 +124,7 @@ export default async function AuditDetailPage({
             const score = audit.scores[key];
             return (
               <div key={key} className="flex items-center gap-5">
-                <div className={`w-14 h-14 rounded-lg ${getScoreBg(score)} flex items-center justify-center shrink-0`}>
+                <div className={`size-14 ${getScoreBg(score)} flex items-center justify-center border border-border shrink-0`}>
                   <span className={`text-xl font-bold ${getScoreColor(score)}`}>
                     {score}
                   </span>
@@ -134,9 +134,9 @@ export default async function AuditDetailPage({
                     <span className="font-medium text-sm">{categoryLabels[key]}</span>
                     <span className="text-muted-foreground text-sm">{score}/100</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-2 bg-muted rounded-none overflow-hidden">
                     <div
-                      className={`h-full rounded-full ${getScoreBarColor(score)} transition-all`}
+                      className={`h-full rounded-none ${getScoreBarColor(score)} transition-all`}
                       style={{ width: `${score}%` }}
                     />
                   </div>
@@ -172,10 +172,10 @@ export default async function AuditDetailPage({
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6"
+                className="bg-card border border-border rounded-none p-6"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <Badge className={`${tagColor} border-0 text-xs font-semibold uppercase tracking-wide`}>
+                  <Badge className={`${tagColor} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
                     {categoryLabels[catKey] || catKey}
                   </Badge>
                 </div>
@@ -183,7 +183,7 @@ export default async function AuditDetailPage({
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {finding.description}
                 </p>
-                <div className="bg-surface-subtle rounded-lg p-4">
+                <div className="bg-surface-subtle rounded-none border border-border p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-teal mb-1.5">
                     {t('detail.recommended_fix')}
                   </p>
@@ -197,14 +197,14 @@ export default async function AuditDetailPage({
 
       {/* CTA Band */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-left">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-primary-foreground">
             {t('detail.cta')}
           </h2>
           <Button
             asChild
             size="lg"
-            className="bg-teal hover:bg-teal/90 text-background font-medium text-base px-8 h-12 mt-6"
+            className="rounded-none bg-teal hover:bg-teal/90 text-background font-medium text-base px-8 h-12 mt-6"
           >
             <Link href="/website-audits">
               {t('detail.cta')}

@@ -14,31 +14,31 @@ export async function PricingCards({ locale }: PricingCardsProps) {
   const tPricing = t;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] md:auto-rows-fr gap-px border border-border bg-border">
       {pricingPackages.map((pkg) => (
         <div
           key={pkg.key}
           className={`${
-            pkg.prominent ? 'pt-4 -mt-4 md:mb-4' : ''
+            pkg.prominent ? 'pt-4 -mt-4 md:row-span-2 md:mb-4' : ''
           }`}
         >
           {pkg.prominent && (
             <div className="relative z-10 flex justify-center -mb-3">
-              <span className="bg-stone text-background text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
+              <span className="bg-stone text-background text-xs font-medium px-3 py-1 border border-border flex items-center gap-1">
                 <Star className="size-3" />
                 {tPricing('most_popular')}
               </span>
             </div>
           )}
           <div
-            className={`bg-card border border-border rounded-xl border-t-2 ${pkg.accentClass} transition-shadow duration-300 hover:shadow-md ${
+            className={`bg-card border border-border rounded-none border-t-2 ${pkg.accentClass} h-full transition-shadow duration-300 hover:shadow-md ${
               pkg.prominent ? 'md:shadow-lg ring-1 ring-border' : ''
             }`}
           >
           <div className="p-6">
             {/* Package name */}
             <div className="flex items-center gap-2.5 mb-2">
-              <span className={`w-2.5 h-2.5 rounded-full ${pkg.dotClass}`} />
+              <span className={`size-2.5 ${pkg.dotClass}`} />
               <h3 className="text-lg font-semibold">{t(`${pkg.key}.name`)}</h3>
             </div>
 
@@ -71,7 +71,7 @@ export async function PricingCards({ locale }: PricingCardsProps) {
             {/* Best upsells */}
             <div className="mb-6">
               <h4 className="text-sm font-medium text-foreground mb-2">{t('best_upsells_label')}</h4>
-              <ul className={`rounded-lg ${pkg.bgAccent} p-3 space-y-2`}>
+              <ul className={`${pkg.bgAccent} border border-border p-3 space-y-2`}>
                 {Array.from({ length: pkg.upsellCount }, (_, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">
                     <Star className={`size-3.5 mt-0.5 shrink-0 ${pkg.iconText}`} />
@@ -87,8 +87,8 @@ export async function PricingCards({ locale }: PricingCardsProps) {
               variant={pkg.prominent ? 'default' : 'outline'}
               className={`w-full ${
                 pkg.prominent
-                  ? 'bg-teal hover:bg-teal/90 text-background'
-                  : ''
+                  ? 'bg-teal hover:bg-teal/90 text-background rounded-none'
+                  : 'rounded-none'
               }`}
             >
               <Link href="/contact">

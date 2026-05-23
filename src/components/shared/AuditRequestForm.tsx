@@ -67,7 +67,7 @@ export function AuditRequestForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-card border border-border rounded-xl p-8 text-center" role="status">
+      <div className="bg-card border border-border rounded-none p-8 text-center" role="status">
         <CheckCircle2 className="size-12 text-navy mx-auto mb-4" />
         <p className="text-lg font-medium mb-2">{t('success')}</p>
       </div>
@@ -78,7 +78,7 @@ export function AuditRequestForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="bg-card border border-border rounded-xl p-6 md:p-8 space-y-5"
+      className="bg-card border border-border rounded-none p-6 md:p-8 space-y-5"
       noValidate
     >
       {/* Honeypot — hidden from real users, visible to bots */}
@@ -187,7 +187,7 @@ export function AuditRequestForm() {
       <Button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full bg-teal hover:bg-teal/90 text-background font-medium text-base h-12"
+        className="w-full rounded-none bg-teal hover:bg-teal/90 text-background font-medium text-base h-12"
       >
         {status === 'sending' ? (
           <>

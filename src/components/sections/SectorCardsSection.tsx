@@ -42,7 +42,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                   className="grid gap-0 border-b border-border last:border-b-0 lg:grid-cols-12"
                 >
                   <div
-                    className={`relative min-h-[320px] overflow-hidden lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}
+                    className={`duotone-wash duotone-wash-navy relative min-h-[320px] overflow-hidden lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}
                   >
                     <Image
                       src={sector.image}

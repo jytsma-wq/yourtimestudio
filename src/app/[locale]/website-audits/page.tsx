@@ -94,24 +94,24 @@ export default async function WebsiteAuditsPage({
 
       {/* Scoring Rubric */}
       <Section variant="subtle">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="mb-12 grid gap-4 md:mb-16 md:grid-cols-[0.75fr_1.25fr] md:items-end">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {t('rubric.heading')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-[1.75]">
+          <p className="text-muted-foreground text-lg max-w-2xl leading-[1.75]">
             {t('rubric.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px border border-border bg-border">
           {rubricItems.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.key}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col items-start gap-3"
+                className="bg-card border border-border rounded-none p-6 flex flex-col items-start gap-3"
               >
-                <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center">
+                <div className="size-10 flex items-center justify-center border border-border bg-teal/10">
                   <Icon className="size-5 text-teal" />
                 </div>
                 <h3 className="font-semibold text-base">
@@ -136,18 +136,18 @@ export default async function WebsiteAuditsPage({
 
       {/* How It Works */}
       <Section>
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-left mb-12 md:mb-16">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {t('howItWorks.heading')}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-col gap-6 border-y border-border py-6 md:flex-row md:items-stretch md:justify-between md:gap-8 max-w-5xl mx-auto">
           {howItWorksSteps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-left flex-1">
+                <div className="size-10 flex items-center justify-center border border-border bg-teal/10 mb-4">
                   <Icon className="size-5 text-teal" />
                 </div>
                 <div className="text-teal font-semibold text-sm mb-2">
@@ -167,13 +167,13 @@ export default async function WebsiteAuditsPage({
 
       {/* Sample Findings */}
       <Section variant="subtle">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-left mb-12 md:mb-16">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {t('sampleFindings.heading')}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border max-w-5xl mx-auto">
           {sampleFindings.map((finding) => {
             const Icon = finding.icon;
             const colorClass =
@@ -192,13 +192,13 @@ export default async function WebsiteAuditsPage({
             return (
               <div
                 key={finding.key}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col gap-4"
+                className="bg-card border border-border rounded-none p-6 flex flex-col gap-4"
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${colorClass}`}>
+                  <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>
                     <Icon className="size-4.5" />
                   </div>
-                  <span className={`text-xs font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full ${tagBgClass}`}>
+                  <span className={`text-xs font-semibold uppercase tracking-wide px-2.5 py-1 border border-border ${tagBgClass}`}>
                     {t(`sampleFindings.items.${finding.key}.sector`)}
                   </span>
                 </div>
@@ -214,7 +214,7 @@ export default async function WebsiteAuditsPage({
       {/* Audit Request Form */}
       <Section>
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-left mb-10">
             <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
               {t('form.heading')}
             </h2>

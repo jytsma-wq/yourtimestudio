@@ -33,13 +33,13 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-3 mb-10">
+      <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-[1.15fr_0.85fr] md:auto-rows-fr mb-10">
         {pricingPackages.map((pkg) => (
           <div
             key={pkg.key}
             className={`bg-card p-6 border-t-2 ${pkg.accentClass} transition-all duration-300 ${
               pkg.prominent
-                ? 'ring-1 ring-inset ring-teal/45'
+                ? 'md:row-span-2 ring-1 ring-inset ring-teal/45'
                 : ''
             }`}
           >
@@ -50,7 +50,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
               </div>
             )}
             <div className="flex items-center gap-2.5 mb-2">
-              <span className={`w-2.5 h-2.5 rounded-full ${pkg.dotClass}`} />
+              <span className={`size-2.5 ${pkg.dotClass}`} />
               <h3 className="text-lg font-semibold">{t(`${pkg.key}.name`)}</h3>
             </div>
             <p className="text-muted-foreground text-sm mb-5">
@@ -85,7 +85,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
         ))}
       </div>
 
-      <div className="text-center mb-10">
+      <div className="text-left mb-10">
         <Link
           href="/pricing"
           className="text-teal font-medium hover:underline text-sm"
@@ -95,7 +95,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        <h3 className="text-lg font-semibold text-center mb-6">{tFaq('faq_heading')}</h3>
+        <h3 className="text-lg font-semibold text-left mb-6">{tFaq('faq_heading')}</h3>
         <div className="space-y-4">
           {Array.from({ length: 4 }, (_, i) => (
             <div key={i} className="bg-card border border-border p-4">

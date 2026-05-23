@@ -14,7 +14,7 @@ export async function ResultsBand({ locale: _locale, number }: ResultsBandProps)
   const t = await getTranslations('results');
 
   return (
-    <Section variant="dark" className="relative overflow-hidden" number={number}>
+    <Section variant="dark" className="relative overflow-hidden py-20 md:py-32 dot-grid-bg" number={number}>
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="mb-12 grid gap-6 border-b border-background/12 pb-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <div>

@@ -418,7 +418,7 @@ export function ContactForm() {
 
               {/* Error state */}
               {submitError && (
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+                <div className="flex items-start gap-3 p-4 rounded-none bg-destructive/10 border border-destructive/20 text-destructive text-sm">
                   <AlertCircle className="size-5 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium">{t('form.error_title')}</p>
@@ -431,7 +431,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full sm:w-auto bg-teal hover:bg-teal/90 text-background min-w-[180px]"
+                className="w-full sm:w-auto rounded-none bg-teal hover:bg-teal/90 text-background min-w-[180px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

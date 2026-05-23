@@ -49,19 +49,19 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
 
   return (
     <div className="mt-16">
-      <h3 className="text-2xl font-semibold text-center mb-8">
+      <h3 className="text-2xl font-semibold text-left mb-8">
         {t('comparison_heading')}
       </h3>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground sticky left-0 bg-background z-10">
+              <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground sticky left-0 bg-card will-change-transform z-10">
                 {t('feature_label')}
               </th>
               {['beauty', 'medical', 'hospitality'].map(key => (
                 <th key={key} className="text-center py-3 px-4 text-sm font-semibold">
-                  <span className={`inline-block size-2 rounded-full mr-2 ${
+                  <span className={`inline-block size-2 mr-2 ${
                     key === 'beauty' ? 'bg-rose' : key === 'medical' ? 'bg-stone' : 'bg-navy'
                   }`} />
                   {t(`${key}.name`)}
@@ -72,7 +72,7 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
           <tbody>
             {featureKeys.map(key => (
               <tr key={key} className="border-b border-border/50 hover:bg-surface-subtle/50 transition-colors">
-                <td className="py-3 px-4 text-sm text-foreground sticky left-0 bg-background z-10">
+                <td className="py-3 px-4 text-sm text-foreground sticky left-0 bg-card will-change-transform z-10">
                   {t(`comparison.${key}`)}
                 </td>
                 {['beauty', 'medical', 'hospitality'].map(plan => (
