@@ -43,13 +43,19 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
       <div className="mx-auto max-w-[var(--container-max-width)] px-[var(--container-padding)] py-12 md:py-16">
         {/* Logo + Tagline */}
         <div className="mb-10">
-          <Image
-            src={siteConfig.assets.logo}
-            alt={`${siteConfig.name} logo`}
-            width={180}
-            height={212}
-            className="mb-4 h-auto w-36"
-          />
+          <div className="mb-4 flex items-center gap-3">
+            <Image
+              src={siteConfig.assets.mark}
+              alt=""
+              width={44}
+              height={44}
+              className="size-11 shrink-0 object-cover"
+              aria-hidden="true"
+            />
+            <span className="font-sans text-sm font-bold uppercase tracking-wide text-foreground">
+              {siteConfig.name}
+            </span>
+          </div>
           <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
             {t('tagline')}
           </p>
