@@ -375,6 +375,15 @@
   flex-shrink: 0;
 }
 
+.section-label.section-label-on-dark {
+  color: var(--background);
+  opacity: 0.9;
+}
+
+.section-label.section-label-on-dark::before {
+  background: var(--background);
+}
+
 /* ─── Premium shadow utilities ─── */
 .shadow-premium { box-shadow: var(--shadow-premium); }
 .shadow-premium-lg { box-shadow: var(--shadow-premium-lg); }

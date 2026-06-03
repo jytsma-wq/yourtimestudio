@@ -15,7 +15,9 @@ export async function CaseStudiesSection({ number }: { number?: string }) {
     <Section variant="dark" className="relative overflow-hidden" number={number}>
       <div className="mb-12 grid gap-6 border-b border-background/12 pb-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
         <div>
-          <p className="section-label text-background">{labels.home.sectionLabel}</p>
+          <p className="section-label section-label-on-dark">
+            {labels.home.sectionLabel}
+          </p>
           <p className="editorial-kicker text-background">{labels.home.kicker}</p>
         </div>
         <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl text-background">

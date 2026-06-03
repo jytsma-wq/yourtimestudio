@@ -52,7 +52,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
               className="size-11 shrink-0 object-cover"
               aria-hidden="true"
             />
-            <span className="font-sans text-sm font-bold uppercase tracking-wide text-foreground">
+            <span className="font-sans text-sm font-bold tracking-wide text-foreground">
               {siteConfig.name}
             </span>
           </div>

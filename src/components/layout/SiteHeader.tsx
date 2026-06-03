@@ -148,7 +148,7 @@ export default function SiteHeader() {
             className="size-9 shrink-0 object-cover"
             priority
           />
-          <span className="font-sans text-sm font-bold uppercase">{siteConfig.name}</span>
+          <span className="font-sans text-sm font-bold">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Navigation */}

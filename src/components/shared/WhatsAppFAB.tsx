@@ -13,7 +13,7 @@ export function WhatsAppFAB() {
   const whatsappHref = siteConfig.contact.whatsappHref || contactHref;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3 md:bottom-8 md:right-8">
+    <div className="fixed bottom-8 right-8 z-50 hidden flex-col gap-3 md:flex">
       <a
         href={`mailto:${siteConfig.contact.email}`}
         className="hidden size-12 items-center justify-center rounded-md bg-card text-foreground ring-1 ring-border transition-colors duration-150 ease-out hover:text-navy md:flex"
