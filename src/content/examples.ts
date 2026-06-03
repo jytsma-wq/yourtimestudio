@@ -38,6 +38,7 @@ export type Example = {
   liveUrl?: string;
   demoUrl?: string;
   repositoryUrl?: string;
+  screenshotFilename: `${string}.webp`;
   screenshot?: string;
   imageAlt: string;
   technologies: string[];
@@ -46,6 +47,8 @@ export type Example = {
   whatItShows: string[];
   ctaLabel: string;
 };
+
+export const exampleScreenshotDirectory = '/examples' as const;
 
 export const exampleTypeLabels: Record<ExampleType, string> = {
   'real-project': 'Real project',
@@ -98,8 +101,8 @@ export const examples: Example[] = [
       'Image-weight and speed planning',
       'Guest trust content',
     ],
-    screenshot: '/images/portfolio-hotel.jpg',
-    imageAlt: 'Demo visual for a boutique hotel direct booking website direction',
+    screenshotFilename: 'boutique-hotel-direct-booking.webp',
+    imageAlt: 'Screenshot of the Boutique Hotel Direct Booking Demo website example',
     technologies: ['Next.js', 'React', 'TypeScript', 'Local SEO', 'Structured data'],
     proofLevel: 'demo',
     disclaimer:
@@ -131,8 +134,8 @@ export const examples: Example[] = [
       'Medical structured data planning',
       'Multilingual content hierarchy',
     ],
-    screenshot: '/images/portfolio-dental.jpg',
-    imageAlt: 'Demo visual for a clinic trust website direction',
+    screenshotFilename: 'clinic-trust-website.webp',
+    imageAlt: 'Screenshot of the Clinic Trust Website Demo website example',
     technologies: ['Next.js', 'React', 'TypeScript', 'Schema.org', 'next-intl'],
     proofLevel: 'demo',
     disclaimer:
@@ -164,8 +167,8 @@ export const examples: Example[] = [
       'Review and social proof placement',
       'Local SEO service pages',
     ],
-    screenshot: '/images/portfolio-beauty.jpg',
-    imageAlt: 'Demo visual for a beauty salon booking website direction',
+    screenshotFilename: 'beauty-salon-booking.webp',
+    imageAlt: 'Screenshot of the Beauty Salon Booking Demo website example',
     technologies: ['Next.js', 'React', 'TypeScript', 'Local SEO', 'Booking UX'],
     proofLevel: 'demo',
     disclaimer:
@@ -197,7 +200,8 @@ export const examples: Example[] = [
       'Audit and lead capture flows',
       'Functional design system',
     ],
-    imageAlt: 'Batumi Lighthouse website internal example placeholder',
+    screenshotFilename: 'batumi-lighthouse-website.webp',
+    imageAlt: 'Screenshot of the Batumi Lighthouse Website internal example',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'next-intl'],
     proofLevel: 'internal',
     disclaimer:

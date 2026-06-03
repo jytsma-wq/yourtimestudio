@@ -1,9 +1,10 @@
-import Image from 'next/image';
-import { ArrowRight, LayoutTemplate, Monitor } from 'lucide-react';
+import { ArrowRight, LayoutTemplate } from 'lucide-react';
+import { ExamplePreviewPanel } from '@/components/examples/ExamplePreviewPanel';
 import { StaggerContainer, StaggerItem } from '@/components/motion';
 import { Link } from '@/lib/i18n/navigation';
 import { Section } from '@/components/shared/Section';
 import {
+  exampleProofLabels,
   exampleSectorLabels,
   exampleStatusLabels,
   exampleTypeLabels,
@@ -26,28 +27,16 @@ export function CaseStudiesSection({ number }: { number?: string }) {
       <StaggerContainer className="grid gap-px overflow-hidden border border-background/12 bg-background/12 md:grid-cols-[1.15fr_0.85fr] md:auto-rows-fr">
         {featuredExamples.map((example) => (
           <StaggerItem key={example.id}>
-            <article className="group bg-ink text-background">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                {example.screenshot ? (
-                  <Image
-                    src={example.screenshot}
-                    alt={example.imageAlt}
-                    fill
-                    className="object-cover opacity-78 transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center bg-background/10 p-6 text-center">
-                    <div>
-                      <Monitor className="mx-auto mb-3 size-8 text-background" />
-                      <p className="text-sm font-medium text-background">
-                        Screenshot not available yet
-                      </p>
-                    </div>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
+            <article className="bg-ink text-background">
+              <div>
+                <ExamplePreviewPanel
+                  example={example}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  tone="dark"
+                  className="aspect-[4/3] border-b border-background/12 bg-ink"
+                  imageClassName="opacity-90"
+                />
+                <div className="border-b border-background/12 px-5 py-4 md:px-6">
                   <p className="editorial-kicker text-background">
                     {exampleTypeLabels[example.type]} / {exampleStatusLabels[example.status]}
                   </p>
@@ -66,6 +55,21 @@ export function CaseStudiesSection({ number }: { number?: string }) {
                 <p className="mt-3 text-sm leading-relaxed text-background">
                   {example.shortDescription}
                 </p>
+                <ul className="mt-4 space-y-2">
+                  {example.features.slice(0, 2).map((feature) => (
+                    <li key={feature} className="text-xs leading-relaxed text-background/78">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 border-t border-background/12 pt-4">
+                  <p className="editorial-kicker text-background/78">
+                    {exampleProofLabels[example.proofLevel]} proof
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-background/72">
+                    {example.disclaimer}
+                  </p>
+                </div>
                 <Link
                   href="/work"
                   className="mt-5 flex items-center gap-2 text-sm font-semibold text-background transition-colors hover:text-background"

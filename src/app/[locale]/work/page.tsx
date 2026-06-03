@@ -1,5 +1,4 @@
 import type { ElementType } from 'react';
-import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import {
   ArrowUpRight,
@@ -10,6 +9,7 @@ import {
   Sparkles,
   Stethoscope,
 } from 'lucide-react';
+import { ExamplePreviewPanel } from '@/components/examples/ExamplePreviewPanel';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Badge } from '@/components/ui/badge';
@@ -90,26 +90,11 @@ export default async function WorkPage({
                 key={example.id}
                 className="flex min-h-full flex-col border border-border bg-card"
               >
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
-                  {example.screenshot ? (
-                    <Image
-                      src={example.screenshot}
-                      alt={example.imageAlt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center p-6 text-center">
-                      <div>
-                        <Monitor className="mx-auto mb-3 size-8 text-muted-foreground" />
-                        <p className="text-sm font-medium text-muted-foreground">
-                          Screenshot not available yet
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <ExamplePreviewPanel
+                  example={example}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="aspect-[16/10] border-b border-border"
+                />
 
                 <div className="flex flex-1 flex-col gap-5 p-5 md:p-6">
                   <div className="flex flex-wrap items-center gap-2">
