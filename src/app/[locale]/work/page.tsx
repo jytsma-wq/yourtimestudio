@@ -1,20 +1,47 @@
+import type { ElementType } from 'react';
+import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { type Locale } from '@/lib/i18n/config';
+import {
+  ArrowUpRight,
+  Building2,
+  Github,
+  MessageSquare,
+  Monitor,
+  Sparkles,
+  Stethoscope,
+} from 'lucide-react';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Stethoscope, Sparkles, Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/lib/i18n/navigation';
+import {
+  examples,
+  exampleProofLabels,
+  exampleSectorLabels,
+  exampleStatusLabels,
+  exampleTypeLabels,
+  type ExampleSector,
+} from '@/content/examples';
 
-const sectorIcons: Record<string, React.ElementType> = {
-  Hospitality: Building2,
-  Medical: Stethoscope,
-  Beauty: Sparkles,
+const pageHeading = 'Website Examples';
+const pageSubtitle =
+  'Real builds, demo websites, and sector-specific examples showing what is possible for Batumi hotels, clinics, salons, and service businesses.';
+const pageNote =
+  'Some examples are demo builds or internal concepts. They are clearly labelled so you can judge the work honestly.';
+
+const sectorIcons: Record<ExampleSector, ElementType> = {
+  hospitality: Building2,
+  medical: Stethoscope,
+  beauty: Sparkles,
+  studio: Monitor,
 };
 
-const sectorColors: Record<string, string> = {
-  Hospitality: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
-  Medical: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
-  Beauty: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken',
+const sectorColors: Record<ExampleSector, string> = {
+  hospitality: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  medical: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  beauty: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken',
+  studio: 'bg-navy/10 text-navy',
 };
 
 export default async function WorkPage({
@@ -25,14 +52,7 @@ export default async function WorkPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('workPage');
   const tNav = await getTranslations('nav');
-
-  const items = [0, 1, 2].map((i) => ({
-    sector: t(`items.${i}.sector`),
-    title: t(`items.${i}.title`),
-    description: t(`items.${i}.description`),
-  }));
 
   return (
     <>
@@ -43,44 +63,157 @@ export default async function WorkPage({
           ]}
         />
 
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <h1 className="editorial-display text-4xl md:text-5xl mb-4">
-            {t('heading')}
+        <div className="mb-10 max-w-3xl md:mb-12">
+          <h1 className="editorial-display mb-4 text-4xl md:text-5xl">
+            {pageHeading}
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl leading-[1.75]">
-            {t('subtitle')}
+          <p className="text-lg leading-[1.75] text-muted-foreground md:text-xl">
+            {pageSubtitle}
+          </p>
+        </div>
+
+        <div className="max-w-3xl border-l border-border pl-4">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {pageNote}
           </p>
         </div>
       </Section>
 
       <Section variant="subtle">
-        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border">
-          {items.map((item, index) => {
-            const Icon = sectorIcons[item.sector] || Building2;
-            const colorClass = sectorColors[item.sector] || 'bg-muted text-muted-foreground';
+        <div className="grid grid-cols-1 gap-px border border-border bg-border lg:grid-cols-2">
+          {examples.map((example) => {
+            const Icon = sectorIcons[example.sector];
+            const colorClass = sectorColors[example.sector];
 
             return (
-              <div
-                key={index}
-                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col gap-4 relative shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+              <article
+                key={example.id}
+                className="flex min-h-full flex-col border border-border bg-card"
               >
-                <div className="flex items-center gap-3">
-                  <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>
-                    <Icon className="size-4.5" />
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
+                  {example.screenshot ? (
+                    <Image
+                      src={example.screenshot}
+                      alt={example.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center p-6 text-center">
+                      <div>
+                        <Monitor className="mx-auto mb-3 size-8 text-muted-foreground" />
+                        <p className="text-sm font-medium text-muted-foreground">
+                          Screenshot not available yet
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex flex-1 flex-col gap-5 p-5 md:p-6">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className={`inline-flex size-9 items-center justify-center border border-border ${colorClass}`}>
+                      <Icon className="size-4" />
+                    </span>
+                    <Badge className={`${colorClass} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
+                      {exampleSectorLabels[example.sector]}
+                    </Badge>
+                    <Badge variant="outline" className="rounded-none text-xs font-semibold uppercase tracking-wide">
+                      {exampleTypeLabels[example.type]}
+                    </Badge>
+                    <Badge variant="outline" className="rounded-none text-xs font-semibold uppercase tracking-wide">
+                      {exampleStatusLabels[example.status]}
+                    </Badge>
                   </div>
-                  <Badge className={`${colorClass} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
-                    {item.sector}
-                  </Badge>
+
+                  <div>
+                    <h2 className="text-2xl font-semibold tracking-tight">
+                      {example.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">
+                      {example.shortDescription}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <p className="editorial-kicker mb-3 text-muted-foreground">Features</p>
+                      <ul className="space-y-2">
+                        {example.features.slice(0, 5).map((feature) => (
+                          <li key={feature} className="text-sm leading-relaxed text-foreground">
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="editorial-kicker mb-3 text-muted-foreground">What it shows</p>
+                      <ul className="space-y-2">
+                        {example.whatItShows.slice(0, 3).map((item) => (
+                          <li key={item} className="text-sm leading-relaxed text-muted-foreground">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {example.technologies.slice(0, 5).map((technology) => (
+                      <span
+                        key={technology}
+                        className="border border-border bg-background px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto border-t border-border pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
+                      {exampleProofLabels[example.proofLevel]} proof
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      {example.disclaimer}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {example.liveUrl && (
+                      <Button asChild>
+                        <a href={example.liveUrl} target="_blank" rel="noopener noreferrer">
+                          View website
+                          <ArrowUpRight className="size-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {example.demoUrl && (
+                      <Button asChild variant="outline">
+                        <a href={example.demoUrl} target="_blank" rel="noopener noreferrer">
+                          View demo
+                          <ArrowUpRight className="size-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {example.repositoryUrl && (
+                      <Button asChild variant="outline">
+                        <a href={example.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="size-4" />
+                          View repository
+                        </a>
+                      </Button>
+                    )}
+                    <Button asChild variant="outline">
+                      <Link href="/contact">
+                        <MessageSquare className="size-4" />
+                        {example.ctaLabel}
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-[1.75] flex-1">
-                  {item.description}
-                </p>
-                <div className="flex items-center gap-1.5 text-muted-foreground text-xs font-medium pt-2">
-                  <Clock className="size-3.5" />
-                  {t('comingSoon')}
-                </div>
-              </div>
+              </article>
             );
           })}
         </div>
