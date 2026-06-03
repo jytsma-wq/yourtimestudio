@@ -31,19 +31,19 @@ export function ContactStrip() {
         visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
     >
-      <div className="bg-card border border-border border-r-0 rounded-l-lg shadow-premium-lg py-3 px-2 flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3 rounded-l-md border border-r-0 border-border bg-card px-2 py-3 shadow-none">
         <a
           href={whatsappHref}
           target={hasWhatsAppLink ? '_blank' : undefined}
           rel={hasWhatsAppLink ? 'noopener noreferrer' : undefined}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-serene-coral-darken transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken/80 hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center text-navy transition-colors duration-150 ease-out hover:text-foreground"
           aria-label={ui('contactViaWhatsApp')}
         >
           <MessageCircle className="size-4" />
         </a>
         <a
           href={`mailto:${siteConfig.contact.email}`}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center text-muted-foreground transition-colors duration-150 ease-out hover:text-navy"
           aria-label={ui('sendEmail')}
         >
           <Mail className="size-4" />

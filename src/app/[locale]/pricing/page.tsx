@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({
   params,
@@ -22,12 +23,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Pricing - Yourtimestudio',
+    title: `Pricing - ${siteConfig.name}`,
     description:
       'Transparent pricing for hospitality, medical, and beauty websites. Setup fees, monthly plans, and add-ons for Batumi businesses.',
     path: '/pricing',
     locale: locale as Locale,
-    ogImage: '/og-default.png',
+    ogImage: siteConfig.assets.ogDefault,
   });
 }
 
@@ -102,16 +103,16 @@ export default async function PricingPage({
           {addOns.map((addon) => (
             <div
               key={addon.name}
-              className="bg-card bg-paper-texture border border-border rounded-none p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+              className="rounded-none border border-border bg-card p-6 shadow-none"
             >
-              <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 mb-4">
-                <addon.Icon className="size-5 text-brand-serene-coral-darken" />
+              <div className="mb-4 flex size-10 items-center justify-center border border-border bg-muted">
+                <addon.Icon className="size-5 text-navy" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{addon.name}</h3>
               <p className="text-muted-foreground text-sm mb-4 leading-[1.75]">
                 {addon.description}
               </p>
-              <p className="text-brand-serene-coral-darken font-semibold text-lg">{addon.price}</p>
+              <p className="text-lg font-semibold text-navy">{addon.price}</p>
             </div>
           ))}
         </div>
@@ -138,12 +139,12 @@ export default async function PricingPage({
             <div className="space-y-8">
               {processSteps.map((step, i) => (
                 <div key={step.title} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
-                    <step.Icon className="size-5 text-brand-serene-coral-darken" />
+                  <div className="relative z-10 flex size-10 shrink-0 items-center justify-center border border-border bg-muted">
+                    <step.Icon className="size-5 text-navy" />
                   </div>
                   <div className="pt-2">
                     <h3 className="text-lg font-semibold mb-1">
-                      <span className="text-brand-serene-coral-darken mr-2">0{i + 1}</span>
+                      <span className="mr-2 text-navy">0{i + 1}</span>
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-[1.75]">

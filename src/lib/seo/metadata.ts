@@ -20,6 +20,11 @@ function localeUrl(locale: Locale, path: string): string {
     : `${siteUrl}/${locale}${path}`;
 }
 
+function absoluteUrl(pathOrUrl: string): string {
+  if (/^https?:\/\//.test(pathOrUrl)) return pathOrUrl;
+  return `${siteUrl}${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`;
+}
+
 export function generatePageMetadata({
   title,
   description,
@@ -29,7 +34,7 @@ export function generatePageMetadata({
   noIndex = false,
 }: MetadataOptions): Metadata {
   const url = localeUrl(locale, path);
-  const ogImageUrl = ogImage || `${siteUrl}/og-default.png`;
+  const ogImageUrl = absoluteUrl(ogImage || siteConfig.assets.ogDefault);
 
   // Build hreflang alternates for all launch locales
   const languages: Record<string, string> = {};
@@ -65,6 +70,7 @@ export function generatePageMetadata({
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImageUrl],
     },
     ...(noIndex && { robots: { index: false, follow: false } }),
   };

@@ -42,7 +42,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                   className="grid gap-0 border-b border-border last:border-b-0 lg:grid-cols-12"
                 >
                   <div
-                    className={`duotone-wash duotone-wash-navy relative min-h-[320px] overflow-hidden lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}
+                    className={`relative min-h-[320px] overflow-hidden lg:col-span-5 ${isReversed ? 'lg:order-2' : ''}`}
                   >
                     <Image
                       src={sector.image}
@@ -53,9 +53,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                       placeholder="blur"
                       blurDataURL={sector.blur}
                     />
-                    <div className="absolute inset-0 bg-brand-cream/10 mix-blend-overlay pointer-events-none" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-5 right-5 text-brand-cream">
+                    <div className="absolute inset-x-0 bottom-0 bg-ink/82 p-5 text-brand-cream">
                       <p className="editorial-kicker text-brand-cream">{String(idx + 1).padStart(2, '0')} / {t(`${sectorKey}.title`)}</p>
                       <p className="mt-2 text-2xl font-semibold leading-tight">{t(`${sectorKey}.tagline`)}</p>
                     </div>
@@ -86,7 +84,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                         </ul>
                         <Link
                           href={sector.href}
-                          className={`mt-6 inline-flex items-center gap-2 border-b border-transparent text-sm font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral ${sector.textClass}`}
+                          className={`mt-6 inline-flex items-center gap-2 border-b border-transparent text-sm font-semibold no-underline transition-colors duration-150 ease-in-out hover:border-accent ${sector.textClass}`}
                         >
                           {t(`${sectorKey}.cta`)}
                           <ArrowRight className="size-4" />
@@ -113,7 +111,7 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                   <span className={`size-2 rounded-full ${sector.dotClass}`} />
                   {t(`${sectorKey}.subtitle`)}
                 </span>
-                <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
+                <ArrowRight className="size-4 text-muted-foreground transition-colors group-hover:text-foreground" />
               </Link>
             );
           })}

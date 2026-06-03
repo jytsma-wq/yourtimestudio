@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Yourtimestudio - Direct-booking websites for Batumi hotels, clinics, and studios",
-    "description": "Founder-led web design, local SEO, booking flows, and photography direction for service businesses in Batumi, Georgia."
+    "title": "Batumi Lighthouse - Clear websites for serious Batumi businesses",
+    "description": "Dutch-practical web design, local SEO, booking flows, and digital systems for hotels, clinics, restaurants, salons, and service businesses in Batumi."
   },
   "nav": {
     "home": "Home",
@@ -17,21 +17,21 @@
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Founder-led Batumi web studio",
-    "title": "Direct-booking websites for Batumi hotels, clinics, and studios",
-    "subtitle": "I build fast multilingual websites with local SEO, booking flows, and photography direction for Batumi businesses that cannot afford to look generic.",
+    "eyebrow": "Dutch-practical web design in Batumi",
+    "title": "Clear websites for serious Batumi businesses",
+    "subtitle": "Batumi Lighthouse builds fast multilingual websites, local SEO systems, and booking flows for hotels, clinics, restaurants, salons, and service businesses that need practical results.",
     "cta_primary": "Request a website audit",
     "cta_secondary": "See sector plans",
     "getQuote": "Get quote",
     "proof_band": [
       "Founder-led",
-      "Photographer-supported",
+      "Dutch-practical",
       "Multilingual",
-      "Hostinger-ready"
+      "Booking-focused"
     ],
-    "sectionLabel": "Founder-led Batumi web studio.",
-    "title1": "Direct booking websites for",
-    "title2": "hotels, clinics & studios",
+    "sectionLabel": "Dutch-practical web design in Batumi.",
+    "title1": "Clear websites for",
+    "title2": "serious Batumi businesses",
     "typewriter": {
       "hotel": "Booking-ready hotel websites",
       "clinic": "Trust-focused clinic websites",
@@ -72,7 +72,7 @@
         "label": "photography partner"
       }
     },
-    "meta_brand": "Yourtimestudio / Batumi",
+    "meta_brand": "Batumi Lighthouse / Batumi",
     "meta_services": "Direct booking / Local SEO / Multilingual UX",
     "feature_direction": "Feature direction",
     "issue": "Issue 01",
@@ -146,21 +146,21 @@
     "note": "No fake scores, no automated fluff. The report explains what is blocking trust, search visibility, and bookings, then lists the fixes in priority order."
   },
   "founder": {
-    "heading": "Founder-led, with specialist photography support",
-    "body": "I run Yourtimestudio as a one-person web studio in Batumi. I handle strategy, UX, code, SEO, and launch directly; a professional photographer supports projects that need original visual work.",
+    "heading": "Founder-led, practical, accountable",
+    "body": "I run Batumi Lighthouse as a focused web studio in Batumi. The method is Dutch-practical: clear structure, useful content, fast pages, and no decorative noise. You work directly with the person responsible for the result.",
     "cta": "About the studio",
     "sectionLabel": "How I work.",
     "founder": {
       "sectionLabel": "How I work.",
-      "heading": "One accountable builder. Specialist support where it matters.",
-      "bio": "Yourtimestudio is my founder-led web studio in Batumi. You work directly with me on strategy, design, code, SEO, and launch. When the project needs original visuals, I bring in a professional photographer instead of relying on generic stock images.",
+      "heading": "One accountable builder. Clear decisions, no noise.",
+      "bio": "Batumi Lighthouse is my focused web studio in Batumi. I work directly on strategy, design, code, SEO, and launch with a Dutch-practical method: clear structure, useful content, fast pages, and direct accountability.",
       "location": "Based in Batumi",
       "since": "Selected projects",
       "cta": "Start your project",
       "statClients": "Core sectors",
       "statLanguages": "Languages planned",
       "statAvailable": "Taking selected projects",
-      "imageAlt": "Yourtimestudio founder workspace"
+      "imageAlt": "Batumi Lighthouse founder workspace"
     },
     "features": {
       "sectionLabel": "Why this model works.",
@@ -359,10 +359,10 @@
   "aboutPage": {
     "heading": "About the studio",
     "story_heading": "The story",
-    "story_body_1": "Yourtimestudio is a focused one-person web studio in Batumi. I work directly on strategy, UX, code, SEO, launch, and support instead of passing the project through layers of account management.",
-    "story_body_2": "For projects that need stronger visuals, I plan the website around an original shot list and bring in a professional photographer. The goal is simple: a site that feels specific to your business, not like a template with new colors.",
-    "approach_heading": "Sector-specific, not generic",
-    "approach_body": "I don't build generic websites. I build sector-specific systems that help hotels get direct bookings, clinics build patient trust, and beauty businesses fill their appointment books. That specialization means every decision — from information architecture to SEO strategy — is grounded in how your business actually works.",
+    "story_body_1": "Batumi Lighthouse is a focused web studio in Batumi. I work directly on strategy, UX, code, SEO, launch, and support instead of passing the project through layers of account management.",
+    "story_body_2": "The method is practical: clear structure, useful content, fast pages, and no decorative noise. Every page should help visitors understand the business and take the next step.",
+    "approach_heading": "Dutch-practical, not decorative",
+    "approach_body": "I build websites around how the business works. The work starts with structure, content, speed, local search, and booking or inquiry paths. Visual decisions support those jobs instead of adding noise.",
     "why_batumi_heading": "Why Batumi?",
     "why_batumi_body_1": "Batumi is growing as a hospitality, medical, and service-business market, but many local websites still make booking, trust, and multilingual communication harder than they need to be.",
     "why_batumi_body_2": "That gap is where I work: practical websites that make the business easier to find, easier to understand, and easier to contact.",
@@ -435,7 +435,7 @@
     ],
     "cta_text": "Ready to see what your website could become?",
     "cta_button": "Start with a free audit",
-    "image_alt": "Yourtimestudio founder",
+    "image_alt": "Batumi Lighthouse founder",
     "image_caption": "Founder-led web studio based in Batumi, Georgia"
   },
   "contactPage": {
@@ -498,7 +498,7 @@
     ],
     "info_heading": "Other ways to reach me",
     "info_email_label": "Email",
-    "info_email": "hello@yourtimestudio.com",
+    "info_email": "hello@batumilighthouse.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
     "info_area_label": "Service area",
@@ -604,8 +604,8 @@
   },
   "about": {
     "heading": "About the studio",
-    "story": "I'm a Dutch developer who grew up on Aruba and now builds websites in Batumi. The Caribbean taught me that hospitality is in the details — and that quality matters more than volume. I bring that same approach to every project: focused, precise, and personal.",
-    "approach": "I don't build generic websites. I build sector-specific systems that help hotels get direct bookings, clinics build patient trust, and beauty businesses fill their appointment books. That specialization means every decision — from information architecture to SEO strategy — is grounded in how your business actually works.",
+    "story": "I'm a Dutch developer building practical websites in Batumi. Batumi Lighthouse exists for businesses that need clear structure, useful content, fast pages, and direct accountability.",
+    "approach": "I don't build decorative websites for presentation only. I build practical systems around local search, clear content, booking flows, and pages that help people take action.",
     "why_batumi": "Batumi is one of Georgia's fastest-growing hospitality and medical destinations. With over 2.7 million visits to the Adjara region and the highest hotel occupancy in the country, this city needs websites that perform — not just look good.",
     "process": [
       "Audit your current web presence",
@@ -663,7 +663,7 @@
     "conversion": "Does your site guide visitors toward booking or contact?"
   },
   "footer": {
-    "tagline": "Batumi web studio for hospitality, medical, and beauty businesses.",
+    "tagline": "Clear websites for serious Batumi businesses.",
     "solutions": "Solutions",
     "company": "Company",
     "legal": "Legal",
@@ -688,7 +688,7 @@
     "privacy": {
       "heading": "Privacy Policy",
       "last_updated": "Last updated: March 2025",
-      "intro": "Yourtimestudio (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.",
+      "intro": "Batumi Lighthouse (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.",
       "data_collection_heading": "1. Data We Collect",
       "data_collection_body": "We may collect the following types of personal data:\n\n• Contact information: name, email address, phone number, and business name when you submit a form or contact us.\n• Website data: your current website URL when provided during an audit request or inquiry.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device data: browser type, operating system, and screen resolution for optimizing your experience.",
       "cookies_heading": "2. Cookies & Tracking",
@@ -700,24 +700,24 @@
       "data_security_heading": "5. Data Security",
       "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
       "contact_heading": "6. Contact Information",
-      "contact_body": "If you have questions about this privacy policy or how we handle your data, please contact us:\n\nEmail: hello@yourtimestudio.com\nLocation: Batumi, Adjara, Georgia"
+      "contact_body": "If you have questions about this privacy policy or how we handle your data, please contact us:\n\nEmail: hello@batumilighthouse.com\nLocation: Batumi, Adjara, Georgia"
     },
     "terms": {
       "heading": "Terms of Service",
       "last_updated": "Last updated: March 2025",
-      "intro": "These Terms of Service govern your use of the Yourtimestudio website and services. By accessing our website or engaging our services, you agree to these terms.",
+      "intro": "These Terms of Service govern your use of the Batumi Lighthouse website and services. By accessing our website or engaging our services, you agree to these terms.",
       "services_heading": "1. Services",
-      "services_body": "Yourtimestudio provides web design, development, and digital consulting services specializing in hospitality, medical, and beauty sector websites in Batumi, Georgia. Our services include but are not limited to:\n\n• Website design and development\n• Search engine optimization (SEO)\n• Website auditing and performance analysis\n• Ongoing website maintenance and support\n• Content strategy and copywriting\n\nThe specific scope, deliverables, and timeline for each project are defined in individual project proposals agreed upon by both parties.",
+      "services_body": "Batumi Lighthouse provides web design, development, local SEO, and digital consulting services for serious Batumi businesses. Our services include but are not limited to:\n\n• Website design and development\n• Search engine optimization (SEO)\n• Website auditing and performance analysis\n• Ongoing website maintenance and support\n• Content strategy and copywriting\n\nThe specific scope, deliverables, and timeline for each project are defined in individual project proposals agreed upon by both parties.",
       "payment_heading": "2. Payment Terms",
       "payment_body": "• Setup fees are one-time charges due before the start of development, unless a payment plan is agreed upon in writing.\n• Monthly fees cover hosting, maintenance, security updates, and support. These are billed in advance on a recurring basis.\n• Payment plans for larger projects may be arranged during the proposal stage and must be agreed upon in writing.\n• All prices are in USD unless otherwise specified. Georgian VAT may apply where required by law.\n• Late payments may result in suspension of services until the outstanding balance is settled.",
       "ip_heading": "3. Intellectual Property",
-      "ip_body": "• Upon full payment, you receive ownership of the custom website design and content created specifically for your project.\n• Yourtimestudio retains ownership of pre-existing tools, frameworks, code libraries, and methodologies used in the development process.\n• You are responsible for ensuring that all content, images, and materials you provide do not infringe on third-party intellectual property rights.\n• Yourtimestudio may showcase the completed project in its portfolio unless otherwise agreed in writing.",
+      "ip_body": "• Upon full payment, you receive ownership of the custom website design and content created specifically for your project.\n• Batumi Lighthouse retains ownership of pre-existing tools, frameworks, code libraries, and methodologies used in the development process.\n• You are responsible for ensuring that all content, images, and materials you provide do not infringe on third-party intellectual property rights.\n• Batumi Lighthouse may showcase the completed project in its portfolio unless otherwise agreed in writing.",
       "liability_heading": "4. Limitation of Liability",
-      "liability_body": "• Yourtimestudio provides services on an \"as is\" basis without warranties of any kind, either express or implied.\n• We are not liable for any indirect, incidental, special, or consequential damages arising from the use of our services.\n• Our total liability for any claim shall not exceed the total fees paid by you for the specific service giving rise to the claim.\n• We are not responsible for losses resulting from third-party service failures (e.g., hosting outages, payment gateway issues).\n• We are not liable for any loss of revenue, data, or business opportunities resulting from the use of our services.",
+      "liability_body": "• Batumi Lighthouse provides services on an \"as is\" basis without warranties of any kind, either express or implied.\n• We are not liable for any indirect, incidental, special, or consequential damages arising from the use of our services.\n• Our total liability for any claim shall not exceed the total fees paid by you for the specific service giving rise to the claim.\n• We are not responsible for losses resulting from third-party service failures (e.g., hosting outages, payment gateway issues).\n• We are not liable for any loss of revenue, data, or business opportunities resulting from the use of our services.",
       "termination_heading": "5. Termination",
-      "termination_body": "• Either party may terminate the service agreement with 30 days' written notice.\n• Upon termination, you retain ownership of all paid deliverables. Yourtimestudio will provide a reasonable handover period.\n• Outstanding fees remain due upon termination regardless of the reason for termination.",
+      "termination_body": "• Either party may terminate the service agreement with 30 days' written notice.\n• Upon termination, you retain ownership of all paid deliverables. Batumi Lighthouse will provide a reasonable handover period.\n• Outstanding fees remain due upon termination regardless of the reason for termination.",
       "governing_heading": "6. Governing Law",
-      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.\n\nFor questions about these terms, contact us at hello@yourtimestudio.com."
+      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.\n\nFor questions about these terms, contact us at hello@batumilighthouse.com."
     }
   },
   "sectorPages": {

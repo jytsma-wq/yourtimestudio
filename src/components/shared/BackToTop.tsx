@@ -34,7 +34,7 @@ export function BackToTop() {
     <button
       onClick={handleClick}
       aria-label={ui('backToTop')}
-      className={`fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 hidden items-center justify-center w-12 h-12 rounded-full bg-card border border-border shadow-lg transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100 md:flex ${
+      className={`fixed bottom-6 left-6 z-40 hidden h-12 w-12 items-center justify-center rounded-md border border-border bg-card transition-colors duration-150 ease-out hover:text-navy md:bottom-8 md:left-8 md:flex ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >

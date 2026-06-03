@@ -1,5 +1,5 @@
 /**
- * Internationalization configuration for Yourtimestudio.
+ * Internationalization configuration.
  *
  * Locales:
  *   en – English  (default, served at root `/`)

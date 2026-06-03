@@ -4,16 +4,19 @@
  * components, structured data, and API routes.
  */
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourtimestudio.com';
+const brandName = 'Batumi Lighthouse';
+const brandSlug = 'batumi-lighthouse';
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://batumilighthouse.com').replace(/\/+$/, '');
 
 export const siteConfig = {
-  name: 'Yourtimestudio',
+  name: brandName,
+  slug: brandSlug,
   url: siteUrl,
   description:
-    'Founder-led web studio for direct-booking and appointment-focused websites in Batumi, Georgia.',
+    'Dutch-practical web design, local SEO, and booking-focused websites for serious Batumi businesses.',
 
   contact: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@yourtimestudio.com',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@batumilighthouse.com',
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '',
     whatsappHref: process.env.NEXT_PUBLIC_WHATSAPP_HREF || '',
     area: 'Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond.',
@@ -36,7 +39,16 @@ export const siteConfig = {
   },
 
   analytics: {
-    domain: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'yourtimestudio.com',
+    domain: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'batumilighthouse.com',
+  },
+
+  assets: {
+    mark: `/brand/${brandSlug}-mark.png`,
+    logo: `/brand/${brandSlug}-logo.png`,
+    faviconSvg: '/favicon.svg',
+    faviconPng: '/favicon.png',
+    manifest: '/manifest.json',
+    ogDefault: '/og-default.png',
   },
 
   /** Colors matching CSS custom properties */

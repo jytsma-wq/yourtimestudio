@@ -7,7 +7,7 @@ import { Cookie } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/site-config';
 
-const CONSENT_KEY = 'yourtimestudio-cookie-consent';
+const CONSENT_KEY = `${siteConfig.slug}-cookie-consent`;
 
 function loadAnalytics() {
   if (document.getElementById('plausible-script')) return;
@@ -54,7 +54,7 @@ export function CookieConsent() {
       role="dialog"
       aria-label={t('aria_label')}
     >
-      <div className="bg-card border border-border rounded-xl shadow-lg p-4">
+      <div className="rounded-md border border-border bg-card p-4 shadow-none">
         <div className="flex flex-col gap-4">
           <div className="flex items-start gap-3">
             <Cookie className="size-5 text-brand-serene-coral-darken shrink-0 mt-0.5" aria-hidden="true" />

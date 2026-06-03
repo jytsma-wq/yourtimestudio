@@ -10,12 +10,14 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
   SheetClose,
 } from '@/components/ui/sheet';
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import { sectors, sectorKeys } from '@/lib/sector-config';
 import Image from 'next/image';
+import { siteConfig } from '@/lib/site-config';
 
 interface NavItem {
   key: string;
@@ -113,11 +115,11 @@ export default function SiteHeader() {
         {visible && (
           <motion.div
             layoutId="nav-indicator"
-            className="absolute bottom-0 left-2 right-2 h-px bg-brand-serene-coral"
+            className="absolute bottom-0 left-2 right-2 h-px bg-accent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+            transition={{ duration: 0.16, ease: 'easeOut' }}
           />
         )}
       </AnimatePresence>
@@ -136,17 +138,17 @@ export default function SiteHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-normal text-foreground hover:text-brand-serene-coral-darken transition-colors"
+          className="flex items-center gap-2.5 text-lg font-semibold tracking-normal text-foreground transition-colors hover:text-navy"
         >
           <Image
-            src="/brand/yourtimestudio-mark.png"
-            alt="Yourtimestudio logo"
+            src={siteConfig.assets.mark}
+            alt={`${siteConfig.name} logo`}
             width={36}
             height={36}
             className="size-9 shrink-0 object-cover"
             priority
           />
-          <span className="font-sans text-sm font-bold uppercase">Yourtimestudio</span>
+          <span className="font-sans text-sm font-bold uppercase">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -170,7 +172,7 @@ export default function SiteHeader() {
                     variant="ghost"
                     size="sm"
                     className={`gap-1 rounded-none font-sans text-xs font-bold uppercase transition-colors ${
-                      active ? 'text-brand-serene-coral-darken' : 'text-muted-foreground hover:text-brand-serene-coral-darken'
+                      active ? 'text-navy' : 'text-muted-foreground hover:text-navy'
                     }`}
                   >
                     {t(item.key)}
@@ -179,7 +181,7 @@ export default function SiteHeader() {
                   {renderNavIndicator(showIndicator)}
                   {solutionsOpen && (
                     <div
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border shadow-lg p-4 z-50"
+                      className="absolute left-1/2 top-full z-50 mt-2 w-[480px] -translate-x-1/2 border border-border bg-card p-4 shadow-none"
                       onMouseEnter={handleSolutionsEnter}
                       onMouseLeave={handleSolutionsLeave}
                     >
@@ -190,7 +192,7 @@ export default function SiteHeader() {
                             <Link
                               key={key}
                               href={sector.href}
-                              className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/5 transition-colors group"
+                              className="group flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-muted"
                             >
                               <Image
                                 src={sector.image}
@@ -202,7 +204,7 @@ export default function SiteHeader() {
                               <div className="flex-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`size-2 rounded-full ${sector.dotClass}`} />
-                                  <span className="text-sm font-semibold text-foreground group-hover:text-brand-serene-coral-darken transition-colors">
+                                  <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-navy">
                                     {sectorT(`${key}.title`)}
                                   </span>
                                 </div>
@@ -217,7 +219,7 @@ export default function SiteHeader() {
                       <div className="mt-3 pt-3 border-t border-border">
                         <Link
                           href="/website-audits"
-                          className="flex items-center gap-2 text-sm font-medium text-brand-sage-green-darken hover:text-brand-serene-coral-darken transition-colors"
+                          className="flex items-center gap-2 text-sm font-medium text-navy transition-colors hover:text-foreground"
                         >
                           {t('audits')} <ArrowRight className="size-3" />
                         </Link>
@@ -241,8 +243,8 @@ export default function SiteHeader() {
                   asChild
                     className={`rounded-none font-sans text-xs font-bold uppercase transition-colors ${
                     active
-                      ? 'text-brand-serene-coral-darken'
-                      : 'text-muted-foreground hover:text-brand-serene-coral-darken'
+                      ? 'text-navy'
+                      : 'text-muted-foreground hover:text-navy'
                   }`}
                 >
                   <Link href={item.href}>{t(item.key)}</Link>
@@ -254,7 +256,7 @@ export default function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ml-2 h-9 rounded-none bg-foreground px-4 text-sm font-semibold text-background hover:bg-foreground/88"
+            className="ml-2 h-9 rounded-md px-4 text-sm font-semibold"
           >
             <Link href="/contact">{t('contact')}</Link>
           </Button>
@@ -267,7 +269,7 @@ export default function SiteHeader() {
             size="icon"
             onClick={toggleTheme}
             aria-label={themeReady ? (dark ? ui('switchToLight') : ui('switchToDark')) : ui('toggleColorTheme')}
-            className="text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
+            className="text-muted-foreground transition-colors hover:text-navy"
           >
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </Button>
@@ -294,14 +296,17 @@ export default function SiteHeader() {
           <SheetHeader className="border-b border-border px-6 py-4">
             <SheetTitle className="flex items-center gap-2.5 text-left">
               <Image
-                src="/brand/yourtimestudio-mark.png"
-                alt="Yourtimestudio logo"
+                src={siteConfig.assets.mark}
+                alt={`${siteConfig.name} logo`}
                 width={32}
                 height={32}
                 className="size-8 shrink-0 object-cover"
               />
-              <span>Yourtimestudio</span>
+              <span>{siteConfig.name}</span>
             </SheetTitle>
+            <SheetDescription className="sr-only">
+              {ui('mobileNavigation')}
+            </SheetDescription>
           </SheetHeader>
 
           <nav className="flex flex-col py-4" aria-label={ui('mobileNavigation')}>
@@ -318,8 +323,8 @@ export default function SiteHeader() {
                           href={child.href}
                           className={`flex items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
                             isActive(child.href)
-                              ? 'text-brand-serene-coral-darken bg-accent/10'
-                              : 'text-foreground hover:text-brand-serene-coral-darken hover:bg-accent/5'
+                              ? 'bg-muted text-navy'
+                              : 'text-foreground hover:bg-muted hover:text-navy'
                           }`}
                         >
                           {child.color && (
@@ -341,8 +346,8 @@ export default function SiteHeader() {
                     href={item.href}
                     className={`flex items-center px-6 py-2.5 text-sm font-medium transition-colors ${
                       isActive(item.href)
-                        ? 'text-brand-serene-coral-darken bg-accent/10'
-                        : 'text-foreground hover:text-brand-serene-coral-darken hover:bg-accent/5'
+                        ? 'bg-muted text-navy'
+                        : 'text-foreground hover:bg-muted hover:text-navy'
                     }`}
                   >
                     {t(item.key)}
@@ -355,7 +360,7 @@ export default function SiteHeader() {
           {/* Mobile CTA + language switcher */}
           <div className="border-t border-border px-6 py-4 mt-auto space-y-3">
             <SheetClose asChild>
-              <Button asChild className="w-full bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium">
+              <Button asChild className="w-full font-medium">
                 <Link href="/contact">{t('contact')}</Link>
               </Button>
             </SheetClose>
@@ -366,7 +371,7 @@ export default function SiteHeader() {
       {/* Scroll progress bar */}
       <div className="h-0.5 bg-border/50">
         <div
-          className="h-full bg-brand-serene-coral transition-[width] duration-150 ease-out"
+          className="h-full bg-accent transition-[width] duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>

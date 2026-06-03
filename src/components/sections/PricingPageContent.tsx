@@ -31,8 +31,8 @@ export async function PricingCards({ locale }: PricingCardsProps) {
             </div>
           )}
           <div
-            className={`bg-card bg-paper-texture border border-border rounded-none border-t-2 ${pkg.accentClass} h-full shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl ${
-              pkg.prominent ? 'md:shadow-lg ring-1 ring-border' : ''
+            className={`h-full rounded-none border border-border border-t-2 bg-card ${pkg.accentClass} shadow-none ${
+              pkg.prominent ? 'ring-1 ring-border' : ''
             }`}
           >
           <div className="p-6">
@@ -87,8 +87,8 @@ export async function PricingCards({ locale }: PricingCardsProps) {
               variant={pkg.prominent ? 'default' : 'outline'}
               className={`w-full ${
                 pkg.prominent
-                  ? 'bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white rounded-none'
-                  : 'rounded-none'
+                  ? 'rounded-md'
+                  : 'rounded-md'
               }`}
             >
               <Link href="/contact">

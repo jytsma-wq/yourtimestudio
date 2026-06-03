@@ -37,14 +37,14 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
         {pricingPackages.map((pkg) => (
           <div
             key={pkg.key}
-            className={`bg-card bg-paper-texture p-6 border-t-2 ${pkg.accentClass} shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl ${
+            className={`border-t-2 bg-card p-6 ${pkg.accentClass} shadow-none ${
               pkg.prominent
-                ? 'md:row-span-2 ring-1 ring-inset ring-brand-serene-coral-darken/45'
+                ? 'md:row-span-2 ring-1 ring-inset ring-border'
                 : ''
             }`}
           >
             {pkg.prominent && (
-              <div className="mb-4 -mt-1 inline-flex items-center gap-1.5 bg-brand-serene-coral px-3 py-1 text-xs font-bold uppercase text-brand-charcoal">
+              <div className="mb-4 -mt-1 inline-flex items-center gap-1.5 bg-accent px-3 py-1 text-xs font-bold uppercase text-accent-foreground">
                 <ShieldCheck className="size-3" />
                 {t('most_popular')}
               </div>
@@ -73,9 +73,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
             <Button
               asChild
               variant={pkg.prominent ? 'default' : 'outline'}
-              className={`w-full rounded-none ${
-                pkg.prominent ? 'bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white' : ''
-              }`}
+              className="w-full rounded-md"
             >
               <Link href="/contact">
                 {t('cta')}
@@ -88,7 +86,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
       <div className="text-left mb-10">
         <Link
           href="/pricing"
-          className="border-b border-transparent text-sm font-medium text-brand-serene-coral-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
+          className="border-b border-transparent text-sm font-medium text-navy no-underline transition-colors duration-150 ease-in-out hover:border-accent"
         >
           {t('see_full_pricing')}
         </Link>
@@ -98,7 +96,7 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
         <h3 className="text-lg font-semibold text-left mb-6">{tFaq('faq_heading')}</h3>
         <div className="space-y-4">
           {Array.from({ length: 4 }, (_, i) => (
-            <div key={i} className="bg-card bg-paper-texture border border-border p-4 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl">
+            <div key={i} className="border border-border bg-card p-4 shadow-none">
               <p className="font-medium text-sm text-foreground mb-1">
                 {tFaq(`faq_items.${i}.q`)}
               </p>
@@ -110,8 +108,8 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto mt-8 flex items-start gap-3 bg-brand-serene-coral/5 border border-brand-serene-coral/20 p-4">
-        <ShieldCheck className="size-5 text-brand-serene-coral-darken shrink-0 mt-0.5" aria-hidden="true" />
+      <div className="mx-auto mt-8 flex max-w-2xl items-start gap-3 border border-border bg-card p-4">
+        <ShieldCheck className="mt-0.5 size-5 shrink-0 text-navy" aria-hidden="true" />
         <p className="text-sm text-muted-foreground leading-relaxed">
           {t('guarantee')}
         </p>

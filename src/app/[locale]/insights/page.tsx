@@ -83,7 +83,7 @@ export default async function InsightsPage({
                   {posts.map((post) => (
                     <div
                       key={post.title}
-                      className="bg-card bg-paper-texture border border-border rounded-xl p-6 flex flex-col gap-3 h-full shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+                      className="flex h-full flex-col gap-3 rounded-md border border-border bg-card p-6 shadow-none"
                     >
                       <Badge className={`${colorClass} border-0 text-xs font-semibold uppercase tracking-wide w-fit`}>
                         {label}

@@ -37,8 +37,8 @@ export async function BlogTeaser({ locale: _locale }: BlogTeaserProps) {
         </div>
 
         <div className="grid gap-8 pt-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="border border-border bg-card bg-paper-texture p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl md:p-8">
-            <p className="editorial-kicker text-brand-serene-coral-darken">{t('description')}</p>
+          <div className="border border-border bg-card p-6 shadow-none md:p-8">
+            <p className="editorial-kicker text-navy">{t('description')}</p>
             <h3 className="mt-4 text-3xl font-semibold leading-tight text-foreground">
               {t('articles.0.title')}
             </h3>
@@ -47,7 +47,7 @@ export async function BlogTeaser({ locale: _locale }: BlogTeaserProps) {
             </p>
             <Link
               href="/insights"
-              className="mt-8 inline-flex items-center gap-2 border-b border-transparent pb-1 text-sm font-semibold text-foreground no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-sage-green-darken"
+              className="mt-8 inline-flex items-center gap-2 border-b border-transparent pb-1 text-sm font-semibold text-foreground no-underline transition-colors duration-150 ease-in-out hover:border-accent hover:text-navy"
             >
               {t('allArticles')}
               <ArrowRight className="size-4" />
@@ -70,7 +70,7 @@ export async function BlogTeaser({ locale: _locale }: BlogTeaserProps) {
                     <span className={`editorial-kicker ${sector.textClass}`}>
                       {t(`categories.${article.categoryKey}`)}
                     </span>
-                    <p className="mt-2 text-lg font-semibold leading-snug text-foreground group-hover:text-brand-sage-green-darken">
+                    <p className="mt-2 text-lg font-semibold leading-snug text-foreground group-hover:text-navy">
                       {t(`articles.${article.key}.title`)}
                     </p>
                     <p className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
@@ -79,7 +79,7 @@ export async function BlogTeaser({ locale: _locale }: BlogTeaserProps) {
                       <span>{t(`articles.${article.key}.readTime`)}</span>
                     </p>
                   </div>
-                  <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-brand-sage-green-darken" />
+                  <ArrowRight className="size-4 text-muted-foreground transition-colors group-hover:text-navy" />
                 </Link>
               );
             })}

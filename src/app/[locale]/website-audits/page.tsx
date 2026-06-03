@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { AuditRequestForm } from '@/components/shared/AuditRequestForm';
+import { siteConfig } from '@/lib/site-config';
 
 const rubricItems = [
   { key: 'brand', icon: Eye },
@@ -48,7 +49,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Website Audits — Yourtimestudio',
+    title: `Website Audits — ${siteConfig.name}`,
     description:
       'Get a detailed website scorecard covering brand clarity, speed, local SEO, content structure, accessibility, and conversion UX. Free audit for Batumi businesses.',
     path: '/website-audits',
@@ -80,7 +81,7 @@ export default async function WebsiteAuditsPage({
 
         {/* Hero */}
         <div className="max-w-3xl mb-16 md:mb-20">
-          <p className="editorial-kicker text-brand-serene-coral-darken mb-3">
+          <p className="editorial-kicker mb-3 text-navy">
             {t('hero.eyebrow')}
           </p>
           <h1 className="editorial-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
@@ -109,10 +110,10 @@ export default async function WebsiteAuditsPage({
             return (
               <div
                 key={item.key}
-                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col items-start gap-3 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+                className="flex flex-col items-start gap-3 rounded-none border border-border bg-card p-6 shadow-none"
               >
-                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10">
-                  <Icon className="size-5 text-brand-serene-coral-darken" />
+                <div className="flex size-10 items-center justify-center border border-border bg-muted">
+                  <Icon className="size-5 text-navy" />
                 </div>
                 <h3 className="font-semibold text-base">
                   {t(`rubric.items.${item.key}.name`)}
@@ -123,7 +124,7 @@ export default async function WebsiteAuditsPage({
                       key={i}
                       className="text-muted-foreground text-sm leading-[1.75] flex items-start gap-2"
                     >
-                      <span className="text-brand-serene-coral-darken mt-1.5 shrink-0">•</span>
+                      <span className="mt-1.5 shrink-0 text-brand-serene-coral">•</span>
                       <span>{t(`rubric.items.${item.key}.points.${i}`)}</span>
                     </li>
                   ))}
@@ -178,21 +179,21 @@ export default async function WebsiteAuditsPage({
             const Icon = finding.icon;
             const colorClass =
               finding.color === 'navy'
-                ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+                ? 'bg-muted text-navy'
                 : finding.color === 'stone'
-                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
-                  : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
+                  ? 'bg-muted text-navy'
+                  : 'bg-muted text-navy';
             const tagBgClass =
               finding.color === 'navy'
-                ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+                ? 'bg-muted text-navy'
                 : finding.color === 'stone'
-                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
-                  : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
+                  ? 'bg-muted text-navy'
+                  : 'bg-muted text-navy';
 
             return (
               <div
                 key={finding.key}
-                className="bg-card bg-paper-texture border border-border rounded-none p-6 flex flex-col gap-4 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+                className="flex flex-col gap-4 rounded-none border border-border bg-card p-6 shadow-none"
               >
                 <div className="flex items-center gap-3">
                   <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>

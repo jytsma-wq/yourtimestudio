@@ -7,7 +7,6 @@ import { type Locale } from '@/lib/i18n/config';
 import { SlideInLeft, SlideInRight, FadeInUp } from '@/components/motion';
 import { teamBlur } from '@/lib/blur-placeholders';
 import { siteConfig } from '@/lib/site-config';
-import { SpotlightCard } from '@/components/shared/SpotlightCard';
 import { AvailabilityBadge } from '@/components/shared/AvailabilityBadge';
 
 interface FounderSectionProps {
@@ -32,27 +31,24 @@ export async function FounderSection({ locale, number }: FounderSectionProps) {
                 alt={t('founder.imageAlt')}
                 width={480}
                 height={560}
-                className="border border-border object-cover object-top shadow-premium-xl w-full"
+                className="w-full border border-border object-cover object-top shadow-none"
                 placeholder="blur"
                 blurDataURL={teamBlur}
               />
               {/* Floating stat chip 1 */}
-              <div className="absolute bottom-4 right-4 bg-brand-sage-green-darken text-background px-4 py-3 shadow-premium-lg float-chip-1">
+              <div className="absolute bottom-4 right-4 bg-navy px-4 py-3 text-background shadow-none">
                 <p className="text-2xl font-bold">{siteConfig.stats.clients.number}{siteConfig.stats.clients.suffix}</p>
                 <p className="text-xs opacity-80">{t('founder.statClients')}</p>
               </div>
               {/* Floating stat chip 2 */}
-              <div className="absolute top-4 left-4 bg-card border border-border px-4 py-3 shadow-premium float-chip-2">
-                <p className="text-2xl font-bold text-brand-serene-coral-darken">{siteConfig.stats.languages.number}</p>
+              <div className="absolute top-4 left-4 border border-border bg-card px-4 py-3 shadow-none">
+                <p className="text-2xl font-bold text-navy">{siteConfig.stats.languages.number}</p>
                 <p className="text-xs text-muted-foreground">{t('founder.statLanguages')}</p>
               </div>
               {/* Floating stat chip 3 — availability */}
-              <div className="absolute top-4 right-4 bg-foreground text-background px-4 py-3 shadow-premium-lg float-chip-3">
+              <div className="absolute top-4 right-4 bg-foreground px-4 py-3 text-background shadow-none">
                 <div className="flex items-center gap-2">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-serene-coral opacity-40" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-serene-coral" />
-                  </span>
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-serene-coral" />
                   <span className="text-xs font-semibold">{t('founder.statAvailable')}</span>
                 </div>
               </div>
@@ -70,18 +66,18 @@ export async function FounderSection({ locale, number }: FounderSectionProps) {
             </p>
             <div className="mt-8 flex gap-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="size-4 text-brand-serene-coral-darken" />
+                <MapPin className="size-4 text-navy" />
                 <span>{t('founder.location')}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="size-4 text-brand-serene-coral-darken" />
+                <Calendar className="size-4 text-navy" />
                 <span>{t('founder.since')}</span>
               </div>
             </div>
             <AvailabilityBadge className="mt-4" />
             <Link
               href="/contact"
-              className="mt-4 inline-flex items-center gap-2 border-b border-transparent text-sm font-semibold text-brand-sage-green-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
+              className="mt-4 inline-flex items-center gap-2 border-b border-transparent text-sm font-semibold text-navy no-underline transition-colors duration-150 ease-in-out hover:border-accent"
             >
               {t('founder.cta')}
               <ArrowRight className="size-4" />
@@ -105,13 +101,13 @@ export async function FounderSection({ locale, number }: FounderSectionProps) {
             </div>
             <div className="mt-10 grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
               {[Globe2, Clock, ShieldCheck, HeadphonesIcon].map((Icon, i) => (
-                <SpotlightCard key={i} className="border-b border-r border-border bg-card bg-paper-texture p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl last:border-r-0 lg:border-b-0">
+                <div key={i} className="border-b border-r border-border bg-card p-6 shadow-none last:border-r-0 lg:border-b-0">
                   <div className="mb-4 flex h-10 w-10 items-center justify-center border border-border bg-background">
-                    <Icon className="size-5 text-brand-serene-coral-darken" />
+                    <Icon className="size-5 text-navy" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-2">{t(`features.items.${i}.title`)}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{t(`features.items.${i}.desc`)}</p>
-                </SpotlightCard>
+                </div>
               ))}
             </div>
           </div>

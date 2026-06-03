@@ -7,13 +7,16 @@ import { X } from 'lucide-react';
 export function AnnouncementBar() {
   const t = useTranslations('announcement');
   const ui = useTranslations('ui');
-  const [dismissed, setDismissed] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return sessionStorage.getItem('announcement-dismissed') === 'true';
-  });
+  const [mounted, setMounted] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
+    queueMicrotask(() => {
+      setMounted(true);
+      setDismissed(sessionStorage.getItem('announcement-dismissed') === 'true');
+    });
+
     // Hide on scroll
     function handleScroll() {
       setHidden(window.scrollY > 300);
@@ -22,7 +25,7 @@ export function AnnouncementBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (dismissed) return null;
+  if (!mounted || dismissed) return null;
 
   function handleDismiss() {
     setDismissed(true);
@@ -47,7 +50,7 @@ export function AnnouncementBar() {
         </a>
         <button
           onClick={handleDismiss}
-          className="absolute right-0 text-brand-charcoal hover:text-brand-charcoal transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+          className="absolute right-0 text-brand-charcoal transition-colors duration-150 ease-out hover:text-brand-charcoal"
           aria-label={ui('dismissAnnouncement')}
         >
           <X className="size-3.5" />

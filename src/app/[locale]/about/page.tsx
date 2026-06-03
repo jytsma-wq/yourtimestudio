@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
 import { teamBlur } from '@/lib/blur-placeholders';
+import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({
   params,
@@ -17,12 +18,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'About — Yourtimestudio',
+    title: `About — ${siteConfig.name}`,
     description:
       'Founder-led web studio in Batumi, Georgia. Dutch developer specializing in hospitality, medical, and beauty websites with sector-specific expertise.',
     path: '/about',
     locale: locale as Locale,
-    ogImage: '/og-default.png',
+    ogImage: siteConfig.assets.ogDefault,
   });
 }
 
@@ -94,7 +95,7 @@ export default async function AboutPage({
       {/* Founder Photo — prominent, large format */}
       <Section>
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-premium-xl aspect-21/9">
+          <div className="relative aspect-21/9 overflow-hidden rounded-md border border-border shadow-none">
             <Image
               src="/images/about-team.jpg"
               alt={t('image_alt')}
@@ -107,7 +108,7 @@ export default async function AboutPage({
             />
             <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-              <p className="text-brand-cream text-xl md:text-2xl font-semibold">Yourtimestudio</p>
+              <p className="text-brand-cream text-xl md:text-2xl font-semibold">{siteConfig.name}</p>
               <p className="text-brand-cream text-sm mt-1">{t('image_caption')}</p>
             </div>
           </div>

@@ -19,27 +19,32 @@ import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: 'Yourtimestudio',
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
   description:
-    'Founder-led websites for Batumi hotels, clinics, and beauty businesses that need direct bookings and qualified inquiries.',
+    'Clear websites, local SEO, and booking-focused digital systems for Batumi hotels, clinics, restaurants, salons, and service businesses.',
   icons: {
     icon: [
-      { url: '/brand/yourtimestudio-mark.png', type: 'image/png', sizes: '512x512' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png', sizes: '1024x1024' },
+      // TODO: Replace the temporary placeholder with the final brand mark asset.
+      { url: siteConfig.assets.mark, type: 'image/png', sizes: '512x512' },
+      { url: siteConfig.assets.faviconSvg, type: 'image/svg+xml' },
+      { url: siteConfig.assets.faviconPng, type: 'image/png', sizes: '1024x1024' },
     ],
     apple: [
-      { url: '/brand/yourtimestudio-mark.png', sizes: '512x512', type: 'image/png' },
+      // TODO: Replace the temporary placeholder with the final brand mark asset.
+      { url: siteConfig.assets.mark, sizes: '512x512', type: 'image/png' },
     ],
   },
-  manifest: '/manifest.json',
+  manifest: siteConfig.assets.manifest,
   openGraph: {
     images: [
       {
-        url: '/og-default.png',
+        url: siteConfig.assets.ogDefault,
         width: 1344,
         height: 768,
-        alt: 'Yourtimestudio - direct-booking and appointment-focused websites in Batumi',
+        alt: `${siteConfig.name} - clear websites for serious Batumi businesses`,
       },
     ],
   },

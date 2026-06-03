@@ -17,17 +17,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          "serene-coral": "#D4A5A5",
-          "serene-coral-darken": "#8A4F4F",
-          "sage-green": "#8DA699",
-          "sage-green-darken": "#4F675B",
-          charcoal: "#2D2D2D",
-          cream: "#F8F5F2",
-          "gray-100": "#F5F5F5",
-          "gray-200": "#EEEEEE",
-          "gray-300": "#E0E0E0",
-          "gray-500": "#757575",
-          "gray-600": "#686868",
+          "serene-coral": "#D6A21E",
+          "serene-coral-darken": "#5C4307",
+          "sage-green": "#A7B4BA",
+          "sage-green-darken": "#18324A",
+          charcoal: "#1F211E",
+          cream: "#F7F4EC",
+          "gray-100": "#EFECE4",
+          "gray-200": "#E6E1D6",
+          "gray-300": "#D7D1C4",
+          "gray-500": "#76746D",
+          "gray-600": "#5E625B",
         },
       },
       fontSize: {

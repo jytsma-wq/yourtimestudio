@@ -66,7 +66,7 @@ export function PricingCalculator() {
   };
 
   return (
-    <div className="bg-card bg-paper-texture border border-border rounded-xl p-6 md:p-8 shadow-md max-w-2xl mx-auto">
+    <div className="mx-auto max-w-2xl rounded-md border border-border bg-card p-6 shadow-none md:p-8">
       {/* Heading */}
       <div className="text-center mb-8">
         <h2 className="editorial-display text-2xl md:text-3xl font-semibold mb-2">
@@ -88,15 +88,15 @@ export function PricingCalculator() {
               key={opt.key}
               type="button"
               onClick={() => setSector(opt.key)}
-              className={`relative px-4 py-3 rounded-lg border text-sm font-medium transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100 ${
+              className={`relative rounded-md border px-4 py-3 text-sm font-medium transition-colors duration-150 ease-out ${
                 sector === opt.key
-                  ? 'border-brand-serene-coral bg-brand-serene-coral/10 text-foreground'
-                  : 'border-border bg-background text-muted-foreground hover:border-brand-serene-coral/40 hover:bg-brand-serene-coral/5'
+                  ? 'border-navy bg-muted text-foreground'
+                  : 'border-border bg-background text-muted-foreground hover:border-navy hover:bg-muted'
               }`}
             >
               {sectorLabels[opt.key]}
               {sector === opt.key && (
-                <span className="absolute -top-1.5 -right-1.5 w-3 h-3 rounded-full bg-brand-serene-coral" />
+                <span className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral" />
               )}
             </button>
           ))}
@@ -109,7 +109,7 @@ export function PricingCalculator() {
           <label className="text-sm font-medium text-foreground">
             {t('calculator_pages')}
           </label>
-          <span className="text-sm font-semibold text-brand-serene-coral-darken tabular-nums">{pages}</span>
+          <span className="text-sm font-semibold tabular-nums text-navy">{pages}</span>
         </div>
         <input
           type="range"
@@ -117,7 +117,7 @@ export function PricingCalculator() {
           max={20}
           value={pages}
           onChange={(e) => setPages(Number(e.target.value))}
-          className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-teal"
+          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-muted accent-navy"
         />
         <div className="flex justify-between mt-1">
           <span className="text-xs text-muted-foreground">5</span>
@@ -139,17 +139,17 @@ export function PricingCalculator() {
                 key={opt.key}
                 type="button"
                 onClick={() => toggleAddOn(opt.key)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100 ${
+                className={`flex w-full items-center justify-between rounded-md border px-4 py-3 transition-colors duration-150 ease-out ${
                   isActive
-                    ? 'border-brand-serene-coral bg-brand-serene-coral/10'
-                    : 'border-border bg-background hover:border-brand-serene-coral/40'
+                    ? 'border-navy bg-muted'
+                    : 'border-border bg-background hover:border-navy'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   {/* Toggle switch */}
                   <span
                     className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-200 ${
-                      isActive ? 'bg-brand-serene-coral' : 'bg-muted'
+                      isActive ? 'bg-navy' : 'bg-muted'
                     }`}
                   >
                     <span
@@ -162,7 +162,7 @@ export function PricingCalculator() {
                     {t(opt.labelKey)}
                   </span>
                 </div>
-                <span className={`text-sm tabular-nums ${isActive ? 'text-brand-serene-coral-darken font-semibold' : 'text-muted-foreground'}`}>
+                <span className={`text-sm tabular-nums ${isActive ? 'font-semibold text-navy' : 'text-muted-foreground'}`}>
                   +${price}
                 </span>
               </button>
@@ -174,7 +174,7 @@ export function PricingCalculator() {
       {/* Price display */}
       <div className="border-t border-border pt-6 mb-6">
         <div className="grid grid-cols-2 gap-6">
-          <div className="text-center p-4 rounded-lg bg-brand-gray-100">
+          <div className="rounded-md bg-muted p-4 text-center">
             <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
               {t('calculator_setup')}
             </p>
@@ -182,7 +182,7 @@ export function PricingCalculator() {
               ${setupTotal.toLocaleString()}
             </p>
           </div>
-          <div className="text-center p-4 rounded-lg bg-brand-gray-100">
+          <div className="rounded-md bg-muted p-4 text-center">
             <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
               {t('calculator_monthly')}
             </p>
@@ -197,7 +197,7 @@ export function PricingCalculator() {
       <Link href="/contact" className="block">
         <Button
           size="lg"
-          className="w-full bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-semibold"
+          className="w-full font-semibold"
         >
           {t('calculator_cta')}
         </Button>

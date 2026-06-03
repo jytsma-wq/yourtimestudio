@@ -44,8 +44,8 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
         {/* Logo + Tagline */}
         <div className="mb-10">
           <Image
-            src="/brand/yourtimestudio-logo.png"
-            alt="Yourtimestudio logo"
+            src={siteConfig.assets.logo}
+            alt={`${siteConfig.name} logo`}
             width={180}
             height={212}
             className="mb-4 h-auto w-36"
@@ -150,7 +150,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-start gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Yourtimestudio. {t('copyright')}
+            &copy; {new Date().getFullYear()} {siteConfig.name}. {t('copyright')}
           </p>
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             {launchLocales.map((loc, i) => (

@@ -1,7 +1,7 @@
 import { siteConfig } from '@/lib/site-config';
 
 const siteUrl = siteConfig.url;
-const logoUrl = `${siteUrl}/brand/yourtimestudio-logo.png`;
+const logoUrl = `${siteUrl}${siteConfig.assets.logo}`;
 const normalizedPhone = siteConfig.contact.whatsapp.replace(/\s/g, '');
 const sameAs = [
   siteConfig.social.instagram,
@@ -53,7 +53,7 @@ export function localBusinessSchema() {
     url: siteUrl,
     logo: logoUrl,
     description: siteConfig.description,
-    image: `${siteUrl}/og-default.png`,
+    image: `${siteUrl}${siteConfig.assets.ogDefault}`,
     ...(normalizedPhone ? { telephone: normalizedPhone } : {}),
     email: siteConfig.contact.email,
     address: {

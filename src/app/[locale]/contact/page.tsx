@@ -15,12 +15,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Contact — Yourtimestudio',
+    title: `Contact — ${siteConfig.name}`,
     description:
-      'Get in touch with Yourtimestudio for hospitality, medical, and beauty web design in Batumi, Georgia. Response within one business day.',
+      `Get in touch with ${siteConfig.name} for practical web design, local SEO, and booking-focused websites in Batumi, Georgia. Response within one business day.`,
     path: '/contact',
     locale: locale as Locale,
-    ogImage: '/og-default.png',
+    ogImage: siteConfig.assets.ogDefault,
   });
 }
 

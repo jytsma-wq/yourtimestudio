@@ -12,29 +12,20 @@ export async function TrustedByStrip() {
     t('client5'),
   ];
 
-  // Duplicate the list for seamless infinite scroll
-  const marqueeItems = [...clients, ...clients];
-
   return (
-    <section className="border-y border-border bg-card py-6 overflow-hidden">
+    <section className="overflow-hidden border-y border-border bg-card py-6">
       <p className="editorial-kicker text-center text-muted-foreground mb-5">
         {t('label')}
       </p>
-      <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
-
-        <div className="flex animate-marquee whitespace-nowrap">
-          {marqueeItems.map((name, i) => (
+      <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-10 gap-y-3 px-4 md:px-8">
+          {clients.map((name, i) => (
             <span
               key={i}
-              className="mx-8 shrink-0 font-sans text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+              className="shrink-0 font-sans text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
             >
-              {name} <span className="ml-8 text-brand-serene-coral-darken">/</span>
+              {name}
             </span>
           ))}
-        </div>
       </div>
     </section>
   );

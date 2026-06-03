@@ -4,6 +4,7 @@ import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import { siteConfig } from '@/lib/site-config';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -16,9 +17,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Privacy Policy — Yourtimestudio',
+    title: `Privacy Policy — ${siteConfig.name}`,
     description:
-      'Learn how Yourtimestudio collects, uses, and protects your personal data. Our privacy policy covers data collection, cookies, third-party services, and your rights.',
+      `Learn how ${siteConfig.name} collects, uses, and protects your personal data. Our privacy policy covers data collection, cookies, third-party services, and your rights.`,
     path: '/privacy',
     locale: locale as Locale,
     noIndex: true,

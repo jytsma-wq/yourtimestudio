@@ -172,7 +172,7 @@ export default async function AuditDetailPage({
             return (
               <div
                 key={index}
-                className="bg-card bg-paper-texture border border-border rounded-none p-6 shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl"
+                className="rounded-none border border-border bg-card p-6 shadow-none"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Badge className={`${tagColor} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
