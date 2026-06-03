@@ -602,6 +602,37 @@
     ],
     "cta": "Start with a fit call"
   },
+  "phoneFirst": {
+    "navLabel": "Phone-first system",
+    "sectionLabel": "Phone-first customer.",
+    "heading": "Built for the phone-first customer",
+    "intro": "Your customers search, compare, decide, and contact you from a phone. A website alone is not enough. Batumi Lighthouse connects your website, Google presence, visual content, social content, and booking flow into one practical digital system.",
+    "support": "One clear system: be found, be understood, be trusted, and be easy to contact.",
+    "primaryCta": "Request a website audit",
+    "secondaryCta": "View website examples",
+    "items": {
+      "website": {
+        "label": "Website",
+        "description": "Trust, structure, service pages, pricing clarity, multilingual content, and conversion-focused contact paths."
+      },
+      "google": {
+        "label": "Google presence",
+        "description": "Local discovery, reviews, maps visibility, opening hours, photos, and service information."
+      },
+      "visuals": {
+        "label": "Photos & short videos",
+        "description": "Practical images and short-form content for websites, Google Business Profile, and social media."
+      },
+      "social": {
+        "label": "Social content",
+        "description": "A steady stream of visual proof that keeps the business visible on the phone."
+      },
+      "booking": {
+        "label": "Booking flow",
+        "description": "Clear calls to action that turn attention into inquiries, reservations, appointments, or direct bookings."
+      }
+    }
+  },
   "about": {
     "heading": "About the studio",
     "story": "I'm a Dutch developer building practical websites in Batumi. Batumi Lighthouse exists for businesses that need clear structure, useful content, fast pages, and direct accountability.",

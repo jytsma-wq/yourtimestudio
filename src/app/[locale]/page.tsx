@@ -16,6 +16,7 @@ import { BlogTeaser } from '@/components/sections/BlogTeaser';
 import { CTABandSection } from '@/components/sections/CTABandSection';
 import { Section } from '@/components/shared/Section';
 import { TrustedByStrip } from '@/components/sections/TrustedByStrip';
+import { PhoneFirstSystemSection } from '@/components/sections/PhoneFirstSystemSection';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -63,34 +64,36 @@ export default async function LocalePage({
 
       <TrustedByStrip />
 
+      <PhoneFirstSystemSection number="02" />
+
       <div id="sectors" data-section-name="Solutions">
-        <SectorCardsSection locale={locale as Locale} number="02" />
+        <SectorCardsSection locale={locale as Locale} number="03" />
       </div>
 
       <div id="audit" data-section-name="Audit">
-        <AuditSection locale={locale as Locale} number="03" />
+        <AuditSection locale={locale as Locale} number="04" />
       </div>
 
       <div id="process" data-section-name="Process">
-        <ProcessSection locale={locale as Locale} number="04" />
+        <ProcessSection locale={locale as Locale} number="05" />
       </div>
 
       <div id="case-studies" data-section-name="Demo Briefs">
-        <CaseStudiesSection number="05" />
+        <CaseStudiesSection number="06" />
       </div>
 
       <div id="about" data-section-name="About">
-        <FounderSection locale={locale as Locale} number="06" />
+        <FounderSection locale={locale as Locale} number="07" />
       </div>
 
-      <ResultsBand locale={locale as Locale} number="07" />
+      <ResultsBand locale={locale as Locale} number="08" />
 
       <div id="pricing" data-section-name="Pricing">
-        <PricingSection locale={locale as Locale} number="08" />
+        <PricingSection locale={locale as Locale} number="09" />
       </div>
 
       <div id="faq" data-section-name="FAQ">
-        <Section variant="subtle" number="09">
+        <Section variant="subtle" number="10">
           <div className="text-center mb-12 md:mb-16">
             <p className="section-label">{t('sectionLabel')}</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">

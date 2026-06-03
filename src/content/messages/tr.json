@@ -602,6 +602,37 @@
     ],
     "cta": "Uygunluk görüşmesiyle başlayın"
   },
+  "phoneFirst": {
+    "navLabel": "Telefon öncelikli sistem",
+    "sectionLabel": "Telefon öncelikli müşteri.",
+    "heading": "Telefon öncelikli müşteri için kuruldu",
+    "intro": "Müşterileriniz telefondan arar, karşılaştırır, karar verir ve sizinle iletişime geçer. Tek başına bir web sitesi yeterli değildir. Batumi Lighthouse web sitenizi, Google varlığınızı, görsel içeriğinizi, sosyal içeriğinizi ve rezervasyon akışınızı tek pratik dijital sistemde birleştirir.",
+    "support": "Tek net sistem: bulunmak, anlaşılmak, güven vermek ve kolay iletişim kurdurmak.",
+    "primaryCta": "Web sitesi denetimi talep edin",
+    "secondaryCta": "Web sitesi örneklerini görün",
+    "items": {
+      "website": {
+        "label": "Web sitesi",
+        "description": "Güven, yapı, hizmet sayfaları, fiyat netliği, çok dilli içerik ve dönüşüm odaklı iletişim yolları."
+      },
+      "google": {
+        "label": "Google varlığı",
+        "description": "Yerel keşif, yorumlar, harita görünürlüğü, çalışma saatleri, fotoğraflar ve hizmet bilgileri."
+      },
+      "visuals": {
+        "label": "Fotoğraflar ve kısa videolar",
+        "description": "Web sitesi, Google Business Profile ve sosyal medya için pratik görseller ve kısa formatlı içerik."
+      },
+      "social": {
+        "label": "Sosyal içerik",
+        "description": "İşletmeyi telefonda görünür tutan düzenli görsel kanıt akışı."
+      },
+      "booking": {
+        "label": "Rezervasyon akışı",
+        "description": "Dikkati taleplere, rezervasyonlara, randevulara veya doğrudan rezervasyonlara çeviren net aksiyon çağrıları."
+      }
+    }
+  },
   "about": {
     "heading": "Stüdyo hakkında",
     "story": "Ben Aruba'da büyümüş, şimdi Batumi'de web siteleri geliştiren Hollandalı bir geliştiriciyim. Karayipler bana misafirperverliğin detaylarda olduğunu — ve kalitenin miktardan daha önemli olduğunu öğretti. Her projeye aynı yaklaşımı getiriyorum: odaklı, hassas ve kişisel.",
