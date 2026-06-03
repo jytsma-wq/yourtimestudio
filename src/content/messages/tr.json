@@ -1358,5 +1358,59 @@
     "home": "Ana sayfaya git",
     "audit": "Denetim iste",
     "contact": "İletişime geç"
+  },
+  "examplesUi": {
+    "page": {
+      "heading": "Web sitesi örnekleri",
+      "subtitle": "Batumi otelleri, klinikleri, salonları ve hizmet işletmeleri için neler yapılabileceğini gösteren gerçek işler, demo web siteleri ve sektörel örnekler.",
+      "note": "Bazı örnekler demo işler veya iç konseptlerdir. Çalışmayı dürüstçe değerlendirebilmeniz için açıkça etiketlenirler."
+    },
+    "home": {
+      "sectionLabel": "Demo özetleri",
+      "kicker": "Örnek yönler, sahte müşteri iddiaları değil.",
+      "heading": "Web sitesi örnekleri",
+      "cta": "Web sitesi örneklerini görün",
+      "note": "Demo ve iç örnekler açıkça etiketlenir. Gerçek müşteri işleri yayımlanmaya hazır olduğunda daha sonra eklenebilir."
+    },
+    "preview": {
+      "screenshotComingSoon": "Ekran görüntüsü yakında"
+    },
+    "fields": {
+      "features": "Özellikler",
+      "whatItShows": "Ne gösteriyor"
+    },
+    "proofLine": "Kanıt: {level}",
+    "typeLabels": {
+      "realProject": "Gerçek proje",
+      "demoBuild": "Demo çalışma",
+      "concept": "Konsept",
+      "prototype": "Prototip",
+      "ownSite": "Kendi site"
+    },
+    "statusLabels": {
+      "live": "Yayında",
+      "inDevelopment": "Geliştirme aşamasında",
+      "demoOnly": "Sadece demo",
+      "private": "Özel"
+    },
+    "proofLabels": {
+      "verifiedLive": "Yayında doğrulandı",
+      "demo": "Demo",
+      "concept": "Konsept",
+      "privateClient": "Özel müşteri",
+      "internal": "İç çalışma"
+    },
+    "sectorLabels": {
+      "hospitality": "Konaklama",
+      "medical": "Medikal",
+      "beauty": "Güzellik",
+      "studio": "Stüdyo"
+    },
+    "buttons": {
+      "viewWebsite": "Web sitesini aç",
+      "viewDemo": "Demoyu aç",
+      "viewRepository": "Depoyu aç",
+      "discussSimilarWebsite": "Benzer bir web sitesini konuşalım"
+    }
   }
 }

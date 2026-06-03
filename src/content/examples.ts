@@ -50,36 +50,6 @@ export type Example = {
 
 export const exampleScreenshotDirectory = '/examples' as const;
 
-export const exampleTypeLabels: Record<ExampleType, string> = {
-  'real-project': 'Real project',
-  'demo-build': 'Demo build',
-  concept: 'Concept',
-  prototype: 'Prototype',
-  'own-site': 'Own site',
-};
-
-export const exampleStatusLabels: Record<ExampleStatus, string> = {
-  live: 'Live',
-  'in-development': 'In development',
-  'demo-only': 'Demo only',
-  private: 'Private',
-};
-
-export const exampleProofLabels: Record<ExampleProofLevel, string> = {
-  'verified-live': 'Verified live',
-  demo: 'Demo',
-  concept: 'Concept',
-  'private-client': 'Private client',
-  internal: 'Internal',
-};
-
-export const exampleSectorLabels: Record<ExampleSector, string> = {
-  hospitality: 'Hospitality',
-  medical: 'Medical',
-  beauty: 'Beauty',
-  studio: 'Studio',
-};
-
 export const examples: Example[] = [
   {
     id: 'boutique-hotel-direct-booking-demo',

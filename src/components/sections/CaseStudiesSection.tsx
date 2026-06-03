@@ -2,25 +2,24 @@ import { ArrowRight, LayoutTemplate } from 'lucide-react';
 import { ExamplePreviewPanel } from '@/components/examples/ExamplePreviewPanel';
 import { StaggerContainer, StaggerItem } from '@/components/motion';
 import { Link } from '@/lib/i18n/navigation';
+import { getExampleUiLabels } from '@/lib/examples/labels';
 import { Section } from '@/components/shared/Section';
 import {
-  exampleProofLabels,
-  exampleSectorLabels,
-  exampleStatusLabels,
-  exampleTypeLabels,
   featuredExamples,
 } from '@/content/examples';
 
-export function CaseStudiesSection({ number }: { number?: string }) {
+export async function CaseStudiesSection({ number }: { number?: string }) {
+  const labels = await getExampleUiLabels();
+
   return (
     <Section variant="dark" className="relative overflow-hidden" number={number}>
       <div className="mb-12 grid gap-6 border-b border-background/12 pb-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
         <div>
-          <p className="section-label text-background">Demo briefs</p>
-          <p className="editorial-kicker text-background">Example directions, not fake client claims.</p>
+          <p className="section-label text-background">{labels.home.sectionLabel}</p>
+          <p className="editorial-kicker text-background">{labels.home.kicker}</p>
         </div>
         <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl text-background">
-          Website examples
+          {labels.home.heading}
         </h2>
       </div>
 
@@ -32,13 +31,14 @@ export function CaseStudiesSection({ number }: { number?: string }) {
                 <ExamplePreviewPanel
                   example={example}
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  screenshotPlaceholder={labels.preview.screenshotComingSoon}
                   tone="dark"
                   className="aspect-[4/3] border-b border-background/12 bg-ink"
                   imageClassName="opacity-90"
                 />
                 <div className="border-b border-background/12 px-5 py-4 md:px-6">
                   <p className="editorial-kicker text-background">
-                    {exampleTypeLabels[example.type]} / {exampleStatusLabels[example.status]}
+                    {labels.typeLabels[example.type]} / {labels.statusLabels[example.status]}
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold leading-tight text-background">
                     {example.title}
@@ -49,7 +49,7 @@ export function CaseStudiesSection({ number }: { number?: string }) {
                 <div className="inline-flex items-center gap-2">
                   <LayoutTemplate className="size-4 text-brand-serene-coral-darken" />
                   <span className="text-sm font-semibold text-background">
-                    {exampleSectorLabels[example.sector]}
+                    {labels.sectorLabels[example.sector]}
                   </span>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-background">
@@ -64,7 +64,7 @@ export function CaseStudiesSection({ number }: { number?: string }) {
                 </ul>
                 <div className="mt-4 border-t border-background/12 pt-4">
                   <p className="editorial-kicker text-background/78">
-                    {exampleProofLabels[example.proofLevel]} proof
+                    {labels.proofLine(example.proofLevel)}
                   </p>
                   <p className="mt-2 text-xs leading-relaxed text-background/72">
                     {example.disclaimer}
@@ -74,7 +74,7 @@ export function CaseStudiesSection({ number }: { number?: string }) {
                   href="/work"
                   className="mt-5 flex items-center gap-2 text-sm font-semibold text-background transition-colors hover:text-background"
                 >
-                  See website examples
+                  {labels.home.cta}
                   <ArrowRight className="size-4" />
                 </Link>
               </div>
@@ -84,7 +84,7 @@ export function CaseStudiesSection({ number }: { number?: string }) {
       </StaggerContainer>
 
       <p className="mt-8 max-w-2xl text-sm leading-relaxed text-background">
-        Demo and internal examples are clearly labelled. Real client work can be added later when it is ready to publish.
+        {labels.home.note}
       </p>
     </Section>
   );

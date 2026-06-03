@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 type ExamplePreviewPanelProps = {
   example: Pick<Example, 'title' | 'screenshot' | 'imageAlt'>;
   sizes: string;
+  screenshotPlaceholder: string;
   className?: string;
   imageClassName?: string;
   tone?: 'light' | 'dark';
@@ -14,6 +15,7 @@ type ExamplePreviewPanelProps = {
 export function ExamplePreviewPanel({
   example,
   sizes,
+  screenshotPlaceholder,
   className,
   imageClassName,
   tone = 'light',
@@ -57,7 +59,7 @@ export function ExamplePreviewPanel({
                 isDark ? 'text-background' : 'text-foreground',
               )}
             >
-              Screenshot coming soon
+              {screenshotPlaceholder}
             </p>
             <p
               className={cn(

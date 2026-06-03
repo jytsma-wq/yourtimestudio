@@ -1358,5 +1358,59 @@
     "home": "Go home",
     "audit": "Request an audit",
     "contact": "Contact us"
+  },
+  "examplesUi": {
+    "page": {
+      "heading": "Website Examples",
+      "subtitle": "Real builds, demo websites, and sector-specific examples showing what is possible for Batumi hotels, clinics, salons, and service businesses.",
+      "note": "Some examples are demo builds or internal concepts. They are clearly labelled so you can judge the work honestly."
+    },
+    "home": {
+      "sectionLabel": "Demo briefs",
+      "kicker": "Example directions, not fake client claims.",
+      "heading": "Website examples",
+      "cta": "See website examples",
+      "note": "Demo and internal examples are clearly labelled. Real client work can be added later when it is ready to publish."
+    },
+    "preview": {
+      "screenshotComingSoon": "Screenshot coming soon"
+    },
+    "fields": {
+      "features": "Features",
+      "whatItShows": "What it shows"
+    },
+    "proofLine": "{level} proof",
+    "typeLabels": {
+      "realProject": "Real project",
+      "demoBuild": "Demo build",
+      "concept": "Concept",
+      "prototype": "Prototype",
+      "ownSite": "Own site"
+    },
+    "statusLabels": {
+      "live": "Live",
+      "inDevelopment": "In development",
+      "demoOnly": "Demo only",
+      "private": "Private"
+    },
+    "proofLabels": {
+      "verifiedLive": "Verified live",
+      "demo": "Demo",
+      "concept": "Concept",
+      "privateClient": "Private client",
+      "internal": "Internal"
+    },
+    "sectorLabels": {
+      "hospitality": "Hospitality",
+      "medical": "Medical",
+      "beauty": "Beauty",
+      "studio": "Studio"
+    },
+    "buttons": {
+      "viewWebsite": "View website",
+      "viewDemo": "View demo",
+      "viewRepository": "View repository",
+      "discussSimilarWebsite": "Discuss a similar website"
+    }
   }
 }

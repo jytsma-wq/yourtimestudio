@@ -15,20 +15,11 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
+import { getExampleUiLabels } from '@/lib/examples/labels';
 import {
   examples,
-  exampleProofLabels,
-  exampleSectorLabels,
-  exampleStatusLabels,
-  exampleTypeLabels,
   type ExampleSector,
 } from '@/content/examples';
-
-const pageHeading = 'Website Examples';
-const pageSubtitle =
-  'Real builds, demo websites, and sector-specific examples showing what is possible for Batumi hotels, clinics, salons, and service businesses.';
-const pageNote =
-  'Some examples are demo builds or internal concepts. They are clearly labelled so you can judge the work honestly.';
 
 const sectorIcons: Record<ExampleSector, ElementType> = {
   hospitality: Building2,
@@ -53,6 +44,7 @@ export default async function WorkPage({
   setRequestLocale(locale);
 
   const tNav = await getTranslations('nav');
+  const labels = await getExampleUiLabels();
 
   return (
     <>
@@ -65,16 +57,16 @@ export default async function WorkPage({
 
         <div className="mb-10 max-w-3xl md:mb-12">
           <h1 className="editorial-display mb-4 text-4xl md:text-5xl">
-            {pageHeading}
+            {labels.page.heading}
           </h1>
           <p className="text-lg leading-[1.75] text-muted-foreground md:text-xl">
-            {pageSubtitle}
+            {labels.page.subtitle}
           </p>
         </div>
 
         <div className="max-w-3xl border-l border-border pl-4">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            {pageNote}
+            {labels.page.note}
           </p>
         </div>
       </Section>
@@ -93,6 +85,7 @@ export default async function WorkPage({
                 <ExamplePreviewPanel
                   example={example}
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  screenshotPlaceholder={labels.preview.screenshotComingSoon}
                   className="aspect-[16/10] border-b border-border"
                 />
 
@@ -102,13 +95,13 @@ export default async function WorkPage({
                       <Icon className="size-4" />
                     </span>
                     <Badge className={`${colorClass} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
-                      {exampleSectorLabels[example.sector]}
+                      {labels.sectorLabels[example.sector]}
                     </Badge>
                     <Badge variant="outline" className="rounded-none text-xs font-semibold uppercase tracking-wide">
-                      {exampleTypeLabels[example.type]}
+                      {labels.typeLabels[example.type]}
                     </Badge>
                     <Badge variant="outline" className="rounded-none text-xs font-semibold uppercase tracking-wide">
-                      {exampleStatusLabels[example.status]}
+                      {labels.statusLabels[example.status]}
                     </Badge>
                   </div>
 
@@ -123,7 +116,9 @@ export default async function WorkPage({
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <p className="editorial-kicker mb-3 text-muted-foreground">Features</p>
+                      <p className="editorial-kicker mb-3 text-muted-foreground">
+                        {labels.fields.features}
+                      </p>
                       <ul className="space-y-2">
                         {example.features.slice(0, 5).map((feature) => (
                           <li key={feature} className="text-sm leading-relaxed text-foreground">
@@ -134,7 +129,9 @@ export default async function WorkPage({
                     </div>
 
                     <div>
-                      <p className="editorial-kicker mb-3 text-muted-foreground">What it shows</p>
+                      <p className="editorial-kicker mb-3 text-muted-foreground">
+                        {labels.fields.whatItShows}
+                      </p>
                       <ul className="space-y-2">
                         {example.whatItShows.slice(0, 3).map((item) => (
                           <li key={item} className="text-sm leading-relaxed text-muted-foreground">
@@ -158,7 +155,7 @@ export default async function WorkPage({
 
                   <div className="mt-auto border-t border-border pt-4">
                     <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
-                      {exampleProofLabels[example.proofLevel]} proof
+                      {labels.proofLine(example.proofLevel)}
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       {example.disclaimer}
@@ -169,7 +166,7 @@ export default async function WorkPage({
                     {example.liveUrl && (
                       <Button asChild>
                         <a href={example.liveUrl} target="_blank" rel="noopener noreferrer">
-                          View website
+                          {labels.buttons.viewWebsite}
                           <ArrowUpRight className="size-4" />
                         </a>
                       </Button>
@@ -177,7 +174,7 @@ export default async function WorkPage({
                     {example.demoUrl && (
                       <Button asChild variant="outline">
                         <a href={example.demoUrl} target="_blank" rel="noopener noreferrer">
-                          View demo
+                          {labels.buttons.viewDemo}
                           <ArrowUpRight className="size-4" />
                         </a>
                       </Button>
@@ -186,14 +183,14 @@ export default async function WorkPage({
                       <Button asChild variant="outline">
                         <a href={example.repositoryUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="size-4" />
-                          View repository
+                          {labels.buttons.viewRepository}
                         </a>
                       </Button>
                     )}
                     <Button asChild variant="outline">
                       <Link href="/contact">
                         <MessageSquare className="size-4" />
-                        {example.ctaLabel}
+                        {labels.buttons.discussSimilarWebsite}
                       </Link>
                     </Button>
                   </div>
