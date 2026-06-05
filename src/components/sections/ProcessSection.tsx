@@ -1,15 +1,10 @@
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Hammer, Palette, Rocket, Search } from 'lucide-react';
-import { type Locale } from '@/lib/i18n/config';
 import { Link } from '@/lib/i18n/navigation';
-
-interface ProcessSectionProps {
-  locale: Locale;
-}
 
 const stepIcons = [Search, Palette, Hammer, Rocket];
 
-export async function ProcessSection({ locale }: ProcessSectionProps) {
+export async function ProcessSection() {
   const t = await getTranslations('process');
 
   return (

@@ -1,5 +1,4 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { type Locale } from '@/lib/i18n/config';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';

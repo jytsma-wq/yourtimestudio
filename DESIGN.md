@@ -164,7 +164,7 @@ The site is **dark-first** with warm paper contrast sections.
 
 ## Typography
 
-Use **Geist Sans** for body and **Geist Mono** for labels and code. Font files exist in `/public/fonts/` — they MUST be wired through `next/font/local`.
+Use **Geist Sans** for body and **Geist Mono** for labels and code. Font files live in `src/fonts/` and MUST be wired through `next/font/local`.
 
 ### Scale
 

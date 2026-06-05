@@ -2,13 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
-import { type Locale } from '@/lib/i18n/config';
 
-interface CTABandSectionProps {
-  locale: Locale;
-}
-
-export async function CTABandSection({ locale }: CTABandSectionProps) {
+export async function CTABandSection() {
   const t = await getTranslations('ctaBand');
 
   return (

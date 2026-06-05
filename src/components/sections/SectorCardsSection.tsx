@@ -1,12 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Check, Monitor, Globe, Zap, Search, BarChart3 } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
-import { type Locale } from '@/lib/i18n/config';
 import { sectorKeys, sectors } from '@/lib/sector-config';
-
-interface SectorCardsSectionProps {
-  locale: Locale;
-}
 
 const sectorIcons = {
   hospitality: [Monitor, Globe, Zap],
@@ -20,7 +15,7 @@ const sectorTechChips = {
   beauty: ['Appointment flow', 'Service menu', 'Instagram-to-booking', 'Location trust'],
 };
 
-export async function SectorCardsSection({ locale }: SectorCardsSectionProps) {
+export async function SectorCardsSection() {
   const t = await getTranslations('sectors');
 
   return (

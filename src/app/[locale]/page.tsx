@@ -57,7 +57,7 @@ export default async function LocalePage({
 
       {/* 02 — Sector systems: three website systems */}
       <div id="sectors" data-section-name="Solutions">
-        <SectorCardsSection locale={locale as Locale} />
+        <SectorCardsSection />
       </div>
 
       {/* 03 — Work: concept system previews */}
@@ -67,7 +67,7 @@ export default async function LocalePage({
 
       {/* 04 — Process: technical build pipeline */}
       <div id="process" data-section-name="Process">
-        <ProcessSection locale={locale as Locale} />
+        <ProcessSection />
       </div>
 
       {/* 05 — Founder: technical authority */}
@@ -81,7 +81,7 @@ export default async function LocalePage({
       </div>
 
       {/* 07 — CTA: strong dark closing */}
-      <CTABandSection locale={locale as Locale} />
+      <CTABandSection />
     </>
   );
 }
