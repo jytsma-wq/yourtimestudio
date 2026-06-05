@@ -3,10 +3,6 @@
 import { useTranslations } from 'next-intl';
 import { Check, X, Minus } from 'lucide-react';
 
-interface ComparisonTableProps {
-  locale: string;
-}
-
 const featureKeys = [
   'pages', 'service_menu', 'local_seo', 'multilingual', 'booking_integration',
   'doctor_profiles', 'structured_data', 'review_system', 'consultation_form',
@@ -38,31 +34,31 @@ const planFeatures: Record<string, Record<string, 'yes' | 'no' | 'partial'>> = {
   }
 };
 
-export function ComparisonTable({ locale }: ComparisonTableProps) {
+export function ComparisonTable() {
   const t = useTranslations('pricing');
 
   function FeatureIcon({ value }: { value: 'yes' | 'no' | 'partial' }) {
-    if (value === 'yes') return <Check className="size-4 text-brand-sage-green-darken" />;
-    if (value === 'no') return <X className="size-4 text-muted-foreground" />;
-    return <Minus className="size-4 text-brand-serene-coral-darken" />;
+    if (value === 'yes') return <Check className="size-4 text-success" />;
+    if (value === 'no') return <X className="size-4 text-oxide" />;
+    return <Minus className="size-4 text-sea-bright" />;
   }
 
   return (
     <div className="mt-16">
-      <h3 className="text-2xl font-semibold text-left mb-8">
+      <h3 className="mb-8 text-left text-2xl font-semibold text-ink">
         {t('comparison_heading')}
       </h3>
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+      <div className="overflow-x-auto rounded-md border border-hairline bg-surface">
+        <table className="w-full border-collapse text-ink">
           <thead>
-            <tr className="border-b border-border">
-              <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground sticky left-0 bg-card will-change-transform z-10">
+            <tr className="border-b border-hairline">
+              <th className="sticky left-0 z-10 bg-surface px-4 py-3 text-left text-sm font-medium text-copy-muted will-change-transform">
                 {t('feature_label')}
               </th>
               {['beauty', 'medical', 'hospitality'].map(key => (
-                <th key={key} className="text-center py-3 px-4 text-sm font-semibold">
+                <th key={key} className="px-4 py-3 text-center text-sm font-semibold">
                   <span className={`inline-block size-2 mr-2 ${
-                    key === 'beauty' ? 'bg-brand-serene-coral' : key === 'medical' ? 'bg-brand-sage-green-darken' : 'bg-brand-sage-green-darken'
+                    key === 'beauty' ? 'bg-oxide' : key === 'medical' ? 'bg-sea-bright' : 'bg-sea'
                   }`} />
                   {t(`${key}.name`)}
                 </th>
@@ -71,12 +67,12 @@ export function ComparisonTable({ locale }: ComparisonTableProps) {
           </thead>
           <tbody>
             {featureKeys.map(key => (
-              <tr key={key} className="border-b border-border/50 hover:bg-brand-gray-100/50 transition-colors">
-                <td className="py-3 px-4 text-sm text-foreground sticky left-0 bg-card will-change-transform z-10">
+              <tr key={key} className="border-b border-hairline transition-colors hover:bg-surface-elevated/50">
+                <td className="sticky left-0 z-10 bg-surface px-4 py-3 text-sm text-ink will-change-transform">
                   {t(`comparison.${key}`)}
                 </td>
                 {['beauty', 'medical', 'hospitality'].map(plan => (
-                  <td key={plan} className="text-center py-3 px-4">
+                  <td key={plan} className="px-4 py-3 text-center">
                     <FeatureIcon value={planFeatures[plan][key]} />
                   </td>
                 ))}

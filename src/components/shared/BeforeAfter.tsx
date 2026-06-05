@@ -70,7 +70,6 @@ export function BeforeAfter({
       onPointerUp={handlePointerUp}
       style={{ cursor: isDragging ? 'grabbing' : 'col-resize' }}
     >
-      {/* After image (full, underneath) */}
       <Image
         src={afterSrc}
         alt={afterAlt}
@@ -81,7 +80,6 @@ export function BeforeAfter({
         blurDataURL={afterBlur}
       />
 
-      {/* Before image (clipped to show left portion only) */}
       <div
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -97,27 +95,23 @@ export function BeforeAfter({
         />
       </div>
 
-      {/* Labels */}
-      <div className="absolute top-2 left-2 bg-ink/60 text-brand-cream text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
+      <div className="pointer-events-none absolute left-2 top-2 z-10 rounded-md border border-hairline bg-surface/90 px-2 py-0.5 text-xs font-semibold text-ink">
         Before
       </div>
-      <div className="absolute top-2 right-2 bg-ink/60 text-brand-cream text-xs font-semibold px-2 py-0.5 rounded z-10 pointer-events-none">
+      <div className="pointer-events-none absolute right-2 top-2 z-10 rounded-md border border-hairline bg-surface/90 px-2 py-0.5 text-xs font-semibold text-ink">
         After
       </div>
 
-      {/* Divider line + handle */}
       <div
         className="absolute top-0 bottom-0 z-20 pointer-events-none"
         style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
       >
-        {/* Vertical line */}
-        <div className="w-0.5 h-full bg-brand-cream/80 mx-auto" />
+        <div className="w-0.5 h-full bg-ink/80 mx-auto" />
 
-        {/* Circular handle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-cream shadow-lg flex items-center justify-center pointer-events-auto cursor-col-resize">
+        <div className="pointer-events-auto absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-col-resize items-center justify-center rounded-md border border-hairline bg-paper text-ink-dark">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 10L4 10M4 10L6 8M4 10L6 12" stroke="var(--ink)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M13 10L16 10M16 10L14 8M16 10L14 12" stroke="var(--ink)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7 10L4 10M4 10L6 8M4 10L6 12" stroke="var(--primitive-ink-dark)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M13 10L16 10M16 10L14 8M16 10L14 12" stroke="var(--primitive-ink-dark)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>

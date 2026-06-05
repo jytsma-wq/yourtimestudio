@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
 const nextConfig: NextConfig = {
   output: "standalone",
   reactStrictMode: true,
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },

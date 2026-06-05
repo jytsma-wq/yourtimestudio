@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Yourtimestudio - პირდაპირი ჯავშნის ვებსაიტები ბათუმის სასტუმროებისთვის, კლინიკებისა და სტუდიებისთვის",
-    "description": "დამფუძნებლის მიერ მართული ვებდიზაინი, ადგილობრივი SEO, ჯავშნის პროცესები და ფოტოგრაფიის მიმართულება ბათუმის მომსახურების ბიზნესებისთვის."
+    "title": "Yourtimestudio — ვებსაიტების განვითარების სტუდია ბათუმში",
+    "description": "დამფუძნებლის მიერ მართული ვებსაიტების განვითარება ბათუმის სასტუმროებისთვის, კლინიკებისთვის, სილამაზის სტუდიებისთვის და მომსახურების ბიზნესებისთვის."
   },
   "nav": {
     "home": "მთავარი",
@@ -14,29 +14,25 @@
     "insights": "ინსაითები",
     "pricing": "ფასები",
     "about": "ჩვენს შესახებ",
-    "contact": "კონტაქტი"
+    "contact": "კონტაქტი",
+    "brand_descriptor": "ვებ დეველოპმენტი · ბათუმი"
   },
   "hero": {
     "eyebrow": "ბათუმის ვებ სტუდია დამფუძნებლის მართვით",
-    "title": "პირდაპირი ჯავშნის ვებსაიტები ბათუმის სასტუმროებისთვის, კლინიკებისა და სტუდიებისთვის",
-    "subtitle": "ვქმნი სწრაფ მრავალენოვან ვებსაიტებს ადგილობრივი SEO-თი, ჯავშნის პროცესებით და ფოტოგრაფიის მიმართულებით ბათუმის ბიზნესებისთვის, რომლებსაც არ სურთ ზოგად შაბლონს დაემსგავსონ.",
+    "title": "ვებსაიტები, რომლებიც ადგილობრივ ბიზნესებს ჯავშნის სისტემებად აქცევს.",
+    "subtitle": "დამფუძნებლის მიერ მართული ვებდეველოპმენტი, UX სტრუქტურა, ადგილობრივი SEO, მრავალენოვანი გვერდები და ჯავშნის პროცესები ბათუმის ბიზნესებისთვის, რომლებსაც საერთაშორისო კლიენტები ჰყავთ.",
     "cta_primary": "ვებსაიტის აუდიტის მოთხოვნა",
-    "cta_secondary": "სექტორული გეგმების ნახვა",
+    "cta_secondary": "ფასების პაკეტების ნახვა",
     "getQuote": "ფასის მიღება",
     "proof_band": [
-      "დამფუძნებლის მართვით",
-      "ფოტოგრაფის მხარდაჭერით",
-      "მრავალენოვანი",
-      "Hostinger-ისთვის მზად"
+      "დამფუძნებლის მიერ შექმნილი",
+      "ადგილობრივი SEO შედის",
+      "მრავალენოვანი სტრუქტურა",
+      "ჯავშანზე ორიენტირებული UX"
     ],
     "sectionLabel": "ბათუმის ვებ სტუდია დამფუძნებლის მართვით.",
-    "title1": "პირდაპირი ჯავშნის ვებსაიტები",
-    "title2": "სასტუმროებისთვის, კლინიკებისა და სტუდიებისთვის",
-    "typewriter": {
-      "hotel": "ჯავშნისთვის მზად სასტუმროს ვებსაიტები",
-      "clinic": "ნდობაზე ორიენტირებული კლინიკის ვებსაიტები",
-      "salon": "ჩაწერაზე ორიენტირებული სილამაზის ვებსაიტები"
-    },
+    "title1": "ვებსაიტები, რომლებიც ადგილობრივ ბიზნესებს აქცევს",
+    "title2": "ჯავშნის სისტემებად.",
     "cards": {
       "hospitality": {
         "name": "სასტუმრო ბიზნესი",
@@ -152,15 +148,52 @@
     "sectionLabel": "როგორ ვმუშაობ.",
     "founder": {
       "sectionLabel": "როგორ ვმუშაობ.",
-      "heading": "ერთი პასუხისმგებელი შემქმნელი. სპეციალისტის მხარდაჭერა იქ, სადაც საჭიროა.",
+      "heading": "პირდაპირ Jasper-თან ერთად შექმნილი.",
       "statClients": "ძირითადი სექტორები",
       "statLanguages": "დაგეგმილი ენები",
       "statAvailable": "ვიღებ შერჩეულ პროექტებს",
-      "bio": "Yourtimestudio არის ჩემი დამფუძნებლის მიერ მართული ვებ სტუდია ბათუმში. თქვენ პირდაპირ ჩემთან მუშაობთ სტრატეგიაზე, დიზაინზე, კოდზე, SEO-ზე და გაშვებაზე. როცა პროექტს ორიგინალური ვიზუალური მასალა სჭირდება, ვიყენებ პროფესიონალი ფოტოგრაფის მხარდაჭერას და არა ზოგად სტოკ ფოტოებს.",
+      "bio": "მე ვარ Jasper Tjeerd IJtsma, ნიდერლანდელი ვებსაიტების დეველოპერი ბათუმში. Yourtimestudio არის ფოკუსირებული სტუდია, სადაც ადგილობრივი მომსახურების ბიზნესებისთვის ჯავშანზე ორიენტირებულ ვებსაიტებს ვქმნი.",
+      "story": [
+        "Yourtimestudio დავიწყე მას შემდეგ, რაც დავინახე, რამდენი ძლიერი ბათუმის ბიზნესი კარგავს ნდობას ონლაინ ნელი, გაუგებარი ან ზოგადი ვებსაიტების გამო.",
+        "ვქმნი ფოკუსირებულ ვებსაიტებს სასტუმროებისთვის, კლინიკებისთვის, სტუდიებისთვის და მომსახურების ბიზნესებისთვის, სადაც მნიშვნელოვანია ჯავშანი, ადგილობრივი SEO, მრავალენოვანი UX და სანდოობა.",
+        "კლიენტები პირდაპირ ჩემთან მუშაობენ სტრუქტურიდან და დიზაინიდან frontend აწყობამდე, გაშვებამდე და გაუმჯობესებამდე, რაც ხარისხსა და ანგარიშვალდებულებას ნათელს ხდის."
+      ],
       "location": "ბათუმში დაფუძნებული",
-      "since": "შერჩეული პროექტები",
+      "since": "ნიდერლანდელი დამფუძნებელი",
       "cta": "პროექტის დაწყება",
       "imageAlt": "Yourtimestudio-ს დამფუძნებლის სამუშაო სივრცე"
+    },
+    "operating": {
+      "label": "მუშაობის მოდელი",
+      "heading": "ერთი პასუხისმგებელი შემქმნელი დიაგნოსტიკიდან გაუმჯობესებამდე.",
+      "items": {
+        "diagnose": "დიაგნოსტიკა",
+        "structure": "სტრუქტურა",
+        "design": "დიზაინი",
+        "build": "აწყობა",
+        "launch": "გაშვება",
+        "improve": "გაუმჯობესება"
+      }
+    },
+    "direct": {
+      "label": "რას ვაკეთებ პირდაპირ",
+      "items": {
+        "ux": "UX სტრუქტურა",
+        "frontend": "frontend implementation",
+        "localSeo": "ადგილობრივი SEO საფუძვლები",
+        "multilingual": "მრავალენოვანი setup",
+        "checks": "performance/accessibility checks",
+        "leadFlows": "ფორმები და lead flows"
+      }
+    },
+    "not_fake": {
+      "label": "რას არ ვაყალბებ",
+      "items": {
+        "numbers": "ყალბი კლიენტების რაოდენობის გარეშე",
+        "decoration": "დეკორაციაზე პირველ რიგში აგებული ვებსაიტების გარეშე",
+        "templates": "გადატვირთული შაბლონების გარეშე",
+        "guarantees": "ბუნდოვანი გარანტიების გარეშე"
+      }
     },
     "features": {
       "sectionLabel": "რატომ მუშაობს ეს მოდელი.",
@@ -187,330 +220,536 @@
     }
   },
   "pricing": {
-    "heading": "ფასები",
-    "subtitle": "ტიპიური ინვესტიციის დიაპაზონები ერთპიროვანი სპეციალისტი სტუდიისთვის.",
+    "heading": "Clear website development scopes.",
+    "subtitle": "Typical ranges for founder-led website development, technical setup, content structure, and monthly care. Final proposals are scoped after the business model, content needs, integrations, and launch requirements are reviewed.",
+    "hero_eyebrow": "Pricing system",
+    "hero_note_label": "How ranges work",
+    "hero_note": "These are planning ranges, not one-click packages. A scoped proposal confirms pages, integrations, content responsibilities, timeline, and monthly support before work begins.",
+    "hero_points": [
+      "Setup covers strategy, UX, design, development, launch, and basic SEO.",
+      "Monthly care covers hosting coordination, maintenance, monitoring, and small updates.",
+      "Integrations, photography, and multilingual content are scoped separately when needed."
+    ],
+    "comparison_eyebrow": "ვებსაიტის პაკეტები",
+    "comparison_heading": "ვებსაიტის დეველოპმენტის პაკეტები",
+    "comparison_subtitle": "სამი build scope მომსახურების ბიზნესებისთვის, რომლებსაც სჭირდებათ უკეთესი ჯავშნის, ჩაწერის, კონსულტაციის ან პირდაპირი მოთხოვნის გზა.",
+    "audit_section_eyebrow": "დიაგნოსტიკური პროდუქტი",
+    "audit_section_heading": "ჯერ build-ისთვის მზად არ ხართ? დაიწყეთ აუდიტით.",
+    "audit_section_subtitle": "აუდიტი არის ცალკე ტექნიკური და კომერციული review ბიზნესებისთვის, რომლებსაც სრული ვებსაიტის build-მდე მკაფიო დიაგნოზი სჭირდებათ.",
     "beauty": {
-      "name": "სილამაზის ონლაინ პრეზენსი",
-      "best_fit": "პატარა სილამაზის სალონები, მედსპა-ები, ფრჩხილისა და თმის სტუდიები",
-      "setup": "$700–$1,200",
-      "monthly": "$59–$99/თვე",
+      "scope_label": "Beauty scope",
+      "name": "Beauty Presence System",
+      "best_fit": "Salons, beauty studios, medspas, nail studios, hair studios, and small local service businesses.",
+      "outcome": "A clearer service menu, trust layer, and appointment path that turns social and search visitors into qualified enquiries.",
+      "setup": "$900-$1,600",
+      "monthly": "$69-$119/mo",
       "includes": [
-        "5–8 გვერდი",
-        "სერვისების მენიუ",
-        "ფასების სექცია",
-        "ადგილობრივი SEO საფუძვლები",
-        "GBP მხარდაჭერა",
-        "კონტაქტი/WhatsApp პროცესი"
+        "Service menu and pricing structure",
+        "Appointment and WhatsApp request flow",
+        "Gallery, reviews, and location trust sections",
+        "Core pages for services, team, contact, and offers"
       ],
-      "best_upsells": [
-        "პრომო სადესანტო გვერდები",
-        "მიმოხილვების შეგროვების სისტემა",
-        "Instagram შინაარსის სისტემა"
+      "technical": [
+        "Responsive Next.js build",
+        "Local business schema basics",
+        "Analytics and form tracking setup"
+      ],
+      "not_included": [
+        "Professional photography production",
+        "Paid advertising management",
+        "Custom booking platform development"
       ]
     },
     "medical": {
-      "name": "კლინიკის ნდობის პლატფორმა",
-      "best_fit": "სტომატოლოგიური, ესთეტიკური, ველნეს, სპეციალიზებული კლინიკები",
-      "setup": "$1,500–$2,750",
-      "monthly": "$99–$189/თვე",
+      "scope_label": "Clinic scope",
+      "name": "Clinic Trust Platform",
+      "best_fit": "Dental, aesthetic, wellness, specialist clinics, and practices that need stronger patient trust before contact.",
+      "outcome": "Treatment clarity, doctor credibility, multilingual intake, and a consultation path built around patient confidence.",
+      "setup": "$1,800-$3,200",
+      "monthly": "$119-$199/mo",
       "includes": [
-        "8–16 გვერდი",
-        "ექიმის/მკურნალობის შაბლონები",
-        "მრავალენოვანი სტრუქტურა",
-        "კონსულტაციის ფორმა",
-        "სტრუქტურირებული მონაცემები",
-        "მიმოხილვები/FAQ ფენა"
+        "Treatment category and detail pages",
+        "Doctor or specialist profile structure",
+        "Consultation request and intake flow",
+        "FAQ, reviews, safety, and trust content blocks"
       ],
-      "best_upsells": [
-        "შინაარსის წარმოება",
-        "მკურნალობის სტატიების კლასტერი",
-        "ლიდების კვალიფიკაციის პროცესი"
+      "technical": [
+        "Structured data for clinic and services",
+        "Accessible form and validation flow",
+        "Multilingual route architecture"
+      ],
+      "not_included": [
+        "Medical copywriting without source material",
+        "Patient record or CRM implementation",
+        "Regulated claims review by legal counsel"
       ]
     },
     "hospitality": {
-      "name": "სასტუმროს პირდაპირი ჯავშნის პლატფორმა",
-      "best_fit": "ბუტიკ სასტუმროები, აპარტ-სასტუმროები, სასტუმრო სახლები, ვილების ოპერატორები",
-      "setup": "$2,000–$4,000",
-      "monthly": "$129–$249/თვე",
+      "scope_label": "Hotel scope",
+      "name": "Hotel Direct Booking Platform",
+      "best_fit": "Boutique hotels, guesthouses, aparthotels, villa operators, and hospitality businesses reducing OTA dependency.",
+      "outcome": "Room clarity, location trust, multilingual search visibility, and a direct booking path that supports higher-intent guests.",
+      "setup": "$2,600-$4,800",
+      "monthly": "$159-$279/mo",
       "includes": [
-        "10–20 გვერდი",
-        "ოთახის შაბლონები და შეთავაზებები",
-        "მრავალენოვანი UX",
-        "პირდაპირი ჯავშნის ინტეგრაცია",
-        "წარმადობისა და CRO-ს შემოწმება",
-        "PMS/ჯავშნის ინტეგრაციის მხარდაჭერა"
+        "Room, offer, policy, and location pages",
+        "Direct booking CTA and enquiry architecture",
+        "Multilingual guest journey structure",
+        "Trust, amenities, gallery, and local-area content blocks"
       ],
-      "best_upsells": [
-        "პროფესიონალური ფოტოგრაფია",
-        "PMS/ჯავშნის ინტეგრაციები",
-        "ადგილობრივი ღირსშესანიშნაობების შინაარსი",
-        "ფასიანი ძიების სადესანტო გვერდები"
+      "technical": [
+        "Hotel and lodging schema basics",
+        "Performance budget for media-heavy pages",
+        "Booking/PMS integration support layer"
+      ],
+      "not_included": [
+        "PMS subscription or third-party booking fees",
+        "Large photo/video production days",
+        "Paid OTA or paid search campaign management"
       ]
     },
-    "cta": "დაწყება",
-    "setup_label": "ერთჯერადი",
-    "monthly_label": "მიმდინარე",
-    "best_for_label": "საუკეთესოა",
-    "includes_label": "რა შედის",
-    "best_upsells_label": "საუკეთესო დამატებები",
-    "most_popular": "ყველაზე პოპულარული",
-    "see_full_pricing": "სრული ფასები →",
-    "guarantee": "სიურპრიზები არ არის. თქვენ იღებთ დეტალურ წინადადებას სფეროს, გრაფიკისა და გამჭვირვალე ფასების შესახებ სამუშაოების დაწყებამდე. გააუქმეთ ყოველთვიური გეგმა 30 დღის წინასწარი შეტყობინებით — თქვენი ვებსაიტი თქვენი რჩება.",
-    "comparison_heading": "ფუნქციების შედარება",
-    "comparison": {
-      "pages": "მორგებული გვერდები",
-      "service_menu": "სერვისების მენიუ",
-      "local_seo": "ადგილობრივი SEO",
-      "multilingual": "მრავალენოვანი მხარდაჭერა",
-      "booking_integration": "ჯავშნის ინტეგრაცია",
-      "doctor_profiles": "ექიმის / სპეციალისტის პროფილები",
-      "structured_data": "სტრუქტურირებული მონაცემები (სქემა)",
-      "review_system": "მიმოხილვების მართვა",
-      "consultation_form": "კონსულტაციის ჯავშანი",
-      "promo_pages": "პრომო სადესანტო გვერდები",
-      "performance_optimization": "წარმადობის ოპტიმიზაცია",
-      "gbp_support": "Google Business Profile",
-      "analytics": "ანალიტიკა და CRO",
-      "priority_support": "პრიორიტეტული მხარდაჭერა",
-      "custom_integrations": "მორგებული ინტეგრაციები"
+    "audit": {
+      "scope_label": "Diagnostic review",
+      "name": "Website Audit / Technical Review",
+      "best_fit": "Businesses that need a clear diagnosis before redesign, rebuild, SEO work, or performance fixes.",
+      "outcome": "A prioritized report explaining what blocks trust, search visibility, speed, accessibility, and booking action.",
+      "setup": "$250-$650",
+      "monthly": "No monthly plan required",
+      "includes": [
+        "Manual UX and conversion review",
+        "Local SEO and content structure review",
+        "Performance and Core Web Vitals checks",
+        "Prioritized fix list and next-step scope"
+      ],
+      "technical": [
+        "Technical crawl and page review",
+        "Schema and metadata inspection",
+        "Accessibility basics and form checks"
+      ],
+      "not_included": [
+        "Implementation of fixes",
+        "Full redesign concepts",
+        "Ongoing support unless scoped after review"
+      ]
     },
-    "calculator_heading": "შეაფასეთ თქვენი პროექტი",
-    "calculator_subtitle": "მიიღეთ უშუალო შეფასება თქვენი საჭიროებების მიხედვით.",
-    "calculator_sector": "თქვენი სექტორი",
-    "calculator_sector_beauty": "სილამაზე",
-    "calculator_sector_medical": "სამედიცინო",
-    "calculator_sector_hospitality": "სასტუმრო ბიზნესი",
-    "calculator_pages": "გვერდების რაოდენობა",
-    "calculator_addons": "დამატებითი ოფციები",
-    "calculator_multilingual": "მრავალენოვანი მხარდაჭერა",
-    "calculator_booking": "ჯავშნის სისტემა",
-    "calculator_seo": "SEO პაკეტი",
-    "calculator_priority": "პრიორიტეტული მხარდაჭერა",
-    "calculator_setup": "სავარაუდო შექმნა",
-    "calculator_monthly": "სავარაუდო თვიური",
-    "calculator_cta": "მიიღეთ ზუსტი შეფასება",
-    "sectionLabel": "ინვესტიცია.",
-    "feature_label": "ფუნქცია"
+    "cta": "Request a scoped proposal",
+    "setup_label": "Typical setup range",
+    "monthly_label": "Monthly care range",
+    "best_for_label": "Best for",
+    "outcome_label": "Business outcome",
+    "includes_label": "Included modules",
+    "technical_label": "Technical deliverables",
+    "not_included_label": "არ შედის / optional add-ons",
+    "audit_not_included_label": "არ შედის",
+    "who_for_label": "ვისთვის არის",
+    "audit_price_label": "აუდიტის დიაპაზონი",
+    "turnaround_label": "Turnaround",
+    "audit_cta": "ვებსაიტის აუდიტის მოთხოვნა",
+    "best_upsells_label": "Useful add-ons",
+    "most_popular": "Common scope",
+    "see_full_pricing": "Open full scope details",
+    "guarantee": "No work starts from a vague package. You receive a scoped proposal with deliverables, responsibilities, exclusions, timeline, and care options before any build begins.",
+    "feature_label": "Feature",
+    "comparison": {
+      "pages": "Custom pages",
+      "service_menu": "Service menu",
+      "local_seo": "Local SEO",
+      "multilingual": "Multilingual support",
+      "booking_integration": "Booking integration",
+      "doctor_profiles": "Doctor / specialist profiles",
+      "structured_data": "Structured data (schema)",
+      "review_system": "Review management",
+      "consultation_form": "Consultation booking",
+      "promo_pages": "Promotional landing pages",
+      "performance_optimization": "Performance optimization",
+      "gbp_support": "Google Business Profile",
+      "analytics": "Analytics & CRO",
+      "priority_support": "Priority support",
+      "custom_integrations": "Custom integrations"
+    },
+    "calculator_label": "Scope estimator",
+    "calculator_heading": "Estimate a development scope",
+    "calculator_subtitle": "Use this as a planning estimate for build complexity. The final proposal depends on content, integrations, and launch requirements.",
+    "calculator_note": "The estimator is not a quote. It helps identify whether the project is closer to a small presence build, a trust platform, or an integration-heavy direct booking system.",
+    "calculator_sector": "Business model",
+    "calculator_sector_beauty": "Beauty",
+    "calculator_sector_medical": "Clinic",
+    "calculator_sector_hospitality": "Hotel",
+    "calculator_pages": "Planned pages",
+    "calculator_addons": "Scope variables",
+    "calculator_multilingual": "Multilingual content structure",
+    "calculator_booking": "Booking or PMS integration support",
+    "calculator_seo": "Local SEO content cluster",
+    "calculator_care": "Maintenance / care plan",
+    "calculator_setup": "Estimated setup",
+    "calculator_monthly": "Estimated care",
+    "calculator_cta": "Request a scoped proposal",
+    "sectionLabel": "Pricing."
   },
   "pricingPage": {
-    "add_ons_heading": "დამატებები და ექსტრები",
-    "add_ons_subtitle": "ყველა ბიზნესი სხვადასხვაა. ეს დამატებები საშუალებას გაძლევთ მორგოთ პაკეტი თქვენი ზრდის მიხედვით.",
+    "add_ons_eyebrow": "Add-ons",
+    "add_ons_heading": "Scope add-ons that change the work.",
+    "add_ons_subtitle": "Add-ons are priced by effort and dependency. They are separated from the base scope so the proposal stays readable.",
     "add_ons": [
       {
-        "name": "ინდივიდუალური ფუნქციები",
-        "description": "ინდივიდუალური ინტეგრაციები, მოწინავე ჯავშნის ლოგიკა, წევრის პორტალები ან რაიმე უნიკალური თქვენი ბიზნესისთვის.",
-        "price": "$250-დან"
+        "name": "ფოტოგრაფიის/კონტენტის მხარდაჭერა",
+        "description": "კადრების დაგეგმვა, კონტენტის პრიორიტეტები და კოორდინაცია რეალური ოთახის, მკურნალობის, სერვისის, გუნდის ან ლოკაციის ვიზუალებისთვის.",
+        "price": "Scoped by shoot"
       },
       {
-        "name": "დამატებითი გვერდები",
-        "description": "გჭირდებათ მეტი გვერდი პაკეტის ფარგლებს გარეთ? ყველა დამატებითი გვერდი იგივე სტანდარტით არის დაპროექტებული და აგებული.",
-        "price": "$75–$150/გვერდი"
+        "name": "Booking/PMS integration support",
+        "description": "Support for connecting booking tools, PMS links, forms, or third-party reservation flows.",
+        "price": "From $350"
       },
       {
-        "name": "პრიორიტეტული მხარდაჭერა",
-        "description": "იმავე დღის პასუხის დრო, შაბათ-კვირის ხელმისაწვდომობა და დათმობილი Slack არხი სასწრაფო საჭიროებებისთვის.",
-        "price": "$49/თვე დამატებით"
+        "name": "Multilingual content",
+        "description": "Language-route structure and content adaptation for English, Georgian, Russian, or Turkish pages.",
+        "price": "From $250/language"
+      },
+      {
+        "name": "Local SEO content cluster",
+        "description": "Service, treatment, room, or location pages planned around high-intent local search topics.",
+        "price": "From $450"
+      },
+      {
+        "name": "Care / maintenance plan",
+        "description": "Ongoing updates, technical monitoring, small content changes, and launch support after the site is live.",
+        "price": "From $69/mo"
       }
     ],
-    "process_heading": "როგორ მუშაობს",
-    "process_subtitle": "ნათელი, ხუთნაბიჯიანი პროცესი პირველი საუბრიდან გაშვებულ ვებსაიტამდე.",
+    "process_eyebrow": "Proposal process",
+    "process_heading": "How the final price is scoped",
+    "process_subtitle": "The proposal is based on the actual site system, not a loose page count. The goal is clarity before design or development starts.",
     "process_steps": [
       {
-        "title": "აუდიტი",
-        "description": "ვარჩევ თქვენს მიმდინარე ვებ-ყოფას, კონკურენტებსა და საბაზრო პოზიციას შესაძლებლობების იდენტიფიცირებისთვის."
+        "title": "Audit",
+        "description": "The current website, business model, content, competitors, and conversion path are reviewed."
       },
       {
-        "title": "ფიტ-ზარი",
-        "description": "30-წუთიანი ზარი თქვენი მიზნების, დროისა და ბიუჯეტის გასაგებად."
+        "title": "Fit call",
+        "description": "We clarify goals, users, languages, integrations, content responsibilities, and launch constraints."
       },
       {
-        "title": "შეთავაზება",
-        "description": "იღებთ დეტალურ შეთავაზებას მასშტაბით, დროით და გამჭვირვალე ფასებით."
+        "title": "Scope",
+        "description": "The proposal separates included modules, technical deliverables, exclusions, and optional add-ons."
       },
       {
-        "title": "აგება",
-        "description": "ვაპროექტებ, ვქმნი და ვტესტავ თქვენს საიტს რეგულარული შემოწმებებით."
+        "title": "Build",
+        "description": "Design and development move through structured checkpoints so the scope remains controlled."
       },
       {
-        "title": "გაშვება",
-        "description": "თქვენი საიტი იქმნება სრული SEO დაყენებით, წარმადობის ოპტიმიზაციითა და მიმდინარე მხარდაჭერით."
+        "title": "Launch",
+        "description": "The site is tested for forms, responsive behavior, SEO basics, performance, redirects, and care handoff."
       }
     ],
-    "faq_heading": "ფასების ხშირად დასმული კითხვები",
+    "faq_eyebrow": "Pricing FAQ",
+    "faq_heading": "Common scope questions",
     "faq_items": [
       {
-        "q": "საწყისი საფასური ერთჯერადი ხარჯია?",
-        "a": "დიახ. საწყისი საფასური მოიცავს დიზაინს, დეველოპმენტს, შინაარსის სტრატეგიას და გაშვებას. დამალული ხარჯები ან სიურპრიზი ინვოისები არ არის."
+        "q": "Why are prices shown as ranges?",
+        "a": "The same sector can require very different work depending on page count, content readiness, integrations, languages, and launch risk. The range keeps early planning honest."
       },
       {
-        "q": "შემიძლია თვიური გეგმის გაუქმება?",
-        "a": "თვიური გეგმა მოიცავს ჰოსტინგს, მოვლას, უსაფრთხოების განახლებებსა და მხარდაჭერას. შეგიძლიათ გაუქმება 30 დღის შეტყობინებით — თქვენი ვებსაიტი თქვენი რჩება."
+        "q": "Is monthly care required?",
+        "a": "Monthly care is recommended for active businesses but not forced into every scope. The proposal separates setup work from ongoing maintenance."
       },
       {
-        "q": "რა ვქნა, თუ რამე მჭირდება პაკეტებს შორის?",
-        "a": "უმეტესი კლიენტები იწყებენ პაკეტით და ამატებენ ინდივიდუალურობას. ფიტ-ზარის დროს შემოგთავაზებთ ზუსტად იმას, რაც გჭირდებათ — არაფერი მეტი, არაფერი ნაკლები."
+        "q": "Can you work with an existing booking tool?",
+        "a": "Yes. Booking and PMS work is scoped after the tool, embed method, forms, redirects, and tracking requirements are known."
       },
       {
-        "q": "გთავაზობთ გადახდის გეგმებს?",
-        "a": "დიახ. დიდი პროექტებისთვის, შემიძლია საწყისი საფასური ორ ან სამ გადახდად დავყო. ამას შეთავაზების ეტაპზე შევთანხმდებით."
+        "q": "Can the audit happen before a full build?",
+        "a": "Yes. The audit is often the cleanest starting point because it identifies what should be fixed, rebuilt, or left alone."
       }
-    ]
+    ],
+    "cta_eyebrow": "Scoped next step",
+    "cta_heading": "Request a scoped proposal.",
+    "cta_subtitle": "Send the business type, current website, required languages, and any booking tools. The reply will focus on scope, not pressure."
   },
   "aboutPage": {
-    "heading": "სტუდიის შესახებ",
-    "story_heading": "ისტორია",
-    "story_body_1": "Yourtimestudio არის კონცენტრირებული ერთკაციანი ვებ სტუდია ბათუმში. პროექტს არ ვატარებ ანგარიშების მართვის ფენებში - პირდაპირ ვმუშაობ სტრატეგიაზე, UX-ზე, კოდზე, SEO-ზე, გაშვებასა და მხარდაჭერაზე.",
-    "story_body_2": "პროექტებისთვის, რომლებსაც ძლიერი ვიზუალი სჭირდება, ვგეგმავ ორიგინალური გადაღების სიას და ვრთავ პროფესიონალ ფოტოგრაფს. მიზანი მარტივია: ვებსაიტი უნდა ჰგავდეს თქვენს ბიზნესს და არა სხვა ფერებით გადაკეთებულ შაბლონს.",
-    "approach_heading": "სექტორზე ორიენტირებული, არა ზოგადი",
-    "approach_body": "არ ვქმნი ზოგად ვებსაიტებს. ვქმნი სექტორზე ორიენტირებულ სისტემებს, რომლებიც ეხმარება სასტუმროებს მიიღონ პირდაპირი ჯავშნები, კლინიკებს ააშენონ პაციენტის ნდობა და სილამაზის ბიზნესმა შეავსოს ჯავშნის წიგნი. ეს სპეციალიზაცია ნიშნავს, რომ ყველა გადაწყვეტა — ინფორმაციის არქიტექტურიდან SEO სტრატეგიამდე — ეფუძნება იმას, თუ როგორ მუშაობს თქვენი ბიზნესი.",
-    "why_batumi_heading": "რატომ ბათუმი?",
-    "why_batumi_body_1": "ბათუმი იზრდება, როგორც სასტუმრო, სამედიცინო და მომსახურების ბიზნესების ბაზარი, მაგრამ ბევრი ადგილობრივი ვებსაიტი კვლავ ართულებს ჯავშანს, ნდობას და მრავალენოვან კომუნიკაციას.",
-    "why_batumi_body_2": "სწორედ ამ სივრცეში ვმუშაობ: პრაქტიკულ ვებსაიტებზე, რომლებიც ბიზნესს უფრო ადვილად საპოვნელს, გასაგებს და საკონტაქტოს ხდის.",
-    "process_heading": "როგორ ვმუშაობ",
-    "process_steps": [
-      {
-        "title": "აუდიტი",
-        "description": "ვარჩევ თქვენს მიმდინარე ვებ-ყოფას, კონკურენტებსა და საბაზრო პოზიციას შესაძლებლობების იდენტიფიცირებისთვის."
-      },
-      {
-        "title": "ფიტ-ზარი",
-        "description": "30-წუთიანი ზარი თქვენი მიზნების, დროისა და ბიუჯეტის გასაგებად. გაყიდვების წნევის გარეშე — მხოლოდ პატიოსანი რჩევა."
-      },
-      {
-        "title": "შეთავაზება",
-        "description": "იღებთ დეტალურ შეთავაზებას მასშტაბით, დროით და გამჭვირვალე ფასებით. დამალული ხარჯები არ არის."
-      },
-      {
-        "title": "აგება",
-        "description": "ვაპროექტებ, ვქმნი და ვტესტავ თქვენს საიტს რეგულარული შემოწმებებით. თქვენ ხედავთ პროგრესს ყველა ეტაპზე."
-      },
-      {
-        "title": "გაშვება",
-        "description": "თქვენი საიტი იქმნება სრული SEO დაყენებით, წარმადობის ოპტიმიზაციითა და მიმდინარე მხარდაჭერით."
+    "hero": {
+      "eyebrow": "Founder-led website development",
+      "title": "მე ვარ Jasper, ნიდერლანდელი ვებ დეველოპერი ბათუმში.",
+      "subtitle": "პირდაპირ ვმუშაობ სასტუმროებთან, კლინიკებთან, სილამაზის სტუდიებთან და მომსახურების ბიზნესებთან სტრატეგიაზე, UX-ზე, frontend კოდზე, ადგილობრივი SEO-ს საფუძვლებზე, გაშვებასა და გაუმჯობესებაზე.",
+      "story": [
+        "Yourtimestudio დავიწყე მას შემდეგ, რაც დავინახე, რამდენი ძლიერი ბათუმის ბიზნესი კარგავს ნდობას ონლაინ ნელი, გაუგებარი ან ზოგადი ვებსაიტების გამო.",
+        "ვქმნი ფოკუსირებულ ვებსაიტებს სასტუმროებისთვის, კლინიკებისთვის, სტუდიებისთვის და მომსახურების ბიზნესებისთვის, სადაც მნიშვნელოვანია ჯავშანი, ადგილობრივი SEO, მრავალენოვანი UX და სანდოობა.",
+        "კლიენტები პირდაპირ ჩემთან მუშაობენ სტრუქტურიდან და დიზაინიდან frontend აწყობამდე, გაშვებამდე და გაუმჯობესებამდე, რაც ხარისხსა და ანგარიშვალდებულებას ნათელს ხდის."
+      ],
+      "panel_label": "Jasper Tjeerd IJtsma / Yourtimestudio",
+      "panel_title": "ნიდერლანდელი დამფუძნებელი. Frontend builder. ბათუმზე ფოკუსირებული.",
+      "panel_body": "სტუდია შექმნილია ადგილობრივი მომსახურების ბიზნესებისთვის, რომლებსაც სჭირდებათ უფრო მკაფიო ჯავშანი, ნდობა, საძიებო ხილვადობა, მრავალენოვანი სტრუქტურა და ტექნიკური საიმედოობა account management-ის ზედმეტი ფენების გარეშე.",
+      "panel_points": [
+        "ნიდერლანდელი დამფუძნებელი ბათუმში",
+        "Hotels, clinics, studios, and service businesses",
+        "სტრატეგია, UX, კოდი, SEO, გაშვება და გაუმჯობესება"
+      ]
+    },
+    "operating": {
+      "eyebrow": "Operating model",
+      "heading": "A controlled build process from diagnosis to improvement.",
+      "subtitle": "The work is organized as a practical website system, not a loose design pass. Each step exists to reduce ambiguity before code and launch.",
+      "items": {
+        "diagnose": {
+          "title": "Diagnose",
+          "description": "Review the business model, current site, search intent, competitors, trust gaps, and booking path."
+        },
+        "structure": {
+          "title": "Structure",
+          "description": "Map pages, routes, content blocks, calls to action, multilingual needs, and lead flow logic."
+        },
+        "design": {
+          "title": "Design",
+          "description": "Create a high-contrast interface around the real decision path, not decorative layout trends."
+        },
+        "build": {
+          "title": "Build",
+          "description": "Implement responsive pages, forms, structured data, performance budgets, and reusable components."
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Test forms, metadata, redirects, mobile layouts, analytics basics, and deployment details."
+        },
+        "improve": {
+          "title": "Improve",
+          "description": "Use audit findings, support requests, and content needs to keep the website useful after launch."
+        }
       }
-    ],
-    "tools_heading": "ხელსაწყოები და ტექნოლოგიები",
-    "tools_subtitle": "აგებულია თანამედროვე, საიმედო ტექნოლოგიებზე სიჩქარის, უსაფრთხოებისა და მოვლადობისთვის.",
-    "tools": [
-      {
-        "name": "Next.js",
-        "category": "framework"
-      },
-      {
-        "name": "TypeScript",
-        "category": "language"
-      },
-      {
-        "name": "Tailwind CSS",
-        "category": "styling"
-      },
-      {
-        "name": "Hostinger",
-        "category": "hosting"
-      },
-      {
-        "name": "Prisma",
-        "category": "database"
-      },
-      {
-        "name": "React Hook Form",
-        "category": "forms"
-      },
-      {
-        "name": "Zod",
-        "category": "validation"
-      },
-      {
-        "name": "next-intl",
-        "category": "i18n"
-      },
-      {
-        "name": "Framer Motion",
-        "category": "animation"
-      },
-      {
-        "name": "Radix UI",
-        "category": "components"
+    },
+    "stack": {
+      "eyebrow": "Technical stack",
+      "heading": "Tools chosen for clear, maintainable website systems.",
+      "subtitle": "The stack is practical: fast pages, structured content, multilingual routing, clear forms, and enough discipline to maintain the site after launch.",
+      "items": {
+        "nextjs": "Next.js",
+        "react": "React",
+        "tailwind": "Tailwind",
+        "routes": "Multilingual routes",
+        "schema": "Structured data",
+        "performance": "Performance checks",
+        "seo": "Local SEO",
+        "forms": "Form / lead flows"
       }
-    ],
-    "cta_text": "მზად ხართ დაინახოთ, რა შეიძლება გახდეს თქვენი ვებსაიტი?",
-    "cta_button": "დაიწყეთ უფასო აუდიტით",
-    "image_alt": "Yourtimestudio-ს დამფუძნებელი",
-    "image_caption": "დამფუძნებლის მიერ მართული ვებ სტუდია ბათუმში, საქართველოში"
+    },
+    "direct": {
+      "eyebrow": "Direct responsibility",
+      "heading": "What I do directly",
+      "items": {
+        "ux": {
+          "title": "UX structure",
+          "description": "Information architecture, page order, conversion paths, and content hierarchy."
+        },
+        "frontend": {
+          "title": "Frontend implementation",
+          "description": "Next.js, React, Tailwind, responsive layouts, component systems, and integration-ready UI."
+        },
+        "seo": {
+          "title": "Local SEO basics",
+          "description": "Metadata, service/location structure, internal links, schema basics, and search-aligned content."
+        },
+        "multilingual": {
+          "title": "მრავალენოვანი setup",
+          "description": "ენის მარშრუტები, ნათარგმნი ნავიგაცია, ლოკალიზებული CTA-ები და hreflang საფუძვლები."
+        },
+        "checks": {
+          "title": "Performance/accessibility checks",
+          "description": "Readable contrast, labels, focus states, mobile behavior, asset weight, and Core Web Vitals basics."
+        },
+        "lead_flows": {
+          "title": "ფორმები და lead flows",
+          "description": "ჯავშნის, კონსულტაციის, აუდიტის, კონტაქტისა და WhatsApp-ის გზები რეალური მომხმარებლის განზრახვაზეა დაგეგმილი."
+        }
+      }
+    },
+    "support": {
+      "eyebrow": "Specialist support",
+      "heading": "Specialists enter only where useful.",
+      "subtitle": "The core website system remains founder-led. Specialist support is used for specific production needs, not to hide responsibility.",
+      "items": {
+        "photography": {
+          "title": "Photography",
+          "description": "Original visual work can be planned when rooms, treatments, services, or location proof need stronger assets."
+        },
+        "content": {
+          "title": "Content support",
+          "description": "Content planning, source-material cleanup, and multilingual adaptation can be scoped when the business needs it."
+        }
+      }
+    },
+    "not_fake": {
+      "eyebrow": "What I do not fake",
+      "heading": "No inflated agency signals.",
+      "subtitle": "The site and proposals should make the work clear without pretending there are client results or guarantees that do not exist.",
+      "items": {
+        "numbers": {
+          "title": "No fake client numbers",
+          "description": "No invented client counts, testimonials, conversion lifts, or performance claims."
+        },
+        "decoration": {
+          "title": "No decoration-first design",
+          "description": "Visual choices have to support booking, trust, comprehension, speed, and maintainability."
+        },
+        "templates": {
+          "title": "No bloated templates",
+          "description": "Builds avoid unnecessary page weight, generic sections, and features that do not serve the business."
+        },
+        "guarantees": {
+          "title": "No vague guarantees",
+          "description": "Recommendations are framed as scope, evidence, and tradeoffs rather than broad promises."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Start with diagnosis",
+      "heading": "See what your website should fix first.",
+      "subtitle": "A manual website audit is the cleanest starting point when the next step is not obvious.",
+      "button": "Request website audit"
+    }
   },
   "contactPage": {
-    "heading": "დაკავშირება",
-    "subtitle": "მომიყევით თქვენი პროექტის შესახებ და ერთ სამუშაო დღეში დაგიკავშირდებით.",
+    "eyebrow": "Project intake",
+    "heading": "Start with a website audit or scoped project.",
+    "subtitle": "Send the context behind the business, website, goal, budget, and timeline. I will reply with the next practical step: audit, scoped proposal, or focused improvement plan.",
+    "hero_panel": {
+      "label": "Before work starts",
+      "body": "A good project starts with a clear diagnosis and a controlled scope, not vague promises or rushed design work.",
+      "points": [
+        "Manual review before recommendation",
+        "Scope, exclusions, and timeline made explicit",
+        "Built for booking, trust, SEO, and performance"
+      ]
+    },
+    "options_eyebrow": "Contact paths",
+    "options_heading": "Choose the conversation that matches the problem.",
+    "options": [
+      {
+        "title": "Website audit",
+        "description": "For businesses that need a clear diagnosis of trust, booking flow, SEO, speed, and mobile UX before deciding what to build."
+      },
+      {
+        "title": "New website project",
+        "description": "For hotels, clinics, and studios that need a structured website system planned, designed, built, and launched."
+      },
+      {
+        "title": "Existing website improvement",
+        "description": "For websites that already exist but need better conversion paths, clearer content, local SEO, performance, or technical cleanup."
+      }
+    ],
     "form": {
-      "name": "თქვენი სახელი",
-      "name_required": "სახელი სავალდებულოა",
-      "business": "ბიზნესის სახელი",
-      "business_optional": "არასავალდებულო",
-      "business_required": "ბიზნესის სახელი სავალდებულოა",
-      "email": "ელ-ფოსტის მისამართი",
-      "email_required": "ელ-ფოსტა სავალდებულოა",
-      "email_invalid": "შეიყვანეთ სწორი ელ-ფოსტის მისამართი",
-      "phone": "ტელეფონი / WhatsApp",
-      "phone_optional": "არასავალდებულო",
-      "sector": "თქვენი სექტორი",
-      "sector_required": "აირჩიეთ სექტორი",
-      "sector_optional": "არასავალდებულო",
-      "sector_placeholder": "აირჩიეთ სექტორი",
-      "website": "ვებსაიტის URL",
-      "website_optional": "არასავალდებულო",
-      "website_invalid": "შეიყვანეთ სწორი URL",
-      "budget": "ბიუჯეტის დიაპაზონი",
-      "budget_optional": "არასავალდებულო",
-      "budget_placeholder": "აირჩიეთ ბიუჯეტი",
-      "language": "სასურველი ენა",
-      "language_required": "აირჩიეთ ენა",
-      "language_optional": "არასავალდებულო",
-      "language_placeholder": "აირჩიეთ ენა",
-      "message": "მოგვითხროთ პროექტზე",
-      "message_required": "გთხოვთ, მომიყევით თქვენი პროექტის შესახებ",
-      "message_optional": "არასავალდებულო",
-      "submit": "გაგზავნა",
-      "sending": "იგზავნება...",
-      "error_title": "შეცდომა",
-      "error_default": "მოთხოვნის გაგზავნა ვერ მოხერხდა. სცადეთ ხელახლა ან მომწერეთ პირდაპირ ელფოსტაზე.",
-      "success_redirect": "გადამისამართება...",
-      "success_title": "გმადლობთ",
-      "success_body": "თქვენი მოთხოვნა მიღებულია. ერთ სამუშაო დღეში დაგიკავშირდებით.",
-      "success_meta": "ჩვეულებრივი პასუხის დრო: 24 საათზე ნაკლები"
+      "eyebrow": "Intake form",
+      "heading": "Send the project context.",
+      "subtitle": "The fields below keep the first reply focused on scope instead of generic sales questions.",
+      "name": "Your name",
+      "name_placeholder": "Your name",
+      "name_required": "Name is required",
+      "business": "Business name",
+      "business_optional": "optional",
+      "business_required": "Business name is required",
+      "email": "Email address",
+      "email_placeholder": "you@example.com",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
+      "phone": "Phone / WhatsApp",
+      "phone_optional": "optional",
+      "business_type": "Business type",
+      "business_type_placeholder": "Select business type",
+      "sector": "Business type",
+      "sector_optional": "optional",
+      "sector_required": "Please select a business type",
+      "sector_placeholder": "Select business type",
+      "website": "Current website",
+      "website_optional": "optional",
+      "website_invalid": "Please enter a valid URL, for example https://example.com",
+      "project_goal": "Project goal",
+      "project_goal_placeholder": "Select project goal",
+      "budget": "Budget range",
+      "budget_optional": "optional",
+      "budget_placeholder": "Select budget range",
+      "timeline": "Timeline",
+      "timeline_placeholder": "Select timeline",
+      "language": "Preferred language",
+      "language_optional": "optional",
+      "language_required": "Please select a preferred language",
+      "language_placeholder": "Select preferred language",
+      "message": "Message",
+      "message_placeholder": "Briefly describe what needs to change, what is not working now, and any booking tools, languages, or launch constraints.",
+      "message_required": "Please describe the project or audit request",
+      "message_optional": "optional",
+      "submit": "Send project request",
+      "sending": "Sending request...",
+      "error_title": "Request could not be sent",
+      "error_default": "Could not send your request. Please try again or email me directly.",
+      "success_redirect": "Redirecting...",
+      "success_title": "Request received",
+      "success_body": "Your project request has been received. I will review the context and reply with the next practical step.",
+      "success_meta": "Typical response time: one business day"
     },
     "sectors": [
-      "სასტუმრო ბიზნესი",
-      "სამედიცინო",
-      "სილამაზე",
-      "სხვა"
+      "Hotel / hospitality",
+      "Clinic / medical",
+      "Beauty studio",
+      "Other local business"
     ],
     "budgets": [
-      "$500-მდე",
-      "$500–$1,000",
-      "$1,000–$2,500",
-      "$2,500+"
+      "Audit / small improvement",
+      "$900-$1,600",
+      "$1,800-$3,200",
+      "$3,200+"
+    ],
+    "project_goals": [
+      "Website audit",
+      "New website project",
+      "Existing website improvement"
+    ],
+    "timelines": [
+      "This month",
+      "1-2 months",
+      "2-3 months",
+      "Flexible / planning"
     ],
     "languages": [
-      "ინგლისური",
-      "ქართული",
-      "რუსული",
-      "თურქული"
+      "English",
+      "Georgian",
+      "Russian",
+      "Turkish"
     ],
-    "info_heading": "დაკავშირების სხვა გზები",
-    "info_email_label": "ელ-ფოსტა",
+    "trust": {
+      "eyebrow": "Working context",
+      "heading": "Clear scope before work starts.",
+      "items": [
+        {
+          "title": "Based in Batumi",
+          "description": "Focused on local service businesses that need international-grade web systems."
+        },
+        {
+          "title": "Founder-led",
+          "description": "You work directly with the person planning, designing, coding, and launching the site."
+        },
+        {
+          "title": "Scope first",
+          "description": "Deliverables, exclusions, timeline, and responsibilities are clarified before build work starts."
+        },
+        {
+          "title": "No fake metrics",
+          "description": "Recommendations are based on audit findings, business context, and practical technical constraints."
+        }
+      ]
+    },
+    "info_heading": "Direct contact",
+    "info_email_label": "Email",
     "info_email": "hello@yourtimestudio.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
-    "info_area_label": "მომსახურების ტერიტორია",
-    "info_area": "ვმუშაობ ბათუმიდან, საქართველოდან. ვემსახურები სასტუმრო, სამედიცინო და სილამაზის ბიზნესებს აჭარაში და მის ფარგლებს გარეთ.",
-    "info_whatsapp_fallback": "ფორმაში მიუთითეთ თქვენი WhatsApp ნომერი"
+    "info_area_label": "Service area",
+    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across Adjara and beyond.",
+    "info_whatsapp_fallback": "Use the form and include your WhatsApp number"
   },
   "thankYouPage": {
     "heading": "მადლობა თქვენი მოთხოვნისთვის",
     "body": "მივიღე თქვენი შეტყობინება და ერთი სამუშაო დღის განმავლობაში გიპასუხებთ.",
-    "browse_insights": "იხილეთ ინსაითები",
+    "browse_insights": "იხილეთ ვებსაიტის აუდიტი",
     "see_pricing": "იხილეთ ფასები",
-    "insights_description": "წაიკითხეთ სტატიები ვებ-სტრატეგიისა და SEO-ს შესახებ.",
+    "insights_description": "ნახეთ, როგორ მუშაობს ხელით აუდიტი რედიზაინის ან მოცულობის განსაზღვრამდე.",
     "pricing_description": "შეადარეთ პაკეტები თქვენი ბიზნესისთვის."
   },
   "faq": {
@@ -604,7 +843,7 @@
   },
   "about": {
     "heading": "სტუდიის შესახებ",
-    "story": "მე ვარ ჰოლანდიელი დეველოპერი, რომელიც გაიზარდა არუბაზე და ახლა ბათუმში ქმნის ვებსაიტებს. კარიბიდან ვისწავლე, რომ სტუმრისმოყვარეობა დეტალებშია — და რომ ხარისხი მოცულობაზე მნიშვნელოვანია.",
+    "story": "მე ვარ Jasper Tjeerd IJtsma, ჰოლანდიელი ვებ დეველოპერი ბათუმში. ვქმნი ფოკუსირებულ ვებსაიტებს სასტუმროებისთვის, კლინიკებისთვის, სილამაზის სტუდიებისთვის და მომსახურების ბიზნესებისთვის, სადაც მნიშვნელოვანია ჯავშანი, ლოკალური SEO, მრავალენოვანი UX და სანდოობა. კლიენტები პირდაპირ ჩემთან მუშაობენ სტრუქტურიდან და დიზაინიდან frontend აწყობამდე, გაშვებამდე და გაუმჯობესებამდე.",
     "approach": "არ ვქმნი ზოგად ვებსაიტებს. ვქმნი სექტორზე ორიენტირებულ სისტემებს, რომლებიც ეხმარება სასტუმროებს, კლინიკებსა და სილამაზის ბიზნესს.",
     "why_batumi": "ბათუმი საქართველოს ერთ-ერთი ყველაზე სწრაფად მზარდი სასტუმრო და სამედიცინო დანიშნულების ადგილია.",
     "process": [
@@ -640,7 +879,7 @@
         "body": "გადაღების სიები და გამოსახულებების პრიორიტეტები, რათა საიტმა გამოიყენოს რეალური ადგილობრივი ვიზუალი და არა ზოგადი სტოკი."
       },
       "deployment": {
-        "title": "Hostinger-ისთვის მზად გაშვება",
+        "title": "ტექნიკური გაშვების მზადყოფნა",
         "body": "ბილდი, გადამისამართებები, მეტამონაცემები, ანალიტიკის თანხმობა და ძირითადი ტექნიკური SEO მოწმდება გადაცემამდე."
       }
     },
@@ -663,6 +902,7 @@
     "conversion": "მიმართავს თუ არა თქვენი საიტი სტუმრებს ჯავშნისკენ ან კონტაქტისკენ?"
   },
   "footer": {
+    "brand_descriptor": "ვებ დეველოპმენტის სტუდია ბათუმში",
     "tagline": "ბათუმის ვებ-სტუდია სასტუმრო, სამედიცინო და სილამაზის ბიზნესისთვის.",
     "solutions": "გადაწყვეტები",
     "company": "კომპანია",
@@ -1036,116 +1276,189 @@
   },
   "auditPage": {
     "hero": {
-      "eyebrow": "ვებსაიტის აუდიტი",
-      "title": "გაიგეთ ზუსტად, რა აფერხებს თქვენს ვებსაიტს",
-      "subtitle": "მიიღეთ დეტალური შეფასების ბარათი ბრენდის სიცხადეზე, სიჩქარეზე, ადგილობრივ SEO-ზე, შინაარსის სტრუქტურაზე, ხელმისაწვდომობასა და კონვერტაციის UX-ზე."
+      "eyebrow": "ვებსაიტის ხელით დიაგნოსტიკა",
+      "title": "ვებსაიტის ხელით აუდიტი ჯავშნისთვის, ნდობისთვის, SEO-სთვის და სიჩქარისთვის.",
+      "subtitle": "იღებთ პრაქტიკულ დიაგნოსტიკურ ანგარიშს, რომელიც ხსნის რა აფერხებს ჯავშნებს, პაციენტის შეკითხვებს, ჩაწერის მოთხოვნებს, ადგილობრივ ძიებას და ნდობას. ყოველი მიგნება აღწერილია როგორც ბიზნეს პრობლემა და მოყვება გამოსწორების გზა.",
+      "cta": "ვებსაიტის აუდიტის მოთხოვნა",
+      "secondary_cta": "ანგარიშის ნახვა",
+      "panel_label": "აუდიტის მიღების პრევიუ",
+      "panel_kicker": "დიაგნოსტიკის ფარგლები",
+      "panel_title": "რას ამოწმებს მიმოხილვა პირველ რიგში",
+      "panel_note": "ხელით შემოწმება, პრიორიტეტული გამოსწორებები და მკაფიო შემდეგი ნაბიჯები. არა ავტომატური ქულების სია."
     },
-    "rubric": {
-      "heading": "რას ვაფასებ",
-      "subtitle": "ყოველი აუდიტი თქვენს საიტს ექვს მნიშვნელოვან მიმართულებაში აფასებს.",
+    "framework": {
+      "eyebrow": "დიაგნოსტიკური ჩარჩო",
+      "heading": "რვა მიმართულება, რომელიც განსაზღვრავს ენდობა თუ არა სტუმარი საიტს და იმოქმედებს თუ არა.",
+      "subtitle": "აუდიტი უყურებს მთელ გზას პირველი შთაბეჭდილებიდან ჯავშნამდე, მოთხოვნამდე, ზარამდე ან ჩაწერამდე. მიზანი არ არის უბრალოდ ლამაზი საიტი; მიზანი არის უფრო მკაფიო კომერციული სისტემა.",
       "items": {
         "brand": {
-          "name": "ბრენდის სიცხადე",
-          "points": [
-            "პირველი შთაბეჭდილება და ვიზუალური იდენტობა",
-            "თანმიმდევრული გზავნილი გვერდებზე",
-            "განსხვავება კონკურენტებისგან"
-          ]
+          "title": "ბრენდის სიცხადე",
+          "summary": "პოზიციონირება და სექტორთან შესაბამისობა.",
+          "description": "ამოწმებს ხვდება თუ არა სტუმარი პირველივე ეკრანზე ვის ემსახურებით, რას სთავაზობთ და რატომ არის ბიზნესი სანდო."
         },
-        "speed": {
-          "name": "წარმადობა და სიჩქარე",
-          "points": [
-            "ჩატვირთვის დრო მობილურსა და დესკტოპზე",
-            "Core Web Vitals (LCP, FID, CLS)",
-            "სურათებისა და რესურსების ოპტიმიზაცია"
-          ]
+        "mobile": {
+          "title": "მობილური UX",
+          "summary": "პატარა ეკრანის განლაგება და მოქმედებები.",
+          "description": "მოწმდება მენიუ, ღილაკები, გვერდის იერარქია, ფიქსირებული მოქმედებები და მობილურით გადაადგილების სიმარტივე."
+        },
+        "booking": {
+          "title": "ჯავშნის / ჩაწერის პროცესი",
+          "summary": "განზრახვიდან მოთხოვნამდე გზა.",
+          "description": "პოულობს ადგილებს, სადაც სტუმარი კარგავს ნდობას, ვერ ამჩნევს CTA-ს ან ზედმეტ ნაბიჯებს გადის ჯავშნამდე."
         },
         "seo": {
-          "name": "ადგილობრივი SEO",
-          "points": [
-            "Google Business Profile-ის გამართვა",
-            "ადგილობრივი საკვანძო სიტყვების მიზნობრიობა",
-            "სტრუქტურირებული მონაცემები და მეტა თეგები"
-          ]
+          "title": "ადგილობრივი SEO",
+          "summary": "ბათუმზე ორიენტირებული ძიების ხილვადობა.",
+          "description": "მოწმდება ლოკალური გვერდები, მეტამონაცემები, სერვისისა და მდებარეობის სიგნალები, შიდა ბმულები და Google-ისთვის მნიშვნელოვანი კონტენტი."
         },
-        "content": {
-          "name": "შინაარსის სტრუქტურა",
-          "points": [
-            "ინფორმაციის იერარქია და ნავიგაცია",
-            "სათაურების სტრუქტურა და წაკითხვადობა",
-            "მრავალენოვანი შინაარსის ორგანიზება"
-          ]
+        "performance": {
+          "title": "წარმადობა / Core Web Vitals",
+          "summary": "სიჩქარისა და სტაბილურობის სიგნალები.",
+          "description": "მოწმდება მძიმე რესურსები, რენდერის დაყოვნება, layout shift და ტექნიკური გადაწყვეტილებები, რომლებიც საიტს ანელებს."
+        },
+        "trust": {
+          "title": "ნდობის სიგნალები",
+          "summary": "დასტური კონტაქტამდე.",
+          "description": "ვეძებ დაკარგულ შეფასებებს, პოლიტიკებს, გუნდის დეტალებს, სერტიფიკატებს, მდებარეობის დასტურს და ტრანზაქციის დამამშვიდებელ ინფორმაციას."
+        },
+        "multilingual": {
+          "title": "მრავალენოვანი სტრუქტურა",
+          "summary": "საერთაშორისო კლიენტისთვის მზადყოფნა.",
+          "description": "მოწმდება ენობრივი route-ები, თარგმნილი ნავიგაცია, ლოკალიზებული CTA, hreflang-ის საფუძვლები და ენებს შორის კონტენტის ხარვეზები."
         },
         "accessibility": {
-          "name": "ხელმისაწვდომობა",
-          "points": [
-            "WCAG 2.1-ის საბაზისო შესაბამისობა",
-            "ფერის კონტრასტი და ტექსტის წაკითხვადობა",
-            "კლავიატურით ნავიგაცია და screen reader მხარდაჭერა"
-          ]
-        },
-        "conversion": {
-          "name": "კონვერტაციის UX",
-          "points": [
-            "ჯავშნისა და კონტაქტის პროცესის სიცხადე",
-            "მოქმედების მოწოდებების განთავსება",
-            "ნდობის ნიშნები და სანდო დასტური"
-          ]
+          "title": "ხელმისაწვდომობის საფუძვლები",
+          "summary": "გამოყენებადობა და წაკითხვადობა.",
+          "description": "მოწმდება კონტრასტი, ტექსტის ზომა, ფორმის label-ები, კლავიატურით წვდომა, focus მდგომარეობები და screen-reader სტრუქტურა."
         }
       }
     },
-    "howItWorks": {
-      "heading": "როგორ მუშაობს",
-      "steps": [
+    "report": {
+      "eyebrow": "ანგარიშის მაგალითი",
+      "heading": "ანგარიში ბიზნეს გავლენაზეა აგებული, არა ბუნდოვან ქულებზე.",
+      "subtitle": "ქვემოთ მოცემული ფორმატი აჩვენებს როგორ სტრუქტურდება მიგნებები. ქულები არ გამოიყენება, თუ ისინი აშკარად მაგალითის ნიშნით ან რეალურ გაზომილ აუდიტთან არ არის დაკავშირებული.",
+      "interface_label": "ხელით მიმოხილვის შედეგი",
+      "interface_title": "ვებსაიტის დიაგნოსტიკური ანგარიში",
+      "example_label": "მაგალითის ფორმატი",
+      "columns": {
+        "area": "მიმოხილვის ზონა",
+        "issue": "პრობლემა",
+        "impact": "ბიზნეს გავლენა",
+        "priority": "პრიორიტეტი",
+        "fix": "რეკომენდებული გამოსწორება"
+      },
+      "rows": [
         {
-          "title": "აგზავნით URL-ს",
-          "description": "ავსებთ ფორმას ვებსაიტის მისამართით და ბიზნესის ძირითადი ინფორმაციით."
+          "area": "ჯავშნის გზა",
+          "issue": "მთავარი მოქმედება ჩნდება რამდენიმე კონკურენტი ბლოკის შემდეგ.",
+          "impact": "ჯავშნისთვის მზად სტუმარმა შეიძლება გვერდი ისე დაათვალიეროს, რომ შემდეგი ნაბიჯი ვერ იპოვოს.",
+          "priority": "მაღალი",
+          "fix": "გადაიტანეთ ჯავშნის CTA პირველ ეკრანზე და გაიმეორეთ ოთახების, მკურნალობის ან სერვისების შემდეგ."
         },
         {
-          "title": "მე ვაანალიზებ საიტს",
-          "description": "ხელით ვამოწმებ საიტს ექვსივე კატეგორიაში რეალურ მოწყობილობებსა და ადგილობრივ ძიების პირობებში."
+          "area": "ადგილობრივი SEO",
+          "issue": "სერვისის გვერდები შეთავაზებას ბათუმის ძიების განზრახვასთან მკაფიოდ არ აკავშირებს.",
+          "impact": "ძებნის სისტემები და სტუმრები სუსტ ლოკალურ სიგნალებს იღებენ.",
+          "priority": "საშუალო",
+          "fix": "დაამატეთ მდებარეობაზე ორიენტირებული სათაურები, სერვისის სტრუქტურირებული ტექსტი და შიდა ბმულები შესაბამის გვერდებზე."
         },
         {
-          "title": "იღებთ დეტალურ ანგარიშს",
-          "description": "იღებთ პრიორიტეტულ მოქმედების გეგმას კონკრეტული გამოსასწორებელი ნაბიჯებით."
+          "area": "ნდობა",
+          "issue": "პოლიტიკები, შეფასებები და ოპერატორის დეტალები კონვერტაციის გზიდან მოშორებულია.",
+          "impact": "სტუმარს მეტი ძალისხმევა სჭირდება, სანამ საკმარისად ენდობა კონტაქტს ან ჯავშანს.",
+          "priority": "ფოკუსი",
+          "fix": "მოათავსეთ კომპაქტური ნდობის მტკიცებულება CTA-სთან და დაამატეთ დეტალები ფორმასთან ან ჯავშნის მოდულთან."
         }
       ]
     },
-    "sampleFindings": {
-      "heading": "ხშირი მიგნებები სექტორების მიხედვით",
+    "sectors": {
+      "eyebrow": "სექტორული მაგალითები",
+      "heading": "აუდიტი იცვლება იმის მიხედვით, როგორ იღებს თქვენი ბიზნესი ჯავშნებს.",
+      "subtitle": "სასტუმროები, კლინიკები და სილამაზის სტუდიები ლიდებს სხვადასხვა ადგილზე კარგავენ. მიმოხილვა ფოკუსირდება იმ კომერციულ გზაზე, რომელიც თქვენს სექტორში მნიშვნელოვანია.",
       "items": {
-        "hospitality": {
-          "sector": "სასტუმრო ბიზნესი",
-          "finding": "ხშირი პრობლემა: სასტუმროს საიტები ოთახის ღირებულებას, ჯავშნის გზას და ადგილობრივი ძიების სიგნალებს ნელ, სურათებით გადატვირთულ გვერდებში მალავენ."
+        "hotel": {
+          "title": "სასტუმრო",
+          "description": "სასტუმროს აუდიტი ამოწმებს რამდენად მარტივად ჩანს ოთახები, მდებარეობა, პოლიტიკები და პირდაპირი ჯავშნის ღირებულება.",
+          "checks": [
+            "ოთახებისა და ფასის სიცხადე",
+            "პირდაპირი ჯავშნის CTA",
+            "მდებარეობისა და პოლიტიკის ნდობის სიგნალები"
+          ]
         },
-        "medical": {
-          "sector": "სამედიცინო",
-          "finding": "ხშირი პრობლემა: კლინიკის საიტებს აკლიათ ექიმების პროფილები, სერვისის schema და მკაფიო გზა საერთაშორისო პაციენტებისთვის."
+        "clinic": {
+          "title": "კლინიკა",
+          "description": "კლინიკის აუდიტი ფოკუსირდება ნდობაზე, მკურნალობის სიცხადეზე, ექიმების სანდოობაზე და შეკითხვის გზაზე.",
+          "checks": [
+            "მკურნალობის გვერდების სტრუქტურა",
+            "ექიმებისა და კვალიფიკაციის დასტური",
+            "კონსულტაციის მოთხოვნის პროცესი"
+          ]
         },
         "beauty": {
-          "sector": "სილამაზე",
-          "finding": "ხშირი პრობლემა: სალონები და სტუდიები სოციალურ DM-ებზე არიან დამოკიდებული, ხოლო საიტი ჯავშანს საკმარისად აშკარას არ ხდის."
+          "title": "სილამაზის სტუდია",
+          "description": "სილამაზის სტუდიის აუდიტი ამოწმებს მიჰყავს თუ არა სერვისები, ფასები, პორტფოლიო და სოციალური ტრაფიკი ჩაწერამდე.",
+          "checks": [
+            "სერვისების მენიუს სიცხადე",
+            "ფასისა და დროის მოლოდინი",
+            "Instagram-იდან ჩაწერამდე გზა"
+          ]
         }
       }
     },
     "form": {
-      "heading": "მოითხოვეთ უფასო აუდიტი",
-      "subtitle": "შეავსეთ დეტალები და შეფასების ბარათს 3 სამუშაო დღეში მოგაწვდით.",
+      "eyebrow": "აუდიტის მოთხოვნა",
+      "heading": "გამოგზავნეთ საიტი, რომელსაც უფრო მკაფიო ჯავშნის გზა სჭირდება.",
+      "subtitle": "გააზიარეთ ვებსაიტის URL და ბიზნეს კონტექსტი. საიტს ხელით შევამოწმებ და შემდეგ ნაბიჯებს მოგწერთ.",
       "name": "თქვენი სახელი",
       "business": "ბიზნესის სახელი",
       "email": "ელფოსტის მისამართი",
       "sector": "თქვენი სექტორი",
       "website": "ვებსაიტის URL",
       "message": "კიდევ რამე უნდა ვიცოდე? (არასავალდებულო)",
-      "submit": "უფასო აუდიტის მოთხოვნა",
+      "submit": "ვებსაიტის აუდიტის მოთხოვნა",
       "sending": "იგზავნება...",
-      "success": "თქვენი აუდიტის მოთხოვნა მიღებულია. 3 სამუშაო დღეში დაგიკავშირდებით.",
+      "success": "თქვენი აუდიტის მოთხოვნა მიღებულია. შემდეგი ნაბიჯებით დაგიკავშირდებით.",
       "error": "რაღაც ვერ მოხერხდა. სცადეთ ხელახლა ან მომწერეთ პირდაპირ ელფოსტაზე.",
       "sectors": [
         "სასტუმრო ბიზნესი",
         "სამედიცინო",
         "სილამაზე",
         "სხვა"
+      ]
+    },
+    "process": {
+      "step": "ნაბიჯი",
+      "items": {
+        "request": {
+          "title": "თქვენ აგზავნით საიტს",
+          "description": "ფორმა აგროვებს URL-ს, სექტორს და კონტექსტს სწორი კონვერტაციის გზის შესამოწმებლად."
+        },
+        "review": {
+          "title": "მე ვამოწმებ ხელით",
+          "description": "საიტი მოწმდება ბრენდის, მობილური UX-ის, ჯავშნის გზის, SEO-ს, სიჩქარის, ნდობის, ენებისა და ხელმისაწვდომობის საფუძვლებით."
+        },
+        "report": {
+          "title": "იღებთ პრიორიტეტულ გამოსწორებებს",
+          "description": "შედეგი ჰყოფს სწრაფ გამოსწორებებს სტრუქტურული პრობლემებისგან, რათა იცოდეთ რა გააუმჯობესოთ პირველ რიგში."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "მოთხოვნის შემდეგ",
+      "heading": "რა ხდება აუდიტის მოთხოვნის შემდეგ?",
+      "items": [
+        {
+          "question": "ეს ავტომატურია?",
+          "answer": "არა. ავტომატური ინსტრუმენტები ტექნიკურ სიგნალებს აჩვენებს, მაგრამ საბოლოო აუდიტი არის მომხმარებლის გზისა და ბიზნეს გავლენის ხელით შეფასება."
+        },
+        {
+          "question": "ანგარიში საიტს თავიდან დამიდიზაინებს?",
+          "answer": "ანგარიში ხსნის რა უნდა გამოსწორდეს და რატომ. თუ redesign სწორი შემდეგი ნაბიჯია, ეს ცალკე ისკოპება."
+        },
+        {
+          "question": "შეგიძლიათ მრავალენოვანი საიტების აუდიტი?",
+          "answer": "დიახ. მიმოხილვა მოიცავს ენობრივ route-ებს, თარგმნილ ნავიგაციას, ლოკალიზებულ CTA-ებს და ენებს შორის აშკარა ხარვეზებს."
+        }
       ]
     },
     "detail": {
@@ -1158,31 +1471,156 @@
     }
   },
   "workPage": {
-    "heading": "სამუშაო მიმართულებები",
-    "subtitle": "დემო ბრიფები და პროექტის მიმართულებები, სანამ რეალური კლიენტის ნამუშევრები გამოქვეყნებისთვის მზად იქნება.",
+    "heading": "ვებსაიტის სისტემები სასტუმროებისთვის, კლინიკებისთვის და სტუდიებისთვის.",
+    "subtitle": "კონცეპტური სისტემები და შერჩეული მიმართულებები, რომლებიც აჩვენებს სტუდიის მეთოდს რეალური კლიენტის ქეისების გამოქვეყნებამდე.",
+    "comingSoon": "კონცეპტური სისტემა",
     "items": [
       {
-        "sector": "სასტუმრო ბიზნესი",
-        "title": "ბუტიკ სასტუმროს ჯავშნის კონცეფცია",
-        "description": "პირდაპირი ჯავშნის ვებსაიტის მიმართულება ბათუმის ზღვისპირა სასტუმროსთვის: ოთახები, ნდობის ნიშნები, მრავალენოვანი SEO და OTA-ზე ნაკლები დამოკიდებულება."
+        "sector": "სასტუმროები",
+        "title": "სასტუმროს პირდაპირი ჯავშნის სისტემა",
+        "description": "კონცეპტური სისტემა ოთახებისთვის, ლოკაციის ნდობისთვის, მრავალენოვანი SEO-სთვის და პირდაპირი ჯავშნის გზისთვის."
       },
       {
-        "sector": "სამედიცინო",
-        "title": "სტომატოლოგიური კლინიკის ნდობის პლატფორმა",
-        "description": "მრავალენოვანი კლინიკის მიმართულება ექიმების პროფილებით, მკურნალობის გვერდებით, პაციენტის FAQ-ებით და სამედიცინო ძიებისთვის სტრუქტურირებული მონაცემებით."
+        "sector": "მედიცინა",
+        "title": "კლინიკის ნდობისა და მკურნალობის სისტემა",
+        "description": "მაგალითი სტრუქტურა მკურნალობის სიცხადისთვის, ექიმის სანდოობისთვის, FAQ-სთვის და კონსულტაციის მოთხოვნებისთვის."
       },
       {
         "sector": "სილამაზე",
-        "title": "სტუდიის ჩაწერის პროცესი",
-        "description": "ჯავშანზე ორიენტირებული სილამაზის ვებსაიტის მიმართულება, რომელიც მოთხოვნას სოციალური DM-ებიდან მკაფიო სერვისების მენიუში და ჩაწერის გზაზე გადაჰყავს."
+        "title": "სილამაზის სტუდიის ჯავშნის სისტემა",
+        "description": "სტუდიის პროტოტიპი სერვისებისთვის, ფასებისთვის, ვიზუალური დასტურისთვის და ჩაწერის მოთხოვნებისთვის."
       }
     ],
-    "comingSoon": "დემო ბრიფი"
+    "hero": {
+      "eyebrow": "ვებსაიტის სისტემების გალერეა",
+      "title": "ვებსაიტის სისტემები სასტუმროებისთვის, კლინიკებისთვის და სტუდიებისთვის.",
+      "subtitle": "კონცეპტური სისტემები და შერჩეული მიმართულებები, რომლებიც აჩვენებს, როგორ აწყობს Yourtimestudio ჯავშანზე ორიენტირებულ ვებსაიტებს ადგილობრივი სერვის ბიზნესებისთვის. არ არის გამოგონილი კლიენტები, შეფასებები ან შედეგების განცხადებები.",
+      "note_label": "პროტოტიპის განმარტება",
+      "note": "ქვემოთ მოცემული მაგალითები არის კონცეპტური სისტემები, მაგალითი აწყობები და სტუდიის პროტოტიპები. ისინი აჩვენებს არქიტექტურას, მოდულებს და კონვერსიის ლოგიკას მანამდე, სანამ რეალური კლიენტის ქეისი მზად იქნება გამოსაქვეყნებლად.",
+      "future_note": "რეალური კლიენტის ნამუშევარი მოგვიანებით დაემატება მხოლოდ მაშინ, როცა სახელების, ვიზუალების, შედეგების ან შეფასებების გამოქვეყნების მკაფიო ნებართვა იქნება.",
+      "proof": [
+        "ამჟამად ვიღებ შერჩეულ პროექტებს ბათუმში.",
+        "დამფუძნებლის მიერ მართული build-ები. მკაფიო scope სამუშაოს დაწყებამდე.",
+        "ქვემოთ ნაჩვენები კონცეპტური სისტემები სტუდიის პროტოტიპებია და არა გამოგონილი კლიენტის ქეისები."
+      ]
+    },
+    "labels": {
+      "problem": "ბიზნეს პრობლემა",
+      "conversion": "კონვერსიის მიზანი",
+      "architecture": "ვებსაიტის არქიტექტურა",
+      "modules": "ძირითადი მოდულები",
+      "technical": "ტექნიკური ფენა"
+    },
+    "systems": {
+      "hotel": {
+        "label": "კონცეპტური სისტემა",
+        "title": "სასტუმროს პირდაპირი ჯავშნის სისტემა",
+        "summary": "სასტუმროს ვებსაიტის არქიტექტურა, რომელიც ოთახების ინტერესს პირდაპირი ჯავშნის გზად აქცევს მრავალენოვანი კონტენტით, ლოკაციის ნდობით და ოთახის დონეზე გადაწყვეტილების მხარდაჭერით.",
+        "problem": "სტუმრები სწრაფად ადარებენ სასტუმროებს და OTA პლატფორმებზე ბრუნდებიან, თუ პირდაპირი საიტი ოთახებს, წესებს, ლოკაციას და ჯავშნის ღირებულებას ნათლად არ აჩვენებს.",
+        "conversion": "დაინტერესებული სტუმრების გადაყვანა ოთახების დათვალიერებიდან პირდაპირი ჯავშნის მოთხოვნამდე OTA პლატფორმებზე დაბრუნების გარეშე.",
+        "architecture": [
+          "მთავარი გვერდი ლოკაციაზე, ოთახებზე და პირდაპირი ჯავშნის ღირებულებაზე.",
+          "ოთახის შაბლონი წესებით, სერვისებით, გალერეით და ჯავშნის CTA-თი.",
+          "მრავალენოვანი ადგილობრივი SEO გვერდები ბათუმის სამოგზაურო მოთხოვნებისთვის."
+        ],
+        "modules": [
+          "ენის გადამრთველი",
+          "ოთახების ბარათების რიგი",
+          "შესვლის თარიღის არჩევა",
+          "ნდობისა და ლოკაციის ზოლი"
+        ],
+        "technical": [
+          "Next.js მარშრუტები",
+          "სტრუქტურირებული სასტუმროს მონაცემები",
+          "Core Web Vitals ბიუჯეტი"
+        ]
+      },
+      "clinic": {
+        "label": "მაგალითი აწყობა",
+        "title": "კლინიკის ნდობისა და მკურნალობის სისტემა",
+        "summary": "კლინიკის ვებსაიტის სისტემა, რომელიც პაციენტებს ეხმარება მკურნალობის გაგებაში, სანდოობის შეფასებაში და კონსულტაციის მოთხოვნაში ძირითადი ინფორმაციის ძებნის გარეშე.",
+        "problem": "პაციენტებს კლინიკასთან დაკავშირებამდე სჭირდებათ სიცხადე მკურნალობაზე, ექიმებზე, უსაფრთხოებაზე, ენის მხარდაჭერაზე და შემდეგ ნაბიჯებზე.",
+        "conversion": "მკურნალობის კვლევის გადაყვანა კონსულტაციის მოთხოვნად, ნდობის დასტურით მოთხოვნის გზის გვერდით.",
+        "architecture": [
+          "მკურნალობის კატეგორიის გვერდები პროცესით, რისკებით, მომზადებით და შემდგომი მოვლით.",
+          "ექიმის პროფილის შაბლონი კვალიფიკაციით, ენებით და შესაბამისი მკურნალობებით.",
+          "FAQ და ნდობის ფენა, დაკავშირებული კონსულტაციის ფორმებთან."
+        ],
+        "modules": [
+          "მკურნალობის კატეგორიის ბარათი",
+          "ექიმის პროფილის რიგი",
+          "კონსულტაციის CTA",
+          "მრავალენოვანი მიღების ინდიკატორი"
+        ],
+        "technical": [
+          "Medical schema საფუძვლები",
+          "ხელმისაწვდომი ფორმის ნაკადი",
+          "ლოკალიზებული მარშრუტების სტრუქტურა"
+        ]
+      },
+      "beauty": {
+        "label": "სტუდიის პროტოტიპი",
+        "title": "სილამაზის სტუდიის ჯავშნის სისტემა",
+        "summary": "სილამაზის სტუდიის ვებსაიტის პროტოტიპი, რომელიც სოციალურ ყურადღებას გადააქვს ნათელ სერვის მენიუში, ფასების კონტექსტში, ვიზუალურ დასტურში და ჩაწერის მოთხოვნის ნაკადში.",
+        "problem": "სოციალური არხები ქმნის ინტერესს, მაგრამ ვიზიტორებს ხშირად არ შეუძლიათ სერვისების, დროის, ფასების ან ხელმისაწვდომობის შედარება ერთ სტრუქტურირებულ ადგილზე.",
+        "conversion": "Instagram-იდან და ძიებიდან მოსული ვიზიტორების გადაყვანა ჩაწერის მოთხოვნებში სერვისზე მორგებული გზებით.",
+        "architecture": [
+          "სერვის მენიუ კატეგორიით, ფასის კონტექსტით, დროით და სპეციალისტით.",
+          "გალერეა და სოციალური დასტური ჯავშნის მოქმედებასთან ახლოს.",
+          "ადგილობრივი SEO გვერდები ბათუმში მაღალი განზრახვის სილამაზის სერვისებისთვის."
+        ],
+        "modules": [
+          "სერვის მენიუს რიგი",
+          "ფასისა და დროის მინი რიგი",
+          "ჩაწერის CTA",
+          "გალერეის ზოლი"
+        ],
+        "technical": [
+          "ჯავშნის მარშრუტის პატერნი",
+          "სურათების ოპტიმიზაცია",
+          "Local service schema"
+        ]
+      }
+    },
+    "process": {
+      "eyebrow": "სტუდიის მეთოდი",
+      "heading": "როგორ ხდება ეს თქვენი ვებსაიტი",
+      "subtitle": "სისტემა იწყება დიაგნოსტიკური სტრუქტურით, შემდეგ კი ხდება ფოკუსირებული ვებსაიტი ნათელი გვერდებით, კონკრეტული კონტენტით და შემოწმებული ჯავშნის გზით.",
+      "items": {
+        "audit": {
+          "title": "აუდიტი",
+          "description": "ვაფასებ არსებულ ვებსაიტს, ბიზნეს მოდელს, კონკურენტებს, ძიების განზრახვას და ადგილებს, სადაც ჯავშნები ან მოთხოვნები იკარგება."
+        },
+        "structure": {
+          "title": "სტრუქტურა",
+          "description": "დიზაინამდე ვხაზავ გვერდების არქიტექტურას, კონვერსიის გზებს, მრავალენოვან მარშრუტებს და კონტენტის ბლოკებს."
+        },
+        "design": {
+          "title": "დიზაინი",
+          "description": "ინტერფეისი ეწყობა სექტორის ლოგიკით: ოთახები, მკურნალობები ან სერვისები, სადაც ნდობა და მოქმედება ახლოსაა."
+        },
+        "build": {
+          "title": "აწყობა",
+          "description": "საიტი იქმნება Next.js-ზე responsive განლაგებებით, სტრუქტურირებული მონაცემებით, ფორმებით და წარმადობის დისციპლინით."
+        },
+        "launch": {
+          "title": "გაშვება",
+          "description": "საიტი ეშვება SEO საფუძვლებით, ანალიტიკის შემოწმებით, ფორმების ტესტებით, გადამისამართებებით და მოვლის პრაქტიკული გზით."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "დაიწყეთ ფაქტებით",
+      "heading": "იპოვეთ სისტემა, რომელიც თქვენს ვებსაიტს რეალურად სჭირდება.",
+      "subtitle": "ხელით ჩატარებული ვებსაიტის აუდიტი აჩვენებს, რა აფერხებს ნდობას, ძიებაში ხილვადობას და ჯავშნის მოქმედებას მანამდე, სანამ რედიზაინის მოცულობა განისაზღვრება.",
+      "audit": "მოითხოვეთ ვებსაიტის აუდიტი",
+      "project": "დაიწყეთ პროექტი"
+    }
   },
   "insightsPage": {
-    "heading": "ინსაითები მზადების პროცესში",
-    "subtitle": "დაგეგმილი პრაქტიკული გზამკვლევები ბათუმის სასტუმრო, სამედიცინო და სილამაზის ვებსაიტებისთვის.",
-    "comingSoon": "დაგეგმილი გზამკვლევი",
+    "heading": "ინსაითები გამოქვეყნდება მხოლოდ რეალური გზამკვლევებით",
+    "subtitle": "სტატიების ბიბლიოთეკა საჯაროდ არ ჩანს, სანამ დასრულებული და სასარგებლო პოსტები არ იქნება მზად. ახლა პრაქტიკული შემდეგი ნაბიჯია ხელით ვებსაიტის აუდიტი, რომელიც აჩვენებს, რა აფერხებს ნდობას, ძიებაში ხილვადობას და ჯავშნებს.",
+    "comingSoon": "გამოქვეყნებული პოსტები ჯერ არ არის",
     "clusters": {
       "hospitality": {
         "label": "სასტუმრო ბიზნესი",
@@ -1225,32 +1663,66 @@
       }
     },
     "detail": {
-      "cta": "გსურთ ვებსაიტი, რომელიც ასე მუშაობს თქვენთვის?",
+      "cta": "ცარიელი სტატიების ბადე არ ჩანს",
       "ctaLink": "მიიღეთ უფასო ვებსაიტის აუდიტი"
     }
   },
   "caseStudies": {
-    "sectionLabel": "დემო ბრიფები.",
-    "heading": "მაგალითი მიმართულებები, არა გამოგონილი კლიენტის შედეგები",
-    "viewLink": "ბრიფის ნახვა",
-    "moreNote": "ეს არის ნიმუშის ბრიფები, სანამ კლიენტის ნამუშევრები გამოქვეყნებისთვის მზად იქნება. მოითხოვეთ თქვენი ბიზნესისთვის ყველაზე ახლო მიმართულება.",
-    "discussProject": "მსგავს პროექტზე საუბარი",
-    "seeBrief": "ბრიფის ნახვა",
+    "sectionLabel": "ვებსაიტის სისტემების გალერეა.",
+    "heading": "მაგალითი სისტემები, არა გამოგონილი ქეისები",
+    "subtitle": "სამი სექტორული მიმართულება, რომელიც აჩვენებს ეკრანებს, ნაკადებს და მოდულებს, საიდანაც რეალური აწყობა შეიძლება დაიწყოს.",
+    "conversionLabel": "კონვერსიის მიზანი",
+    "viewGallery": "ვებსაიტის სისტემების ნახვა",
+    "viewLink": "სისტემის ნახვა",
+    "moreNote": "ეს პრევიუები არის კონცეპტური სისტემები და სტუდიის პროტოტიპები. ისინი არ აცხადებენ კლიენტის შედეგებს, შეფასებებს ან მეტრიკებს.",
+    "proof": {
+      "items": [
+        "ამჟამად ვიღებ შერჩეულ პროექტებს ბათუმში.",
+        "დამფუძნებლის მიერ მართული build-ები. მკაფიო scope სამუშაოს დაწყებამდე.",
+        "ქვემოთ ნაჩვენები კონცეპტური სისტემები სტუდიის პროტოტიპებია და არა გამოგონილი კლიენტის ქეისები."
+      ]
+    },
+    "discussProject": "მსგავსი პროექტის განხილვა",
+    "seeBrief": "სისტემის ნახვა",
     "studies": {
       "hospitality": {
-        "vertical": "სასტუმრო ბიზნესი",
-        "title": "ბუტიკ სასტუმროს პირდაპირი ჯავშნის კონცეფცია",
-        "result": "ჯავშნის პროცესის გეგმა"
+        "label": "კონცეპტური სისტემა",
+        "vertical": "სასტუმროები",
+        "title": "სასტუმროს პირდაპირი ჯავშნის სისტემა",
+        "problem": "პირდაპირი საიტი ოთახებს, ლოკაციას, წესებს და ჯავშნის ღირებულებას OTA გვერდზე უფრო სანდოდ უნდა აჩვენებდეს.",
+        "conversion": "პირდაპირი ჯავშნის მოთხოვნა",
+        "result": "ჯავშნის ნაკადის გეგმა",
+        "modules": [
+          "ოთახების ბარათები წესების კონტექსტით",
+          "შესვლისა და სტუმრების არჩევა",
+          "ლოკაციისა და ნდობის ზოლი"
+        ]
       },
       "medical": {
-        "vertical": "სამედიცინო",
-        "title": "სტომატოლოგიური კლინიკის მრავალენოვანი ნდობის საიტი",
-        "result": "პაციენტის მოთხოვნის სტრუქტურა"
+        "label": "მაგალითი აწყობა",
+        "vertical": "მედიცინა",
+        "title": "კლინიკის ნდობისა და მკურნალობის სისტემა",
+        "problem": "პაციენტებს კონსულტაციის მოთხოვნამდე სჭირდებათ მკურნალობის სიცხადე, ექიმის სანდოობა და ენის მხარდაჭერა.",
+        "conversion": "კონსულტაციის მოთხოვნა",
+        "result": "პაციენტის მოთხოვნის სტრუქტურა",
+        "modules": [
+          "მკურნალობის კატეგორიის კონტენტი",
+          "ექიმის პროფილი და კვალიფიკაცია",
+          "FAQ და მრავალენოვანი მიღება"
+        ]
       },
       "beauty": {
+        "label": "სტუდიის პროტოტიპი",
         "vertical": "სილამაზე",
-        "title": "სილამაზის სტუდიის ჩაწერის ვებსაიტი",
-        "result": "ჩაწერის პროცესის პროტოტიპი"
+        "title": "სილამაზის სტუდიის ჯავშნის სისტემა",
+        "problem": "სოციალურ ყურადღებას სჭირდება სტრუქტურირებული სერვის მენიუ, ფასის კონტექსტი, ვიზუალური დასტური და ნათელი ჩაწერის გზა.",
+        "conversion": "ჩაწერის მოთხოვნა",
+        "result": "ჩაწერის ნაკადის პროტოტიპი",
+        "modules": [
+          "სერვის მენიუ კატეგორიებით",
+          "ფასის, დროის და სპეციალისტის რიგი",
+          "გალერეა და ჯავშნის CTA"
+        ]
       }
     }
   },
@@ -1292,7 +1764,11 @@
     "client2": "ადგილობრივი SEO",
     "client3": "ორიგინალური ფოტოგრაფია",
     "client4": "მრავალენოვანი გვერდები",
-    "client5": "Hostinger-ზე გაშვება"
+    "client5": "გაშვების მხარდაჭერა"
+  },
+  "testimonials": {
+    "eyebrow": "კლიენტის მტკიცებულება",
+    "heading": "რეალური შეფასებები"
   },
   "ui": {
     "skipToContent": "შინაარსზე გადასვლა",
@@ -1314,8 +1790,8 @@
     "locationArea": "ვმუშაობ ბათუმიდან, საქართველოდან. ვემსახურები სასტუმრო, სამედიცინო და სილამაზის ბიზნესებს აჭარაში და მის ფარგლებს გარეთ."
   },
   "announcement": {
-    "text": "უფასო ვებსაიტის აუდიტი ამ თვეში - ადგილები შეზღუდულია",
-    "cta": "მოითხოვეთ"
+    "text": "ხელმისაწვდომია ხელით ვებსაიტის აუდიტი",
+    "cta": "მოითხოვეთ აუდიტი"
   },
   "availability": {
     "available": "ვიღებ ახალ პროექტებს",

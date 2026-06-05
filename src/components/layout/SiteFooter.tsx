@@ -1,7 +1,7 @@
 import { Link } from '@/lib/i18n/navigation';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
-import Image from 'next/image';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
 import { sectors, sectorKeys } from '@/lib/sector-config';
@@ -24,7 +24,6 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
     { label: nav('about'), href: '/about' },
     { label: nav('pricing'), href: '/pricing' },
     { label: nav('contact'), href: '/contact' },
-    { label: nav('insights'), href: '/insights' },
   ];
 
   const legalLinks = [
@@ -36,21 +35,34 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
     { label: t('instagram'), href: siteConfig.social.instagram, icon: Instagram },
     { label: t('linkedin'), href: siteConfig.social.linkedin, icon: Linkedin },
     { label: t('facebook'), href: siteConfig.social.facebook, icon: Facebook },
-  ].filter((link) => link.href);
+  ].filter((link) => link.href.trim());
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-hairline bg-canvas">
       <div className="mx-auto max-w-[var(--container-max-width)] px-[var(--container-padding)] py-12 md:py-16">
         {/* Logo + Tagline */}
         <div className="mb-10">
-          <Image
-            src="/brand/yourtimestudio-logo.png"
-            alt="Yourtimestudio logo"
-            width={180}
-            height={212}
-            className="mb-4 h-auto w-36"
-          />
-          <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
+          <Link href="/" className="group inline-flex items-center gap-3 text-ink transition-colors hover:text-sea-bright">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-md border border-hairline bg-paper p-0.5">
+              <Image
+                src={siteConfig.brand.markSrc}
+                alt={siteConfig.brand.markAlt}
+                width={40}
+                height={40}
+                sizes="44px"
+                className="size-10 rounded-sm object-cover"
+              />
+            </span>
+            <span className="leading-none">
+              <span className="block text-base font-semibold tracking-[0.04em] text-ink">
+                {siteConfig.brand.displayName}
+              </span>
+              <span className="mt-1.5 block font-mono text-[0.68rem] font-semibold uppercase leading-none tracking-[0.12em] text-muted transition-colors group-hover:text-ink/80">
+                {t('brand_descriptor')}
+              </span>
+            </span>
+          </Link>
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
             {t('tagline')}
           </p>
           <div className="mt-4 max-w-sm">
@@ -62,7 +74,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 md:gap-12">
           {/* Solutions */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="mb-4 mono-label text-muted">
               {t('solutions')}
             </h3>
             <ul className="space-y-3">
@@ -70,7 +82,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="flex items-center gap-2 text-sm text-ink transition-colors hover:text-sea-bright"
                   >
                     {link.color && (
                       <span className={`inline-block size-1.5 rounded-full ${link.color}`} />
@@ -84,7 +96,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="mb-4 mono-label text-muted">
               {t('company')}
             </h3>
             <ul className="space-y-3">
@@ -92,7 +104,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="text-sm text-muted transition-colors hover:text-sea-bright"
                   >
                     {link.label}
                   </Link>
@@ -103,7 +115,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
 
           {/* Legal */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="mb-4 mono-label text-muted">
               {t('legal')}
             </h3>
             <ul className="space-y-3">
@@ -111,7 +123,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="text-sm text-muted transition-colors hover:text-sea-bright"
                   >
                     {link.label}
                   </Link>
@@ -122,7 +134,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
 
           {socialLinks.length > 0 && (
             <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h3 className="mb-4 mono-label text-muted">
                 {t('social_heading')}
               </h3>
               <ul className="space-y-3">
@@ -134,7 +146,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                        className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-sea-bright"
                       >
                         <Icon className="size-4" aria-hidden="true" />
                         {link.label}
@@ -148,18 +160,18 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-start gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-12 flex flex-col items-start gap-4 border-t border-hairline pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted">
             &copy; {new Date().getFullYear()} Yourtimestudio. {t('copyright')}
           </p>
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+          <div className="flex items-center gap-3 text-xs text-muted">
             {launchLocales.map((loc, i) => (
               <span key={loc} className="flex items-center gap-3">
-                {i > 0 && <span className="text-border">|</span>}
+                {i > 0 && <span className="text-hairline">|</span>}
                 <Link
                   href="/"
                   locale={loc}
-                  className={`transition-colors hover:text-brand-serene-coral-darken ${locale === loc ? 'text-brand-serene-coral-darken font-semibold' : ''}`}
+                  className={`transition-colors hover:text-sea-bright ${locale === loc ? 'text-sea-bright font-semibold' : ''}`}
                 >
                   {localeLabels[loc]}
                 </Link>

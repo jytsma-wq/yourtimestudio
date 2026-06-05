@@ -1,21 +1,15 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { type Locale, launchLocales } from '@/lib/i18n/config';
-import { generatePageMetadata } from '@/lib/seo/metadata';
+import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
 import { organizationSchema, webSiteSchema, localBusinessSchema } from '@/lib/seo/structured-data';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
-import { AuditSection } from '@/components/sections/AuditSection';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection';
 import { FounderSection } from '@/components/sections/FounderSection';
-import { ResultsBand } from '@/components/sections/ResultsBand';
 import { PricingSection } from '@/components/sections/PricingSection';
-import { FAQSection } from '@/components/sections/FAQSection';
-import { BlogTeaser } from '@/components/sections/BlogTeaser';
 import { CTABandSection } from '@/components/sections/CTABandSection';
-import { Section } from '@/components/shared/Section';
-import { TrustedByStrip } from '@/components/sections/TrustedByStrip';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -33,6 +27,7 @@ export async function generateMetadata({
     description: t('description'),
     path: '',
     locale: locale as Locale,
+    ogImage: pageOgImages.home,
   });
 }
 
@@ -43,8 +38,6 @@ export default async function LocalePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-
-  const t = await getTranslations('faq');
 
   return (
     <>
@@ -59,54 +52,35 @@ export default async function LocalePage({
         }}
       />
 
+      {/* 01 — Hero: dark, immersive, developer-system mockup */}
       <HeroSection locale={locale as Locale} />
 
-      <TrustedByStrip />
-
+      {/* 02 — Sector systems: three website systems */}
       <div id="sectors" data-section-name="Solutions">
-        <SectorCardsSection locale={locale as Locale} number="02" />
+        <SectorCardsSection locale={locale as Locale} />
       </div>
 
-      <div id="audit" data-section-name="Audit">
-        <AuditSection locale={locale as Locale} number="03" />
+      {/* 03 — Work: concept system previews */}
+      <div id="case-studies" data-section-name="Systems">
+        <CaseStudiesSection />
       </div>
 
+      {/* 04 — Process: technical build pipeline */}
       <div id="process" data-section-name="Process">
-        <ProcessSection locale={locale as Locale} number="04" />
+        <ProcessSection locale={locale as Locale} />
       </div>
 
-      <div id="case-studies" data-section-name="Demo Briefs">
-        <CaseStudiesSection number="05" />
-      </div>
-
+      {/* 05 — Founder: technical authority */}
       <div id="about" data-section-name="About">
-        <FounderSection locale={locale as Locale} number="06" />
+        <FounderSection locale={locale as Locale} />
       </div>
 
-      <ResultsBand locale={locale as Locale} number="07" />
-
+      {/* 06 — Pricing: calm scope comparison */}
       <div id="pricing" data-section-name="Pricing">
-        <PricingSection locale={locale as Locale} number="08" />
+        <PricingSection />
       </div>
 
-      <div id="faq" data-section-name="FAQ">
-        <Section variant="subtle" number="09">
-          <div className="text-center mb-12 md:mb-16">
-            <p className="section-label">{t('sectionLabel')}</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              {t('heading')}
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <FAQSection locale={locale} />
-          </div>
-        </Section>
-      </div>
-
-      <div id="insights" data-section-name="Insights">
-        <BlogTeaser locale={locale as Locale} />
-      </div>
-
+      {/* 07 — CTA: strong dark closing */}
       <CTABandSection locale={locale as Locale} />
     </>
   );

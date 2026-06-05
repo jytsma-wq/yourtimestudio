@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SectorPageTemplate } from '@/components/shared/SectorPageTemplate';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
-import { generatePageMetadata } from '@/lib/seo/metadata';
+import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
 
 export async function generateMetadata({
   params,
@@ -11,12 +11,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Medical Websites Batumi — Trust-First Websites for Clinics',
+    title: 'Clinic & Medical Tourism Websites in Batumi',
     description:
-      'Websites that build patient trust before the first consultation. Doctor profiles, consultation booking, multilingual medical content, and structured data for Batumi clinics and dental practices.',
+      'Trust-first websites for Batumi clinics, dental practices, and medical tourism providers with doctor profiles, clear services, and multilingual appointment paths.',
     path: '/medical-websites-batumi',
     locale: locale as Locale,
-    ogImage: '/og-medical.png',
+    ogImage: pageOgImages.medical,
   });
 }
 

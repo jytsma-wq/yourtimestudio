@@ -46,15 +46,15 @@ export function FAQSection({ locale }: FAQSectionProps) {
       <Accordion type="single" collapsible className="w-full">
         {items.map((item, i) => (
           <AccordionItem key={i} value={`faq-${i}`}>
-            <AccordionTrigger className="text-left text-base md:text-lg font-medium">
-              <span className="flex items-baseline">
-                <span className="faq-number">
+            <AccordionTrigger className="text-left text-base md:text-lg font-medium text-ink">
+              <span className="flex items-baseline gap-3">
+                <span className="font-mono text-sm font-semibold text-sea-bright">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span>{item.q}</span>
               </span>
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground leading-relaxed pl-[3.2em]">
+            <AccordionContent className="text-muted leading-relaxed pl-[3.2em]">
               {item.a}
             </AccordionContent>
           </AccordionItem>

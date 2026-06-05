@@ -9,24 +9,31 @@ import {
   Accessibility,
   MousePointerClick,
   ArrowRight,
+  AlertTriangle,
+  CheckCircle2,
+  Circle,
 } from 'lucide-react';
-import { Section } from '@/components/shared/Section';
 import { type Locale } from '@/lib/i18n/config';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 
 const auditCategories = [
-  { key: 'brand', icon: Eye, score: '01' },
-  { key: 'speed', icon: Gauge, score: '02' },
-  { key: 'seo', icon: MapPin, score: '03' },
-  { key: 'content', icon: LayoutGrid, score: '04' },
-  { key: 'accessibility', icon: Accessibility, score: '05' },
-  { key: 'conversion', icon: MousePointerClick, score: '06' },
+  { key: 'brand', icon: Eye, risk: 'high' },
+  { key: 'speed', icon: Gauge, risk: 'medium' },
+  { key: 'seo', icon: MapPin, risk: 'high' },
+  { key: 'content', icon: LayoutGrid, risk: 'medium' },
+  { key: 'accessibility', icon: Accessibility, risk: 'low' },
+  { key: 'conversion', icon: MousePointerClick, risk: 'high' },
 ];
+
+const riskConfig = {
+  high: { icon: AlertTriangle, color: 'text-oxide', bg: 'bg-oxide/10', label: 'High impact' },
+  medium: { icon: Circle, color: 'text-warning', bg: 'bg-warning/10', label: 'Medium impact' },
+  low: { icon: CheckCircle2, color: 'text-success', bg: 'bg-success/10', label: 'Low impact' },
+};
 
 interface AuditSectionProps {
   locale: Locale;
-  /** Large faint section number for background decoration */
   number?: string;
 }
 
@@ -35,67 +42,78 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
   const tDesc = useTranslations('auditDescriptions');
 
   return (
-    <Section variant="subtle" number={number}>
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="lg:sticky lg:top-28 dot-grid-bg">
-          <p className="section-label">{t('sectionLabel')}</p>
-          <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl text-foreground">
-            {t('heading')}
-          </h2>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            {t('subtitle')}
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 h-12 rounded-none bg-foreground px-6 text-background hover:bg-foreground/88"
-          >
-            <Link href="/website-audits">
-              {t('cta')}
-              <ArrowRight className="ml-1 size-4" />
-            </Link>
-          </Button>
-        </div>
-
-        <div className="border border-border bg-card bg-paper-texture shadow-md transition duration-150 ease-out hover:translate-y-[-4px] hover:shadow-xl">
-          <div className="grid grid-cols-[1fr_auto] gap-4 border-b border-border p-5 md:p-6">
-            <div>
-              <p className="editorial-kicker text-brand-serene-coral-darken">{t('panel_kicker')}</p>
-              <h3 className="mt-2 text-2xl font-semibold text-foreground">{t('scorecard_title')}</h3>
-            </div>
-            <p className="text-right font-sans text-3xl font-semibold text-muted-foreground">/100</p>
+    <section className="bg-canvas py-16 md:py-24 px-[var(--container-padding)]">
+      <div className="mx-auto max-w-[var(--container-max-width)]">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          {/* Left: Copy */}
+          <div className="lg:sticky lg:top-28">
+            <p className="mono-label text-sea-bright mb-4">{t('sectionLabel')}</p>
+            <h2 className="text-display-lg text-ink">
+              {t('heading')}
+            </h2>
+            <p className="mt-6 max-w-xl text-body-lg text-muted leading-relaxed">
+              {t('subtitle')}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="mt-8 h-12 rounded-md bg-oxide px-6 text-white hover:bg-oxide-hover transition-colors"
+            >
+              <Link href="/website-audits">
+                {t('cta')}
+                <ArrowRight className="ml-1.5 size-4" />
+              </Link>
+            </Button>
           </div>
 
-          <div className="divide-y divide-border">
-            {auditCategories.map((cat) => {
-              const Icon = cat.icon;
-              return (
-                <div key={cat.key} className="grid gap-4 p-5 md:grid-cols-[80px_1fr] md:p-6">
-                  <div className="flex items-center gap-3 md:block">
-                    <p className="font-sans text-sm font-semibold text-muted-foreground">{cat.score}</p>
-                    <div className="mt-0 flex size-10 items-center justify-center border border-border bg-background md:mt-4">
-                      <Icon className="size-5 text-brand-sage-green-darken" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <h4 className="text-lg font-semibold text-foreground">{t(`categories.${cat.key}`)}</h4>
-                      <span className="editorial-kicker text-muted-foreground">{t('manual_review')}</span>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {tDesc(cat.key)}
-                    </p>
-                  </div>
+          {/* Right: Diagnostic product panel */}
+          <div className="bg-surface border border-hairline rounded-md overflow-hidden">
+            {/* Panel header */}
+            <div className="border-b border-hairline p-5 md:p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="mono-label text-sea-bright">{t('panel_kicker')}</p>
+                  <h3 className="mt-2 text-heading-md text-ink">{t('scorecard_title')}</h3>
                 </div>
-              );
-            })}
-          </div>
+                <span className="mono-label text-muted">Manual review</span>
+              </div>
+            </div>
 
-          <div className="border-t border-border bg-background p-5 text-sm leading-relaxed text-muted-foreground md:p-6">
-            {t('note')}
+            {/* Audit checklist rows */}
+            <div className="divide-y divide-hairline">
+              {auditCategories.map((cat) => {
+                const Icon = cat.icon;
+                const risk = riskConfig[cat.risk as keyof typeof riskConfig];
+                return (
+                  <div key={cat.key} className="p-5 md:p-6 hover:bg-surface-elevated/50 transition-colors">
+                    <div className="flex items-start gap-4">
+                      <div className="flex size-9 items-center justify-center rounded bg-sea/10 shrink-0">
+                        <Icon className="size-4 text-sea-bright" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-sm font-semibold text-ink">{t(`categories.${cat.key}`)}</h4>
+                          <span className={`mono-label text-[9px] ${risk.color} ${risk.bg} px-1.5 py-0.5 rounded`}>
+                            {risk.label}
+                          </span>
+                        </div>
+                        <p className="text-body-sm text-muted leading-relaxed">
+                          {tDesc(cat.key)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Panel footer */}
+            <div className="border-t border-hairline bg-surface-elevated p-5 text-body-sm text-muted md:p-6">
+              {t('note')}
+            </div>
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

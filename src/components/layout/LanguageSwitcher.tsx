@@ -37,30 +37,30 @@ export default function LanguageSwitcher() {
         <Button
           variant="outline"
           size="sm"
-          className="h-8 gap-1.5 rounded-md border-border/60 bg-background/50 px-2.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-brand-serene-coral/40 hover:text-brand-serene-coral-darken hover:bg-brand-serene-coral/5"
+          className="h-8 gap-1.5 rounded-md border-hairline bg-surface px-2.5 text-xs font-medium text-copy-muted transition-colors hover:border-sea/40 hover:bg-surface-elevated hover:text-sea-bright"
         >
           <span className="text-xs font-bold tracking-wider uppercase">{localeAbbreviations[locale]}</span>
-          <span className="text-xs text-muted-foreground">▼</span>
+          <span className="text-xs text-copy-muted">▼</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-40 p-1">
+      <DropdownMenuContent align="end" className="w-40 border-hairline bg-surface p-1 text-ink shadow-none">
         {launchLocales.map((loc) => (
           <DropdownMenuItem
             key={loc}
             onClick={() => handleSwitch(loc)}
             className={`flex items-center justify-between gap-2 rounded-md px-2.5 py-2 text-sm transition-colors ${
               locale === loc
-                ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken font-semibold'
-                : 'text-foreground hover:bg-accent/5 hover:text-brand-serene-coral-darken'
+                ? 'bg-sea/20 text-sea-bright font-semibold'
+                : 'text-copy-muted hover:bg-surface-elevated hover:text-ink'
             }`}
           >
             <span className="flex items-center gap-2">
-              <span className="text-xs font-bold tracking-wider uppercase text-muted-foreground w-5">
+              <span className="text-xs font-bold tracking-wider uppercase text-copy-muted w-5">
                 {localeAbbreviations[loc]}
               </span>
               <span>{localeLabels[loc]}</span>
             </span>
-            {locale === loc && <Check className="size-3.5 text-brand-serene-coral-darken" />}
+            {locale === loc && <Check className="size-3.5 text-sea-bright" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

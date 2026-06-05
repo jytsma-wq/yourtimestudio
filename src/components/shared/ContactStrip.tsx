@@ -1,17 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { MessageCircle, Mail } from 'lucide-react';
 import { siteConfig } from '@/lib/site-config';
 
 export function ContactStrip() {
   const ui = useTranslations('ui');
-  const locale = useLocale();
   const [visible, setVisible] = useState(false);
-  const contactHref = locale === 'en' ? '/contact' : `/${locale}/contact`;
-  const hasWhatsAppLink = Boolean(siteConfig.contact.whatsappHref);
-  const whatsappHref = siteConfig.contact.whatsappHref || contactHref;
+  const whatsappHref = siteConfig.contact.whatsappHref;
 
   useEffect(() => {
     function handleScroll() {
@@ -31,24 +28,26 @@ export function ContactStrip() {
         visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
     >
-      <div className="bg-card border border-border border-r-0 rounded-l-lg shadow-premium-lg py-3 px-2 flex flex-col items-center gap-3">
-        <a
-          href={whatsappHref}
-          target={hasWhatsAppLink ? '_blank' : undefined}
-          rel={hasWhatsAppLink ? 'noopener noreferrer' : undefined}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-serene-coral-darken transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken/80 hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
-          aria-label={ui('contactViaWhatsApp')}
-        >
-          <MessageCircle className="size-4" />
-        </a>
+      <div className="flex flex-col items-center gap-3 rounded-l-md border border-r-0 border-hairline bg-surface px-2 py-3 text-ink">
+        {whatsappHref && (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-sea-bright transition duration-150 ease-out hover:bg-surface-elevated hover:text-oxide"
+            aria-label={ui('contactViaWhatsApp')}
+          >
+            <MessageCircle className="size-4" />
+          </a>
+        )}
         <a
           href={`mailto:${siteConfig.contact.email}`}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground transition duration-150 ease-out hover:scale-[1.02] hover:text-brand-serene-coral-darken hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-muted transition duration-150 ease-out hover:bg-surface-elevated hover:text-sea-bright"
           aria-label={ui('sendEmail')}
         >
           <Mail className="size-4" />
         </a>
-        <span className="[writing-mode:vertical-lr] text-xs font-medium text-muted-foreground tracking-widest uppercase rotate-180 mt-1">
+        <span className="mt-1 rotate-180 text-xs font-medium uppercase tracking-widest text-muted [writing-mode:vertical-lr]">
           {ui('contact')}
         </span>
       </div>

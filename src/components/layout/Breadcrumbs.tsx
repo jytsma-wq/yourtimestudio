@@ -67,7 +67,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             <BreadcrumbLink asChild>
               <Link
                 href="/"
-                className="flex items-center gap-1 text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
+                className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-sea-bright"
               >
                 <Home className="size-3.5" />
                 <span className="sr-only sm:not-sr-only">{ui('home')}</span>
@@ -90,7 +90,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                     <BreadcrumbLink asChild>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
+                        className="text-muted-foreground transition-colors hover:text-sea-bright"
                       >
                         {item.label}
                       </Link>

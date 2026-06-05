@@ -5,7 +5,7 @@ import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen, DollarSign } from 'lucide-react';
+import { ClipboardCheck, DollarSign } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 
 export async function generateMetadata({
@@ -32,7 +32,6 @@ export default async function ThankYouPage({
   setRequestLocale(locale);
 
   const t = await getTranslations('thankYouPage');
-  const tNav = await getTranslations('nav');
 
   const breadcrumbItems = [
     { label: 'Thank You' },
@@ -48,9 +47,9 @@ export default async function ThankYouPage({
       <Section>
         <div className="max-w-2xl mx-auto text-center">
           {/* Success indicator */}
-          <div className="size-16 flex items-center justify-center bg-brand-serene-coral/10 border border-border mx-auto mb-8">
+          <div className="size-16 flex items-center justify-center bg-oxide/10 border border-border mx-auto mb-8">
             <svg
-              className="size-8 text-brand-serene-coral-darken"
+              className="size-8 text-sea-bright"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -77,11 +76,11 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-md"
             >
-              <Link href="/insights">
-                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
-                  <BookOpen className="size-4 text-brand-serene-coral-darken" />
+              <Link href="/website-audits">
+                <div className="size-10 flex items-center justify-center border border-border bg-oxide/10 shrink-0">
+                  <ClipboardCheck className="size-4 text-sea-bright" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('browse_insights')}</p>
@@ -93,11 +92,11 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-md"
             >
               <Link href="/pricing">
-                <div className="size-10 flex items-center justify-center border border-border bg-brand-sage-green-darken/10 shrink-0">
-                  <DollarSign className="size-4 text-brand-sage-green-darken" />
+                <div className="size-10 flex items-center justify-center border border-border bg-sea/10 shrink-0">
+                  <DollarSign className="size-4 text-sea-bright" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('see_pricing')}</p>

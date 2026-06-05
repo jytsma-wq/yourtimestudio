@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SectorPageTemplate } from '@/components/shared/SectorPageTemplate';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
-import { generatePageMetadata } from '@/lib/seo/metadata';
+import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
 
 export async function generateMetadata({
   params,
@@ -11,12 +11,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Hospitality Web Design Batumi — Direct Booking Websites for Hotels',
+    title: 'Hotel Website Development in Batumi',
     description:
-      'Websites that fill rooms, not OTA commission sheets. Direct booking integration, multilingual guest paths, and speed optimization for Batumi hotels, guesthouses, and aparthotels.',
+      'Direct booking websites for Batumi hotels, guesthouses, and aparthotels with fast pages, multilingual guest paths, and clear room enquiry flows.',
     path: '/hospitality-web-design-batumi',
     locale: locale as Locale,
-    ogImage: '/og-hospitality.png',
+    ogImage: pageOgImages.hospitality,
   });
 }
 

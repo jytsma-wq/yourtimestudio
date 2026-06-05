@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
@@ -25,6 +26,7 @@ export function AuditRequestForm() {
 
   const tSectors = useTranslations('contactPage');
   const sectors = [tSectors('sectors.0'), tSectors('sectors.1'), tSectors('sectors.2'), tSectors('sectors.3')] as const;
+  const fieldClass = 'border-hairline bg-canvas/40 text-ink placeholder:text-copy-muted focus-visible:border-sea-bright focus-visible:ring-sea-bright/30';
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -58,6 +60,7 @@ export function AuditRequestForm() {
 
       if (!res.ok) throw new Error('Request failed');
 
+      trackEvent('Audit Form Submitted');
       setStatus('success');
       formRef.current?.reset();
     } catch {
@@ -67,8 +70,8 @@ export function AuditRequestForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-card border border-border rounded-none p-8 text-center" role="status">
-        <CheckCircle2 className="size-12 text-brand-sage-green-darken mx-auto mb-4" />
+      <div className="rounded-md border border-success/35 bg-success/10 p-8 text-center text-ink" role="status">
+        <CheckCircle2 className="size-12 text-success mx-auto mb-4" />
         <p className="text-lg font-medium mb-2">{t('success')}</p>
       </div>
     );
@@ -78,7 +81,7 @@ export function AuditRequestForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="bg-card border border-border rounded-none p-6 md:p-8 space-y-5"
+      className="relative space-y-5 rounded-md border border-hairline bg-surface p-5 text-ink md:p-6"
       noValidate
     >
       {/* Honeypot — hidden from real users, visible to bots */}
@@ -105,6 +108,7 @@ export function AuditRequestForm() {
             required
             autoComplete="name"
             placeholder="Mariam K."
+            className={fieldClass}
           />
         </div>
 
@@ -117,6 +121,7 @@ export function AuditRequestForm() {
             required
             autoComplete="organization"
             placeholder="Seafront Rooms"
+            className={fieldClass}
           />
         </div>
       </div>
@@ -132,6 +137,7 @@ export function AuditRequestForm() {
             required
             autoComplete="email"
             placeholder="mariam@example.com"
+            className={fieldClass}
           />
         </div>
 
@@ -139,12 +145,12 @@ export function AuditRequestForm() {
         <div className="space-y-2">
           <Label htmlFor="audit-sector">{t('sector')} *</Label>
           <Select name="sector" required>
-            <SelectTrigger id="audit-sector" className="w-full">
+            <SelectTrigger id="audit-sector" className={`w-full ${fieldClass}`}>
               <SelectValue placeholder={t('sector')} />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="border-hairline bg-surface text-ink shadow-none">
               {sectors.map((sector) => (
-                <SelectItem key={sector} value={sector}>
+                <SelectItem key={sector} value={sector} className="focus:bg-surface-elevated focus:text-ink">
                   {sector}
                 </SelectItem>
               ))}
@@ -163,6 +169,7 @@ export function AuditRequestForm() {
           required
           autoComplete="url"
           placeholder="https://yourwebsite.com"
+          className={fieldClass}
         />
       </div>
 
@@ -174,6 +181,7 @@ export function AuditRequestForm() {
           name="message"
           rows={3}
           placeholder=""
+          className={fieldClass}
         />
       </div>
 
@@ -187,7 +195,7 @@ export function AuditRequestForm() {
       <Button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base h-12"
+        className="w-full rounded-md bg-oxide text-white hover:bg-oxide-hover hover:text-white font-medium text-base h-12"
       >
         {status === 'sending' ? (
           <>

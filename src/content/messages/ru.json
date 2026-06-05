@@ -1,8 +1,8 @@
 {
   "_note": "Russian (ru) translations — complete. All strings translated to Russian.",
   "metadata": {
-    "title": "Yourtimestudio - сайты прямого бронирования для отелей, клиник и студий Батуми",
-    "description": "Веб-дизайн под руководством основателя, локальное SEO, пути бронирования и визуальное направление для сервисного бизнеса в Батуми, Грузия."
+    "title": "Yourtimestudio — студия разработки сайтов в Батуми",
+    "description": "Разработка сайтов под руководством основателя для отелей, клиник, салонов красоты и сервисных бизнесов в Батуми, Грузия."
   },
   "nav": {
     "home": "Главная",
@@ -15,29 +15,25 @@
     "insights": "Инсайты",
     "pricing": "Цены",
     "about": "О нас",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "brand_descriptor": "Веб-разработка · Батуми"
   },
   "hero": {
     "eyebrow": "Веб-студия в Батуми под руководством основателя",
-    "title": "Сайты прямого бронирования для отелей, клиник и студий Батуми",
-    "subtitle": "Я создаю быстрые многоязычные сайты с локальным SEO, путями бронирования и визуальным направлением для бизнесов Батуми, которым нельзя выглядеть шаблонно.",
+    "title": "Сайты, которые превращают локальный бизнес в системы бронирования.",
+    "subtitle": "Веб-разработка под руководством основателя: UX-структура, локальное SEO, многоязычные страницы и пути бронирования для бизнесов Батуми с международными клиентами.",
     "cta_primary": "Запросить аудит сайта",
-    "cta_secondary": "Посмотреть отраслевые планы",
+    "cta_secondary": "Посмотреть ценовые пакеты",
     "getQuote": "Получить цену",
     "proof_band": [
-      "Под руководством основателя",
-      "С поддержкой фотографа",
-      "Многоязычно",
-      "Готово для Hostinger"
+      "Разработка под руководством основателя",
+      "Локальное SEO включено",
+      "Многоязычная структура",
+      "UX с фокусом на бронирование"
     ],
     "sectionLabel": "Веб-студия в Батуми под руководством основателя.",
-    "title1": "Сайты прямого бронирования для",
-    "title2": "отелей, клиник и студий",
-    "typewriter": {
-      "hotel": "Готовые к бронированию сайты отелей",
-      "clinic": "Сайты клиник, построенные на доверии",
-      "salon": "Сайты beauty-бизнеса с фокусом на запись"
-    },
+    "title1": "Сайты, которые превращают локальный бизнес в",
+    "title2": "системы бронирования.",
     "cards": {
       "hospitality": {
         "name": "Гостиничный бизнес",
@@ -153,15 +149,52 @@
     "sectionLabel": "Как я работаю.",
     "founder": {
       "sectionLabel": "Как я работаю.",
-      "heading": "Один ответственный исполнитель. Специалисты там, где они действительно нужны.",
-      "bio": "Yourtimestudio - моя веб-студия в Батуми под руководством основателя. Вы работаете напрямую со мной над стратегией, дизайном, кодом, SEO и запуском. Когда проекту нужны оригинальные визуальные материалы, я подключаю профессионального фотографа вместо стоковых изображений.",
+      "heading": "Разработка напрямую с Jasper.",
+      "bio": "Я Jasper Tjeerd IJtsma, нидерландский разработчик сайтов в Батуми. Yourtimestudio - моя сфокусированная студия для сайтов локального сервисного бизнеса, где важны бронирования.",
+      "story": [
+        "Я начал Yourtimestudio после того, как увидел, сколько сильных бизнесов Батуми теряют доверие онлайн из-за медленных, непонятных или шаблонных сайтов.",
+        "Я создаю сфокусированные сайты для отелей, клиник, студий и сервисного бизнеса, где важны бронирование, локальное SEO, многоязычный UX и доверие.",
+        "Клиенты работают напрямую со мной от структуры и дизайна до frontend-разработки, запуска и улучшений, поэтому качество и ответственность остаются видимыми."
+      ],
       "location": "База в Батуми",
-      "since": "Избранные проекты",
+      "since": "Нидерландский основатель",
       "cta": "Начать проект",
       "statClients": "Ключевые отрасли",
       "statLanguages": "Запланированные языки",
       "statAvailable": "Беру выбранные проекты",
       "imageAlt": "Рабочее пространство основателя Yourtimestudio"
+    },
+    "operating": {
+      "label": "Модель работы",
+      "heading": "Один ответственный исполнитель от диагностики до улучшений.",
+      "items": {
+        "diagnose": "Диагностика",
+        "structure": "Структура",
+        "design": "Дизайн",
+        "build": "Разработка",
+        "launch": "Запуск",
+        "improve": "Улучшение"
+      }
+    },
+    "direct": {
+      "label": "Что я делаю напрямую",
+      "items": {
+        "ux": "UX-структура",
+        "frontend": "frontend implementation",
+        "localSeo": "основы локального SEO",
+        "multilingual": "многоязычная настройка",
+        "checks": "проверки performance/accessibility",
+        "leadFlows": "формы и lead flows"
+      }
+    },
+    "not_fake": {
+      "label": "Что я не имитирую",
+      "items": {
+        "numbers": "без фейковых чисел клиентов",
+        "decoration": "без сайтов, где декор важнее задачи",
+        "templates": "без раздутых шаблонов",
+        "guarantees": "без расплывчатых гарантий"
+      }
     },
     "features": {
       "sectionLabel": "Почему эта модель работает.",
@@ -188,330 +221,536 @@
     }
   },
   "pricing": {
-    "heading": "Цены",
-    "subtitle": "Типичные диапазоны инвестиций для студии специалиста-одиночки.",
+    "heading": "Clear website development scopes.",
+    "subtitle": "Typical ranges for founder-led website development, technical setup, content structure, and monthly care. Final proposals are scoped after the business model, content needs, integrations, and launch requirements are reviewed.",
+    "hero_eyebrow": "Pricing system",
+    "hero_note_label": "How ranges work",
+    "hero_note": "These are planning ranges, not one-click packages. A scoped proposal confirms pages, integrations, content responsibilities, timeline, and monthly support before work begins.",
+    "hero_points": [
+      "Setup covers strategy, UX, design, development, launch, and basic SEO.",
+      "Monthly care covers hosting coordination, maintenance, monitoring, and small updates.",
+      "Integrations, photography, and multilingual content are scoped separately when needed."
+    ],
+    "comparison_eyebrow": "Пакеты сайтов",
+    "comparison_heading": "Пакеты разработки сайтов",
+    "comparison_subtitle": "Три объема build для сервисного бизнеса, которому нужен более ясный путь к бронированию, записи, консультации или прямой заявке.",
+    "audit_section_eyebrow": "Диагностический продукт",
+    "audit_section_heading": "Еще не готовы к build? Начните с аудита.",
+    "audit_section_subtitle": "Аудит - это отдельный технический и коммерческий review для бизнеса, которому нужен ясный диагноз перед полной разработкой сайта.",
     "beauty": {
-      "name": "Онлайн-присутствие для beauty-бизнеса",
-      "best_fit": "Небольшие салоны красоты, медспа, ногтевые и парикмахерские студии",
-      "setup": "$700–$1,200",
-      "monthly": "$59–$99/мес",
+      "scope_label": "Beauty scope",
+      "name": "Beauty Presence System",
+      "best_fit": "Salons, beauty studios, medspas, nail studios, hair studios, and small local service businesses.",
+      "outcome": "A clearer service menu, trust layer, and appointment path that turns social and search visitors into qualified enquiries.",
+      "setup": "$900-$1,600",
+      "monthly": "$69-$119/mo",
       "includes": [
-        "5–8 страниц",
-        "Меню услуг",
-        "Раздел цен",
-        "Основы локального SEO",
-        "Поддержка GBP",
-        "Контакт/WhatsApp поток"
+        "Service menu and pricing structure",
+        "Appointment and WhatsApp request flow",
+        "Gallery, reviews, and location trust sections",
+        "Core pages for services, team, contact, and offers"
       ],
-      "best_upsells": [
-        "Промо посадочные страницы",
-        "Система сбора отзывов",
-        "Контент-система для Instagram"
+      "technical": [
+        "Responsive Next.js build",
+        "Local business schema basics",
+        "Analytics and form tracking setup"
+      ],
+      "not_included": [
+        "Professional photography production",
+        "Paid advertising management",
+        "Custom booking platform development"
       ]
     },
     "medical": {
-      "name": "Платформа доверия клиники",
-      "best_fit": "Стоматологические, эстетические, велнес-клиники и клиники узкой специализации",
-      "setup": "$1,500–$2,750",
-      "monthly": "$99–$189/мес",
+      "scope_label": "Clinic scope",
+      "name": "Clinic Trust Platform",
+      "best_fit": "Dental, aesthetic, wellness, specialist clinics, and practices that need stronger patient trust before contact.",
+      "outcome": "Treatment clarity, doctor credibility, multilingual intake, and a consultation path built around patient confidence.",
+      "setup": "$1,800-$3,200",
+      "monthly": "$119-$199/mo",
       "includes": [
-        "8–16 страниц",
-        "Шаблоны врачей/лечений",
-        "Многоязычная структура",
-        "Форма консультации",
-        "Структурированные данные",
-        "Слой отзывов/FAQ"
+        "Treatment category and detail pages",
+        "Doctor or specialist profile structure",
+        "Consultation request and intake flow",
+        "FAQ, reviews, safety, and trust content blocks"
       ],
-      "best_upsells": [
-        "Производство контента",
-        "Кластер статей о лечении",
-        "Процесс квалификации лидов"
+      "technical": [
+        "Structured data for clinic and services",
+        "Accessible form and validation flow",
+        "Multilingual route architecture"
+      ],
+      "not_included": [
+        "Medical copywriting without source material",
+        "Patient record or CRM implementation",
+        "Regulated claims review by legal counsel"
       ]
     },
     "hospitality": {
-      "name": "Платформа прямых бронирований отеля",
-      "best_fit": "Бутик-отели, апартотели, гостевые дома, операторы вилл",
-      "setup": "$2,000–$4,000",
-      "monthly": "$129–$249/мес",
+      "scope_label": "Hotel scope",
+      "name": "Hotel Direct Booking Platform",
+      "best_fit": "Boutique hotels, guesthouses, aparthotels, villa operators, and hospitality businesses reducing OTA dependency.",
+      "outcome": "Room clarity, location trust, multilingual search visibility, and a direct booking path that supports higher-intent guests.",
+      "setup": "$2,600-$4,800",
+      "monthly": "$159-$279/mo",
       "includes": [
-        "10–20 страниц",
-        "Шаблоны номеров и предложений",
-        "Многоязычный UX",
-        "Интеграция прямого бронирования",
-        "Проверки производительности и CRO",
-        "Поддержка интеграции PMS/бронирования"
+        "Room, offer, policy, and location pages",
+        "Direct booking CTA and enquiry architecture",
+        "Multilingual guest journey structure",
+        "Trust, amenities, gallery, and local-area content blocks"
       ],
-      "best_upsells": [
-        "Профессиональная фотография",
-        "Интеграции PMS/бронирования",
-        "Контент о местных достопримечательностях",
-        "Посадочные страницы платного поиска"
+      "technical": [
+        "Hotel and lodging schema basics",
+        "Performance budget for media-heavy pages",
+        "Booking/PMS integration support layer"
+      ],
+      "not_included": [
+        "PMS subscription or third-party booking fees",
+        "Large photo/video production days",
+        "Paid OTA or paid search campaign management"
       ]
     },
-    "cta": "Начать",
-    "setup_label": "разовые",
-    "monthly_label": "ежемесячные",
-    "best_for_label": "Лучше всего для",
-    "includes_label": "Что включено",
-    "best_upsells_label": "Лучшие дополнения",
-    "most_popular": "Самый популярный",
-    "see_full_pricing": "Полный прайс →",
-    "guarantee": "Без сюрпризов. Вы получаете детальное предложение с объёмом работ, сроками и прозрачными ценами до начала работы. Отмените ежемесячный план с уведомлением за 30 дней — ваш сайт остаётся вашим.",
-    "comparison_heading": "Сравнение функций",
-    "comparison": {
-      "pages": "Пользовательские страницы",
-      "service_menu": "Меню услуг",
-      "local_seo": "Локальное SEO",
-      "multilingual": "Многоязычная поддержка",
-      "booking_integration": "Интеграция бронирования",
-      "doctor_profiles": "Профили врачей / специалистов",
-      "structured_data": "Структурированные данные (схема)",
-      "review_system": "Управление отзывами",
-      "consultation_form": "Запись на консультацию",
-      "promo_pages": "Промо посадочные страницы",
-      "performance_optimization": "Оптимизация производительности",
-      "gbp_support": "Google Business Profile",
-      "analytics": "Аналитика и CRO",
-      "priority_support": "Приоритетная поддержка",
-      "custom_integrations": "Пользовательские интеграции"
+    "audit": {
+      "scope_label": "Diagnostic review",
+      "name": "Website Audit / Technical Review",
+      "best_fit": "Businesses that need a clear diagnosis before redesign, rebuild, SEO work, or performance fixes.",
+      "outcome": "A prioritized report explaining what blocks trust, search visibility, speed, accessibility, and booking action.",
+      "setup": "$250-$650",
+      "monthly": "No monthly plan required",
+      "includes": [
+        "Manual UX and conversion review",
+        "Local SEO and content structure review",
+        "Performance and Core Web Vitals checks",
+        "Prioritized fix list and next-step scope"
+      ],
+      "technical": [
+        "Technical crawl and page review",
+        "Schema and metadata inspection",
+        "Accessibility basics and form checks"
+      ],
+      "not_included": [
+        "Implementation of fixes",
+        "Full redesign concepts",
+        "Ongoing support unless scoped after review"
+      ]
     },
-    "calculator_heading": "Рассчитайте стоимость проекта",
-    "calculator_subtitle": "Получите мгновенную оценку на основе ваших потребностей.",
-    "calculator_sector": "Ваша отрасль",
-    "calculator_sector_beauty": "Красота",
-    "calculator_sector_medical": "Медицина",
-    "calculator_sector_hospitality": "Гостиничный бизнес",
-    "calculator_pages": "Количество страниц",
-    "calculator_addons": "Дополнительные опции",
-    "calculator_multilingual": "Многоязычная поддержка",
-    "calculator_booking": "Система бронирования",
-    "calculator_seo": "SEO-пакет",
-    "calculator_priority": "Приоритетная поддержка",
-    "calculator_setup": "Ориентировочная настройка",
-    "calculator_monthly": "Ориентировочно в месяц",
-    "calculator_cta": "Получить точный расчёт",
-    "sectionLabel": "Инвестиции.",
-    "feature_label": "Функция"
+    "cta": "Request a scoped proposal",
+    "setup_label": "Typical setup range",
+    "monthly_label": "Monthly care range",
+    "best_for_label": "Best for",
+    "outcome_label": "Business outcome",
+    "includes_label": "Included modules",
+    "technical_label": "Technical deliverables",
+    "not_included_label": "Не входит / optional add-ons",
+    "audit_not_included_label": "Не входит",
+    "who_for_label": "Для кого",
+    "audit_price_label": "Диапазон аудита",
+    "turnaround_label": "Turnaround",
+    "audit_cta": "Запросить аудит сайта",
+    "best_upsells_label": "Useful add-ons",
+    "most_popular": "Common scope",
+    "see_full_pricing": "Open full scope details",
+    "guarantee": "No work starts from a vague package. You receive a scoped proposal with deliverables, responsibilities, exclusions, timeline, and care options before any build begins.",
+    "feature_label": "Feature",
+    "comparison": {
+      "pages": "Custom pages",
+      "service_menu": "Service menu",
+      "local_seo": "Local SEO",
+      "multilingual": "Multilingual support",
+      "booking_integration": "Booking integration",
+      "doctor_profiles": "Doctor / specialist profiles",
+      "structured_data": "Structured data (schema)",
+      "review_system": "Review management",
+      "consultation_form": "Consultation booking",
+      "promo_pages": "Promotional landing pages",
+      "performance_optimization": "Performance optimization",
+      "gbp_support": "Google Business Profile",
+      "analytics": "Analytics & CRO",
+      "priority_support": "Priority support",
+      "custom_integrations": "Custom integrations"
+    },
+    "calculator_label": "Scope estimator",
+    "calculator_heading": "Estimate a development scope",
+    "calculator_subtitle": "Use this as a planning estimate for build complexity. The final proposal depends on content, integrations, and launch requirements.",
+    "calculator_note": "The estimator is not a quote. It helps identify whether the project is closer to a small presence build, a trust platform, or an integration-heavy direct booking system.",
+    "calculator_sector": "Business model",
+    "calculator_sector_beauty": "Beauty",
+    "calculator_sector_medical": "Clinic",
+    "calculator_sector_hospitality": "Hotel",
+    "calculator_pages": "Planned pages",
+    "calculator_addons": "Scope variables",
+    "calculator_multilingual": "Multilingual content structure",
+    "calculator_booking": "Booking or PMS integration support",
+    "calculator_seo": "Local SEO content cluster",
+    "calculator_care": "Maintenance / care plan",
+    "calculator_setup": "Estimated setup",
+    "calculator_monthly": "Estimated care",
+    "calculator_cta": "Request a scoped proposal",
+    "sectionLabel": "Pricing."
   },
   "pricingPage": {
-    "add_ons_heading": "Дополнительные услуги",
-    "add_ons_subtitle": "Каждый бизнес уникален. Эти дополнения позволяют настроить пакет под ваш рост.",
+    "add_ons_eyebrow": "Add-ons",
+    "add_ons_heading": "Scope add-ons that change the work.",
+    "add_ons_subtitle": "Add-ons are priced by effort and dependency. They are separated from the base scope so the proposal stays readable.",
     "add_ons": [
       {
-        "name": "Индивидуальные функции",
-        "description": "Нестандартные интеграции, продвинутая логика бронирования, порталы для участников или что-либо уникальное для вашего бизнеса.",
-        "price": "От $250"
+        "name": "Поддержка фото/контента",
+        "description": "Планирование кадров, приоритеты контента и координация оригинальных визуалов для номеров, процедур, услуг, команды или локации.",
+        "price": "Scoped by shoot"
       },
       {
-        "name": "Дополнительные страницы",
-        "description": "Нужно больше страниц, чем в вашем пакете? Каждая дополнительная страница проектируется и создаётся на том же уровне качества.",
-        "price": "$75–$150/страница"
+        "name": "Booking/PMS integration support",
+        "description": "Support for connecting booking tools, PMS links, forms, or third-party reservation flows.",
+        "price": "From $350"
       },
       {
-        "name": "Приоритетная поддержка",
-        "description": "Ответ в тот же день, доступность в выходные и выделенный канал Slack для срочных вопросов.",
-        "price": "$49/мес дополнительно"
+        "name": "Multilingual content",
+        "description": "Language-route structure and content adaptation for English, Georgian, Russian, or Turkish pages.",
+        "price": "From $250/language"
+      },
+      {
+        "name": "Local SEO content cluster",
+        "description": "Service, treatment, room, or location pages planned around high-intent local search topics.",
+        "price": "From $450"
+      },
+      {
+        "name": "Care / maintenance plan",
+        "description": "Ongoing updates, technical monitoring, small content changes, and launch support after the site is live.",
+        "price": "From $69/mo"
       }
     ],
-    "process_heading": "Как это работает",
-    "process_subtitle": "Прозрачный пятиэтапный процесс от первого разговора до запуска сайта.",
+    "process_eyebrow": "Proposal process",
+    "process_heading": "How the final price is scoped",
+    "process_subtitle": "The proposal is based on the actual site system, not a loose page count. The goal is clarity before design or development starts.",
     "process_steps": [
       {
-        "title": "Аудит",
-        "description": "Я анализирую ваше текущее веб-присутствие, конкурентов и рыночную позицию для выявления возможностей."
+        "title": "Audit",
+        "description": "The current website, business model, content, competitors, and conversion path are reviewed."
       },
       {
-        "title": "Знакомый звонок",
-        "description": "30-минутный звонок для понимания ваших целей, сроков и бюджета. Никакого давления — только честный совет."
+        "title": "Fit call",
+        "description": "We clarify goals, users, languages, integrations, content responsibilities, and launch constraints."
       },
       {
-        "title": "Предложение",
-        "description": "Вы получаете детальное предложение с объёмом работ, сроками и прозрачными ценами. Никаких скрытых платежей."
+        "title": "Scope",
+        "description": "The proposal separates included modules, technical deliverables, exclusions, and optional add-ons."
       },
       {
-        "title": "Разработка",
-        "description": "Я проектирую, разрабатываю и тестирую ваш сайт с регулярными обсуждениями прогресса. Вы видите результат на каждом этапе."
+        "title": "Build",
+        "description": "Design and development move through structured checkpoints so the scope remains controlled."
       },
       {
-        "title": "Запуск",
-        "description": "Ваш сайт запускается с полной настройкой SEO, оптимизацией производительности и включённой постоянной поддержкой."
+        "title": "Launch",
+        "description": "The site is tested for forms, responsive behavior, SEO basics, performance, redirects, and care handoff."
       }
     ],
-    "faq_heading": "Часто задаваемые вопросы о ценах",
+    "faq_eyebrow": "Pricing FAQ",
+    "faq_heading": "Common scope questions",
     "faq_items": [
       {
-        "q": "Стартовый сбор — это разовая стоимость?",
-        "a": "Да. Стартовый сбор покрывает дизайн, разработку, контент-стратегию и запуск. Никаких скрытых расходов или неожиданных счетов."
+        "q": "Why are prices shown as ranges?",
+        "a": "The same sector can require very different work depending on page count, content readiness, integrations, languages, and launch risk. The range keeps early planning honest."
       },
       {
-        "q": "Можно ли отменить ежемесячный план?",
-        "a": "Ежемесячный план покрывает хостинг, обслуживание, обновления безопасности и поддержку. Вы можете отменить с уведомлением за 30 дней — ваш сайт остаётся вашим."
+        "q": "Is monthly care required?",
+        "a": "Monthly care is recommended for active businesses but not forced into every scope. The proposal separates setup work from ongoing maintenance."
       },
       {
-        "q": "Что если мне нужно что-то между пакетами?",
-        "a": "Большинство клиентов начинают с пакета и добавляют индивидуальные настройки. Я предложу именно то, что вам нужно, во время знакомого звонка — ничего лишнего, ничего недостающего."
+        "q": "Can you work with an existing booking tool?",
+        "a": "Yes. Booking and PMS work is scoped after the tool, embed method, forms, redirects, and tracking requirements are known."
       },
       {
-        "q": "Вы предлагаете рассрочку?",
-        "a": "Да. Для крупных проектов я могу разделить стартовый сбор на два или три платежа. Мы согласуем это на этапе предложения."
+        "q": "Can the audit happen before a full build?",
+        "a": "Yes. The audit is often the cleanest starting point because it identifies what should be fixed, rebuilt, or left alone."
       }
-    ]
+    ],
+    "cta_eyebrow": "Scoped next step",
+    "cta_heading": "Request a scoped proposal.",
+    "cta_subtitle": "Send the business type, current website, required languages, and any booking tools. The reply will focus on scope, not pressure."
   },
   "aboutPage": {
-    "heading": "О студии",
-    "story_heading": "История",
-    "story_body_1": "Yourtimestudio - сфокусированная веб-студия одного человека в Батуми. Я работаю напрямую над стратегией, UX, кодом, SEO, запуском и поддержкой, не пропуская проект через слои аккаунт-менеджмента.",
-    "story_body_2": "Для проектов, которым нужны сильные визуальные материалы, я планирую сайт вокруг оригинального списка кадров и подключаю профессионального фотографа. Цель проста: сайт должен ощущаться конкретно вашим бизнесом, а не шаблоном с новыми цветами.",
-    "approach_heading": "Отраслевая специализация, а не шаблоны",
-    "approach_body": "Я не создаю шаблонные сайты. Я создаю отраслевые системы, которые помогают отелям получать прямые бронирования, клиникам — формировать доверие пациентов, а бьюти-бизнесу — заполнять книгу записей. Эта специализация означает, что каждое решение — от информационной архитектуры до SEO-стратегии — основано на реальной работе вашего бизнеса.",
-    "why_batumi_heading": "Почему Батуми?",
-    "why_batumi_body_1": "Батуми растет как рынок гостиничного, медицинского и сервисного бизнеса, но многие местные сайты все еще усложняют бронирование, доверие и многоязычную коммуникацию.",
-    "why_batumi_body_2": "Именно с этим пробелом я работаю: практичные сайты, которые помогают бизнесу быть проще найденным, понятным и доступным для контакта.",
-    "process_heading": "Как я работаю",
-    "process_steps": [
-      {
-        "title": "Аудит",
-        "description": "Я анализирую ваше текущее веб-присутствие, конкурентов и рыночную позицию для выявления возможностей."
-      },
-      {
-        "title": "Знакомый звонок",
-        "description": "30-минутный звонок для понимания ваших целей, сроков и бюджета. Никакого давления — только честный совет."
-      },
-      {
-        "title": "Предложение",
-        "description": "Вы получаете детальное предложение с объёмом работ, сроками и прозрачными ценами. Никаких скрытых платежей."
-      },
-      {
-        "title": "Разработка",
-        "description": "Я проектирую, разрабатываю и тестирую ваш сайт с регулярными обсуждениями прогресса. Вы видите результат на каждом этапе."
-      },
-      {
-        "title": "Запуск",
-        "description": "Ваш сайт запускается с полной настройкой SEO, оптимизацией производительности и включённой постоянной поддержкой."
+    "hero": {
+      "eyebrow": "Founder-led website development",
+      "title": "Я Jasper, нидерландский веб-разработчик в Батуми.",
+      "subtitle": "Я напрямую работаю с отелями, клиниками, beauty-студиями и сервисным бизнесом над стратегией, UX, frontend-кодом, основами локального SEO, запуском и улучшениями.",
+      "story": [
+        "Я начал Yourtimestudio после того, как увидел, сколько сильных бизнесов Батуми теряют доверие онлайн из-за медленных, непонятных или шаблонных сайтов.",
+        "Я создаю сфокусированные сайты для отелей, клиник, студий и сервисного бизнеса, где важны бронирование, локальное SEO, многоязычный UX и доверие.",
+        "Клиенты работают напрямую со мной от структуры и дизайна до frontend-разработки, запуска и улучшений, поэтому качество и ответственность остаются видимыми."
+      ],
+      "panel_label": "Jasper Tjeerd IJtsma / Yourtimestudio",
+      "panel_title": "Нидерландский основатель. Frontend builder. Фокус на Батуми.",
+      "panel_body": "Студия создана для локального сервисного бизнеса, которому нужны более ясное бронирование, доверие, поисковая видимость, многоязычная структура и техническая надежность без лишних слоев account management.",
+      "panel_points": [
+        "Нидерландский основатель в Батуми",
+        "Hotels, clinics, studios, and service businesses",
+        "Стратегия, UX, код, SEO, запуск и улучшение"
+      ]
+    },
+    "operating": {
+      "eyebrow": "Operating model",
+      "heading": "A controlled build process from diagnosis to improvement.",
+      "subtitle": "The work is organized as a practical website system, not a loose design pass. Each step exists to reduce ambiguity before code and launch.",
+      "items": {
+        "diagnose": {
+          "title": "Diagnose",
+          "description": "Review the business model, current site, search intent, competitors, trust gaps, and booking path."
+        },
+        "structure": {
+          "title": "Structure",
+          "description": "Map pages, routes, content blocks, calls to action, multilingual needs, and lead flow logic."
+        },
+        "design": {
+          "title": "Design",
+          "description": "Create a high-contrast interface around the real decision path, not decorative layout trends."
+        },
+        "build": {
+          "title": "Build",
+          "description": "Implement responsive pages, forms, structured data, performance budgets, and reusable components."
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Test forms, metadata, redirects, mobile layouts, analytics basics, and deployment details."
+        },
+        "improve": {
+          "title": "Improve",
+          "description": "Use audit findings, support requests, and content needs to keep the website useful after launch."
+        }
       }
-    ],
-    "tools_heading": "Инструменты и стек",
-    "tools_subtitle": "Создано на современной, надёжной технологии для скорости, безопасности и поддерживаемости.",
-    "tools": [
-      {
-        "name": "Next.js",
-        "category": "framework"
-      },
-      {
-        "name": "TypeScript",
-        "category": "language"
-      },
-      {
-        "name": "Tailwind CSS",
-        "category": "styling"
-      },
-      {
-        "name": "Hostinger",
-        "category": "hosting"
-      },
-      {
-        "name": "Prisma",
-        "category": "database"
-      },
-      {
-        "name": "React Hook Form",
-        "category": "forms"
-      },
-      {
-        "name": "Zod",
-        "category": "validation"
-      },
-      {
-        "name": "next-intl",
-        "category": "i18n"
-      },
-      {
-        "name": "Framer Motion",
-        "category": "animation"
-      },
-      {
-        "name": "Radix UI",
-        "category": "components"
+    },
+    "stack": {
+      "eyebrow": "Technical stack",
+      "heading": "Tools chosen for clear, maintainable website systems.",
+      "subtitle": "The stack is practical: fast pages, structured content, multilingual routing, clear forms, and enough discipline to maintain the site after launch.",
+      "items": {
+        "nextjs": "Next.js",
+        "react": "React",
+        "tailwind": "Tailwind",
+        "routes": "Multilingual routes",
+        "schema": "Structured data",
+        "performance": "Performance checks",
+        "seo": "Local SEO",
+        "forms": "Form / lead flows"
       }
-    ],
-    "cta_text": "Готовы увидеть, каким может стать ваш сайт?",
-    "cta_button": "Начать с бесплатного аудита",
-    "image_alt": "Основатель Yourtimestudio",
-    "image_caption": "Веб-студия под руководством основателя в Батуми, Грузия"
+    },
+    "direct": {
+      "eyebrow": "Direct responsibility",
+      "heading": "What I do directly",
+      "items": {
+        "ux": {
+          "title": "UX structure",
+          "description": "Information architecture, page order, conversion paths, and content hierarchy."
+        },
+        "frontend": {
+          "title": "Frontend implementation",
+          "description": "Next.js, React, Tailwind, responsive layouts, component systems, and integration-ready UI."
+        },
+        "seo": {
+          "title": "Local SEO basics",
+          "description": "Metadata, service/location structure, internal links, schema basics, and search-aligned content."
+        },
+        "multilingual": {
+          "title": "Многоязычная настройка",
+          "description": "Языковые маршруты, переведенная навигация, локализованные CTA и основы hreflang."
+        },
+        "checks": {
+          "title": "Performance/accessibility checks",
+          "description": "Readable contrast, labels, focus states, mobile behavior, asset weight, and Core Web Vitals basics."
+        },
+        "lead_flows": {
+          "title": "Формы и lead flows",
+          "description": "Пути бронирования, консультации, аудита, контакта и WhatsApp планируются вокруг реального намерения пользователя."
+        }
+      }
+    },
+    "support": {
+      "eyebrow": "Specialist support",
+      "heading": "Specialists enter only where useful.",
+      "subtitle": "The core website system remains founder-led. Specialist support is used for specific production needs, not to hide responsibility.",
+      "items": {
+        "photography": {
+          "title": "Photography",
+          "description": "Original visual work can be planned when rooms, treatments, services, or location proof need stronger assets."
+        },
+        "content": {
+          "title": "Content support",
+          "description": "Content planning, source-material cleanup, and multilingual adaptation can be scoped when the business needs it."
+        }
+      }
+    },
+    "not_fake": {
+      "eyebrow": "What I do not fake",
+      "heading": "No inflated agency signals.",
+      "subtitle": "The site and proposals should make the work clear without pretending there are client results or guarantees that do not exist.",
+      "items": {
+        "numbers": {
+          "title": "No fake client numbers",
+          "description": "No invented client counts, testimonials, conversion lifts, or performance claims."
+        },
+        "decoration": {
+          "title": "No decoration-first design",
+          "description": "Visual choices have to support booking, trust, comprehension, speed, and maintainability."
+        },
+        "templates": {
+          "title": "No bloated templates",
+          "description": "Builds avoid unnecessary page weight, generic sections, and features that do not serve the business."
+        },
+        "guarantees": {
+          "title": "No vague guarantees",
+          "description": "Recommendations are framed as scope, evidence, and tradeoffs rather than broad promises."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Start with diagnosis",
+      "heading": "See what your website should fix first.",
+      "subtitle": "A manual website audit is the cleanest starting point when the next step is not obvious.",
+      "button": "Request website audit"
+    }
   },
   "contactPage": {
-    "heading": "Свяжитесь с нами",
-    "subtitle": "Расскажите о проекте, и я отвечу в течение одного рабочего дня.",
+    "eyebrow": "Project intake",
+    "heading": "Start with a website audit or scoped project.",
+    "subtitle": "Send the context behind the business, website, goal, budget, and timeline. I will reply with the next practical step: audit, scoped proposal, or focused improvement plan.",
+    "hero_panel": {
+      "label": "Before work starts",
+      "body": "A good project starts with a clear diagnosis and a controlled scope, not vague promises or rushed design work.",
+      "points": [
+        "Manual review before recommendation",
+        "Scope, exclusions, and timeline made explicit",
+        "Built for booking, trust, SEO, and performance"
+      ]
+    },
+    "options_eyebrow": "Contact paths",
+    "options_heading": "Choose the conversation that matches the problem.",
+    "options": [
+      {
+        "title": "Website audit",
+        "description": "For businesses that need a clear diagnosis of trust, booking flow, SEO, speed, and mobile UX before deciding what to build."
+      },
+      {
+        "title": "New website project",
+        "description": "For hotels, clinics, and studios that need a structured website system planned, designed, built, and launched."
+      },
+      {
+        "title": "Existing website improvement",
+        "description": "For websites that already exist but need better conversion paths, clearer content, local SEO, performance, or technical cleanup."
+      }
+    ],
     "form": {
-      "name": "Ваше имя",
-      "name_required": "Имя обязательно",
-      "business": "Название бизнеса",
-      "business_optional": "необязательно",
-      "business_required": "Название бизнеса обязательно",
-      "email": "Адрес электронной почты",
-      "email_required": "Электронная почта обязательна",
-      "email_invalid": "Пожалуйста, введите корректный адрес электронной почты",
-      "phone": "Телефон / WhatsApp",
-      "phone_optional": "необязательно",
-      "sector": "Ваша отрасль",
-      "sector_required": "Пожалуйста, выберите отрасль",
-      "sector_optional": "необязательно",
-      "sector_placeholder": "Выберите вашу отрасль",
-      "website": "URL текущего сайта",
-      "website_optional": "необязательно",
-      "website_invalid": "Пожалуйста, введите корректный URL (например, https://example.com)",
-      "budget": "Диапазон ежемесячного бюджета",
-      "budget_optional": "необязательно",
-      "budget_placeholder": "Выберите диапазон бюджета",
-      "language": "Предпочитаемый язык",
-      "language_required": "Пожалуйста, выберите предпочитаемый язык",
-      "language_optional": "необязательно",
-      "language_placeholder": "Выберите предпочитаемый язык",
-      "message": "Расскажите о вашем проекте",
-      "message_required": "Пожалуйста, расскажите о вашем проекте",
-      "message_optional": "необязательно",
-      "submit": "Отправить заявку",
-      "sending": "Отправка...",
-      "error_title": "Что-то пошло не так",
-      "error_default": "Не удалось отправить запрос. Попробуйте снова или напишите мне напрямую на email.",
-      "success_redirect": "Перенаправление...",
-      "success_title": "Спасибо",
-      "success_body": "Ваш запрос получен. Я отвечу в течение одного рабочего дня.",
-      "success_meta": "Обычное время ответа: менее 24 часов"
+      "eyebrow": "Intake form",
+      "heading": "Send the project context.",
+      "subtitle": "The fields below keep the first reply focused on scope instead of generic sales questions.",
+      "name": "Your name",
+      "name_placeholder": "Your name",
+      "name_required": "Name is required",
+      "business": "Business name",
+      "business_optional": "optional",
+      "business_required": "Business name is required",
+      "email": "Email address",
+      "email_placeholder": "you@example.com",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
+      "phone": "Phone / WhatsApp",
+      "phone_optional": "optional",
+      "business_type": "Business type",
+      "business_type_placeholder": "Select business type",
+      "sector": "Business type",
+      "sector_optional": "optional",
+      "sector_required": "Please select a business type",
+      "sector_placeholder": "Select business type",
+      "website": "Current website",
+      "website_optional": "optional",
+      "website_invalid": "Please enter a valid URL, for example https://example.com",
+      "project_goal": "Project goal",
+      "project_goal_placeholder": "Select project goal",
+      "budget": "Budget range",
+      "budget_optional": "optional",
+      "budget_placeholder": "Select budget range",
+      "timeline": "Timeline",
+      "timeline_placeholder": "Select timeline",
+      "language": "Preferred language",
+      "language_optional": "optional",
+      "language_required": "Please select a preferred language",
+      "language_placeholder": "Select preferred language",
+      "message": "Message",
+      "message_placeholder": "Briefly describe what needs to change, what is not working now, and any booking tools, languages, or launch constraints.",
+      "message_required": "Please describe the project or audit request",
+      "message_optional": "optional",
+      "submit": "Send project request",
+      "sending": "Sending request...",
+      "error_title": "Request could not be sent",
+      "error_default": "Could not send your request. Please try again or email me directly.",
+      "success_redirect": "Redirecting...",
+      "success_title": "Request received",
+      "success_body": "Your project request has been received. I will review the context and reply with the next practical step.",
+      "success_meta": "Typical response time: one business day"
     },
     "sectors": [
-      "Гостиничный бизнес",
-      "Медицина",
-      "Красота",
-      "Другое"
+      "Hotel / hospitality",
+      "Clinic / medical",
+      "Beauty studio",
+      "Other local business"
     ],
     "budgets": [
-      "До $500",
-      "$500–$1,000",
-      "$1,000–$2,500",
-      "$2,500+"
+      "Audit / small improvement",
+      "$900-$1,600",
+      "$1,800-$3,200",
+      "$3,200+"
+    ],
+    "project_goals": [
+      "Website audit",
+      "New website project",
+      "Existing website improvement"
+    ],
+    "timelines": [
+      "This month",
+      "1-2 months",
+      "2-3 months",
+      "Flexible / planning"
     ],
     "languages": [
-      "Английский",
-      "Грузинский",
-      "Русский",
-      "Турецкий"
+      "English",
+      "Georgian",
+      "Russian",
+      "Turkish"
     ],
-    "info_heading": "Другие способы связи",
-    "info_email_label": "Электронная почта",
+    "trust": {
+      "eyebrow": "Working context",
+      "heading": "Clear scope before work starts.",
+      "items": [
+        {
+          "title": "Based in Batumi",
+          "description": "Focused on local service businesses that need international-grade web systems."
+        },
+        {
+          "title": "Founder-led",
+          "description": "You work directly with the person planning, designing, coding, and launching the site."
+        },
+        {
+          "title": "Scope first",
+          "description": "Deliverables, exclusions, timeline, and responsibilities are clarified before build work starts."
+        },
+        {
+          "title": "No fake metrics",
+          "description": "Recommendations are based on audit findings, business context, and practical technical constraints."
+        }
+      ]
+    },
+    "info_heading": "Direct contact",
+    "info_email_label": "Email",
     "info_email": "hello@yourtimestudio.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
-    "info_area_label": "Зона обслуживания",
-    "info_area": "Работаю из Батуми, Грузия. Помогаю гостиничному, медицинскому и beauty-бизнесу в Аджарии и за ее пределами.",
-    "info_whatsapp_fallback": "Укажите ваш WhatsApp в форме"
+    "info_area_label": "Service area",
+    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across Adjara and beyond.",
+    "info_whatsapp_fallback": "Use the form and include your WhatsApp number"
   },
   "thankYouPage": {
     "heading": "Спасибо за вашу заявку",
     "body": "Я получил ваше сообщение и свяжусь с вами в течение одного рабочего дня. А пока вам могут быть полезны эти ресурсы.",
-    "browse_insights": "Читать инсайты",
+    "browse_insights": "Посмотреть аудит сайта",
     "see_pricing": "Посмотреть цены",
-    "insights_description": "Читайте статьи о веб-стратегии, локальном SEO и отраслевых цифровых советах.",
+    "insights_description": "Посмотрите, как работает ручной аудит до редизайна или определения объема.",
     "pricing_description": "Сравните пакеты и найдите подходящий для вашего бизнеса."
   },
   "faq": {
@@ -605,7 +844,7 @@
   },
   "about": {
     "heading": "О студии",
-    "story": "Я голландский разработчик, выросший на Арубе и сейчас создающий сайты в Батуми. Карибы научили меня, что гостеприимство — в деталях — и что качество важнее количества. Я приношу такой же подход к каждому проекту: сфокусированный, точный и персональный.",
+    "story": "Я Jasper Tjeerd IJtsma, голландский веб-разработчик в Батуми. Я создаю сфокусированные сайты для отелей, клиник, студий красоты и сервисных компаний, где важны бронирование, локальное SEO, многоязычный UX и доверие. Клиенты работают напрямую со мной от структуры и дизайна до frontend-разработки, запуска и улучшения.",
     "approach": "Я не создаю шаблонные сайты. Я создаю отраслевые системы, которые помогают отелям получать прямые бронирования, клиникам — формировать доверие пациентов, а бьюти-бизнесу — заполнять книгу записей. Эта специализация означает, что каждое решение — от информационной архитектуры до SEO-стратегии — основано на реальной работе вашего бизнеса.",
     "why_batumi": "Батуми — одно из самых быстрорастущих направлений гостеприимства и медицины в Грузии. С более чем 2,7 миллионами посещений региона Аджария в год и самой высокой загрузкой отелей в стране, этому городу нужны сайты, которые работают — а не просто красиво выглядят.",
     "process": [
@@ -641,7 +880,7 @@
         "body": "Списки кадров и приоритеты изображений, чтобы сайт использовал реальные локальные визуалы, а не общий сток."
       },
       "deployment": {
-        "title": "Запуск, готовый для Hostinger",
+        "title": "Техническая готовность к запуску",
         "body": "Билд, редиректы, метаданные, согласие аналитики и базовое техническое SEO проверяются до передачи."
       }
     },
@@ -664,6 +903,7 @@
     "conversion": "Направляет ли ваш сайт посетителей к бронированию или контакту?"
   },
   "footer": {
+    "brand_descriptor": "Студия веб-разработки в Батуми",
     "tagline": "Веб-студия в Батуми для гостиничного, медицинского и бьюти-бизнеса.",
     "solutions": "Решения",
     "company": "Компания",
@@ -1037,116 +1277,189 @@
   },
   "auditPage": {
     "hero": {
-      "eyebrow": "Аудиты сайтов",
-      "title": "Узнайте точно, что сдерживает ваш сайт",
-      "subtitle": "Получите подробную оценочную карту по ясности бренда, скорости, локальному SEO, структуре контента, доступности и конверсионному UX."
+      "eyebrow": "Ручная диагностика сайта",
+      "title": "Ручные аудиты сайтов для бронирования, доверия, SEO и скорости.",
+      "subtitle": "Вы получаете практический диагностический отчет: что мешает бронированиям, заявкам пациентов, запросам на запись, локальной видимости и доверию. Каждая находка описана как бизнес-проблема с предлагаемым исправлением.",
+      "cta": "Запросить аудит сайта",
+      "secondary_cta": "Посмотреть пример отчета",
+      "panel_label": "Превью заявки на аудит",
+      "panel_kicker": "Область диагностики",
+      "panel_title": "Что проверяется в первую очередь",
+      "panel_note": "Ручная проверка, приоритетные исправления и понятные следующие шаги. Без автоматической выгрузки оценок."
     },
-    "rubric": {
-      "heading": "Что мы оцениваем",
-      "subtitle": "Каждый аудит оценивает сайт по шести критически важным направлениям.",
+    "framework": {
+      "eyebrow": "Диагностическая рамка",
+      "heading": "Восемь областей, которые решают, доверит ли посетитель сайту и выполнит ли действие.",
+      "subtitle": "Аудит смотрит на весь путь от первого впечатления до бронирования, заявки, звонка или записи. Цель не просто красивый сайт, а более понятная коммерческая система.",
       "items": {
         "brand": {
-          "name": "Ясность бренда",
-          "points": [
-            "Первое впечатление и визуальная идентичность",
-            "Последовательное сообщение на страницах",
-            "Отличие от конкурентов"
-          ]
+          "title": "Ясность бренда",
+          "summary": "Позиционирование и соответствие сектору.",
+          "description": "Проверяется, понимает ли посетитель на первом экране, для кого вы работаете, что предлагаете и почему бизнесу можно доверять."
         },
-        "speed": {
-          "name": "Производительность и скорость",
-          "points": [
-            "Время загрузки на мобильных и десктопе",
-            "Core Web Vitals (LCP, FID, CLS)",
-            "Оптимизация изображений и ресурсов"
-          ]
+        "mobile": {
+          "title": "Мобильный UX",
+          "summary": "Структура и действия на малом экране.",
+          "description": "Проверяются меню, зоны нажатия, иерархия страницы, закрепленные действия и отсутствие трения на мобильных устройствах."
+        },
+        "booking": {
+          "title": "Путь бронирования / записи",
+          "summary": "От намерения к запросу.",
+          "description": "Находит места, где посетитель теряет доверие, не видит CTA или проходит лишние шаги перед бронированием."
         },
         "seo": {
-          "name": "Локальное SEO",
-          "points": [
-            "Настройка Google Business Profile",
-            "Таргетинг локальных ключевых слов",
-            "Структурированные данные и мета-теги"
-          ]
+          "title": "Локальное SEO",
+          "summary": "Видимость под намерения Батуми.",
+          "description": "Проверяются локальная структура страниц, метаданные, сигналы услуг и локаций, внутренние ссылки и качество контента для Google."
         },
-        "content": {
-          "name": "Структура контента",
-          "points": [
-            "Иерархия информации и навигация",
-            "Структура заголовков и читаемость",
-            "Организация многоязычного контента"
-          ]
+        "performance": {
+          "title": "Производительность / Core Web Vitals",
+          "summary": "Скорость и стабильность.",
+          "description": "Проверяются тяжелые ресурсы, задержки рендера, сдвиги макета и технические решения, из-за которых сайт кажется медленным."
+        },
+        "trust": {
+          "title": "Сигналы доверия",
+          "summary": "Доказательства до контакта.",
+          "description": "Ищутся отсутствующие отзывы, политики, данные команды, сертификаты, подтверждение локации и уверенность вокруг транзакции."
+        },
+        "multilingual": {
+          "title": "Многоязычная структура",
+          "summary": "Готовность к международным клиентам.",
+          "description": "Проверяются языковые маршруты, переведенная навигация, локализованные CTA, основы hreflang и пробелы между версиями."
         },
         "accessibility": {
-          "name": "Доступность",
-          "points": [
-            "Базовое соответствие WCAG 2.1",
-            "Цветовой контраст и читаемость текста",
-            "Навигация с клавиатуры и поддержка screen reader"
-          ]
-        },
-        "conversion": {
-          "name": "Конверсионный UX",
-          "points": [
-            "Ясность пути бронирования и контакта",
-            "Размещение призывов к действию",
-            "Сигналы доверия и убедительные доказательства"
-          ]
+          "title": "Основы доступности",
+          "summary": "Удобство и читаемость.",
+          "description": "Проверяются контраст, читаемость текста, labels форм, доступ с клавиатуры, focus-состояния и базовая структура для screen reader."
         }
       }
     },
-    "howItWorks": {
-      "heading": "Как это работает",
-      "steps": [
+    "report": {
+      "eyebrow": "Пример отчета",
+      "heading": "Интерфейс отчета строится вокруг бизнес-влияния, а не размытых оценок.",
+      "subtitle": "Формат ниже показывает, как структурируются находки. Оценки не используются, если они не помечены как пример или не связаны с реальным измеренным аудитом.",
+      "interface_label": "Результат ручной проверки",
+      "interface_title": "Диагностический отчет сайта",
+      "example_label": "Формат примера",
+      "columns": {
+        "area": "Область",
+        "issue": "Проблема",
+        "impact": "Бизнес-влияние",
+        "priority": "Приоритет",
+        "fix": "Рекомендованное исправление"
+      },
+      "rows": [
         {
-          "title": "Отправьте URL",
-          "description": "Заполните форму ниже с адресом сайта и базовой информацией о бизнесе."
+          "area": "Путь бронирования",
+          "issue": "Основное действие появляется после нескольких конкурирующих блоков.",
+          "impact": "Готовые к бронированию посетители могут не найти следующий шаг.",
+          "priority": "Высокий",
+          "fix": "Перенести CTA бронирования на первый экран и повторить его после блоков комнат, услуг или процедур."
         },
         {
-          "title": "Я анализирую сайт",
-          "description": "Я вручную проверяю сайт по всем шести категориям на реальных устройствах и с учетом локального поиска."
+          "area": "Локальное SEO",
+          "issue": "Страницы услуг слабо связывают предложение с поисковым намерением Батуми.",
+          "impact": "Поисковые системы и посетители получают слабые локальные сигналы.",
+          "priority": "Средний",
+          "fix": "Добавить локальные заголовки, структурированный контент услуг и внутренние ссылки на релевантные страницы."
         },
         {
-          "title": "Вы получаете подробный отчет",
-          "description": "Получаете приоритетный план действий с конкретными исправлениями, которые можно внедрить сразу."
+          "area": "Доверие",
+          "issue": "Политики, отзывы и данные оператора отделены от пути конверсии.",
+          "impact": "Посетителю нужно больше усилий, прежде чем он почувствует безопасность для контакта или бронирования.",
+          "priority": "Фокус",
+          "fix": "Разместить компактные доказательства доверия рядом с CTA и добавить детали возле формы или модуля бронирования."
         }
       ]
     },
-    "sampleFindings": {
-      "heading": "Типичные находки по отраслям",
+    "sectors": {
+      "eyebrow": "Отраслевые примеры",
+      "heading": "Аудит меняется в зависимости от того, как бизнес получает бронирования.",
+      "subtitle": "Отели, клиники и beauty-студии теряют лиды в разных местах. Проверка фокусируется на коммерческом пути, важном для вашего сектора.",
       "items": {
-        "hospitality": {
-          "sector": "Гостиничный бизнес",
-          "finding": "Типичная проблема: сайты отелей прячут ценность номеров, путь бронирования и локальные поисковые сигналы за медленными страницами с тяжелыми изображениями."
+        "hotel": {
+          "title": "Отель",
+          "description": "Аудит отеля проверяет, насколько легко сравнить номера, локацию, политики и ценность прямого бронирования.",
+          "checks": [
+            "Ясность номеров и тарифов",
+            "Размещение CTA прямого бронирования",
+            "Сигналы доверия по локации и политикам"
+          ]
         },
-        "medical": {
-          "sector": "Медицина",
-          "finding": "Типичная проблема: сайтам клиник часто не хватает профилей врачей, service schema и ясных путей для международных пациентов."
+        "clinic": {
+          "title": "Клиника",
+          "description": "Аудит клиники фокусируется на доверии, ясности процедур, профилях врачей и пути заявки для локальных и международных пациентов.",
+          "checks": [
+            "Структура страниц процедур",
+            "Доказательства врачей и квалификаций",
+            "Путь запроса консультации"
+          ]
         },
         "beauty": {
-          "sector": "Бьюти",
-          "finding": "Типичная проблема: салоны и студии полагаются на социальные DM, а сайт не делает запись достаточно очевидной."
+          "title": "Beauty-студия",
+          "description": "Аудит beauty-студии проверяет, ведут ли услуги, цены, доступность, портфолио и соцтрафик к записи.",
+          "checks": [
+            "Ясность меню услуг",
+            "Ожидания по цене и времени",
+            "Путь от Instagram к записи"
+          ]
         }
       }
     },
     "form": {
-      "heading": "Запросить бесплатный аудит",
-      "subtitle": "Заполните данные ниже, и я подготовлю оценочную карту в течение 3 рабочих дней.",
+      "eyebrow": "Запросить аудит",
+      "heading": "Отправьте сайт, которому нужен более ясный путь к бронированию.",
+      "subtitle": "Укажите URL и контекст бизнеса. Я вручную проверю сайт и отвечу со следующими шагами для отчета.",
       "name": "Ваше имя",
       "business": "Название бизнеса",
       "email": "Email",
       "sector": "Ваша отрасль",
       "website": "URL сайта",
       "message": "Что еще мне стоит знать? (необязательно)",
-      "submit": "Запросить бесплатный аудит",
+      "submit": "Запросить аудит сайта",
       "sending": "Отправка...",
-      "success": "Ваш запрос на аудит получен. Я свяжусь с вами в течение 3 рабочих дней.",
+      "success": "Ваш запрос на аудит получен. Я свяжусь со следующими шагами.",
       "error": "Что-то пошло не так. Попробуйте снова или напишите мне напрямую на email.",
       "sectors": [
         "Гостиничный бизнес",
         "Медицина",
         "Бьюти",
         "Другое"
+      ]
+    },
+    "process": {
+      "step": "Шаг",
+      "items": {
+        "request": {
+          "title": "Вы отправляете сайт",
+          "description": "Форма собирает URL, сектор бизнеса и контекст, чтобы проверить правильный путь конверсии."
+        },
+        "review": {
+          "title": "Я проверяю вручную",
+          "description": "Сайт проверяется по бренду, мобильному UX, бронированию, локальному SEO, скорости, доверию, языкам и основам доступности."
+        },
+        "report": {
+          "title": "Вы получаете приоритетные исправления",
+          "description": "Результат отделяет быстрые исправления от структурных проблем, чтобы понять, что улучшать первым."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "После заявки",
+      "heading": "Что происходит после запроса аудита?",
+      "items": [
+        {
+          "question": "Это автоматизировано?",
+          "answer": "Нет. Автоматические инструменты показывают технические сигналы, но финальный аудит — это ручная коммерческая оценка пользовательского пути и бизнес-влияния."
+        },
+        {
+          "question": "Вы редизайнете сайт в отчете?",
+          "answer": "Отчет объясняет, что исправить и почему. Если редизайн является правильным следующим шагом, он оценивается отдельно."
+        },
+        {
+          "question": "Можно проверить многоязычные сайты?",
+          "answer": "Да. Проверка включает языковые маршруты, переведенную навигацию, локализованные CTA и очевидные разрывы между языковыми версиями."
+        }
       ]
     },
     "detail": {
@@ -1159,31 +1472,156 @@
     }
   },
   "workPage": {
-    "heading": "Направления работ",
-    "subtitle": "Демо-брифы и направления проектов, пока реальные клиентские работы не готовы к публикации.",
+    "heading": "Системы сайтов для отелей, клиник и студий.",
+    "subtitle": "Концепт-системы и выбранные направления, показывающие метод студии до публикации реальных клиентских кейсов.",
+    "comingSoon": "Концепт-система",
     "items": [
       {
-        "sector": "Гостиничный бизнес",
-        "title": "Концепция бронирования для бутик-отеля",
-        "description": "Направление сайта прямого бронирования для отеля на набережной Батуми: номера, сигналы доверия, многоязычное SEO и меньшая зависимость от OTA."
+        "sector": "Гостиницы",
+        "title": "Система прямого бронирования для отеля",
+        "description": "Концепт-система для номеров, доверия к локации, многоязычного SEO и прямого бронирования."
       },
       {
         "sector": "Медицина",
-        "title": "Платформа доверия для стоматологической клиники",
-        "description": "Многоязычное направление сайта клиники с профилями врачей, страницами услуг, FAQ для пациентов и структурированными данными для медицинского поиска."
+        "title": "Система доверия и услуг для клиники",
+        "description": "Пример структуры для ясности процедур, доверия к врачам, FAQ и запросов на консультацию."
       },
       {
-        "sector": "Бьюти",
-        "title": "Путь записи для студии",
-        "description": "Направление beauty-сайта с фокусом на запись, которое переводит спрос из социальных DM в ясное меню услуг и путь записи."
+        "sector": "Beauty",
+        "title": "Система записи для beauty-студии",
+        "description": "Студийный прототип для услуг, цен, визуального доказательства и заявок на запись."
       }
     ],
-    "comingSoon": "Демо-бриф"
+    "hero": {
+      "eyebrow": "Галерея систем сайтов",
+      "title": "Системы сайтов для отелей, клиник и студий.",
+      "subtitle": "Концепт-системы и выбранные направления, показывающие, как Yourtimestudio строит сайты с фокусом на бронирования для локального бизнеса. Без выдуманных клиентов, отзывов и показателей.",
+      "note_label": "Статус прототипов",
+      "note": "Примеры ниже - это концепт-системы, примерные сборки и студийные прототипы. Они показывают архитектуру, модули и логику конверсии до публикации реального клиентского кейса.",
+      "future_note": "Реальные клиентские работы можно добавить позже, когда будет явное разрешение публиковать названия, визуалы, результаты или отзывы.",
+      "proof": [
+        "Сейчас принимаются выбранные проекты в Батуми.",
+        "Разработка под руководством основателя. Четкий scope до начала работы.",
+        "Концепт-системы ниже - это прототипы студии, а не выдуманные клиентские кейсы."
+      ]
+    },
+    "labels": {
+      "problem": "Бизнес-проблема",
+      "conversion": "Цель конверсии",
+      "architecture": "Архитектура сайта",
+      "modules": "Ключевые модули",
+      "technical": "Технический слой"
+    },
+    "systems": {
+      "hotel": {
+        "label": "Концепт-система",
+        "title": "Система прямого бронирования для отеля",
+        "summary": "Архитектура сайта отеля, которая переводит интерес к номерам в прямое бронирование через многоязычный контент, доказательство локации и поддержку выбора на уровне номера.",
+        "problem": "Гости быстро сравнивают отели и возвращаются на OTA-платформы, если прямой сайт не объясняет номера, правила, локацию и ценность бронирования.",
+        "conversion": "Перевести заинтересованных гостей от просмотра номеров к прямому запросу бронирования без возврата на OTA.",
+        "architecture": [
+          "Главная страница вокруг локации, номеров и ценности прямого бронирования.",
+          "Шаблон номера с правилами, удобствами, галереей и CTA бронирования.",
+          "Многоязычные локальные SEO-страницы под туристический спрос в Батуми."
+        ],
+        "modules": [
+          "Переключатель языков",
+          "Ряд карточек номеров",
+          "Выбор даты заезда",
+          "Полоса доверия и локации"
+        ],
+        "technical": [
+          "Маршруты Next.js",
+          "Структурированные данные отеля",
+          "Бюджет Core Web Vitals"
+        ]
+      },
+      "clinic": {
+        "label": "Пример сборки",
+        "title": "Система доверия и услуг для клиники",
+        "summary": "Система сайта клиники, которая помогает пациентам понять процедуры, оценить доверие и запросить консультацию без поиска базовой информации.",
+        "problem": "Пациентам нужна ясность по процедурам, врачам, безопасности, языковой поддержке и следующим шагам до обращения в клинику.",
+        "conversion": "Перевести изучение процедуры в запрос консультации, разместив доказательства доверия рядом с формой обращения.",
+        "architecture": [
+          "Страницы категорий процедур с процессом, рисками, подготовкой и уходом после.",
+          "Шаблон профиля врача с квалификацией, языками и связанными процедурами.",
+          "FAQ и слой доверия, связанные с формами консультации."
+        ],
+        "modules": [
+          "Карточка категории процедуры",
+          "Ряд профиля врача",
+          "CTA консультации",
+          "Индикатор многоязычной анкеты"
+        ],
+        "technical": [
+          "Основы medical schema",
+          "Доступный поток формы",
+          "Локализованная структура маршрутов"
+        ]
+      },
+      "beauty": {
+        "label": "Студийный прототип",
+        "title": "Система записи для beauty-студии",
+        "summary": "Прототип сайта beauty-студии, который переводит внимание из социальных каналов в ясное меню услуг, контекст цен, визуальное доказательство и заявку на запись.",
+        "problem": "Социальные каналы создают интерес, но посетители часто не могут сравнить услуги, время, цены и доступность в одном структурированном месте.",
+        "conversion": "Перевести посетителей из Instagram и поиска в заявки на запись через пути под конкретные услуги.",
+        "architecture": [
+          "Меню услуг по категориям, цене, времени и специалисту.",
+          "Галерея и социальное доказательство рядом с действием записи.",
+          "Локальные SEO-страницы для beauty-услуг с высоким намерением в Батуми."
+        ],
+        "modules": [
+          "Ряд меню услуг",
+          "Мини-ряд цены и времени",
+          "CTA записи",
+          "Галерея"
+        ],
+        "technical": [
+          "Паттерн маршрута бронирования",
+          "Оптимизация изображений",
+          "Local service schema"
+        ]
+      }
+    },
+    "process": {
+      "eyebrow": "Метод студии",
+      "heading": "Как это становится вашим сайтом",
+      "subtitle": "Система начинается как диагностическая структура, затем становится сфокусированным сайтом с ясными страницами, конкретным контентом и проверенным путем бронирования.",
+      "items": {
+        "audit": {
+          "title": "Аудит",
+          "description": "Разбор текущего сайта, бизнес-модели, конкурентов, поискового спроса и мест, где теряются бронирования или заявки."
+        },
+        "structure": {
+          "title": "Структура",
+          "description": "Карта архитектуры страниц, путей конверсии, многоязычных маршрутов и контентных блоков до начала дизайна."
+        },
+        "design": {
+          "title": "Дизайн",
+          "description": "Интерфейс строится вокруг логики сектора: номера, процедуры или услуги, с доверием и действием рядом."
+        },
+        "build": {
+          "title": "Разработка",
+          "description": "Сайт разрабатывается на Next.js с адаптивными макетами, структурированными данными, формами и дисциплиной производительности."
+        },
+        "launch": {
+          "title": "Запуск",
+          "description": "Публикация с SEO-основами, проверкой аналитики, тестами форм, редиректами и практичным планом поддержки."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Начните с фактов",
+      "heading": "Найдите систему, которая действительно нужна вашему сайту.",
+      "subtitle": "Ручной аудит сайта показывает, что мешает доверию, поисковой видимости и бронированию до определения объема редизайна.",
+      "audit": "Запросить аудит сайта",
+      "project": "Начать проект"
+    }
   },
   "insightsPage": {
-    "heading": "Инсайты в работе",
-    "subtitle": "Запланированные практические руководства для сайтов гостиниц, клиник и beauty-бизнеса Батуми.",
-    "comingSoon": "Запланированное руководство",
+    "heading": "Инсайты откроются только с готовыми руководствами",
+    "subtitle": "Библиотека статей не публикуется, пока нет законченных и полезных материалов. Сейчас практичный следующий шаг - ручной аудит сайта, который покажет, что мешает доверию, видимости в поиске и бронированиям.",
+    "comingSoon": "Опубликованных статей пока нет",
     "clusters": {
       "hospitality": {
         "label": "Гостиничный бизнес",
@@ -1226,7 +1664,7 @@
       }
     },
     "detail": {
-      "cta": "Хотите сайт, который работает для вас так же активно?",
+      "cta": "Пустая сетка статей не показывается",
       "ctaLink": "Получить бесплатный аудит сайта"
     }
   },
@@ -1262,27 +1700,61 @@
     "featuredDescription": "Практические заметки о страницах номеров, сигналах доверия, CTA бронирования, весе изображений и локальном поисковом намерении для отелей Батуми."
   },
   "caseStudies": {
-    "sectionLabel": "Демо-брифы.",
-    "heading": "Примеры направлений, а не выдуманные результаты клиентов",
-    "viewLink": "Смотреть бриф",
-    "moreNote": "Это примерные брифы, пока клиентские работы не готовы к публикации. Запросите направление, ближайшее к вашему бизнесу.",
+    "sectionLabel": "Галерея систем сайтов.",
+    "heading": "Примерные системы, а не выдуманные кейсы",
+    "subtitle": "Три отраслевых направления, показывающие экраны, потоки и модули, с которых может начаться реальная сборка.",
+    "conversionLabel": "Цель конверсии",
+    "viewGallery": "Смотреть системы сайтов",
+    "viewLink": "Смотреть систему",
+    "moreNote": "Эти превью - концепт-системы и студийные прототипы. Они не заявляют клиентские результаты, отзывы или метрики.",
+    "proof": {
+      "items": [
+        "Сейчас принимаются выбранные проекты в Батуми.",
+        "Разработка под руководством основателя. Четкий scope до начала работы.",
+        "Концепт-системы ниже - это прототипы студии, а не выдуманные клиентские кейсы."
+      ]
+    },
     "discussProject": "Обсудить похожий проект",
-    "seeBrief": "Смотреть бриф",
+    "seeBrief": "Смотреть систему",
     "studies": {
       "hospitality": {
-        "vertical": "Гостиничный бизнес",
-        "title": "Концепция прямого бронирования для бутик-отеля",
-        "result": "План пути бронирования"
+        "label": "Концепт-система",
+        "vertical": "Гостиницы",
+        "title": "Система прямого бронирования для отеля",
+        "problem": "Прямой сайт должен объяснять номера, локацию, правила и ценность бронирования убедительнее, чем OTA-страница.",
+        "conversion": "Запрос прямого бронирования",
+        "result": "План потока бронирования",
+        "modules": [
+          "Карточки номеров с правилами",
+          "Выбор заезда и гостей",
+          "Полоса локации и доверия"
+        ]
       },
       "medical": {
+        "label": "Пример сборки",
         "vertical": "Медицина",
-        "title": "Многоязычный сайт доверия для стоматологической клиники",
-        "result": "Структура заявки пациента"
+        "title": "Система доверия и услуг для клиники",
+        "problem": "Пациентам нужны ясность процедуры, доверие к врачу и языковая поддержка до запроса консультации.",
+        "conversion": "Запрос консультации",
+        "result": "Структура заявки пациента",
+        "modules": [
+          "Контент категории процедуры",
+          "Профиль врача и квалификация",
+          "FAQ и многоязычная анкета"
+        ]
       },
       "beauty": {
-        "vertical": "Бьюти",
-        "title": "Сайт записи для beauty-студии",
-        "result": "Прототип пути записи"
+        "label": "Студийный прототип",
+        "vertical": "Beauty",
+        "title": "Система записи для beauty-студии",
+        "problem": "Социальное внимание требует меню услуг, контекста цен, визуального доказательства и ясного пути записи.",
+        "conversion": "Заявка на запись",
+        "result": "Прототип потока записи",
+        "modules": [
+          "Меню услуг по категориям",
+          "Ряд цены, времени и специалиста",
+          "Галерея и CTA записи"
+        ]
       }
     }
   },
@@ -1293,7 +1765,11 @@
     "client2": "Локальное SEO",
     "client3": "Оригинальная фотография",
     "client4": "Многоязычные страницы",
-    "client5": "Запуск на Hostinger"
+    "client5": "Поддержка запуска"
+  },
+  "testimonials": {
+    "eyebrow": "Клиентское подтверждение",
+    "heading": "Реальные отзывы"
   },
   "ui": {
     "skipToContent": "Перейти к содержанию",
@@ -1315,8 +1791,8 @@
     "locationArea": "Работаю из Батуми, Грузия. Помогаю гостиничному, медицинскому и beauty-бизнесу в Аджарии и за ее пределами."
   },
   "announcement": {
-    "text": "Бесплатный аудит сайта в этом месяце - мест мало",
-    "cta": "Забронировать"
+    "text": "Доступен ручной аудит сайта",
+    "cta": "Запросить аудит"
   },
   "availability": {
     "available": "Доступен для проектов",

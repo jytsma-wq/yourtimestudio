@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 import { type Locale } from '@/lib/i18n/config';
-import { Section } from '@/components/shared/Section';
-import { MagneticButton } from '@/components/shared/MagneticButton';
 
 interface CTABandSectionProps {
   locale: Locale;
@@ -14,40 +12,40 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
   const t = await getTranslations('ctaBand');
 
   return (
-    <Section variant="accent" className="border-t border-brand-sage-green/20 py-16 md:py-20" id="cta">
-      <div className="mx-auto max-w-4xl text-left">
-        <p className="section-label text-background">{t('sectionLabel')}</p>
-        <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl mb-5 text-background">
-          {t('heading')}
-        </h2>
-        <p className="text-background text-lg max-w-xl leading-relaxed mb-10">
-          {t('subtitle')}
-        </p>
-      </div>
-      <div className="flex flex-col sm:flex-row gap-4 justify-start">
-        <MagneticButton>
+    <section className="bg-canvas py-16 md:py-24 px-[var(--container-padding)] border-t border-hairline" id="cta">
+      <div className="mx-auto max-w-[var(--container-max-width)]">
+        <div className="max-w-2xl">
+          <p className="mono-label text-sea-bright mb-4">{t('sectionLabel')}</p>
+          <h2 className="text-display-lg text-ink mb-5">
+            {t('heading')}
+          </h2>
+          <p className="text-body-lg text-muted max-w-xl leading-relaxed mb-10">
+            {t('subtitle')}
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
           <Button
             asChild
             size="lg"
-            className="bg-background text-brand-sage-green-darken font-semibold text-base px-8 h-12 rounded-none hover:bg-background/90"
+            className="bg-oxide text-white font-semibold text-base px-8 h-12 rounded-md hover:bg-oxide-hover transition-colors"
           >
             <Link href="/website-audits">
               {t('primary')}
-              <ArrowRight className="ml-1 size-4" />
+              <ArrowRight className="ml-1.5 size-4" />
             </Link>
           </Button>
-        </MagneticButton>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="text-base px-8 h-12 rounded-none border-background/35 text-background hover:bg-background/10 hover:text-background"
-        >
-          <Link href="/contact">
-            {t('secondary')}
-          </Link>
-        </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="text-base px-8 h-12 rounded-md border-hairline text-ink hover:bg-surface hover:text-ink transition-colors"
+          >
+            <Link href="/contact">
+              {t('secondary')}
+            </Link>
+          </Button>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

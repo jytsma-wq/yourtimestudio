@@ -54,16 +54,16 @@ export function CookieConsent() {
       role="dialog"
       aria-label={t('aria_label')}
     >
-      <div className="bg-card border border-border rounded-xl shadow-lg p-4">
+      <div className="rounded-md border border-hairline bg-surface p-4 text-ink shadow-none">
         <div className="flex flex-col gap-4">
           <div className="flex items-start gap-3">
-            <Cookie className="size-5 text-brand-serene-coral-darken shrink-0 mt-0.5" aria-hidden="true" />
+            <Cookie className="size-5 text-sea-bright shrink-0 mt-0.5" aria-hidden="true" />
             <div className="flex-1">
-              <p className="text-sm text-foreground leading-relaxed">
+              <p className="text-sm leading-relaxed text-ink">
                 {t('message')}{' '}
                 <Link
                   href="/privacy"
-                  className="border-b border-transparent font-medium text-brand-serene-coral-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
+                  className="font-medium text-sea-bright underline-offset-4 transition duration-150 ease-in-out hover:text-oxide hover:underline"
                 >
                   {t('privacy_link')}
                 </Link>
@@ -75,14 +75,14 @@ export function CookieConsent() {
               variant="outline"
               size="sm"
               onClick={handleDecline}
-              className="text-sm"
+              className="border-hairline text-sm text-ink hover:bg-surface-elevated hover:text-ink"
             >
               {t('decline')}
             </Button>
             <Button
               size="sm"
               onClick={handleAccept}
-              className="bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white text-sm"
+              className="text-sm"
             >
               {t('accept')}
             </Button>

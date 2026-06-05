@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SectorPageTemplate } from '@/components/shared/SectorPageTemplate';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
-import { generatePageMetadata } from '@/lib/seo/metadata';
+import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
 
 export async function generateMetadata({
   params,
@@ -11,12 +11,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Beauty Salon Websites Batumi — Booking-Led Websites for Salons',
+    title: 'Beauty Salon Website Development in Batumi',
     description:
-      'Websites that fill your appointment book, not your Instagram DMs. Service menu systems, online booking, pricing visibility, and promo management for Batumi salons, medspas, and studios.',
+      'Booking-led websites for Batumi salons, medspas, and beauty studios with service menus, appointment flows, pricing clarity, and galleries.',
     path: '/beauty-salon-websites-batumi',
     locale: locale as Locale,
-    ogImage: '/og-beauty.png',
+    ogImage: pageOgImages.beauty,
   });
 }
 

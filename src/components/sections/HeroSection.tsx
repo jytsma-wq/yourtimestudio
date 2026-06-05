@@ -1,148 +1,341 @@
 import { getTranslations } from 'next-intl/server';
+import {
+  ArrowRight,
+  BedDouble,
+  CalendarDays,
+  Check,
+  Code2,
+  FileCode2,
+  Gauge,
+  Languages,
+  MapPin,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  type LucideIcon,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
-import Image from 'next/image';
 import { type Locale } from '@/lib/i18n/config';
-import { CountUp } from '@/components/shared/CountUp';
-import { sectors } from '@/lib/sector-config';
-import { siteConfig } from '@/lib/site-config';
-import { AvailabilityBadge } from '@/components/shared/AvailabilityBadge';
-import { MagneticButton } from '@/components/shared/MagneticButton';
 
 interface HeroSectionProps {
   locale: Locale;
 }
 
-const statKeys = Object.keys(siteConfig.stats) as (keyof typeof siteConfig.stats)[];
-const statDelays = [0, 160, 320];
+interface BrowserFrameProps {
+  title: string;
+  subtitle: string;
+  url: string;
+  sector: string;
+  children: React.ReactNode;
+}
+
 const proofKeys = ['proof_band.0', 'proof_band.1', 'proof_band.2', 'proof_band.3'] as const;
 
-export async function HeroSection({ locale: _locale }: HeroSectionProps) {
+const techStack: { icon: LucideIcon; label: string }[] = [
+  { icon: Code2, label: 'Next.js / React' },
+  { icon: Search, label: 'Local SEO' },
+  { icon: Gauge, label: 'Core Web Vitals' },
+  { icon: FileCode2, label: 'Structured data' },
+  { icon: Languages, label: 'Multilingual routes' },
+];
+
+function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFrameProps) {
+  return (
+    <article
+      aria-label={title}
+      className="overflow-hidden rounded-md border border-hairline bg-surface"
+    >
+      <div className="flex min-w-0 items-center gap-2 border-b border-hairline px-3 py-2">
+        <div className="flex gap-1.5" aria-hidden="true">
+          <span className="size-2 rounded-full bg-hairline-light/70" />
+          <span className="size-2 rounded-full bg-hairline-light/50" />
+          <span className="size-2 rounded-full bg-hairline-light/30" />
+        </div>
+        <div className="min-w-0 flex-1 rounded bg-canvas px-2 py-1 font-mono text-[10px] text-muted">
+          <span className="block truncate">{url}</span>
+        </div>
+        <span className="hidden shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-sea-bright sm:inline">
+          {sector}
+        </span>
+      </div>
+
+      <div className="p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="text-sm font-semibold text-ink">{title}</h2>
+            <p className="mt-1 text-xs leading-relaxed text-muted">{subtitle}</p>
+          </div>
+          <span className="rounded border border-sea/40 bg-sea/15 px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-sea-bright">
+            System
+          </span>
+        </div>
+
+        <div className="mt-4">{children}</div>
+      </div>
+    </article>
+  );
+}
+
+function HotelBookingFrame() {
+  return (
+    <BrowserFrame
+      title="Hotel Direct Booking System"
+      subtitle="A booking-first hotel site with language routes and direct inquiry flow."
+      url="batumi-hotel.ge/direct-booking"
+      sector="Hospitality"
+    >
+      <div className="space-y-3">
+        <div className="flex flex-wrap gap-1.5" aria-label="Language switcher options">
+          {['EN', 'KA', 'RU', 'TR'].map((language) => (
+            <span
+              key={language}
+              className="rounded border border-hairline bg-canvas px-2 py-1 font-mono text-[10px] font-semibold text-muted"
+            >
+              {language}
+            </span>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-3 gap-2" aria-label="Booking date selector preview">
+          {['Check-in', 'Nights', 'Guests'].map((label) => (
+            <div key={label} className="rounded border border-hairline bg-canvas p-2">
+              <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted">{label}</p>
+              <div className="mt-2 h-1.5 w-10 rounded bg-sea-bright/70" />
+            </div>
+          ))}
+        </div>
+
+        <div className="grid gap-2 sm:grid-cols-2" aria-label="Room card row">
+          {['Sea view room', 'Family stay'].map((room) => (
+            <div key={room} className="rounded border border-hairline bg-surface-elevated p-2.5">
+              <div className="flex items-center gap-2 text-xs font-medium text-ink">
+                <BedDouble className="size-3.5 text-sea-bright" />
+                <span>{room}</span>
+              </div>
+              <div className="mt-2 flex gap-1.5">
+                <span className="h-1.5 flex-1 rounded bg-hairline-light/50" />
+                <span className="h-1.5 w-8 rounded bg-hairline-light/30" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between gap-3 rounded border border-oxide/40 bg-oxide/15 px-3 py-2">
+          <div className="flex items-center gap-2 text-xs text-ink">
+            <CalendarDays className="size-3.5 text-oxide-hover" />
+            <span>Direct booking flow</span>
+          </div>
+          <span className="rounded bg-oxide px-2.5 py-1 text-xs font-semibold text-white">Book direct</span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 border-t border-hairline pt-3 text-xs text-muted">
+          <MapPin className="size-3.5 text-sea-bright" />
+          <span>Batumi location pages</span>
+          <span className="hidden text-hairline-light sm:inline">/</span>
+          <span>Trust and policy strip</span>
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function ClinicTrustFrame() {
+  return (
+    <BrowserFrame
+      title="Clinic Trust System"
+      subtitle="A clinic website structure for treatments, doctors, intake, and patient questions."
+      url="dental-clinic.ge/treatments"
+      sector="Medical"
+    >
+      <div className="space-y-3">
+        <div className="rounded border border-hairline bg-canvas p-3">
+          <div className="flex items-start gap-2">
+            <Stethoscope className="mt-0.5 size-4 text-sea-bright" />
+            <div>
+              <p className="text-xs font-semibold text-ink">Treatment category</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted">Overview, eligibility, preparation, aftercare.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3 rounded border border-hairline bg-surface-elevated p-3">
+          <div className="flex size-8 items-center justify-center rounded bg-sea/30 font-mono text-xs font-semibold text-sea-bright">
+            DR
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-xs font-semibold text-ink">Doctor profile row</p>
+            <p className="truncate text-xs text-muted">Credentials, languages, consultation path</p>
+          </div>
+          <ShieldCheck className="size-4 shrink-0 text-success" />
+        </div>
+
+        <div className="grid gap-2 sm:grid-cols-[1fr_auto] sm:items-center">
+          <div className="rounded border border-hairline bg-canvas px-3 py-2">
+            <p className="text-xs font-medium text-ink">FAQ and trust signal</p>
+            <p className="mt-1 text-xs text-muted">Answers before the patient contacts the clinic.</p>
+          </div>
+          <span className="rounded bg-oxide px-3 py-2 text-center text-xs font-semibold text-white">
+            Request consultation
+          </span>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 border-t border-hairline pt-3 text-xs text-muted">
+          <Languages className="size-3.5 text-sea-bright" />
+          <span>Multilingual intake</span>
+          {['EN', 'KA', 'RU'].map((language) => (
+            <span key={language} className="rounded border border-hairline px-1.5 py-0.5 font-mono text-[10px]">
+              {language}
+            </span>
+          ))}
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function BeautyAppointmentFrame() {
+  return (
+    <BrowserFrame
+      title="Beauty Appointment System"
+      subtitle="A service menu, gallery, and appointment path for studios with social traffic."
+      url="beauty-studio.ge/book"
+      sector="Beauty"
+    >
+      <div className="space-y-3">
+        <div className="grid grid-cols-3 gap-2" aria-label="Service menu row">
+          {['Hair', 'Nails', 'Makeup'].map((service) => (
+            <div key={service} className="rounded border border-hairline bg-canvas p-2 text-center">
+              <Sparkles className="mx-auto size-3.5 text-oxide-hover" />
+              <p className="mt-1 text-xs font-medium text-ink">{service}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-3 gap-2" aria-label="Price and time row">
+          {['Price visible', 'Time visible', 'Specialist'].map((detail) => (
+            <div key={detail} className="rounded border border-hairline bg-surface-elevated px-2 py-2">
+              <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted">{detail}</p>
+              <div className="mt-2 h-1.5 rounded bg-hairline-light/40" />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between gap-3 rounded border border-oxide/40 bg-oxide/15 px-3 py-2">
+          <span className="text-xs font-medium text-ink">Appointment flow</span>
+          <span className="rounded bg-oxide px-2.5 py-1 text-xs font-semibold text-white">Book appointment</span>
+        </div>
+
+        <div className="grid grid-cols-4 gap-1.5" aria-label="Gallery strip">
+          {['Look', 'Space', 'Result', 'Team'].map((label) => (
+            <div key={label} className="aspect-[4/3] rounded border border-hairline bg-canvas p-1.5">
+              <div className="h-full rounded-sm border border-sea/20 bg-surface-elevated" />
+              <span className="sr-only">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="border-t border-hairline pt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-sea-bright">
+          Instagram to booking
+        </div>
+      </div>
+    </BrowserFrame>
+  );
+}
+
+function TechnicalPanel() {
+  return (
+    <aside
+      aria-label="Technical delivery stack"
+      className="rounded-md border border-hairline bg-canvas-soft p-4"
+    >
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
+          Build layer
+        </p>
+        <span className="rounded border border-success/30 bg-success/10 px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-success">
+          Production
+        </span>
+      </div>
+      <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+        {techStack.map(({ icon: Icon, label }) => (
+          <li key={label} className="flex items-center gap-2 text-xs text-ink">
+            <Icon className="size-3.5 shrink-0 text-sea-bright" aria-hidden="true" />
+            <span>{label}</span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
+
+export async function HeroSection({ locale }: HeroSectionProps) {
   const t = await getTranslations('hero');
 
   return (
-    <section
-      id="hero"
-      data-section-name={t('sectionLabel')}
-      className="bg-background bg-linen-texture px-4 pt-12 pb-10 sm:pt-14 md:px-8 lg:pt-12 lg:pb-12 relative overflow-hidden"
-    >
-      <div className="mx-auto w-full max-w-[calc(100vw-2rem)] md:max-w-[calc(100vw-4rem)] lg:max-w-7xl">
-        <div className="mb-8 hidden items-center justify-between border-y border-border py-3 text-xs text-muted-foreground md:flex">
-          <span className="editorial-kicker">{t('meta_brand')}</span>
-          <span className="editorial-kicker">{t('meta_services')}</span>
-          <AvailabilityBadge />
+    <section id="hero" data-locale={locale} className="relative overflow-hidden bg-canvas">
+      <div className="mx-auto w-full max-w-[var(--hero-max-width)] px-[var(--container-padding)] py-16 md:py-24 lg:py-28">
+        <div className="mb-10 hidden items-center justify-between border-b border-hairline pb-4 md:flex">
+          <span className="mono-label text-muted">Web Development Studio</span>
+          <span className="mono-label text-muted">Batumi / Georgia</span>
+          <span className="mono-label text-sea-bright">Available for projects</span>
         </div>
 
-        <div className="grid min-w-0 gap-10 lg:grid-cols-[minmax(0,1.04fr)_minmax(320px,0.96fr)] lg:gap-14 items-center">
-          <div className="min-w-0">
-            <p className="section-label">{t('sectionLabel')}</p>
-            <h1 className="editorial-display max-w-[22rem] text-[clamp(2.4rem,8.8vw,5.25rem)] sm:max-w-full sm:text-6xl lg:text-[4.65rem] xl:text-[5.25rem] text-foreground text-balance">
-              {t('title1')}
-              <span className="block text-brand-sage-green-darken">{t('title2')}</span>
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(440px,0.98fr)] lg:gap-16">
+          <div>
+            <p className="mono-label mb-4 text-sea-bright">{t('sectionLabel')}</p>
+
+            <h1 className="max-w-2xl text-balance text-display-xl text-ink">
+              {t('title1')}{' '}
+              <span className="text-sea-bright">{t('title2')}</span>
             </h1>
-            <p className="mt-6 max-w-[22rem] text-base md:max-w-2xl md:text-xl text-muted-foreground leading-[1.75]">
+
+            <p className="mt-6 max-w-xl text-body-lg leading-[1.75] text-muted">
               {t('subtitle')}
             </p>
 
-            <div className="mt-8 grid max-w-[22rem] gap-2 sm:max-w-none sm:grid-cols-2">
+            <ul className="mt-8 grid max-w-lg gap-3 sm:grid-cols-2" aria-label="Project delivery proof points">
               {proofKeys.map((key) => (
-                <div key={key} className="flex items-center gap-2 border-t border-border py-3 text-sm text-muted-foreground">
-                  <CheckCircle2 className="size-4 shrink-0 text-brand-sage-green-darken" />
+                <li key={key} className="flex items-center gap-2 text-sm text-muted">
+                  <Check className="size-4 shrink-0 text-sea-bright" aria-hidden="true" />
                   <span>{t(key)}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="mt-8 grid max-w-[22rem] gap-3 sm:max-w-none sm:flex sm:flex-wrap">
-              <MagneticButton className="w-full sm:w-auto">
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-12 w-full rounded-none bg-foreground px-6 text-base font-semibold text-background hover:bg-foreground/88 sm:w-auto"
-                >
-                  <Link href="/website-audits">
-                    {t('cta_primary')}
-                    <ArrowRight className="ml-1 size-4" />
-                  </Link>
-                </Button>
-              </MagneticButton>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 rounded-md bg-oxide px-6 text-base font-semibold text-white transition-colors hover:bg-oxide-hover"
+              >
+                <Link href="/website-audits">
+                  {t('cta_primary')}
+                  <ArrowRight className="ml-1.5 size-4" aria-hidden="true" />
+                </Link>
+              </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-12 w-full rounded-none border-foreground/25 bg-transparent px-6 text-base text-foreground hover:bg-foreground hover:text-background sm:w-auto"
+                className="h-12 rounded-md border-hairline bg-transparent px-6 text-base text-ink transition-colors hover:bg-surface hover:text-ink"
               >
-                <Link href="/pricing">
-                  {t('cta_secondary')}
-                </Link>
+                <Link href="/pricing">{t('cta_secondary')}</Link>
               </Button>
             </div>
           </div>
 
-          <div className="min-w-0">
-            <div className="relative mx-auto w-full max-w-xl">
-              <div className="relative aspect-[16/9] overflow-hidden border border-foreground/15 bg-card shadow-premium-xl sm:aspect-[4/5]">
-                <Image
-                  src={sectors.hospitality.image}
-                  alt={t('cards.hospitality.name')}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 92vw, 45vw"
-                  placeholder="blur"
-                  blurDataURL={sectors.hospitality.blur}
-                  priority
-                />
-                <div className="absolute inset-0 bg-brand-cream/15 mix-blend-overlay pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/45 to-transparent p-5 text-brand-cream">
-                  <p className="editorial-kicker text-brand-cream">{t('feature_direction')}</p>
-                  <p className="mt-2 max-w-sm text-2xl font-semibold leading-tight">
-                    {t('typewriter.hotel')}
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute -left-2 top-4 w-40 border border-border bg-background p-3 shadow-premium-lg float-chip-1 sm:-left-4 sm:top-8 sm:w-44">
-                <p className="editorial-kicker text-brand-serene-coral-darken">{t('issue')}</p>
-                <p className="mt-2 text-sm font-semibold leading-snug">
-                  {t('cards.medical.tagline')}
-                </p>
-              </div>
-
-              <div className="absolute -right-2 bottom-4 w-44 border border-border bg-background p-3 shadow-premium-lg float-chip-2 sm:-right-4 sm:bottom-8 sm:w-52">
-                <div className="relative mb-3 aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={sectors.beauty.image}
-                    alt={t('cards.beauty.name')}
-                    fill
-                    className="object-cover"
-                    sizes="208px"
-                    placeholder="blur"
-                    blurDataURL={sectors.beauty.blur}
-                  />
-                </div>
-                <p className="editorial-kicker text-brand-serene-coral-darken">{t('appointment_flow')}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{t('cards.beauty.priceFrom')}</p>
-              </div>
+          <div className="min-w-0" aria-label="Miniature website systems preview">
+            <div className="space-y-3">
+              <HotelBookingFrame />
+              <ClinicTrustFrame />
+              <BeautyAppointmentFrame />
+            </div>
+            <div className="mt-4">
+              <TechnicalPanel />
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 grid border-y border-border md:grid-cols-[1.15fr_0.85fr]">
-          {statKeys.map((key, i) => (
-            <div key={key} className="border-border py-5 md:border-r md:px-6 last:md:border-r-0">
-              <div className="text-3xl md:text-4xl font-semibold text-foreground">
-                <CountUp
-                  number={siteConfig.stats[key].number}
-                  suffix={siteConfig.stats[key].suffix}
-                  delay={statDelays[i] ?? 0}
-                />
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t(`stats.${key}.label`)}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

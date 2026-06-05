@@ -12,4 +12,5 @@ dev.db-journal
 *.sqlite-journal
 
 *.log
-next-env.d.ts
+*.tsbuildinfo
+*.zip

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { X } from 'lucide-react';
+import { Link } from '@/lib/i18n/navigation';
 
 export function AnnouncementBar() {
   const t = useTranslations('announcement');
@@ -31,7 +32,7 @@ export function AnnouncementBar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 bg-brand-serene-coral text-brand-charcoal text-center text-xs sm:text-sm py-2 px-4 transform-gpu transition-transform duration-300 ${
+      className={`sticky top-0 z-50 bg-oxide text-white text-center text-xs sm:text-sm py-2 px-4 transform-gpu transition-transform duration-300 ${
         hidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
@@ -39,15 +40,15 @@ export function AnnouncementBar() {
         <span className="font-medium leading-tight">
           {t('text')}
         </span>
-        <a
+        <Link
           href="/website-audits"
-          className="border-b border-transparent font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-charcoal whitespace-nowrap leading-tight"
+          className="border-b border-transparent font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-oxide hover:text-white whitespace-nowrap leading-tight"
         >
           {t('cta')}
-        </a>
+        </Link>
         <button
           onClick={handleDismiss}
-          className="absolute right-0 text-brand-charcoal hover:text-brand-charcoal transition duration-150 ease-out hover:scale-[1.02] hover:shadow-md active:scale-[0.99] motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+          className="absolute right-0 text-white/80 hover:text-white transition duration-150 ease-out"
           aria-label={ui('dismissAnnouncement')}
         >
           <X className="size-3.5" />
