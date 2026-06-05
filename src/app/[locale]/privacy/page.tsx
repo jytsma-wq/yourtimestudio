@@ -16,9 +16,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Privacy Policy — Yourtimestudio',
+    title: 'Privacy Policy — Batumi Lighthouse',
     description:
-      'Learn how Yourtimestudio collects, uses, and protects your personal data. Our privacy policy covers data collection, cookies, third-party services, and your rights.',
+      'Learn how Batumi Lighthouse collects, uses, and protects your personal data. Our privacy policy covers data collection, cookies, third-party services, and your rights.',
     path: '/privacy',
     locale: locale as Locale,
     noIndex: true,

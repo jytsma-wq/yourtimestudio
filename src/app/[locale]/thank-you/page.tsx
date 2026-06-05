@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Thank You — Yourtimestudio',
+    title: 'Thank You — Batumi Lighthouse',
     description: 'Thank you for your inquiry. We will get back to you within one business day.',
     path: '/thank-you',
     locale: locale as Locale,

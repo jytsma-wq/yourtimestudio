@@ -31,7 +31,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'About - Yourtimestudio',
+    title: 'About - Batumi Lighthouse',
     description:
       'Founder-led website development in Batumi by Jasper: strategy, UX, code, SEO, launch, and improvement for hotels, clinics, and studios.',
     path: '/about',

@@ -1,6 +1,6 @@
 ---
 # DESIGN.md — Black Sea Digital Systems
-# Design constitution for Yourtimestudio website
+# Design constitution for Batumi Lighthouse website
 # All future edits must follow this document.
 
 version: "2.0"

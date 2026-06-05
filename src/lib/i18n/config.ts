@@ -1,5 +1,5 @@
 /**
- * Internationalization configuration for Yourtimestudio.
+ * Internationalization configuration for Batumi Lighthouse.
  *
  * Locales:
  *   en – English  (default, served at root `/`)

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Yourtimestudio — Batum'da Web Sitesi Geliştirme Stüdyosu",
+    "title": "Batumi Lighthouse — Batum'da Web Sitesi Geliştirme Stüdyosu",
     "description": "Batum'daki oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için kurucu liderliğinde web sitesi geliştirme."
   },
   "nav": {
@@ -68,7 +68,7 @@
         "label": "fotoğrafçı partner"
       }
     },
-    "meta_brand": "Yourtimestudio / Batum",
+    "meta_brand": "Batumi Lighthouse / Batum",
     "meta_services": "Doğrudan rezervasyon / yerel SEO / çok dilli UX",
     "feature_direction": "Özellik yönü",
     "issue": "Sayı 01",
@@ -143,15 +143,15 @@
   },
   "founder": {
     "heading": "Kurucu liderliğinde, uzman fotoğraf desteğiyle",
-    "body": "Yourtimestudio, Batum merkezli tek kişilik web stüdyom. Strateji, UX, kod, SEO ve yayını doğrudan ben yönetirim; özgün görsel gereken projelerde profesyonel fotoğrafçı destek olur.",
+    "body": "Batumi Lighthouse, Batum merkezli tek kişilik web stüdyom. Strateji, UX, kod, SEO ve yayını doğrudan ben yönetirim; özgün görsel gereken projelerde profesyonel fotoğrafçı destek olur.",
     "cta": "Stüdyo hakkında",
     "sectionLabel": "Nasıl çalışırım.",
     "founder": {
       "sectionLabel": "Nasıl çalışırım.",
       "heading": "Doğrudan Jasper ile inşa edilir.",
-      "bio": "Ben Jasper Tjeerd IJtsma, Batum merkezli Hollandalı bir web sitesi geliştiricisiyim. Yourtimestudio, yerel hizmet işletmeleri için rezervasyon odaklı web siteleri kurduğum odaklı stüdyomdur.",
+      "bio": "Ben Jasper Tjeerd IJtsma, Batum merkezli Hollandalı bir web sitesi geliştiricisiyim. Batumi Lighthouse, yerel hizmet işletmeleri için rezervasyon odaklı web siteleri kurduğum odaklı stüdyomdur.",
       "story": [
-        "Yourtimestudio'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
+        "Batumi Lighthouse'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
         "Rezervasyon, yerel SEO, çok dilli UX ve güvenilirliğin önemli olduğu oteller, klinikler, stüdyolar ve hizmet işletmeleri için odaklı web siteleri kurarım.",
         "Müşteriler yapı ve tasarımdan frontend geliştirme, yayın ve iyileştirmeye kadar doğrudan benimle çalışır; bu da kaliteyi ve sorumluluğu görünür tutar."
       ],
@@ -161,7 +161,7 @@
       "statClients": "Ana sektör",
       "statLanguages": "Planlanan dil",
       "statAvailable": "Seçili projeler alıyorum",
-      "imageAlt": "Yourtimestudio kurucusunun çalışma alanı"
+      "imageAlt": "Batumi Lighthouse kurucusunun çalışma alanı"
     },
     "operating": {
       "label": "Çalışma modeli",
@@ -472,11 +472,11 @@
       "title": "Ben Jasper, Batum merkezli Hollandalı bir web geliştiricisiyim.",
       "subtitle": "Oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleriyle strateji, UX, frontend kodu, yerel SEO temelleri, yayın ve iyileştirme üzerinde doğrudan çalışırım.",
       "story": [
-        "Yourtimestudio'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
+        "Batumi Lighthouse'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
         "Rezervasyon, yerel SEO, çok dilli UX ve güvenilirliğin önemli olduğu oteller, klinikler, stüdyolar ve hizmet işletmeleri için odaklı web siteleri kurarım.",
         "Müşteriler yapı ve tasarımdan frontend geliştirme, yayın ve iyileştirmeye kadar doğrudan benimle çalışır; bu da kaliteyi ve sorumluluğu görünür tutar."
       ],
-      "panel_label": "Jasper Tjeerd IJtsma / Yourtimestudio",
+      "panel_label": "Jasper Tjeerd IJtsma / Batumi Lighthouse",
       "panel_title": "Hollandalı kurucu. Frontend builder. Batum odaklı.",
       "panel_body": "Stüdyo, fazla account management katmanları olmadan daha net rezervasyon, güven, arama görünürlüğü, çok dilli yapı ve teknik güvenilirlik isteyen yerel hizmet işletmeleri için kuruldu.",
       "panel_points": [
@@ -737,7 +737,7 @@
     },
     "info_heading": "Direct contact",
     "info_email_label": "Email",
-    "info_email": "hello@yourtimestudio.com",
+    "info_email": "hello@batumilighthouse.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
     "info_area_label": "Service area",
@@ -928,7 +928,7 @@
     "privacy": {
       "heading": "Gizlilik Politikası",
       "last_updated": "Son güncelleme: Mart 2025",
-      "intro": "Yourtimestudio (\"biz,\" \"bizim\" veya \"bizi\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
+      "intro": "Batumi Lighthouse (\"biz,\" \"bizim\" veya \"bizi\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
       "data_collection_heading": "1. Topladığımız Veriler",
       "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim bilgileri: bir form gönderdiğinizde veya bizimle iletişime geçtiğinizde ad, e-posta adresi, telefon numarası ve işletme adı.\n• Web sitesi verileri: bir denetim talebi veya soruşturma sırasında sağlanan mevcut web sitesi URL'niz.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz verileri: deneyiminizi optimize etmek için tarayıcı türü, işletim sistemi ve ekran çözünürlüğü.",
       "cookies_heading": "2. Çerezler ve İzleme",
@@ -940,24 +940,24 @@
       "data_security_heading": "5. Veri Güvenliği",
       "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
       "contact_heading": "6. İletişim Bilgileri",
-      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@yourtimestudio.com\nKonum: Batumi, Acara, Gürcistan"
+      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@batumilighthouse.com\nKonum: Batumi, Acara, Gürcistan"
     },
     "terms": {
       "heading": "Hizmet Şartları",
       "last_updated": "Son güncelleme: Mart 2025",
-      "intro": "Bu Hizmet Şartları, Yourtimestudio web sitesi ve hizmetlerinin kullanımını yönetir. Web sitemize erişerek veya hizmetlerimizi kullanarak bu şartları kabul etmiş olursunuz.",
+      "intro": "Bu Hizmet Şartları, Batumi Lighthouse web sitesi ve hizmetlerinin kullanımını yönetir. Web sitemize erişerek veya hizmetlerimizi kullanarak bu şartları kabul etmiş olursunuz.",
       "services_heading": "1. Hizmetler",
-      "services_body": "Yourtimestudio, Gürcistan'ın Batumi şehrinde konaklama, sağlık ve güzellik sektörü web sitelerinde uzmanlaşmış web tasarımı, geliştirme ve dijital danışmanlık hizmetleri sunar. Hizmetlerimiz aşağıdakilerle sınırlı olmamak üzere şunları içerir:\n\n• Web sitesi tasarımı ve geliştirme\n• Arama motoru optimizasyonu (SEO)\n• Web sitesi denetimi ve performans analizi\n• Sürekli web sitesi bakımı ve destek\n• İçerik stratejisi ve metin yazarlığı\n\nHer proje için özel kapsam, teslim edilebilirler ve zaman çizelgesi, her iki tarafın da üzerinde anlaştığı bireysel proje tekliflerinde tanımlanır.",
+      "services_body": "Batumi Lighthouse, Gürcistan'ın Batumi şehrinde konaklama, sağlık ve güzellik sektörü web sitelerinde uzmanlaşmış web tasarımı, geliştirme ve dijital danışmanlık hizmetleri sunar. Hizmetlerimiz aşağıdakilerle sınırlı olmamak üzere şunları içerir:\n\n• Web sitesi tasarımı ve geliştirme\n• Arama motoru optimizasyonu (SEO)\n• Web sitesi denetimi ve performans analizi\n• Sürekli web sitesi bakımı ve destek\n• İçerik stratejisi ve metin yazarlığı\n\nHer proje için özel kapsam, teslim edilebilirler ve zaman çizelgesi, her iki tarafın da üzerinde anlaştığı bireysel proje tekliflerinde tanımlanır.",
       "payment_heading": "2. Ödeme Şartları",
       "payment_body": "• Kurulum ücretleri, yazılı olarak bir ödeme planı üzerinde anlaşılmadıkça, geliştirme başlamadan önce ödenmesi gereken tek seferlik ücretlerdir.\n• Aylık ücretler barındırma, bakım, güvenlik güncellemeleri ve desteği kapsar. Bunlar yinelenen şekilde önceden faturalandırılır.\n• Daha büyük projeler için ödeme planları teklif aşamasında düzenlenebilir ve yazılı olarak onaylanmalıdır.\n• Aksi belirtilmedikçe tüm fiyatlar USD cinsindendir. Yasayla gerektiğinde Gürcistan KDV'si uygulanabilir.\n• Geç ödemeler, ödenmemiş bakiye clearing edilene kadar hizmetlerin askıya alınmasına neden olabilir.",
       "ip_heading": "3. Fikri Mülkiyet",
-      "ip_body": "• Tam ödeme sonrasında, projeniz için özel olarak oluşturulan özel web sitesi tasarımı ve içeriğin mülkiyetini alırsınız.\n• Yourtimestudio, geliştirme sürecinde kullanılan önceden mevcut araçların, çerçevelerin, kod kitaplıklarının ve yöntemlerin mülkiyetini saklı tutar.\n• Sağladığınız tüm içerik, görsel ve materyallerin üçüncü taraf fikri mülkiyet haklarını ihlal etmemesini sağlamak sizin sorumluluğunuzdadır.\n• Yourtimestudio, aksi yazılı olarak kararlaştırılmadıkça tamamlanmış projeyi portföyünde sergileyebilir.",
+      "ip_body": "• Tam ödeme sonrasında, projeniz için özel olarak oluşturulan özel web sitesi tasarımı ve içeriğin mülkiyetini alırsınız.\n• Batumi Lighthouse, geliştirme sürecinde kullanılan önceden mevcut araçların, çerçevelerin, kod kitaplıklarının ve yöntemlerin mülkiyetini saklı tutar.\n• Sağladığınız tüm içerik, görsel ve materyallerin üçüncü taraf fikri mülkiyet haklarını ihlal etmemesini sağlamak sizin sorumluluğunuzdadır.\n• Batumi Lighthouse, aksi yazılı olarak kararlaştırılmadıkça tamamlanmış projeyi portföyünde sergileyebilir.",
       "liability_heading": "4. Sorumluluğun Sınırlandırılması",
-      "liability_body": "• Yourtimestudio, açık veya zımni hiçbir türde garanti olmaksızın hizmetleri \"olduğu gibi\" sunar.\n• Hizmetlerimizin kullanımından kaynaklanan dolaylı, tesadüfi, özel veya sonuçsal zararlardan sorumlu değiliz.\n• Herhangi bir talep için toplam sorumluluğumuz, talebe neden olan belirli hizmet için sizin tarafınızdan ödenen toplam ücretleri aşamaz.\n• Üçüncü taraf hizmet arızalarından (örn., barındırma kesintileri, ödeme geçidi sorunları) kaynaklanan kayıplardan sorumlu değiliz.\n• Hizmetlerimizin kullanımından kaynaklanan gelir, veri veya iş fırsatı kaybından sorumlu değiliz.",
+      "liability_body": "• Batumi Lighthouse, açık veya zımni hiçbir türde garanti olmaksızın hizmetleri \"olduğu gibi\" sunar.\n• Hizmetlerimizin kullanımından kaynaklanan dolaylı, tesadüfi, özel veya sonuçsal zararlardan sorumlu değiliz.\n• Herhangi bir talep için toplam sorumluluğumuz, talebe neden olan belirli hizmet için sizin tarafınızdan ödenen toplam ücretleri aşamaz.\n• Üçüncü taraf hizmet arızalarından (örn., barındırma kesintileri, ödeme geçidi sorunları) kaynaklanan kayıplardan sorumlu değiliz.\n• Hizmetlerimizin kullanımından kaynaklanan gelir, veri veya iş fırsatı kaybından sorumlu değiliz.",
       "termination_heading": "5. Fesih",
-      "termination_body": "• Her iki taraf da 30 günlük yazılı bildirimle hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında tüm ödenmiş teslim edilebilirlerin mülkiyetini sizde kalır. Yourtimestudio makul bir devir süresi sağlayacaktır.\n• Fesih nedeninden bağımsız olarak, ödenmemiş ücretler fesih sonrasında da ödenmeye devam eder.",
+      "termination_body": "• Her iki taraf da 30 günlük yazılı bildirimle hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında tüm ödenmiş teslim edilebilirlerin mülkiyetini sizde kalır. Batumi Lighthouse makul bir devir süresi sağlayacaktır.\n• Fesih nedeninden bağımsız olarak, ödenmemiş ücretler fesih sonrasında da ödenmeye devam eder.",
       "governing_heading": "6. Uygulanacak Hukuk",
-      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.\n\nBu şartlar hakkında sorularınız için hello@yourtimestudio.com adresinden bizimle iletişime geçin."
+      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.\n\nBu şartlar hakkında sorularınız için hello@batumilighthouse.com adresinden bizimle iletişime geçin."
     }
   },
   "sectorPages": {
@@ -1494,7 +1494,7 @@
     "hero": {
       "eyebrow": "Web Sitesi Sistemleri Galerisi",
       "title": "Oteller, klinikler ve stüdyolar için web sitesi sistemleri.",
-      "subtitle": "Yourtimestudio tarafından yerel hizmet işletmeleri için rezervasyon odaklı web sitelerinin nasıl yapılandırıldığını gösteren konsept sistemler ve seçilmiş yönler. Uydurma müşteri, referans veya performans iddiası yok.",
+      "subtitle": "Batumi Lighthouse tarafından yerel hizmet işletmeleri için rezervasyon odaklı web sitelerinin nasıl yapılandırıldığını gösteren konsept sistemler ve seçilmiş yönler. Uydurma müşteri, referans veya performans iddiası yok.",
       "note_label": "Prototip açıklaması",
       "note": "Aşağıdaki örnekler konsept sistemler, örnek yapılar ve stüdyo prototipleridir. Gerçek bir müşteri çalışması yayınlanmadan önce mimariyi, modülleri ve dönüşüm mantığını gösterirler.",
       "future_note": "Gerçek müşteri çalışmaları, isimleri, görselleri, sonuçları veya referansları yayımlamak için açık izin olduğunda daha sonra eklenebilir.",

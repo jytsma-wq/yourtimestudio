@@ -2,7 +2,7 @@ import { siteConfig } from '@/lib/site-config';
 import { defaultLocale, type Locale } from '@/lib/i18n/config';
 
 const siteUrl = siteConfig.url;
-const logoUrl = `${siteUrl}/brand/yourtimestudio-logo.png`;
+const logoUrl = `${siteUrl}${siteConfig.brand.logoPngSrc}`;
 const organizationId = `${siteUrl}/#organization`;
 const localBusinessId = `${siteUrl}/#localbusiness`;
 const normalizedPhone = siteConfig.contact.whatsapp.replace(/\s/g, '');

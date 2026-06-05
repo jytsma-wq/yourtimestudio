@@ -1,6 +1,6 @@
 {
-  "name": "Yourtimestudio",
-  "short_name": "Yourtimestudio",
+  "name": "Batumi Lighthouse",
+  "short_name": "Batumi Lighthouse",
   "description": "Founder-led websites for direct bookings, local SEO, and qualified inquiries in Batumi, Georgia.",
   "start_url": "/",
   "display": "standalone",
@@ -8,7 +8,7 @@
   "theme_color": "#315BFF",
   "icons": [
     {
-      "src": "/brand/yourtimestudio-mark.png",
+      "src": "/brand/batumi-lighthouse-mark.png",
       "sizes": "512x512",
       "type": "image/png"
     },

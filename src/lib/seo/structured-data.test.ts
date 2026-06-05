@@ -9,5 +9,5 @@ export const serviceSchemaContract = serviceSchema({
 });
 
 export const serviceTypeContract: 'Service' = serviceSchemaContract['@type'];
-export const providerNameContract: 'Yourtimestudio' = serviceSchemaContract.provider.name;
+export const providerNameContract: 'Batumi Lighthouse' = serviceSchemaContract.provider.name;
 export const areaServedNamesContract: string[] = areaServedSchema().map((area) => area.name);

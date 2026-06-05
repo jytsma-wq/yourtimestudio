@@ -3,10 +3,11 @@
  * contact details, social links, and brand info used across
  * components, structured data, and API routes.
  *
- * Updated for Black Sea Digital Systems design direction.
  */
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourtimestudio.com';
+const brandName = 'Batumi Lighthouse';
+const brandSlug = 'batumi-lighthouse';
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://batumilighthouse.com').replace(/\/+$/, '');
 
 function normalizeHttpUrl(value: string | undefined): string {
   const raw = value?.trim();
@@ -47,18 +48,21 @@ const derivedWhatsAppHref = whatsappNumber
   : '';
 
 export const siteConfig = {
-  name: 'Yourtimestudio',
+  name: brandName,
+  slug: brandSlug,
   brand: {
-    displayName: 'Yourtime Studio',
-    markSrc: '/brand/yourtimestudio-mark.webp',
-    markAlt: 'Yourtimestudio mark',
+    displayName: brandName,
+    markSrc: `/brand/${brandSlug}-mark.webp`,
+    markPngSrc: `/brand/${brandSlug}-mark.png`,
+    logoPngSrc: `/brand/${brandSlug}-logo.png`,
+    markAlt: `${brandName} mark`,
   },
   url: siteUrl,
   description:
     'Website development studio in Batumi for hotels, clinics, beauty studios, and service businesses.',
 
   contact: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@yourtimestudio.com',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@batumilighthouse.com',
     // NEXT_PUBLIC_WHATSAPP must be E.164, e.g. +995555123456.
     // Alternatively set NEXT_PUBLIC_WHATSAPP_HREF to a WhatsApp URL such as https://wa.me/995555123456.
     whatsapp: whatsappNumber,
@@ -93,7 +97,7 @@ export const siteConfig = {
   },
 
   analytics: {
-    domain: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'yourtimestudio.com',
+    domain: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'batumilighthouse.com',
   },
 
   /** Key metrics — truthful, credible */

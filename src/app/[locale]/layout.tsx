@@ -14,28 +14,29 @@ import { siteConfig } from '@/lib/site-config';
 import { pageOgImages } from '@/lib/seo/metadata';
 import '@/app/globals.css';
 
-
+const defaultTitle = `${siteConfig.name} — Website Development Studio in Batumi`;
+const defaultDescription =
+  'Founder-led website development for hotels, clinics, and beauty businesses in Batumi. Booking systems, local SEO, multilingual UX, and conversion-focused design.';
+const brandMarkPng = siteConfig.brand.markPngSrc;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: 'Yourtimestudio — Website Development Studio in Batumi',
-  description:
-    'Founder-led website development for hotels, clinics, and beauty businesses in Batumi. Booking systems, local SEO, multilingual UX, and conversion-focused design.',
+  title: defaultTitle,
+  description: defaultDescription,
   icons: {
     icon: [
-      { url: '/brand/yourtimestudio-mark.png', type: 'image/png', sizes: '512x512' },
+      { url: brandMarkPng, type: 'image/png', sizes: '512x512' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon.png', type: 'image/png', sizes: '1024x1024' },
     ],
     apple: [
-      { url: '/brand/yourtimestudio-mark.png', sizes: '512x512', type: 'image/png' },
+      { url: brandMarkPng, sizes: '512x512', type: 'image/png' },
     ],
   },
   manifest: '/manifest.json',
   openGraph: {
-    title: 'Yourtimestudio — Website Development Studio in Batumi',
-    description:
-      'Founder-led website development for hotels, clinics, and beauty businesses in Batumi.',
+    title: defaultTitle,
+    description: defaultDescription,
     siteName: siteConfig.name,
     type: 'website',
     images: [
@@ -43,15 +44,14 @@ export const metadata: Metadata = {
         url: pageOgImages.home,
         width: 1344,
         height: 768,
-        alt: 'Yourtimestudio — Website Development Studio in Batumi',
+        alt: defaultTitle,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yourtimestudio — Website Development Studio in Batumi',
-    description:
-      'Founder-led website development for hotels, clinics, and beauty businesses in Batumi.',
+    title: defaultTitle,
+    description: defaultDescription,
     images: [pageOgImages.home],
   },
 };

@@ -7,7 +7,7 @@ import { Cookie } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/site-config';
 
-const CONSENT_KEY = 'yourtimestudio-cookie-consent';
+const CONSENT_KEY = 'batumi-lighthouse-cookie-consent';
 
 function loadAnalytics() {
   if (document.getElementById('plausible-script')) return;

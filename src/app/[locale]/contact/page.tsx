@@ -26,7 +26,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Contact - Yourtimestudio',
+    title: 'Contact - Batumi Lighthouse',
     description:
       'Start with a website audit, scoped project, or focused improvement request for hotels, clinics, and studios in Batumi.',
     path: '/contact',

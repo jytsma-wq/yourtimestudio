@@ -17,7 +17,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'insightsPage' });
 
   return generatePageMetadata({
-    title: `${t('heading')} - Yourtimestudio`,
+    title: `${t('heading')} - Batumi Lighthouse`,
     description: t('subtitle'),
     path: '/insights',
     locale: locale as Locale,

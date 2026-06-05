@@ -16,9 +16,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Terms of Service — Yourtimestudio',
+    title: 'Terms of Service — Batumi Lighthouse',
     description:
-      'Read the terms of service for Yourtimestudio. Covers our web design and development services, payment terms, intellectual property, liability limitations, and more.',
+      'Read the terms of service for Batumi Lighthouse. Covers our web design and development services, payment terms, intellectual property, liability limitations, and more.',
     path: '/terms',
     locale: locale as Locale,
     noIndex: true,

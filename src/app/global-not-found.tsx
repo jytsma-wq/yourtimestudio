@@ -4,7 +4,7 @@ import { geistMono, geistSans } from '@/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Page not found - Yourtimestudio',
+  title: 'Page not found - Batumi Lighthouse',
   description: 'The requested page could not be found.',
 };
 

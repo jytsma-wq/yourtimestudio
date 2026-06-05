@@ -162,7 +162,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-start gap-4 border-t border-hairline pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Yourtimestudio. {t('copyright')}
+            &copy; {new Date().getFullYear()} Batumi Lighthouse. {t('copyright')}
           </p>
           <div className="flex items-center gap-3 text-xs text-muted">
             {launchLocales.map((loc, i) => (
