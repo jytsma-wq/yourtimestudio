@@ -58,11 +58,11 @@ export async function FounderSection({ locale }: FounderSectionProps) {
             </div>
             <div className="mt-6 flex gap-6">
               <div className="flex items-center gap-2 text-sm text-muted">
-                <MapPin className="size-4 text-sea-bright" />
+                <MapPin className="size-4 text-sea-bright" aria-hidden="true" />
                 <span>{t('founder.location')}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted">
-                <Globe className="size-4 text-sea-bright" />
+                <Globe className="size-4 text-sea-bright" aria-hidden="true" />
                 <span>{t('founder.since')}</span>
               </div>
             </div>
@@ -71,7 +71,7 @@ export async function FounderSection({ locale }: FounderSectionProps) {
               className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sea-bright hover:text-oxide transition-colors"
             >
               {t('founder.cta')}
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </div>
 
@@ -87,7 +87,7 @@ export async function FounderSection({ locale }: FounderSectionProps) {
                 return (
                   <div key={step.key} className="flex items-center gap-3 p-4 hover:bg-surface-elevated/50 transition-colors">
                     <div className="flex size-8 items-center justify-center rounded bg-sea/10 shrink-0">
-                      <Icon className="size-3.5 text-sea-bright" />
+                      <Icon className="size-3.5 text-sea-bright" aria-hidden="true" />
                     </div>
                     <span className="text-sm font-medium text-ink">{t(`operating.items.${step.key}`)}</span>
                   </div>
@@ -104,7 +104,7 @@ export async function FounderSection({ locale }: FounderSectionProps) {
             <div className="space-y-2">
               {directKeys.map((key) => (
                 <div key={key} className="flex items-center gap-2 text-sm text-ink">
-                  <ShieldCheck className="size-3.5 text-success shrink-0" />
+                  <ShieldCheck className="size-3.5 text-success shrink-0" aria-hidden="true" />
                   <span>{t(`direct.items.${key}`)}</span>
                 </div>
               ))}
@@ -115,7 +115,7 @@ export async function FounderSection({ locale }: FounderSectionProps) {
             <div className="space-y-2">
               {notFakeKeys.map((key) => (
                 <div key={key} className="flex items-center gap-2 text-sm text-ink">
-                  <MousePointerClick className="size-3.5 text-oxide shrink-0" />
+                  <MousePointerClick className="size-3.5 text-oxide shrink-0" aria-hidden="true" />
                   <span>{t(`not_fake.items.${key}`)}</span>
                 </div>
               ))}

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rate-limit';
+import { sendLeadNotification } from '@/lib/email/notifications';
+import { recaptchaActions } from '@/lib/recaptcha-actions';
+import { verifyRecaptchaToken } from '@/lib/recaptcha';
 
 const leadSchema = z.object({
   name: z.string().min(1, 'Name is required').max(200),
@@ -14,6 +17,7 @@ const leadSchema = z.object({
   preferredLanguage: z.string().max(50).optional(),
   message: z.string().min(1, 'Message is required').max(5000),
   source: z.string().max(50).optional(),
+  recaptchaToken: z.string().min(1, 'reCAPTCHA verification is required'),
   honeypot: z.string().max(0, 'Bot detected').optional(),
 });
 
@@ -50,6 +54,15 @@ export async function POST(request: NextRequest) {
     }
 
     const data = parsed.data;
+    const recaptcha = await verifyRecaptchaToken({
+      token: data.recaptchaToken,
+      expectedAction: recaptchaActions.contact,
+      remoteIp: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim(),
+    });
+
+    if (!recaptcha.success) {
+      return NextResponse.json({ error: 'reCAPTCHA verification failed' }, { status: 400 });
+    }
 
     const lead = await db.lead.create({
       data: {
@@ -65,6 +78,8 @@ export async function POST(request: NextRequest) {
         source: data.source || 'contact_form',
       },
     });
+
+    await sendLeadNotification(lead);
 
     return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
   } catch (error) {

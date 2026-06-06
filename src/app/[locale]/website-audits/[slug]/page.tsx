@@ -82,7 +82,7 @@ export default async function AuditDetailPage({
               {audit.sector.charAt(0).toUpperCase() + audit.sector.slice(1)}
             </Badge>
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
-              <Calendar className="size-3.5" />
+              <Calendar className="size-3.5" aria-hidden="true" />
               {new Date(audit.date).toLocaleDateString(locale, {
                 year: 'numeric',
                 month: 'long',
@@ -207,7 +207,7 @@ export default async function AuditDetailPage({
           >
             <Link href="/website-audits">
               {t('detail.cta')}
-              <ArrowRight className="ml-1 size-4" />
+              <ArrowRight className="ml-1 size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>

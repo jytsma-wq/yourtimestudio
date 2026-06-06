@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
+import { siteConfig } from '@/lib/site-config';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
@@ -91,11 +92,17 @@ export default async function PrivacyPage({
               <p className="whitespace-pre-line">{t('data_security_body')}</p>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
+            <div className="rounded-md border border-hairline bg-paper p-6 text-ink-dark">
+              <h2 className="text-2xl font-semibold text-ink-dark mb-4">
                 {t('contact_heading')}
               </h2>
-              <p className="whitespace-pre-line">{t('contact_body')}</p>
+              <p className="whitespace-pre-line text-ink-dark/80">{t('contact_body')}</p>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="mt-4 inline-flex font-semibold text-sea-dark transition-colors hover:text-oxide"
+              >
+                {siteConfig.contact.email}
+              </a>
             </div>
           </div>
         </div>

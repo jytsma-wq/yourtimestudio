@@ -154,7 +154,7 @@ export function PricingCalculator() {
                         }`}
                         aria-hidden="true"
                       >
-                        <CheckCircle2 className="size-3.5" />
+                        <CheckCircle2 className="size-3.5" aria-hidden="true" />
                       </span>
                       <span className={`text-sm font-medium ${active ? 'text-ink' : 'text-muted'}`}>
                         {t(opt.labelKey)}

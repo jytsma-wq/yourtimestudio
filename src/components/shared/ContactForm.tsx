@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import Script from 'next/script';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslations } from 'next-intl';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { Link } from '@/lib/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -25,6 +27,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { trackEvent } from '@/lib/analytics';
+import { getRecaptchaToken, recaptchaScriptSrc } from '@/lib/recaptcha-client';
 
 const fieldClass =
   'min-h-11 rounded-md border-hairline bg-canvas text-ink placeholder:text-muted focus-visible:border-sea-bright focus-visible:ring-sea-bright/30';
@@ -34,6 +37,7 @@ const messageClass = 'text-sm text-oxide-hover';
 
 export function ContactForm() {
   const t = useTranslations('contactPage');
+  const legal = useTranslations('legalNotice');
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -91,6 +95,8 @@ export function ContactForm() {
     ].filter(Boolean).join('\n\n');
 
     try {
+      const recaptchaToken = await getRecaptchaToken('contact');
+
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -102,6 +108,7 @@ export function ContactForm() {
           budgetRange: data.budgetRange || undefined,
           message: intakeMessage,
           source: 'contact_form',
+          recaptchaToken,
         }),
       });
 
@@ -144,8 +151,12 @@ export function ContactForm() {
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" noValidate>
+    <>
+      {recaptchaScriptSrc && (
+        <Script src={recaptchaScriptSrc} strategy="afterInteractive" />
+      )}
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5" noValidate>
         <div className="absolute -left-[9999px]" aria-hidden="true" tabIndex={-1}>
           <FormField
             control={form.control}
@@ -358,6 +369,18 @@ export function ContactForm() {
           </div>
         )}
 
+        <p className="max-w-2xl text-xs leading-relaxed text-muted">
+          {legal('formText')}{' '}
+          <Link href="/privacy" className="font-semibold text-sea-bright transition-colors hover:text-oxide">
+            {legal('privacy')}
+          </Link>{' '}
+          {legal('and')}{' '}
+          <Link href="/terms" className="font-semibold text-sea-bright transition-colors hover:text-oxide">
+            {legal('terms')}
+          </Link>
+          .
+        </p>
+
         <Button
           type="submit"
           size="lg"
@@ -373,7 +396,8 @@ export function ContactForm() {
             t('form.submit')
           )}
         </Button>
-      </form>
-    </Form>
+        </form>
+      </Form>
+    </>
   );
 }

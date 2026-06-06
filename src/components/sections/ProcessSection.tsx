@@ -24,7 +24,7 @@ export async function ProcessSection() {
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink-dark hover:text-oxide transition-colors"
             >
               {t('cta')}
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </div>
 
@@ -39,7 +39,7 @@ export async function ProcessSection() {
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex size-10 items-center justify-center rounded bg-sea/10 shrink-0">
-                      <Icon className="size-4 text-sea-bright" />
+                      <Icon className="size-4 text-sea-bright" aria-hidden="true" />
                     </div>
                     <span className="font-mono text-sm font-semibold text-muted-dark md:hidden">
                       0{i + 1}

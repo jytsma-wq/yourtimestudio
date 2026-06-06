@@ -38,8 +38,11 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
   ].filter((link) => link.href.trim());
 
   return (
-    <footer className="border-t border-hairline bg-canvas">
-      <div className="mx-auto max-w-[var(--container-max-width)] px-[var(--container-padding)] py-12 md:py-16">
+    <footer className="relative isolate overflow-hidden border-t border-hairline bg-canvas">
+      <div className="pointer-events-none absolute inset-0 bl-grid opacity-25" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)] px-[var(--container-padding)] py-12 md:py-16">
         {/* Logo + Tagline */}
         <div className="mb-10">
           <Link href="/" className="group inline-flex items-center gap-3 text-ink transition-colors hover:text-sea-bright">
@@ -65,6 +68,9 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
             {t('tagline')}
           </p>
+          <p className="bl-coordinates mt-3" aria-hidden="true">
+            BL / N41.6168 / E41.6367
+          </p>
           <div className="mt-4 max-w-sm">
             <LocationCard />
           </div>
@@ -85,7 +91,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                     className="flex items-center gap-2 text-sm text-ink transition-colors hover:text-sea-bright"
                   >
                     {link.color && (
-                      <span className={`inline-block size-1.5 rounded-full ${link.color}`} />
+                      <span className={`inline-block size-1.5 rounded-full ${link.color}`} aria-hidden="true" />
                     )}
                     {link.label}
                   </Link>
@@ -167,7 +173,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
           <div className="flex items-center gap-3 text-xs text-muted">
             {launchLocales.map((loc, i) => (
               <span key={loc} className="flex items-center gap-3">
-                {i > 0 && <span className="text-hairline">|</span>}
+                {i > 0 && <span className="text-hairline" aria-hidden="true">|</span>}
                 <Link
                   href="/"
                   locale={loc}

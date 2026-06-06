@@ -19,10 +19,14 @@ export async function SectorCardsSection() {
   const t = await getTranslations('sectors');
 
   return (
-    <section className="bg-paper py-16 md:py-24 px-[var(--container-padding)]">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
+    <section className="relative isolate overflow-hidden bg-paper py-16 md:py-24 px-[var(--container-padding)]">
+      <div className="pointer-events-none absolute inset-0 bl-grid opacity-35" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-0 top-10 bl-signal-line h-6 opacity-45" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">
         {/* Section header */}
         <div className="mb-12 max-w-2xl">
+          <p className="bl-coordinates mb-3 text-sea" aria-hidden="true">BL-CHART / N41.6168 / E41.6367</p>
           <p className="mono-label text-sea mb-4">{t('sectionLabel')}</p>
           <h2 className="text-display-lg text-ink-dark">
             {t('heading')}
@@ -42,12 +46,12 @@ export async function SectorCardsSection() {
             return (
               <div
                 key={sectorKey}
-                className="group bg-paper-soft border border-hairline-light rounded-md overflow-hidden hover:border-sea/30 transition-colors"
+                className="group relative bg-paper-soft border border-hairline-light rounded-md overflow-hidden hover:border-sea/30 transition-colors"
               >
                 {/* System header */}
-                <div className="border-b border-hairline-light p-5">
+                <div className="bl-grid border-b border-hairline-light p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className={`size-2 rounded-full ${sector.dotClass}`} />
+                    <span className={`size-2 rounded-full ${sector.dotClass}`} aria-hidden="true" />
                     <span className="mono-label text-muted-dark">0{idx + 1}</span>
                     <span className="mono-label text-sea ml-auto">{t(`${sectorKey}.title`)}</span>
                   </div>
@@ -64,7 +68,7 @@ export async function SectorCardsSection() {
                   <p className="mono-label text-muted-dark mb-2">Core modules</p>
                   {icons.map((Icon, i) => (
                     <div key={i} className="flex items-center gap-2.5 text-sm text-ink-dark">
-                      <Icon className="size-4 text-sea-bright shrink-0" />
+                      <Icon className="size-4 text-sea-bright shrink-0" aria-hidden="true" />
                       <span>{t(`${sectorKey}.deliverables.${i}`)}</span>
                     </div>
                   ))}
@@ -91,7 +95,7 @@ export async function SectorCardsSection() {
                     className="inline-flex items-center gap-2 text-sm font-semibold text-ink-dark hover:text-oxide transition-colors group"
                   >
                     View {t(`${sectorKey}.title`).toLowerCase()} system
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </Link>
                 </div>
               </div>

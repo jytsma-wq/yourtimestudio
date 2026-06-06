@@ -924,23 +924,29 @@
     "privacy_heading": "Gizlilik Politikası",
     "terms_heading": "Hizmet Şartları"
   },
+  "legalNotice": {
+    "formText": "Bu formu göndererek Batumi Lighthouse'ın talebinize yanıt vermek için bilgilerinizi saklamasını ve işlemesini kabul edersiniz. Bkz.",
+    "privacy": "Gizlilik Politikası",
+    "and": "ve",
+    "terms": "Hizmet Şartları"
+  },
   "legalPage": {
     "privacy": {
       "heading": "Gizlilik Politikası",
       "last_updated": "Son güncelleme: Mart 2025",
       "intro": "Batumi Lighthouse (\"biz,\" \"bizim\" veya \"bizi\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
       "data_collection_heading": "1. Topladığımız Veriler",
-      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim bilgileri: bir form gönderdiğinizde veya bizimle iletişime geçtiğinizde ad, e-posta adresi, telefon numarası ve işletme adı.\n• Web sitesi verileri: bir denetim talebi veya soruşturma sırasında sağlanan mevcut web sitesi URL'niz.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz verileri: deneyiminizi optimize etmek için tarayıcı türü, işletim sistemi ve ekran çözünürlüğü.",
+      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim formu verileri: ad, e-posta adresi, sağlanırsa telefon numarası, işletme türü, web sitesi URL'si, bütçe aralığı, proje hedefleri, zaman çizelgesi ve mesaj içeriği.\n• Denetim talebi verileri: ad, işletme adı, e-posta adresi, sektör, web sitesi URL'si ve sağladığınız isteğe bağlı notlar.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz ve güvenlik verileri: formları kötüye kullanımdan korumak için tarayıcı türü, işletim sistemi, ekran çözünürlüğü, IP kaynaklı istek bilgileri, honeypot sonuçları ve reCAPTCHA doğrulama sinyalleri.\n\nİletişim ve denetim formu gönderimleri veritabanımızda saklanır, talebinize yanıt vermek için kullanılır ve ekibimizin takip edebilmesi için dahili e-posta bildirimlerine dahil edilebilir.",
       "cookies_heading": "2. Çerezler ve İzleme",
       "cookies_body": "Web sitesinin düzgün çalışmasını sağlamak için gerekli çerezleri kullanıyoruz. Ziyaretçilerin sitemizle nasıl etkileşime girdiğini anlamak için analiz çerezleri de kullanabiliriz. Çerez tercihlerinizi istediğiniz zaman tarayıcı ayarlarınızdan kontrol edebilirsiniz. Reklam çerezi kullanmıyoruz ve verileri üçüncü taraf reklamcılara satmıyoruz.",
       "third_party_heading": "3. Üçüncü Taraf Hizmetleri",
-      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:\n\n• Web sitemizi güvenli bir şekilde sunmak için barındırma sağlayıcıları (örn., Hostinger).\n• Soruşturmaları ve denetim taleplerini yönetmek için form işleme araçları.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikası altında çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşıyoruz.",
+      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:\n\n• Web sitesini güvenli şekilde sunmak ve form gönderimlerini saklamak için barındırma ve veritabanı sağlayıcıları.\n• İletişim ve denetim talepleri hakkında dahili bildirim göndermek için e-posta teslim sağlayıcıları.\n• Formlarda dolandırıcılık ve spam önleme için Google reCAPTCHA.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikası altında çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşıyoruz.",
       "data_rights_heading": "4. Haklarınız",
       "data_rights_body": "Aşağıdaki haklara sahipsiniz:\n\n• Hakkınızda tuttuğumuz kişisel verilerinize erişim.\n• Verilerinizin düzeltilmesi veya silinmesini talep etme.\n• Verilerinizin belirli amaçlarla işlenmesine itiraz etme.\n• Verilerinizin taşınabilir bir formatta kopyasını talep etme.\n\nBu hakları kullanmak için aşağıdaki iletişim bilgilerini kullanın.",
       "data_security_heading": "5. Veri Güvenliği",
-      "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
+      "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Gönderilen form verilerine erişim, isteklere yanıt vermek, web sitesini işletmek veya hizmeti korumak için buna ihtiyaç duyan kişi ve sistemlerle sınırlıdır. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
       "contact_heading": "6. İletişim Bilgileri",
-      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@batumilighthouse.com\nKonum: Batumi, Acara, Gürcistan"
+      "contact_body": "Bu gizlilik politikası, verilerinizi nasıl ele aldığımız veya gönderilen form verilerine erişme, düzeltme ya da silme talebi hakkında sorularınız varsa lütfen bizimle iletişime geçin. Konum: Batumi, Acara, Gürcistan."
     },
     "terms": {
       "heading": "Hizmet Şartları",
@@ -957,7 +963,9 @@
       "termination_heading": "5. Fesih",
       "termination_body": "• Her iki taraf da 30 günlük yazılı bildirimle hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında tüm ödenmiş teslim edilebilirlerin mülkiyetini sizde kalır. Batumi Lighthouse makul bir devir süresi sağlayacaktır.\n• Fesih nedeninden bağımsız olarak, ödenmemiş ücretler fesih sonrasında da ödenmeye devam eder.",
       "governing_heading": "6. Uygulanacak Hukuk",
-      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.\n\nBu şartlar hakkında sorularınız için hello@batumilighthouse.com adresinden bizimle iletişime geçin."
+      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.",
+      "contact_heading": "7. İletişim Bilgileri",
+      "contact_body": "Bu şartlar, iletişim formu gönderimleri, denetim talepleri veya proje bilgilerinizin nasıl işlendiği hakkında sorularınız için lütfen bizimle iletişime geçin. Konum: Batumi, Acara, Gürcistan."
     }
   },
   "sectorPages": {
@@ -1410,10 +1418,17 @@
       "heading": "Daha net bir rezervasyon yoluna ihtiyaç duyan siteyi gönderin.",
       "subtitle": "Web sitesi URL’sini ve işletme bağlamını paylaşın. Siteyi manuel inceleyip denetim raporu için sonraki adımları ileteceğim.",
       "name": "Adınız",
+      "name_required": "Ad zorunludur",
       "business": "İşletme adı",
+      "business_required": "İşletme adı zorunludur",
       "email": "E-posta adresi",
+      "email_required": "E-posta zorunludur",
+      "email_invalid": "Lütfen geçerli bir e-posta adresi girin",
       "sector": "Sektörünüz",
+      "sector_required": "Lütfen bir sektör seçin",
       "website": "Web sitesi URL’si",
+      "website_required": "Web sitesi URL’si zorunludur",
+      "website_invalid": "Lütfen geçerli bir URL girin, örneğin https://example.com",
       "message": "Başka bilmem gereken bir şey var mı? (isteğe bağlı)",
       "submit": "Web sitesi denetimi iste",
       "sending": "Gönderiliyor...",
@@ -1776,6 +1791,7 @@
     "mainNavigation": "Ana navigasyon",
     "mobileNavigation": "Mobil navigasyon",
     "openNavigationMenu": "Navigasyon menüsünü aç",
+    "changeLanguage": "Dili değiştir",
     "toggleColorTheme": "Renk temasını değiştir",
     "switchToLight": "Açık moda geç",
     "switchToDark": "Koyu moda geç",

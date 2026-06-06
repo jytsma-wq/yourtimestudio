@@ -11,7 +11,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { WhatsAppFAB } from '@/components/shared/WhatsAppFAB';
 import { BackToTop } from '@/components/shared/BackToTop';
 import { siteConfig } from '@/lib/site-config';
-import { pageOgImages } from '@/lib/seo/metadata';
+import { localizedAlternates, pageOgImages } from '@/lib/seo/metadata';
 import '@/app/globals.css';
 
 const defaultTitle = `${siteConfig.name} — Website Development Studio in Batumi`;
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: defaultTitle,
   description: defaultDescription,
+  alternates: localizedAlternates(''),
   icons: {
     icon: [
       { url: brandMarkPng, type: 'image/png', sizes: '512x512' },

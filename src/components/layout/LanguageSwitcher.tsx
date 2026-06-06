@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -21,6 +21,7 @@ const localeAbbreviations: Record<Locale, string> = {
 
 export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
+  const ui = useTranslations('ui');
   const pathname = usePathname();
   const router = useRouter();
 
@@ -37,10 +38,11 @@ export default function LanguageSwitcher() {
         <Button
           variant="outline"
           size="sm"
+          aria-label={ui('changeLanguage')}
           className="h-8 gap-1.5 rounded-md border-hairline bg-surface px-2.5 text-xs font-medium text-copy-muted transition-colors hover:border-sea/40 hover:bg-surface-elevated hover:text-sea-bright"
         >
           <span className="text-xs font-bold tracking-wider uppercase">{localeAbbreviations[locale]}</span>
-          <span className="text-xs text-copy-muted">▼</span>
+          <span className="text-xs text-copy-muted" aria-hidden="true">▼</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-40 border-hairline bg-surface p-1 text-ink shadow-none">
@@ -60,7 +62,7 @@ export default function LanguageSwitcher() {
               </span>
               <span>{localeLabels[loc]}</span>
             </span>
-            {locale === loc && <Check className="size-3.5 text-sea-bright" />}
+            {locale === loc && <Check className="size-3.5 text-sea-bright" aria-hidden="true" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

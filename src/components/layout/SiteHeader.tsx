@@ -137,12 +137,14 @@ export default function SiteHeader() {
                   <Button
                     variant="ghost"
                     size="sm"
+                    aria-expanded={solutionsOpen}
+                    aria-haspopup="menu"
                     className={`gap-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider transition-colors ${
                       active ? 'text-sea-bright' : 'text-muted hover:text-ink'
                     }`}
                   >
                     {t(item.key)}
-                    <ChevronDown className={`size-3 opacity-50 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`size-3 opacity-50 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                   </Button>
                   {solutionsOpen && (
                     <div
@@ -161,7 +163,7 @@ export default function SiteHeader() {
                                 : 'text-ink hover:text-sea-bright hover:bg-surface-elevated'
                             }`}
                           >
-                            <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} />
+                            <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} aria-hidden="true" />
                             {child.key === 'audits' ? t('audits') : sectorT(`${child.key}.title`)}
                           </Link>
                         ))}
@@ -209,7 +211,7 @@ export default function SiteHeader() {
             onClick={() => setMobileOpen(true)}
             aria-label={ui('openNavigationMenu')}
           >
-            <Menu className="size-5" />
+            <Menu className="size-5" aria-hidden="true" />
           </Button>
         </div>
       </div>
@@ -244,7 +246,7 @@ export default function SiteHeader() {
                               : 'text-ink hover:text-sea-bright hover:bg-surface'
                           }`}
                         >
-                          <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} />
+                          <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} aria-hidden="true" />
                           {child.key === 'audits' ? t('audits') : sectorT(`${child.key}.title`)}
                         </Link>
                       </SheetClose>

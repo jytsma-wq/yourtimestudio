@@ -80,7 +80,7 @@ export default async function ThankYouPage({
             >
               <Link href="/website-audits">
                 <div className="size-10 flex items-center justify-center border border-border bg-oxide/10 shrink-0">
-                  <ClipboardCheck className="size-4 text-sea-bright" />
+                  <ClipboardCheck className="size-4 text-sea-bright" aria-hidden="true" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('browse_insights')}</p>
@@ -96,7 +96,7 @@ export default async function ThankYouPage({
             >
               <Link href="/pricing">
                 <div className="size-10 flex items-center justify-center border border-border bg-sea/10 shrink-0">
-                  <DollarSign className="size-4 text-sea-bright" />
+                  <DollarSign className="size-4 text-sea-bright" aria-hidden="true" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('see_pricing')}</p>

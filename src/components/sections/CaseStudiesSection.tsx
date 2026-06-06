@@ -27,7 +27,7 @@ function MiniBrowser({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-md border border-hairline bg-surface">
+    <div className="relative overflow-hidden rounded-md border border-hairline bg-surface">
       <div className="flex min-w-0 items-center gap-2 border-b border-hairline px-3 py-2">
         <div className="flex gap-1.5" aria-hidden="true">
           <span className="size-1.5 rounded-full bg-hairline-light/70" />
@@ -38,6 +38,7 @@ function MiniBrowser({
           <span className="block truncate">{url}</span>
         </div>
       </div>
+      <div className="bl-signal-line h-2.5" aria-hidden="true" />
       <div className="p-3">{children}</div>
     </div>
   );
@@ -149,8 +150,11 @@ export async function CaseStudiesSection() {
   const t = await getTranslations('caseStudies');
 
   return (
-    <section className="border-y border-hairline bg-surface px-[var(--container-padding)] py-16 md:py-24">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
+    <section className="relative isolate overflow-hidden border-y border-hairline bg-surface px-[var(--container-padding)] py-16 md:py-24">
+      <div className="pointer-events-none absolute inset-0 bl-navigation-chart opacity-45" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">
         <div className="mb-12 grid gap-6 lg:grid-cols-[0.75fr_1fr] lg:items-end">
           <div>
             <p className="mono-label mb-4 text-sea-bright">{t('sectionLabel')}</p>
@@ -179,8 +183,11 @@ export async function CaseStudiesSection() {
             return (
               <article
                 key={key}
-                className="group flex h-full flex-col rounded-md border border-hairline bg-canvas transition-colors hover:border-sea/30 hover:bg-surface-elevated/50"
+                className="group relative flex h-full flex-col overflow-hidden rounded-md border border-hairline bg-canvas transition-colors hover:border-sea/30 hover:bg-surface-elevated/50"
               >
+                <div className="pointer-events-none absolute right-4 top-4 bl-coordinates opacity-50" aria-hidden="true">
+                  BL-0{sectorKeys.indexOf(key) + 1}
+                </div>
                 <div className="border-b border-hairline p-4">
                   <SystemPreview sectorKey={key} />
                 </div>

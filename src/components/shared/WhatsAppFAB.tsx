@@ -21,7 +21,7 @@ export function WhatsAppFAB() {
         className="hidden size-12 items-center justify-center rounded-md border border-hairline bg-surface text-ink transition duration-150 ease-out hover:border-sea/40 hover:bg-surface-elevated hover:text-sea-bright md:flex"
         aria-label={ui('sendEmail')}
       >
-        <Mail className="size-5" />
+        <Mail className="size-5" aria-hidden="true" />
       </a>
 
       {hasPhone && (
@@ -30,7 +30,7 @@ export function WhatsAppFAB() {
           className="hidden size-12 items-center justify-center rounded-md bg-sea text-white transition duration-150 ease-out hover:bg-sea-bright md:flex"
           aria-label={ui('call')}
         >
-          <Phone className="size-5" />
+          <Phone className="size-5" aria-hidden="true" />
         </a>
       )}
 
@@ -42,7 +42,7 @@ export function WhatsAppFAB() {
         onClick={() => trackEvent('WhatsApp Clicked', { location: 'floating_action_button' })}
         className="flex size-14 items-center justify-center rounded-md bg-oxide text-white transition duration-150 ease-out hover:bg-oxide-hover"
       >
-        <MessageCircle className="size-6" />
+        <MessageCircle className="size-6" aria-hidden="true" />
       </a>
     </div>
   );

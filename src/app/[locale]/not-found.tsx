@@ -20,20 +20,20 @@ export default async function NotFound() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg">
             <Link href="/">
-              <Home className="size-4 mr-2" />
+            <Home className="size-4 mr-2" aria-hidden="true" />
               {t('home')}
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/website-audits">
-              <Search className="size-4 mr-2" />
+            <Search className="size-4 mr-2" aria-hidden="true" />
               {t('audit')}
             </Link>
           </Button>
           <Button asChild variant="ghost" size="lg" className="text-muted hover:bg-surface-elevated hover:text-ink">
             <Link href="/contact">
               {t('contact')}
-              <ArrowRight className="size-4 ml-1" />
+            <ArrowRight className="size-4 ml-1" aria-hidden="true" />
             </Link>
           </Button>
         </div>

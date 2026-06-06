@@ -56,7 +56,7 @@ export function BackToTop() {
           className="transition-[stroke-dashoffset] duration-150 ease-out"
         />
       </svg>
-      <ArrowUp className="size-4 text-ink" />
+      <ArrowUp className="size-4 text-ink" aria-hidden="true" />
     </button>
   );
 }

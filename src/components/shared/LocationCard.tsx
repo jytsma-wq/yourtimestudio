@@ -7,7 +7,7 @@ export async function LocationCard() {
   return (
     <div className="flex items-start gap-3 rounded-md border border-hairline bg-surface p-4 text-ink">
       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sea/20">
-        <MapPin className="size-4 text-sea-bright" />
+        <MapPin className="size-4 text-sea-bright" aria-hidden="true" />
       </div>
       <div>
         <p className="text-sm font-semibold text-ink">{ui('location')}</p>

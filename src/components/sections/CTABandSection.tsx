@@ -7,9 +7,14 @@ export async function CTABandSection() {
   const t = await getTranslations('ctaBand');
 
   return (
-    <section className="bg-canvas py-16 md:py-24 px-[var(--container-padding)] border-t border-hairline" id="cta">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
+    <section className="bl-soft-vignette relative isolate overflow-hidden bg-canvas py-16 md:py-24 px-[var(--container-padding)] border-t border-hairline" id="cta">
+      <div className="pointer-events-none absolute inset-0 bl-beacon-beam" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
+      <div className="pointer-events-none absolute right-[10%] top-12 hidden size-44 bl-radar opacity-50 md:block" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">
         <div className="max-w-2xl">
+          <p className="bl-coordinates mb-3" aria-hidden="true">BL-SIGNAL / REQUEST-01</p>
           <p className="mono-label text-sea-bright mb-4">{t('sectionLabel')}</p>
           <h2 className="text-display-lg text-ink mb-5">
             {t('heading')}
@@ -26,7 +31,7 @@ export async function CTABandSection() {
           >
             <Link href="/website-audits">
               {t('primary')}
-              <ArrowRight className="ml-1.5 size-4" />
+              <ArrowRight className="ml-1.5 size-4" aria-hidden="true" />
             </Link>
           </Button>
           <Button
@@ -40,6 +45,7 @@ export async function CTABandSection() {
             </Link>
           </Button>
         </div>
+        <div className="mt-10 bl-signal-line h-4 max-w-3xl" aria-hidden="true" />
       </div>
     </section>
   );

@@ -202,7 +202,7 @@ export async function SectorPageTemplate({
                 eventProps={{ sector: sectorKey, location: 'hero_primary', destination: 'website_audits' }}
               >
                 {data.cta.primary}
-                <ArrowRight className="size-4 ml-1" />
+                <ArrowRight className="size-4 ml-1" aria-hidden="true" />
               </TrackedLink>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -232,7 +232,7 @@ export async function SectorPageTemplate({
                   <div
                     className={`size-10 rounded-lg ${sector.bgLight} flex items-center justify-center mb-4`}
                   >
-                    <Icon className={`size-5 ${sector.textClass}`} />
+                    <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {item.title}
@@ -260,7 +260,7 @@ export async function SectorPageTemplate({
                 <div
                   className={`size-10 shrink-0 rounded-lg ${sector.bgLight} flex items-center justify-center`}
                 >
-                  <Icon className={`size-5 ${sector.textClass}`} />
+                  <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">
@@ -347,7 +347,7 @@ export async function SectorPageTemplate({
                 eventProps={{ sector: sectorKey, location: 'footer_primary', destination: 'website_audits' }}
               >
                 {data.cta.primary}
-                <ArrowRight className="size-4 ml-1" />
+                <ArrowRight className="size-4 ml-1" aria-hidden="true" />
               </TrackedLink>
             </Button>
             <Button

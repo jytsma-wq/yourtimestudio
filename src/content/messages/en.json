@@ -920,23 +920,29 @@
     "privacy_heading": "Privacy Policy",
     "terms_heading": "Terms of Service"
   },
+  "legalNotice": {
+    "formText": "By submitting this form, you agree that Batumi Lighthouse may store and process your details to respond to your request. See our",
+    "privacy": "Privacy Policy",
+    "and": "and",
+    "terms": "Terms of Service"
+  },
   "legalPage": {
     "privacy": {
       "heading": "Privacy Policy",
       "last_updated": "Last updated: March 2025",
       "intro": "Batumi Lighthouse (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.",
       "data_collection_heading": "1. Data We Collect",
-      "data_collection_body": "We may collect the following types of personal data:\n\n• Contact information: name, email address, phone number, and business name when you submit a form or contact us.\n• Website data: your current website URL when provided during an audit request or inquiry.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device data: browser type, operating system, and screen resolution for optimizing your experience.",
+      "data_collection_body": "We may collect the following types of personal data:\n\n• Contact form data: name, email address, phone number when provided, business type, website URL, budget range, project goals, timeline, and message content.\n• Audit request data: name, business name, email address, sector, website URL, and any optional notes you provide.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device and security data: browser type, operating system, screen resolution, IP-derived request information, honeypot results, and reCAPTCHA verification signals used to protect forms from abuse.\n\nContact and audit form submissions are stored in our database, used to respond to your request, and may be included in internal email notifications so our team can follow up.",
       "cookies_heading": "2. Cookies & Tracking",
       "cookies_body": "We use essential cookies to ensure the website functions properly. We may also use analytics cookies to understand how visitors interact with our site. You can control cookie preferences through your browser settings at any time. We do not use advertising cookies or sell data to third-party advertisers.",
       "third_party_heading": "3. Third-Party Services",
-      "third_party_body": "We may use the following third-party services that process your data:\n\n• Hosting providers (e.g., Hostinger) for serving our website securely.\n• Form processing tools to manage inquiries and audit requests.\n• Analytics services to understand website traffic and performance.\n\nEach third-party service operates under its own privacy policy. We only share data necessary for the service to function.",
+      "third_party_body": "We may use the following third-party services that process your data:\n\n• Hosting and database providers for serving our website securely and storing form submissions.\n• Email delivery providers for sending internal notifications about contact and audit requests.\n• Google reCAPTCHA for fraud and spam prevention on forms.\n• Analytics services to understand website traffic and performance.\n\nEach third-party service operates under its own privacy policy. We only share data necessary for the service to function.",
       "data_rights_heading": "4. Your Rights",
       "data_rights_body": "You have the right to:\n\n• Access the personal data we hold about you.\n• Request correction or deletion of your data.\n• Object to processing of your data for specific purposes.\n• Request a copy of your data in a portable format.\n\nTo exercise these rights, contact us using the details below.",
       "data_security_heading": "5. Data Security",
-      "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
+      "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Access to submitted form data is limited to people and systems that need it to respond to requests, operate the website, or protect the service. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
       "contact_heading": "6. Contact Information",
-      "contact_body": "If you have questions about this privacy policy or how we handle your data, please contact us:\n\nEmail: hello@batumilighthouse.com\nLocation: Batumi, Adjara, Georgia"
+      "contact_body": "If you have questions about this privacy policy, how we handle your data, or a request to access, correct, or delete submitted form data, please contact us. Based in Batumi, Adjara, Georgia."
     },
     "terms": {
       "heading": "Terms of Service",
@@ -953,7 +959,9 @@
       "termination_heading": "5. Termination",
       "termination_body": "• Either party may terminate the service agreement with 30 days' written notice.\n• Upon termination, you retain ownership of all paid deliverables. Batumi Lighthouse will provide a reasonable handover period.\n• Outstanding fees remain due upon termination regardless of the reason for termination.",
       "governing_heading": "6. Governing Law",
-      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.\n\nFor questions about these terms, contact us at hello@batumilighthouse.com."
+      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.",
+      "contact_heading": "7. Contact Information",
+      "contact_body": "For questions about these terms, contact form submissions, audit requests, or how your project information is handled, please contact us. Based in Batumi, Adjara, Georgia."
     }
   },
   "sectorPages": {
@@ -1406,10 +1414,17 @@
       "heading": "Send the site that needs a clearer booking path.",
       "subtitle": "Share the website URL and business context. I will review the site manually and reply with next steps for the audit report.",
       "name": "Your name",
+      "name_required": "Name is required",
       "business": "Business name",
+      "business_required": "Business name is required",
       "email": "Email address",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
       "sector": "Your sector",
+      "sector_required": "Please select a sector",
       "website": "Website URL",
+      "website_required": "Website URL is required",
+      "website_invalid": "Please enter a valid URL, for example https://example.com",
       "message": "Anything else I should know? (optional)",
       "submit": "Request website audit",
       "sending": "Sending...",
@@ -1772,6 +1787,7 @@
     "mainNavigation": "Main navigation",
     "mobileNavigation": "Mobile navigation",
     "openNavigationMenu": "Open navigation menu",
+    "changeLanguage": "Change language",
     "toggleColorTheme": "Toggle color theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",

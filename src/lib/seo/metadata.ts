@@ -4,6 +4,13 @@ import { siteConfig } from '@/lib/site-config';
 
 const siteUrl = siteConfig.url;
 
+const hreflangByLocale = {
+  en: 'en-US',
+  ka: 'ka-GE',
+  ru: 'ru-RU',
+  tr: 'tr-TR',
+} satisfies Record<Locale, string>;
+
 export const pageOgImages = {
   home: '/og-default.png',
   hospitality: '/og-hospitality.png',
@@ -26,9 +33,30 @@ interface MetadataOptions {
 
 /** Build the full URL for a given locale + path */
 function localeUrl(locale: Locale, path: string): string {
+  const normalizedPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
+
   return locale === defaultLocale
-    ? `${siteUrl}${path}`
-    : `${siteUrl}/${locale}${path}`;
+    ? `${siteUrl}${normalizedPath}`
+    : `${siteUrl}/${locale}${normalizedPath}`;
+}
+
+function alternateLanguages(path: string): Record<string, string> {
+  return Object.fromEntries(
+    launchLocales.map((locale) => [
+      hreflangByLocale[locale],
+      localeUrl(locale, path),
+    ])
+  );
+}
+
+export function localizedAlternates(
+  path: string,
+  locale: Locale = defaultLocale
+): NonNullable<Metadata['alternates']> {
+  return {
+    canonical: localeUrl(locale, path),
+    languages: alternateLanguages(path),
+  };
 }
 
 function absoluteUrl(pathOrUrl: string): string {
@@ -51,12 +79,6 @@ export function generatePageMetadata({
   const url = localeUrl(locale, path);
   const ogImageUrl = absoluteUrl(ogImage || pageOgImages.home);
 
-  // Build hreflang alternates for all launch locales
-  const languages: Record<string, string> = {};
-  for (const loc of launchLocales) {
-    languages[loc] = localeUrl(loc, path);
-  }
-
   // Map locale to OG locale format
   const ogLocaleMap: Record<string, string> = {
     en: 'en_US',
@@ -68,10 +90,7 @@ export function generatePageMetadata({
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-      languages,
-    },
+    alternates: localizedAlternates(path, locale),
     openGraph: {
       title,
       description,

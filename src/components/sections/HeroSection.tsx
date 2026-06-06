@@ -45,7 +45,7 @@ function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFramePr
   return (
     <article
       aria-label={title}
-      className="overflow-hidden rounded-md border border-hairline bg-surface"
+      className="relative overflow-hidden rounded-md border border-hairline bg-surface"
     >
       <div className="flex min-w-0 items-center gap-2 border-b border-hairline px-3 py-2">
         <div className="flex gap-1.5" aria-hidden="true">
@@ -60,6 +60,7 @@ function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFramePr
           {sector}
         </span>
       </div>
+      <div className="bl-signal-line h-3" aria-hidden="true" />
 
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
@@ -111,7 +112,7 @@ function HotelBookingFrame() {
           {['Sea view room', 'Family stay'].map((room) => (
             <div key={room} className="rounded border border-hairline bg-surface-elevated p-2.5">
               <div className="flex items-center gap-2 text-xs font-medium text-ink">
-                <BedDouble className="size-3.5 text-sea-bright" />
+                <BedDouble className="size-3.5 text-sea-bright" aria-hidden="true" />
                 <span>{room}</span>
               </div>
               <div className="mt-2 flex gap-1.5">
@@ -124,14 +125,14 @@ function HotelBookingFrame() {
 
         <div className="flex items-center justify-between gap-3 rounded border border-oxide/40 bg-oxide/15 px-3 py-2">
           <div className="flex items-center gap-2 text-xs text-ink">
-            <CalendarDays className="size-3.5 text-oxide-hover" />
+            <CalendarDays className="size-3.5 text-oxide-hover" aria-hidden="true" />
             <span>Direct booking flow</span>
           </div>
           <span className="rounded bg-oxide px-2.5 py-1 text-xs font-semibold text-white">Book direct</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 border-t border-hairline pt-3 text-xs text-muted">
-          <MapPin className="size-3.5 text-sea-bright" />
+          <MapPin className="size-3.5 text-sea-bright" aria-hidden="true" />
           <span>Batumi location pages</span>
           <span className="hidden text-hairline-light sm:inline">/</span>
           <span>Trust and policy strip</span>
@@ -152,7 +153,7 @@ function ClinicTrustFrame() {
       <div className="space-y-3">
         <div className="rounded border border-hairline bg-canvas p-3">
           <div className="flex items-start gap-2">
-            <Stethoscope className="mt-0.5 size-4 text-sea-bright" />
+            <Stethoscope className="mt-0.5 size-4 text-sea-bright" aria-hidden="true" />
             <div>
               <p className="text-xs font-semibold text-ink">Treatment category</p>
               <p className="mt-1 text-xs leading-relaxed text-muted">Overview, eligibility, preparation, aftercare.</p>
@@ -168,7 +169,7 @@ function ClinicTrustFrame() {
             <p className="truncate text-xs font-semibold text-ink">Doctor profile row</p>
             <p className="truncate text-xs text-muted">Credentials, languages, consultation path</p>
           </div>
-          <ShieldCheck className="size-4 shrink-0 text-success" />
+          <ShieldCheck className="size-4 shrink-0 text-success" aria-hidden="true" />
         </div>
 
         <div className="grid gap-2 sm:grid-cols-[1fr_auto] sm:items-center">
@@ -182,7 +183,7 @@ function ClinicTrustFrame() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 border-t border-hairline pt-3 text-xs text-muted">
-          <Languages className="size-3.5 text-sea-bright" />
+          <Languages className="size-3.5 text-sea-bright" aria-hidden="true" />
           <span>Multilingual intake</span>
           {['EN', 'KA', 'RU'].map((language) => (
             <span key={language} className="rounded border border-hairline px-1.5 py-0.5 font-mono text-[10px]">
@@ -207,7 +208,7 @@ function BeautyAppointmentFrame() {
         <div className="grid grid-cols-3 gap-2" aria-label="Service menu row">
           {['Hair', 'Nails', 'Makeup'].map((service) => (
             <div key={service} className="rounded border border-hairline bg-canvas p-2 text-center">
-              <Sparkles className="mx-auto size-3.5 text-oxide-hover" />
+              <Sparkles className="mx-auto size-3.5 text-oxide-hover" aria-hidden="true" />
               <p className="mt-1 text-xs font-medium text-ink">{service}</p>
             </div>
           ))}
@@ -248,7 +249,7 @@ function TechnicalPanel() {
   return (
     <aside
       aria-label="Technical delivery stack"
-      className="rounded-md border border-hairline bg-canvas-soft p-4"
+      className="bl-grid rounded-md border border-hairline bg-canvas-soft p-4"
     >
       <div className="flex items-center justify-between gap-3">
         <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
@@ -274,11 +275,15 @@ export async function HeroSection({ locale }: HeroSectionProps) {
   const t = await getTranslations('hero');
 
   return (
-    <section id="hero" data-locale={locale} className="relative overflow-hidden bg-canvas">
-      <div className="mx-auto w-full max-w-[var(--hero-max-width)] px-[var(--container-padding)] py-16 md:py-24 lg:py-28">
+    <section id="hero" data-locale={locale} className="bl-soft-vignette relative isolate overflow-hidden bg-canvas">
+      <div className="pointer-events-none absolute inset-0 bl-navigation-chart opacity-70" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bl-beacon-beam" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
+
+      <div className="relative z-10 mx-auto w-full max-w-[var(--hero-max-width)] px-[var(--container-padding)] py-16 md:py-24 lg:py-28">
         <div className="mb-10 hidden items-center justify-between border-b border-hairline pb-4 md:flex">
           <span className="mono-label text-muted">Web Development Studio</span>
-          <span className="mono-label text-muted">Batumi / Georgia</span>
+          <span className="bl-coordinates">N41.6168 / E41.6367</span>
           <span className="mono-label text-sea-bright">Available for projects</span>
         </div>
 
@@ -326,8 +331,9 @@ export async function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="min-w-0" aria-label="Miniature website systems preview">
-            <div className="space-y-3">
+          <div className="relative min-w-0" aria-label="Miniature website systems preview">
+            <div className="pointer-events-none absolute -right-16 top-8 hidden size-72 bl-radar opacity-60 lg:block" aria-hidden="true" />
+            <div className="relative space-y-3">
               <HotelBookingFrame />
               <ClinicTrustFrame />
               <BeautyAppointmentFrame />

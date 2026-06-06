@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rate-limit';
+import { sendAuditNotification } from '@/lib/email/notifications';
+import { recaptchaActions } from '@/lib/recaptcha-actions';
+import { verifyRecaptchaToken } from '@/lib/recaptcha';
 
 const auditSchema = z.object({
   name: z.string().min(1, 'Name is required').max(200),
@@ -11,6 +14,7 @@ const auditSchema = z.object({
   sector: z.string().min(1, 'Sector is required').max(100),
   websiteUrl: z.string().min(1, 'Website URL is required').url('Invalid URL').max(500),
   message: z.string().max(5000).optional(),
+  recaptchaToken: z.string().min(1, 'reCAPTCHA verification is required'),
   website_check: z.string().max(0, 'Bot detected').optional(),
 });
 
@@ -47,6 +51,15 @@ export async function POST(request: NextRequest) {
     }
 
     const data = parsed.data;
+    const recaptcha = await verifyRecaptchaToken({
+      token: data.recaptchaToken,
+      expectedAction: recaptchaActions.audit,
+      remoteIp: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim(),
+    });
+
+    if (!recaptcha.success) {
+      return NextResponse.json({ error: 'reCAPTCHA verification failed' }, { status: 400 });
+    }
 
     const audit = await db.auditRequest.create({
       data: {
@@ -59,6 +72,8 @@ export async function POST(request: NextRequest) {
         message: data.message || null,
       },
     });
+
+    await sendAuditNotification(audit);
 
     return NextResponse.json({ success: true, id: audit.id }, { status: 201 });
   } catch (error) {
