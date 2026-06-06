@@ -21,6 +21,7 @@ export function LighthouseBeam({ className }: LighthouseBeamProps) {
       )}
     >
       <svg
+        aria-hidden="true"
         className="absolute left-[-12%] top-[8%] h-[62vw] max-h-[560px] min-h-64 w-[120vw] max-w-[1120px] opacity-60 max-sm:left-[-48%] max-sm:top-[18%] max-sm:h-[92vw]"
         viewBox="0 0 1120 560"
         preserveAspectRatio="none"

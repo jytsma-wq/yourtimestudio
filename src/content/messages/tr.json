@@ -1574,7 +1574,9 @@
         "conversion": "Dönüşüm hedefi",
         "architecture": "Web sitesi mimarisi",
         "modules": "Temel modüller",
-        "technical": "Teknik katman"
+        "technical": "Teknik katman",
+        "repository": "Repository",
+        "liveSite": "Live site"
       },
       "systemIndex": {
         "eyebrow": "Sistem indeksi",
@@ -1596,7 +1598,7 @@
       "viewSystem": "Sistemi görüntüle",
       "viewRepository": "Repository görüntüle",
       "viewLiveSite": "Live site görüntüle",
-      "screenshotsComingSoon": "Screenshots yakında eklenecek",
+      "screenshotsComingSoon": "Arayüz ekran görüntüleri bekleniyor",
       "detail": {
         "eyebrow": "Örnek sistem",
         "disclosure": "Açıklama",
@@ -1616,11 +1618,13 @@
           "tablet": "Tablet",
           "mobile": "Mobile",
           "fallbackNote": "Screenshots şimdilik eksik. Üretilen sistem görseli, yerel görüntüler eklenene kadar sayfayı kullanılabilir tutar.",
-          "captureLabel": "Screenshots capture sonrası eklenebilir."
+          "captureLabel": "Arayüz ekran görüntüleri bekleniyor"
         },
         "routeArchitecture": "Route architecture",
         "technicalBuild": "Technical build",
         "technicalDelivery": "Technical delivery",
+        "technicalReference": "Teknik referans",
+        "stackTags": "Stack etiketleri",
         "whatThisDemonstrates": "Bu neyi gösterir",
         "delivery": {
           "nextjs": {
@@ -1768,7 +1772,7 @@
       "viewSystem": "Sistemi görüntüle",
       "viewRepository": "Repository görüntüle",
       "viewLiveSite": "Live site görüntüle",
-      "screenshotsComingSoon": "Screenshots yakında eklenecek"
+      "screenshotsComingSoon": "Arayüz ekran görüntüleri bekleniyor"
     },
     "labels": {
       "problem": "İş problemi",
@@ -1828,6 +1832,24 @@
     "detail": {
       "cta": "Boş makale listesi gösterilmiyor",
       "ctaLink": "Ücretsiz web sitesi denetimi alın"
+    }
+  },
+  "homepage": {
+    "exampleBuilds": {
+      "eyebrow": "Tamamlanmış iç build'ler",
+      "heading": "İncelemeye hazır iki tamamlanmış web sitesi sistemi.",
+      "subtitle": "Bu iç build'ler, Batumi Lighthouse'un müşteri projesi yayına çıkmadan önce rezervasyon, güven, çok dilli içerik ve mobil dönüşümü nasıl yapılandırdığını gösterir.",
+      "systemLabel": "Örnek sistem",
+      "screenshotsPending": "Arayüz ekran görüntüleri bekleniyor",
+      "silk": {
+        "badge": "Güzellik randevu sistemi",
+        "description": "Tedaviler, randevu niyeti, güven ve uluslararası ziyaretçi navigasyonu için çok dilli salon web sitesi yapısı."
+      },
+      "grand": {
+        "badge": "Hospitality doğrudan rezervasyon sistemi",
+        "description": "Oda keşfi, konum güveni ve doğrudan rezervasyon ya da enquiry niyeti için butik otel web sitesi yapısı."
+      },
+      "cta": "Örnek sistemi görüntüle"
     }
   },
   "caseStudies": {

@@ -1570,7 +1570,9 @@
         "conversion": "Conversion goal",
         "architecture": "Website architecture",
         "modules": "Key modules",
-        "technical": "Technical layer"
+        "technical": "Technical layer",
+        "repository": "Repository",
+        "liveSite": "Live site"
       },
       "systemIndex": {
         "eyebrow": "System index",
@@ -1592,7 +1594,7 @@
       "viewSystem": "View system",
       "viewRepository": "View repository",
       "viewLiveSite": "View live site",
-      "screenshotsComingSoon": "Screenshots coming soon",
+      "screenshotsComingSoon": "Interface screenshots pending",
       "detail": {
         "eyebrow": "Example system",
         "disclosure": "Disclosure",
@@ -1612,11 +1614,13 @@
           "tablet": "Tablet",
           "mobile": "Mobile",
           "fallbackNote": "Screenshots are missing for now. The generated system visual keeps the page usable until local captures are added.",
-          "captureLabel": "Screenshots can be added after capture."
+          "captureLabel": "Interface screenshots pending"
         },
         "routeArchitecture": "Route architecture",
         "technicalBuild": "Technical build",
         "technicalDelivery": "Technical delivery",
+        "technicalReference": "Technical reference",
+        "stackTags": "Stack tags",
         "whatThisDemonstrates": "What this demonstrates",
         "delivery": {
           "nextjs": {
@@ -1764,7 +1768,7 @@
       "viewSystem": "View system",
       "viewRepository": "View repository",
       "viewLiveSite": "View live site",
-      "screenshotsComingSoon": "Screenshots coming soon"
+      "screenshotsComingSoon": "Interface screenshots pending"
     },
     "labels": {
       "problem": "Business problem",
@@ -1824,6 +1828,24 @@
     "detail": {
       "cta": "No empty article grid",
       "ctaLink": "Get a free website audit"
+    }
+  },
+  "homepage": {
+    "exampleBuilds": {
+      "eyebrow": "Finished internal builds",
+      "heading": "Two finished website systems, ready to inspect.",
+      "subtitle": "These internal builds show how Batumi Lighthouse structures booking, trust, multilingual content, and mobile conversion before a client project goes live.",
+      "systemLabel": "Example system",
+      "screenshotsPending": "Interface screenshots pending",
+      "silk": {
+        "badge": "Beauty appointment system",
+        "description": "A multilingual salon website structure for treatments, appointment intent, trust, and international visitor navigation."
+      },
+      "grand": {
+        "badge": "Hospitality direct-booking system",
+        "description": "A boutique hotel website structure for room discovery, location trust, and direct booking or enquiry intent."
+      },
+      "cta": "View example system"
     }
   },
   "caseStudies": {

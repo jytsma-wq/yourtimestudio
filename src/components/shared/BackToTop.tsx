@@ -38,7 +38,14 @@ export function BackToTop() {
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >
-      <svg className="absolute inset-0 -rotate-90" width="48" height="48" viewBox="0 0 48 48">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 -rotate-90"
+        focusable="false"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+      >
         <circle
           cx="24" cy="24" r={radius}
           fill="none"

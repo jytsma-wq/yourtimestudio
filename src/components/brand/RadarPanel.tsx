@@ -22,6 +22,7 @@ export function RadarPanel({ className }: RadarPanelProps) {
       )}
     >
       <svg
+        aria-hidden="true"
         className="absolute inset-3 size-[calc(100%-1.5rem)] opacity-65"
         viewBox="0 0 160 160"
         focusable="false"

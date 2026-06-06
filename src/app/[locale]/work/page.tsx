@@ -25,6 +25,7 @@ import { TestimonialsSection } from '@/components/sections/TrustedByStrip';
 import { type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
 import { exampleSystems, type ExampleSystem } from '@/content/example-systems';
+import { getPrimaryExampleScreenshot } from '@/lib/work-screenshots';
 import { cn } from '@/lib/utils';
 
 type SystemStyle = CSSProperties & {
@@ -135,8 +136,11 @@ function SystemVisual({
   screenshotsComingSoon: string;
   system: ExampleSystem;
 }) {
+  const screenshotSrc = getPrimaryExampleScreenshot(system);
+
   return (
     <ExampleSystemVisual
+      screenshotSrc={screenshotSrc}
       screenshotsComingSoon={screenshotsComingSoon}
       system={system}
       variant="card"
@@ -299,18 +303,22 @@ function ExampleSystemCard({
                   <ExternalLink className="size-4" aria-hidden="true" />
                 </a>
               )}
-              {system.repoUrl && (
+            </div>
+
+            {system.repoUrl && (
+              <div className="mt-4 border-t border-hairline pt-3">
                 <a
                   href={system.repoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md border border-hairline bg-canvas px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-sea-bright hover:text-sea-bright"
+                  aria-label={`Open ${system.title} repository on GitHub`}
+                  className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted transition-colors hover:text-sea-bright"
                 >
-                  {t('viewRepository')}
-                  <ExternalLink className="size-4" aria-hidden="true" />
+                  {t('labels.repository')}
+                  <ExternalLink className="size-3.5" aria-hidden="true" />
                 </a>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

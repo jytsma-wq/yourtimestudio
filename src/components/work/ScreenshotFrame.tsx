@@ -145,7 +145,7 @@ export function ScreenshotFrame({
       )}
 
       {label && (
-        <figcaption className="mt-3 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
+        <figcaption className="mt-3 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted">
           {label}
         </figcaption>
       )}

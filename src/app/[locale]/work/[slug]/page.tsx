@@ -35,6 +35,7 @@ type SystemStyle = CSSProperties & {
 };
 
 type DetailScreenshot = ExampleSystem['detail']['screenshots'][number];
+type AvailableDetailScreenshot = DetailScreenshot & { src: string };
 
 const statusLabelKeys: Record<ExampleSystem['status'], 'concept' | 'internalBuild' | 'clientBuild'> = {
   concept: 'concept',
@@ -97,8 +98,10 @@ function getExampleSystem(slug: string): ExampleSystem | undefined {
   return exampleSystems.find((system) => system.slug === slug);
 }
 
-function getAvailableDetailScreenshots(system: ExampleSystem): DetailScreenshot[] {
-  return system.detail.screenshots.filter((screenshot) => publicWorkAssetExists(screenshot.src));
+function getAvailableDetailScreenshots(system: ExampleSystem): AvailableDetailScreenshot[] {
+  return system.detail.screenshots.filter(
+    (screenshot): screenshot is AvailableDetailScreenshot => publicWorkAssetExists(screenshot.src)
+  );
 }
 
 function getHeroDesktopScreenshot(system: ExampleSystem): string | undefined {
@@ -279,32 +282,6 @@ export default async function ExampleSystemDetailPage({
               <div className="mt-6 rounded-md border border-hairline bg-surface px-4 py-3 text-body-sm leading-[1.75] text-muted">
                 <span className="font-semibold text-ink">{t('detail.disclosure')}:</span> {system.disclosure}
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {system.repoUrl && (
-                  <a
-                    href={system.repoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md border border-hairline bg-surface px-4 py-3 text-sm font-semibold text-ink transition-colors hover:border-sea-bright hover:text-sea-bright"
-                  >
-                    <FileCode2 className="size-4" aria-hidden="true" />
-                    {t('viewRepository')}
-                    <ExternalLink className="size-4" aria-hidden="true" />
-                  </a>
-                )}
-                {system.liveUrl && (
-                  <a
-                    href={system.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md border border-oxide/45 bg-oxide/15 px-4 py-3 text-sm font-semibold text-ink transition-colors hover:bg-oxide hover:text-white"
-                  >
-                    <Globe2 className="size-4" aria-hidden="true" />
-                    {t('viewLiveSite')}
-                    <ExternalLink className="size-4" aria-hidden="true" />
-                  </a>
-                )}
-              </div>
             </div>
 
             <MainVisual screenshotsCanBeAdded={t('detail.screenshots.captureLabel')} system={system} />
@@ -454,6 +431,65 @@ export default async function ExampleSystemDetailPage({
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-5 rounded-md border border-hairline bg-canvas p-4">
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <FileCode2 className="size-4 text-sea-bright" aria-hidden="true" />
+                <h3 className="font-mono text-[11px] font-semibold tracking-[0.12em] text-sea-bright">
+                  {t('detail.technicalReference')}
+                </h3>
+                <span className={cn('rounded-md border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em]', statusClasses[system.status])}>
+                  {t(`status.${statusLabelKeys[system.status]}`)}
+                </span>
+              </div>
+
+              <p className="text-body-sm leading-[1.75] text-muted">
+                <span className="font-semibold text-ink">{t('detail.disclosure')}:</span> {system.disclosure}
+              </p>
+
+              <div className="mt-4 border-t border-hairline pt-4">
+                <p className="mono-label mb-3 text-muted">{t('detail.stackTags')}</p>
+                <div className="flex flex-wrap gap-2">
+                  {system.technical.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-sm border border-hairline bg-surface px-2 py-1 font-mono text-[10px] font-semibold text-sea-bright"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {(system.repoUrl || system.liveUrl) && (
+                <div className="mt-4 flex flex-wrap gap-3 border-t border-hairline pt-4">
+                  {system.repoUrl && (
+                    <a
+                      href={system.repoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${system.title} repository on GitHub`}
+                      className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted transition-colors hover:text-sea-bright"
+                    >
+                      {t('labels.repository')}
+                      <ExternalLink className="size-3.5" aria-hidden="true" />
+                    </a>
+                  )}
+                  {system.liveUrl && (
+                    <a
+                      href={system.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted transition-colors hover:text-oxide-hover"
+                    >
+                      <Globe2 className="size-3.5" aria-hidden="true" />
+                      {t('viewLiveSite')}
+                      <ExternalLink className="size-3.5" aria-hidden="true" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1574,7 +1574,9 @@
         "conversion": "კონვერსიის მიზანი",
         "architecture": "ვებსაიტის არქიტექტურა",
         "modules": "ძირითადი მოდულები",
-        "technical": "ტექნიკური ფენა"
+        "technical": "ტექნიკური ფენა",
+        "repository": "Repository",
+        "liveSite": "Live site"
       },
       "systemIndex": {
         "eyebrow": "სისტემების ინდექსი",
@@ -1596,7 +1598,7 @@
       "viewSystem": "სისტემის ნახვა",
       "viewRepository": "repository-ის ნახვა",
       "viewLiveSite": "live site-ის ნახვა",
-      "screenshotsComingSoon": "Screenshots მალე დაემატება",
+      "screenshotsComingSoon": "ინტერფეისის კადრები მზადდება",
       "detail": {
         "eyebrow": "მაგალითი სისტემა",
         "disclosure": "გამჟღავნება",
@@ -1616,11 +1618,13 @@
           "tablet": "Tablet",
           "mobile": "Mobile",
           "fallbackNote": "Screenshots ახლა არ არის დამატებული. გენერირებული სისტემის ვიზუალი გვერდს გამოსაყენებლად ტოვებს ლოკალური კადრების დამატებამდე.",
-          "captureLabel": "Screenshots შეიძლება დაემატოს capture-ის შემდეგ."
+          "captureLabel": "ინტერფეისის კადრები მზადდება"
         },
         "routeArchitecture": "Route architecture",
         "technicalBuild": "Technical build",
         "technicalDelivery": "Technical delivery",
+        "technicalReference": "ტექნიკური reference",
+        "stackTags": "Stack tags",
         "whatThisDemonstrates": "რას აჩვენებს ეს",
         "delivery": {
           "nextjs": {
@@ -1768,7 +1772,7 @@
       "viewSystem": "სისტემის ნახვა",
       "viewRepository": "repository-ის ნახვა",
       "viewLiveSite": "live site-ის ნახვა",
-      "screenshotsComingSoon": "Screenshots მალე დაემატება"
+      "screenshotsComingSoon": "ინტერფეისის კადრები მზადდება"
     },
     "labels": {
       "problem": "ბიზნეს პრობლემა",
@@ -1828,6 +1832,24 @@
     "detail": {
       "cta": "ცარიელი სტატიების ბადე არ ჩანს",
       "ctaLink": "მიიღეთ უფასო ვებსაიტის აუდიტი"
+    }
+  },
+  "homepage": {
+    "exampleBuilds": {
+      "eyebrow": "დასრულებული შიდა build-ები",
+      "heading": "ორი დასრულებული ვებსაიტის სისტემა, მზად შესამოწმებლად.",
+      "subtitle": "ეს შიდა build-ები აჩვენებს, როგორ აწყობს Batumi Lighthouse ჯავშნებს, ნდობას, მრავალენოვან კონტენტს და მობილურ კონვერსიას კლიენტის პროექტის გაშვებამდე.",
+      "systemLabel": "მაგალითი სისტემა",
+      "screenshotsPending": "ინტერფეისის კადრები მზადდება",
+      "silk": {
+        "badge": "სილამაზის appointment სისტემა",
+        "description": "მრავალენოვანი სალონის ვებსაიტის სტრუქტურა პროცედურებისთვის, ჩაწერის განზრახვისთვის, ნდობისთვის და საერთაშორისო ვიზიტორების ნავიგაციისთვის."
+      },
+      "grand": {
+        "badge": "სასტუმროს direct-booking სისტემა",
+        "description": "ბუტიკ სასტუმროს ვებსაიტის სტრუქტურა ნომრების აღმოჩენისთვის, მდებარეობის ნდობისთვის და პირდაპირი ჯავშნის ან enquiry განზრახვისთვის."
+      },
+      "cta": "მაგალითი სისტემის ნახვა"
     }
   },
   "caseStudies": {

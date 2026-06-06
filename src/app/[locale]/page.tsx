@@ -7,6 +7,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection';
+import { ExampleBuildsSection } from '@/components/sections/ExampleBuildsSection';
 import { FounderSection } from '@/components/sections/FounderSection';
 import { PricingSection } from '@/components/sections/PricingSection';
 import { CTABandSection } from '@/components/sections/CTABandSection';
@@ -65,22 +66,27 @@ export default async function LocalePage({
         <CaseStudiesSection />
       </div>
 
-      {/* 04 — Process: technical build pipeline */}
+      {/* 04 — Example builds: finished internal systems */}
+      <div id="example-builds" data-section-name="Example builds">
+        <ExampleBuildsSection />
+      </div>
+
+      {/* 05 — Process: technical build pipeline */}
       <div id="process" data-section-name="Process">
         <ProcessSection />
       </div>
 
-      {/* 05 — Founder: technical authority */}
+      {/* 06 — Founder: technical authority */}
       <div id="about" data-section-name="About">
         <FounderSection locale={locale as Locale} />
       </div>
 
-      {/* 06 — Pricing: calm scope comparison */}
+      {/* 07 — Pricing: calm scope comparison */}
       <div id="pricing" data-section-name="Pricing">
         <PricingSection />
       </div>
 
-      {/* 07 — CTA: strong dark closing */}
+      {/* 08 — CTA: strong dark closing */}
       <CTABandSection />
     </>
   );

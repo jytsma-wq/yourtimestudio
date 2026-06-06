@@ -38,15 +38,16 @@ function BrandLockup({ descriptor, className = '', priority = false, onClick }: 
       className={`group flex min-w-0 items-center gap-2.5 text-ink transition-colors hover:text-sea-bright ${className}`}
     >
       <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-hairline bg-paper p-0.5">
-        <Image
-          src={siteConfig.brand.markSrc}
-          alt={siteConfig.brand.markAlt}
-          width={32}
-          height={32}
-          sizes="36px"
-          priority={priority}
-          className="size-8 rounded-sm object-cover"
-        />
+        <span className="relative size-8 overflow-hidden rounded-sm">
+          <Image
+            src={siteConfig.brand.markSrc}
+            alt={siteConfig.brand.markAlt}
+            fill
+            sizes="32px"
+            priority={priority}
+            className="object-cover"
+          />
+        </span>
       </span>
       <span className="min-w-0 leading-none">
         <span className="block truncate text-sm font-semibold tracking-[0.04em] text-ink">

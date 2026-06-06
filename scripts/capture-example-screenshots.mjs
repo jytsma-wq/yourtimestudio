@@ -5,7 +5,11 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const defaultConfigPath = path.join(rootDir, 'examples.screenshots.config.mjs');
 const outputRoot = path.join(rootDir, 'public', 'work');
-const args = new Set(process.argv.slice(2));
+const argv = process.argv.slice(2);
+const args = new Set(argv);
+
+const navigationTimeoutMs = 15_000;
+const networkIdleTimeoutMs = 8_000;
 
 const viewports = [
   { name: 'desktop', width: 1440, height: 1100 },
@@ -16,53 +20,47 @@ const viewports = [
 const stableScreenshotCss = `
   *, *::before, *::after {
     animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
     transition-duration: 0s !important;
-    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
   }
 
-  [id*="cookie" i],
-  [class*="cookie" i],
-  [aria-label*="cookie" i],
-  [data-testid*="cookie" i],
-  [id*="consent" i],
-  [class*="consent" i],
-  [aria-label*="consent" i],
-  [data-testid*="consent" i],
-  [id*="gdpr" i],
-  [class*="gdpr" i],
-  [data-testid*="gdpr" i],
-  [id*="privacy-banner" i],
-  [class*="privacy-banner" i] {
+  [data-cookie-banner],
+  [role="dialog"][aria-label*="cookie" i],
+  #cookie-banner,
+  .cookie-banner {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
   }
 `;
 
+const cookieSelectors = [
+  '[data-cookie-banner]',
+  '[role="dialog"][aria-label*="cookie" i]',
+  '#cookie-banner',
+  '.cookie-banner',
+];
+
 function printHelp() {
   console.log(`Capture local example website screenshots.
 
 Usage:
-  npm run screenshots:examples
-  npm run screenshots:examples -- --config ./examples.screenshots.config.mjs
-  npm run screenshots:examples -- --dry-run
-  npm run screenshots:examples -- --previews
+  npm run examples:screenshots
+  npm run examples:screenshots -- --config ./examples.screenshots.config.mjs
+  npm run examples:screenshots -- --dry-run
+  npm run examples:screenshots -- --previews
 
 Outputs:
   public/work/{slug}/desktop-{route}.png
   public/work/{slug}/tablet-{route}.png
   public/work/{slug}/mobile-{route}.png
 
-Optional --previews also writes viewport-only crops:
-  public/work/{slug}/preview-desktop-{route}.png
+Optional --previews also writes desktop viewport-only crops:
+  public/work/{slug}/preview-{route}.png
 `);
 }
 
 function getArgValue(flag, fallback) {
-  const argv = process.argv.slice(2);
   const index = argv.indexOf(flag);
 
   if (index === -1) return fallback;
@@ -73,6 +71,10 @@ function normalizeUrl(baseUrl, routePath) {
   const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   const pathWithoutLeadingSlash = routePath.replace(/^\/+/, '');
   return new URL(pathWithoutLeadingSlash, base).toString();
+}
+
+function relativeOutputPath(filePath) {
+  return path.relative(rootDir, filePath).replaceAll(path.sep, '/');
 }
 
 function safeSegment(value, label) {
@@ -118,6 +120,7 @@ function validateConfig(config) {
     }
 
     return {
+      label: typeof site.label === 'string' && site.label.trim() ? site.label.trim() : site.slug,
       slug: safeSegment(site.slug, 'site slug'),
       url: site.url,
       routes: site.routes.map((route, routeIndex) => {
@@ -162,54 +165,129 @@ async function importPlaywright() {
   }
 }
 
-async function preparePage(page) {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.addStyleTag({ content: stableScreenshotCss });
-
-  await page.evaluate(() => {
-    window.scrollTo(0, 0);
-
-    const buttonLabels = [
-      'accept',
-      'agree',
-      'allow all',
-      'got it',
-      'ok',
-      'decline',
-      'reject',
-      'deny',
-    ];
-
-    for (const button of document.querySelectorAll('button, [role="button"]')) {
-      const label = button.textContent?.trim().toLowerCase();
-      if (label && buttonLabels.some((candidate) => label === candidate || label.includes(candidate))) {
-        button.click();
-        break;
+async function hideCookieBanners(page) {
+  for (const selector of cookieSelectors) {
+    await page.locator(selector).evaluateAll((elements) => {
+      for (const element of elements) {
+        element.setAttribute(
+          'style',
+          'display:none!important;visibility:hidden!important;pointer-events:none!important;'
+        );
       }
-    }
-  });
-
-  await page.addStyleTag({ content: stableScreenshotCss });
+    }).catch(() => {});
+  }
 }
 
-async function captureRoute(page, site, route, viewport, capturePreviews) {
+async function preparePage(page) {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.addStyleTag({ content: stableScreenshotCss }).catch(() => {});
+  await hideCookieBanners(page);
+  await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
+  await page.waitForTimeout(250);
+  await page.addStyleTag({ content: stableScreenshotCss }).catch(() => {});
+}
+
+async function navigateWithFallback(page, targetUrl, site, route) {
+  let response;
+
+  try {
+    response = await page.goto(targetUrl, {
+      waitUntil: 'domcontentloaded',
+      timeout: navigationTimeoutMs,
+    });
+  } catch (error) {
+    console.warn(`[skip] ${site.slug}/${route.name}: navigation failed for ${targetUrl}`);
+    console.warn(`       ${error.message}`);
+    return { ok: false, status: undefined };
+  }
+
+  const status = response?.status();
+
+  if (status === 404) {
+    console.warn(`[skip] ${site.slug}/${route.name}: route returned 404 (${targetUrl})`);
+    return { ok: false, status };
+  }
+
+  if (status && status >= 400) {
+    console.warn(`[skip] ${site.slug}/${route.name}: route returned ${status} (${targetUrl})`);
+    return { ok: false, status };
+  }
+
+  try {
+    await page.waitForLoadState('networkidle', { timeout: networkIdleTimeoutMs });
+  } catch {
+    console.warn(`[warn] ${site.slug}/${route.name}: network idle timeout; capturing current loaded state.`);
+  }
+
+  return { ok: true, status };
+}
+
+async function captureViewport(page, site, route, viewport, outputDir, capturePreviews) {
   const targetUrl = normalizeUrl(site.url, route.path);
-  const outputDir = path.join(outputRoot, site.slug);
   const outputFile = path.join(outputDir, `${viewport.name}-${route.name}.png`);
 
-  await mkdir(outputDir, { recursive: true });
   await page.setViewportSize({ width: viewport.width, height: viewport.height });
+  const navigation = await navigateWithFallback(page, targetUrl, site, route);
 
-  console.log(`- ${site.slug}/${route.name} ${viewport.name}: ${targetUrl}`);
+  if (!navigation.ok) {
+    return false;
+  }
 
-  await page.goto(targetUrl, { waitUntil: 'networkidle', timeout: 45_000 });
   await preparePage(page);
   await page.screenshot({ path: outputFile, fullPage: true });
+  console.log(`[write] ${relativeOutputPath(outputFile)}`);
 
-  if (capturePreviews) {
-    const previewFile = path.join(outputDir, `preview-${viewport.name}-${route.name}.png`);
+  if (capturePreviews && viewport.name === 'desktop') {
+    const previewFile = path.join(outputDir, `preview-${route.name}.png`);
     await page.screenshot({ path: previewFile, fullPage: false });
+    console.log(`[write] ${relativeOutputPath(previewFile)}`);
   }
+
+  return true;
+}
+
+async function captureSite(browser, site, capturePreviews) {
+  const outputDir = path.join(outputRoot, site.slug);
+  const skippedRoutes = [];
+  let createdCount = 0;
+
+  await mkdir(outputDir, { recursive: true });
+
+  console.log(`\nCapturing ${site.label} (${site.slug})`);
+  console.log(`Source: ${site.url}`);
+
+  for (const route of site.routes) {
+    const context = await browser.newContext({
+      deviceScaleFactor: 1,
+      locale: 'en-US',
+    });
+    const page = await context.newPage();
+    let routeCaptured = false;
+    let routeSkipped = false;
+
+    try {
+      for (const viewport of viewports) {
+        const didCapture = await captureViewport(page, site, route, viewport, outputDir, capturePreviews);
+
+        if (!didCapture) {
+          skippedRoutes.push(`${site.slug}/${route.name}`);
+          routeSkipped = true;
+          break;
+        }
+
+        createdCount += 1;
+        routeCaptured = true;
+      }
+    } finally {
+      await context.close();
+    }
+
+    if (routeCaptured && !routeSkipped) {
+      console.log(`[done] ${site.slug}/${route.name}`);
+    }
+  }
+
+  return { createdCount, skippedRoutes };
 }
 
 async function main() {
@@ -234,31 +312,25 @@ async function main() {
 
   const { chromium } = await importPlaywright();
   const browser = await chromium.launch();
+  const skippedRoutes = [];
+  let createdCount = 0;
 
   try {
     for (const site of config) {
-      console.log(`\nCapturing ${site.slug}`);
-      const context = await browser.newContext({
-        deviceScaleFactor: 1,
-        locale: 'en-US',
-      });
-      const page = await context.newPage();
-
-      try {
-        for (const route of site.routes) {
-          for (const viewport of viewports) {
-            await captureRoute(page, site, route, viewport, capturePreviews);
-          }
-        }
-      } finally {
-        await context.close();
-      }
+      const result = await captureSite(browser, site, capturePreviews);
+      createdCount += result.createdCount;
+      skippedRoutes.push(...result.skippedRoutes);
     }
   } finally {
     await browser.close();
   }
 
-  console.log(`\nScreenshots written to ${path.relative(rootDir, outputRoot)}`);
+  console.log(`\nScreenshots written to ${relativeOutputPath(outputRoot)}`);
+  console.log(`Created ${createdCount} full-page screenshot(s).`);
+
+  if (skippedRoutes.length > 0) {
+    console.log(`Skipped ${skippedRoutes.length} route(s): ${skippedRoutes.join(', ')}`);
+  }
 }
 
 main().catch((error) => {

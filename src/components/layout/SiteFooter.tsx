@@ -59,14 +59,15 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
           <div>
             <Link href="/" className="group inline-flex items-center gap-3 text-ink transition-colors hover:text-sea-bright">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-md border border-hairline bg-paper p-0.5">
-                <Image
-                  src={siteConfig.brand.markSrc}
-                  alt={siteConfig.brand.markAlt}
-                  width={40}
-                  height={40}
-                  sizes="44px"
-                  className="size-10 rounded-sm object-cover"
-                />
+                <span className="relative size-10 overflow-hidden rounded-sm">
+                  <Image
+                    src={siteConfig.brand.markSrc}
+                    alt={siteConfig.brand.markAlt}
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
+                </span>
               </span>
               <span className="leading-none">
                 <span className="block text-base font-semibold tracking-[0.04em] text-ink">

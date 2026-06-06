@@ -23,7 +23,7 @@ export type ExampleSystem = {
     solutionFocus: string[];
     demonstrates: string[];
     screenshots: Array<{
-      src: string;
+      src?: string;
       device: 'desktop' | 'tablet' | 'mobile';
       label: string;
     }>;
@@ -63,6 +63,7 @@ export const exampleSystems: ExampleSystem[] = [
     screenshot: {
       desktop: '/work/silk-beauty-salon/desktop-home.png',
       mobile: '/work/silk-beauty-salon/mobile-home.png',
+      tablet: '/work/silk-beauty-salon/tablet-home.png',
       alt: 'Silk Beauty Salon homepage interface shown as a beauty appointment website example',
     },
     fallbackVisual: 'beauty-booking',
@@ -90,7 +91,8 @@ export const exampleSystems: ExampleSystem[] = [
       screenshots: [
         { src: '/work/silk-beauty-salon/desktop-home.png', device: 'desktop', label: 'Homepage desktop' },
         { src: '/work/silk-beauty-salon/mobile-home.png', device: 'mobile', label: 'Homepage mobile' },
-        { src: '/work/silk-beauty-salon/desktop-services.png', device: 'desktop', label: 'Services desktop' },
+        { src: '/work/silk-beauty-salon/tablet-home.png', device: 'tablet', label: 'Homepage tablet' },
+        { src: '/work/silk-beauty-salon/desktop-treatments.png', device: 'desktop', label: 'Treatments desktop' },
         { src: '/work/silk-beauty-salon/mobile-booking.png', device: 'mobile', label: 'Booking mobile' },
       ],
     },
@@ -128,6 +130,7 @@ export const exampleSystems: ExampleSystem[] = [
     screenshot: {
       desktop: '/work/grand-boutique-hotel/desktop-home.png',
       mobile: '/work/grand-boutique-hotel/mobile-home.png',
+      tablet: '/work/grand-boutique-hotel/tablet-home.png',
       alt: 'Grand Boutique Hotel homepage interface shown as a direct-booking hospitality website example',
     },
     fallbackVisual: 'hotel-booking',
@@ -155,6 +158,7 @@ export const exampleSystems: ExampleSystem[] = [
       screenshots: [
         { src: '/work/grand-boutique-hotel/desktop-home.png', device: 'desktop', label: 'Homepage desktop' },
         { src: '/work/grand-boutique-hotel/mobile-home.png', device: 'mobile', label: 'Homepage mobile' },
+        { src: '/work/grand-boutique-hotel/tablet-home.png', device: 'tablet', label: 'Homepage tablet' },
         { src: '/work/grand-boutique-hotel/desktop-rooms.png', device: 'desktop', label: 'Rooms desktop' },
         { src: '/work/grand-boutique-hotel/mobile-booking.png', device: 'mobile', label: 'Booking mobile' },
       ],

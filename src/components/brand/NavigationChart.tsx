@@ -32,6 +32,7 @@ export function NavigationChart({ variant = 'section', className }: NavigationCh
       )}
     >
       <svg
+        aria-hidden="true"
         className="absolute inset-0 size-full"
         viewBox="0 0 100 60"
         preserveAspectRatio="none"

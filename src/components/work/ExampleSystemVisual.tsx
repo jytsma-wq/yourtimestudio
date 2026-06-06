@@ -9,7 +9,6 @@ import {
   Stethoscope,
 } from 'lucide-react';
 import type { ExampleSystem } from '@/content/example-systems';
-import { getPrimaryExampleScreenshot } from '@/lib/work-screenshots';
 import { cn } from '@/lib/utils';
 import { ScreenshotFrame } from './ScreenshotFrame';
 
@@ -18,6 +17,7 @@ type ExampleSystemVisualVariant = 'card' | 'hero';
 interface ExampleSystemVisualProps {
   className?: string;
   imagePriority?: boolean;
+  screenshotSrc?: string;
   screenshotsComingSoon: string;
   showMissingLabel?: boolean;
   system: ExampleSystem;
@@ -207,13 +207,12 @@ export function ExampleSystemFallbackVisual({ fallbackVisual }: { fallbackVisual
 export function ExampleSystemVisual({
   className,
   imagePriority = false,
+  screenshotSrc,
   screenshotsComingSoon,
   showMissingLabel = true,
   system,
   variant = 'card',
 }: ExampleSystemVisualProps) {
-  const screenshotSrc = getPrimaryExampleScreenshot(system);
-
   return (
     <ScreenshotFrame
       alt={system.screenshot?.alt ?? `${system.title} interface preview`}

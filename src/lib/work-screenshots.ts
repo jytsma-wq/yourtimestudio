@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import type { ExampleSystem } from '@/content/example-systems';
