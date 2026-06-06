@@ -911,11 +911,22 @@
     "kicker": "Delivery standards"
   },
   "ctaBand": {
-    "heading": "Ready to improve your web presence?",
-    "primary": "Request a website audit",
-    "secondary": "Contact me",
-    "sectionLabel": "Get in touch.",
-    "subtitle": "Tell us about your project and we will get back to you within one business day."
+    "heading": "Show me your current website. I'll find what blocks bookings, trust, and local search.",
+    "primary": "Request website audit",
+    "secondary": "View example systems",
+    "sectionLabel": "Signal diagnosis.",
+    "subtitle": "A focused audit or rebuild starts with the same step: diagnose the signal loss.",
+    "panelTitle": "Signal map",
+    "signals": {
+      "booking": "Bookings",
+      "trust": "Trust",
+      "search": "Local search"
+    },
+    "routes": {
+      "booking": "Audit route",
+      "trust": "Trust barrier",
+      "search": "Search visibility"
+    }
   },
   "auditDescriptions": {
     "brand": "Is your brand message instantly clear to visitors?",
@@ -926,8 +937,17 @@
     "conversion": "Does your site guide visitors toward booking or contact?"
   },
   "footer": {
-    "brand_descriptor": "Website Development Studio in Batumi",
-    "tagline": "Batumi web studio for hospitality, medical, and beauty businesses.",
+    "brand_descriptor": "Website Systems Studio in Batumi",
+    "tagline": "Audit-led websites for hotels, clinics, beauty studios, and local service businesses in Batumi.",
+    "positioning": "A small Batumi studio building multilingual websites that make bookings, trust, and local search easier to navigate.",
+    "basedIn": "Based in Batumi, Georgia",
+    "coordinates": "N41.6168 / E41.6367",
+    "contactHeading": "Contact signal",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "keyRoutes": "Key routes",
+    "sectorRoutes": "Sector routes",
+    "navigationSignal": "Navigation signal",
     "solutions": "Solutions",
     "company": "Company",
     "legal": "Legal",
@@ -1543,14 +1563,78 @@
         "Concept systems shown below are studio prototypes, not fake client case studies."
       ]
     },
-    "labels": {
-      "problem": "Business problem",
-      "conversion": "Conversion goal",
-      "architecture": "Website architecture",
-      "modules": "Key modules",
-      "technical": "Technical layer"
-    },
-    "systems": {
+      "labels": {
+        "problem": "Business problem",
+        "solution": "System solution",
+        "conversion": "Conversion goal",
+        "architecture": "Website architecture",
+        "modules": "Key modules",
+        "technical": "Technical layer"
+      },
+      "systemIndex": {
+        "eyebrow": "System index",
+        "heading": "Example systems ready for finished screenshots.",
+        "subtitle": "These cards are wired for future repository, live site, and screenshot fields. Until those are added, each system uses a technical fallback visual instead of an empty placeholder."
+      },
+      "status": {
+        "concept": "Concept",
+        "internalBuild": "Internal build",
+        "clientBuild": "Client build"
+      },
+      "viewSystem": "View system",
+      "viewRepository": "View repository",
+      "viewLiveSite": "View live site",
+      "screenshotsComingSoon": "Screenshots coming soon",
+      "detail": {
+        "eyebrow": "Example system",
+        "disclosure": "Disclosure",
+        "structureEyebrow": "System architecture",
+        "structureHeading": "Problem, solution, modules, and technical layer.",
+        "structureBody": "Each example is organized as a practical website system: clear route architecture, conversion modules, technical delivery, and future screenshot slots.",
+        "diagnostic": {
+          "signal": "Signal",
+          "system": "System",
+          "output": "Output"
+        },
+        "screenshots": {
+          "eyebrow": "Screenshot gallery",
+          "heading": "Interface captures",
+          "body": "Desktop, tablet, and mobile captures can be added from the local screenshot workflow without fetching anything at runtime.",
+          "desktop": "Desktop",
+          "tablet": "Tablet",
+          "mobile": "Mobile",
+          "fallbackNote": "Screenshots are missing for now. The generated system visual keeps the page usable until local captures are added."
+        },
+        "routeArchitecture": "Route architecture",
+        "technicalDelivery": "Technical delivery",
+        "delivery": {
+          "nextjs": {
+            "title": "Next.js",
+            "body": "Static routes and component structure ready for a fast production build."
+          },
+          "localSeo": {
+            "title": "Local SEO",
+            "body": "Page intent, location terms, and service language aligned to Batumi search behavior."
+          },
+          "structuredData": {
+            "title": "Structured data",
+            "body": "Schema patterns planned around the business type and visible page content."
+          },
+          "multilingualRoutes": {
+            "title": "Multilingual routes",
+            "body": "Language-aware navigation, metadata, and route structure for local and visitor audiences."
+          },
+          "performance": {
+            "title": "Performance",
+            "body": "Image, layout, and interaction choices kept within a practical performance budget."
+          }
+        },
+        "externalLinks": "Published links",
+        "noPublishedLinks": "Live site and repository links will appear here after they are verified and ready to publish.",
+        "requestAudit": "Request website audit",
+        "contact": "Contact"
+      },
+      "systems": {
       "hotel": {
         "label": "Concept system",
         "title": "Hotel Direct Booking System",

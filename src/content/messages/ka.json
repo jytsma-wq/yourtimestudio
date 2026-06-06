@@ -915,11 +915,22 @@
     "kicker": "მიწოდების სტანდარტები"
   },
   "ctaBand": {
-    "heading": "მზად ხართ გააუმჯობესოთ თქვენი ვებ-ყოფა?",
+    "heading": "მაჩვენეთ თქვენი მიმდინარე ვებსაიტი. ვიპოვი, რა აფერხებს ჯავშნებს, ნდობას და ადგილობრივ ძიებას.",
     "primary": "მოითხოვეთ ვებსაიტის აუდიტი",
-    "secondary": "დამიკავშირდით",
-    "sectionLabel": "დაკავშირება.",
-    "subtitle": "მოგვითხროთ თქვენს პროექტზე და ერთი სამუშაო დღის განმავლობაში გიპასუხებთ."
+    "secondary": "იხილეთ მაგალითი სისტემები",
+    "sectionLabel": "სიგნალის დიაგნოსტიკა.",
+    "subtitle": "ფოკუსირებული აუდიტი ან თავიდან აწყობა ერთსა და იმავე ნაბიჯით იწყება: სიგნალის დაკარგვის დიაგნოსტიკით.",
+    "panelTitle": "სიგნალის რუკა",
+    "signals": {
+      "booking": "ჯავშნები",
+      "trust": "ნდობა",
+      "search": "ლოკალური ძიება"
+    },
+    "routes": {
+      "booking": "აუდიტის მარშრუტი",
+      "trust": "ნდობის ბარიერი",
+      "search": "ძიების ხილვადობა"
+    }
   },
   "auditDescriptions": {
     "brand": "დაუყოვნებლივ თუ ჩანს თქვენი ბრენდის შეტყობინება სტუმრებისთვის?",
@@ -930,8 +941,17 @@
     "conversion": "მიმართავს თუ არა თქვენი საიტი სტუმრებს ჯავშნისკენ ან კონტაქტისკენ?"
   },
   "footer": {
-    "brand_descriptor": "ვებ დეველოპმენტის სტუდია ბათუმში",
-    "tagline": "ბათუმის ვებ-სტუდია სასტუმრო, სამედიცინო და სილამაზის ბიზნესისთვის.",
+    "brand_descriptor": "ვებსაიტების სისტემების სტუდია ბათუმში",
+    "tagline": "აუდიტზე დაფუძნებული ვებსაიტები სასტუმროებისთვის, კლინიკებისთვის, სილამაზის სტუდიებისა და ადგილობრივი სერვისებისთვის ბათუმში.",
+    "positioning": "პატარა ბათუმური სტუდია, რომელიც ქმნის მრავალენოვან ვებსაიტებს ჯავშნების, ნდობისა და ადგილობრივი ძიების გასამარტივებლად.",
+    "basedIn": "დაფუძნებულია ბათუმში, საქართველო",
+    "coordinates": "N41.6168 / E41.6367",
+    "contactHeading": "საკონტაქტო სიგნალი",
+    "email": "ელფოსტა",
+    "whatsapp": "WhatsApp",
+    "keyRoutes": "მთავარი მარშრუტები",
+    "sectorRoutes": "სექტორის მარშრუტები",
+    "navigationSignal": "ნავიგაციის სიგნალი",
     "solutions": "გადაწყვეტები",
     "company": "კომპანია",
     "legal": "იურიდიული",
@@ -1547,14 +1567,78 @@
         "ქვემოთ ნაჩვენები კონცეპტური სისტემები სტუდიის პროტოტიპებია და არა გამოგონილი კლიენტის ქეისები."
       ]
     },
-    "labels": {
-      "problem": "ბიზნეს პრობლემა",
-      "conversion": "კონვერსიის მიზანი",
-      "architecture": "ვებსაიტის არქიტექტურა",
-      "modules": "ძირითადი მოდულები",
-      "technical": "ტექნიკური ფენა"
-    },
-    "systems": {
+      "labels": {
+        "problem": "ბიზნეს პრობლემა",
+        "solution": "სისტემის გადაწყვეტა",
+        "conversion": "კონვერსიის მიზანი",
+        "architecture": "ვებსაიტის არქიტექტურა",
+        "modules": "ძირითადი მოდულები",
+        "technical": "ტექნიკური ფენა"
+      },
+      "systemIndex": {
+        "eyebrow": "სისტემების ინდექსი",
+        "heading": "მაგალითი სისტემები, რომლებიც მზადაა დასრულებული screenshot-ებისთვის.",
+        "subtitle": "ეს ბარათები უკვე მზადაა მომავალი repository, live site და screenshot ველებისთვის. სანამ ისინი დაემატება, თითოეული სისტემა ცარიელი placeholder-ის ნაცვლად ტექნიკურ fallback ვიზუალს იყენებს."
+      },
+      "status": {
+        "concept": "კონცეპტი",
+        "internalBuild": "შიდა build",
+        "clientBuild": "კლიენტის build"
+      },
+      "viewSystem": "სისტემის ნახვა",
+      "viewRepository": "repository-ის ნახვა",
+      "viewLiveSite": "live site-ის ნახვა",
+      "screenshotsComingSoon": "Screenshots მალე დაემატება",
+      "detail": {
+        "eyebrow": "მაგალითი სისტემა",
+        "disclosure": "გამჟღავნება",
+        "structureEyebrow": "სისტემის არქიტექტურა",
+        "structureHeading": "პრობლემა, გადაწყვეტა, მოდულები და ტექნიკური ფენა.",
+        "structureBody": "თითოეული მაგალითი ორგანიზებულია როგორც პრაქტიკული ვებსაიტის სისტემა: მკაფიო route architecture, conversion modules, technical delivery და მომავალი screenshot ველები.",
+        "diagnostic": {
+          "signal": "სიგნალი",
+          "system": "სისტემა",
+          "output": "შედეგი"
+        },
+        "screenshots": {
+          "eyebrow": "Screenshot გალერეა",
+          "heading": "ინტერფეისის კადრები",
+          "body": "Desktop, tablet და mobile კადრები შეიძლება დაემატოს ლოკალური screenshot workflow-დან runtime fetching-ის გარეშე.",
+          "desktop": "Desktop",
+          "tablet": "Tablet",
+          "mobile": "Mobile",
+          "fallbackNote": "Screenshots ახლა არ არის დამატებული. გენერირებული სისტემის ვიზუალი გვერდს გამოსაყენებლად ტოვებს ლოკალური კადრების დამატებამდე."
+        },
+        "routeArchitecture": "Route architecture",
+        "technicalDelivery": "Technical delivery",
+        "delivery": {
+          "nextjs": {
+            "title": "Next.js",
+            "body": "Static routes და component structure სწრაფი production build-ისთვის."
+          },
+          "localSeo": {
+            "title": "Local SEO",
+            "body": "გვერდის განზრახვა, ლოკაციის ტერმინები და სერვისის ენა მორგებულია ბათუმის ძიების ქცევაზე."
+          },
+          "structuredData": {
+            "title": "Structured data",
+            "body": "Schema patterns დაგეგმილია ბიზნესის ტიპისა და ხილული გვერდის კონტენტის მიხედვით."
+          },
+          "multilingualRoutes": {
+            "title": "Multilingual routes",
+            "body": "ენის-aware navigation, metadata და route structure ადგილობრივი და სტუმარი აუდიტორიისთვის."
+          },
+          "performance": {
+            "title": "Performance",
+            "body": "სურათები, layout და interaction არჩევანი ინარჩუნებს პრაქტიკულ performance budget-ს."
+          }
+        },
+        "externalLinks": "გამოქვეყნებული ბმულები",
+        "noPublishedLinks": "Live site და repository ბმულები გამოჩნდება, როცა ისინი გადამოწმებული და გამოსაქვეყნებლად მზად იქნება.",
+        "requestAudit": "ვებსაიტის აუდიტის მოთხოვნა",
+        "contact": "კონტაქტი"
+      },
+      "systems": {
       "hotel": {
         "label": "კონცეპტური სისტემა",
         "title": "სასტუმროს პირდაპირი ჯავშნის სისტემა",

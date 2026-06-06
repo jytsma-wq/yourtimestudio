@@ -915,11 +915,22 @@
     "kicker": "Teslim standartları"
   },
   "ctaBand": {
-    "heading": "Web varlığınızı geliştirmeye hazır mısınız?",
+    "heading": "Mevcut web sitenizi gösterin. Rezervasyonları, güveni ve yerel aramayı neyin engellediğini bulacağım.",
     "primary": "Web sitesi denetimi talep edin",
-    "secondary": "Benimle iletişime geçin",
-    "sectionLabel": "İletişime geçin.",
-    "subtitle": "Projenizi anlatın, bir iş günü içinde size geri döneceğiz."
+    "secondary": "Örnek sistemleri görüntüle",
+    "sectionLabel": "Sinyal teşhisi.",
+    "subtitle": "Odaklı bir denetim ya da yeniden kurulum aynı adımla başlar: sinyal kaybını teşhis etmek.",
+    "panelTitle": "Sinyal haritası",
+    "signals": {
+      "booking": "Rezervasyon",
+      "trust": "Güven",
+      "search": "Yerel arama"
+    },
+    "routes": {
+      "booking": "Denetim rotası",
+      "trust": "Güven bariyeri",
+      "search": "Arama görünürlüğü"
+    }
   },
   "auditDescriptions": {
     "brand": "Marka mesajınız ziyaretçilere anında net mi?",
@@ -930,8 +941,17 @@
     "conversion": "Siteniz ziyaretçileri rezervasyon veya iletişime yönlendiriyor mu?"
   },
   "footer": {
-    "brand_descriptor": "Batumi'de Web Geliştirme Stüdyosu",
-    "tagline": "Konaklama, sağlık ve güzellik işletmeleri için Batumi web stüdyosu.",
+    "brand_descriptor": "Batumi'de Web Sistemleri Stüdyosu",
+    "tagline": "Batumi'deki oteller, klinikler, güzellik stüdyoları ve yerel hizmetler için denetim odaklı web siteleri.",
+    "positioning": "Rezervasyon, güven ve yerel arama yollarını daha kolay yönlendiren çok dilli web siteleri kuran küçük bir Batumi stüdyosu.",
+    "basedIn": "Batumi, Gürcistan merkezli",
+    "coordinates": "N41.6168 / E41.6367",
+    "contactHeading": "İletişim sinyali",
+    "email": "E-posta",
+    "whatsapp": "WhatsApp",
+    "keyRoutes": "Ana rotalar",
+    "sectorRoutes": "Sektör rotaları",
+    "navigationSignal": "Navigasyon sinyali",
     "solutions": "Çözümler",
     "company": "Şirket",
     "legal": "Yasal",
@@ -1547,14 +1567,78 @@
         "Aşağıdaki konsept sistemler stüdyo prototipleridir, sahte müşteri case study değildir."
       ]
     },
-    "labels": {
-      "problem": "İş problemi",
-      "conversion": "Dönüşüm hedefi",
-      "architecture": "Web sitesi mimarisi",
-      "modules": "Temel modüller",
-      "technical": "Teknik katman"
-    },
-    "systems": {
+      "labels": {
+        "problem": "İş problemi",
+        "solution": "Sistem çözümü",
+        "conversion": "Dönüşüm hedefi",
+        "architecture": "Web sitesi mimarisi",
+        "modules": "Temel modüller",
+        "technical": "Teknik katman"
+      },
+      "systemIndex": {
+        "eyebrow": "Sistem indeksi",
+        "heading": "Final ekran görüntüleri için hazır örnek sistemler.",
+        "subtitle": "Bu kartlar gelecekteki repository, live site ve screenshot alanları için hazırlandı. Bunlar eklenene kadar her sistem boş placeholder yerine teknik fallback görseli kullanır."
+      },
+      "status": {
+        "concept": "Konsept",
+        "internalBuild": "İç build",
+        "clientBuild": "Müşteri build"
+      },
+      "viewSystem": "Sistemi görüntüle",
+      "viewRepository": "Repository görüntüle",
+      "viewLiveSite": "Live site görüntüle",
+      "screenshotsComingSoon": "Screenshots yakında eklenecek",
+      "detail": {
+        "eyebrow": "Örnek sistem",
+        "disclosure": "Açıklama",
+        "structureEyebrow": "Sistem mimarisi",
+        "structureHeading": "Problem, çözüm, modüller ve teknik katman.",
+        "structureBody": "Her örnek pratik bir web sitesi sistemi olarak düzenlenir: net route architecture, conversion modules, technical delivery ve gelecekteki screenshot alanları.",
+        "diagnostic": {
+          "signal": "Sinyal",
+          "system": "Sistem",
+          "output": "Çıktı"
+        },
+        "screenshots": {
+          "eyebrow": "Screenshot galerisi",
+          "heading": "Arayüz görüntüleri",
+          "body": "Desktop, tablet ve mobile görüntüler runtime fetching olmadan yerel screenshot workflow üzerinden eklenebilir.",
+          "desktop": "Desktop",
+          "tablet": "Tablet",
+          "mobile": "Mobile",
+          "fallbackNote": "Screenshots şimdilik eksik. Üretilen sistem görseli, yerel görüntüler eklenene kadar sayfayı kullanılabilir tutar."
+        },
+        "routeArchitecture": "Route architecture",
+        "technicalDelivery": "Technical delivery",
+        "delivery": {
+          "nextjs": {
+            "title": "Next.js",
+            "body": "Static routes ve component structure hızlı production build için hazırdır."
+          },
+          "localSeo": {
+            "title": "Local SEO",
+            "body": "Sayfa niyeti, lokasyon terimleri ve hizmet dili Batumi arama davranışına göre hizalanır."
+          },
+          "structuredData": {
+            "title": "Structured data",
+            "body": "Schema patterns işletme türü ve görünür sayfa içeriği etrafında planlanır."
+          },
+          "multilingualRoutes": {
+            "title": "Multilingual routes",
+            "body": "Yerel ve ziyaretçi kitleler için dil-aware navigation, metadata ve route structure."
+          },
+          "performance": {
+            "title": "Performance",
+            "body": "Görsel, layout ve interaction tercihleri pratik bir performance budget içinde tutulur."
+          }
+        },
+        "externalLinks": "Yayınlanmış linkler",
+        "noPublishedLinks": "Live site ve repository linkleri doğrulanıp yayına hazır olduğunda burada görünecek.",
+        "requestAudit": "Web sitesi denetimi talep edin",
+        "contact": "İletişim"
+      },
+      "systems": {
       "hotel": {
         "label": "Konsept sistem",
         "title": "Otel Doğrudan Rezervasyon Sistemi",

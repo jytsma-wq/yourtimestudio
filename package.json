@@ -12,6 +12,7 @@
     "test": "jest",
     "test:unit": "jest",
     "test:e2e": "playwright test",
+    "screenshots:examples": "node scripts/capture-example-screenshots.mjs",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
