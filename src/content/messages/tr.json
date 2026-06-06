@@ -72,7 +72,35 @@
     "meta_services": "Doğrudan rezervasyon / yerel SEO / çok dilli UX",
     "feature_direction": "Özellik yönü",
     "issue": "Sayı 01",
-    "appointment_flow": "Randevu akışı"
+    "appointment_flow": "Randevu akışı",
+    "command": {
+      "coordinates": "41.6168° N / 41.6367° E",
+      "location": "Batum / Acara",
+      "signal": "Sinyal: rezervasyon odaklı web siteleri"
+    },
+    "signals": {
+      "booking": "Rezervasyon sinyali",
+      "trust": "Güven sinyali",
+      "localSeo": "Yerel SEO sinyali",
+      "multilingual": "Çok dilli sinyal"
+    },
+    "systems": {
+      "hotel": {
+        "title": "Otel Doğrudan Rezervasyon Sistemi",
+        "subtitle": "Dil rotaları ve doğrudan talep akışı olan rezervasyon odaklı otel sitesi.",
+        "sector": "Konaklama"
+      },
+      "clinic": {
+        "title": "Klinik Güven Sistemi",
+        "subtitle": "Tedaviler, doktorlar, başvuru ve hasta soruları için klinik sitesi yapısı.",
+        "sector": "Sağlık"
+      },
+      "beauty": {
+        "title": "Güzellik Randevu Sistemi",
+        "subtitle": "Sosyal trafikli stüdyolar için hizmet menüsü, galeri ve randevu yolu.",
+        "sector": "Güzellik"
+      }
+    }
   },
   "sectors": {
     "heading": "Sektör çözümleri",
@@ -1686,10 +1714,17 @@
     "sectionLabel": "Web sitesi sistemleri galerisi.",
     "heading": "Örnek sistemler, uydurma vaka çalışmaları değil",
     "subtitle": "Gerçek bir yapının başlayabileceği ekranları, akışları ve modülleri gösteren üç sektör yönü.",
+    "disclosure": "Gerçek müşteri kanıtı eklenene kadar konsept sistemler.",
     "conversionLabel": "Dönüşüm hedefi",
+    "modulesLabel": "Modüller",
     "viewGallery": "Web sitesi sistemlerini görüntüle",
     "viewLink": "Sistemi görüntüle",
     "moreNote": "Bu önizlemeler konsept sistemler ve stüdyo prototipleridir. Müşteri sonucu, referans veya metrik iddia etmezler.",
+    "footer": {
+      "signal": "Sinyal",
+      "system": "Sistem",
+      "output": "Çıktı"
+    },
     "proof": {
       "items": [
         "Şu anda Batumi'de seçilmiş projeler kabul ediliyor.",
@@ -1703,7 +1738,7 @@
       "hospitality": {
         "label": "Konsept sistem",
         "vertical": "Konaklama",
-        "title": "Otel Doğrudan Rezervasyon Sistemi",
+        "title": "Konaklama Sinyal Sistemi",
         "problem": "Doğrudan site; odaları, konumu, politikaları ve rezervasyon değerini OTA listesinden daha güvenilir göstermelidir.",
         "conversion": "Doğrudan rezervasyon talebi",
         "result": "Rezervasyon akışı planı",
@@ -1716,7 +1751,7 @@
       "medical": {
         "label": "Örnek yapı",
         "vertical": "Medikal",
-        "title": "Klinik Güven ve Tedavi Sistemi",
+        "title": "Klinik Güven Sistemi",
         "problem": "Hastalar danışma istemeden önce tedavi açıklığı, doktor güveni ve dil desteği arar.",
         "conversion": "Danışma talebi",
         "result": "Hasta başvuru yapısı",

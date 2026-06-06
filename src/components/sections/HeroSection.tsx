@@ -4,20 +4,17 @@ import {
   BedDouble,
   CalendarDays,
   Check,
-  Code2,
-  FileCode2,
-  Gauge,
   Languages,
   MapPin,
-  Search,
   ShieldCheck,
   Sparkles,
   Stethoscope,
-  type LucideIcon,
 } from 'lucide-react';
+import { LighthouseBeam, NavigationChart, RadarPanel, SignalBadge } from '@/components/brand';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 import { type Locale } from '@/lib/i18n/config';
+import { cn } from '@/lib/utils';
 
 interface HeroSectionProps {
   locale: Locale;
@@ -28,24 +25,35 @@ interface BrowserFrameProps {
   subtitle: string;
   url: string;
   sector: string;
+  signalLabel: string;
+  signalTone?: 'sea' | 'oxide' | 'success' | 'muted';
+  scale?: 'primary' | 'secondary';
+  className?: string;
   children: React.ReactNode;
 }
 
 const proofKeys = ['proof_band.0', 'proof_band.1', 'proof_band.2', 'proof_band.3'] as const;
 
-const techStack: { icon: LucideIcon; label: string }[] = [
-  { icon: Code2, label: 'Next.js / React' },
-  { icon: Search, label: 'Local SEO' },
-  { icon: Gauge, label: 'Core Web Vitals' },
-  { icon: FileCode2, label: 'Structured data' },
-  { icon: Languages, label: 'Multilingual routes' },
-];
-
-function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFrameProps) {
+function BrowserFrame({
+  title,
+  subtitle,
+  url,
+  sector,
+  signalLabel,
+  signalTone = 'sea',
+  scale = 'secondary',
+  className,
+  children,
+}: BrowserFrameProps) {
   return (
     <article
       aria-label={title}
-      className="relative overflow-hidden rounded-md border border-hairline bg-surface"
+      className={cn(
+        'group relative overflow-hidden rounded-md border border-hairline bg-surface shadow-[0_24px_120px_rgba(0,0,0,0.26)]',
+        'transition-[background-color,border-color,transform] duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:border-sea/35 motion-safe:hover:bg-surface-elevated',
+        scale === 'primary' && 'bg-surface',
+        className
+      )}
     >
       <div className="flex min-w-0 items-center gap-2 border-b border-hairline px-3 py-2">
         <div className="flex gap-1.5" aria-hidden="true">
@@ -62,15 +70,15 @@ function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFramePr
       </div>
       <div className="bl-signal-line h-3" aria-hidden="true" />
 
-      <div className="p-4">
+      <div className={cn('p-4', scale === 'primary' && 'md:p-5')}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h2 className="text-sm font-semibold text-ink">{title}</h2>
+            <h2 className={cn('font-semibold text-ink', scale === 'primary' ? 'text-base md:text-lg' : 'text-sm')}>
+              {title}
+            </h2>
             <p className="mt-1 text-xs leading-relaxed text-muted">{subtitle}</p>
           </div>
-          <span className="rounded border border-sea/40 bg-sea/15 px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-sea-bright">
-            System
-          </span>
+          <SignalBadge label={signalLabel} tone={signalTone} className="hidden shrink-0 sm:inline-flex" />
         </div>
 
         <div className="mt-4">{children}</div>
@@ -79,13 +87,24 @@ function BrowserFrame({ title, subtitle, url, sector, children }: BrowserFramePr
   );
 }
 
-function HotelBookingFrame() {
+interface SystemCopy {
+  title: string;
+  subtitle: string;
+  sector: string;
+  signal: string;
+}
+
+function HotelBookingFrame({ copy, className }: { copy: SystemCopy; className?: string }) {
   return (
     <BrowserFrame
-      title="Hotel Direct Booking System"
-      subtitle="A booking-first hotel site with language routes and direct inquiry flow."
+      title={copy.title}
+      subtitle={copy.subtitle}
       url="batumi-hotel.ge/direct-booking"
-      sector="Hospitality"
+      sector={copy.sector}
+      signalLabel={copy.signal}
+      signalTone="oxide"
+      scale="primary"
+      className={className}
     >
       <div className="space-y-3">
         <div className="flex flex-wrap gap-1.5" aria-label="Language switcher options">
@@ -142,13 +161,16 @@ function HotelBookingFrame() {
   );
 }
 
-function ClinicTrustFrame() {
+function ClinicTrustFrame({ copy, className }: { copy: SystemCopy; className?: string }) {
   return (
     <BrowserFrame
-      title="Clinic Trust System"
-      subtitle="A clinic website structure for treatments, doctors, intake, and patient questions."
+      title={copy.title}
+      subtitle={copy.subtitle}
       url="dental-clinic.ge/treatments"
-      sector="Medical"
+      sector={copy.sector}
+      signalLabel={copy.signal}
+      signalTone="success"
+      className={className}
     >
       <div className="space-y-3">
         <div className="rounded border border-hairline bg-canvas p-3">
@@ -172,16 +194,6 @@ function ClinicTrustFrame() {
           <ShieldCheck className="size-4 shrink-0 text-success" aria-hidden="true" />
         </div>
 
-        <div className="grid gap-2 sm:grid-cols-[1fr_auto] sm:items-center">
-          <div className="rounded border border-hairline bg-canvas px-3 py-2">
-            <p className="text-xs font-medium text-ink">FAQ and trust signal</p>
-            <p className="mt-1 text-xs text-muted">Answers before the patient contacts the clinic.</p>
-          </div>
-          <span className="rounded bg-oxide px-3 py-2 text-center text-xs font-semibold text-white">
-            Request consultation
-          </span>
-        </div>
-
         <div className="flex flex-wrap items-center gap-2 border-t border-hairline pt-3 text-xs text-muted">
           <Languages className="size-3.5 text-sea-bright" aria-hidden="true" />
           <span>Multilingual intake</span>
@@ -196,13 +208,16 @@ function ClinicTrustFrame() {
   );
 }
 
-function BeautyAppointmentFrame() {
+function BeautyAppointmentFrame({ copy, className }: { copy: SystemCopy; className?: string }) {
   return (
     <BrowserFrame
-      title="Beauty Appointment System"
-      subtitle="A service menu, gallery, and appointment path for studios with social traffic."
+      title={copy.title}
+      subtitle={copy.subtitle}
       url="beauty-studio.ge/book"
-      sector="Beauty"
+      sector={copy.sector}
+      signalLabel={copy.signal}
+      signalTone="sea"
+      className={className}
     >
       <div className="space-y-3">
         <div className="grid grid-cols-3 gap-2" aria-label="Service menu row">
@@ -228,46 +243,50 @@ function BeautyAppointmentFrame() {
           <span className="rounded bg-oxide px-2.5 py-1 text-xs font-semibold text-white">Book appointment</span>
         </div>
 
-        <div className="grid grid-cols-4 gap-1.5" aria-label="Gallery strip">
-          {['Look', 'Space', 'Result', 'Team'].map((label) => (
-            <div key={label} className="aspect-[4/3] rounded border border-hairline bg-canvas p-1.5">
-              <div className="h-full rounded-sm border border-sea/20 bg-surface-elevated" />
-              <span className="sr-only">{label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="border-t border-hairline pt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-sea-bright">
-          Instagram to booking
-        </div>
       </div>
     </BrowserFrame>
   );
 }
 
-function TechnicalPanel() {
+function HeroSystemStack({
+  systems,
+  coordinates,
+  location,
+}: {
+  systems: {
+    hotel: SystemCopy;
+    clinic: SystemCopy;
+    beauty: SystemCopy;
+  };
+  coordinates: string;
+  location: string;
+}) {
   return (
-    <aside
-      aria-label="Technical delivery stack"
-      className="bl-grid rounded-md border border-hairline bg-canvas-soft p-4"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
-          Build layer
-        </p>
-        <span className="rounded border border-success/30 bg-success/10 px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-success">
-          Production
-        </span>
+    <div className="relative mx-auto w-full max-w-[640px] lg:min-h-[760px]" aria-label="Miniature website systems preview">
+      <div className="pointer-events-none absolute -inset-x-8 -inset-y-6 bl-grid opacity-30" aria-hidden="true" />
+      <div className="pointer-events-none absolute left-4 top-8 h-[76%] w-px bg-gradient-to-b from-transparent via-sea-bright/25 to-transparent" aria-hidden="true" />
+      <div className="pointer-events-none absolute right-2 top-24 hidden h-[68%] w-px bg-gradient-to-b from-transparent via-oxide-hover/30 to-transparent lg:block" aria-hidden="true" />
+
+      <div className="relative z-20 lg:w-[88%]">
+        <HotelBookingFrame copy={systems.hotel} />
       </div>
-      <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-        {techStack.map(({ icon: Icon, label }) => (
-          <li key={label} className="flex items-center gap-2 text-xs text-ink">
-            <Icon className="size-3.5 shrink-0 text-sea-bright" aria-hidden="true" />
-            <span>{label}</span>
-          </li>
-        ))}
-      </ul>
-    </aside>
+
+      <RadarPanel className="z-30 mx-auto mt-4 w-40 sm:w-44 lg:absolute lg:right-[-4rem] lg:top-[292px] lg:mt-0" />
+
+      <div className="relative z-10 mt-4 ml-auto w-[94%] lg:absolute lg:right-0 lg:top-[372px] lg:mt-0 lg:w-[78%]">
+        <ClinicTrustFrame copy={systems.clinic} />
+      </div>
+
+      <div className="relative z-10 mt-4 w-[94%] lg:absolute lg:left-6 lg:top-[548px] lg:mt-0 lg:w-[73%]">
+        <BeautyAppointmentFrame copy={systems.beauty} />
+      </div>
+
+      <div className="relative z-20 mt-5 grid gap-2 text-xs text-muted sm:grid-cols-[auto_1fr_auto] sm:items-center lg:absolute lg:bottom-0 lg:left-0 lg:right-8 lg:mt-0">
+        <span className="bl-coordinates">{coordinates}</span>
+        <div className="bl-signal-line hidden h-3 sm:block" aria-hidden="true" />
+        <span className="bl-coordinates">{location}</span>
+      </div>
+    </div>
   );
 }
 
@@ -276,22 +295,22 @@ export async function HeroSection({ locale }: HeroSectionProps) {
 
   return (
     <section id="hero" data-locale={locale} className="bl-soft-vignette relative isolate overflow-hidden bg-canvas">
-      <div className="pointer-events-none absolute inset-0 bl-navigation-chart opacity-70" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-0 bl-beacon-beam" aria-hidden="true" />
+      <NavigationChart variant="hero" />
+      <LighthouseBeam className="opacity-90" />
       <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[var(--hero-max-width)] px-[var(--container-padding)] py-16 md:py-24 lg:py-28">
-        <div className="mb-10 hidden items-center justify-between border-b border-hairline pb-4 md:flex">
-          <span className="mono-label text-muted">Web Development Studio</span>
-          <span className="bl-coordinates">N41.6168 / E41.6367</span>
-          <span className="mono-label text-sea-bright">Available for projects</span>
+      <div className="relative z-10 mx-auto w-full max-w-[var(--hero-max-width)] px-[var(--container-padding)] py-12 md:py-24 lg:py-28">
+        <div className="mb-10 grid gap-3 border-b border-hairline pb-4 sm:grid-cols-[auto_auto_1fr] sm:items-center">
+          <span className="bl-coordinates">{t('command.coordinates')}</span>
+          <span className="bl-coordinates">{t('command.location')}</span>
+          <SignalBadge label={t('command.signal')} tone="oxide" className="justify-self-start sm:justify-self-end" />
         </div>
 
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(440px,0.98fr)] lg:gap-16">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(500px,1.08fr)] lg:gap-14 xl:gap-18">
           <div>
             <p className="mono-label mb-4 text-sea-bright">{t('sectionLabel')}</p>
 
-            <h1 className="max-w-2xl text-balance text-display-xl text-ink">
+            <h1 className="max-w-2xl text-balance text-display-lg text-ink md:text-display-xl">
               {t('title1')}{' '}
               <span className="text-sea-bright">{t('title2')}</span>
             </h1>
@@ -331,17 +350,30 @@ export async function HeroSection({ locale }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="relative min-w-0" aria-label="Miniature website systems preview">
-            <div className="pointer-events-none absolute -right-16 top-8 hidden size-72 bl-radar opacity-60 lg:block" aria-hidden="true" />
-            <div className="relative space-y-3">
-              <HotelBookingFrame />
-              <ClinicTrustFrame />
-              <BeautyAppointmentFrame />
-            </div>
-            <div className="mt-4">
-              <TechnicalPanel />
-            </div>
-          </div>
+          <HeroSystemStack
+            coordinates={t('command.coordinates')}
+            location={t('command.location')}
+            systems={{
+              hotel: {
+                title: t('systems.hotel.title'),
+                subtitle: t('systems.hotel.subtitle'),
+                sector: t('systems.hotel.sector'),
+                signal: t('signals.booking'),
+              },
+              clinic: {
+                title: t('systems.clinic.title'),
+                subtitle: t('systems.clinic.subtitle'),
+                sector: t('systems.clinic.sector'),
+                signal: t('signals.trust'),
+              },
+              beauty: {
+                title: t('systems.beauty.title'),
+                subtitle: t('systems.beauty.subtitle'),
+                sector: t('systems.beauty.sector'),
+                signal: t('signals.multilingual'),
+              },
+            }}
+          />
         </div>
       </div>
     </section>

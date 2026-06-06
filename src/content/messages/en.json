@@ -68,7 +68,35 @@
     "meta_services": "Direct booking / Local SEO / Multilingual UX",
     "feature_direction": "Feature direction",
     "issue": "Issue 01",
-    "appointment_flow": "Appointment flow"
+    "appointment_flow": "Appointment flow",
+    "command": {
+      "coordinates": "41.6168° N / 41.6367° E",
+      "location": "Batumi / Adjara",
+      "signal": "Signal: booking-first websites"
+    },
+    "signals": {
+      "booking": "Booking signal",
+      "trust": "Trust signal",
+      "localSeo": "Local SEO signal",
+      "multilingual": "Multilingual signal"
+    },
+    "systems": {
+      "hotel": {
+        "title": "Hotel Direct Booking System",
+        "subtitle": "A booking-first hotel site with language routes and direct inquiry flow.",
+        "sector": "Hospitality"
+      },
+      "clinic": {
+        "title": "Clinic Trust System",
+        "subtitle": "A clinic website structure for treatments, doctors, intake, and patient questions.",
+        "sector": "Medical"
+      },
+      "beauty": {
+        "title": "Beauty Appointment System",
+        "subtitle": "A service menu, gallery, and appointment path for studios with social traffic.",
+        "sector": "Beauty"
+      }
+    }
   },
   "sectors": {
     "heading": "Sector solutions",
@@ -1682,10 +1710,17 @@
     "sectionLabel": "Website systems gallery.",
     "heading": "Example systems, not fake case studies",
     "subtitle": "Three sector directions showing screens, flows, and modules a real build can start from.",
+    "disclosure": "Concept systems until real client proof is added.",
     "conversionLabel": "Conversion goal",
+    "modulesLabel": "Modules",
     "viewGallery": "View website systems",
     "viewLink": "View system",
     "moreNote": "These previews are concept systems and studio prototypes. They do not claim client results, testimonials, or metrics.",
+    "footer": {
+      "signal": "Signal",
+      "system": "System",
+      "output": "Output"
+    },
     "proof": {
       "items": [
         "Currently accepting selected projects in Batumi.",
@@ -1699,7 +1734,7 @@
       "hospitality": {
         "label": "Concept system",
         "vertical": "Hospitality",
-        "title": "Hotel Direct Booking System",
+        "title": "Hospitality Signal System",
         "problem": "A direct site has to make rooms, location, policies, and booking value easier to trust than an OTA listing.",
         "conversion": "Direct booking request",
         "result": "Booking flow blueprint",
@@ -1712,7 +1747,7 @@
       "medical": {
         "label": "Example build",
         "vertical": "Medical",
-        "title": "Clinic Trust & Treatment System",
+        "title": "Clinic Trust System",
         "problem": "Patients need treatment clarity, doctor credibility, and language support before they request a consultation.",
         "conversion": "Consultation request",
         "result": "Patient inquiry structure",
