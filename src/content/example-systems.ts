@@ -18,82 +18,146 @@ export type ExampleSystem = {
     alt: string;
   };
   fallbackVisual: 'hotel-booking' | 'clinic-trust' | 'beauty-booking';
+  detail: {
+    problemFocus: string[];
+    solutionFocus: string[];
+    demonstrates: string[];
+    screenshots: Array<{
+      src: string;
+      device: 'desktop' | 'tablet' | 'mobile';
+      label: string;
+    }>;
+  };
 };
 
 export const exampleSystems: ExampleSystem[] = [
   {
-    slug: 'hotel-direct-booking-system',
-    title: 'Hotel Direct Booking System',
-    vertical: 'hospitality',
-    status: 'concept',
-    disclosure: 'Concept system prepared as a booking-first website architecture. Not presented as client work.',
-    summary:
-      'A hotel website system designed to move guests from room comparison into a direct booking path with multilingual content and location trust.',
-    problem:
-      'Guests compare hotels quickly and often return to OTA platforms when the direct website does not make rooms, policies, location, and booking value clear.',
-    solution:
-      'Structure rooms, rates, policies, language routes, local proof, and a direct booking CTA into one clear decision path.',
-    modules: [
-      'Room comparison cards',
-      'Direct booking route',
-      'Policy and amenity strip',
-      'Location trust panel',
-    ],
-    technical: [
-      'Next.js route architecture',
-      'Hotel structured data',
-      'Performance budget for media-heavy pages',
-    ],
-    fallbackVisual: 'hotel-booking',
-  },
-  {
-    slug: 'clinic-trust-website',
-    title: 'Clinic Trust Website',
-    vertical: 'medical',
-    status: 'concept',
-    disclosure: 'Concept system prepared as a trust-first clinic website architecture. Not presented as client work.',
-    summary:
-      'A clinic website system that connects treatment clarity, doctor credibility, FAQs, and consultation requests.',
-    problem:
-      'Patients need treatment details, safety signals, doctor credibility, language support, and next steps before they feel ready to contact a clinic.',
-    solution:
-      'Place treatment pages, doctor profiles, intake prompts, and trust proof close to the consultation path.',
-    modules: [
-      'Treatment category pages',
-      'Doctor profile rows',
-      'FAQ and safety panel',
-      'Consultation request flow',
-    ],
-    technical: [
-      'Medical schema basics',
-      'Accessible intake form flow',
-      'Localized route structure',
-    ],
-    fallbackVisual: 'clinic-trust',
-  },
-  {
-    slug: 'beauty-appointment-website',
-    title: 'Beauty Appointment Website',
+    slug: 'silk-beauty-salon',
+    title: 'Silk Beauty Salon',
     vertical: 'beauty',
-    status: 'concept',
-    disclosure: 'Concept system prepared as an appointment-first beauty website architecture. Not presented as client work.',
+    status: 'internal-build',
+    disclosure:
+      'Internal build used as an example website system. It is not presented as paid work, testimonial-backed work, or a published business result.',
     summary:
-      'A beauty studio website system that turns social and search interest into service-specific appointment requests.',
+      'A multilingual beauty salon website system for treatments, appointments, service discovery, and international visitors in Batumi.',
     problem:
-      'Social traffic creates attention, but visitors often cannot compare services, price context, time, availability, or visual proof in one structured place.',
+      'Beauty and aesthetic businesses often depend too much on Instagram or messaging alone. Visitors need clear treatment information, trust signals, service navigation, and an appointment path before they contact the salon.',
     solution:
-      'Organize services, price/time context, gallery proof, promotions, and booking prompts into a clear appointment route.',
+      'A structured salon website with multilingual routes, treatment content, appointment-oriented UX, contact flow, and a professional service presentation.',
     modules: [
-      'Service menu grid',
-      'Price and time context',
-      'Gallery proof strip',
-      'Appointment request route',
+      'Treatment and service discovery',
+      'Appointment / booking path',
+      'Multilingual visitor structure',
+      'Trust and contact sections',
+      'Mobile-first salon browsing',
     ],
     technical: [
-      'Booking route pattern',
-      'Image optimization layer',
-      'Local service schema',
+      'Next.js App Router',
+      'TypeScript',
+      'next-intl multilingual routing',
+      'Prisma-backed data model',
+      'Resend email integration',
+      'Playwright / accessibility testing structure',
     ],
+    repoUrl: 'https://github.com/jytsma-wq/silk-beauty-salon',
+    screenshot: {
+      desktop: '/work/silk-beauty-salon/desktop-home.png',
+      mobile: '/work/silk-beauty-salon/mobile-home.png',
+      alt: 'Silk Beauty Salon homepage interface shown as a beauty appointment website example',
+    },
     fallbackVisual: 'beauty-booking',
+    detail: {
+      problemFocus: [
+        'Treatment information clarity',
+        'Appointment path',
+        'Multilingual visitors',
+        'Trust before enquiry',
+        'Mobile service browsing',
+      ],
+      solutionFocus: [
+        'Beauty appointment system',
+        'Treatment/service discovery',
+        'International visitor structure',
+        'Contact and booking UX',
+        'Multilingual content support',
+      ],
+      demonstrates: [
+        'How a salon can move beyond social-only discovery into a structured service website.',
+        'How appointment intent can sit close to treatment information and trust signals.',
+        'How multilingual routes support visitors who need clarity before contacting the studio.',
+        'How a mobile-first service path can make treatments easier to compare and request.',
+      ],
+      screenshots: [
+        { src: '/work/silk-beauty-salon/desktop-home.png', device: 'desktop', label: 'Homepage desktop' },
+        { src: '/work/silk-beauty-salon/mobile-home.png', device: 'mobile', label: 'Homepage mobile' },
+        { src: '/work/silk-beauty-salon/desktop-services.png', device: 'desktop', label: 'Services desktop' },
+        { src: '/work/silk-beauty-salon/mobile-booking.png', device: 'mobile', label: 'Booking mobile' },
+      ],
+    },
+  },
+  {
+    slug: 'grand-boutique-hotel',
+    title: 'Grand Boutique Hotel',
+    vertical: 'hospitality',
+    status: 'internal-build',
+    disclosure:
+      'Internal build used as an example website system. It is not presented as paid work, testimonial-backed work, or a published business result.',
+    summary:
+      'A boutique hotel website system for room discovery, direct booking intent, local trust, and multilingual hospitality presentation.',
+    problem:
+      'Hotels and guesthouses lose direct-booking opportunities when the website does not clearly show rooms, location, policies, trust signals, and a direct enquiry or booking path.',
+    solution:
+      'A hospitality website system with room-focused UX, booking-oriented calls to action, local search structure, content management support, and technical foundations for growth.',
+    modules: [
+      'Room and offer presentation',
+      'Direct booking / enquiry path',
+      'Location and trust sections',
+      'Hotel content management layer',
+      'Mobile-first guest journey',
+    ],
+    technical: [
+      'Next.js App Router',
+      'TypeScript',
+      'next-intl multilingual routing',
+      'Prisma-backed data model',
+      'Sanity content tooling',
+      'Resend email integration',
+      'React Day Picker booking UI support',
+    ],
+    repoUrl: 'https://github.com/jytsma-wq/Grand-boutique-hotel',
+    screenshot: {
+      desktop: '/work/grand-boutique-hotel/desktop-home.png',
+      mobile: '/work/grand-boutique-hotel/mobile-home.png',
+      alt: 'Grand Boutique Hotel homepage interface shown as a direct-booking hospitality website example',
+    },
+    fallbackVisual: 'hotel-booking',
+    detail: {
+      problemFocus: [
+        'Direct booking friction',
+        'Room and offer clarity',
+        'Location trust',
+        'Guest journey on mobile',
+        'OTA dependency',
+      ],
+      solutionFocus: [
+        'Hotel direct-booking presentation',
+        'Room/offer modules',
+        'Enquiry or booking path',
+        'Location and trust content',
+        'Content management support',
+      ],
+      demonstrates: [
+        'How a boutique hotel can make rooms and offers easier to evaluate before enquiry.',
+        'How direct-booking intent can be supported without pretending to replace every hotel system.',
+        'How location, trust content, and mobile navigation reduce friction for guests.',
+        'How content tooling can support seasonal room, offer, and hospitality updates.',
+      ],
+      screenshots: [
+        { src: '/work/grand-boutique-hotel/desktop-home.png', device: 'desktop', label: 'Homepage desktop' },
+        { src: '/work/grand-boutique-hotel/mobile-home.png', device: 'mobile', label: 'Homepage mobile' },
+        { src: '/work/grand-boutique-hotel/desktop-rooms.png', device: 'desktop', label: 'Rooms desktop' },
+        { src: '/work/grand-boutique-hotel/mobile-booking.png', device: 'mobile', label: 'Booking mobile' },
+      ],
+    },
   },
 ];

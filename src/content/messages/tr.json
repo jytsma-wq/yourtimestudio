@@ -1535,7 +1535,7 @@
   },
   "workPage": {
     "heading": "Oteller, klinikler ve stüdyolar için web sitesi sistemleri.",
-    "subtitle": "Gerçek müşteri örnekleri yayınlanmadan önce stüdyo yöntemini gösteren konsept sistemler ve seçilmiş yönler.",
+    "subtitle": "Uydurma kanıt veya performans iddiası olmadan stüdyo yöntemini gösteren iç build'ler ve seçilmiş sistemler.",
     "comingSoon": "Konsept sistem",
     "items": [
       {
@@ -1557,14 +1557,15 @@
     "hero": {
       "eyebrow": "Web Sitesi Sistemleri Galerisi",
       "title": "Oteller, klinikler ve stüdyolar için web sitesi sistemleri.",
-      "subtitle": "Batumi Lighthouse tarafından yerel hizmet işletmeleri için rezervasyon odaklı web sitelerinin nasıl yapılandırıldığını gösteren konsept sistemler ve seçilmiş yönler. Uydurma müşteri, referans veya performans iddiası yok.",
+      "subtitle": "Batumi Lighthouse tarafından yerel hizmet işletmeleri için rezervasyon odaklı web sitelerinin nasıl yapılandırıldığını gösteren iç build'ler ve seçilmiş yönler. Uydurma işletme, referans veya performans iddiası yok.",
+      "internal_note": "Aksi açıkça etiketlenmedikçe bunlar örnek sistemler ve iç build'lerdir.",
       "note_label": "Prototip açıklaması",
-      "note": "Aşağıdaki örnekler konsept sistemler, örnek yapılar ve stüdyo prototipleridir. Gerçek bir müşteri çalışması yayınlanmadan önce mimariyi, modülleri ve dönüşüm mantığını gösterirler.",
-      "future_note": "Gerçek müşteri çalışmaları, isimleri, görselleri, sonuçları veya referansları yayımlamak için açık izin olduğunda daha sonra eklenebilir.",
+      "note": "Aşağıdaki örnekler iç build'ler ve stüdyo prototipleridir. Yayınlanmış iş sonuçları iddia etmeden mimariyi, modülleri ve dönüşüm mantığını gösterirler.",
+      "future_note": "Yayınlanmış işler; isimleri, görselleri, sonuçları veya referansları yayımlamak için açık izin olduğunda daha sonra eklenebilir.",
       "proof": [
         "Şu anda Batumi'de seçilmiş projeler kabul ediliyor.",
         "Kurucu liderliğinde build'ler. İş başlamadan önce net scope.",
-        "Aşağıdaki konsept sistemler stüdyo prototipleridir, sahte müşteri case study değildir."
+        "Aşağıdaki iç sistemler stüdyo örnekleridir, uydurma kanıt değildir."
       ]
     },
       "labels": {
@@ -1577,8 +1578,15 @@
       },
       "systemIndex": {
         "eyebrow": "Sistem indeksi",
-        "heading": "Final ekran görüntüleri için hazır örnek sistemler.",
-        "subtitle": "Bu kartlar gelecekteki repository, live site ve screenshot alanları için hazırlandı. Bunlar eklenene kadar her sistem boş placeholder yerine teknik fallback görseli kullanır."
+        "heading": "Arayüz ekran görüntüleri için hazır örnek sistemler.",
+        "subtitle": "Bu kartlar public repository ve screenshot alanları için hazırlandı. Yerel görüntüler eklenene kadar her sistem boş placeholder yerine teknik fallback görseli kullanır.",
+        "disclosure": "Bu örnekler web sitesi sistemlerini ve arayüz yapısını gösterir. Müşteri iddiaları ve performance sonuçları yalnızca doğrulandığında gösterilir.",
+        "cta": {
+          "eyebrow": "Build sinyali",
+          "heading": "Web siteniz için benzer bir sistem ister misiniz?",
+          "subtitle": "Odaklı bir denetimle başlayın veya benzer bir build için bağlamı gönderin. İlk adım; rezervasyonları, güveni ve yerel aramayı neyin engellediğini teşhis etmektir.",
+          "discussBuild": "Benzer build konuş"
+        }
       },
       "status": {
         "concept": "Konsept",
@@ -1607,10 +1615,13 @@
           "desktop": "Desktop",
           "tablet": "Tablet",
           "mobile": "Mobile",
-          "fallbackNote": "Screenshots şimdilik eksik. Üretilen sistem görseli, yerel görüntüler eklenene kadar sayfayı kullanılabilir tutar."
+          "fallbackNote": "Screenshots şimdilik eksik. Üretilen sistem görseli, yerel görüntüler eklenene kadar sayfayı kullanılabilir tutar.",
+          "captureLabel": "Screenshots capture sonrası eklenebilir."
         },
         "routeArchitecture": "Route architecture",
+        "technicalBuild": "Technical build",
         "technicalDelivery": "Technical delivery",
+        "whatThisDemonstrates": "Bu neyi gösterir",
         "delivery": {
           "nextjs": {
             "title": "Next.js",
@@ -1635,6 +1646,9 @@
         },
         "externalLinks": "Yayınlanmış linkler",
         "noPublishedLinks": "Live site ve repository linkleri doğrulanıp yayına hazır olduğunda burada görünecek.",
+        "auditCtaEyebrow": "Web sitesi sinyali",
+        "auditCtaHeading": "Web sitenizde bu düzeyde yapı ister misiniz?",
+        "auditCtaSubtitle": "Odaklı bir denetimle başlayın. İnceleme; rezervasyonları, güveni, yerel aramayı ve sonraki pratik build kararını neyin engellediğini bulur.",
         "requestAudit": "Web sitesi denetimi talep edin",
         "contact": "İletişim"
       },
@@ -1744,6 +1758,28 @@
       "project": "Projeye başla"
     }
   },
+  "work": {
+    "status": {
+      "concept": "Konsept",
+      "internalBuild": "İç build",
+      "clientBuild": "Müşteri build"
+    },
+    "actions": {
+      "viewSystem": "Sistemi görüntüle",
+      "viewRepository": "Repository görüntüle",
+      "viewLiveSite": "Live site görüntüle",
+      "screenshotsComingSoon": "Screenshots yakında eklenecek"
+    },
+    "labels": {
+      "problem": "İş problemi",
+      "solution": "Sistem çözümü",
+      "modules": "Temel modüller",
+      "technical": "Teknik katman",
+      "repository": "Repository",
+      "liveSite": "Live site",
+      "exampleSystem": "Örnek sistem"
+    }
+  },
   "insightsPage": {
     "heading": "İçgörüler yalnızca gerçek rehberlerle yayınlanacak",
     "subtitle": "Makale arşivi, tamamlanmış ve faydalı yazılar hazır olana kadar herkese açık değildir. Şimdilik en pratik sonraki adım; güveni, arama görünürlüğünü ve rezervasyonları neyin engellediğini gösteren manuel web sitesi denetimidir.",
@@ -1796,14 +1832,14 @@
   },
   "caseStudies": {
     "sectionLabel": "Web sitesi sistemleri galerisi.",
-    "heading": "Örnek sistemler, uydurma vaka çalışmaları değil",
-    "subtitle": "Gerçek bir yapının başlayabileceği ekranları, akışları ve modülleri gösteren üç sektör yönü.",
-    "disclosure": "Gerçek müşteri kanıtı eklenene kadar konsept sistemler.",
+    "heading": "Örnek sistemler, uydurma kanıt değil",
+    "subtitle": "Gerçek bir yapının başlayabileceği ekranları, akışları ve modülleri gösteren sektör yönleri.",
+    "disclosure": "Yayınlanabilir kanıt hazır olana kadar iç örnekler ve konsept sistemler.",
     "conversionLabel": "Dönüşüm hedefi",
     "modulesLabel": "Modüller",
     "viewGallery": "Web sitesi sistemlerini görüntüle",
     "viewLink": "Sistemi görüntüle",
-    "moreNote": "Bu önizlemeler konsept sistemler ve stüdyo prototipleridir. Müşteri sonucu, referans veya metrik iddia etmezler.",
+    "moreNote": "Bu önizlemeler iç örnekler ve stüdyo prototipleridir. Sonuç, referans veya metrik iddia etmezler.",
     "footer": {
       "signal": "Sinyal",
       "system": "Sistem",
@@ -1813,7 +1849,7 @@
       "items": [
         "Şu anda Batumi'de seçilmiş projeler kabul ediliyor.",
         "Kurucu liderliğinde build'ler. İş başlamadan önce net scope.",
-        "Aşağıdaki konsept sistemler stüdyo prototipleridir, sahte müşteri case study değildir."
+        "Aşağıdaki iç sistemler stüdyo örnekleridir, uydurma kanıt değildir."
       ]
     },
     "discussProject": "Benzer bir projeyi konuş",

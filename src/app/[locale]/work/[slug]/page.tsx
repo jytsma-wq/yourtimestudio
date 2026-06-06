@@ -1,6 +1,5 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
@@ -19,20 +18,23 @@ import {
   Stethoscope,
   type LucideIcon,
 } from 'lucide-react';
+import { NavigationChart, SignalBadge } from '@/components/brand';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
-import { ExampleSystemVisual } from '@/components/work/ExampleSystemVisual';
+import { ExampleSystemFallbackVisual, ExampleSystemVisual } from '@/components/work/ExampleSystemVisual';
+import { ScreenshotFrame } from '@/components/work/ScreenshotFrame';
 import { exampleSystems, type ExampleSystem } from '@/content/example-systems';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { Link } from '@/lib/i18n/navigation';
 import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
+import { publicWorkAssetExists } from '@/lib/work-screenshots';
 import { cn } from '@/lib/utils';
 
 type SystemStyle = CSSProperties & {
   '--system-color': string;
 };
 
-type ScreenshotKey = 'desktop' | 'tablet' | 'mobile';
+type DetailScreenshot = ExampleSystem['detail']['screenshots'][number];
 
 const statusLabelKeys: Record<ExampleSystem['status'], 'concept' | 'internalBuild' | 'clientBuild'> = {
   concept: 'concept',
@@ -95,13 +97,13 @@ function getExampleSystem(slug: string): ExampleSystem | undefined {
   return exampleSystems.find((system) => system.slug === slug);
 }
 
-function getScreenshots(system: ExampleSystem): Array<{ key: ScreenshotKey; src: string }> {
-  return ([
-    { key: 'desktop', src: system.screenshot?.desktop },
-    { key: 'mobile', src: system.screenshot?.mobile },
-    { key: 'tablet', src: system.screenshot?.tablet },
-  ] as Array<{ key: ScreenshotKey; src?: string }>)
-    .filter((screenshot): screenshot is { key: ScreenshotKey; src: string } => Boolean(screenshot.src));
+function getAvailableDetailScreenshots(system: ExampleSystem): DetailScreenshot[] {
+  return system.detail.screenshots.filter((screenshot) => publicWorkAssetExists(screenshot.src));
+}
+
+function getHeroDesktopScreenshot(system: ExampleSystem): string | undefined {
+  const desktopScreenshot = system.screenshot?.desktop;
+  return publicWorkAssetExists(desktopScreenshot) ? desktopScreenshot : undefined;
 }
 
 export function generateStaticParams() {
@@ -125,12 +127,14 @@ export async function generateMetadata({
     notFound();
   }
 
+  const screenshotOgImage = getHeroDesktopScreenshot(system);
+
   return generatePageMetadata({
     title: `${system.title} | Website System Example`,
     description: system.summary,
     path: `/work/${system.slug}`,
     locale: locale as Locale,
-    ogImage: pageOgImages.work,
+    ogImage: screenshotOgImage ?? pageOgImages.work,
   });
 }
 
@@ -143,90 +147,77 @@ function ScreenshotGallery({
   system: ExampleSystem;
   t: Awaited<ReturnType<typeof getTranslations>>;
 }) {
-  const screenshots = getScreenshots(system);
+  const screenshots = getAvailableDetailScreenshots(system);
 
-  if (!system.screenshot || screenshots.length === 0) {
+  if (screenshots.length === 0) {
     return (
       <div className="rounded-md border border-hairline bg-surface p-4 md:p-6">
         <ExampleSystemVisual
           screenshotsComingSoon={screenshotsComingSoon}
+          showMissingLabel={false}
           system={system}
           variant="card"
         />
-        <p className="mt-4 text-body-sm leading-[1.75] text-muted">
-          {t('detail.screenshots.fallbackNote')}
+        <p className="mt-4 inline-flex rounded-sm border border-hairline bg-canvas px-3 py-2 font-mono text-[11px] font-semibold text-muted">
+          {t('detail.screenshots.captureLabel')}
         </p>
       </div>
     );
   }
 
-  const screenshotAlt = system.screenshot.alt;
-  const desktop = screenshots.find((screenshot) => screenshot.key === 'desktop');
-  const mobile = screenshots.find((screenshot) => screenshot.key === 'mobile');
-  const remaining = screenshots.filter((screenshot) => screenshot.key !== 'desktop' && screenshot.key !== 'mobile');
+  const screenshotAlt = system.screenshot?.alt ?? `${system.title} website system screenshot`;
 
   return (
-    <div className="space-y-4">
-      {(desktop || mobile) && (
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(180px,0.34fr)]">
-          {desktop && (
-            <ScreenshotFrame
-              alt={screenshotAlt}
-              label={t('detail.screenshots.desktop')}
-              screenshot={desktop}
-            />
-          )}
-          {mobile && (
-            <ScreenshotFrame
-              alt={screenshotAlt}
-              label={t('detail.screenshots.mobile')}
-              screenshot={mobile}
-            />
-          )}
-        </div>
-      )}
-      {remaining.length > 0 && (
-        <div className="grid gap-4 md:grid-cols-2">
-          {remaining.map((screenshot) => (
-            <ScreenshotFrame
-              key={screenshot.key}
-              alt={screenshotAlt}
-              label={t(`detail.screenshots.${screenshot.key}`)}
-              screenshot={screenshot}
-            />
-          ))}
-        </div>
-      )}
+    <div className="grid gap-4 md:grid-cols-2">
+      {screenshots.map((screenshot) => (
+        <ScreenshotFrame
+          key={screenshot.src}
+          alt={`${screenshotAlt} - ${screenshot.label}`}
+          device={screenshot.device}
+          fallback={<ExampleSystemFallbackVisual fallbackVisual={system.fallbackVisual} />}
+          label={screenshot.label}
+          src={screenshot.src}
+        />
+      ))}
     </div>
   );
 }
 
-function ScreenshotFrame({
-  alt,
-  label,
-  screenshot,
+function MainVisual({
+  screenshotsCanBeAdded,
+  system,
 }: {
-  alt: string;
-  label: string;
-  screenshot: { key: ScreenshotKey; src: string };
+  screenshotsCanBeAdded: string;
+  system: ExampleSystem;
 }) {
-  const isMobile = screenshot.key === 'mobile';
+  const desktopScreenshot = getHeroDesktopScreenshot(system);
+
+  if (desktopScreenshot && system.screenshot) {
+    return (
+      <ScreenshotFrame
+        alt={system.screenshot.alt}
+        device="desktop"
+        fallback={<ExampleSystemFallbackVisual fallbackVisual={system.fallbackVisual} />}
+        label={system.title}
+        priority
+        src={desktopScreenshot}
+      />
+    );
+  }
 
   return (
-    <figure className="rounded-md border border-hairline bg-surface p-3">
-      <div className={cn('relative overflow-hidden rounded border border-hairline bg-canvas', isMobile ? 'aspect-[9/16]' : 'aspect-[16/10]')}>
-        <Image
-          src={screenshot.src}
-          alt={`${alt} - ${label}`}
-          fill
-          sizes={isMobile ? '(min-width: 1024px) 22vw, 80vw' : '(min-width: 1024px) 60vw, 100vw'}
-          className="object-cover object-top"
-        />
-      </div>
-      <figcaption className="mt-3 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
-        {label}
-      </figcaption>
-    </figure>
+    <div>
+      <ExampleSystemVisual
+        imagePriority
+        screenshotsComingSoon={screenshotsCanBeAdded}
+        showMissingLabel={false}
+        system={system}
+        variant="hero"
+      />
+      <p className="mt-3 inline-flex rounded-sm border border-hairline bg-surface px-3 py-2 font-mono text-[11px] font-semibold text-muted">
+        {screenshotsCanBeAdded}
+      </p>
+    </div>
   );
 }
 
@@ -248,7 +239,6 @@ export default async function ExampleSystemDetailPage({
   const tNav = await getTranslations('nav');
   const vertical = verticalMeta[system.vertical];
   const VerticalIcon = vertical.icon;
-  const hasExternalLinks = Boolean(system.liveUrl || system.repoUrl);
   const routes = routeArchitecture[system.fallbackVisual];
 
   return (
@@ -257,7 +247,7 @@ export default async function ExampleSystemDetailPage({
         className="relative isolate overflow-hidden px-[var(--container-padding)] py-12 md:py-18 lg:py-20"
         style={{ '--system-color': vertical.color } as SystemStyle}
       >
-        <div className="pointer-events-none absolute inset-0 bl-navigation-chart opacity-25" aria-hidden="true" />
+        <NavigationChart variant="section" className="!absolute opacity-[0.25]" />
         <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">
           <Breadcrumbs
@@ -289,16 +279,35 @@ export default async function ExampleSystemDetailPage({
               <div className="mt-6 rounded-md border border-hairline bg-surface px-4 py-3 text-body-sm leading-[1.75] text-muted">
                 <span className="font-semibold text-ink">{t('detail.disclosure')}:</span> {system.disclosure}
               </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {system.repoUrl && (
+                  <a
+                    href={system.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md border border-hairline bg-surface px-4 py-3 text-sm font-semibold text-ink transition-colors hover:border-sea-bright hover:text-sea-bright"
+                  >
+                    <FileCode2 className="size-4" aria-hidden="true" />
+                    {t('viewRepository')}
+                    <ExternalLink className="size-4" aria-hidden="true" />
+                  </a>
+                )}
+                {system.liveUrl && (
+                  <a
+                    href={system.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md border border-oxide/45 bg-oxide/15 px-4 py-3 text-sm font-semibold text-ink transition-colors hover:bg-oxide hover:text-white"
+                  >
+                    <Globe2 className="size-4" aria-hidden="true" />
+                    {t('viewLiveSite')}
+                    <ExternalLink className="size-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </div>
 
-            <ExampleSystemVisual
-              imagePriority
-              screenshotsComingSoon={t('screenshotsComingSoon')}
-              showMissingLabel={false}
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              system={system}
-              variant="hero"
-            />
+            <MainVisual screenshotsCanBeAdded={t('detail.screenshots.captureLabel')} system={system} />
           </div>
         </div>
       </section>
@@ -337,10 +346,26 @@ export default async function ExampleSystemDetailPage({
             <div className="rounded-md border border-hairline bg-surface p-5">
               <p className="mono-label mb-4 text-muted">{t('labels.problem')}</p>
               <p className="text-body-sm leading-[1.75] text-ink">{system.problem}</p>
+              <ul className="mt-4 space-y-2 border-t border-hairline pt-4">
+                {system.detail.problemFocus.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="rounded-md border border-hairline bg-surface p-5">
               <p className="mono-label mb-4 text-muted">{t('labels.solution')}</p>
               <p className="text-body-sm leading-[1.75] text-ink">{system.solution}</p>
+              <ul className="mt-4 space-y-2 border-t border-hairline pt-4">
+                {system.detail.solutionFocus.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="rounded-md border border-hairline bg-surface p-5">
               <p className="mono-label mb-4 text-muted">{t('labels.modules')}</p>
@@ -354,7 +379,7 @@ export default async function ExampleSystemDetailPage({
               </ul>
             </div>
             <div className="rounded-md border border-hairline bg-surface p-5">
-              <p className="mono-label mb-4 text-muted">{t('labels.technical')}</p>
+              <p className="mono-label mb-4 text-muted">{t('detail.technicalBuild')}</p>
               <div className="flex flex-wrap gap-2">
                 {system.technical.map((item) => (
                   <span key={item} className="rounded-md border border-hairline bg-canvas px-2.5 py-1 font-mono text-[11px] font-semibold text-sea-bright">
@@ -386,9 +411,22 @@ export default async function ExampleSystemDetailPage({
         <div className="mx-auto grid max-w-[var(--container-max-width)] gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-md border border-hairline bg-surface p-5 md:p-6">
             <div className="mb-5 flex items-center gap-3">
-              <GitBranch className="size-5 text-sea-bright" aria-hidden="true" />
-              <h2 className="text-heading-md text-ink">{t('detail.routeArchitecture')}</h2>
+              <Layers3 className="size-5 text-sea-bright" aria-hidden="true" />
+              <h2 className="text-heading-md text-ink">{t('detail.whatThisDemonstrates')}</h2>
             </div>
+            <ul className="space-y-3">
+              {system.detail.demonstrates.map((item) => (
+                <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 border-t border-hairline pt-5">
+              <div className="mb-4 flex items-center gap-2">
+                <GitBranch className="size-4 text-sea-bright" aria-hidden="true" />
+                <p className="mono-label text-muted">{t('detail.routeArchitecture')}</p>
+              </div>
             <div className="space-y-2">
               {routes.map((route, index) => (
                 <div key={route} className="flex items-center gap-3 rounded-md border border-hairline bg-canvas px-3 py-2">
@@ -396,6 +434,7 @@ export default async function ExampleSystemDetailPage({
                   <code className="font-mono text-sm font-semibold text-ink">{route}</code>
                 </div>
               ))}
+            </div>
             </div>
           </div>
 
@@ -423,37 +462,9 @@ export default async function ExampleSystemDetailPage({
       <section className="border-t border-hairline bg-canvas-soft px-[var(--container-padding)] py-14 md:py-20">
         <div className="mx-auto grid max-w-[var(--container-max-width)] gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
           <div>
-            <p className="mono-label mb-4 text-sea-bright">{t('detail.externalLinks')}</p>
-            {hasExternalLinks ? (
-              <div className="flex flex-wrap gap-3">
-                {system.liveUrl && (
-                  <a
-                    href={system.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md border border-oxide/45 bg-oxide/15 px-4 py-3 text-sm font-semibold text-ink transition-colors hover:bg-oxide hover:text-white"
-                  >
-                    <Globe2 className="size-4" aria-hidden="true" />
-                    {t('viewLiveSite')}
-                    <ExternalLink className="size-4" aria-hidden="true" />
-                  </a>
-                )}
-                {system.repoUrl && (
-                  <a
-                    href={system.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md border border-hairline bg-canvas px-4 py-3 text-sm font-semibold text-ink transition-colors hover:border-sea-bright hover:text-sea-bright"
-                  >
-                    <FileCode2 className="size-4" aria-hidden="true" />
-                    {t('viewRepository')}
-                    <ExternalLink className="size-4" aria-hidden="true" />
-                  </a>
-                )}
-              </div>
-            ) : (
-              <p className="max-w-xl text-body-sm leading-[1.75] text-muted">{t('detail.noPublishedLinks')}</p>
-            )}
+            <SignalBadge label={t('detail.auditCtaEyebrow')} tone="sea" />
+            <h2 className="mt-4 text-heading-lg text-ink">{t('detail.auditCtaHeading')}</h2>
+            <p className="mt-4 max-w-2xl text-body-lg leading-[1.75] text-muted">{t('detail.auditCtaSubtitle')}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button

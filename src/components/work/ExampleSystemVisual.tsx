@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react';
-import Image from 'next/image';
 import {
   BedDouble,
   CalendarDays,
   Languages,
   MapPin,
-  Monitor,
   ShieldCheck,
   Sparkles,
   Stethoscope,
 } from 'lucide-react';
 import type { ExampleSystem } from '@/content/example-systems';
+import { getPrimaryExampleScreenshot } from '@/lib/work-screenshots';
 import { cn } from '@/lib/utils';
+import { ScreenshotFrame } from './ScreenshotFrame';
 
 type ExampleSystemVisualVariant = 'card' | 'hero';
 
@@ -20,14 +20,13 @@ interface ExampleSystemVisualProps {
   imagePriority?: boolean;
   screenshotsComingSoon: string;
   showMissingLabel?: boolean;
-  sizes?: string;
   system: ExampleSystem;
   variant?: ExampleSystemVisualVariant;
 }
 
 const imageFrameClasses: Record<ExampleSystemVisualVariant, string> = {
-  card: 'aspect-[16/10]',
-  hero: 'min-h-[22rem] md:min-h-[30rem]',
+  card: '',
+  hero: '',
 };
 
 function BrowserChrome({
@@ -210,39 +209,20 @@ export function ExampleSystemVisual({
   imagePriority = false,
   screenshotsComingSoon,
   showMissingLabel = true,
-  sizes = '(min-width: 1024px) 50vw, 100vw',
   system,
   variant = 'card',
 }: ExampleSystemVisualProps) {
-  const screenshotSrc = system.screenshot?.desktop ?? system.screenshot?.tablet ?? system.screenshot?.mobile;
-
-  if (screenshotSrc && system.screenshot) {
-    return (
-      <div className={cn('relative overflow-hidden rounded-md border border-hairline bg-canvas shadow-premium-lg', imageFrameClasses[variant], className)}>
-        <Image
-          src={screenshotSrc}
-          alt={system.screenshot.alt}
-          fill
-          priority={imagePriority}
-          sizes={sizes}
-          className="object-cover object-top"
-        />
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" aria-hidden="true" />
-      </div>
-    );
-  }
+  const screenshotSrc = getPrimaryExampleScreenshot(system);
 
   return (
-    <div className={className}>
-      <ExampleSystemFallbackVisual fallbackVisual={system.fallbackVisual} />
-      {showMissingLabel && (
-        <div className="mt-3 flex items-center gap-2 rounded-md border border-hairline bg-canvas px-3 py-2">
-          <Monitor className="size-4 shrink-0 text-sea-bright" aria-hidden="true" />
-          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
-            {screenshotsComingSoon}
-          </span>
-        </div>
-      )}
-    </div>
+    <ScreenshotFrame
+      alt={system.screenshot?.alt ?? `${system.title} interface preview`}
+      className={cn(imageFrameClasses[variant], className)}
+      device="desktop"
+      fallback={<ExampleSystemFallbackVisual fallbackVisual={system.fallbackVisual} />}
+      label={screenshotSrc ? system.title : showMissingLabel ? screenshotsComingSoon : undefined}
+      priority={imagePriority}
+      src={screenshotSrc}
+    />
   );
 }

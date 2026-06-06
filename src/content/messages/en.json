@@ -1531,7 +1531,7 @@
   },
   "workPage": {
     "heading": "Website systems for hotels, clinics, and studios.",
-    "subtitle": "Concept systems and selected directions showing the studio method before real client case studies are ready to publish.",
+    "subtitle": "Internal builds and selected systems showing the studio method without fabricated proof or performance claims.",
     "comingSoon": "Concept system",
     "items": [
       {
@@ -1553,14 +1553,15 @@
     "hero": {
       "eyebrow": "Website Systems Gallery",
       "title": "Website systems for hotels, clinics, and studios.",
-      "subtitle": "Concept systems and selected directions showing how Batumi Lighthouse structures booking-first websites for local service businesses. No fabricated clients, testimonials, or performance claims.",
+      "subtitle": "Internal builds and selected directions showing how Batumi Lighthouse structures booking-first websites for local service businesses. No fabricated businesses, testimonials, or performance claims.",
+      "internal_note": "Example systems and internal builds unless a project is explicitly labelled otherwise.",
       "note_label": "Prototype disclosure",
-      "note": "The examples below are concept systems, example builds, and studio prototypes. They show architecture, modules, and conversion logic before a real client case study is ready to publish.",
-      "future_note": "Real client work can be added later when there is explicit permission to publish names, visuals, results, or testimonials.",
+      "note": "The examples below are internal builds and studio prototypes. They show architecture, modules, and conversion logic without claiming published business outcomes.",
+      "future_note": "Published work can be added later when there is explicit permission to publish names, visuals, results, or testimonials.",
       "proof": [
         "Currently accepting selected projects in Batumi.",
         "Founder-led builds. Clear scope before work starts.",
-        "Concept systems shown below are studio prototypes, not fake client case studies."
+        "Internal systems shown below are studio examples, not fabricated proof."
       ]
     },
       "labels": {
@@ -1573,8 +1574,15 @@
       },
       "systemIndex": {
         "eyebrow": "System index",
-        "heading": "Example systems ready for finished screenshots.",
-        "subtitle": "These cards are wired for future repository, live site, and screenshot fields. Until those are added, each system uses a technical fallback visual instead of an empty placeholder."
+        "heading": "Example systems ready for interface screenshots.",
+        "subtitle": "These cards are wired for public repository and screenshot fields. Until local captures are added, each system uses a technical fallback visual instead of an empty placeholder.",
+        "disclosure": "These examples show website systems and interface structure. Client claims and performance results are only shown when verified.",
+        "cta": {
+          "eyebrow": "Build signal",
+          "heading": "Want a similar system for your website?",
+          "subtitle": "Start with a focused audit or send the context for a similar build. The first step is diagnosing what blocks bookings, trust, and local search.",
+          "discussBuild": "Discuss a similar build"
+        }
       },
       "status": {
         "concept": "Concept",
@@ -1603,10 +1611,13 @@
           "desktop": "Desktop",
           "tablet": "Tablet",
           "mobile": "Mobile",
-          "fallbackNote": "Screenshots are missing for now. The generated system visual keeps the page usable until local captures are added."
+          "fallbackNote": "Screenshots are missing for now. The generated system visual keeps the page usable until local captures are added.",
+          "captureLabel": "Screenshots can be added after capture."
         },
         "routeArchitecture": "Route architecture",
+        "technicalBuild": "Technical build",
         "technicalDelivery": "Technical delivery",
+        "whatThisDemonstrates": "What this demonstrates",
         "delivery": {
           "nextjs": {
             "title": "Next.js",
@@ -1631,6 +1642,9 @@
         },
         "externalLinks": "Published links",
         "noPublishedLinks": "Live site and repository links will appear here after they are verified and ready to publish.",
+        "auditCtaEyebrow": "Website signal",
+        "auditCtaHeading": "Want this level of structure on your website?",
+        "auditCtaSubtitle": "Start with a focused audit. The review finds what blocks bookings, trust, local search, and the next practical build decision.",
         "requestAudit": "Request website audit",
         "contact": "Contact"
       },
@@ -1736,8 +1750,30 @@
       "eyebrow": "Start with evidence",
       "heading": "Find the system your website actually needs.",
       "subtitle": "A manual website audit shows what is blocking trust, search visibility, and booking action before a redesign is scoped.",
-      "audit": "Request a website audit",
+      "audit": "Request website audit",
       "project": "Start a project"
+    }
+  },
+  "work": {
+    "status": {
+      "concept": "Concept",
+      "internalBuild": "Internal build",
+      "clientBuild": "Client build"
+    },
+    "actions": {
+      "viewSystem": "View system",
+      "viewRepository": "View repository",
+      "viewLiveSite": "View live site",
+      "screenshotsComingSoon": "Screenshots coming soon"
+    },
+    "labels": {
+      "problem": "Business problem",
+      "solution": "System solution",
+      "modules": "Key modules",
+      "technical": "Technical layer",
+      "repository": "Repository",
+      "liveSite": "Live site",
+      "exampleSystem": "Example system"
     }
   },
   "insightsPage": {
@@ -1792,14 +1828,14 @@
   },
   "caseStudies": {
     "sectionLabel": "Website systems gallery.",
-    "heading": "Example systems, not fake case studies",
-    "subtitle": "Three sector directions showing screens, flows, and modules a real build can start from.",
-    "disclosure": "Concept systems until real client proof is added.",
+    "heading": "Example systems, not fabricated proof",
+    "subtitle": "Sector directions showing screens, flows, and modules a real build can start from.",
+    "disclosure": "Internal examples and concept systems until public proof is ready to publish.",
     "conversionLabel": "Conversion goal",
     "modulesLabel": "Modules",
     "viewGallery": "View website systems",
     "viewLink": "View system",
-    "moreNote": "These previews are concept systems and studio prototypes. They do not claim client results, testimonials, or metrics.",
+    "moreNote": "These previews are internal examples and studio prototypes. They do not claim results, testimonials, or metrics.",
     "footer": {
       "signal": "Signal",
       "system": "System",
@@ -1809,7 +1845,7 @@
       "items": [
         "Currently accepting selected projects in Batumi.",
         "Founder-led builds. Clear scope before work starts.",
-        "Concept systems shown below are studio prototypes, not fake client case studies."
+        "Internal systems shown below are studio examples, not fabricated proof."
       ]
     },
     "discussProject": "Discuss a similar project",
