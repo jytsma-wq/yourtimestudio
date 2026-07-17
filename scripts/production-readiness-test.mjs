@@ -63,8 +63,11 @@ function assertNoRawMarkers(text, label) {
 }
 
 function checkI18nParity() {
+  const localeMessages = Object.fromEntries(
+    locales.map((locale) => [locale, readJson(`${messageDir}/${locale}.json`)]),
+  );
   const messages = Object.fromEntries(
-    locales.map((locale) => [locale, flatten(readJson(`${messageDir}/${locale}.json`))]),
+    locales.map((locale) => [locale, flatten(localeMessages[locale])]),
   );
   const englishKeys = Object.keys(messages.en).sort();
 
@@ -78,6 +81,21 @@ function checkI18nParity() {
       if (typeof value === 'string') {
         assertNoRawMarkers(value, `${locale}:${key}`);
       }
+    }
+  }
+
+  const englishTemplateCatalog = flatten(localeMessages.en.templatesCatalog);
+  for (const locale of locales.filter((item) => item !== 'en')) {
+    const localizedTemplateCatalog = flatten(localeMessages[locale].templatesCatalog);
+
+    for (const [key, englishValue] of Object.entries(englishTemplateCatalog)) {
+      if (typeof englishValue !== 'string' || !englishValue.trim()) continue;
+
+      assert.notEqual(
+        localizedTemplateCatalog[key],
+        englishValue,
+        `${locale}:templatesCatalog.${key} must not fall back to English`,
+      );
     }
   }
 }
