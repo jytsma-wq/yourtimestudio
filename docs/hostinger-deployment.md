@@ -61,6 +61,10 @@ Open these URLs after deployment:
 - `/website-audits`
 - `/pricing`
 - `/work`
+- `/templates`
+- `/templates/hotel-01-luxury`
+- `/preview/hotel-01-luxury`
+- `/template-sites/hotel-01-luxury/booking`
 - `/about`
 - `/contact`
 - `/privacy`
@@ -76,6 +80,10 @@ Check:
 - Audit form validates empty and invalid fields.
 - Valid form submission stores data, or shows the safe fallback if `DATABASE_URL` is missing.
 - Internal example builds are clearly labelled as internal examples.
+- The template catalog shows 18 entries in English, Georgian, Russian, and Turkish.
+- Template previews load inside the preview shell, and their internal links stay inside `/preview/...`.
+- `/preview/...` and `/template-sites/...` are noindex and absent from `sitemap.xml`.
+- Raw template routes can be framed only by the same origin; normal business pages still use `frame-ancestors 'none'`.
 - No horizontal overflow at mobile widths.
 - No browser console errors or hydration errors.
 

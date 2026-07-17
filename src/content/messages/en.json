@@ -20,7 +20,8 @@
     "insights": "Insights",
     "pricing": "Pricing",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "templates": "Templates"
   },
   "hero": {
     "eyebrow": "Founder-led web design and development in Batumi",
@@ -1943,6 +1944,118 @@
           "How practical lead paths can be built into a small studio website"
         ],
         "ctaLabel": "Discuss a similar website"
+      }
+    }
+  },
+  "templatesCatalog": {
+    "metadataTitle": "Website templates for Batumi businesses",
+    "metadataDescription": "Explore 18 original website templates for hotels, clinics, beauty businesses, restaurants, bars and shops, then discuss a tailored Batumi Lighthouse build.",
+    "eyebrow": "18 original website starting points",
+    "heading": "Choose a strong direction before your project starts.",
+    "intro": "Explore complete, responsive website examples for six business categories. Each one gives us a practical starting point for structure, style and customer journeys.",
+    "disclosure": "Every business shown is fictional. These are internal template demonstrations, not client work, testimonials or published business results.",
+    "all": "All templates",
+    "filter": "Filter by business type",
+    "showing": "Showing {count} templates",
+    "pageCount": "{count} complete pages",
+    "details": "View details",
+    "preview": "Live preview",
+    "internalDemo": "Internal demo",
+    "imageAlt": "{category} website template preview",
+    "openPreview": "Open full preview",
+    "requestTemplate": "Discuss this template",
+    "whatIsIncluded": "A complete starting point",
+    "completeWebsite": "Built beyond the homepage",
+    "customizationNote": "Your final website is adapted to your brand, content, language needs and business goals.",
+    "ctaHeading": "See a direction that fits your business?",
+    "ctaBody": "Send the template name and a short description of your business. I will explain what should stay, what should change and what the build would cost.",
+    "contactInterest": "You are asking about the {name} template. I will use it as a visual and structural starting point, not copy it unchanged.",
+    "included": {
+      "responsive": "Responsive homepage and complete inner-page structure",
+      "navigation": "Accessible desktop and mobile navigation",
+      "forms": "Business-specific booking, enquiry or appointment forms",
+      "seo": "SEO-ready page structure, metadata and configurable content"
+    },
+    "categories": {
+      "hotel": "Hotels",
+      "dentist": "Dental practices",
+      "beauty-salon": "Beauty & wellness",
+      "restaurant": "Restaurants",
+      "bar": "Bars",
+      "shop": "Shops & retail"
+    },
+    "items": {
+      "hotel-01-luxury": {
+        "positioning": "A refined hotel website for premium stays, room comparison, offers and direct booking enquiries.",
+        "signature": "Full-screen hospitality storytelling with a practical stay planner."
+      },
+      "hotel-02-boutique": {
+        "positioning": "An intimate hotel website that makes rooms, character and the surrounding neighborhood easy to explore.",
+        "signature": "Editorial room stories paired with a useful local guide."
+      },
+      "hotel-03-resort": {
+        "positioning": "A destination-led resort website for stays, experiences, packages and group planning.",
+        "signature": "Scenic trip planning across rooms, activities and occasions."
+      },
+      "dentist-01-clinical": {
+        "positioning": "A calm clinical website that helps patients understand treatments, the team and how to request care.",
+        "signature": "A visible emergency pathway and clear treatment guidance."
+      },
+      "dentist-02-premium-cosmetic": {
+        "positioning": "A consultation-led website for cosmetic dentistry, detailed treatment journeys and specialist trust.",
+        "signature": "A staged treatment journey from first question to consultation."
+      },
+      "dentist-03-family": {
+        "positioning": "A welcoming dental website for families, new patients, routine care and urgent questions.",
+        "signature": "A parent-friendly first-visit guide with simple next steps."
+      },
+      "beauty-01-salon": {
+        "positioning": "A fashion-aware salon website for services, stylists, pricing and appointment requests.",
+        "signature": "A clear stylist and service matching experience."
+      },
+      "beauty-02-spa": {
+        "positioning": "A calm wellness website for treatments, rituals, packages, memberships and gift cards.",
+        "signature": "A tactile treatment finder built around time and intention."
+      },
+      "beauty-03-aesthetic-clinic": {
+        "positioning": "A safety-first aesthetic clinic website for treatments, practitioners and consultation planning.",
+        "signature": "A measured consultation path that avoids exaggerated claims."
+      },
+      "restaurant-01-fine-dining": {
+        "positioning": "An atmospheric restaurant website for seasonal menus, chef story, private dining and reservations.",
+        "signature": "A focused tasting-menu journey with strong occasion planning."
+      },
+      "restaurant-02-bistro": {
+        "positioning": "A lively neighborhood restaurant website for menus, daily updates, events and table bookings.",
+        "signature": "A useful tonight-and-events board with local character."
+      },
+      "restaurant-03-fast-casual": {
+        "positioning": "A quick, menu-first website that helps guests choose dine-in, pickup or delivery without friction.",
+        "signature": "An immediate order-mode selector and highly scannable menu."
+      },
+      "bar-01-cocktail": {
+        "positioning": "A distinctive cocktail bar website for drinks, seating, private hire and table reservations.",
+        "signature": "A refined drinks list paired with seating and event choices."
+      },
+      "bar-02-pub": {
+        "positioning": "A warm pub website for food, drinks, live sport, weekly events and group visits.",
+        "signature": "A practical fixtures and events noticeboard for regular guests."
+      },
+      "bar-03-rooftop": {
+        "positioning": "A skyline-led rooftop bar website for reservations, group packages and private events.",
+        "signature": "A clear group planner built around views, occasions and capacity."
+      },
+      "shop-01-fashion": {
+        "positioning": "An editorial fashion shop website for collections, product stories, lookbooks and enquiries.",
+        "signature": "A strong lookbook that connects campaign imagery to products."
+      },
+      "shop-02-lifestyle": {
+        "positioning": "A warm lifestyle shop website for thoughtful products, gifting occasions and curated collections.",
+        "signature": "An occasion-led gift guide with tactile product storytelling."
+      },
+      "shop-03-specialty": {
+        "positioning": "An expert retail website for technical products, specifications, comparisons and buyer questions.",
+        "signature": "A practical comparison tool that makes specialist choices clearer."
       }
     }
   }

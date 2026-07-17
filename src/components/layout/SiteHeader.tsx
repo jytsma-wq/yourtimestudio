@@ -41,6 +41,7 @@ const navItems: NavItem[] = [
   { key: 'home', href: '/' },
   { key: 'solutions', href: '#', children: serviceNavItems },
   { key: 'work', href: '/work' },
+  { key: 'templates', href: '/templates' },
   { key: 'pricing', href: '/pricing' },
   { key: 'insights', href: '/insights' },
   { key: 'about', href: '/about' },

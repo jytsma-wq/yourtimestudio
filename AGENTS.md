@@ -25,12 +25,15 @@ The site must feel human, clear, practical, local, and credible. Avoid AI/SaaS d
 - `/en/website-audits`
 - `/en/pricing`
 - `/en/work`
+- `/en/templates` and 18 localized template detail pages
 - `/en/about`
 - `/en/contact`
 - `/en/privacy`
 - `/en/terms`
 - Equivalent main pages for Georgian, Russian, and Turkish
 - API routes: `/api/leads`, `/api/audits`
+- Buyer preview routes: `/preview/[templateId]/...` (always noindex)
+- Isolated demo sites: `/template-sites/[templateId]/...` (always noindex)
 
 ## Hard Rules
 
@@ -42,6 +45,9 @@ The site must feel human, clear, practical, local, and credible. Avoid AI/SaaS d
 - Do not send real production emails or spam during tests.
 - Do not redesign unless the task explicitly asks for redesign.
 - Do not make broad refactors during QA, launch, security, SEO, or accessibility tasks.
+- Keep the Batumi Lighthouse business site as the root experience. Do not turn the homepage into the template showcase.
+- Keep template demo rendering isolated from the localized studio layout, analytics controls, floating actions, and business navigation.
+- Do not publish fictional testimonials inside template demos. Use an explicit no-review placeholder until verified, permissioned proof is supplied.
 
 ## i18n Rules
 
@@ -49,6 +55,7 @@ The site must feel human, clear, practical, local, and credible. Avoid AI/SaaS d
 - When adding or changing message keys, update every locale file or keep a safe fallback.
 - Do not leave raw keys, `MISSING_MESSAGE`, or English-only UI in localized pages unless explicitly accepted.
 - Preserve locale-aware navigation from `src/lib/i18n/navigation.ts`.
+- Public template catalog and detail pages must be complete in all four locales. Raw fictional demo sites may remain English because they live outside localized public routes and are clearly disclosed.
 
 ## Design Rules
 
@@ -56,6 +63,7 @@ The site must feel human, clear, practical, local, and credible. Avoid AI/SaaS d
 - Avoid radar/signal/dashboard visuals, fake browser chrome, excessive grids, neon technical effects, and generic agency hype.
 - Do not change design direction during performance, security, SEO, analytics, or accessibility passes unless needed to fix a confirmed bug.
 - Keep mobile layouts readable at 320px and avoid horizontal overflow.
+- Preserve visual distinction across the 18 imported templates. Shared packages may handle primitives, models, tokens, forms, and routing, but not unique hero compositions or category-specific rhythm.
 
 ## Testing Rules
 
@@ -116,6 +124,7 @@ Before saying the site is safe to deploy, check:
 - `robots.txt` and `sitemap.xml` work.
 - Security headers are present.
 - No console errors, hydration errors, network 404s, raw i18n keys, broken images, or horizontal overflow on critical routes.
+- Template preview iframes load, internal preview navigation works, demo routes are noindex, and raw demo headers permit same-origin framing without weakening normal page framing rules.
 - Contact and audit forms validate safely.
 - Cookie consent, language switcher, mobile drawer, CTAs, footer links, WhatsApp fallback, and back-to-top controls work.
 

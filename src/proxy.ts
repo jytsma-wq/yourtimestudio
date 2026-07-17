@@ -10,6 +10,16 @@ const intlMiddleware = createMiddleware({
 
 export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const isUnlocalizedTemplatePreview =
+    pathname === '/preview' ||
+    pathname.startsWith('/preview/') ||
+    pathname === '/template-sites' ||
+    pathname.startsWith('/template-sites/');
+
+  if (isUnlocalizedTemplatePreview) {
+    return NextResponse.next();
+  }
+
   const hasLocalePrefix = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
@@ -38,5 +48,9 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(ka|ru|tr|en)/:path*', '/((?!api|_next|.*\\..*).*)'],
+  matcher: [
+    '/',
+    '/(ka|ru|tr|en)/:path*',
+    '/((?!api|_next|preview|template-sites|.*\\..*).*)',
+  ],
 };

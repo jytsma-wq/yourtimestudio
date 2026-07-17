@@ -7,6 +7,17 @@ const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
   reactStrictMode: true,
+  transpilePackages: [
+    '@website-template-factory/content',
+    '@website-template-factory/tokens',
+    '@website-template-factory/ui',
+    '@website-template-factory/template-hotel',
+    '@website-template-factory/template-dentist',
+    '@website-template-factory/template-beauty-salon',
+    '@website-template-factory/template-restaurant',
+    '@website-template-factory/template-bar',
+    '@website-template-factory/template-shop',
+  ],
   images: {
     formats: ['image/avif', 'image/webp'],
   },
@@ -45,10 +56,23 @@ const nextConfig: NextConfig = {
       },
     ];
 
+    const templatePreviewHeaders = securityHeaders.map((header) =>
+      header.key === 'Content-Security-Policy-Report-Only'
+        ? {
+            ...header,
+            value: header.value.replace("frame-ancestors 'none'", "frame-ancestors 'self'"),
+          }
+        : header
+    );
+
     return [
       {
         source: '/(.*)',
         headers: securityHeaders,
+      },
+      {
+        source: '/template-sites/:path*',
+        headers: templatePreviewHeaders,
       },
     ];
   },

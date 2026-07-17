@@ -11,7 +11,7 @@
     "prebuild": "prisma generate",
     "build": "next build && node scripts/copy-standalone-assets.mjs",
     "start": "node server.js",
-    "test": "node scripts/production-readiness-test.mjs",
+    "test": "node scripts/production-readiness-test.mjs && vitest run packages --passWithNoTests",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
@@ -22,6 +22,15 @@
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
     "@prisma/client": "^6.11.1",
+    "@website-template-factory/content": "workspace:*",
+    "@website-template-factory/template-bar": "workspace:*",
+    "@website-template-factory/template-beauty-salon": "workspace:*",
+    "@website-template-factory/template-dentist": "workspace:*",
+    "@website-template-factory/template-hotel": "workspace:*",
+    "@website-template-factory/template-restaurant": "workspace:*",
+    "@website-template-factory/template-shop": "workspace:*",
+    "@website-template-factory/tokens": "workspace:*",
+    "@website-template-factory/ui": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
@@ -74,6 +83,7 @@
     "eslint-config-next": "^16.1.1",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.9"
   }
 }

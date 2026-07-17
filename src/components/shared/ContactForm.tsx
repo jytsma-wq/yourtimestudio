@@ -28,8 +28,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { Locale } from '@/lib/i18n/config';
 import { trackEvent } from '@/lib/analytics';
 
-export function ContactForm() {
+type ContactFormProps = {
+  templateInterest?: {
+    id: string;
+    label: string;
+  };
+};
+
+export function ContactForm({ templateInterest }: ContactFormProps) {
   const t = useTranslations('contactPage');
+  const templates = useTranslations('templatesCatalog');
   const locale = useLocale() as Locale;
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -82,7 +90,8 @@ export function ContactForm() {
     // Honeypot check
     if (data.honeypot) return;
 
-    trackEvent('contact_form_submit_attempt', { source: 'contact_form' });
+    const source = templateInterest ? `template:${templateInterest.id}` : 'contact_form';
+    trackEvent('contact_form_submit_attempt', { source });
     setSubmitError(null);
     setIsSubmitting(true);
     let failureTracked = false;
@@ -104,7 +113,7 @@ export function ContactForm() {
           budgetRange: data.budgetRange || undefined,
           preferredLanguage: data.preferredLanguage || undefined,
           message: data.message,
-          source: 'contact_form',
+          source,
         }),
       });
 
@@ -116,7 +125,7 @@ export function ContactForm() {
       }
 
       // Show in-place success state
-      trackEvent('contact_form_submit_success', { source: 'contact_form' });
+      trackEvent('contact_form_submit_success', { source });
       setSubmitted(true);
     } catch (err) {
       if (!failureTracked) {
@@ -129,7 +138,9 @@ export function ContactForm() {
   }
 
   function onInvalid() {
-    trackEvent('contact_form_submit_attempt', { source: 'contact_form' });
+    trackEvent('contact_form_submit_attempt', {
+      source: templateInterest ? `template:${templateInterest.id}` : 'contact_form',
+    });
     trackEvent('contact_form_submit_failure', { reason: 'client_validation' });
   }
 
@@ -198,6 +209,12 @@ export function ContactForm() {
         >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
+              {templateInterest ? (
+                <div className="border border-brand-serene-coral/40 bg-brand-serene-coral/10 p-4 text-sm leading-6 text-foreground">
+                  {templates('contactInterest', { name: templateInterest.label })}
+                </div>
+              ) : null}
+
               {/* Honeypot - hidden from users, bots will fill it */}
               <div className="absolute -left-[9999px]" aria-hidden="true" tabIndex={-1}>
                 <FormField

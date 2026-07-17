@@ -7,6 +7,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { ContactForm } from '@/components/shared/ContactForm';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
 import { siteConfig } from '@/lib/site-config';
+import { getTemplateShowcaseEntry } from '@/lib/templates/catalog';
 
 export async function generateMetadata({
   params,
@@ -27,10 +28,13 @@ export async function generateMetadata({
 
 export default async function ContactPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ template?: string | string[] }>;
 }) {
   const { locale } = await params;
+  const query = await searchParams;
   setRequestLocale(locale);
 
   const t = await getTranslations('contactPage');
@@ -38,6 +42,10 @@ export default async function ContactPage({
   const hasWhatsApp = Boolean(siteConfig.contact.whatsapp && siteConfig.contact.whatsappHref);
   const whatsappHref = hasWhatsApp ? siteConfig.contact.whatsappHref : '#contact-form';
   const whatsappLabel = hasWhatsApp ? siteConfig.contact.whatsapp : t('info_whatsapp_fallback');
+  const requestedTemplateId = Array.isArray(query.template) ? query.template[0] : query.template;
+  const requestedTemplate = requestedTemplateId
+    ? getTemplateShowcaseEntry(requestedTemplateId)
+    : undefined;
 
   const breadcrumbItems = [
     { label: tNav('contact'), href: '/contact' },
@@ -65,7 +73,12 @@ export default async function ContactPage({
           {/* Contact Form - takes 2 columns */}
           <div id="contact-form" className="scroll-mt-24 lg:col-span-1">
             <div className="bg-card border border-border rounded-none p-6 md:p-8">
-              <ContactForm />
+              <ContactForm
+                templateInterest={requestedTemplate ? {
+                  id: requestedTemplate.id,
+                  label: requestedTemplate.brandName,
+                } : undefined}
+              />
             </div>
           </div>
 

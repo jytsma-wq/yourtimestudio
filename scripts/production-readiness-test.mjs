@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const locales = ['en', 'ka', 'ru', 'tr'];
@@ -9,6 +9,8 @@ const localizedPagePaths = [
   '/photography',
   '/pricing',
   '/work',
+  '/templates',
+  '/templates/hotel-01-luxury',
   '/about',
   '/contact',
   '/privacy',
@@ -158,6 +160,49 @@ function checkPhotographyEditorialSceneBoard() {
   );
 }
 
+function checkTemplateLibrary() {
+  const expectedPackages = [
+    'packages/content',
+    'packages/tokens',
+    'packages/ui',
+    'templates/hotel',
+    'templates/dentist',
+    'templates/beauty-salon',
+    'templates/restaurant',
+    'templates/bar',
+    'templates/shop',
+  ];
+
+  for (const packagePath of expectedPackages) {
+    assert(existsSync(`${packagePath}/package.json`), `${packagePath} must be a workspace package`);
+  }
+
+  const assets = readdirSync('public/templates', { withFileTypes: true })
+    .filter((entry) => entry.isDirectory());
+  assert.equal(assets.length, 18, 'The template library must include exactly 18 asset directories');
+
+  for (const locale of locales) {
+    const messages = readJson(`${messageDir}/${locale}.json`);
+    assert.equal(
+      Object.keys(messages.templatesCatalog.items).length,
+      18,
+      `${locale} must describe all 18 templates`,
+    );
+  }
+
+  const contentFiles = [
+    'packages/content/src/index.ts',
+    'packages/content/src/batch-one.ts',
+    'packages/content/src/batch-two.ts',
+    'packages/content/src/batch-three.ts',
+    'packages/content/src/batch-four.ts',
+    'packages/content/src/batch-five.ts',
+    'packages/content/src/batch-six.ts',
+  ];
+  const templateContent = contentFiles.map((file) => readFileSync(file, 'utf8')).join('\n');
+  assert(!templateContent.includes('Template buyer review'), 'Template demos must not publish invented buyer reviews');
+}
+
 async function checkRouteSmoke(baseUrl) {
   for (const route of requiredRoutes) {
     const response = await fetch(new URL(route, baseUrl));
@@ -183,6 +228,18 @@ async function checkRouteSmoke(baseUrl) {
     'CSP or CSP report-only header must be present',
   );
   assert.equal(headerResponse.headers.get('x-powered-by'), null, 'X-Powered-By must be disabled');
+
+  const previewResponse = await fetch(new URL('/preview/hotel-01-luxury', baseUrl));
+  const previewHtml = await previewResponse.text();
+  assert(previewHtml.includes('noindex'), 'Template preview routes must be noindex');
+
+  const rawTemplateResponse = await fetch(new URL('/template-sites/hotel-01-luxury', baseUrl));
+  const rawTemplateHtml = await rawTemplateResponse.text();
+  assert(rawTemplateHtml.includes('noindex'), 'Raw template routes must be noindex');
+  assert(
+    rawTemplateResponse.headers.get('content-security-policy-report-only')?.includes("frame-ancestors 'self'"),
+    'Raw template routes must allow same-origin preview framing',
+  );
 
   await checkInternalLinks(baseUrl);
   await checkApiValidation(baseUrl);
@@ -247,6 +304,7 @@ async function main() {
   checkPhotographyNavigation();
   checkPhotographyHomepageShowcase();
   checkPhotographyEditorialSceneBoard();
+  checkTemplateLibrary();
 
   if (process.env.SMOKE_BASE_URL) {
     await checkRouteSmoke(process.env.SMOKE_BASE_URL);

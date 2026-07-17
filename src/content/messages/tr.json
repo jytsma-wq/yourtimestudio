@@ -20,7 +20,8 @@
     "insights": "Bilgi Bankası",
     "pricing": "Fiyatlar",
     "about": "Hakkımızda",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "templates": "Şablonlar"
   },
   "hero": {
     "eyebrow": "Batum'da kurucu liderliğinde web tasarımı ve geliştirme",
@@ -1943,6 +1944,118 @@
           "Pratik talep yolları küçük stüdyo sitesinde nasıl kurulabilir"
         ],
         "ctaLabel": "Benzer bir web sitesini konuşalım"
+      }
+    }
+  },
+  "templatesCatalog": {
+    "metadataTitle": "Batum işletmeleri için web sitesi şablonları",
+    "metadataDescription": "Oteller, klinikler, güzellik işletmeleri, restoranlar, barlar ve mağazalar için 18 özgün web sitesi şablonunu inceleyin.",
+    "eyebrow": "18 özgün web sitesi başlangıç noktası",
+    "heading": "Proje başlamadan önce güçlü bir yön seçin.",
+    "intro": "Altı iş kategorisi için tamamlanmış, duyarlı web sitesi örneklerini inceleyin. Her biri yapı, stil ve müşteri yolculuğu için pratik bir başlangıç noktası sunar.",
+    "disclosure": "Gösterilen tüm işletmeler kurgusaldır. Bunlar şirket içi şablon demolarıdır; müşteri işi, referans veya yayımlanmış iş sonucu değildir.",
+    "all": "Tüm şablonlar",
+    "filter": "İş türüne göre filtrele",
+    "showing": "{count} şablon gösteriliyor",
+    "pageCount": "{count} tamamlanmış sayfa",
+    "details": "Ayrıntıları gör",
+    "preview": "Canlı önizleme",
+    "internalDemo": "Şirket içi örnek",
+    "imageAlt": "{category} web sitesi şablonu önizlemesi",
+    "openPreview": "Tam önizlemeyi aç",
+    "requestTemplate": "Bu şablonu görüş",
+    "whatIsIncluded": "Eksiksiz bir başlangıç noktası",
+    "completeWebsite": "Ana sayfanın ötesinde",
+    "customizationNote": "Son web sitesi markanıza, içeriğinize, dil ihtiyaçlarınıza ve iş hedeflerinize göre uyarlanır.",
+    "ctaHeading": "İşletmenize uygun bir yön buldunuz mu?",
+    "ctaBody": "Şablon adını ve işletmenizin kısa bir açıklamasını gönderin. Nelerin korunacağını, nelerin değişeceğini ve yapım maliyetini açıklayacağım.",
+    "contactInterest": "{name} şablonuyla ilgileniyorsunuz. Bunu görsel ve yapısal başlangıç noktası olarak kullanacağım; değiştirmeden kopyalamayacağım.",
+    "included": {
+      "responsive": "Duyarlı ana sayfa ve eksiksiz iç sayfa yapısı",
+      "navigation": "Erişilebilir masaüstü ve mobil gezinme",
+      "forms": "İşletmeye özel rezervasyon, talep veya randevu formları",
+      "seo": "SEO'ya hazır sayfa yapısı, meta veriler ve düzenlenebilir içerik"
+    },
+    "categories": {
+      "hotel": "Oteller",
+      "dentist": "Diş klinikleri",
+      "beauty-salon": "Güzellik ve wellness",
+      "restaurant": "Restoranlar",
+      "bar": "Barlar",
+      "shop": "Mağazalar"
+    },
+    "items": {
+      "hotel-01-luxury": {
+        "positioning": "Premium konaklamalar, oda karşılaştırması, teklifler ve doğrudan rezervasyon talepleri için rafine bir otel sitesi.",
+        "signature": "Etkileyici otel anlatımı ve pratik konaklama planlayıcısı."
+      },
+      "hotel-02-boutique": {
+        "positioning": "Odaları, karakteri ve çevredeki mahalleyi keşfetmeyi kolaylaştıran samimi bir otel sitesi.",
+        "signature": "Editoryal oda hikâyeleri ve kullanışlı yerel rehber."
+      },
+      "hotel-03-resort": {
+        "positioning": "Konaklama, deneyim, paket ve grup planlaması için destinasyon odaklı bir resort sitesi.",
+        "signature": "Odalar, aktiviteler ve özel günler için bütünlüklü gezi planlaması."
+      },
+      "dentist-01-clinical": {
+        "positioning": "Hastaların tedavileri, ekibi ve bakım talebini anlamasına yardımcı olan sakin bir klinik sitesi.",
+        "signature": "Görünür acil bakım yolu ve açık tedavi bilgileri."
+      },
+      "dentist-02-premium-cosmetic": {
+        "positioning": "Kozmetik diş hekimliği, ayrıntılı tedavi adımları ve uzman güveni için danışma odaklı bir site.",
+        "signature": "İlk sorudan danışmaya kadar aşamalı tedavi yolculuğu."
+      },
+      "dentist-03-family": {
+        "positioning": "Aileler, yeni hastalar, rutin bakım ve acil sorular için sıcak bir diş kliniği sitesi.",
+        "signature": "Ebeveyn dostu ilk ziyaret rehberi ve açık sonraki adımlar."
+      },
+      "beauty-01-salon": {
+        "positioning": "Hizmetler, uzmanlar, fiyatlar ve randevu talepleri için moda duyarlılığı olan bir salon sitesi.",
+        "signature": "Açık uzman ve hizmet eşleştirme deneyimi."
+      },
+      "beauty-02-spa": {
+        "positioning": "Bakımlar, ritüeller, paketler, üyelikler ve hediye kartları için sakin bir wellness sitesi.",
+        "signature": "Süreye ve amaca göre hazırlanmış dokunsal bakım bulucu."
+      },
+      "beauty-03-aesthetic-clinic": {
+        "positioning": "Tedaviler, uzmanlar ve danışma planlaması için güvenlik odaklı estetik klinik sitesi.",
+        "signature": "Abartılı iddialardan uzak, ölçülü danışma yolu."
+      },
+      "restaurant-01-fine-dining": {
+        "positioning": "Mevsimsel menüler, şef hikâyesi, özel yemekler ve rezervasyonlar için atmosferik restoran sitesi.",
+        "signature": "Odaklı tadım menüsü yolculuğu ve güçlü davet planlaması."
+      },
+      "restaurant-02-bistro": {
+        "positioning": "Menüler, günlük duyurular, etkinlikler ve masa rezervasyonları için canlı mahalle restoranı sitesi.",
+        "signature": "Yerel karakter taşıyan kullanışlı bugün ve etkinlikler panosu."
+      },
+      "restaurant-03-fast-casual": {
+        "positioning": "Misafirlerin mekânda yeme, gel-al veya teslimatı kolayca seçmesini sağlayan hızlı, menü odaklı site.",
+        "signature": "Anında sipariş türü seçimi ve kolay taranan menü."
+      },
+      "bar-01-cocktail": {
+        "positioning": "İçecekler, oturma seçenekleri, özel kiralama ve masa rezervasyonları için özgün kokteyl barı sitesi.",
+        "signature": "Zarif içecek listesi ile oturma ve etkinlik seçenekleri."
+      },
+      "bar-02-pub": {
+        "positioning": "Yemek, içecek, canlı spor, haftalık etkinlikler ve gruplar için sıcak bir pub sitesi.",
+        "signature": "Düzenli misafirler için pratik maç ve etkinlik panosu."
+      },
+      "bar-03-rooftop": {
+        "positioning": "Rezervasyonlar, grup paketleri ve özel etkinlikler için manzara odaklı çatı barı sitesi.",
+        "signature": "Manzara, etkinlik ve kapasiteye göre açık grup planlayıcısı."
+      },
+      "shop-01-fashion": {
+        "positioning": "Koleksiyonlar, ürün hikâyeleri, lookbook ve talepler için editoryal moda mağazası sitesi.",
+        "signature": "Kampanya görsellerini ürünlere bağlayan güçlü lookbook."
+      },
+      "shop-02-lifestyle": {
+        "positioning": "Özenli ürünler, hediye anları ve seçilmiş koleksiyonlar için sıcak bir yaşam tarzı mağazası sitesi.",
+        "signature": "Duruma göre hediye rehberi ve dokunsal ürün anlatımı."
+      },
+      "shop-03-specialty": {
+        "positioning": "Teknik ürünler, özellikler, karşılaştırmalar ve alıcı soruları için uzman perakende sitesi.",
+        "signature": "Uzmanlık gerektiren seçimi netleştiren pratik karşılaştırma."
       }
     }
   }

@@ -23,6 +23,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
 
   const companyLinks = [
     { label: nav('about'), href: '/about' },
+    { label: nav('templates'), href: '/templates' },
     { label: nav('pricing'), href: '/pricing' },
     { label: nav('contact'), href: '/contact' },
     { label: nav('insights'), href: '/insights' },
