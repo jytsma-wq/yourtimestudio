@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { SectorPageTemplate } from '@/components/shared/SectorPageTemplate';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
@@ -10,10 +10,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'sectorPages.hospitality.hero' });
   return generatePageMetadata({
-    title: 'Hospitality Web Design Batumi — Direct Booking Websites for Hotels',
-    description:
-      'Websites that fill rooms, not OTA commission sheets. Direct booking integration, multilingual guest paths, and speed optimization for Batumi hotels, guesthouses, and aparthotels.',
+    title: t('title'),
+    description: t('subtitle'),
     path: '/hospitality-web-design-batumi',
     locale: locale as Locale,
     ogImage: '/og-hospitality.png',

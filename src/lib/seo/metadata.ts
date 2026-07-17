@@ -41,6 +41,7 @@ export function generatePageMetadata({
   for (const loc of launchLocales) {
     languages[loc] = localeUrl(loc, path);
   }
+  languages['x-default'] = localeUrl(defaultLocale, path);
 
   // Map locale to OG locale format
   const ogLocaleMap: Record<string, string> = {

@@ -4,7 +4,6 @@ import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { siteConfig } from '@/lib/site-config';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -16,10 +15,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'legalPage.terms' });
+
   return generatePageMetadata({
-    title: `Terms of Service — ${siteConfig.name}`,
-    description:
-      `Read the terms of service for ${siteConfig.name}. Covers our web design and development services, payment terms, intellectual property, liability limitations, and more.`,
+    title: t('heading'),
+    description: t('intro'),
     path: '/terms',
     locale: locale as Locale,
     noIndex: true,

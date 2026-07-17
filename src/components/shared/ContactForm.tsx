@@ -26,6 +26,7 @@ import {
 } from '@/components/ui/form';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Locale } from '@/lib/i18n/config';
+import { trackEvent } from '@/lib/analytics';
 
 export function ContactForm() {
   const t = useTranslations('contactPage');
@@ -81,13 +82,18 @@ export function ContactForm() {
     // Honeypot check
     if (data.honeypot) return;
 
+    trackEvent('contact_form_submit_attempt', { source: 'contact_form' });
     setSubmitError(null);
     setIsSubmitting(true);
+    let failureTracked = false;
 
     try {
       const response = await fetch('/api/leads', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-locale': locale,
+        },
         body: JSON.stringify({
           name: data.name,
           businessName: data.businessName || undefined,
@@ -104,16 +110,27 @@ export function ContactForm() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
+        trackEvent('contact_form_submit_failure', { reason: 'server_response' });
+        failureTracked = true;
         throw new Error(errorData.error || t('form.error_default'));
       }
 
       // Show in-place success state
+      trackEvent('contact_form_submit_success', { source: 'contact_form' });
       setSubmitted(true);
     } catch (err) {
+      if (!failureTracked) {
+        trackEvent('contact_form_submit_failure', { reason: 'request_error' });
+      }
       setSubmitError(err instanceof Error ? err.message : t('form.error_default'));
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  function onInvalid() {
+    trackEvent('contact_form_submit_attempt', { source: 'contact_form' });
+    trackEvent('contact_form_submit_failure', { reason: 'client_validation' });
   }
 
   const sectors = [
@@ -149,7 +166,7 @@ export function ContactForm() {
           className="text-center py-12"
         >
           <div className="mx-auto mb-6 w-20 h-20">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="40" cy="40" r="36" stroke="var(--navy)" strokeWidth="3" fill="var(--navy)" opacity="0.1" />
               <path
                 d="M24 42 L34 52 L56 30"
@@ -180,7 +197,7 @@ export function ContactForm() {
           transition={{ duration: 0.2 }}
         >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
+            <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
               {/* Honeypot - hidden from users, bots will fill it */}
               <div className="absolute -left-[9999px]" aria-hidden="true" tabIndex={-1}>
                 <FormField
@@ -418,8 +435,11 @@ export function ContactForm() {
 
               {/* Error state */}
               {submitError && (
-                <div className="flex items-start gap-3 p-4 rounded-none bg-destructive/10 border border-destructive/20 text-destructive text-sm">
-                  <AlertCircle className="size-5 shrink-0 mt-0.5" />
+                <div
+                  className="flex items-start gap-3 p-4 rounded-none bg-destructive/10 border border-destructive/20 text-destructive text-sm"
+                  role="alert"
+                >
+                  <AlertCircle className="size-5 shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
                     <p className="font-medium">{t('form.error_title')}</p>
                     <p>{submitError}</p>
@@ -436,7 +456,7 @@ export function ContactForm() {
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="size-4 mr-2 animate-spin" />
+                    <Loader2 className="size-4 mr-2 animate-spin" aria-hidden="true" />
                     {t('form.sending')}
                   </>
                 ) : (

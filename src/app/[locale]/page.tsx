@@ -5,18 +5,11 @@ import { generatePageMetadata } from '@/lib/seo/metadata';
 import { organizationSchema, webSiteSchema, localBusinessSchema } from '@/lib/seo/structured-data';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
-import { AuditSection } from '@/components/sections/AuditSection';
-import { ProcessSection } from '@/components/sections/ProcessSection';
-import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection';
+import { ExampleBuildsSection } from '@/components/sections/ExampleBuildsSection';
 import { FounderSection } from '@/components/sections/FounderSection';
-import { ResultsBand } from '@/components/sections/ResultsBand';
 import { PricingSection } from '@/components/sections/PricingSection';
-import { FAQSection } from '@/components/sections/FAQSection';
-import { BlogTeaser } from '@/components/sections/BlogTeaser';
 import { CTABandSection } from '@/components/sections/CTABandSection';
-import { Section } from '@/components/shared/Section';
-import { TrustedByStrip } from '@/components/sections/TrustedByStrip';
-import { PhoneFirstSystemSection } from '@/components/sections/PhoneFirstSystemSection';
+import { PhotographyShowcaseSection } from '@/components/sections/PhotographyShowcaseSection';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -45,8 +38,6 @@ export default async function LocalePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('faq');
-
   return (
     <>
       <script
@@ -62,52 +53,24 @@ export default async function LocalePage({
 
       <HeroSection locale={locale as Locale} />
 
-      <TrustedByStrip />
+      <div id="photography" data-section-name="Photography">
+        <PhotographyShowcaseSection number="02" />
+      </div>
 
-      <PhoneFirstSystemSection number="02" />
-
-      <div id="sectors" data-section-name="Solutions">
+      <div id="sectors" data-section-name="Services">
         <SectorCardsSection locale={locale as Locale} number="03" />
       </div>
 
-      <div id="audit" data-section-name="Audit">
-        <AuditSection locale={locale as Locale} number="04" />
-      </div>
-
-      <div id="process" data-section-name="Process">
-        <ProcessSection locale={locale as Locale} number="05" />
-      </div>
-
-      <div id="case-studies" data-section-name="Demo Briefs">
-        <CaseStudiesSection number="06" />
+      <div id="examples" data-section-name="Examples">
+        <ExampleBuildsSection number="04" />
       </div>
 
       <div id="about" data-section-name="About">
-        <FounderSection locale={locale as Locale} number="07" />
+        <FounderSection locale={locale as Locale} number="05" />
       </div>
-
-      <ResultsBand locale={locale as Locale} number="08" />
 
       <div id="pricing" data-section-name="Pricing">
-        <PricingSection locale={locale as Locale} number="09" />
-      </div>
-
-      <div id="faq" data-section-name="FAQ">
-        <Section variant="subtle" number="10">
-          <div className="text-center mb-12 md:mb-16">
-            <p className="section-label">{t('sectionLabel')}</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              {t('heading')}
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <FAQSection locale={locale} />
-          </div>
-        </Section>
-      </div>
-
-      <div id="insights" data-section-name="Insights">
-        <BlogTeaser locale={locale as Locale} />
+        <PricingSection locale={locale as Locale} number="06" />
       </div>
 
       <CTABandSection locale={locale as Locale} />

@@ -19,7 +19,6 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { AuditRequestForm } from '@/components/shared/AuditRequestForm';
-import { siteConfig } from '@/lib/site-config';
 
 const rubricItems = [
   { key: 'brand', icon: Eye },
@@ -48,10 +47,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'auditPage.hero' });
+
   return generatePageMetadata({
-    title: `Website Audits — ${siteConfig.name}`,
-    description:
-      'Get a detailed website scorecard covering brand clarity, speed, local SEO, content structure, accessibility, and conversion UX. Free audit for Batumi businesses.',
+    title: t('title'),
+    description: t('subtitle'),
     path: '/website-audits',
     locale: locale as Locale,
     ogImage: '/og-audits.png',
@@ -152,7 +152,7 @@ export default async function WebsiteAuditsPage({
                   <Icon className="size-5 text-brand-serene-coral-darken" />
                 </div>
                 <div className="text-brand-serene-coral-darken font-semibold text-sm mb-2">
-                  Step {index + 1}
+                  {t('howItWorks.step_label')} {index + 1}
                 </div>
                 <h3 className="font-semibold text-lg mb-2">
                   {t(`howItWorks.steps.${index}.title`)}

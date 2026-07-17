@@ -1,45 +1,60 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { type FocusEvent, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Menu, ChevronDown, Sun, Moon, ArrowRight } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, ChevronDown, Menu, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
-  SheetClose,
 } from '@/components/ui/sheet';
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
-import { sectors, sectorKeys } from '@/lib/sector-config';
+import { sectors } from '@/lib/sector-config';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
+
+interface NavChild {
+  key: string;
+  href: string;
+}
 
 interface NavItem {
   key: string;
   href: string;
-  children?: { key: string; href: string; color?: string }[];
+  children?: NavChild[];
 }
+
+const serviceNavItems: NavChild[] = [
+  { key: 'hotelsGuesthouses', href: sectors.hospitality.href },
+  { key: 'clinicsMedical', href: sectors.medical.href },
+  { key: 'beautyStudios', href: sectors.beauty.href },
+  { key: 'websiteAudit', href: '/website-audits' },
+  { key: 'photography', href: '/photography' },
+];
+
+const navItems: NavItem[] = [
+  { key: 'home', href: '/' },
+  { key: 'solutions', href: '#', children: serviceNavItems },
+  { key: 'work', href: '/work' },
+  { key: 'pricing', href: '/pricing' },
+  { key: 'insights', href: '/insights' },
+  { key: 'about', href: '/about' },
+  { key: 'contact', href: '/contact' },
+];
 
 export default function SiteHeader() {
   const t = useTranslations('nav');
   const ui = useTranslations('ui');
-  const sectorT = useTranslations('sectors');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [themeReady, setThemeReady] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Sliding underline indicator state
-  const [hoveredNav, setHoveredNav] = useState<string | null>(null);
-
-  // Mega-menu solutions dropdown state
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -53,25 +68,38 @@ export default function SiteHeader() {
     });
   }, []);
 
-  function handleSolutionsEnter() {
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 16);
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (solutionsTimeoutRef.current) {
+        clearTimeout(solutionsTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  function openSolutions() {
     if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
     setSolutionsOpen(true);
   }
 
-  function handleSolutionsLeave() {
-    solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), 150);
+  function closeSolutions(delay = 120) {
+    if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
+    solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), delay);
   }
 
-  useEffect(() => {
-    function handleScroll() {
-      setScrolled(window.scrollY > 16);
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
-      setScrollProgress(Math.min(100, progress));
+  function handleSolutionsBlur(event: FocusEvent<HTMLDivElement>) {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setSolutionsOpen(false);
     }
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }
 
   function toggleTheme() {
     const next = !dark;
@@ -80,149 +108,124 @@ export default function SiteHeader() {
     localStorage.setItem('theme', next ? 'dark' : 'light');
   }
 
-  const navItems: NavItem[] = [
-    { key: 'home', href: '/' },
-    {
-      key: 'solutions',
-      href: '#',
-      children: [
-        ...sectorKeys.map(key => ({ key, href: sectors[key].href, color: sectors[key].dotClass })),
-        { key: 'insights', href: '/insights' },
-      ],
-    },
-    { key: 'audits', href: '/website-audits' },
-    { key: 'work', href: '/work' },
-    { key: 'pricing', href: '/pricing' },
-    { key: 'about', href: '/about' },
-  ];
-
   function isActive(href: string): boolean {
     if (href === '#') return false;
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
-  const activeNavKey = navItems.find((item) => (
-    item.children
+  function isItemActive(item: NavItem): boolean {
+    return item.children
       ? item.children.some((child) => isActive(child.href))
-      : isActive(item.href)
-  ))?.key ?? null;
-  const indicatorNavKey = hoveredNav ?? activeNavKey;
-
-  function renderNavIndicator(visible: boolean) {
-    return (
-      <AnimatePresence initial={false}>
-        {visible && (
-          <motion.div
-            layoutId="nav-indicator"
-            className="absolute bottom-0 left-2 right-2 h-px bg-accent"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.16, ease: 'easeOut' }}
-          />
-        )}
-      </AnimatePresence>
-    );
+      : isActive(item.href);
   }
+
+  const desktopLinkClass = (active: boolean) =>
+    `h-10 rounded-md px-3 text-sm font-medium normal-case tracking-normal transition-colors ${
+      active
+        ? 'bg-muted text-foreground'
+        : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+    }`;
+
+  const mobileLinkClass = (active: boolean) =>
+    `flex min-h-12 items-center rounded-md px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+      active
+        ? 'bg-muted text-foreground'
+        : 'text-foreground hover:bg-muted/70 hover:text-foreground'
+    }`;
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full border-b transition-all duration-300 ${
         scrolled
-          ? 'bg-background/94 backdrop-blur-md border-b border-border'
-          : 'bg-background/80 backdrop-blur-sm'
+          ? 'border-border bg-background/96 shadow-sm backdrop-blur-md'
+          : 'border-border/60 bg-background/88 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
-        {/* Logo */}
+      <div className="mx-auto flex h-[4.5rem] max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-normal text-foreground transition-colors hover:text-navy"
+          className="flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+          aria-label={siteConfig.name}
         >
           <Image
             src={siteConfig.assets.mark}
-            alt={`${siteConfig.name} logo`}
-            width={36}
-            height={36}
-            className="size-9 shrink-0 object-cover"
-            priority
+            alt=""
+            width={40}
+            height={40}
+            className="size-10 shrink-0 object-cover"
+            aria-hidden="true"
           />
-          <span className="font-sans text-sm font-bold">{siteConfig.name}</span>
+          <span className="truncate text-base font-semibold tracking-normal">{siteConfig.name}</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-1" aria-label={ui('mainNavigation')}>
+        <nav className="hidden items-center gap-1 xl:flex" aria-label={ui('mainNavigation')}>
           {navItems.map((item) => {
-            const active = item.children
-              ? item.children.some((child) => isActive(child.href))
-              : isActive(item.href);
-            const showIndicator = indicatorNavKey === item.key;
+            const active = isItemActive(item);
 
             if (item.children) {
-              // Solutions dropdown — mega-menu with hover panel
               return (
                 <div
                   key={item.key}
-                  onMouseEnter={() => { setHoveredNav(item.key); handleSolutionsEnter(); }}
-                  onMouseLeave={() => { setHoveredNav(null); handleSolutionsLeave(); }}
                   className="relative"
+                  onBlur={handleSolutionsBlur}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') setSolutionsOpen(false);
+                  }}
+                  onMouseEnter={openSolutions}
+                  onMouseLeave={() => closeSolutions()}
                 >
                   <Button
+                    type="button"
                     variant="ghost"
                     size="sm"
-                    className={`gap-1 rounded-none font-sans text-xs font-bold uppercase transition-colors ${
-                      active ? 'text-navy' : 'text-muted-foreground hover:text-navy'
-                    }`}
+                    aria-expanded={solutionsOpen}
+                    aria-controls="site-services-menu"
+                    aria-haspopup="true"
+                    onClick={openSolutions}
+                    onFocus={openSolutions}
+                    className={`${desktopLinkClass(active)} gap-1.5`}
                   >
                     {t(item.key)}
-                    <ChevronDown className={`size-3.5 opacity-50 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`size-4 opacity-60 transition-transform duration-200 ${
+                        solutionsOpen ? 'rotate-180' : ''
+                      }`}
+                      aria-hidden="true"
+                    />
                   </Button>
-                  {renderNavIndicator(showIndicator)}
+
                   {solutionsOpen && (
                     <div
-                      className="absolute left-1/2 top-full z-50 mt-2 w-[480px] -translate-x-1/2 border border-border bg-card p-4 shadow-none"
-                      onMouseEnter={handleSolutionsEnter}
-                      onMouseLeave={handleSolutionsLeave}
+                      id="site-services-menu"
+                      className="absolute left-0 top-full z-50 mt-3 w-80 rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-lg shadow-brand-charcoal/10"
+                      onMouseEnter={openSolutions}
+                      onMouseLeave={() => closeSolutions()}
                     >
                       <div className="space-y-1">
-                        {sectorKeys.map((key) => {
-                          const sector = sectors[key];
+                        {item.children.map((child) => {
+                          const childActive = isActive(child.href);
+
                           return (
                             <Link
-                              key={key}
-                              href={sector.href}
-                              className="group flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-muted"
+                              key={child.key}
+                              href={child.href}
+                              aria-current={childActive ? 'page' : undefined}
+                              onClick={() => setSolutionsOpen(false)}
+                              className={`group flex min-h-11 items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                                childActive
+                                  ? 'bg-muted text-foreground'
+                                  : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+                              }`}
                             >
-                              <Image
-                                src={sector.image}
-                                alt={sectorT(`${key}.title`)}
-                                width={60}
-                                height={40}
-                              className="object-cover"
+                              <span>{t(child.key)}</span>
+                              <ArrowRight
+                                className="size-4 opacity-0 transition-opacity group-hover:opacity-70"
+                                aria-hidden="true"
                               />
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2">
-                                  <span className={`size-2 rounded-full ${sector.dotClass}`} />
-                                  <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-navy">
-                                    {sectorT(`${key}.title`)}
-                                  </span>
-                                </div>
-                                <p className="text-xs text-muted-foreground mt-0.5">
-                                  {sectorT(`${key}.subtitle`)}
-                                </p>
-                              </div>
                             </Link>
                           );
                         })}
-                      </div>
-                      <div className="mt-3 pt-3 border-t border-border">
-                        <Link
-                          href="/website-audits"
-                          className="flex items-center gap-2 text-sm font-medium text-navy transition-colors hover:text-foreground"
-                        >
-                          {t('audits')} <ArrowRight className="size-3" />
-                        </Link>
                       </div>
                     </div>
                   )}
@@ -231,53 +234,50 @@ export default function SiteHeader() {
             }
 
             return (
-              <div
+              <Button
                 key={item.key}
-                onMouseEnter={() => setHoveredNav(item.key)}
-                onMouseLeave={() => setHoveredNav(null)}
-                className="relative"
+                variant="ghost"
+                size="sm"
+                asChild
+                className={desktopLinkClass(active)}
               >
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                    className={`rounded-none font-sans text-xs font-bold uppercase transition-colors ${
-                    active
-                      ? 'text-navy'
-                      : 'text-muted-foreground hover:text-navy'
-                  }`}
-                >
-                  <Link href={item.href}>{t(item.key)}</Link>
-                </Button>
-                {renderNavIndicator(showIndicator)}
-              </div>
+                <Link href={item.href} aria-current={active ? 'page' : undefined}>
+                  {t(item.key)}
+                </Link>
+              </Button>
             );
           })}
+
           <Button
             asChild
             size="sm"
-            className="ml-2 h-9 rounded-md px-4 text-sm font-semibold"
+            className="ml-2 h-10 rounded-md bg-foreground px-4 text-sm font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
           >
-            <Link href="/contact">{t('contact')}</Link>
+            <Link
+              href="/website-audits"
+              data-analytics-event="header_audit_cta_click"
+              data-analytics-section="header"
+            >
+              {t('requestAudit')}
+            </Link>
           </Button>
         </nav>
 
-        {/* Right side: Theme Toggle + Language Switcher + Mobile Menu */}
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
             aria-label={themeReady ? (dark ? ui('switchToLight') : ui('switchToDark')) : ui('toggleColorTheme')}
-            className="text-muted-foreground transition-colors hover:text-navy"
+            className="text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
           >
-            {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            {dark ? <Sun className="size-4" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
           </Button>
+
           <div className="hidden xl:block">
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile menu trigger */}
           <Button
             variant="ghost"
             size="icon"
@@ -285,96 +285,96 @@ export default function SiteHeader() {
             onClick={() => setMobileOpen(true)}
             aria-label={ui('openNavigationMenu')}
           >
-            <Menu className="size-5" />
+            <Menu className="size-5" aria-hidden="true" />
           </Button>
         </div>
       </div>
 
-      {/* Mobile Slide-out Drawer */}
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-sm p-0">
-          <SheetHeader className="border-b border-border px-6 py-4">
-            <SheetTitle className="flex items-center gap-2.5 text-left">
+        <SheetContent side="right" className="flex w-full flex-col bg-background p-0 sm:max-w-sm">
+          <SheetHeader className="border-b border-border px-6 py-5">
+            <SheetTitle className="flex items-center gap-3 text-left text-base">
               <Image
                 src={siteConfig.assets.mark}
-                alt={`${siteConfig.name} logo`}
-                width={32}
-                height={32}
-                className="size-8 shrink-0 object-cover"
+                alt=""
+                width={36}
+                height={36}
+                className="size-9 shrink-0 object-cover"
+                aria-hidden="true"
               />
               <span>{siteConfig.name}</span>
             </SheetTitle>
-            <SheetDescription className="sr-only">
-              {ui('mobileNavigation')}
-            </SheetDescription>
+            <SheetDescription className="sr-only">{ui('mobileNavigation')}</SheetDescription>
           </SheetHeader>
 
-          <nav className="flex flex-col py-4" aria-label={ui('mobileNavigation')}>
-            {navItems.map((item) => {
-              if (item.children) {
-                return (
-                  <div key={item.key} className="px-6 py-2">
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {t(item.key)}
-                    </p>
-                    {item.children.map((child) => (
-                      <SheetClose asChild key={child.key}>
-                        <Link
-                          href={child.href}
-                          className={`flex items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                            isActive(child.href)
-                              ? 'bg-muted text-navy'
-                              : 'text-foreground hover:bg-muted hover:text-navy'
-                          }`}
-                        >
-                          {child.color && (
-                            <span
-                              className={`inline-block size-2 rounded-full ${child.color}`}
-                            />
-                          )}
-                          {t(child.key)}
-                        </Link>
-                      </SheetClose>
-                    ))}
-                  </div>
-                );
-              }
+          <nav className="flex-1 overflow-y-auto px-4 py-4" aria-label={ui('mobileNavigation')}>
+            <div className="space-y-1">
+              {navItems.map((item) => {
+                if (item.children) {
+                  return (
+                    <div key={item.key} className="py-2">
+                      <p className="px-4 pb-2 text-sm font-semibold text-muted-foreground">
+                        {t(item.key)}
+                      </p>
+                      <div className="space-y-1">
+                        {item.children.map((child) => {
+                          const childActive = isActive(child.href);
 
-              return (
-                <SheetClose asChild key={item.key}>
-                  <Link
-                    href={item.href}
-                    className={`flex items-center px-6 py-2.5 text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'bg-muted text-navy'
-                        : 'text-foreground hover:bg-muted hover:text-navy'
-                    }`}
-                  >
-                    {t(item.key)}
-                  </Link>
-                </SheetClose>
-              );
-            })}
+                          return (
+                            <SheetClose asChild key={child.key}>
+                              <Link
+                                href={child.href}
+                                aria-current={childActive ? 'page' : undefined}
+                                className={mobileLinkClass(childActive)}
+                              >
+                                {t(child.key)}
+                              </Link>
+                            </SheetClose>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
+                const active = isActive(item.href);
+
+                return (
+                  <SheetClose asChild key={item.key}>
+                    <Link
+                      href={item.href}
+                      aria-current={active ? 'page' : undefined}
+                      className={mobileLinkClass(active)}
+                    >
+                      {t(item.key)}
+                    </Link>
+                  </SheetClose>
+                );
+              })}
+            </div>
           </nav>
 
-          {/* Mobile CTA + language switcher */}
-          <div className="border-t border-border px-6 py-4 mt-auto space-y-3">
+          <div className="space-y-4 border-t border-border px-6 py-5">
             <SheetClose asChild>
-              <Button asChild className="w-full font-medium">
-                <Link href="/contact">{t('contact')}</Link>
+              <Button
+                asChild
+                className="h-11 w-full rounded-md bg-foreground text-base font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
+              >
+                <Link
+                  href="/website-audits"
+                  data-analytics-event="header_audit_cta_click"
+                  data-analytics-section="mobile_drawer"
+                >
+                  {t('requestAudit')}
+                </Link>
               </Button>
             </SheetClose>
-            <LanguageSwitcher />
+            <div className="flex items-center justify-between">
+              <LanguageSwitcher />
+            </div>
           </div>
         </SheetContent>
       </Sheet>
-      {/* Scroll progress bar */}
-      <div className="h-0.5 bg-border/50">
-        <div
-          className="h-full bg-accent transition-[width] duration-150 ease-out"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
     </header>
   );
 }

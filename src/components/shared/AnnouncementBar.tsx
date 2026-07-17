@@ -38,22 +38,22 @@ export function AnnouncementBar() {
         hidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-1 pr-8 sm:flex-row sm:gap-3 relative">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-1 pr-12 sm:flex-row sm:gap-3 relative">
         <span className="font-medium leading-tight">
           {t('text')}
         </span>
         <a
           href="/website-audits"
-          className="border-b border-transparent font-semibold no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-charcoal whitespace-nowrap leading-tight"
+          className="inline-flex min-h-10 items-center border-b border-transparent font-semibold leading-tight no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-charcoal whitespace-nowrap"
         >
           {t('cta')}
         </a>
         <button
           onClick={handleDismiss}
-          className="absolute right-0 text-brand-charcoal transition-colors duration-150 ease-out hover:text-brand-charcoal"
+          className="absolute right-0 inline-flex size-10 items-center justify-center text-brand-charcoal transition-colors duration-150 ease-out hover:text-brand-charcoal"
           aria-label={ui('dismissAnnouncement')}
         >
-          <X className="size-3.5" />
+          <X className="size-3.5" aria-hidden="true" />
         </button>
       </div>
     </div>

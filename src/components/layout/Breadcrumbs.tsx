@@ -3,6 +3,7 @@
 import { Link } from '@/lib/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Home } from 'lucide-react';
+import Script from 'next/script';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -57,8 +58,10 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
 
   return (
     <>
-      <script
+      <Script
+        id={`breadcrumb-json-ld-${locale}`}
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Breadcrumb className="mb-4">
@@ -67,9 +70,9 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             <BreadcrumbLink asChild>
               <Link
                 href="/"
-                className="flex items-center gap-1 text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
+                className="flex min-h-10 min-w-10 items-center justify-center gap-1 py-1 text-muted-foreground transition-colors hover:text-brand-serene-coral-darken sm:min-w-0 sm:justify-start"
               >
-                <Home className="size-3.5" />
+                <Home className="size-3.5" aria-hidden="true" />
                 <span className="sr-only sm:not-sr-only">{ui('home')}</span>
               </Link>
             </BreadcrumbLink>
@@ -90,7 +93,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                     <BreadcrumbLink asChild>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
+                        className="inline-flex min-h-10 items-center py-1 text-muted-foreground hover:text-brand-serene-coral-darken transition-colors"
                       >
                         {item.label}
                       </Link>

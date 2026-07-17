@@ -8,7 +8,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
-import { teamBlur } from '@/lib/blur-placeholders';
 import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({
@@ -17,10 +16,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'aboutPage' });
   return generatePageMetadata({
-    title: `About — ${siteConfig.name}`,
-    description:
-      'Founder-led web studio in Batumi, Georgia. Dutch developer specializing in hospitality, medical, and beauty websites with sector-specific expertise.',
+    title: t('heading'),
+    description: t('story_body_1'),
     path: '/about',
     locale: locale as Locale,
     ogImage: siteConfig.assets.ogDefault,
@@ -36,6 +35,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
 
   const t = await getTranslations('aboutPage');
+  const tFounder = await getTranslations('founder.founder');
   const tNav = await getTranslations('nav');
 
   const breadcrumbItems = [
@@ -92,25 +92,27 @@ export default async function AboutPage({
         </div>
       </Section>
 
-      {/* Founder Photo — prominent, large format */}
+      {/* Founder-led proof panel — no staged founder portrait */}
       <Section>
         <div className="max-w-4xl mx-auto">
-          <div className="relative aspect-21/9 overflow-hidden rounded-md border border-border shadow-none">
-            <Image
-              src="/images/about-team.jpg"
-              alt={t('image_alt')}
-              fill
-              className="object-cover object-center"
-              priority
-              placeholder="blur"
-              blurDataURL={teamBlur}
-              sizes="(max-width: 768px) 100vw, 896px"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-foreground/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-              <p className="text-brand-cream text-xl md:text-2xl font-semibold">{siteConfig.name}</p>
-              <p className="text-brand-cream text-sm mt-1">{t('image_caption')}</p>
+          <div className="border border-border bg-card p-6 shadow-none md:p-8">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+              <Image
+                src={siteConfig.assets.mark}
+                alt=""
+                width={56}
+                height={56}
+                className="size-14 shrink-0 object-cover"
+                aria-hidden="true"
+              />
+              <div>
+                <p className="text-xl font-semibold text-foreground md:text-2xl">{siteConfig.name}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t('image_caption')}</p>
+              </div>
             </div>
+            <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-muted-foreground">
+              {tFounder('photoNote')}
+            </p>
           </div>
         </div>
       </Section>

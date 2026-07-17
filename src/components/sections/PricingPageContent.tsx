@@ -24,8 +24,8 @@ export async function PricingCards({ locale }: PricingCardsProps) {
         >
           {pkg.prominent && (
             <div className="relative z-10 flex justify-center -mb-3">
-              <span className="bg-brand-sage-green-darken text-background text-xs font-medium px-3 py-1 border border-border flex items-center gap-1">
-                <Star className="size-3" />
+              <span className="flex max-w-full items-center justify-center gap-1 text-wrap border border-border bg-brand-sage-green-darken px-3 py-1 text-center text-xs font-medium leading-snug text-background">
+                <Star className="size-3 shrink-0" />
                 {tPricing('most_popular')}
               </span>
             </div>
@@ -39,7 +39,7 @@ export async function PricingCards({ locale }: PricingCardsProps) {
             {/* Package name */}
             <div className="flex items-center gap-2.5 mb-2">
               <span className={`size-2.5 ${pkg.dotClass}`} />
-              <h3 className="text-lg font-semibold">{t(`${pkg.key}.name`)}</h3>
+              <h2 className="text-lg font-semibold">{t(`${pkg.key}.name`)}</h2>
             </div>
 
             {/* Best for */}
@@ -57,7 +57,7 @@ export async function PricingCards({ locale }: PricingCardsProps) {
 
             {/* Includes */}
             <div className="mb-4">
-              <h4 className="text-sm font-medium text-foreground mb-2">{t('includes_label')}</h4>
+              <h3 className="text-sm font-medium text-foreground mb-2">{t('includes_label')}</h3>
               <ul className="space-y-2">
                 {Array.from({ length: pkg.itemCount }, (_, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">
@@ -70,7 +70,7 @@ export async function PricingCards({ locale }: PricingCardsProps) {
 
             {/* Best upsells */}
             <div className="mb-6">
-              <h4 className="text-sm font-medium text-foreground mb-2">{t('best_upsells_label')}</h4>
+              <h3 className="text-sm font-medium text-foreground mb-2">{t('best_upsells_label')}</h3>
               <ul className={`${pkg.bgAccent} border border-border p-3 space-y-2`}>
                 {Array.from({ length: pkg.upsellCount }, (_, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm">

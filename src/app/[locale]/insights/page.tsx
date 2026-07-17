@@ -1,8 +1,11 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Badge } from '@/components/ui/badge';
 import { Building2, Stethoscope, Sparkles, Clock } from 'lucide-react';
+import { generatePageMetadata } from '@/lib/seo/metadata';
+import type { Locale } from '@/lib/i18n/config';
 
 const clusterIcons: Record<string, React.ElementType> = {
   hospitality: Building2,
@@ -23,6 +26,22 @@ const clusterDotColors: Record<string, string> = {
 };
 
 const clusterKeys = ['hospitality', 'medical', 'beauty'] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'insightsPage' });
+
+  return generatePageMetadata({
+    title: t('heading'),
+    description: t('subtitle'),
+    path: '/insights',
+    locale: locale as Locale,
+  });
+}
 
 export default async function InsightsPage({
   params,

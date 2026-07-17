@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { SectorPageTemplate } from '@/components/shared/SectorPageTemplate';
 import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
@@ -10,10 +10,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'sectorPages.beauty.hero' });
   return generatePageMetadata({
-    title: 'Beauty Salon Websites Batumi — Booking-Led Websites for Salons',
-    description:
-      'Websites that fill your appointment book, not your Instagram DMs. Service menu systems, online booking, pricing visibility, and promo management for Batumi salons, medspas, and studios.',
+    title: t('title'),
+    description: t('subtitle'),
     path: '/beauty-salon-websites-batumi',
     locale: locale as Locale,
     ogImage: '/og-beauty.png',

@@ -1,5 +1,8 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { type Locale } from '@/lib/i18n/config';
+import { type Locale, launchLocales } from '@/lib/i18n/config';
+import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
@@ -7,6 +10,16 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 import auditData from '@/content/audits/batumi-hotel-website-audit.json';
+
+type LocalizedAuditDetail = {
+  title: string;
+  executiveSummary: string;
+  findings: Array<{
+    title: string;
+    description: string;
+    recommendedFix: string;
+  }>;
+};
 
 function getScoreColor(score: number): string {
   if (score >= 70) return 'text-brand-sage-green-darken';
@@ -26,16 +39,36 @@ function getScoreBarColor(score: number): string {
   return 'bg-destructive';
 }
 
-const categoryLabels: Record<string, string> = {
-  brand: 'Brand Clarity',
-  speed: 'Performance & Speed',
-  seo: 'Local SEO',
-  content: 'Content Structure',
-  accessibility: 'Accessibility',
-  conversion: 'Conversion UX',
-};
-
 const categoryKeys = ['brand', 'speed', 'seo', 'content', 'accessibility', 'conversion'] as const;
+
+export function generateStaticParams() {
+  return launchLocales.map((locale) => ({
+    locale,
+    slug: 'batumi-hotel-website-audit',
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (slug !== 'batumi-hotel-website-audit') {
+    return {};
+  }
+
+  const t = await getTranslations({ locale, namespace: 'auditPage' });
+  const localizedAudit = t.raw('detail.demo_audit') as LocalizedAuditDetail;
+
+  return generatePageMetadata({
+    title: localizedAudit.title,
+    description: localizedAudit.executiveSummary,
+    path: `/website-audits/${slug}`,
+    locale: locale as Locale,
+  });
+}
 
 export default async function AuditDetailPage({
   params,
@@ -47,17 +80,24 @@ export default async function AuditDetailPage({
 
   const t = await getTranslations('auditPage');
   const tNav = await getTranslations('nav');
+  const localizedAudit = t.raw('detail.demo_audit') as LocalizedAuditDetail;
+  const categoryLabels: Record<string, string> = Object.fromEntries(
+    categoryKeys.map((key) => [key, t(`rubric.items.${key}.name`)])
+  );
 
-  // For now, only the demo audit exists
   if (slug !== 'batumi-hotel-website-audit') {
-    return (
-      <Section>
-        <p>Audit not found.</p>
-      </Section>
-    );
+    notFound();
   }
 
-  const audit = auditData;
+  const audit = {
+    ...auditData,
+    title: localizedAudit.title,
+    executiveSummary: localizedAudit.executiveSummary,
+    findings: auditData.findings.map((finding, index) => ({
+      ...finding,
+      ...localizedAudit.findings[index],
+    })),
+  };
   const sectorTagColor =
     audit.sector === 'hospitality'
       ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
@@ -80,7 +120,7 @@ export default async function AuditDetailPage({
         <div className="mb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <Badge className={`${sectorTagColor} rounded-none border-0 font-semibold text-xs uppercase tracking-wide`}>
-              {audit.sector.charAt(0).toUpperCase() + audit.sector.slice(1)}
+              {t(`sampleFindings.items.${audit.sector}.sector`)}
             </Badge>
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
               <Calendar className="size-3.5" />

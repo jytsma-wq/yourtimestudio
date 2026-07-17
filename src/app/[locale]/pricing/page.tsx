@@ -22,10 +22,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'pricing' });
   return generatePageMetadata({
-    title: `Pricing - ${siteConfig.name}`,
-    description:
-      'Transparent pricing for hospitality, medical, and beauty websites. Setup fees, monthly plans, and add-ons for Batumi businesses.',
+    title: t('heading'),
+    description: t('subtitle'),
     path: '/pricing',
     locale: locale as Locale,
     ogImage: siteConfig.assets.ogDefault,

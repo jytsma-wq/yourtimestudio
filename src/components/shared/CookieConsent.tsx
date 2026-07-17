@@ -25,14 +25,20 @@ export function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    queueMicrotask(() => {
-      const consent = localStorage.getItem(CONSENT_KEY);
-      if (!consent) {
+    const consentCheck = window.setTimeout(() => {
+      try {
+        const consent = localStorage.getItem(CONSENT_KEY);
+        if (!consent) {
+          setVisible(true);
+        } else if (consent === 'accepted') {
+          loadAnalytics();
+        }
+      } catch {
         setVisible(true);
-      } else if (consent === 'accepted') {
-        loadAnalytics();
       }
-    });
+    }, 0);
+
+    return () => window.clearTimeout(consentCheck);
   }, []);
 
   function handleAccept() {
@@ -63,7 +69,7 @@ export function CookieConsent() {
                 {t('message')}{' '}
                 <Link
                   href="/privacy"
-                  className="border-b border-transparent font-medium text-brand-serene-coral-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
+                  className="inline-flex min-h-10 items-center border-b border-transparent font-medium text-brand-serene-coral-darken no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral"
                 >
                   {t('privacy_link')}
                 </Link>

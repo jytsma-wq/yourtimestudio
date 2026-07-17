@@ -5,9 +5,8 @@ import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen, DollarSign } from 'lucide-react';
+import { BookOpen, DollarSign } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
-import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({
   params,
@@ -15,9 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'thankYouPage' });
+
   return generatePageMetadata({
-    title: `Thank You — ${siteConfig.name}`,
-    description: 'Thank you for your inquiry. We will get back to you within one business day.',
+    title: t('heading'),
+    description: t('body'),
     path: '/thank-you',
     locale: locale as Locale,
     noIndex: true,
@@ -33,10 +34,9 @@ export default async function ThankYouPage({
   setRequestLocale(locale);
 
   const t = await getTranslations('thankYouPage');
-  const tNav = await getTranslations('nav');
 
   const breadcrumbItems = [
-    { label: 'Thank You' },
+    { label: t('heading') },
   ];
 
   return (

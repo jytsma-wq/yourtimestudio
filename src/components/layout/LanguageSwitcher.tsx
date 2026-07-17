@@ -37,16 +37,18 @@ export default function LanguageSwitcher() {
         <Button
           variant="outline"
           size="sm"
-          className="h-8 gap-1.5 rounded-md border-border/60 bg-background/50 px-2.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-brand-serene-coral/40 hover:text-brand-serene-coral-darken hover:bg-brand-serene-coral/5"
+          className="min-h-11 gap-1.5 rounded-md border-border/60 bg-background/50 px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-brand-serene-coral/40 hover:text-brand-serene-coral-darken hover:bg-brand-serene-coral/5"
+          aria-label={`${localeLabels[locale]} language`}
         >
           <span className="text-xs font-bold tracking-wider uppercase">{localeAbbreviations[locale]}</span>
-          <span className="text-xs text-muted-foreground">▼</span>
+          <span className="text-xs text-muted-foreground" aria-hidden="true">▼</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-40 p-1">
         {launchLocales.map((loc) => (
           <DropdownMenuItem
             key={loc}
+            aria-label={localeLabels[loc]}
             onClick={() => handleSwitch(loc)}
             className={`flex items-center justify-between gap-2 rounded-md px-2.5 py-2 text-sm transition-colors ${
               locale === loc
@@ -55,12 +57,15 @@ export default function LanguageSwitcher() {
             }`}
           >
             <span className="flex items-center gap-2">
-              <span className="text-xs font-bold tracking-wider uppercase text-muted-foreground w-5">
+              <span
+                className="text-xs font-bold tracking-wider uppercase text-muted-foreground w-5"
+                aria-hidden="true"
+              >
                 {localeAbbreviations[loc]}
               </span>
               <span>{localeLabels[loc]}</span>
             </span>
-            {locale === loc && <Check className="size-3.5 text-brand-serene-coral-darken" />}
+            {locale === loc && <Check className="size-3.5 text-brand-serene-coral-darken" aria-hidden="true" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

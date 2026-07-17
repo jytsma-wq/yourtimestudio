@@ -14,10 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contactPage' });
+
   return generatePageMetadata({
-    title: `Contact — ${siteConfig.name}`,
-    description:
-      `Get in touch with ${siteConfig.name} for practical web design, local SEO, and booking-focused websites in Batumi, Georgia. Response within one business day.`,
+    title: t('heading'),
+    description: t('subtitle'),
     path: '/contact',
     locale: locale as Locale,
     ogImage: siteConfig.assets.ogDefault,

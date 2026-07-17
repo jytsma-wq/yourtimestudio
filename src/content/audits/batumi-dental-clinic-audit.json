@@ -35,8 +35,8 @@
     {
       "category": "content",
       "title": "Monolingual Georgian content only",
-      "description": "With 40% of Batumi medical tourists from Russian-speaking countries and a growing international patient base, having content only in Georgian excludes the majority of potential patients. Russian and English content is essential for medical tourism.",
-      "recommendedFix": "Add Russian and English translations for all patient-facing content. Prioritize doctor profiles, treatment descriptions, and the booking flow. Ensure medical terminology is professionally translated."
+      "description": "A clinic serving local and international patients needs treatment, doctor, safety, and appointment information in the languages patients are most likely to use. Single-language content can make qualified patients hesitate before contacting.",
+      "recommendedFix": "Add Russian and English translations for key patient-facing content. Prioritize doctor profiles, treatment descriptions, and the booking flow. Review medical terminology with a qualified translator."
     }
   ]
 }

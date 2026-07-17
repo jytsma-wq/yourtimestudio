@@ -29,9 +29,13 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
           size="lg"
           className="h-12 rounded-md bg-background px-8 text-base font-semibold text-navy hover:bg-background/90"
         >
-          <Link href="/website-audits">
+          <Link
+            href="/website-audits"
+            data-analytics-event="final_audit_cta_click"
+            data-analytics-section="final_cta"
+          >
             {t('primary')}
-            <ArrowRight className="ml-1 size-4" />
+            <ArrowRight className="ml-1 size-4" aria-hidden="true" />
           </Link>
         </Button>
         <Button
@@ -40,7 +44,11 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
           size="lg"
           className="h-12 rounded-md border-background/35 px-8 text-base text-background hover:bg-background/10 hover:text-background"
         >
-          <Link href="/contact">
+          <Link
+            href="/contact"
+            data-analytics-event="final_contact_cta_click"
+            data-analytics-section="final_cta"
+          >
             {t('secondary')}
           </Link>
         </Button>

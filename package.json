@@ -2,11 +2,16 @@
   "name": "batumi-lighthouse",
   "version": "0.2.0",
   "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev -p 3000",
     "prebuild": "prisma generate",
     "build": "next build && node scripts/copy-standalone-assets.mjs",
-    "start": "node .next/standalone/server.js",
+    "start": "node server.js",
+    "test": "node scripts/production-readiness-test.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",

@@ -34,9 +34,9 @@
     },
     {
       "category": "speed",
-      "title": "3.8-second mobile load time",
-      "description": "The homepage loads slowly on mobile due to unoptimized Instagram embeds and large background images. 53% of beauty salon searches happen on mobile — slow load times directly cost bookings.",
-      "recommendedFix": "Replace Instagram embeds with lightweight image galleries, optimize all images to WebP format, implement lazy loading, and target sub-2-second load times."
+      "title": "Slow-feeling mobile first load",
+      "description": "The homepage feels heavier than it needs to on mobile because social embeds and large media compete with the first booking decision. Visitors arriving from Instagram or Google need service, price, proof, and contact details quickly.",
+      "recommendedFix": "Replace heavy embeds with lightweight image galleries, optimize images, lazy-load non-critical media, and test the first screen on real mobile connections before launch."
     }
   ]
 }

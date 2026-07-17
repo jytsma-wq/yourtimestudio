@@ -34,6 +34,11 @@ export async function getExampleUiLabels() {
       screenshotComingSoon: t('preview.screenshotComingSoon'),
     },
     fields: {
+      businessType: t('fields.businessType'),
+      demonstratedProblem: t('fields.demonstratedProblem'),
+      pagesModules: t('fields.pagesModules'),
+      clientLearning: t('fields.clientLearning'),
+      disclosure: t('fields.disclosure'),
       features: t('fields.features'),
       whatItShows: t('fields.whatItShows'),
     },
@@ -61,6 +66,7 @@ export async function getExampleUiLabels() {
       viewWebsite: t('buttons.viewWebsite'),
       viewDemo: t('buttons.viewDemo'),
       viewRepository: t('buttons.viewRepository'),
+      viewExample: t('buttons.viewExample'),
       discussSimilarWebsite: t('buttons.discussSimilarWebsite'),
     },
     proofLine: (level: ExampleProofLevel) =>

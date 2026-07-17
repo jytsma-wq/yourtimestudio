@@ -22,10 +22,10 @@ const buttonVariants = cva(
         link: "text-navy no-underline border-b border-transparent hover:border-b hover:border-accent hover:no-underline ease-in-out dark:text-brand-serene-coral",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        default: "min-h-11 px-4 py-2 has-[>svg]:px-3",
+        sm: "min-h-10 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "min-h-12 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-11",
       },
     },
     defaultVariants: {

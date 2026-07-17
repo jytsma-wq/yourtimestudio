@@ -10,6 +10,7 @@ const pages = [
   { path: '/medical-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/beauty-salon-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/website-audits', priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/photography', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/pricing', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },

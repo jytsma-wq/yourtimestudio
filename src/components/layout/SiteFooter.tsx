@@ -18,6 +18,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
   const solutionsLinks: { label: string; href: string; color?: string }[] = [
     ...sectorKeys.map(key => ({ label: nav(key), href: sectors[key].href, color: sectors[key].dotClass })),
     { label: nav('audits'), href: '/website-audits' },
+    { label: nav('photography'), href: '/photography' },
   ];
 
   const companyLinks = [
@@ -76,10 +77,10 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="flex min-h-10 items-center gap-2 py-1 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.color && (
-                      <span className={`inline-block size-1.5 rounded-full ${link.color}`} />
+                      <span className={`inline-block size-1.5 rounded-full ${link.color}`} aria-hidden="true" />
                     )}
                     {link.label}
                   </Link>
@@ -98,7 +99,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="inline-flex min-h-10 items-center py-1 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.label}
                   </Link>
@@ -117,7 +118,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                    className="inline-flex min-h-10 items-center py-1 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                   >
                     {link.label}
                   </Link>
@@ -140,7 +141,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
+                        className="flex min-h-10 items-center gap-2.5 py-1 text-sm text-muted-foreground transition-colors hover:text-brand-serene-coral-darken"
                       >
                         <Icon className="size-4" aria-hidden="true" />
                         {link.label}
@@ -161,7 +162,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             {launchLocales.map((loc, i) => (
               <span key={loc} className="flex items-center gap-3">
-                {i > 0 && <span className="text-border">|</span>}
+                {i > 0 && <span className="text-border" aria-hidden="true">|</span>}
                 <Link
                   href="/"
                   locale={loc}

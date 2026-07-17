@@ -9,12 +9,17 @@ const intlMiddleware = createMiddleware({
 });
 
 export default function proxy(request: NextRequest) {
-  if (request.nextUrl.pathname === '/') {
+  const pathname = request.nextUrl.pathname;
+  const hasLocalePrefix = locales.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
+
+  if (!hasLocalePrefix) {
     const headers = new Headers(request.headers);
     headers.set('X-NEXT-INTL-LOCALE', defaultLocale);
 
     const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}`;
+    url.pathname = `/${defaultLocale}${pathname === '/' ? '' : pathname}`;
 
     const response = NextResponse.rewrite(url, {
       request: {

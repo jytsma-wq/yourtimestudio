@@ -4,7 +4,6 @@ import { launchLocales, type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { siteConfig } from '@/lib/site-config';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -16,10 +15,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'legalPage.privacy' });
+
   return generatePageMetadata({
-    title: `Privacy Policy — ${siteConfig.name}`,
-    description:
-      `Learn how ${siteConfig.name} collects, uses, and protects your personal data. Our privacy policy covers data collection, cookies, third-party services, and your rights.`,
+    title: t('heading'),
+    description: t('intro'),
     path: '/privacy',
     locale: locale as Locale,
     noIndex: true,

@@ -52,7 +52,7 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
           >
             <Link href="/website-audits">
               {t('cta')}
-              <ArrowRight className="ml-1 size-4" />
+              <ArrowRight className="ml-1 size-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>
@@ -63,7 +63,9 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
               <p className="editorial-kicker text-navy">{t('panel_kicker')}</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">{t('scorecard_title')}</h3>
             </div>
-            <p className="text-right font-sans text-3xl font-semibold text-muted-foreground">/100</p>
+            <p className="text-right font-sans text-3xl font-semibold text-muted-foreground" aria-hidden="true">
+              /100
+            </p>
           </div>
 
           <div className="divide-y divide-border">
@@ -72,9 +74,11 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
               return (
                 <div key={cat.key} className="grid gap-4 p-5 md:grid-cols-[80px_1fr] md:p-6">
                   <div className="flex items-center gap-3 md:block">
-                    <p className="font-sans text-sm font-semibold text-muted-foreground">{cat.score}</p>
+                    <p className="font-sans text-sm font-semibold text-muted-foreground" aria-hidden="true">
+                      {cat.score}
+                    </p>
                     <div className="mt-0 flex size-10 items-center justify-center border border-border bg-background md:mt-4">
-                      <Icon className="size-5 text-navy" />
+                      <Icon className="size-5 text-navy" aria-hidden="true" />
                     </div>
                   </div>
                   <div>
