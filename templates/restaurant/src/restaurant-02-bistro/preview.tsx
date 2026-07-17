@@ -139,7 +139,7 @@ function BistroHome({
             <p className="text-sm font-semibold uppercase tracking-wide text-[#9c5b2c]">
               Neighborhood bistro
             </p>
-            <h1 className="mt-4 max-w-3xl [font-family:var(--wtf-font-heading)] text-5xl font-normal leading-[1.03] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 max-w-3xl [font-family:var(--wtf-font-heading)] text-[2.75rem] font-normal leading-[1.03] sm:text-6xl lg:text-7xl">
               {content.hero.title}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#6d513b]">
