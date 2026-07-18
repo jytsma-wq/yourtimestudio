@@ -1,173 +1,232 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import { type FocusEvent, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Menu, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Menu, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetClose,
 } from '@/components/ui/sheet';
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
-import { sectors, sectorKeys } from '@/lib/sector-config';
+import { sectors } from '@/lib/sector-config';
+import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
+
+interface NavChild {
+  key: string;
+  href: string;
+}
 
 interface NavItem {
   key: string;
-  href?: string;
-  children?: { key: string; href: string }[];
+  href: string;
+  children?: NavChild[];
 }
 
-interface BrandLockupProps {
-  descriptor: string;
-  className?: string;
-  priority?: boolean;
-  onClick?: () => void;
-}
+const serviceNavItems: NavChild[] = [
+  { key: 'hotelsGuesthouses', href: sectors.hospitality.href },
+  { key: 'clinicsMedical', href: sectors.medical.href },
+  { key: 'beautyStudios', href: sectors.beauty.href },
+  { key: 'websiteAudit', href: '/website-audits' },
+  { key: 'photography', href: '/photography' },
+];
 
-function BrandLockup({ descriptor, className = '', priority = false, onClick }: BrandLockupProps) {
-  return (
-    <Link
-      href="/"
-      onClick={onClick}
-      className={`group flex min-w-0 items-center gap-2.5 text-ink transition-colors hover:text-sea-bright ${className}`}
-    >
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-hairline bg-paper p-0.5">
-        <span className="relative size-8 overflow-hidden rounded-sm">
-          <Image
-            src={siteConfig.brand.markSrc}
-            alt={siteConfig.brand.markAlt}
-            fill
-            sizes="32px"
-            priority={priority}
-            className="object-cover"
-          />
-        </span>
-      </span>
-      <span className="min-w-0 leading-none">
-        <span className="block truncate text-sm font-semibold tracking-[0.04em] text-ink">
-          {siteConfig.brand.displayName}
-        </span>
-        <span className="mt-1 block truncate font-mono text-[0.62rem] font-semibold uppercase leading-none tracking-[0.12em] text-muted transition-colors group-hover:text-ink/80">
-          {descriptor}
-        </span>
-      </span>
-    </Link>
-  );
-}
+const navItems: NavItem[] = [
+  { key: 'home', href: '/' },
+  { key: 'solutions', href: '#', children: serviceNavItems },
+  { key: 'work', href: '/work' },
+  { key: 'templates', href: '/templates' },
+  { key: 'pricing', href: '/pricing' },
+  { key: 'insights', href: '/insights' },
+  { key: 'about', href: '/about' },
+  { key: 'contact', href: '/contact' },
+];
 
 export default function SiteHeader() {
   const t = useTranslations('nav');
   const ui = useTranslations('ui');
-  const sectorT = useTranslations('sectors');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dark, setDark] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  function handleSolutionsEnter() {
-    if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
-    setSolutionsOpen(true);
-  }
-
-  function handleSolutionsLeave() {
-    solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), 150);
-  }
+  useEffect(() => {
+    queueMicrotask(() => {
+      const saved = localStorage.getItem('theme');
+      const isDark = saved === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+      setDark(isDark);
+      setThemeReady(true);
+    });
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
       setScrolled(window.scrollY > 16);
     }
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems: NavItem[] = [
-    { key: 'home', href: '/' },
-    {
-      key: 'solutions',
-      children: [
-        ...sectorKeys.map(key => ({ key, href: sectors[key].href })),
-        { key: 'audits', href: '/website-audits' },
-      ],
-    },
-    { key: 'work', href: '/work' },
-    { key: 'pricing', href: '/pricing' },
-    { key: 'about', href: '/about' },
-  ];
+  useEffect(() => {
+    return () => {
+      if (solutionsTimeoutRef.current) {
+        clearTimeout(solutionsTimeoutRef.current);
+      }
+    };
+  }, []);
 
-  function isActive(href?: string): boolean {
-    if (!href) return false;
+  function openSolutions() {
+    if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
+    setSolutionsOpen(true);
+  }
+
+  function closeSolutions(delay = 120) {
+    if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
+    solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), delay);
+  }
+
+  function handleSolutionsBlur(event: FocusEvent<HTMLDivElement>) {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setSolutionsOpen(false);
+    }
+  }
+
+  function toggleTheme() {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle('dark', next);
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+  }
+
+  function isActive(href: string): boolean {
+    if (href === '#') return false;
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
+  function isItemActive(item: NavItem): boolean {
+    return item.children
+      ? item.children.some((child) => isActive(child.href))
+      : isActive(item.href);
+  }
+
+  const desktopLinkClass = (active: boolean) =>
+    `h-10 rounded-md px-3 text-sm font-medium normal-case tracking-normal transition-colors ${
+      active
+        ? 'bg-muted text-foreground'
+        : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+    }`;
+
+  const mobileLinkClass = (active: boolean) =>
+    `flex min-h-12 items-center rounded-md px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+      active
+        ? 'bg-muted text-foreground'
+        : 'text-foreground hover:bg-muted/70 hover:text-foreground'
+    }`;
+
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full border-b transition-all duration-300 ${
         scrolled
-          ? 'bg-canvas/95 backdrop-blur-md border-b border-hairline'
-          : 'bg-canvas/80 backdrop-blur-sm'
+          ? 'border-border bg-background/96 shadow-sm backdrop-blur-md'
+          : 'border-border/60 bg-background/88 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
-        {/* Brand lockup */}
-        <BrandLockup descriptor={t('brand_descriptor')} priority />
+      <div className="mx-auto flex h-[4.5rem] max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
+        <Link
+          href="/"
+          className="flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+          aria-label={siteConfig.name}
+        >
+          <Image
+            src={siteConfig.assets.mark}
+            alt=""
+            width={40}
+            height={40}
+            className="size-10 shrink-0 object-cover"
+            aria-hidden="true"
+          />
+          <span className="truncate text-base font-semibold tracking-normal">{siteConfig.name}</span>
+        </Link>
 
-        {/* Desktop Navigation — visible at lg (1024px) */}
-        <nav className="hidden lg:flex items-center gap-1" aria-label={ui('mainNavigation')}>
+        <nav className="hidden items-center gap-1 xl:flex" aria-label={ui('mainNavigation')}>
           {navItems.map((item) => {
-            const active = item.children
-              ? item.children.some((child) => isActive(child.href))
-              : isActive(item.href);
+            const active = isItemActive(item);
 
             if (item.children) {
               return (
                 <div
                   key={item.key}
-                  onMouseEnter={handleSolutionsEnter}
-                  onMouseLeave={handleSolutionsLeave}
                   className="relative"
+                  onBlur={handleSolutionsBlur}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Escape') setSolutionsOpen(false);
+                  }}
+                  onMouseEnter={openSolutions}
+                  onMouseLeave={() => closeSolutions()}
                 >
                   <Button
+                    type="button"
                     variant="ghost"
                     size="sm"
                     aria-expanded={solutionsOpen}
-                    aria-haspopup="menu"
-                    className={`gap-1 rounded-md font-mono text-xs font-semibold uppercase tracking-wider transition-colors ${
-                      active ? 'text-sea-bright' : 'text-muted hover:text-ink'
-                    }`}
+                    aria-controls="site-services-menu"
+                    aria-haspopup="true"
+                    onClick={openSolutions}
+                    onFocus={openSolutions}
+                    className={`${desktopLinkClass(active)} gap-1.5`}
                   >
                     {t(item.key)}
-                    <ChevronDown className={`size-3 opacity-50 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                    <ChevronDown
+                      className={`size-4 opacity-60 transition-transform duration-200 ${
+                        solutionsOpen ? 'rotate-180' : ''
+                      }`}
+                      aria-hidden="true"
+                    />
                   </Button>
+
                   {solutionsOpen && (
                     <div
-                      className="absolute top-full left-1/2 z-50 mt-2 w-72 -translate-x-1/2 rounded-md border border-hairline bg-surface p-3 shadow-none"
-                      onMouseEnter={handleSolutionsEnter}
-                      onMouseLeave={handleSolutionsLeave}
+                      id="site-services-menu"
+                      className="absolute left-0 top-full z-50 mt-3 w-80 rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-lg shadow-brand-charcoal/10"
+                      onMouseEnter={openSolutions}
+                      onMouseLeave={() => closeSolutions()}
                     >
-                      <div className="space-y-0.5">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.key}
-                            href={child.href}
-                            className={`flex items-center gap-2.5 px-3 py-2 rounded text-sm transition-colors ${
-                              isActive(child.href)
-                                ? 'text-sea-bright bg-surface-elevated'
-                                : 'text-ink hover:text-sea-bright hover:bg-surface-elevated'
-                            }`}
-                          >
-                            <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} aria-hidden="true" />
-                            {child.key === 'audits' ? t('audits') : sectorT(`${child.key}.title`)}
-                          </Link>
-                        ))}
+                      <div className="space-y-1">
+                        {item.children.map((child) => {
+                          const childActive = isActive(child.href);
+
+                          return (
+                            <Link
+                              key={child.key}
+                              href={child.href}
+                              aria-current={childActive ? 'page' : undefined}
+                              onClick={() => setSolutionsOpen(false)}
+                              className={`group flex min-h-11 items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                                childActive
+                                  ? 'bg-muted text-foreground'
+                                  : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+                              }`}
+                            >
+                              <span>{t(child.key)}</span>
+                              <ArrowRight
+                                className="size-4 opacity-0 transition-opacity group-hover:opacity-70"
+                                aria-hidden="true"
+                              />
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -181,34 +240,49 @@ export default function SiteHeader() {
                 variant="ghost"
                 size="sm"
                 asChild
-                className={`rounded-md font-mono text-xs font-semibold uppercase tracking-wider transition-colors ${
-                  active ? 'text-sea-bright' : 'text-muted hover:text-ink'
-                }`}
+                className={desktopLinkClass(active)}
               >
-                <Link href={item.href || '/'}>{t(item.key)}</Link>
+                <Link href={item.href} aria-current={active ? 'page' : undefined}>
+                  {t(item.key)}
+                </Link>
               </Button>
             );
           })}
+
           <Button
             asChild
             size="sm"
-            className="ml-3 h-9 rounded-md bg-oxide px-4 text-sm font-semibold text-white hover:bg-oxide-hover transition-colors"
+            className="ml-2 h-10 rounded-md bg-foreground px-4 text-sm font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
           >
-            <Link href="/website-audits">{t('audits')}</Link>
+            <Link
+              href="/website-audits"
+              data-analytics-event="header_audit_cta_click"
+              data-analytics-section="header"
+            >
+              {t('requestAudit')}
+            </Link>
           </Button>
         </nav>
 
-        {/* Right side: Language Switcher + Mobile Menu */}
         <div className="flex items-center gap-2">
-          <div className="hidden lg:block">
-            <LanguageSwitcher />
-          </div>
-
-          {/* Mobile menu trigger — visible below lg */}
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden text-muted hover:text-ink"
+            onClick={toggleTheme}
+            aria-label={themeReady ? (dark ? ui('switchToLight') : ui('switchToDark')) : ui('toggleColorTheme')}
+            className="text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
+          >
+            {dark ? <Sun className="size-4" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
+          </Button>
+
+          <div className="hidden xl:block">
+            <LanguageSwitcher />
+          </div>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="xl:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label={ui('openNavigationMenu')}
           >
@@ -217,70 +291,88 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Slide-out Drawer */}
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-sm p-0 bg-canvas border-hairline">
-          <SheetHeader className="border-b border-hairline px-6 py-4">
-            <SheetTitle className="text-left text-ink">
-              <BrandLockup
-                descriptor={t('brand_descriptor')}
-                onClick={() => setMobileOpen(false)}
+        <SheetContent side="right" className="flex w-full flex-col bg-background p-0 sm:max-w-sm">
+          <SheetHeader className="border-b border-border px-6 py-5">
+            <SheetTitle className="flex items-center gap-3 text-left text-base">
+              <Image
+                src={siteConfig.assets.mark}
+                alt=""
+                width={36}
+                height={36}
+                className="size-9 shrink-0 object-cover"
+                aria-hidden="true"
               />
+              <span>{siteConfig.name}</span>
             </SheetTitle>
+            <SheetDescription className="sr-only">{ui('mobileNavigation')}</SheetDescription>
           </SheetHeader>
 
-          <nav className="flex flex-col py-4" aria-label={ui('mobileNavigation')}>
-            {navItems.map((item) => {
-              if (item.children) {
-                return (
-                  <div key={item.key} className="px-6 py-2">
-                    <p className="mb-2 mono-label text-muted">
-                      {t(item.key)}
-                    </p>
-                    {item.children.map((child) => (
-                      <SheetClose asChild key={child.key}>
-                        <Link
-                          href={child.href}
-                          className={`flex items-center gap-2.5 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                            isActive(child.href)
-                              ? 'text-sea-bright bg-surface'
-                              : 'text-ink hover:text-sea-bright hover:bg-surface'
-                          }`}
-                        >
-                          <span className={`size-1.5 rounded-full ${sectors[child.key as keyof typeof sectors]?.dotClass || 'bg-muted'}`} aria-hidden="true" />
-                          {child.key === 'audits' ? t('audits') : sectorT(`${child.key}.title`)}
-                        </Link>
-                      </SheetClose>
-                    ))}
-                  </div>
-                );
-              }
+          <nav className="flex-1 overflow-y-auto px-4 py-4" aria-label={ui('mobileNavigation')}>
+            <div className="space-y-1">
+              {navItems.map((item) => {
+                if (item.children) {
+                  return (
+                    <div key={item.key} className="py-2">
+                      <p className="px-4 pb-2 text-sm font-semibold text-muted-foreground">
+                        {t(item.key)}
+                      </p>
+                      <div className="space-y-1">
+                        {item.children.map((child) => {
+                          const childActive = isActive(child.href);
 
-              return (
-                <SheetClose asChild key={item.key}>
-                  <Link
-                    href={item.href || '/'}
-                    className={`flex items-center px-6 py-2.5 text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'text-sea-bright bg-surface'
-                        : 'text-ink hover:text-sea-bright hover:bg-surface'
-                    }`}
-                  >
-                    {t(item.key)}
-                  </Link>
-                </SheetClose>
-              );
-            })}
+                          return (
+                            <SheetClose asChild key={child.key}>
+                              <Link
+                                href={child.href}
+                                aria-current={childActive ? 'page' : undefined}
+                                className={mobileLinkClass(childActive)}
+                              >
+                                {t(child.key)}
+                              </Link>
+                            </SheetClose>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
+                const active = isActive(item.href);
+
+                return (
+                  <SheetClose asChild key={item.key}>
+                    <Link
+                      href={item.href}
+                      aria-current={active ? 'page' : undefined}
+                      className={mobileLinkClass(active)}
+                    >
+                      {t(item.key)}
+                    </Link>
+                  </SheetClose>
+                );
+              })}
+            </div>
           </nav>
 
-          {/* Mobile CTA + language switcher */}
-          <div className="border-t border-hairline px-6 py-4 mt-auto space-y-3">
+          <div className="space-y-4 border-t border-border px-6 py-5">
             <SheetClose asChild>
-              <Button asChild className="w-full bg-oxide text-white hover:bg-oxide-hover font-medium rounded-md">
-                <Link href="/website-audits">{t('audits')}</Link>
+              <Button
+                asChild
+                className="h-11 w-full rounded-md bg-foreground text-base font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
+              >
+                <Link
+                  href="/website-audits"
+                  data-analytics-event="header_audit_cta_click"
+                  data-analytics-section="mobile_drawer"
+                >
+                  {t('requestAudit')}
+                </Link>
               </Button>
             </SheetClose>
-            <LanguageSwitcher />
+            <div className="flex items-center justify-between">
+              <LanguageSwitcher />
+            </div>
           </div>
         </SheetContent>
       </Sheet>

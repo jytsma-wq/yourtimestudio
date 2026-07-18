@@ -1,8 +1,9 @@
 {
   "name": "Batumi Lighthouse",
   "short_name": "Batumi Lighthouse",
-  "description": "Founder-led websites for direct bookings, local SEO, and qualified inquiries in Batumi, Georgia.",
+  "description": "Dutch-practical web design, local SEO, and booking-focused websites for serious Batumi businesses.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#315BFF",

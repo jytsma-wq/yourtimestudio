@@ -3,9 +3,12 @@ import { cn } from '@/lib/utils';
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'subtle' | 'dark' | 'accent' | 'paper' | 'surface';
+  /** Background variant — determines the section's visual rhythm */
+  variant?: 'default' | 'subtle' | 'dark' | 'accent';
+  /** Whether to show a top border (needed when adjacent sections share the same bg) */
   border?: boolean;
   id?: string;
+  /** Optional section number retained for compatibility with older layouts */
   number?: string;
 }
 
@@ -14,12 +17,10 @@ interface SectionProps {
  * background alternation across the site.
  *
  * Variants:
- *   default — dark canvas
- *   subtle  — slightly lighter dark
- *   dark    — deep dark (same as default)
- *   accent  — sea-dark accent
- *   paper   — warm paper contrast
- *   surface — elevated dark surface
+ *   default — warm page background
+ *   subtle  — soft neutral surface for alternating rhythm
+ *   dark    — restrained deep sea for selective contrast
+ *   accent  — restrained deep sea for primary CTA bands
  */
 export function Section({
   children,
@@ -34,18 +35,17 @@ export function Section({
       id={id}
       data-number={number || undefined}
       className={cn(
-        'py-16 md:py-24 px-[var(--container-padding)] relative',
-        variant === 'default' && 'bg-canvas text-ink',
-        variant === 'subtle' && 'bg-canvas-soft text-ink',
-        variant === 'dark' && 'bg-canvas text-ink',
-        variant === 'accent' && 'bg-sea text-ink',
-        variant === 'paper' && 'bg-paper text-ink-dark',
-        variant === 'surface' && 'bg-surface text-ink',
-        border && 'border-t border-hairline',
+        'relative px-[var(--container-padding)] py-[var(--section-padding)]',
+        number && 'section-numbered',
+        variant === 'default' && 'bg-background',
+        variant === 'subtle' && 'bg-muted',
+        variant === 'dark' && 'bg-navy text-background',
+        variant === 'accent' && 'bg-navy text-background',
+        border && 'border-t border-border',
         className
       )}
     >
-      <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">{children}</div>
+      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">{children}</div>
     </section>
   );
 }

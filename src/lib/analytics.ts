@@ -1,37 +1,37 @@
-export type AnalyticsEventProps = Record<string, string | number | boolean | null | undefined>;
-
-type PlausibleProps = Record<string, string | number | boolean>;
+export type AnalyticsProps = Record<string, string | number | boolean | undefined>;
 
 declare global {
   interface Window {
-    plausible?: (eventName: string, options?: { props?: PlausibleProps }) => void;
+    plausible?: (eventName: string, options?: { props?: Record<string, string | number | boolean> }) => void;
   }
 }
 
-function cleanProps(props?: AnalyticsEventProps): PlausibleProps | undefined {
-  if (!props) return undefined;
+const CONSENT_KEY = 'batumi-lighthouse-cookie-consent';
 
-  const cleaned: PlausibleProps = {};
-
-  for (const [key, value] of Object.entries(props)) {
-    if (value !== null && value !== undefined) {
-      cleaned[key] = value;
-    }
-  }
-
-  return Object.keys(cleaned).length > 0 ? cleaned : undefined;
-}
-
-export function trackEvent(name: string, props?: AnalyticsEventProps) {
-  if (typeof window === 'undefined' || typeof window.plausible !== 'function') {
-    return;
-  }
-
-  const cleanedProps = cleanProps(props);
+function hasAnalyticsConsent() {
+  if (typeof window === 'undefined') return false;
 
   try {
-    window.plausible(name, cleanedProps ? { props: cleanedProps } : undefined);
+    return window.localStorage.getItem(CONSENT_KEY) === 'accepted';
   } catch {
-    // Analytics must never break the user flow.
+    return false;
+  }
+}
+
+function cleanProps(props?: AnalyticsProps) {
+  if (!props) return undefined;
+
+  return Object.fromEntries(
+    Object.entries(props).filter((entry): entry is [string, string | number | boolean] => entry[1] !== undefined),
+  );
+}
+
+export function trackEvent(eventName: string, props?: AnalyticsProps) {
+  if (!hasAnalyticsConsent()) return;
+
+  try {
+    window.plausible?.(eventName, { props: cleanProps(props) });
+  } catch {
+    // Analytics must never block navigation, forms, or rendering.
   }
 }

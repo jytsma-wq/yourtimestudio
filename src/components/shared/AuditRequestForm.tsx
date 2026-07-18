@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Script from 'next/script';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Link } from '@/lib/i18n/navigation';
 import {
   Select,
   SelectContent,
@@ -17,58 +15,52 @@ import {
 } from '@/components/ui/select';
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
-import { getRecaptchaToken, recaptchaScriptSrc } from '@/lib/recaptcha-client';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
-type AuditField = 'name' | 'businessName' | 'email' | 'sector' | 'websiteUrl';
-type ValidationErrors = Partial<Record<AuditField, string>>;
+type FieldErrors = Partial<
+  Record<'name' | 'businessName' | 'email' | 'sector' | 'websiteUrl', string>
+>;
 
 export function AuditRequestForm() {
   const t = useTranslations('auditPage.form');
-  const legal = useTranslations('legalNotice');
+  const locale = useLocale();
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [honeypot, setHoneypot] = useState('');
-  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
   const formRef = useRef<HTMLFormElement>(null);
 
   const tSectors = useTranslations('contactPage');
+  const tContactForm = useTranslations('contactPage.form');
   const sectors = [tSectors('sectors.0'), tSectors('sectors.1'), tSectors('sectors.2'), tSectors('sectors.3')] as const;
-  const fieldClass = 'border-hairline bg-canvas/40 text-ink placeholder:text-copy-muted focus-visible:border-sea-bright focus-visible:ring-sea-bright/30';
-  const errorClass = 'text-sm text-oxide-hover';
 
-  function clearValidationError(field: AuditField) {
-    setValidationErrors((current) => {
-      if (!current[field]) return current;
+  function validateFields(data: {
+    name: string;
+    businessName: string;
+    email: string;
+    sector: string;
+    websiteUrl: string;
+  }): FieldErrors {
+    const errors: FieldErrors = {};
 
-      const next = { ...current };
-      delete next[field];
-      return next;
-    });
-  }
-
-  function validateData(data: Record<AuditField, string>): ValidationErrors {
-    const errors: ValidationErrors = {};
-
-    if (!data.name.trim()) errors.name = t('name_required');
-    if (!data.businessName.trim()) errors.businessName = t('business_required');
+    if (!data.name.trim()) errors.name = tContactForm('name_required');
+    if (!data.businessName.trim()) errors.businessName = tContactForm('business_required');
     if (!data.email.trim()) {
-      errors.email = t('email_required');
+      errors.email = tContactForm('email_required');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
-      errors.email = t('email_invalid');
+      errors.email = tContactForm('email_invalid');
     }
-
-    if (!data.sector.trim()) errors.sector = t('sector_required');
-
+    if (!data.sector.trim()) errors.sector = tContactForm('sector_required');
     if (!data.websiteUrl.trim()) {
       errors.websiteUrl = t('website_required');
     } else {
       try {
         const url = new URL(data.websiteUrl);
         if (url.protocol !== 'http:' && url.protocol !== 'https:') {
-          errors.websiteUrl = t('website_invalid');
+          errors.websiteUrl = tContactForm('website_invalid');
         }
       } catch {
-        errors.websiteUrl = t('website_invalid');
+        errors.websiteUrl = tContactForm('website_invalid');
       }
     }
 
@@ -81,65 +73,77 @@ export function AuditRequestForm() {
     // Honeypot check
     if (honeypot) return;
 
+    trackEvent('audit_form_submit_attempt', { source: 'audit_form' });
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name') as string,
-      businessName: formData.get('businessName') as string,
-      email: formData.get('email') as string,
-      sector: formData.get('sector') as string,
-      websiteUrl: formData.get('websiteUrl') as string,
-      message: formData.get('message') as string,
+      name: String(formData.get('name') || ''),
+      businessName: String(formData.get('businessName') || ''),
+      email: String(formData.get('email') || ''),
+      sector: String(formData.get('sector') || ''),
+      websiteUrl: String(formData.get('websiteUrl') || ''),
+      message: String(formData.get('message') || ''),
     };
 
-    const errors = validateData(data);
-    setValidationErrors(errors);
+    const errors = validateFields(data);
+    setFieldErrors(errors);
+    setSubmitError(null);
 
     if (Object.keys(errors).length > 0) {
+      trackEvent('audit_form_submit_failure', { reason: 'client_validation' });
+      setStatus('idle');
       return;
     }
 
     setStatus('sending');
+    let failureTracked = false;
 
     try {
-      const recaptchaToken = await getRecaptchaToken('audit');
-
       const res = await fetch('/api/audits', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, recaptchaToken }),
+        headers: {
+          'Content-Type': 'application/json',
+          'x-locale': locale,
+        },
+        body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error('Request failed');
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        trackEvent('audit_form_submit_failure', { reason: 'server_response' });
+        failureTracked = true;
+        throw new Error(errorData.error || t('error'));
+      }
 
-      trackEvent('Audit Form Submitted');
-      setValidationErrors({});
+      trackEvent('audit_form_submit_success', { source: 'audit_form' });
       setStatus('success');
+      setFieldErrors({});
+      setSubmitError(null);
       formRef.current?.reset();
-    } catch {
+    } catch (error) {
+      if (!failureTracked) {
+        trackEvent('audit_form_submit_failure', { reason: 'request_error' });
+      }
+      setSubmitError(error instanceof Error ? error.message : t('error'));
       setStatus('error');
     }
   }
 
   if (status === 'success') {
     return (
-      <div className="rounded-md border border-success/35 bg-success/10 p-8 text-center text-ink" role="status">
-        <CheckCircle2 className="size-12 text-success mx-auto mb-4" aria-hidden="true" />
+      <div className="bg-card border border-border rounded-none p-8 text-center" role="status">
+        <CheckCircle2 className="size-12 text-brand-sage-green-darken mx-auto mb-4" aria-hidden="true" />
         <p className="text-lg font-medium mb-2">{t('success')}</p>
       </div>
     );
   }
 
   return (
-    <>
-      {recaptchaScriptSrc && (
-        <Script src={recaptchaScriptSrc} strategy="afterInteractive" />
-      )}
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        className="relative space-y-5 rounded-md border border-hairline bg-surface p-5 text-ink md:p-6"
-        noValidate
-      >
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      className="bg-card border border-border rounded-none p-6 md:p-8 space-y-5"
+      noValidate
+    >
       {/* Honeypot — hidden from real users, visible to bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label htmlFor="audit-website-check">Website</label>
@@ -162,16 +166,14 @@ export function AuditRequestForm() {
             id="audit-name"
             name="name"
             required
-            aria-invalid={Boolean(validationErrors.name)}
-            aria-describedby={validationErrors.name ? 'audit-name-error' : undefined}
             autoComplete="name"
             placeholder="Mariam K."
-            className={fieldClass}
-            onChange={() => clearValidationError('name')}
+            aria-invalid={Boolean(fieldErrors.name)}
+            aria-describedby={fieldErrors.name ? 'audit-name-error' : undefined}
           />
-          {validationErrors.name && (
-            <p id="audit-name-error" className={errorClass}>
-              {validationErrors.name}
+          {fieldErrors.name && (
+            <p id="audit-name-error" className="text-sm text-destructive" role="alert">
+              {fieldErrors.name}
             </p>
           )}
         </div>
@@ -183,16 +185,14 @@ export function AuditRequestForm() {
             id="audit-business"
             name="businessName"
             required
-            aria-invalid={Boolean(validationErrors.businessName)}
-            aria-describedby={validationErrors.businessName ? 'audit-business-error' : undefined}
             autoComplete="organization"
             placeholder="Seafront Rooms"
-            className={fieldClass}
-            onChange={() => clearValidationError('businessName')}
+            aria-invalid={Boolean(fieldErrors.businessName)}
+            aria-describedby={fieldErrors.businessName ? 'audit-business-error' : undefined}
           />
-          {validationErrors.businessName && (
-            <p id="audit-business-error" className={errorClass}>
-              {validationErrors.businessName}
+          {fieldErrors.businessName && (
+            <p id="audit-business-error" className="text-sm text-destructive" role="alert">
+              {fieldErrors.businessName}
             </p>
           )}
         </div>
@@ -207,16 +207,14 @@ export function AuditRequestForm() {
             name="email"
             type="email"
             required
-            aria-invalid={Boolean(validationErrors.email)}
-            aria-describedby={validationErrors.email ? 'audit-email-error' : undefined}
             autoComplete="email"
             placeholder="mariam@example.com"
-            className={fieldClass}
-            onChange={() => clearValidationError('email')}
+            aria-invalid={Boolean(fieldErrors.email)}
+            aria-describedby={fieldErrors.email ? 'audit-email-error' : undefined}
           />
-          {validationErrors.email && (
-            <p id="audit-email-error" className={errorClass}>
-              {validationErrors.email}
+          {fieldErrors.email && (
+            <p id="audit-email-error" className="text-sm text-destructive" role="alert">
+              {fieldErrors.email}
             </p>
           )}
         </div>
@@ -224,26 +222,26 @@ export function AuditRequestForm() {
         {/* Sector */}
         <div className="space-y-2">
           <Label htmlFor="audit-sector">{t('sector')} *</Label>
-          <Select name="sector" required onValueChange={() => clearValidationError('sector')}>
+          <Select name="sector" required>
             <SelectTrigger
               id="audit-sector"
-              className={`w-full ${fieldClass}`}
-              aria-invalid={Boolean(validationErrors.sector)}
-              aria-describedby={validationErrors.sector ? 'audit-sector-error' : undefined}
+              className="w-full"
+              aria-invalid={Boolean(fieldErrors.sector)}
+              aria-describedby={fieldErrors.sector ? 'audit-sector-error' : undefined}
             >
               <SelectValue placeholder={t('sector')} />
             </SelectTrigger>
-            <SelectContent className="border-hairline bg-surface text-ink shadow-none">
+            <SelectContent>
               {sectors.map((sector) => (
-                <SelectItem key={sector} value={sector} className="focus:bg-surface-elevated focus:text-ink">
+                <SelectItem key={sector} value={sector}>
                   {sector}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
-          {validationErrors.sector && (
-            <p id="audit-sector-error" className={errorClass}>
-              {validationErrors.sector}
+          {fieldErrors.sector && (
+            <p id="audit-sector-error" className="text-sm text-destructive" role="alert">
+              {fieldErrors.sector}
             </p>
           )}
         </div>
@@ -257,16 +255,14 @@ export function AuditRequestForm() {
           name="websiteUrl"
           type="url"
           required
-          aria-invalid={Boolean(validationErrors.websiteUrl)}
-          aria-describedby={validationErrors.websiteUrl ? 'audit-website-error' : undefined}
           autoComplete="url"
           placeholder="https://yourwebsite.com"
-          className={fieldClass}
-          onChange={() => clearValidationError('websiteUrl')}
+          aria-invalid={Boolean(fieldErrors.websiteUrl)}
+          aria-describedby={fieldErrors.websiteUrl ? 'audit-website-error' : undefined}
         />
-        {validationErrors.websiteUrl && (
-          <p id="audit-website-error" className={errorClass}>
-            {validationErrors.websiteUrl}
+        {fieldErrors.websiteUrl && (
+          <p id="audit-website-error" className="text-sm text-destructive" role="alert">
+            {fieldErrors.websiteUrl}
           </p>
         )}
       </div>
@@ -279,33 +275,20 @@ export function AuditRequestForm() {
           name="message"
           rows={3}
           placeholder=""
-          className={fieldClass}
         />
       </div>
 
       {status === 'error' && (
         <div className="flex items-center gap-2 text-destructive text-sm" role="alert">
           <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
-          <span>{t('error')}</span>
+          <span>{submitError || t('error')}</span>
         </div>
       )}
-
-      <p className="text-xs leading-relaxed text-muted">
-        {legal('formText')}{' '}
-        <Link href="/privacy" className="font-semibold text-sea-bright transition-colors hover:text-oxide">
-          {legal('privacy')}
-        </Link>{' '}
-        {legal('and')}{' '}
-        <Link href="/terms" className="font-semibold text-sea-bright transition-colors hover:text-oxide">
-          {legal('terms')}
-        </Link>
-        .
-      </p>
 
       <Button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full rounded-md bg-oxide text-white hover:bg-oxide-hover hover:text-white font-medium text-base h-12"
+        className="w-full rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base h-12"
       >
         {status === 'sending' ? (
           <>
@@ -316,7 +299,6 @@ export function AuditRequestForm() {
           t('submit')
         )}
       </Button>
-      </form>
-    </>
+    </form>
   );
 }

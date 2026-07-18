@@ -1,65 +1,68 @@
 import { getTranslations } from 'next-intl/server';
 import { ArrowRight, Hammer, Palette, Rocket, Search } from 'lucide-react';
+import { type Locale } from '@/lib/i18n/config';
+import { Section } from '@/components/shared/Section';
+import { FadeInUp } from '@/components/motion';
 import { Link } from '@/lib/i18n/navigation';
+
+interface ProcessSectionProps {
+  locale: Locale;
+  /** Large faint section number for background decoration */
+  number?: string;
+}
 
 const stepIcons = [Search, Palette, Hammer, Rocket];
 
-export async function ProcessSection() {
+export async function ProcessSection({ locale, number }: ProcessSectionProps) {
   const t = await getTranslations('process');
 
   return (
-    <section className="bg-paper py-16 md:py-24 px-[var(--container-padding)]">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
-        <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr]">
-          <div>
-            <p className="mono-label text-sea mb-4">{t('sectionLabel')}</p>
-            <h2 className="text-display-lg text-ink-dark">
-              {t('heading')}
-            </h2>
-            <p className="mt-6 max-w-md text-body-lg text-muted-dark leading-relaxed">
-              {t('subtitle')}
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-ink-dark hover:text-oxide transition-colors"
-            >
-              {t('cta')}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
-          </div>
+    <Section number={number}>
+      <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+        <div>
+          <p className="section-label">{t('sectionLabel')}</p>
+          <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl text-foreground">
+            {t('heading')}
+          </h2>
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
+            {t('subtitle')}
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center gap-2 border-b border-transparent pb-1 text-sm font-semibold text-foreground no-underline transition duration-150 ease-in-out hover:border-b-2 hover:border-brand-serene-coral hover:text-brand-sage-green-darken"
+          >
+            {t('cta')}
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
 
-          {/* Build pipeline — technical steps */}
-          <div className="border-t border-hairline-light">
-            {[0, 1, 2, 3].map((i) => {
-              const Icon = stepIcons[i];
-              return (
-                <div
-                  key={i}
-                  className="grid gap-4 border-b border-hairline-light py-6 last:border-b-0 md:grid-cols-[72px_1fr]"
-                >
+        <div className="border-y border-border">
+          {[0, 1, 2, 3].map((i) => {
+            const Icon = stepIcons[i];
+            return (
+              <FadeInUp key={i} delay={i * 0.12}>
+                <div className="grid gap-4 border-b border-border py-6 last:border-b-0 md:grid-cols-[92px_1fr_1.2fr] md:items-start">
                   <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded bg-sea/10 shrink-0">
-                      <Icon className="size-4 text-sea-bright" aria-hidden="true" />
-                    </div>
-                    <span className="font-mono text-sm font-semibold text-muted-dark md:hidden">
-                      0{i + 1}
+                    <span className="font-sans text-3xl font-semibold text-muted-foreground">
+                      {String(i + 1).padStart(2, '0')}
                     </span>
+                    <Icon className="size-5 text-brand-serene-coral-darken md:hidden" />
+                  </div>
+                  <div className="hidden size-12 items-center justify-center border border-border bg-brand-gray-100 md:flex">
+                    <Icon className="size-5 text-brand-serene-coral-darken" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-sm font-semibold text-muted-dark hidden md:inline">0{i + 1}</span>
-                      <h3 className="text-lg font-semibold text-ink-dark">{t(`steps.${i}.title`)}</h3>
-                    </div>
-                    <p className="text-body-sm text-muted-dark leading-relaxed">
+                    <h3 className="text-xl font-semibold text-foreground">{t(`steps.${i}.title`)}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {t(`steps.${i}.description`)}
                     </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </FadeInUp>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

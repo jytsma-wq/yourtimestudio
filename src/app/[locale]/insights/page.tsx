@@ -1,12 +1,31 @@
-import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { ArrowRight, FileSearch } from 'lucide-react';
+import type { Metadata } from 'next';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { Button } from '@/components/ui/button';
-import { Link } from '@/lib/i18n/navigation';
-import { type Locale } from '@/lib/i18n/config';
+import { Badge } from '@/components/ui/badge';
+import { Building2, Stethoscope, Sparkles, Clock } from 'lucide-react';
 import { generatePageMetadata } from '@/lib/seo/metadata';
+import type { Locale } from '@/lib/i18n/config';
+
+const clusterIcons: Record<string, React.ElementType> = {
+  hospitality: Building2,
+  medical: Stethoscope,
+  beauty: Sparkles,
+};
+
+const clusterColors: Record<string, string> = {
+  hospitality: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  medical: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken',
+  beauty: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken',
+};
+
+const clusterDotColors: Record<string, string> = {
+  hospitality: 'bg-brand-sage-green-darken',
+  medical: 'bg-brand-sage-green-darken',
+  beauty: 'bg-brand-serene-coral-darken',
+};
+
+const clusterKeys = ['hospitality', 'medical', 'beauty'] as const;
 
 export async function generateMetadata({
   params,
@@ -17,11 +36,10 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'insightsPage' });
 
   return generatePageMetadata({
-    title: `${t('heading')} - Batumi Lighthouse`,
+    title: t('heading'),
     description: t('subtitle'),
     path: '/insights',
     locale: locale as Locale,
-    noIndex: true,
   });
 }
 
@@ -37,44 +55,76 @@ export default async function InsightsPage({
   const tNav = await getTranslations('nav');
 
   return (
-    <Section className="min-h-[70vh]">
-      <Breadcrumbs
-        items={[
-          { label: tNav('insights'), href: '/insights' },
-        ]}
-      />
+    <>
+      <Section>
+        <Breadcrumbs
+          items={[
+            { label: tNav('insights'), href: '/insights' },
+          ]}
+        />
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.65fr)] lg:items-center lg:gap-16">
-        <div className="max-w-3xl">
-          <p className="mono-label mb-4 text-sea-bright">{t('comingSoon')}</p>
-          <h1 className="text-display-lg text-ink">
+        <div className="max-w-3xl mb-16 md:mb-20">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
             {t('heading')}
           </h1>
-          <p className="mt-6 text-body-lg leading-[1.75] text-muted">
+          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
             {t('subtitle')}
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 h-12 rounded-md bg-oxide px-6 text-base font-semibold text-white transition-colors hover:bg-oxide-hover hover:text-white"
-          >
-            <Link href="/website-audits">
-              {t('detail.ctaLink')}
-              <ArrowRight className="ml-1.5 size-4" aria-hidden="true" />
-            </Link>
-          </Button>
         </div>
+      </Section>
 
-        <aside className="rounded-md border border-hairline bg-surface p-5">
-          <div className="mb-5 flex size-11 items-center justify-center rounded-md border border-hairline bg-canvas">
-            <FileSearch className="size-5 text-sea-bright" aria-hidden="true" />
-          </div>
-          <p className="mono-label text-muted">{t('detail.cta')}</p>
-          <p className="mt-3 text-body-sm leading-[1.75] text-muted">
-            {t('subtitle')}
-          </p>
-        </aside>
-      </div>
-    </Section>
+      <Section variant="subtle">
+        <div className="space-y-16">
+          {clusterKeys.map((clusterKey) => {
+            const Icon = clusterIcons[clusterKey];
+            const colorClass = clusterColors[clusterKey];
+            const dotClass = clusterDotColors[clusterKey];
+            const label = t(`clusters.${clusterKey}.label`);
+
+            const posts = [0, 1].map((i) => ({
+              title: t(`clusters.${clusterKey}.posts.${i}.title`),
+              description: t(`clusters.${clusterKey}.posts.${i}.description`),
+            }));
+
+            return (
+              <div key={clusterKey}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${colorClass}`}>
+                    <Icon className="size-4" />
+                  </div>
+                  <div className={`w-2 h-2 rounded-full ${dotClass}`} />
+                  <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
+                    {label}
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {posts.map((post) => (
+                    <div
+                      key={post.title}
+                      className="flex h-full flex-col gap-3 rounded-md border border-border bg-card p-6 shadow-none"
+                    >
+                      <Badge className={`${colorClass} border-0 text-xs font-semibold uppercase tracking-wide w-fit`}>
+                        {label}
+                      </Badge>
+                      <h3 className="font-semibold text-base">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                        {post.description}
+                      </p>
+                      <div className="flex items-center gap-1.5 text-muted-foreground text-xs font-medium pt-2">
+                        <Clock className="size-3.5" />
+                        {t('comingSoon')}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </Section>
+    </>
   );
 }

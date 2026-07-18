@@ -1,128 +1,143 @@
 import { getTranslations } from 'next-intl/server';
+import { Section } from '@/components/shared/Section';
 import { Link } from '@/lib/i18n/navigation';
 import {
   ArrowRight,
+  Camera,
+  CheckCircle2,
   Code2,
-  FileSearch,
-  Gauge,
-  Globe,
-  Layout,
+  FileText,
   MapPin,
-  MousePointerClick,
-  Rocket,
   Search,
   ShieldCheck,
+  UsersRound,
 } from 'lucide-react';
 import { type Locale } from '@/lib/i18n/config';
+import { SlideInLeft, SlideInRight, FadeInUp } from '@/components/motion';
+import { AvailabilityBadge } from '@/components/shared/AvailabilityBadge';
 
 interface FounderSectionProps {
   locale: Locale;
+  /** Large faint section number for background decoration */
+  number?: string;
 }
 
-const operatingModel = [
-  { key: 'diagnose', icon: Search },
-  { key: 'structure', icon: FileSearch },
-  { key: 'design', icon: Layout },
-  { key: 'build', icon: Code2 },
-  { key: 'launch', icon: Rocket },
-  { key: 'improve', icon: Gauge },
-] as const;
-
-const directKeys = ['ux', 'frontend', 'localSeo', 'multilingual', 'checks', 'leadFlows'] as const;
-const notFakeKeys = ['numbers', 'decoration', 'templates', 'guarantees'] as const;
-
-export async function FounderSection({ locale }: FounderSectionProps) {
-  void locale;
+export async function FounderSection({ locale, number }: FounderSectionProps) {
   const t = await getTranslations('founder');
+  const responsibilities = [
+    { icon: FileText, key: '0' },
+    { icon: Code2, key: '1' },
+    { icon: Search, key: '2' },
+    { icon: ShieldCheck, key: '3' },
+  ];
+  const featureIcons = [UsersRound, Camera, CheckCircle2, ShieldCheck];
 
   return (
-    <section className="bg-canvas py-16 md:py-24 px-[var(--container-padding)]">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
-        {/* Part A — Founder intro */}
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
-          {/* Left: Info */}
-          <div>
-            <p className="mono-label text-sea-bright mb-4">{t('founder.sectionLabel')}</p>
-            <h2 className="text-display-lg text-ink">
-              {t('founder.heading')}
-            </h2>
-            <p className="mt-6 text-body-lg text-muted leading-relaxed max-w-lg">
-              {t('founder.bio')}
-            </p>
-            <div className="mt-6 max-w-xl space-y-3 border-l border-hairline pl-4">
-              {[0, 1, 2].map((index) => (
-                <p key={index} className="text-body-sm leading-[1.75] text-muted">
-                  {t(`founder.story.${index}`)}
-                </p>
-              ))}
-            </div>
-            <div className="mt-6 flex gap-6">
-              <div className="flex items-center gap-2 text-sm text-muted">
-                <MapPin className="size-4 text-sea-bright" aria-hidden="true" />
-                <span>{t('founder.location')}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted">
-                <Globe className="size-4 text-sea-bright" aria-hidden="true" />
-                <span>{t('founder.since')}</span>
-              </div>
-            </div>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sea-bright hover:text-oxide transition-colors"
-            >
-              {t('founder.cta')}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
-          </div>
+    <Section border number={number} className="bg-background">
+      <div className="mx-auto max-w-7xl" data-locale={locale}>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.85fr)] lg:items-start">
+          <SlideInLeft>
+            <div>
+              <p className="section-label">{t('founder.sectionLabel')}</p>
+              <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+                {t('founder.heading')}
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                {t('founder.bio')}
+              </p>
 
-          {/* Right: Operating model */}
-          <div className="bg-surface border border-hairline rounded-md overflow-hidden">
-            <div className="border-b border-hairline p-5">
-              <p className="mono-label text-sea-bright">{t('operating.label')}</p>
-              <p className="mt-2 text-sm text-ink font-semibold">{t('operating.heading')}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-2 text-sm font-medium text-foreground">
+                  <MapPin className="size-4 text-navy" aria-hidden="true" />
+                  {t('founder.location')}
+                </span>
+                <AvailabilityBadge />
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/website-audits"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                >
+                  {t('founder.cta')}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex min-h-11 items-center justify-center border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                >
+                  {t('founder.secondaryCta')}
+                </Link>
+              </div>
             </div>
-            <div className="divide-y divide-hairline">
-              {operatingModel.map((step) => {
-                const Icon = step.icon;
-                return (
-                  <div key={step.key} className="flex items-center gap-3 p-4 hover:bg-surface-elevated/50 transition-colors">
-                    <div className="flex size-8 items-center justify-center rounded bg-sea/10 shrink-0">
-                      <Icon className="size-3.5 text-sea-bright" aria-hidden="true" />
+          </SlideInLeft>
+
+          <SlideInRight>
+            <aside className="border border-border bg-card p-5 shadow-none md:p-7" aria-label={t('founder.panelLabel')}>
+              <p className="text-sm font-semibold text-muted-foreground">{t('founder.panelLabel')}</p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+                {t('founder.panelHeading')}
+              </h3>
+
+              <div className="mt-6 space-y-4">
+                {responsibilities.map(({ icon: Icon, key }) => (
+                  <div key={key} className="flex gap-3 border-t border-border pt-4 first:border-t-0 first:pt-0">
+                    <div className="mt-0.5 flex size-9 shrink-0 items-center justify-center border border-border bg-background">
+                      <Icon className="size-4 text-navy" aria-hidden="true" />
                     </div>
-                    <span className="text-sm font-medium text-ink">{t(`operating.items.${step.key}`)}</span>
+                    <div>
+                      <h4 className="text-sm font-semibold text-foreground">
+                        {t(`founder.responsibilities.${key}.title`)}
+                      </h4>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {t(`founder.responsibilities.${key}.desc`)}
+                      </p>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                ))}
+              </div>
+
+              <div className="mt-7 grid gap-4">
+                <div className="border border-border bg-background p-4">
+                  <h4 className="text-sm font-semibold text-foreground">{t('founder.supportTitle')}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t('founder.supportBody')}</p>
+                </div>
+                <div className="border border-border bg-background p-4">
+                  <h4 className="text-sm font-semibold text-foreground">{t('founder.noFakeTitle')}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t('founder.noFakeBody')}</p>
+                </div>
+              </div>
+            </aside>
+          </SlideInRight>
         </div>
 
-        {/* Part B — What I do / What I don't fake */}
-        <div className="mt-16 grid md:grid-cols-2 gap-6">
-          <div className="bg-surface border border-hairline rounded-md p-5">
-            <p className="mono-label text-sea-bright mb-4">{t('direct.label')}</p>
-            <div className="space-y-2">
-              {directKeys.map((key) => (
-                <div key={key} className="flex items-center gap-2 text-sm text-ink">
-                  <ShieldCheck className="size-3.5 text-success shrink-0" aria-hidden="true" />
-                  <span>{t(`direct.items.${key}`)}</span>
+        <FadeInUp delay={0.2}>
+          <div className="mt-14 border border-border bg-card py-10 md:mt-20 md:py-12">
+            <div className="grid gap-6 px-5 md:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+              <div>
+                <p className="section-label">{t('features.sectionLabel')}</p>
+                <h3 className="text-2xl font-semibold tracking-tight text-foreground md:text-4xl">
+                  {t('features.heading')}
+                </h3>
+              </div>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {t('features.intro')}
+              </p>
+            </div>
+            <div className="mt-10 grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+              {featureIcons.map((Icon, i) => (
+                <div key={i} className="border-b border-border bg-card p-5 shadow-none sm:border-r sm:even:border-r-0 lg:border-b-0 lg:even:border-r lg:last:border-r-0 md:p-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center border border-border bg-background">
+                    <Icon className="size-5 text-navy" aria-hidden="true" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">{t(`features.items.${i}.title`)}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`features.items.${i}.desc`)}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="bg-surface border border-hairline rounded-md p-5">
-            <p className="mono-label text-oxide mb-4">{t('not_fake.label')}</p>
-            <div className="space-y-2">
-              {notFakeKeys.map((key) => (
-                <div key={key} className="flex items-center gap-2 text-sm text-ink">
-                  <MousePointerClick className="size-3.5 text-oxide shrink-0" aria-hidden="true" />
-                  <span>{t(`not_fake.items.${key}`)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        </FadeInUp>
       </div>
-    </section>
+    </Section>
   );
 }

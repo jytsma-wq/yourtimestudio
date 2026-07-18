@@ -2,23 +2,96 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rate-limit';
-import { sendAuditNotification } from '@/lib/email/notifications';
-import { recaptchaActions } from '@/lib/recaptcha-actions';
-import { verifyRecaptchaToken } from '@/lib/recaptcha';
 
-const auditSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(200),
-  businessName: z.string().min(1, 'Business name is required').max(200),
-  email: z.string().min(1, 'Email is required').email('Invalid email address').max(300),
-  phone: z.string().max(50).optional(),
-  sector: z.string().min(1, 'Sector is required').max(100),
-  websiteUrl: z.string().min(1, 'Website URL is required').url('Invalid URL').max(500),
-  message: z.string().max(5000).optional(),
-  recaptchaToken: z.string().min(1, 'reCAPTCHA verification is required'),
-  website_check: z.string().max(0, 'Bot detected').optional(),
-});
+type ApiLocale = 'en' | 'ka' | 'ru' | 'tr';
+
+const apiLocales = ['en', 'ka', 'ru', 'tr'] as const;
+
+const apiMessages = {
+  en: {
+    nameRequired: 'Name is required',
+    businessRequired: 'Business name is required',
+    emailRequired: 'Email is required',
+    emailInvalid: 'Invalid email address',
+    sectorRequired: 'Sector is required',
+    websiteRequired: 'Website URL is required',
+    websiteInvalid: 'Invalid URL',
+    botDetected: 'Bot detected',
+    rateLimited: 'Too many requests. Please try again later.',
+    validationFailed: 'Validation failed',
+    formNotConfigured: 'Form submissions are not configured. Please email me directly.',
+    internalError: 'Internal server error',
+  },
+  ka: {
+    nameRequired: 'სახელი აუცილებელია',
+    businessRequired: 'ბიზნესის სახელი აუცილებელია',
+    emailRequired: 'ელფოსტა აუცილებელია',
+    emailInvalid: 'ელფოსტის მისამართი არასწორია',
+    sectorRequired: 'სფერო აუცილებელია',
+    websiteRequired: 'ვებსაიტის URL აუცილებელია',
+    websiteInvalid: 'URL არასწორია',
+    botDetected: 'ბოტი დაფიქსირდა',
+    rateLimited: 'ძალიან ბევრი მოთხოვნაა. სცადეთ მოგვიანებით.',
+    validationFailed: 'შემოწმება ვერ დასრულდა',
+    formNotConfigured: 'ფორმის გაგზავნა ჯერ არ არის კონფიგურირებული. გთხოვთ, პირდაპირ მომწეროთ ელფოსტაზე.',
+    internalError: 'შიდა სერვერის შეცდომა',
+  },
+  ru: {
+    nameRequired: 'Укажите имя',
+    businessRequired: 'Укажите название бизнеса',
+    emailRequired: 'Укажите email',
+    emailInvalid: 'Некорректный email',
+    sectorRequired: 'Укажите сферу бизнеса',
+    websiteRequired: 'Укажите URL сайта',
+    websiteInvalid: 'Некорректный URL',
+    botDetected: 'Обнаружен бот',
+    rateLimited: 'Слишком много запросов. Попробуйте позже.',
+    validationFailed: 'Проверка не пройдена',
+    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую на email.',
+    internalError: 'Внутренняя ошибка сервера',
+  },
+  tr: {
+    nameRequired: 'Ad gerekli',
+    businessRequired: 'İşletme adı gerekli',
+    emailRequired: 'E-posta gerekli',
+    emailInvalid: 'Geçersiz e-posta adresi',
+    sectorRequired: 'Sektör gerekli',
+    websiteRequired: 'Web sitesi URL’si gerekli',
+    websiteInvalid: 'Geçersiz URL',
+    botDetected: 'Bot algılandı',
+    rateLimited: 'Çok fazla istek gönderildi. Lütfen daha sonra tekrar deneyin.',
+    validationFailed: 'Doğrulama başarısız oldu',
+    formNotConfigured: 'Form gönderimleri yapılandırılmamış. Lütfen bana doğrudan e-posta gönderin.',
+    internalError: 'Sunucu hatası',
+  },
+} satisfies Record<ApiLocale, Record<string, string>>;
+
+function getApiLocale(request: NextRequest): ApiLocale {
+  const requestedLocale =
+    request.headers.get('x-locale') ??
+    request.headers.get('accept-language')?.slice(0, 2);
+
+  return apiLocales.includes(requestedLocale as ApiLocale)
+    ? (requestedLocale as ApiLocale)
+    : 'en';
+}
+
+function getAuditSchema(messages: (typeof apiMessages)[ApiLocale]) {
+  return z.object({
+    name: z.string().min(1, messages.nameRequired).max(200),
+    businessName: z.string().min(1, messages.businessRequired).max(200),
+    email: z.string().min(1, messages.emailRequired).email(messages.emailInvalid).max(300),
+    phone: z.string().max(50).optional(),
+    sector: z.string().min(1, messages.sectorRequired).max(100),
+    websiteUrl: z.string().min(1, messages.websiteRequired).url(messages.websiteInvalid).max(500),
+    message: z.string().max(5000).optional(),
+    website_check: z.string().max(0, messages.botDetected).optional(),
+  });
+}
 
 export async function POST(request: NextRequest) {
+  const messages = apiMessages[getApiLocale(request)];
+
   try {
     const rateLimit = checkRateLimit(request, {
       keyPrefix: 'audit',
@@ -28,7 +101,7 @@ export async function POST(request: NextRequest) {
 
     if (rateLimit.limited) {
       return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
+        { error: messages.rateLimited },
         {
           status: 429,
           headers: { 'Retry-After': String(rateLimit.retryAfter) },
@@ -43,23 +116,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true }, { status: 201 });
     }
 
-    const parsed = auditSchema.safeParse(body);
+    const parsed = getAuditSchema(messages).safeParse(body);
     if (!parsed.success) {
       const fieldErrors = parsed.error.flatten().fieldErrors;
-      const firstError = Object.values(fieldErrors).flat()[0] || 'Validation failed';
+      const firstError = Object.values(fieldErrors).flat()[0] || messages.validationFailed;
       return NextResponse.json({ error: firstError }, { status: 400 });
     }
 
     const data = parsed.data;
-    const recaptcha = await verifyRecaptchaToken({
-      token: data.recaptchaToken,
-      expectedAction: recaptchaActions.audit,
-      remoteIp: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim(),
-    });
-
-    if (!recaptcha.success) {
-      return NextResponse.json({ error: 'reCAPTCHA verification failed' }, { status: 400 });
-    }
 
     const audit = await db.auditRequest.create({
       data: {
@@ -73,11 +137,18 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    await sendAuditNotification(audit);
-
     return NextResponse.json({ success: true, id: audit.id }, { status: 201 });
   } catch (error) {
     console.error('Audit request error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    const message = error instanceof Error ? error.message : '';
+    if (message.includes('DATABASE_URL')) {
+      return NextResponse.json(
+        {
+          error: messages.formNotConfigured,
+        },
+        { status: 503 }
+      );
+    }
+    return NextResponse.json({ error: messages.internalError }, { status: 500 });
   }
 }

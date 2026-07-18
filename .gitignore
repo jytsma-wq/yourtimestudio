@@ -8,9 +8,10 @@ dist/
 
 dev.db
 dev.db-journal
+*.db
+*.db-journal
 *.sqlite
 *.sqlite-journal
 
 *.log
-*.tsbuildinfo
-*.zip
+next-env.d.ts

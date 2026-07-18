@@ -1,209 +1,82 @@
-import type { CSSProperties } from 'react';
-import { getTranslations } from 'next-intl/server';
-import { ArrowRight, BedDouble, CheckCircle2, Sparkles, type LucideIcon } from 'lucide-react';
-import { NavigationChart, SignalBadge } from '@/components/brand';
-import { ExampleSystemFallbackVisual, ExampleSystemVisual } from '@/components/work/ExampleSystemVisual';
-import { ScreenshotFrame } from '@/components/work/ScreenshotFrame';
-import { exampleSystems, type ExampleSystem } from '@/content/example-systems';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
-import { getPrimaryExampleScreenshot } from '@/lib/work-screenshots';
-import { cn } from '@/lib/utils';
+import { getExampleUiLabels } from '@/lib/examples/labels';
+import { getLocalizedFeaturedExamples } from '@/lib/examples/localized';
+import { Section } from '@/components/shared/Section';
 
-type BuildSlug = 'silk-beauty-salon' | 'grand-boutique-hotel';
-type SignalBadgeTone = 'sea' | 'oxide' | 'success' | 'muted';
+const imageBySector = {
+  hospitality: '/images/studio-scenes/hospitality-hero.webp',
+  medical: '/images/studio-scenes/clinic-story.webp',
+  beauty: '/images/studio-scenes/beauty-studio.webp',
+  studio: '/images/studio-scenes/food-story.webp',
+} as const;
 
-type BuildStyle = CSSProperties & {
-  '--build-color': string;
-  '--bl-signal-position': string;
-};
-
-type BuildConfig = {
-  slug: BuildSlug;
-  badgeKey: 'silk.badge' | 'grand.badge';
-  descriptionKey: 'silk.description' | 'grand.description';
-  icon: LucideIcon;
-  tone: SignalBadgeTone;
-  color: string;
-  textClass: string;
-  signalPosition: string;
-  routes: string[];
-};
-
-const buildConfigs: BuildConfig[] = [
-  {
-    slug: 'silk-beauty-salon',
-    badgeKey: 'silk.badge',
-    descriptionKey: 'silk.description',
-    icon: Sparkles,
-    tone: 'oxide',
-    color: 'var(--primitive-oxide-hover)',
-    textClass: 'text-oxide-hover',
-    signalPosition: '58%',
-    routes: ['/', '/treatments', '/booking', '/contact'],
-  },
-  {
-    slug: 'grand-boutique-hotel',
-    badgeKey: 'grand.badge',
-    descriptionKey: 'grand.description',
-    icon: BedDouble,
-    tone: 'sea',
-    color: 'var(--primitive-sea-bright)',
-    textClass: 'text-sea-bright',
-    signalPosition: '68%',
-    routes: ['/', '/rooms', '/booking', '/contact'],
-  },
-];
-
-function getExampleSystem(slug: BuildSlug): ExampleSystem {
-  const system = exampleSystems.find((item) => item.slug === slug);
-
-  if (!system) {
-    throw new Error(`Missing example system content for ${slug}`);
-  }
-
-  return system;
-}
-
-function BuildVisual({
-  pendingLabel,
-  priority,
-  screenshotSrc,
-  system,
-}: {
-  pendingLabel: string;
-  priority?: boolean;
-  screenshotSrc?: string;
-  system: ExampleSystem;
-}) {
-  if (screenshotSrc) {
-    return (
-      <ScreenshotFrame
-        alt={system.screenshot?.alt ?? `${system.title} example system interface screenshot`}
-        device="desktop"
-        fallback={<ExampleSystemFallbackVisual fallbackVisual={system.fallbackVisual} />}
-        label={system.title}
-        priority={priority}
-        src={screenshotSrc}
-      />
-    );
-  }
+export async function ExampleBuildsSection({ number }: { number?: string }) {
+  const labels = await getExampleUiLabels();
+  const examples = await getLocalizedFeaturedExamples();
 
   return (
-    <ExampleSystemVisual
-      screenshotSrc={screenshotSrc}
-      screenshotsComingSoon={pendingLabel}
-      system={system}
-      variant="card"
-    />
-  );
-}
-
-export async function ExampleBuildsSection() {
-  const t = await getTranslations('homepage.exampleBuilds');
-
-  return (
-    <section className="relative isolate overflow-hidden border-y border-hairline bg-canvas px-[var(--container-padding)] py-16 md:py-24">
-      <NavigationChart variant="section" className="!absolute opacity-[0.28]" />
-      <div className="pointer-events-none absolute inset-0 bl-noise" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-x-0 top-1/2 bl-signal-line h-5 opacity-45" aria-hidden="true" />
-
-      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)]">
-        <div className="mb-10 grid gap-6 lg:grid-cols-[0.72fr_1fr] lg:items-end">
-          <div>
-            <SignalBadge label={t('eyebrow')} tone="sea" />
-            <h2 className="mt-5 text-display-lg text-ink">{t('heading')}</h2>
-          </div>
-          <p className="max-w-2xl text-body-lg leading-[1.75] text-muted lg:justify-self-end">
-            {t('subtitle')}
-          </p>
+    <Section border className="overflow-hidden" number={number}>
+      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
+        <div>
+          <p className="text-sm font-semibold text-navy">{labels.home.sectionLabel}</p>
+          <h2 className="mt-4 max-w-[13ch] font-serif text-5xl font-medium leading-[0.98] md:text-6xl lg:text-7xl">
+            {labels.home.heading}
+          </h2>
         </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {buildConfigs.map((config, index) => {
-            const system = getExampleSystem(config.slug);
-            const screenshotSrc = getPrimaryExampleScreenshot(system);
-            const Icon = config.icon;
-
-            return (
-              <article
-                key={system.slug}
-                className="group relative isolate overflow-hidden rounded-md border border-hairline bg-surface shadow-premium-lg transition-colors hover:border-[color:var(--build-color)]"
-                style={
-                  {
-                    '--build-color': config.color,
-                    '--bl-signal-position': config.signalPosition,
-                  } as BuildStyle
-                }
-              >
-                <div className="pointer-events-none absolute inset-0 bl-soft-vignette opacity-80" aria-hidden="true" />
-                <div className="pointer-events-none absolute inset-0 bl-grid opacity-20" aria-hidden="true" />
-
-                <div className="relative z-10 grid h-full gap-0">
-                  <div className="border-b border-hairline p-4 md:p-5">
-                    <BuildVisual
-                      pendingLabel={t('screenshotsPending')}
-                      priority={index === 0}
-                      screenshotSrc={screenshotSrc}
-                      system={system}
-                    />
-                    <div className="mt-4 bl-signal-line h-4" aria-hidden="true" />
-                  </div>
-
-                  <div className="grid gap-5 p-5">
-                    <div className="flex min-w-0 flex-wrap items-center gap-3">
-                      <span className="flex size-10 shrink-0 items-center justify-center rounded-sm border border-hairline bg-canvas/80">
-                        <Icon className={cn('size-4', config.textClass)} aria-hidden="true" />
-                      </span>
-                      <SignalBadge label={t(config.badgeKey)} tone={config.tone} />
-                      <span className="ml-auto font-mono text-xs font-semibold text-muted">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                    </div>
-
-                    <div>
-                      <p className="mono-label mb-3 text-sea-bright">{t('systemLabel')}</p>
-                      <h3 className="text-heading-md text-ink">{system.title}</h3>
-                      <p className="mt-3 text-body-sm leading-[1.75] text-muted">
-                        {t(config.descriptionKey)}
-                      </p>
-                    </div>
-
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {system.modules.slice(0, 4).map((module) => (
-                        <div key={module} className="flex gap-2 text-sm leading-relaxed text-ink">
-                          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
-                          <span>{module}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5">
-                      {config.routes.map((route) => (
-                        <code
-                          key={route}
-                          className="rounded-sm border border-hairline bg-canvas/90 px-2 py-1 font-mono text-[10px] font-semibold text-muted"
-                        >
-                          {route}
-                        </code>
-                      ))}
-                    </div>
-
-                    <div className="border-t border-hairline pt-5">
-                      <Link
-                        href={`/work/${system.slug}`}
-                        className="inline-flex items-center gap-2 rounded-md border border-oxide/45 bg-oxide/15 px-4 py-3 text-sm font-semibold text-ink transition-colors hover:bg-oxide hover:text-white"
-                      >
-                        {t('cta')}
-                        <ArrowRight className="size-4" aria-hidden="true" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+        <p className="max-w-xl text-base leading-[1.7] text-muted-foreground md:text-lg">{labels.home.note}</p>
       </div>
-    </section>
+
+      <div className="mt-12 bg-[#fdfaf4] p-3 text-brand-charcoal shadow-[0_24px_70px_rgba(32,35,31,0.12)] md:p-5">
+        <div className="flex justify-between gap-6 border-b border-brand-charcoal/20 pb-3 text-xs font-semibold uppercase">
+          <span>{labels.home.kicker}</span>
+          <span>01-03 / {labels.typeLabels['demo-build']}</span>
+        </div>
+
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {examples.map((example, index) => (
+            <Link
+              key={example.id}
+              href={`/work/${example.slug}`}
+              data-analytics-event="work_example_card_click"
+              data-analytics-section="homepage_examples"
+              data-analytics-item={example.slug}
+              className={`group block min-w-0 border border-brand-charcoal/15 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${index === 2 ? 'md:col-span-2' : ''}`}
+            >
+              <figure>
+                <div className={`relative overflow-hidden bg-muted ${index === 2 ? 'aspect-[16/7]' : 'aspect-[16/10]'}`}>
+                  <Image
+                    src={imageBySector[example.sector]}
+                    alt={example.shortDescription}
+                    fill
+                    sizes={index === 2 ? '(max-width: 768px) 100vw, 90vw' : '(max-width: 768px) 100vw, 45vw'}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  />
+                </div>
+                <figcaption className="flex items-start justify-between gap-4 p-3 text-sm md:p-4">
+                  <span className="font-semibold">{example.title}</span>
+                  <span className="shrink-0 text-xs font-semibold uppercase text-brand-serene-coral-darken">{labels.statusLabels[example.status]}</span>
+                </figcaption>
+              </figure>
+            </Link>
+          ))}
+        </div>
+
+        <p className="mt-4 border-t border-brand-charcoal/20 pt-3 text-xs leading-relaxed text-muted-foreground">
+          {examples[0]?.disclaimer}
+        </p>
+      </div>
+
+      <Link
+        href="/work"
+        data-analytics-event="work_examples_index_cta_click"
+        data-analytics-section="homepage_examples"
+        className="mt-8 inline-flex min-h-11 items-center gap-2 py-2 text-sm font-semibold text-navy transition-colors hover:text-foreground"
+      >
+        {labels.home.cta}
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </Link>
+    </Section>
   );
 }

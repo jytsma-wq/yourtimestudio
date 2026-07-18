@@ -1,83 +1,167 @@
 import { getTranslations } from 'next-intl/server';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Section } from '@/components/shared/Section';
 import { Button } from '@/components/ui/button';
-import { TrackedLink } from '@/components/shared/TrackedLink';
-import { pricingWebsitePackages } from '@/lib/pricing-config';
+import { ArrowRight, Check, FileSearch, ShieldCheck } from 'lucide-react';
+import { Link } from '@/lib/i18n/navigation';
+import { type Locale } from '@/lib/i18n/config';
+import { pricingPackages } from '@/lib/pricing-config';
 
-export async function PricingSection() {
+interface PricingSectionProps {
+  locale: Locale;
+  /** Large faint section number for background decoration */
+  number?: string;
+}
+
+export async function PricingSection({ locale, number }: PricingSectionProps) {
   const t = await getTranslations('pricing');
 
   return (
-    <section className="bg-paper px-[var(--container-padding)] py-16 text-ink-dark md:py-24">
-      <div className="mx-auto max-w-[var(--container-max-width)]">
-        <div className="mb-12 grid gap-6 lg:grid-cols-[0.7fr_1fr] lg:items-end">
+    <Section variant="subtle" number={number}>
+      <div data-locale={locale} className="space-y-10">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-end">
           <div>
-            <p className="mono-label mb-4 text-sea-bright">{t('sectionLabel')}</p>
-            <h2 className="text-display-lg text-ink-dark">{t('heading')}</h2>
+            <p className="section-label">{t('sectionLabel')}</p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+              {t('heading')}
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              {t('subtitle')}
+            </p>
           </div>
-          <p className="max-w-2xl text-body-lg leading-[1.75] text-muted-dark lg:justify-self-end">
-            {t('subtitle')}
-          </p>
+
+          <aside className="border border-border bg-background p-5 shadow-none md:p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex size-11 shrink-0 items-center justify-center border border-border bg-card">
+                <FileSearch className="size-5 text-navy" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-muted-foreground">
+                  {t('audit_offer.kicker')}
+                </p>
+                <h3 className="mt-1 text-xl font-semibold text-foreground">
+                  {t('audit_offer.title')}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {t('audit_offer.body')}
+                </p>
+              </div>
+            </div>
+            <Button asChild className="mt-5 w-full">
+              <Link
+                href="/website-audits"
+                data-analytics-event="pricing_audit_cta_click"
+                data-analytics-section="pricing_preview"
+              >
+                {t('audit_offer.cta')}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </Button>
+          </aside>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-md border border-hairline-light bg-hairline-light md:grid-cols-3">
-          {pricingWebsitePackages.map((pkg) => (
-            <article key={pkg.key} className="flex h-full flex-col bg-paper-soft p-5">
-              <div className="mb-4 flex items-start justify-between gap-3">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+          {pricingPackages.map((pkg) => (
+            <article
+              key={pkg.key}
+              className={`flex h-full flex-col border border-border bg-card p-5 shadow-none md:p-6 ${pkg.prominent ? 'bg-background ring-1 ring-inset ring-navy/15' : ''}`}
+            >
+              <div className="flex min-h-28 flex-col items-start gap-4 border-b border-border pb-5 sm:flex-row sm:justify-between">
                 <div>
                   <div className="mb-3 flex items-center gap-2">
-                    <span className={`size-2 rounded-full ${pkg.dotClass}`} aria-hidden="true" />
-                    <span className="mono-label text-sea-bright">{t(`${pkg.key}.scope_label`)}</span>
+                    <span className={`size-2.5 ${pkg.dotClass}`} aria-hidden="true" />
+                    <p className="text-sm font-semibold text-muted-foreground">
+                      {t('best_for_label')}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold leading-tight text-ink-dark">{t(`${pkg.key}.name`)}</h3>
+                  <h3 className="text-2xl font-semibold tracking-tight text-foreground">
+                    {t(`${pkg.key}.name`)}
+                  </h3>
                 </div>
-                <span className="font-mono text-xs font-semibold text-muted-dark">{pkg.packageNumber}</span>
+                {pkg.prominent && (
+                  <span className="inline-flex max-w-full items-center gap-1.5 text-wrap border border-border bg-accent px-2.5 py-1 text-xs font-semibold leading-snug text-accent-foreground">
+                    <ShieldCheck className="size-3.5" aria-hidden="true" />
+                    {t('most_popular')}
+                  </span>
+                )}
               </div>
 
-              <p className="text-sm leading-[1.65] text-muted-dark">{t(`${pkg.key}.outcome`)}</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                {t(`${pkg.key}.best_fit`)}
+              </p>
 
-              <div className="my-5 border-y border-hairline-light py-4">
-                <p className="text-xl font-semibold text-ink-dark">{t(`${pkg.key}.setup`)}</p>
-                <p className="mt-1 text-sm text-muted-dark">{t('setup_label')}</p>
-                <p className="mt-3 text-base font-semibold text-ink-dark">{t(`${pkg.key}.monthly`)}</p>
-                <p className="mt-1 text-sm text-muted-dark">{t('monthly_label')}</p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                <div className="border border-border bg-background p-4">
+                  <p className="text-sm font-semibold text-muted-foreground">{t('setup_label')}</p>
+                  <p className="mt-1 text-2xl font-semibold text-foreground">{t(`${pkg.key}.setup`)}</p>
+                </div>
+                <div className="border border-border bg-background p-4">
+                  <p className="text-sm font-semibold text-muted-foreground">{t('monthly_label')}</p>
+                  <p className="mt-1 text-xl font-semibold text-foreground">{t(`${pkg.key}.monthly`)}</p>
+                </div>
               </div>
 
-              <ul className="mb-6 space-y-2">
-                {Array.from({ length: Math.min(pkg.moduleCount, 3) }, (_, i) => (
-                  <li key={i} className="flex gap-2 text-sm leading-relaxed text-ink-dark">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" aria-hidden="true" />
-                    <span>{t(`${pkg.key}.includes.${i}`)}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-5">
+                <p className="text-sm font-semibold text-foreground">{t('outcome_label')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {t(`${pkg.key}.outcome`)}
+                </p>
+              </div>
 
-              <TrackedLink
-                href="/pricing"
-                eventName="Pricing CTA Clicked"
-                eventProps={{ location: 'homepage_pricing_card', package: pkg.key }}
-                className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-sea-bright transition-colors hover:text-oxide"
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-foreground">{t('includes_label')}</p>
+                <ul className="mt-3 space-y-2.5">
+                  {Array.from({ length: Math.min(pkg.itemCount, 4) }, (_, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                      <Check className={`mt-0.5 size-4 shrink-0 ${pkg.iconText}`} aria-hidden="true" />
+                      <span>{t(`${pkg.key}.includes.${i}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-6 border-t border-border pt-4">
+                <p className="text-xs font-semibold text-muted-foreground">{t('scope_note_label')}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {t(`${pkg.key}.scope_note`)}
+                </p>
+              </div>
+
+              <Button
+                asChild
+                variant={pkg.prominent ? 'default' : 'outline'}
+                className="mt-auto w-full"
               >
-                {t('see_full_pricing')}
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </TrackedLink>
+                <Link
+                  href="/contact"
+                  data-analytics-event="pricing_card_cta_click"
+                  data-analytics-section="pricing_preview"
+                  data-analytics-item={pkg.key}
+                >
+                  {t('cta')}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </Button>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 rounded-md border border-hairline-light bg-paper p-5 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-2xl text-body-sm leading-[1.7] text-muted-dark">{t('guarantee')}</p>
-          <Button asChild className="rounded-md bg-oxide text-white hover:bg-oxide-hover hover:text-white">
-            <TrackedLink
-              href="/contact"
-              eventName="Pricing CTA Clicked"
-              eventProps={{ location: 'homepage_pricing_footer' }}
-            >
-              {t('cta')}
-            </TrackedLink>
-          </Button>
+        <div className="flex flex-col gap-4 border border-border bg-background p-5 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="mt-0.5 size-5 shrink-0 text-navy" aria-hidden="true" />
+            <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+              {t('guarantee')}
+            </p>
+          </div>
+          <Link
+            href="/pricing"
+            data-analytics-event="pricing_full_page_cta_click"
+            data-analytics-section="pricing_preview"
+            className="inline-flex min-h-11 shrink-0 items-center border-b border-transparent py-2 text-sm font-semibold text-navy no-underline transition-colors duration-150 ease-in-out hover:border-accent"
+          >
+            {t('see_full_pricing')}
+          </Link>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

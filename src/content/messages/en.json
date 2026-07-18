@@ -1,42 +1,72 @@
 {
   "metadata": {
-    "title": "Batumi Lighthouse — Website Development Studio in Batumi",
-    "description": "Founder-led website development for hotels, clinics, beauty studios, and service businesses in Batumi, Georgia."
+    "title": "Batumi Lighthouse - Clear websites for serious Batumi businesses",
+    "description": "Founder-led web design, business photography, social-ready content, local SEO, and multilingual websites for Batumi hotels, clinics, studios, and local businesses."
   },
   "nav": {
     "home": "Home",
-    "solutions": "Solutions",
+    "solutions": "Services",
     "hospitality": "Hospitality",
     "medical": "Medical",
     "beauty": "Beauty",
-    "audits": "Website Audits",
+    "audits": "Website audit",
+    "hotelsGuesthouses": "Hotels & guesthouses",
+    "clinicsMedical": "Clinics & medical",
+    "beautyStudios": "Beauty studios",
+    "websiteAudit": "Website audit",
+    "photography": "Photography & content shoots",
+    "requestAudit": "Request audit",
     "work": "Work",
     "insights": "Insights",
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
-    "brand_descriptor": "Website Development · Batumi"
+    "templates": "Templates"
   },
   "hero": {
-    "eyebrow": "Founder-led Batumi web studio",
-    "title": "Websites that turn local businesses into booking systems.",
-    "subtitle": "Founder-led web development, UX structure, local SEO, multilingual pages, and booking flows for Batumi businesses with international clients.",
-    "cta_primary": "Request website audit",
-    "cta_secondary": "View pricing scopes",
+    "eyebrow": "Founder-led web design and development in Batumi",
+    "title": "Websites and original content for Batumi businesses that need more direct enquiries.",
+    "subtitle": "I build the website, plan the images, and shape the social content directly with hotels, clinics, beauty studios, and local businesses in Batumi.",
+    "cta_primary": "Request a website audit",
+    "cta_secondary": "View the work",
+    "visual_label": "Original studio art direction / not client work",
+    "visual_alt": "Warm Batumi hotel interior prepared for a website and content shoot, with the Black Sea visible beyond the balcony",
     "getQuote": "Get quote",
     "proof_band": [
-      "Founder-led build",
-      "Local SEO included",
+      "Built directly with Jasper",
+      "Local SEO basics included",
       "Multilingual structure",
-      "Booking-first UX"
+      "Booking and enquiry paths"
     ],
-    "sectionLabel": "Founder-led Batumi web studio.",
-    "title1": "Websites that turn local businesses into",
-    "title2": "booking systems.",
+    "sectionLabel": "Founder-led web design and development in Batumi.",
+    "title1": "Websites. Photography. Social content.",
+    "title2": "Made for Batumi businesses that want more enquiries.",
+    "trust_line": "Built directly with Jasper in Batumi. Clear scope, practical advice, no agency layers.",
+    "panel_title": "Website audit preview",
+    "panel_subtitle": "What I check before recommending a rebuild.",
+    "problems_title": "What usually blocks enquiries",
+    "problems": [
+      "Visitors cannot quickly understand the offer, location, prices, or next step.",
+      "Trust proof, multilingual basics, and local search basics are scattered.",
+      "Contact, booking, or appointment paths ask people to work too hard."
+    ],
+    "fixes_title": "What I improve",
+    "fixes": [
+      "Clearer homepage and service structure.",
+      "Local SEO basics and useful metadata.",
+      "Multilingual content paths for visitors.",
+      "Booking and enquiry flows that are easier to finish."
+    ],
+    "panel_note": "The audit gives you a practical priority list before you commit to design or development.",
+    "typewriter": {
+      "hotel": "Booking-ready hotel websites",
+      "clinic": "Trust-focused clinic websites",
+      "salon": "Appointment-focused beauty websites"
+    },
     "cards": {
       "hospitality": {
         "name": "Hospitality",
-        "tagline": "Direct booking engines",
+        "tagline": "Direct booking handoff",
         "priceFrom": "From $1,800"
       },
       "medical": {
@@ -46,334 +76,255 @@
       },
       "beauty": {
         "name": "Beauty",
-        "tagline": "Online booking systems",
+        "tagline": "Online booking help",
         "priceFrom": "From $700"
       }
     },
     "stats": {
-      "sectors": {
+      "clients": {
         "value": "3",
-        "label": "sector systems"
+        "label": "core sectors"
       },
       "languages": {
         "value": "4",
-        "label": "-language architecture"
+        "label": "languages planned"
       },
-      "focus": {
-        "value": "100",
-        "label": "% booking-first focus"
+      "industries": {
+        "value": "3",
+        "label": "sectors"
+      },
+      "countries": {
+        "value": "1",
+        "label": "photography partner"
       }
     },
     "meta_brand": "Batumi Lighthouse / Batumi",
     "meta_services": "Direct booking / Local SEO / Multilingual UX",
     "feature_direction": "Feature direction",
     "issue": "Issue 01",
-    "appointment_flow": "Appointment flow",
-    "command": {
-      "coordinates": "41.6168° N / 41.6367° E",
-      "location": "Batumi / Adjara",
-      "signal": "Signal: booking-first websites"
-    },
-    "signals": {
-      "booking": "Booking signal",
-      "trust": "Trust signal",
-      "localSeo": "Local SEO signal",
-      "multilingual": "Multilingual signal"
-    },
-    "systems": {
-      "hotel": {
-        "title": "Hotel Direct Booking System",
-        "subtitle": "A booking-first hotel site with language routes and direct inquiry flow.",
-        "sector": "Hospitality"
-      },
-      "clinic": {
-        "title": "Clinic Trust System",
-        "subtitle": "A clinic website structure for treatments, doctors, intake, and patient questions.",
-        "sector": "Medical"
-      },
-      "beauty": {
-        "title": "Beauty Appointment System",
-        "subtitle": "A service menu, gallery, and appointment path for studios with social traffic.",
-        "sector": "Beauty"
-      }
-    }
+    "appointment_flow": "Appointment flow"
   },
   "sectors": {
-    "heading": "Sector solutions",
-    "subtitle": "Websites built for how your business actually works — not generic templates.",
+    "heading": "Websites for local businesses that need clearer enquiries",
+    "subtitle": "I build practical pages for three kinds of Batumi businesses: places to stay, practices people trust, and studios people book.",
     "hospitality": {
-      "title": "Hospitality",
-      "subtitle": "Direct booking websites for hotels, guesthouses, and aparthotels",
-      "pain": "OTA commissions eating your margins? Your website can't compete with booking.com?",
+      "title": "Hotels & guesthouses",
+      "subtitle": "Websites for hotels, guesthouses, and aparthotels",
+      "pain": "Reduce dependence on OTAs with clearer rooms, offers, policies, and direct booking paths.",
       "deliverables": [
-        "Room & offer management",
-        "Direct booking integration",
-        "Multilingual guest paths",
+        "Room pages and offers",
+        "Policies and location details",
+        "Direct booking or enquiry handoff",
         "Speed-optimized booking flow"
       ],
-      "cta": "See hospitality solutions",
-      "tagline": "Stop paying OTA commissions",
-      "priceFrom": "From $2,499 — includes direct booking engine"
+      "cta": "See hotel websites",
+      "tagline": "Bring more bookings to your own site",
+      "priceFrom": "From $2,499 - includes booking handoff"
     },
     "medical": {
-      "title": "Medical",
-      "subtitle": "Trust-first websites for clinics, dental practices, and aesthetic centers",
-      "pain": "Patients can't find your doctors? Your site doesn't build trust before the first consultation?",
+      "title": "Clinics & dental practices",
+      "subtitle": "Websites for clinics, dental practices, and aesthetic centers",
+      "pain": "Help patients understand treatments, doctors, safety, and consultation options before they contact you.",
       "deliverables": [
-        "Doctor & treatment profiles",
-        "Consultation flow",
-        "Multilingual clarity",
+        "Treatment and doctor pages",
+        "Consultation request flow",
+        "Safety and FAQ content",
         "Structured data for medical SEO"
       ],
-      "cta": "See medical solutions",
+      "cta": "See clinic websites",
       "tagline": "Build patient trust before the first visit",
       "priceFrom": "From $1,500 — includes doctor profiles & booking"
     },
     "beauty": {
-      "title": "Beauty",
-      "subtitle": "Booking-led websites for salons, medspas, and studios",
-      "pain": "Appointments scattered across Instagram DMs? No clear service menu or pricing online?",
+      "title": "Beauty studios & salons",
+      "subtitle": "Websites for salons, medspas, and studios",
+      "pain": "Turn Instagram and Google visitors into appointment requests with clear services, prices, proof, and contact flow.",
       "deliverables": [
-        "Service menu clarity",
-        "Appointment flow",
-        "Pricing visibility",
-        "Promo system & repeat business"
+        "Service and price menu",
+        "Appointment request flow",
+        "Proof, gallery, and reviews",
+        "Promo pages and rebooking reminders"
       ],
-      "cta": "See beauty solutions",
+      "cta": "See beauty websites",
       "tagline": "Fill your appointment book, not your DMs",
       "priceFrom": "From $700 — includes service menu & online booking"
     },
-    "sectionLabel": "What we do.",
-    "kicker": "Three departments",
-    "departmentLabel": "Department"
+    "sectionLabel": "What I build.",
+    "kicker": "Three service areas",
+    "departmentLabel": "Service",
+    "problemLabel": "The business problem",
+    "builtLabel": "What gets built"
   },
   "audit": {
-    "heading": "Website audits",
-    "subtitle": "Your signature lead magnet. Get a detailed scorecard on brand clarity, speed, local SEO, content structure, accessibility, and conversion UX.",
-    "cta": "Request a free audit",
+    "heading": "Start with a website audit",
+    "subtitle": "Send your current website and I will review clarity, mobile UX, contact paths, local SEO, speed, trust, and multilingual basics in plain language.",
+    "cta": "Request a website audit",
     "categories": {
       "brand": "Brand clarity",
       "speed": "Performance & speed",
       "seo": "Local SEO",
       "content": "Content structure",
       "accessibility": "Accessibility",
-      "conversion": "Conversion UX"
+      "conversion": "Contact and booking UX"
     },
-    "sectionLabel": "How we audit.",
-    "panel_kicker": "Transparent rubric",
+    "sectionLabel": "Website audit.",
+    "panel_kicker": "Report preview",
     "scorecard_title": "Website scorecard",
     "manual_review": "Manual review",
     "note": "No fake scores, no automated fluff. The report explains what is blocking trust, search visibility, and bookings, then lists the fixes in priority order."
   },
   "founder": {
-    "heading": "Founder-led, with specialist photography support",
-    "body": "I run Batumi Lighthouse as a one-person web studio in Batumi. I handle strategy, UX, code, SEO, and launch directly; a professional photographer supports projects that need original visual work.",
+    "heading": "Founder-led web work from Batumi",
+    "body": "I'm Jasper, a Dutch web developer based in Batumi. I work directly on the audit, plan, page structure, design, code, SEO basics, launch, and support.",
     "cta": "About the studio",
     "sectionLabel": "How I work.",
     "founder": {
       "sectionLabel": "How I work.",
-      "heading": "Built directly with Jasper.",
-      "bio": "I'm Jasper Tjeerd IJtsma, a Dutch website developer based in Batumi. Batumi Lighthouse is the focused studio I use to build booking-first websites for local service businesses.",
-      "story": [
-        "I started Batumi Lighthouse after seeing how many strong Batumi businesses lose trust online through slow, unclear, or generic websites.",
-        "I build focused websites for hotels, clinics, studios, and service businesses where booking, local SEO, multilingual UX, and credibility matter.",
-        "Clients work directly with me from structure and design through frontend build, launch, and improvement, which keeps quality and accountability visible."
-      ],
-      "location": "Based in Batumi",
-      "since": "Dutch founder",
-      "cta": "Start your project",
+      "heading": "You work directly with Jasper.",
+      "bio": "I'm Jasper, a Dutch web developer based in Batumi. I run Batumi Lighthouse as a small studio for hotels, clinics, beauty studios, and service businesses that need clearer websites and more direct enquiries. I handle the audit, website plan, page structure, design, code, local SEO basics, launch, and support myself.",
+      "location": "Based in Batumi, Georgia",
+      "since": "Founder-led studio",
+      "cta": "Send your current website",
+      "secondaryCta": "Read about the studio",
       "statClients": "Core sectors",
       "statLanguages": "Languages planned",
       "statAvailable": "Taking selected projects",
-      "imageAlt": "Batumi Lighthouse founder workspace"
-    },
-    "operating": {
-      "label": "Operating model",
-      "heading": "One accountable builder from diagnosis to improvement.",
-      "items": {
-        "diagnose": "Diagnose",
-        "structure": "Structure",
-        "design": "Design",
-        "build": "Build",
-        "launch": "Launch",
-        "improve": "Improve"
-      }
-    },
-    "direct": {
-      "label": "What I do directly",
-      "items": {
-        "ux": "UX structure",
-        "frontend": "frontend implementation",
-        "localSeo": "local SEO basics",
-        "multilingual": "multilingual setup",
-        "checks": "performance/accessibility checks",
-        "leadFlows": "form and lead flows"
-      }
-    },
-    "not_fake": {
-      "label": "What I do not fake",
-      "items": {
-        "numbers": "no fake client numbers",
-        "decoration": "no decoration-first websites",
-        "templates": "no bloated templates",
-        "guarantees": "no vague guarantees"
-      }
+      "imageAlt": "Batumi Lighthouse workspace placeholder",
+      "photoNote": "No founder portrait is shown here unless it is a real, approved photo.",
+      "panelLabel": "Founder-led model",
+      "panelHeading": "What Jasper handles personally",
+      "responsibilities": [
+        {
+          "title": "Website audit and plan",
+          "desc": "I review the current site, competitors, offer, languages, search basics, and the main contact or booking path."
+        },
+        {
+          "title": "Structure, copy direction, and design",
+          "desc": "I decide the page order, content priorities, calls to action, and visual direction with you before build."
+        },
+        {
+          "title": "Next.js build and launch",
+          "desc": "I build the site, check responsive layouts, metadata, forms, speed, and the launch checklist."
+        },
+        {
+          "title": "Local SEO and handoff",
+          "desc": "I set up practical local search basics and explain what to keep updating after launch."
+        }
+      ],
+      "supportTitle": "When specialist support enters",
+      "supportBody": "If the project needs stronger photography, translation review, brand assets, or content production, I bring that in openly and keep the scope clear.",
+      "noFakeTitle": "What I refuse to fake",
+      "noFakeBody": "No fake testimonials, invented client results, fake metrics, copied layouts, stock logos, or staged founder proof. If something is an internal example, placeholder, or estimate, it is labelled that way."
     },
     "features": {
-      "sectionLabel": "Why this model works.",
-      "heading": "Small studio, senior attention",
+      "sectionLabel": "What this means for your project.",
+      "heading": "A small studio with clear responsibility",
       "items": [
         {
           "title": "One direct contact",
-          "desc": "You speak with the person planning, designing, coding, and launching the site."
+          "desc": "You speak with Jasper, not a sales layer or rotating account team."
         },
         {
-          "title": "Photography-ready",
-          "desc": "Pages are planned around strong original images, with a professional photographer available when needed."
+          "title": "Real content first",
+          "desc": "The site is planned around your actual rooms, treatments, services, prices, proof, and policies."
         },
         {
-          "title": "Performance first",
-          "desc": "Lean Next.js pages, optimized media, and clear Core Web Vitals targets from the start."
+          "title": "Specialists when useful",
+          "desc": "Photography, content, or translation support is added when it improves the project, not hidden inside vague agency work."
         },
         {
-          "title": "Local SEO built in",
-          "desc": "Business schema, service pages, and local search copy are planned before launch."
+          "title": "No fake proof",
+          "desc": "Example work, estimates, placeholders, and unpublished results are marked clearly."
         }
       ],
-      "intro": "A small studio only works when the responsibilities are visible. These are the parts I own directly, and where specialist help enters the project."
+      "intro": "Founder-led should be practical, not romantic. You know who is making the decisions, which parts Jasper owns, and when outside support is needed."
     }
   },
   "pricing": {
-    "heading": "Clear website development scopes.",
-    "subtitle": "Typical ranges for founder-led website development, technical setup, content structure, and monthly care. Final proposals are scoped after the business model, content needs, integrations, and launch requirements are reviewed.",
-    "hero_eyebrow": "Pricing system",
-    "hero_note_label": "How ranges work",
-    "hero_note": "These are planning ranges, not one-click packages. A scoped proposal confirms pages, integrations, content responsibilities, timeline, and monthly support before work begins.",
-    "hero_points": [
-      "Setup covers strategy, UX, design, development, launch, and basic SEO.",
-      "Monthly care covers hosting coordination, maintenance, monitoring, and small updates.",
-      "Integrations, photography, and multilingual content are scoped separately when needed."
-    ],
-    "comparison_eyebrow": "Website packages",
-    "comparison_heading": "Website Development Packages",
-    "comparison_subtitle": "Three build scopes for service businesses that need a stronger booking, appointment, consultation, or direct-enquiry path.",
-    "audit_section_eyebrow": "Diagnostic product",
-    "audit_section_heading": "Not ready to build yet? Start with an audit.",
-    "audit_section_subtitle": "The audit is a separate technical and commercial review for businesses that need a clear diagnosis before committing to a full website build.",
+    "heading": "Transparent starting ranges",
+    "subtitle": "Typical starting points for Batumi businesses. Final scope depends on pages, languages, content, integrations, and launch support.",
     "beauty": {
-      "scope_label": "Beauty scope",
-      "name": "Beauty Presence System",
-      "best_fit": "Salons, beauty studios, medspas, nail studios, hair studios, and small local service businesses.",
-      "outcome": "A clearer service menu, trust layer, and appointment path that turns social and search visitors into qualified enquiries.",
-      "setup": "$900-$1,600",
-      "monthly": "$69-$119/mo",
+      "name": "Beauty studio website",
+      "best_fit": "Small beauty salons, medspas, nail and hair studios",
+      "setup": "$700–$1,200",
+      "monthly": "$59–$99/mo",
+      "outcome": "A clearer service menu, local search foundation, and contact or booking path for a small studio.",
       "includes": [
-        "Service menu and pricing structure",
-        "Appointment and WhatsApp request flow",
-        "Gallery, reviews, and location trust sections",
-        "Core pages for services, team, contact, and offers"
+        "5–8 pages",
+        "Service menu",
+        "Pricing area",
+        "Local SEO basics",
+        "GBP support",
+        "Contact/WhatsApp flow"
       ],
-      "technical": [
-        "Responsive Next.js build",
-        "Local business schema basics",
-        "Analytics and form tracking setup"
+      "best_upsells": [
+        "Promo landing pages",
+        "Review request flow",
+        "Instagram content support"
       ],
-      "not_included": [
-        "Professional photography production",
-        "Paid advertising management",
-        "Custom booking platform development"
-      ]
+      "scope_note": "Professional photography, paid ads, and advanced booking software setup are scoped separately."
     },
     "medical": {
-      "scope_label": "Clinic scope",
-      "name": "Clinic Trust Platform",
-      "best_fit": "Dental, aesthetic, wellness, specialist clinics, and practices that need stronger patient trust before contact.",
-      "outcome": "Treatment clarity, doctor credibility, multilingual intake, and a consultation path built around patient confidence.",
-      "setup": "$1,800-$3,200",
-      "monthly": "$119-$199/mo",
+      "name": "Clinic Website",
+      "best_fit": "Dental, aesthetic, wellness, specialist clinics",
+      "setup": "$1,500–$2,750",
+      "monthly": "$99–$189/mo",
+      "outcome": "A trust-first clinic site with treatment clarity, practitioner information, and safer enquiry flow.",
       "includes": [
-        "Treatment category and detail pages",
-        "Doctor or specialist profile structure",
-        "Consultation request and intake flow",
-        "FAQ, reviews, safety, and trust content blocks"
+        "8–16 pages",
+        "Doctor/treatment templates",
+        "Multilingual structure",
+        "Consultation form",
+        "Structured data",
+        "Reviews/FAQ layer"
       ],
-      "technical": [
-        "Structured data for clinic and services",
-        "Accessible form and validation flow",
-        "Multilingual route architecture"
+      "best_upsells": [
+        "Content production",
+        "Treatment article cluster",
+        "Lead qualification workflow"
       ],
-      "not_included": [
-        "Medical copywriting without source material",
-        "Patient record or CRM implementation",
-        "Regulated claims review by legal counsel"
-      ]
+      "scope_note": "Medical/legal review, clinical copywriting, and third-party patient systems are scoped separately."
     },
     "hospitality": {
-      "scope_label": "Hotel scope",
-      "name": "Hotel Direct Booking Platform",
-      "best_fit": "Boutique hotels, guesthouses, aparthotels, villa operators, and hospitality businesses reducing OTA dependency.",
-      "outcome": "Room clarity, location trust, multilingual search visibility, and a direct booking path that supports higher-intent guests.",
-      "setup": "$2,600-$4,800",
-      "monthly": "$159-$279/mo",
+      "name": "Hotel Website",
+      "best_fit": "Boutique hotels, aparthotels, guesthouses, villa operators",
+      "setup": "$2,000–$4,000",
+      "monthly": "$129–$249/mo",
+      "outcome": "A direct-enquiry hotel site with stronger room pages, offers, local context, and booking handoff.",
       "includes": [
-        "Room, offer, policy, and location pages",
-        "Direct booking CTA and enquiry architecture",
-        "Multilingual guest journey structure",
-        "Trust, amenities, gallery, and local-area content blocks"
+        "10–20 pages",
+        "Room templates & offers",
+        "Multilingual UX",
+        "Direct booking integration",
+        "Performance and CRO checks",
+        "PMS/booking integration support"
       ],
-      "technical": [
-        "Hotel and lodging schema basics",
-        "Performance budget for media-heavy pages",
-        "Booking/PMS integration support layer"
+      "best_upsells": [
+        "Professional photography",
+        "PMS/booking integrations",
+        "Local attraction content",
+        "Paid search landing pages"
       ],
-      "not_included": [
-        "PMS subscription or third-party booking fees",
-        "Large photo/video production days",
-        "Paid OTA or paid search campaign management"
-      ]
+      "scope_note": "Booking engine fees, PMS rules, payments, and room photography are scoped separately."
     },
-    "audit": {
-      "scope_label": "Diagnostic review",
-      "name": "Website Audit / Technical Review",
-      "best_fit": "Businesses that need a clear diagnosis before redesign, rebuild, SEO work, or performance fixes.",
-      "outcome": "A prioritized report explaining what blocks trust, search visibility, speed, accessibility, and booking action.",
-      "setup": "$250-$650",
-      "monthly": "No monthly plan required",
-      "includes": [
-        "Manual UX and conversion review",
-        "Local SEO and content structure review",
-        "Performance and Core Web Vitals checks",
-        "Prioritized fix list and next-step scope"
-      ],
-      "technical": [
-        "Technical crawl and page review",
-        "Schema and metadata inspection",
-        "Accessibility basics and form checks"
-      ],
-      "not_included": [
-        "Implementation of fixes",
-        "Full redesign concepts",
-        "Ongoing support unless scoped after review"
-      ]
+    "audit_offer": {
+      "kicker": "Low-friction first step",
+      "title": "Start with a website audit",
+      "body": "Send your current site and I will review clarity, mobile UX, contact paths, local SEO basics, speed, trust, and multilingual structure before you commit to a build.",
+      "cta": "Request an audit"
     },
-    "cta": "Request a scoped proposal",
-    "setup_label": "Typical setup range",
-    "monthly_label": "Monthly care range",
+    "cta": "Discuss this package",
+    "setup_label": "Typical setup",
+    "monthly_label": "Monthly care",
     "best_for_label": "Best for",
-    "outcome_label": "Business outcome",
-    "includes_label": "Included modules",
-    "technical_label": "Technical deliverables",
-    "not_included_label": "Not included / optional add-ons",
-    "audit_not_included_label": "Not included",
-    "who_for_label": "Who it is for",
-    "audit_price_label": "Audit range",
-    "turnaround_label": "Turnaround",
-    "audit_cta": "Request website audit",
-    "best_upsells_label": "Useful add-ons",
-    "most_popular": "Common scope",
-    "see_full_pricing": "Open full scope details",
-    "guarantee": "No work starts from a vague package. You receive a scoped proposal with deliverables, responsibilities, exclusions, timeline, and care options before any build begins.",
-    "feature_label": "Feature",
+    "outcome_label": "Outcome",
+    "includes_label": "What you get",
+    "scope_note_label": "Scoped separately",
+    "best_upsells_label": "Best upsells",
+    "most_popular": "Most popular",
+    "see_full_pricing": "View full pricing →",
+    "guarantee": "No surprises. You receive a detailed proposal with scope, timeline, and transparent pricing before any work begins. Cancel the monthly plan with 30 days' notice — your website remains yours.",
+    "comparison_heading": "Feature comparison",
     "comparison": {
       "pages": "Custom pages",
       "service_menu": "Service menu",
@@ -391,345 +342,221 @@
       "priority_support": "Priority support",
       "custom_integrations": "Custom integrations"
     },
-    "calculator_label": "Scope estimator",
-    "calculator_heading": "Estimate a development scope",
-    "calculator_subtitle": "Use this as a planning estimate for build complexity. The final proposal depends on content, integrations, and launch requirements.",
-    "calculator_note": "The estimator is not a quote. It helps identify whether the project is closer to a small presence build, a trust platform, or an integration-heavy direct booking system.",
-    "calculator_sector": "Business model",
+    "calculator_heading": "Estimate your project",
+    "calculator_subtitle": "Get an instant estimate based on your needs.",
+    "calculator_sector": "Your sector",
     "calculator_sector_beauty": "Beauty",
-    "calculator_sector_medical": "Clinic",
-    "calculator_sector_hospitality": "Hotel",
-    "calculator_pages": "Planned pages",
-    "calculator_addons": "Scope variables",
-    "calculator_multilingual": "Multilingual content structure",
-    "calculator_booking": "Booking or PMS integration support",
-    "calculator_seo": "Local SEO content cluster",
-    "calculator_care": "Maintenance / care plan",
+    "calculator_sector_medical": "Medical",
+    "calculator_sector_hospitality": "Hospitality",
+    "calculator_pages": "Number of pages",
+    "calculator_addons": "Add-ons",
+    "calculator_multilingual": "Multilingual support",
+    "calculator_booking": "Booking flow",
+    "calculator_seo": "SEO package",
+    "calculator_priority": "Priority support",
     "calculator_setup": "Estimated setup",
-    "calculator_monthly": "Estimated care",
-    "calculator_cta": "Request a scoped proposal",
-    "sectionLabel": "Pricing."
+    "calculator_monthly": "Estimated monthly",
+    "calculator_cta": "Get a precise quote",
+    "sectionLabel": "Investment.",
+    "feature_label": "Feature"
   },
   "pricingPage": {
-    "add_ons_eyebrow": "Add-ons",
-    "add_ons_heading": "Scope add-ons that change the work.",
-    "add_ons_subtitle": "Add-ons are priced by effort and dependency. They are separated from the base scope so the proposal stays readable.",
+    "add_ons_heading": "Add-ons & extras",
+    "add_ons_subtitle": "Every business is different. These add-ons let you customize your package as you grow.",
     "add_ons": [
       {
-        "name": "Photography/content support",
-        "description": "Shot planning, content priorities, and coordination for original room, treatment, service, team, or location visuals.",
-        "price": "Scoped by shoot"
+        "name": "Custom features",
+        "description": "Custom integrations, advanced booking logic, member portals, or anything unique to your business.",
+        "price": "From $250"
       },
       {
-        "name": "Booking/PMS integration support",
-        "description": "Support for connecting booking tools, PMS links, forms, or third-party reservation flows.",
-        "price": "From $350"
+        "name": "Additional pages",
+        "description": "Need more pages beyond your package? Each additional page is designed and built to the same standard.",
+        "price": "$75–$150/page"
       },
       {
-        "name": "Multilingual content",
-        "description": "Language-route structure and content adaptation for English, Georgian, Russian, or Turkish pages.",
-        "price": "From $250/language"
-      },
-      {
-        "name": "Local SEO content cluster",
-        "description": "Service, treatment, room, or location pages planned around high-intent local search topics.",
-        "price": "From $450"
-      },
-      {
-        "name": "Care / maintenance plan",
-        "description": "Ongoing updates, technical monitoring, small content changes, and launch support after the site is live.",
-        "price": "From $69/mo"
+        "name": "Priority support",
+        "description": "Same-day response time, weekend availability, and a dedicated Slack channel for urgent needs.",
+        "price": "$49/mo extra"
       }
     ],
-    "process_eyebrow": "Proposal process",
-    "process_heading": "How the final price is scoped",
-    "process_subtitle": "The proposal is based on the actual site system, not a loose page count. The goal is clarity before design or development starts.",
+    "process_heading": "How it works",
+    "process_subtitle": "A clear, five-step process from first conversation to launched website.",
     "process_steps": [
       {
         "title": "Audit",
-        "description": "The current website, business model, content, competitors, and conversion path are reviewed."
+        "description": "I review your current web presence, competitors, and market position to identify opportunities."
       },
       {
         "title": "Fit call",
-        "description": "We clarify goals, users, languages, integrations, content responsibilities, and launch constraints."
+        "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
       },
       {
-        "title": "Scope",
-        "description": "The proposal separates included modules, technical deliverables, exclusions, and optional add-ons."
+        "title": "Proposal",
+        "description": "You receive a detailed proposal with scope, timeline, and transparent pricing. No hidden fees."
       },
       {
         "title": "Build",
-        "description": "Design and development move through structured checkpoints so the scope remains controlled."
+        "description": "I design, develop, and test your site with regular check-ins. You see progress every step of the way."
       },
       {
         "title": "Launch",
-        "description": "The site is tested for forms, responsive behavior, SEO basics, performance, redirects, and care handoff."
+        "description": "Your site goes live with full SEO setup, performance optimization, and ongoing support included."
       }
     ],
-    "faq_eyebrow": "Pricing FAQ",
-    "faq_heading": "Common scope questions",
+    "faq_heading": "Pricing FAQ",
     "faq_items": [
       {
-        "q": "Why are prices shown as ranges?",
-        "a": "The same sector can require very different work depending on page count, content readiness, integrations, languages, and launch risk. The range keeps early planning honest."
+        "q": "Is the setup fee a one-time cost?",
+        "a": "Yes. The setup fee covers design, development, content strategy, and launch. There are no hidden costs or surprise invoices."
       },
       {
-        "q": "Is monthly care required?",
-        "a": "Monthly care is recommended for active businesses but not forced into every scope. The proposal separates setup work from ongoing maintenance."
+        "q": "Can I cancel the monthly plan?",
+        "a": "The monthly plan covers hosting, maintenance, security updates, and support. You can cancel with 30 days' notice — your website remains yours."
       },
       {
-        "q": "Can you work with an existing booking tool?",
-        "a": "Yes. Booking and PMS work is scoped after the tool, embed method, forms, redirects, and tracking requirements are known."
+        "q": "What if I need something between packages?",
+        "a": "Most projects start with a package and add customizations. I will propose exactly what you need during the fit call - nothing more, nothing less."
       },
       {
-        "q": "Can the audit happen before a full build?",
-        "a": "Yes. The audit is often the cleanest starting point because it identifies what should be fixed, rebuilt, or left alone."
+        "q": "Do you offer payment plans?",
+        "a": "Yes. For larger projects, I can split the setup fee into two or three installments. We'll agree on this during the proposal stage."
       }
-    ],
-    "cta_eyebrow": "Scoped next step",
-    "cta_heading": "Request a scoped proposal.",
-    "cta_subtitle": "Send the business type, current website, required languages, and any booking tools. The reply will focus on scope, not pressure."
+    ]
   },
   "aboutPage": {
-    "hero": {
-      "eyebrow": "Founder-led website development",
-      "title": "I'm Jasper, a Dutch web developer based in Batumi.",
-      "subtitle": "I work directly with hotels, clinics, beauty studios, and service businesses on strategy, UX, frontend code, local SEO basics, launch, and improvement.",
-      "story": [
-        "I started Batumi Lighthouse after seeing how many strong Batumi businesses lose trust online through slow, unclear, or generic websites.",
-        "I build focused websites for hotels, clinics, studios, and service businesses where booking, local SEO, multilingual UX, and credibility matter.",
-        "Clients work directly with me from structure and design through frontend build, launch, and improvement, which keeps quality and accountability visible."
-      ],
-      "panel_label": "Jasper Tjeerd IJtsma / Batumi Lighthouse",
-      "panel_title": "Dutch founder. Frontend builder. Batumi-focused.",
-      "panel_body": "The studio is built for local service businesses that need clearer booking, trust, search visibility, multilingual structure, and technical reliability without passing through layers of account management.",
-      "panel_points": [
-        "Dutch founder based in Batumi",
-        "Hotels, clinics, studios, and service businesses",
-        "Strategy, UX, code, SEO, launch, and improvement"
-      ]
-    },
-    "operating": {
-      "eyebrow": "Operating model",
-      "heading": "A controlled build process from diagnosis to improvement.",
-      "subtitle": "The work is organized as a practical website system, not a loose design pass. Each step exists to reduce ambiguity before code and launch.",
-      "items": {
-        "diagnose": {
-          "title": "Diagnose",
-          "description": "Review the business model, current site, search intent, competitors, trust gaps, and booking path."
-        },
-        "structure": {
-          "title": "Structure",
-          "description": "Map pages, routes, content blocks, calls to action, multilingual needs, and lead flow logic."
-        },
-        "design": {
-          "title": "Design",
-          "description": "Create a high-contrast interface around the real decision path, not decorative layout trends."
-        },
-        "build": {
-          "title": "Build",
-          "description": "Implement responsive pages, forms, structured data, performance budgets, and reusable components."
-        },
-        "launch": {
-          "title": "Launch",
-          "description": "Test forms, metadata, redirects, mobile layouts, analytics basics, and deployment details."
-        },
-        "improve": {
-          "title": "Improve",
-          "description": "Use audit findings, support requests, and content needs to keep the website useful after launch."
-        }
-      }
-    },
-    "stack": {
-      "eyebrow": "Technical stack",
-      "heading": "Tools chosen for clear, maintainable website systems.",
-      "subtitle": "The stack is practical: fast pages, structured content, multilingual routing, clear forms, and enough discipline to maintain the site after launch.",
-      "items": {
-        "nextjs": "Next.js",
-        "react": "React",
-        "tailwind": "Tailwind",
-        "routes": "Multilingual routes",
-        "schema": "Structured data",
-        "performance": "Performance checks",
-        "seo": "Local SEO",
-        "forms": "Form / lead flows"
-      }
-    },
-    "direct": {
-      "eyebrow": "Direct responsibility",
-      "heading": "What I do directly",
-      "items": {
-        "ux": {
-          "title": "UX structure",
-          "description": "Information architecture, page order, conversion paths, and content hierarchy."
-        },
-        "frontend": {
-          "title": "Frontend implementation",
-          "description": "Next.js, React, Tailwind, responsive layouts, component systems, and integration-ready UI."
-        },
-        "seo": {
-          "title": "Local SEO basics",
-          "description": "Metadata, service/location structure, internal links, schema basics, and search-aligned content."
-        },
-        "multilingual": {
-          "title": "Multilingual setup",
-          "description": "Language routes, translated navigation, localized calls to action, and hreflang basics."
-        },
-        "checks": {
-          "title": "Performance/accessibility checks",
-          "description": "Readable contrast, labels, focus states, mobile behavior, asset weight, and Core Web Vitals basics."
-        },
-        "lead_flows": {
-          "title": "Form and lead flows",
-          "description": "Booking, consultation, audit, contact, and WhatsApp paths planned around actual user intent."
-        }
-      }
-    },
-    "support": {
-      "eyebrow": "Specialist support",
-      "heading": "Specialists enter only where useful.",
-      "subtitle": "The core website system remains founder-led. Specialist support is used for specific production needs, not to hide responsibility.",
-      "items": {
-        "photography": {
-          "title": "Photography",
-          "description": "Original visual work can be planned when rooms, treatments, services, or location proof need stronger assets."
-        },
-        "content": {
-          "title": "Content support",
-          "description": "Content planning, source-material cleanup, and multilingual adaptation can be scoped when the business needs it."
-        }
-      }
-    },
-    "not_fake": {
-      "eyebrow": "What I do not fake",
-      "heading": "No inflated agency signals.",
-      "subtitle": "The site and proposals should make the work clear without pretending there are client results or guarantees that do not exist.",
-      "items": {
-        "numbers": {
-          "title": "No fake client numbers",
-          "description": "No invented client counts, testimonials, conversion lifts, or performance claims."
-        },
-        "decoration": {
-          "title": "No decoration-first design",
-          "description": "Visual choices have to support booking, trust, comprehension, speed, and maintainability."
-        },
-        "templates": {
-          "title": "No bloated templates",
-          "description": "Builds avoid unnecessary page weight, generic sections, and features that do not serve the business."
-        },
-        "guarantees": {
-          "title": "No vague guarantees",
-          "description": "Recommendations are framed as scope, evidence, and tradeoffs rather than broad promises."
-        }
-      }
-    },
-    "cta": {
-      "eyebrow": "Start with diagnosis",
-      "heading": "See what your website should fix first.",
-      "subtitle": "A manual website audit is the cleanest starting point when the next step is not obvious.",
-      "button": "Request website audit"
-    }
-  },
-  "contactPage": {
-    "eyebrow": "Project intake",
-    "heading": "Start with a website audit or scoped project.",
-    "subtitle": "Send the context behind the business, website, goal, budget, and timeline. I will reply with the next practical step: audit, scoped proposal, or focused improvement plan.",
-    "hero_panel": {
-      "label": "Before work starts",
-      "body": "A good project starts with a clear diagnosis and a controlled scope, not vague promises or rushed design work.",
-      "points": [
-        "Manual review before recommendation",
-        "Scope, exclusions, and timeline made explicit",
-        "Built for booking, trust, SEO, and performance"
-      ]
-    },
-    "options_eyebrow": "Contact paths",
-    "options_heading": "Choose the conversation that matches the problem.",
-    "options": [
+    "heading": "About the studio",
+    "story_heading": "The story",
+    "story_body_1": "I'm Jasper, a Dutch web developer based in Batumi. Batumi Lighthouse is the small studio I use to work directly with local hotels, clinics, beauty studios, and service businesses.",
+    "story_body_2": "I personally handle the audit, page plan, structure, design direction, Next.js build, local SEO basics, launch checks, and support. If a project needs photography, translation review, brand work, or deeper content support, I bring in a specialist openly.",
+    "approach_heading": "Plain work, no fake proof",
+    "approach_body": "I do not invent testimonials, client logos, performance numbers, case-study results, or founder proof. The work starts with real business details: services, rooms, treatments, prices, policies, proof, languages, search intent, and the path to contact or book.",
+    "why_batumi_heading": "Why Batumi?",
+    "why_batumi_body_1": "Batumi is growing as a hospitality, medical, and service-business market, but many local websites still make booking, trust, and multilingual communication harder than they need to be.",
+    "why_batumi_body_2": "That gap is where I work: practical websites that make the business easier to find, easier to understand, and easier to contact.",
+    "process_heading": "How I work",
+    "process_steps": [
       {
-        "title": "Website audit",
-        "description": "For businesses that need a clear diagnosis of trust, booking flow, SEO, speed, and mobile UX before deciding what to build."
+        "title": "Audit",
+        "description": "I review your current web presence, competitors, and market position to identify opportunities."
       },
       {
-        "title": "New website project",
-        "description": "For hotels, clinics, and studios that need a structured website system planned, designed, built, and launched."
+        "title": "Fit call",
+        "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
       },
       {
-        "title": "Existing website improvement",
-        "description": "For websites that already exist but need better conversion paths, clearer content, local SEO, performance, or technical cleanup."
+        "title": "Proposal",
+        "description": "You receive a detailed proposal with scope, timeline, and transparent pricing. No hidden fees."
+      },
+      {
+        "title": "Build",
+        "description": "I design, develop, and test your site with regular check-ins. You see progress every step of the way."
+      },
+      {
+        "title": "Launch",
+        "description": "Your site goes live with full SEO setup, performance optimization, and ongoing support included."
       }
     ],
+    "tools_heading": "Tools I use",
+    "tools_subtitle": "Built with modern, reliable technology for speed, security, and maintainability.",
+    "tools": [
+      {
+        "name": "Next.js",
+        "category": "framework"
+      },
+      {
+        "name": "TypeScript",
+        "category": "language"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "styling"
+      },
+      {
+        "name": "Hostinger",
+        "category": "hosting"
+      },
+      {
+        "name": "Prisma",
+        "category": "database"
+      },
+      {
+        "name": "React Hook Form",
+        "category": "forms"
+      },
+      {
+        "name": "Zod",
+        "category": "validation"
+      },
+      {
+        "name": "next-intl",
+        "category": "i18n"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "animation"
+      },
+      {
+        "name": "Radix UI",
+        "category": "components"
+      }
+    ],
+    "cta_text": "Ready to see what your website could become?",
+    "cta_button": "Start with a free audit",
+    "image_alt": "Batumi Lighthouse studio mark",
+    "image_caption": "Founder-led web studio based in Batumi, Georgia"
+  },
+  "contactPage": {
+    "heading": "Get in touch",
+    "subtitle": "Tell me about your project and I'll get back to you within one business day.",
     "form": {
-      "eyebrow": "Intake form",
-      "heading": "Send the project context.",
-      "subtitle": "The fields below keep the first reply focused on scope instead of generic sales questions.",
       "name": "Your name",
-      "name_placeholder": "Your name",
       "name_required": "Name is required",
       "business": "Business name",
       "business_optional": "optional",
       "business_required": "Business name is required",
       "email": "Email address",
-      "email_placeholder": "you@example.com",
       "email_required": "Email is required",
       "email_invalid": "Please enter a valid email address",
       "phone": "Phone / WhatsApp",
       "phone_optional": "optional",
-      "business_type": "Business type",
-      "business_type_placeholder": "Select business type",
-      "sector": "Business type",
+      "sector": "Your sector",
       "sector_optional": "optional",
-      "sector_required": "Please select a business type",
-      "sector_placeholder": "Select business type",
-      "website": "Current website",
+      "sector_required": "Please select a sector",
+      "sector_placeholder": "Select your sector",
+      "website": "Current website URL",
       "website_optional": "optional",
-      "website_invalid": "Please enter a valid URL, for example https://example.com",
-      "project_goal": "Project goal",
-      "project_goal_placeholder": "Select project goal",
-      "budget": "Budget range",
+      "website_invalid": "Please enter a valid URL (e.g. https://example.com)",
+      "budget": "Monthly budget range",
       "budget_optional": "optional",
       "budget_placeholder": "Select budget range",
-      "timeline": "Timeline",
-      "timeline_placeholder": "Select timeline",
       "language": "Preferred language",
       "language_optional": "optional",
       "language_required": "Please select a preferred language",
       "language_placeholder": "Select preferred language",
-      "message": "Message",
-      "message_placeholder": "Briefly describe what needs to change, what is not working now, and any booking tools, languages, or launch constraints.",
-      "message_required": "Please describe the project or audit request",
+      "message": "Tell me about your project",
+      "message_required": "Please tell me about your project",
       "message_optional": "optional",
-      "submit": "Send project request",
-      "sending": "Sending request...",
-      "error_title": "Request could not be sent",
-      "error_default": "Could not send your request. Please try again or email me directly.",
+      "submit": "Send inquiry",
+      "sending": "Sending...",
+      "error_title": "Something went wrong",
+      "error_default": "Could not send your inquiry. Please try again or email me directly.",
       "success_redirect": "Redirecting...",
-      "success_title": "Request received",
-      "success_body": "Your project request has been received. I will review the context and reply with the next practical step.",
-      "success_meta": "Typical response time: one business day"
+      "success_title": "Thank you",
+      "success_body": "Your inquiry has been received. I'll get back to you within one business day.",
+      "success_meta": "Typical response time: under 24 hours"
     },
     "sectors": [
-      "Hotel / hospitality",
-      "Clinic / medical",
-      "Beauty studio",
-      "Other local business"
+      "Hospitality",
+      "Medical",
+      "Beauty",
+      "Other"
     ],
     "budgets": [
-      "Audit / small improvement",
-      "$900-$1,600",
-      "$1,800-$3,200",
-      "$3,200+"
-    ],
-    "project_goals": [
-      "Website audit",
-      "New website project",
-      "Existing website improvement"
-    ],
-    "timelines": [
-      "This month",
-      "1-2 months",
-      "2-3 months",
-      "Flexible / planning"
+      "Under $500",
+      "$500–$1,000",
+      "$1,000–$2,500",
+      "$2,500+"
     ],
     "languages": [
       "English",
@@ -737,43 +564,21 @@
       "Russian",
       "Turkish"
     ],
-    "trust": {
-      "eyebrow": "Working context",
-      "heading": "Clear scope before work starts.",
-      "items": [
-        {
-          "title": "Based in Batumi",
-          "description": "Focused on local service businesses that need international-grade web systems."
-        },
-        {
-          "title": "Founder-led",
-          "description": "You work directly with the person planning, designing, coding, and launching the site."
-        },
-        {
-          "title": "Scope first",
-          "description": "Deliverables, exclusions, timeline, and responsibilities are clarified before build work starts."
-        },
-        {
-          "title": "No fake metrics",
-          "description": "Recommendations are based on audit findings, business context, and practical technical constraints."
-        }
-      ]
-    },
-    "info_heading": "Direct contact",
+    "info_heading": "Other ways to reach me",
     "info_email_label": "Email",
     "info_email": "hello@batumilighthouse.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
     "info_area_label": "Service area",
-    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across Adjara and beyond.",
+    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond.",
     "info_whatsapp_fallback": "Use the form and include your WhatsApp number"
   },
   "thankYouPage": {
     "heading": "Thank you for your inquiry",
     "body": "I've received your message and will get back to you within one business day. In the meantime, you might find these resources useful.",
-    "browse_insights": "Review website audit",
+    "browse_insights": "Browse insights",
     "see_pricing": "See pricing",
-    "insights_description": "See how the manual audit works before a rebuild or scope decision.",
+    "insights_description": "Read articles about web strategy, local SEO, and sector-specific digital advice.",
     "pricing_description": "Compare packages and find the right fit for your business."
   },
   "faq": {
@@ -865,11 +670,42 @@
     ],
     "cta": "Start with a fit call"
   },
+  "phoneFirst": {
+    "navLabel": "Phone-first websites",
+    "sectionLabel": "Phone-first customer.",
+    "heading": "Built for the phone-first customer",
+    "intro": "Your customers search, compare, decide, and contact you from a phone. I connect your website, Google profile, images, social links, and booking flow so people can understand you and take the next step.",
+    "support": "Be found, be understood, be trusted, and be easy to contact.",
+    "primaryCta": "Request a website audit",
+    "secondaryCta": "View website examples",
+    "items": {
+      "website": {
+        "label": "Website",
+        "description": "Trust, structure, service pages, pricing clarity, multilingual content, and conversion-focused contact paths."
+      },
+      "google": {
+        "label": "Google presence",
+        "description": "Local discovery, reviews, maps visibility, opening hours, photos, and service information."
+      },
+      "visuals": {
+        "label": "Photos & short videos",
+        "description": "Practical images and short-form content for websites, Google Business Profile, and social media."
+      },
+      "social": {
+        "label": "Social content",
+        "description": "A steady stream of visual proof that keeps the business visible on the phone."
+      },
+      "booking": {
+        "label": "Booking flow",
+        "description": "Clear calls to action that turn attention into inquiries, reservations, appointments, or direct bookings."
+      }
+    }
+  },
   "about": {
     "heading": "About the studio",
-    "story": "I'm Jasper Tjeerd IJtsma, a Dutch web developer based in Batumi. I build focused websites for hotels, clinics, beauty studios, and service businesses where booking, local SEO, multilingual UX, and credibility matter. Clients work directly with me from structure and design through frontend build, launch, and improvement.",
-    "approach": "I don't build generic websites. I build sector-specific systems that help hotels get direct bookings, clinics build patient trust, and beauty businesses fill their appointment books. That specialization means every decision — from information architecture to SEO strategy — is grounded in how your business actually works.",
-    "why_batumi": "Batumi is one of Georgia's fastest-growing hospitality and medical destinations. With over 2.7 million visits to the Adjara region and the highest hotel occupancy in the country, this city needs websites that perform — not just look good.",
+    "story": "I'm Jasper, a Dutch web developer based in Batumi. Batumi Lighthouse exists for local businesses that need clearer websites, useful content, fast pages, and direct accountability.",
+    "approach": "I build around real business details: local search, clear pages, multilingual content, booking or contact flow, and proof that actually exists.",
+    "why_batumi": "Batumi has a busy hospitality, medical, beauty, and service market. Many local websites still make it too hard to compare offers, trust the business, and make direct contact.",
     "process": [
       "Audit your current web presence",
       "Fit call to understand your goals",
@@ -887,7 +723,7 @@
     "decline": "Decline"
   },
   "results": {
-    "sectionLabel": "Launch system.",
+    "sectionLabel": "Launch support.",
     "heading": "What every project has to cover",
     "items": {
       "strategy": {
@@ -903,7 +739,7 @@
         "body": "Shot lists and image priorities so the site can use real local visuals instead of generic stock."
       },
       "deployment": {
-        "title": "Technical launch readiness",
+        "title": "Hostinger-ready launch",
         "body": "Build output, redirects, metadata, analytics consent, and basic technical SEO checked before handoff."
       }
     },
@@ -911,25 +747,14 @@
     "kicker": "Delivery standards"
   },
   "ctaBand": {
-    "heading": "Show me your current website. I'll find what blocks bookings, trust, and local search.",
-    "primary": "Request website audit",
-    "secondary": "View example systems",
-    "sectionLabel": "Signal diagnosis.",
-    "subtitle": "A focused audit or rebuild starts with the same step: diagnose the signal loss.",
-    "panelTitle": "Signal map",
-    "signals": {
-      "booking": "Bookings",
-      "trust": "Trust",
-      "search": "Local search"
-    },
-    "routes": {
-      "booking": "Audit route",
-      "trust": "Trust barrier",
-      "search": "Search visibility"
-    }
+    "heading": "Send me your current website.",
+    "primary": "Request a website audit",
+    "secondary": "Contact me",
+    "sectionLabel": "Next step.",
+    "subtitle": "I will show you what is blocking bookings, trust, and local search, then suggest the clearest next fixes."
   },
   "auditDescriptions": {
-    "brand": "Is your brand message instantly clear to visitors?",
+    "brand": "Can visitors understand what you offer right away?",
     "speed": "Does your site load fast on any device and connection?",
     "seo": "Can locals and tourists find you on Google?",
     "content": "Is your information structured for easy scanning?",
@@ -937,17 +762,7 @@
     "conversion": "Does your site guide visitors toward booking or contact?"
   },
   "footer": {
-    "brand_descriptor": "Website Systems Studio in Batumi",
-    "tagline": "Audit-led websites for hotels, clinics, beauty studios, and local service businesses in Batumi.",
-    "positioning": "A small Batumi studio building multilingual websites that make bookings, trust, and local search easier to navigate.",
-    "basedIn": "Based in Batumi, Georgia",
-    "coordinates": "N41.6168 / E41.6367",
-    "contactHeading": "Contact signal",
-    "email": "Email",
-    "whatsapp": "WhatsApp",
-    "keyRoutes": "Key routes",
-    "sectorRoutes": "Sector routes",
-    "navigationSignal": "Navigation signal",
+    "tagline": "Clear websites for serious Batumi businesses.",
     "solutions": "Solutions",
     "company": "Company",
     "legal": "Legal",
@@ -968,36 +783,30 @@
     "privacy_heading": "Privacy Policy",
     "terms_heading": "Terms of Service"
   },
-  "legalNotice": {
-    "formText": "By submitting this form, you agree that Batumi Lighthouse may store and process your details to respond to your request. See our",
-    "privacy": "Privacy Policy",
-    "and": "and",
-    "terms": "Terms of Service"
-  },
   "legalPage": {
     "privacy": {
       "heading": "Privacy Policy",
       "last_updated": "Last updated: March 2025",
       "intro": "Batumi Lighthouse (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.",
       "data_collection_heading": "1. Data We Collect",
-      "data_collection_body": "We may collect the following types of personal data:\n\n• Contact form data: name, email address, phone number when provided, business type, website URL, budget range, project goals, timeline, and message content.\n• Audit request data: name, business name, email address, sector, website URL, and any optional notes you provide.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device and security data: browser type, operating system, screen resolution, IP-derived request information, honeypot results, and reCAPTCHA verification signals used to protect forms from abuse.\n\nContact and audit form submissions are stored in our database, used to respond to your request, and may be included in internal email notifications so our team can follow up.",
+      "data_collection_body": "We may collect the following types of personal data:\n\n• Contact information: name, email address, phone number, and business name when you submit a form or contact us.\n• Website data: your current website URL when provided during an audit request or inquiry.\n• Usage data: pages visited, time spent on pages, and general navigation patterns collected through privacy-respecting analytics.\n• Device data: browser type, operating system, and screen resolution for optimizing your experience.",
       "cookies_heading": "2. Cookies & Tracking",
       "cookies_body": "We use essential cookies to ensure the website functions properly. We may also use analytics cookies to understand how visitors interact with our site. You can control cookie preferences through your browser settings at any time. We do not use advertising cookies or sell data to third-party advertisers.",
       "third_party_heading": "3. Third-Party Services",
-      "third_party_body": "We may use the following third-party services that process your data:\n\n• Hosting and database providers for serving our website securely and storing form submissions.\n• Email delivery providers for sending internal notifications about contact and audit requests.\n• Google reCAPTCHA for fraud and spam prevention on forms.\n• Analytics services to understand website traffic and performance.\n\nEach third-party service operates under its own privacy policy. We only share data necessary for the service to function.",
+      "third_party_body": "We may use the following third-party services that process your data:\n\n• Hosting providers (e.g., Hostinger) for serving our website securely.\n• Form processing tools to manage inquiries and audit requests.\n• Analytics services to understand website traffic and performance.\n\nEach third-party service operates under its own privacy policy. We only share data necessary for the service to function.",
       "data_rights_heading": "4. Your Rights",
       "data_rights_body": "You have the right to:\n\n• Access the personal data we hold about you.\n• Request correction or deletion of your data.\n• Object to processing of your data for specific purposes.\n• Request a copy of your data in a portable format.\n\nTo exercise these rights, contact us using the details below.",
       "data_security_heading": "5. Data Security",
-      "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Access to submitted form data is limited to people and systems that need it to respond to requests, operate the website, or protect the service. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
+      "data_security_body": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.",
       "contact_heading": "6. Contact Information",
-      "contact_body": "If you have questions about this privacy policy, how we handle your data, or a request to access, correct, or delete submitted form data, please contact us. Based in Batumi, Adjara, Georgia."
+      "contact_body": "If you have questions about this privacy policy or how we handle your data, please contact us:\n\nEmail: hello@batumilighthouse.com\nLocation: Batumi, Adjara, Georgia"
     },
     "terms": {
       "heading": "Terms of Service",
       "last_updated": "Last updated: March 2025",
       "intro": "These Terms of Service govern your use of the Batumi Lighthouse website and services. By accessing our website or engaging our services, you agree to these terms.",
       "services_heading": "1. Services",
-      "services_body": "Batumi Lighthouse provides web design, development, and digital consulting services specializing in hospitality, medical, and beauty sector websites in Batumi, Georgia. Our services include but are not limited to:\n\n• Website design and development\n• Search engine optimization (SEO)\n• Website auditing and performance analysis\n• Ongoing website maintenance and support\n• Content strategy and copywriting\n\nThe specific scope, deliverables, and timeline for each project are defined in individual project proposals agreed upon by both parties.",
+      "services_body": "Batumi Lighthouse provides web design, development, local SEO, and digital consulting services for serious Batumi businesses. Our services include but are not limited to:\n\n• Website design and development\n• Search engine optimization (SEO)\n• Website auditing and performance analysis\n• Ongoing website maintenance and support\n• Content strategy and copywriting\n\nThe specific scope, deliverables, and timeline for each project are defined in individual project proposals agreed upon by both parties.",
       "payment_heading": "2. Payment Terms",
       "payment_body": "• Setup fees are one-time charges due before the start of development, unless a payment plan is agreed upon in writing.\n• Monthly fees cover hosting, maintenance, security updates, and support. These are billed in advance on a recurring basis.\n• Payment plans for larger projects may be arranged during the proposal stage and must be agreed upon in writing.\n• All prices are in USD unless otherwise specified. Georgian VAT may apply where required by law.\n• Late payments may result in suspension of services until the outstanding balance is settled.",
       "ip_heading": "3. Intellectual Property",
@@ -1007,28 +816,26 @@
       "termination_heading": "5. Termination",
       "termination_body": "• Either party may terminate the service agreement with 30 days' written notice.\n• Upon termination, you retain ownership of all paid deliverables. Batumi Lighthouse will provide a reasonable handover period.\n• Outstanding fees remain due upon termination regardless of the reason for termination.",
       "governing_heading": "6. Governing Law",
-      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.",
-      "contact_heading": "7. Contact Information",
-      "contact_body": "For questions about these terms, contact form submissions, audit requests, or how your project information is handled, please contact us. Based in Batumi, Adjara, Georgia."
+      "governing_body": "These terms are governed by the laws of Georgia. Any disputes shall be resolved through good-faith negotiation first, and if unresolved, through the courts of Batumi, Georgia.\n\nFor questions about these terms, contact us at hello@batumilighthouse.com."
     }
   },
   "sectorPages": {
     "hospitality": {
       "hero": {
         "eyebrow": "Hospitality",
-        "title": "Websites that fill rooms — not OTA commission sheets",
-        "subtitle": "Your Batumi hotel, guesthouse, or aparthotel deserves a website that drives direct bookings, speaks your guests' language, and loads fast enough to capture impulse searches."
+        "title": "Hotel websites for more direct enquiries",
+        "subtitle": "Websites for Batumi hotels, guesthouses, and aparthotels that show rooms clearly, support multilingual guests, and make direct booking or contact easier."
       },
       "pains": {
         "heading": "The challenges you're facing",
         "items": [
           {
-            "title": "OTA commission leakage",
-            "description": "Every booking through Booking.com or Agoda costs you 15–25%. Your website should be the most profitable channel — not the most expensive."
+            "title": "Too much dependence on third-party booking sites",
+            "description": "Third-party booking sites can be useful, but relying on them alone makes it harder to own guest relationships. Your website should help guests contact or book with you directly."
           },
           {
             "title": "Slow booking flow",
-            "description": "Guests abandon sites that take more than 3 seconds to load. If your booking engine isn't fast and frictionless, you're losing revenue every day."
+            "description": "Slow pages and heavy images make guests leave before they compare rooms. I plan lighter pages and clearer room content."
           },
           {
             "title": "No multilingual content",
@@ -1036,7 +843,7 @@
           },
           {
             "title": "Poor mobile experience",
-            "description": "Over 60% of travel searches happen on mobile. A site that isn't optimized for phones is a site that doesn't convert."
+            "description": "Many guests check hotel options from a phone. Your site needs to be easy to read, compare, and contact on mobile."
           }
         ]
       },
@@ -1049,19 +856,19 @@
           },
           {
             "title": "Direct booking integration",
-            "description": "Seamless booking engine integration that lets guests check availability and book directly on your site, with no redirect or commission."
+            "description": "Connect your preferred booking tool, calendar, or enquiry form so guests can move from room details to the next step."
           },
           {
             "title": "Multilingual guest paths",
             "description": "Full content in Georgian, Russian, and English — so every guest finds what they need in their language, from room details to local tips."
           },
           {
-            "title": "OTA-compliant rate display",
-            "description": "Rate parity handled correctly: your best rate is always visible, and your direct-booking advantage is clear without violating OTA terms."
+            "title": "Clear rate and offer display",
+            "description": "Room rates, packages, and seasonal offers are shown clearly, with any booking rules explained in plain language."
           },
           {
             "title": "Speed optimization",
-            "description": "Sub-2-second load times across all pages. Image optimization, lazy loading, and performance monitoring built in from day one."
+            "description": "Image optimization, lazy loading, and launch checks to keep pages fast on real devices."
           },
           {
             "title": "Analytics & CRO",
@@ -1073,12 +880,12 @@
         "heading": "What this looks like in practice",
         "items": [
           {
-            "title": "A guest finds your hotel on Google in their language, checks rooms, and books directly — no OTA commission.",
-            "description": "A Russian-speaking traveler searches 'отель в Батуми', lands on your Russian-language page, browses rooms with clear pricing, and books in under 2 minutes. You keep the full revenue."
+            "title": "A guest finds your hotel in their language, checks rooms, and contacts or books directly.",
+            "description": "A traveller lands on your language-specific page, compares rooms with clear pricing, and uses your booking or contact option without extra confusion."
           },
           {
-            "title": "Your seasonal offers reach guests before they check Booking.com.",
-            "description": "A targeted landing page for your summer package loads instantly on mobile, shows the rate advantage, and links straight to the booking engine — capturing demand before the OTAs do."
+            "title": "Your seasonal offers are easier to find before guests book elsewhere.",
+            "description": "A focused page for your summer package loads quickly on mobile, explains the offer, and links to the booking or enquiry step."
           },
           {
             "title": "Repeat guests book directly because they remember your site works.",
@@ -1090,8 +897,8 @@
         "heading": "Hospitality website FAQ",
         "items": [
           {
-            "q": "Can you integrate with Booking.com and other OTAs?",
-            "a": "Yes. I build OTA-compliant websites that work alongside your channel manager. Your direct-booking advantage is highlighted without violating rate parity agreements. Think of your site as the channel where you pay zero commission."
+            "q": "Can you connect my site with my channel manager or booking provider?",
+            "a": "Yes. I can build a website that works alongside your channel manager or booking tools. I avoid making claims about rate parity until we review your setup and provider rules."
           },
           {
             "q": "What payment processing do you support?",
@@ -1099,7 +906,7 @@
           },
           {
             "q": "How do you handle seasonal pricing?",
-            "a": "Your booking engine handles rate logic — I ensure the website presents rates clearly and updates in real time. Seasonal offers, last-minute deals, and package pricing are all built into the page structure so guests always see current, accurate rates."
+            "a": "Your booking tool handles rate logic. I make sure the website presents room and offer information clearly and uses the current details your tool provides."
           },
           {
             "q": "Do you support multi-property websites?",
@@ -1107,7 +914,7 @@
           },
           {
             "q": "Can I update room content myself?",
-            "a": "Absolutely. Every hospitality site includes a content management system that lets you update room descriptions, photos, amenities, and offers without any technical knowledge. I also provide training and ongoing support."
+            "a": "Yes. A hospitality site can include a simple editor for room descriptions, photos, amenities, and offers. I also provide training and ongoing support."
           }
         ]
       },
@@ -1121,7 +928,7 @@
       "hero": {
         "eyebrow": "Medical",
         "title": "Websites that build patient trust before the first consultation",
-        "subtitle": "Your Batumi clinic, dental practice, or aesthetic center needs a website that makes patients feel confident — clear doctor profiles, multilingual clarity, and a seamless path from research to appointment."
+        "subtitle": "Your Batumi clinic, dental practice, or aesthetic center needs a website that helps patients understand treatments, doctors, languages, and how to request an appointment."
       },
       "pains": {
         "heading": "The challenges you're facing",
@@ -1153,7 +960,7 @@
           },
           {
             "title": "Consultation booking",
-            "description": "A clean, simple consultation request flow that works on every device. Patients choose a doctor, select a time, and submit — with confirmation sent automatically."
+            "description": "A clean consultation request flow that works on every device. Patients choose the relevant service or doctor and send an enquiry."
           },
           {
             "title": "Multilingual medical content",
@@ -1165,11 +972,11 @@
           },
           {
             "title": "Review management",
-            "description": "A review collection and display system that builds social proof. New patient reviews appear on your site, and negative feedback is flagged for your attention before it goes public."
+            "description": "Review collection and display options that help show credible patient feedback, with your approval before anything goes live."
           },
           {
-            "title": "FAQ system",
-            "description": "A searchable FAQ section with structured data that answers common patient questions, reduces avoidable phone inquiries, and gives search engines clearer page context."
+            "title": "FAQ section",
+            "description": "A searchable FAQ section with structured data that answers common patient questions — reducing phone inquiries and improving your SEO with FAQ rich results."
           }
         ]
       },
@@ -1182,11 +989,11 @@
           },
           {
             "title": "Your clinic appears in Google's local medical results with rich information.",
-            "description": "Structured data helps search engines understand your doctors, specialties, services, and local context, giving patients clearer information before they choose to contact you."
+            "description": "Structured data markup means Google shows your doctors, specialties, and patient ratings directly in search results — giving patients the confidence to click through before they even visit your site."
           },
           {
             "title": "Fewer phone calls, more online consultations.",
-            "description": "With a clear FAQ system and online booking, patients find answers and book appointments without calling your reception — freeing your staff to focus on in-person care."
+            "description": "With clear FAQs and appointment options, patients can find answers before they call reception."
           }
         ]
       },
@@ -1195,23 +1002,23 @@
         "items": [
           {
             "q": "How do you handle patient data privacy?",
-            "a": "All consultation forms use encrypted transmission, and I build with GDPR and Georgian data protection requirements in mind. Patient data is never stored on the website itself — it goes directly to your secure practice management system or email."
+            "a": "Consultation forms use secure transmission. I build with privacy and data-protection requirements in mind. Patient data is not stored on the marketing pages unless that is agreed and configured properly."
           },
           {
             "q": "Can you create multilingual medical content?",
             "a": "Yes. I work with professional medical translators to ensure accuracy in Georgian, Russian, and English. Medical terminology is precise — I never rely on machine translation for clinical content."
           },
           {
-            "q": "Do you integrate with insurance or practice management systems?",
-            "a": "I can integrate with most practice management and scheduling systems through APIs or embeddable widgets. During our consultation, I'll review your current tech stack and recommend the best integration approach."
+            "q": "Do you integrate with insurance or practice software?",
+            "a": "I can connect to practice software or scheduling tools when they provide APIs or embeddable widgets. During the fit call, I review what you use and recommend a practical option."
           },
           {
-            "q": "What appointment systems do you support?",
-            "a": "I build custom booking flows or integrate with systems you already use — whether that's a simple calendar, a clinic management platform, or a third-party scheduling tool. The right approach depends on your practice size and workflow."
+            "q": "What appointment tools do you support?",
+            "a": "I can build a simple enquiry form or connect booking tools you already use. The right approach depends on your practice size and workflow."
           },
           {
             "q": "How do you ensure medical content accuracy?",
-            "a": "I structure content based on information you provide about your practice and specialists. All medical claims, treatment descriptions, and doctor qualifications are reviewed and approved by you before publication. I provide the framework — you provide the clinical authority."
+            "a": "I structure content based on information you provide. You review and approve all medical claims, treatment descriptions, and doctor qualifications before publication. I provide the page structure; you provide the clinical authority."
           }
         ]
       },
@@ -1224,27 +1031,27 @@
     "beauty": {
       "hero": {
         "eyebrow": "Beauty",
-        "title": "Websites that fill your appointment book — not your Instagram DMs",
-        "subtitle": "Your Batumi salon, medspa, or studio deserves a website that showcases your services, displays pricing clearly, and lets clients book in seconds — all from their phone."
+        "title": "Websites for beauty studios that need clearer services and easier bookings",
+        "subtitle": "Your Batumi salon, medspa, or studio deserves a website that shows services and prices clearly and makes booking or enquiry easy from a phone."
       },
       "pains": {
         "heading": "The challenges you're facing",
         "items": [
           {
             "title": "No online booking",
-            "description": "If clients can only book through DMs, phone calls, or walk-ins, you're losing appointments. Online booking captures demand 24/7 — even when you're with a client."
+            "description": "If clients can only book through DMs, phone calls, or walk-ins, some appointments will be missed. A clear website gives them another simple way to enquire or book."
           },
           {
             "title": "Scattered contact channels",
-            "description": "Instagram DMs, WhatsApp, phone calls, walk-ins — when bookings come from everywhere, things fall through the cracks. A single booking system eliminates the chaos."
+            "description": "Instagram DMs, WhatsApp, phone calls, and walk-ins can be hard to track. A clearer booking flow reduces confusion for you and your clients."
           },
           {
             "title": "No service menu visibility",
             "description": "If potential clients can't see your full service menu and pricing online, they'll choose a salon that shows them exactly what they want — and what it costs."
           },
           {
-            "title": "No repeat business system",
-            "description": "First-time clients are expensive to acquire. Without a system for follow-ups, promotions, and easy rebooking, you're always chasing new clients instead of nurturing existing ones."
+            "title": "No easy rebooking",
+            "description": "First-time clients are hard to earn. Follow-up offers, visible services, and simple rebooking help clients come back."
           }
         ]
       },
@@ -1252,12 +1059,12 @@
         "heading": "What I deliver",
         "items": [
           {
-            "title": "Service menu system",
+            "title": "Service menu",
             "description": "A clear, organized service menu with descriptions, duration, and pricing — searchable by category and presented beautifully on every device."
           },
           {
             "title": "Online appointment flow",
-            "description": "Clients pick a service, choose a stylist or therapist, select a time slot, and confirm — all in under a minute, from any device."
+            "description": "Clients choose a service, see useful details, and move to your booking or enquiry option without searching through messages."
           },
           {
             "title": "Pricing visibility",
@@ -1269,11 +1076,11 @@
           },
           {
             "title": "Instagram & social integration",
-            "description": "Your best Instagram posts embedded in your site, social proof that updates automatically, and clear links to all your social channels."
+            "description": "Your Instagram work can be linked or embedded where useful, with clear links to your social channels."
           },
           {
-            "title": "Review capture",
-            "description": "A simple system that encourages happy clients to leave reviews — building the social proof that brings in new clients week after week."
+            "title": "Review requests",
+            "description": "A simple follow-up flow can ask happy clients to leave a review and help you show credible feedback on your site."
           }
         ]
       },
@@ -1282,15 +1089,15 @@
         "items": [
           {
             "title": "A client sees your service menu, picks a treatment, and books an appointment — all from their phone.",
-            "description": "A potential client finds your salon on Google, browses your service menu with clear pricing, picks a treatment, and books a slot with their preferred stylist without a single DM or phone call."
+            "description": "A potential client finds your salon on Google, checks services and starting prices, picks a treatment, and uses your booking or contact option without sending a DM first."
           },
           {
             "title": "Your Instagram followers become website visitors become booked clients.",
             "description": "Your Instagram bio links to a website that actually converts. Followers see your work, check your prices, and book immediately — instead of scrolling past because messaging feels like too much effort."
           },
           {
-            "title": "Seasonal promos drive repeat bookings automatically.",
-            "description": "A returning client sees your seasonal offer on the homepage, clicks to book their favorite treatment at a special rate, and confirms in seconds — no manual outreach required."
+            "title": "Seasonal offers make repeat bookings easier.",
+            "description": "A returning client sees your seasonal offer on the homepage, opens the booking or enquiry option, and knows what to do next."
           }
         ]
       },
@@ -1298,8 +1105,8 @@
         "heading": "Beauty website FAQ",
         "items": [
           {
-            "q": "What booking systems do you integrate with?",
-            "a": "I work with popular booking platforms like Fresha, Booksy, and custom solutions. If you already use a booking system, I'll integrate it seamlessly. If you don't have one, I'll recommend the best fit for your salon size and service type."
+            "q": "What booking tools do you connect?",
+            "a": "I work with tools like Fresha, Booksy, and simple custom forms. If you already use a booking tool, I can connect it. If not, I will recommend a practical fit for your salon size and services."
           },
           {
             "q": "Can you connect my Instagram to my website?",
@@ -1307,15 +1114,15 @@
           },
           {
             "q": "How do you handle service pricing display?",
-            "a": "Pricing is displayed clearly on your service menu with starting prices, duration, and any relevant notes. You can update prices anytime through the content management system — no technical knowledge required."
+            "a": "Pricing is displayed clearly on your service menu with starting prices, duration, and relevant notes. You can update prices through a simple editor."
           },
           {
             "q": "Can I manage promotions and seasonal offers?",
-            "a": "Absolutely. The promo management system lets you create, schedule, and remove offers from a simple dashboard. Seasonal packages, first-visit discounts, and loyalty rewards can all be set up in minutes."
+            "a": "Yes. I can add a simple offers area that you can update. Seasonal packages, first-visit offers, and loyalty rewards can be added without changing the whole site."
           },
           {
             "q": "How do you help me get more reviews?",
-            "a": "I build a review capture system that sends automated follow-up messages to clients after their appointment, making it easy to leave a Google or Facebook review. The best reviews are also displayed on your website for social proof."
+            "a": "I can set up a simple review request flow after appointments and show selected reviews on your website."
           }
         ]
       },
@@ -1328,155 +1135,112 @@
   },
   "auditPage": {
     "hero": {
-      "eyebrow": "Manual website diagnostics",
-      "title": "Manual website audits for booking, trust, SEO, and speed.",
-      "subtitle": "You receive a practical diagnostic report that explains what is blocking bookings, patient enquiries, appointment requests, local search visibility, and trust. Every finding is written as a business problem with a suggested fix.",
-      "cta": "Request website audit",
-      "secondary_cta": "Preview the report",
-      "panel_label": "Audit intake preview",
-      "panel_kicker": "Diagnostic scope",
-      "panel_title": "What the review checks first",
-      "panel_note": "Manual review, prioritized fixes, and clear next steps. No automated score dump."
+      "eyebrow": "Website audits",
+      "title": "Find out exactly what's holding your website back",
+      "subtitle": "Get a practical report covering clarity, speed, local SEO, content structure, accessibility, and contact or booking flow."
     },
-    "framework": {
-      "eyebrow": "Diagnostic framework",
-      "heading": "Eight areas that decide whether visitors trust you and take action.",
-      "subtitle": "The audit looks at the full path from first impression to booking, request, call, or appointment. The goal is not a prettier website; it is a clearer commercial system.",
+    "rubric": {
+      "heading": "What we evaluate",
+      "subtitle": "Every audit scores your site across six critical dimensions.",
       "items": {
         "brand": {
-          "title": "Brand clarity",
-          "summary": "Immediate positioning and sector fit.",
-          "description": "Checks whether visitors can understand who you serve, what you offer, and why your business is credible within the first screen."
+          "name": "Brand Clarity",
+          "points": [
+            "First impression & visual identity",
+            "Consistent messaging across pages",
+            "Differentiation from competitors"
+          ]
         },
-        "mobile": {
-          "title": "Mobile UX",
-          "summary": "Small-screen layout and actions.",
-          "description": "Reviews menu behavior, tap targets, page hierarchy, sticky actions, and whether mobile visitors can move without friction."
-        },
-        "booking": {
-          "title": "Booking / appointment flow",
-          "summary": "The path from intent to request.",
-          "description": "Finds points where visitors lose confidence, miss the call to action, or are forced into unnecessary steps before booking."
+        "speed": {
+          "name": "Performance & Speed",
+          "points": [
+            "Page load time on mobile & desktop",
+            "Core Web Vitals (LCP, FID, CLS)",
+            "Image & asset optimization"
+          ]
         },
         "seo": {
-          "title": "Local SEO",
-          "summary": "Search visibility for Batumi intent.",
-          "description": "Reviews local page structure, metadata, service/location signals, internal links, and Google-facing content quality."
+          "name": "Local SEO",
+          "points": [
+            "Google Business Profile setup",
+            "Local keyword targeting",
+            "Structured data & meta tags"
+          ]
         },
-        "performance": {
-          "title": "Performance / Core Web Vitals",
-          "summary": "Speed and stability signals.",
-          "description": "Checks heavy assets, rendering delays, layout shifts, and technical decisions that make the site feel slow or unstable."
-        },
-        "trust": {
-          "title": "Trust signals",
-          "summary": "Proof before the contact step.",
-          "description": "Looks for missing reviews, policy information, team details, credentials, location proof, and reassurance around the transaction."
-        },
-        "multilingual": {
-          "title": "Multilingual structure",
-          "summary": "International-client readiness.",
-          "description": "Reviews language routes, translated navigation, localized calls to action, hreflang basics, and content gaps across languages."
+        "content": {
+          "name": "Content Structure",
+          "points": [
+            "Information hierarchy & navigation",
+            "Headline structure & readability",
+            "Multilingual content organization"
+          ]
         },
         "accessibility": {
-          "title": "Accessibility basics",
-          "summary": "Usability and readability fundamentals.",
-          "description": "Checks contrast, readable text, form labels, keyboard access, focus states, and basic screen-reader structure."
+          "name": "Accessibility",
+          "points": [
+            "WCAG 2.1 compliance basics",
+            "Color contrast & text legibility",
+            "Keyboard navigation & screen reader support"
+          ]
+        },
+        "conversion": {
+          "name": "Contact and booking UX",
+          "points": [
+            "Booking & contact flow clarity",
+            "Call-to-action placement",
+            "Credible proof and trust details"
+          ]
         }
       }
     },
-    "report": {
-      "eyebrow": "Example report preview",
-      "heading": "A report interface built around business impact, not vague scores.",
-      "subtitle": "The format below is an example of how findings are structured. Scores are not used unless they are clearly labeled as example or tied to a real measured audit.",
-      "interface_label": "Manual review output",
-      "interface_title": "Website diagnostic report",
-      "example_label": "Example format",
-      "columns": {
-        "area": "Review area",
-        "issue": "Issue",
-        "impact": "Business impact",
-        "priority": "Priority",
-        "fix": "Suggested fix"
-      },
-      "rows": [
+    "howItWorks": {
+      "heading": "How it works",
+      "steps": [
         {
-          "area": "Booking flow",
-          "issue": "The primary action appears after several competing content blocks.",
-          "impact": "Ready-to-book visitors may scan the page without finding the next step.",
-          "priority": "High",
-          "fix": "Move the booking CTA into the first screen and repeat it after room, treatment, or service sections."
+          "title": "Submit your URL",
+          "description": "Fill out the form below with your website address and basic business info."
         },
         {
-          "area": "Local SEO",
-          "issue": "Service pages do not clearly connect the offer with Batumi search intent.",
-          "impact": "Search engines and visitors get weak local relevance signals.",
-          "priority": "Medium",
-          "fix": "Add location-specific headings, structured service content, and internal links to relevant sector pages."
+          "title": "I analyze your site",
+          "description": "I manually review your site across all six categories using real devices and local search conditions."
         },
         {
-          "area": "Trust",
-          "issue": "Policies, reviews, and operator details are separated from the conversion path.",
-          "impact": "Visitors have to work harder before they feel safe enough to contact or book.",
-          "priority": "Focused",
-          "fix": "Place compact trust proof beside the CTA and add supporting detail near the form or booking module."
+          "title": "You get a detailed report",
+          "description": "Receive a prioritized action plan with specific fixes you can implement right away."
         }
-      ]
+      ],
+      "step_label": "Step"
     },
-    "sectors": {
-      "eyebrow": "Sector-specific examples",
-      "heading": "The audit changes depending on how your business wins bookings.",
-      "subtitle": "Hotels, clinics, and beauty studios lose leads in different places. The review focuses on the commercial path that matters for your sector.",
+    "sampleFindings": {
+      "heading": "Common findings by sector",
       "items": {
-        "hotel": {
-          "title": "Hotel",
-          "description": "A hotel audit checks whether the site makes rooms, location, policies, and direct booking value easy to compare.",
-          "checks": [
-            "Room and rate clarity",
-            "Direct booking CTA placement",
-            "Location and policy trust signals"
-          ]
+        "hospitality": {
+          "sector": "Hospitality",
+          "finding": "Common issue: hotel sites hide room value, booking steps, and local search basics behind slow image-heavy pages."
         },
-        "clinic": {
-          "title": "Clinic",
-          "description": "A clinic audit focuses on trust, treatment clarity, doctor credibility, and the enquiry path for local and international patients.",
-          "checks": [
-            "Treatment page structure",
-            "Doctor and credential proof",
-            "Consultation request flow"
-          ]
+        "medical": {
+          "sector": "Medical",
+          "finding": "Common issue: clinic sites often miss doctor profiles, service schema, and clear paths for international patients."
         },
         "beauty": {
-          "title": "Beauty studio",
-          "description": "A beauty studio audit checks whether services, pricing, availability, portfolio proof, and social traffic lead to appointment requests.",
-          "checks": [
-            "Service menu clarity",
-            "Price and time expectations",
-            "Instagram-to-booking path"
-          ]
+          "sector": "Beauty",
+          "finding": "Common issue: salons and studios rely on social DMs while their websites do not make booking obvious enough."
         }
       }
     },
     "form": {
-      "eyebrow": "Request the audit",
-      "heading": "Send the site that needs a clearer booking path.",
-      "subtitle": "Share the website URL and business context. I will review the site manually and reply with next steps for the audit report.",
+      "heading": "Request your free audit",
+      "subtitle": "Fill in the details below and I'll deliver your scorecard within 3 business days.",
       "name": "Your name",
-      "name_required": "Name is required",
       "business": "Business name",
-      "business_required": "Business name is required",
       "email": "Email address",
-      "email_required": "Email is required",
-      "email_invalid": "Please enter a valid email address",
       "sector": "Your sector",
-      "sector_required": "Please select a sector",
       "website": "Website URL",
       "website_required": "Website URL is required",
-      "website_invalid": "Please enter a valid URL, for example https://example.com",
       "message": "Anything else I should know? (optional)",
-      "submit": "Request website audit",
+      "submit": "Request free audit",
       "sending": "Sending...",
-      "success": "Your audit request has been received. I will be in touch with the next steps.",
+      "success": "Your audit request has been received. I'll be in touch within 3 business days.",
       "error": "Something went wrong. Please try again or email me directly.",
       "sectors": [
         "Hospitality",
@@ -1485,312 +1249,80 @@
         "Other"
       ]
     },
-    "process": {
-      "step": "Step",
-      "items": {
-        "request": {
-          "title": "You send the website",
-          "description": "The form captures the URL, business sector, and context needed to review the right conversion path."
-        },
-        "review": {
-          "title": "I review it manually",
-          "description": "The site is checked across brand, mobile UX, booking flow, local SEO, speed, trust, languages, and accessibility basics."
-        },
-        "report": {
-          "title": "You receive prioritized fixes",
-          "description": "The output separates quick fixes from structural problems so you can decide what to improve first."
-        }
-      }
-    },
-    "faq": {
-      "eyebrow": "After request",
-      "heading": "What happens after you request an audit?",
-      "items": [
-        {
-          "question": "Is this automated?",
-          "answer": "No. Automated tools can expose technical signals, but the final audit is a manual commercial review of the user journey and business impact."
-        },
-        {
-          "question": "Will you redesign the site in the report?",
-          "answer": "The report explains what to fix and why. If a redesign is the right next step, the recommendation is scoped separately."
-        },
-        {
-          "question": "Can you audit multilingual sites?",
-          "answer": "Yes. The review includes language routes, translated navigation, localized calls to action, and obvious gaps between language versions."
-        }
-      ]
-    },
     "detail": {
       "cta": "Get your website audited",
       "executive_summary": "Executive Summary",
       "scoring": "Scoring Breakdown",
       "findings": "Detailed Findings",
       "recommended_fix": "Recommended fix",
-      "score_out_of": "/100"
+      "score_out_of": "/100",
+      "not_found": "Audit not found.",
+      "demo_audit": {
+        "title": "Batumi Hotel Website Audit",
+        "executiveSummary": "This Batumi seafront hotel website has strong visual appeal but struggles with the fundamentals that drive direct bookings. Mobile performance is critically slow, the booking flow requires too many steps, and the site is nearly invisible in local search results. The good news: these are fixable problems with clear, prioritized actions.",
+        "findings": [
+          {
+            "title": "Slow-feeling mobile first load",
+            "description": "The homepage appears heavier than it needs to be on mobile because large hero imagery and extra scripts compete for the first screen. A lighter image and script budget would make the first visit feel faster and more reliable.",
+            "recommendedFix": "Compress and resize hero images, remove unnecessary blocking scripts, lazy-load non-critical media, and test the page against Core Web Vitals before launch."
+          },
+          {
+            "title": "Booking flow asks for too many decisions",
+            "description": "The booking path asks visitors to move through several decisions before they reach a clear next step. Extra decision points can reduce confidence and increase drop-off, especially on mobile.",
+            "recommendedFix": "Put room choice, policies, and the booking/contact handoff closer together, then keep the direct booking CTA visible on room and offer pages."
+          },
+          {
+            "title": "No Google Business Profile integration",
+            "description": "The hotel has a Google Business Profile but the website doesn't link to it, and the profile has inconsistent NAP (Name, Address, Phone) data. There is no structured data markup (Schema.org Hotel) on any page. The site does not appear in the local pack for 'hotel Batumi' queries.",
+            "recommendedFix": "Add Hotel schema markup to every room page, keep NAP data consistent across listings, and link the Google Business Profile from the site footer."
+          },
+          {
+            "title": "Room pages lack multilingual content",
+            "description": "Room descriptions are not equally clear across the languages guests are likely to use. Russian-speaking or English-speaking visitors may leave if room details, policies, and contact options are not available in a language they understand.",
+            "recommendedFix": "Prioritize complete English, Georgian, and Russian room and policy content, then review search snippets and contact prompts for each language."
+          },
+          {
+            "title": "Low contrast on key CTAs",
+            "description": "The 'Book Now' button uses low-contrast text on a light background, making an important action harder to read. Room images lack alt text. No skip-navigation link is present.",
+            "recommendedFix": "Increase button contrast to meet WCAG AA, add descriptive alt text to room images, and add a skip-to-content link at the top of the page."
+          }
+        ]
+      }
     }
   },
   "workPage": {
-    "heading": "Website systems for hotels, clinics, and studios.",
-    "subtitle": "Internal builds and selected systems showing the studio method without fabricated proof or performance claims.",
-    "comingSoon": "Concept system",
+    "heading": "Work directions",
+    "subtitle": "Demo briefs and project directions until real client work is ready to publish.",
     "items": [
       {
         "sector": "Hospitality",
-        "title": "Hotel Direct Booking System",
-        "description": "A concept system for rooms, location proof, multilingual SEO, and a direct booking path."
+        "title": "Boutique hotel booking concept",
+        "description": "A direct-booking website direction for a Batumi seafront hotel: rooms, credible proof, multilingual SEO, and less dependence on third-party booking sites."
       },
       {
         "sector": "Medical",
-        "title": "Clinic Trust & Treatment System",
-        "description": "An example build structure for treatment clarity, doctor credibility, FAQs, and consultation requests."
+        "title": "Dental clinic website",
+        "description": "A multilingual clinic direction with doctor profiles, treatment pages, patient FAQs, and structured data for medical search."
       },
       {
         "sector": "Beauty",
-        "title": "Beauty Appointment System",
-        "description": "A studio prototype for services, pricing, visual proof, and appointment requests."
+        "title": "Studio appointment flow",
+        "description": "A booking-led beauty website direction that moves demand from social DMs into a clearer service menu and appointment path."
       }
     ],
-    "hero": {
-      "eyebrow": "Website Systems Gallery",
-      "title": "Website systems for hotels, clinics, and studios.",
-      "subtitle": "Internal builds and selected directions showing how Batumi Lighthouse structures booking-first websites for local service businesses. No fabricated businesses, testimonials, or performance claims.",
-      "internal_note": "Example systems and internal builds unless a project is explicitly labelled otherwise.",
-      "note_label": "Prototype disclosure",
-      "note": "The examples below are internal builds and studio prototypes. They show architecture, modules, and conversion logic without claiming published business outcomes.",
-      "future_note": "Published work can be added later when there is explicit permission to publish names, visuals, results, or testimonials.",
-      "proof": [
-        "Currently accepting selected projects in Batumi.",
-        "Founder-led builds. Clear scope before work starts.",
-        "Internal systems shown below are studio examples, not fabricated proof."
-      ]
-    },
-      "labels": {
-        "problem": "Business problem",
-        "solution": "System solution",
-        "conversion": "Conversion goal",
-        "architecture": "Website architecture",
-        "modules": "Key modules",
-        "technical": "Technical layer",
-        "repository": "Repository",
-        "liveSite": "Live site"
-      },
-      "systemIndex": {
-        "eyebrow": "System index",
-        "heading": "Example systems ready for interface screenshots.",
-        "subtitle": "These cards are wired for public repository and screenshot fields. Until local captures are added, each system uses a technical fallback visual instead of an empty placeholder.",
-        "disclosure": "These examples show website systems and interface structure. Client claims and performance results are only shown when verified.",
-        "cta": {
-          "eyebrow": "Build signal",
-          "heading": "Want a similar system for your website?",
-          "subtitle": "Start with a focused audit or send the context for a similar build. The first step is diagnosing what blocks bookings, trust, and local search.",
-          "discussBuild": "Discuss a similar build"
-        }
-      },
-      "status": {
-        "concept": "Concept",
-        "internalBuild": "Internal build",
-        "clientBuild": "Client build"
-      },
-      "viewSystem": "View system",
-      "viewRepository": "View repository",
-      "viewLiveSite": "View live site",
-      "screenshotsComingSoon": "Interface screenshots pending",
-      "detail": {
-        "eyebrow": "Example system",
-        "disclosure": "Disclosure",
-        "structureEyebrow": "System architecture",
-        "structureHeading": "Problem, solution, modules, and technical layer.",
-        "structureBody": "Each example is organized as a practical website system: clear route architecture, conversion modules, technical delivery, and future screenshot slots.",
-        "diagnostic": {
-          "signal": "Signal",
-          "system": "System",
-          "output": "Output"
-        },
-        "screenshots": {
-          "eyebrow": "Screenshot gallery",
-          "heading": "Interface captures",
-          "body": "Desktop, tablet, and mobile captures can be added from the local screenshot workflow without fetching anything at runtime.",
-          "desktop": "Desktop",
-          "tablet": "Tablet",
-          "mobile": "Mobile",
-          "fallbackNote": "Screenshots are missing for now. The generated system visual keeps the page usable until local captures are added.",
-          "captureLabel": "Interface screenshots pending"
-        },
-        "routeArchitecture": "Route architecture",
-        "technicalBuild": "Technical build",
-        "technicalDelivery": "Technical delivery",
-        "technicalReference": "Technical reference",
-        "stackTags": "Stack tags",
-        "whatThisDemonstrates": "What this demonstrates",
-        "delivery": {
-          "nextjs": {
-            "title": "Next.js",
-            "body": "Static routes and component structure ready for a fast production build."
-          },
-          "localSeo": {
-            "title": "Local SEO",
-            "body": "Page intent, location terms, and service language aligned to Batumi search behavior."
-          },
-          "structuredData": {
-            "title": "Structured data",
-            "body": "Schema patterns planned around the business type and visible page content."
-          },
-          "multilingualRoutes": {
-            "title": "Multilingual routes",
-            "body": "Language-aware navigation, metadata, and route structure for local and visitor audiences."
-          },
-          "performance": {
-            "title": "Performance",
-            "body": "Image, layout, and interaction choices kept within a practical performance budget."
-          }
-        },
-        "externalLinks": "Published links",
-        "noPublishedLinks": "Live site and repository links will appear here after they are verified and ready to publish.",
-        "auditCtaEyebrow": "Website signal",
-        "auditCtaHeading": "Want this level of structure on your website?",
-        "auditCtaSubtitle": "Start with a focused audit. The review finds what blocks bookings, trust, local search, and the next practical build decision.",
-        "requestAudit": "Request website audit",
-        "contact": "Contact"
-      },
-      "systems": {
-      "hotel": {
-        "label": "Concept system",
-        "title": "Hotel Direct Booking System",
-        "summary": "A hotel website architecture for turning room interest into a direct booking path, with multilingual content, location proof, and room-level decision support.",
-        "problem": "Guests compare hotels quickly and often return to OTAs when the direct site does not make rooms, policies, location, and booking value clear.",
-        "conversion": "Move qualified guests from room browsing to a direct booking request without forcing them back to OTA platforms.",
-        "architecture": [
-          "Homepage built around location, rooms, and direct booking value.",
-          "Room template with policies, amenities, gallery, and booking CTA.",
-          "Multilingual local SEO pages for Batumi travel intent."
-        ],
-        "modules": [
-          "Language switcher",
-          "Room card row",
-          "Check-in selector",
-          "Trust and location strip"
-        ],
-        "technical": [
-          "Next.js routes",
-          "Structured hotel data",
-          "Core Web Vitals budget"
-        ]
-      },
-      "clinic": {
-        "label": "Example build",
-        "title": "Clinic Trust & Treatment System",
-        "summary": "A clinic website system for helping patients understand treatments, evaluate credibility, and request a consultation without searching for basic trust information.",
-        "problem": "Patients need clarity on treatments, doctors, safety, language support, and next steps before they feel ready to contact a clinic.",
-        "conversion": "Turn treatment research into a consultation request with trust proof beside the enquiry path.",
-        "architecture": [
-          "Treatment category pages with process, risks, preparation, and aftercare.",
-          "Doctor profile template with credentials, languages, and relevant treatments.",
-          "FAQ and trust layer connected to consultation forms."
-        ],
-        "modules": [
-          "Treatment category card",
-          "Doctor profile row",
-          "Consultation CTA",
-          "Multilingual intake indicator"
-        ],
-        "technical": [
-          "Medical schema basics",
-          "Accessible form flow",
-          "Localized route structure"
-        ]
-      },
-      "beauty": {
-        "label": "Studio prototype",
-        "title": "Beauty Appointment System",
-        "summary": "A beauty studio website prototype for moving social attention into a clearer service menu, pricing context, visual proof, and appointment request flow.",
-        "problem": "Social channels create interest, but visitors often cannot compare services, time, pricing, or availability in one structured place.",
-        "conversion": "Turn Instagram and search visitors into appointment requests with service-specific paths.",
-        "architecture": [
-          "Service menu organized by category, price context, time, and specialist.",
-          "Gallery and social proof close to the booking action.",
-          "Local SEO pages for high-intent beauty services in Batumi."
-        ],
-        "modules": [
-          "Service menu row",
-          "Price and time mini row",
-          "Appointment CTA",
-          "Gallery strip"
-        ],
-        "technical": [
-          "Booking route pattern",
-          "Image optimization",
-          "Local service schema"
-        ]
-      }
-    },
-    "process": {
-      "eyebrow": "Studio method",
-      "heading": "How this becomes your website",
-      "subtitle": "The system starts as a diagnostic structure, then becomes a focused website with clear pages, specific content, and a tested booking path.",
-      "items": {
-        "audit": {
-          "title": "Audit",
-          "description": "Review the current website, business model, competitors, search intent, and where bookings or enquiries are lost."
-        },
-        "structure": {
-          "title": "Structure",
-          "description": "Map the page architecture, conversion paths, multilingual routes, and content blocks before design starts."
-        },
-        "design": {
-          "title": "Design",
-          "description": "Build the interface around the sector logic: rooms, treatments, or services with trust and action close together."
-        },
-        "build": {
-          "title": "Build",
-          "description": "Develop the site in Next.js with responsive layouts, structured data, forms, and performance discipline."
-        },
-        "launch": {
-          "title": "Launch",
-          "description": "Ship the site with SEO basics, analytics checks, form testing, redirects, and a practical maintenance path."
-        }
-      }
-    },
-    "cta": {
-      "eyebrow": "Start with evidence",
-      "heading": "Find the system your website actually needs.",
-      "subtitle": "A manual website audit shows what is blocking trust, search visibility, and booking action before a redesign is scoped.",
-      "audit": "Request website audit",
-      "project": "Start a project"
-    }
-  },
-  "work": {
-    "status": {
-      "concept": "Concept",
-      "internalBuild": "Internal build",
-      "clientBuild": "Client build"
-    },
-    "actions": {
-      "viewSystem": "View system",
-      "viewRepository": "View repository",
-      "viewLiveSite": "View live site",
-      "screenshotsComingSoon": "Interface screenshots pending"
-    },
-    "labels": {
-      "problem": "Business problem",
-      "solution": "System solution",
-      "modules": "Key modules",
-      "technical": "Technical layer",
-      "repository": "Repository",
-      "liveSite": "Live site",
-      "exampleSystem": "Example system"
-    }
+    "comingSoon": "Demo brief"
   },
   "insightsPage": {
-    "heading": "Insights are being held for real guides",
-    "subtitle": "The article library is not public until there are finished, useful posts. For now, the practical next step is a manual website audit that shows what is blocking trust, search visibility, and bookings.",
-    "comingSoon": "No published posts yet",
+    "heading": "Insights in progress",
+    "subtitle": "Planned practical guides for Batumi hospitality, medical, and beauty websites.",
+    "comingSoon": "Planned guide",
     "clusters": {
       "hospitality": {
         "label": "Hospitality",
         "posts": [
           {
             "title": "Direct booking pages for Batumi hotels",
-            "description": "A practical guide to room pages, trust signals, booking calls to action, and local SEO for hotel websites."
+            "description": "A practical guide to room pages, credible proof, booking calls to action, and local SEO for hotel websites."
           },
           {
             "title": "Speed checklist for hotel sites",
@@ -1826,91 +1358,32 @@
       }
     },
     "detail": {
-      "cta": "No empty article grid",
+      "cta": "Want a website that works this hard for you?",
       "ctaLink": "Get a free website audit"
     }
   },
-  "homepage": {
-    "exampleBuilds": {
-      "eyebrow": "Finished internal builds",
-      "heading": "Two finished website systems, ready to inspect.",
-      "subtitle": "These internal builds show how Batumi Lighthouse structures booking, trust, multilingual content, and mobile conversion before a client project goes live.",
-      "systemLabel": "Example system",
-      "screenshotsPending": "Interface screenshots pending",
-      "silk": {
-        "badge": "Beauty appointment system",
-        "description": "A multilingual salon website structure for treatments, appointment intent, trust, and international visitor navigation."
-      },
-      "grand": {
-        "badge": "Hospitality direct-booking system",
-        "description": "A boutique hotel website structure for room discovery, location trust, and direct booking or enquiry intent."
-      },
-      "cta": "View example system"
-    }
-  },
   "caseStudies": {
-    "sectionLabel": "Website systems gallery.",
-    "heading": "Example systems, not fabricated proof",
-    "subtitle": "Sector directions showing screens, flows, and modules a real build can start from.",
-    "disclosure": "Internal examples and concept systems until public proof is ready to publish.",
-    "conversionLabel": "Conversion goal",
-    "modulesLabel": "Modules",
-    "viewGallery": "View website systems",
-    "viewLink": "View system",
-    "moreNote": "These previews are internal examples and studio prototypes. They do not claim results, testimonials, or metrics.",
-    "footer": {
-      "signal": "Signal",
-      "system": "System",
-      "output": "Output"
-    },
-    "proof": {
-      "items": [
-        "Currently accepting selected projects in Batumi.",
-        "Founder-led builds. Clear scope before work starts.",
-        "Internal systems shown below are studio examples, not fabricated proof."
-      ]
-    },
+    "sectionLabel": "Demo briefs.",
+    "heading": "Example directions, not fake client claims",
+    "viewLink": "View brief",
+    "moreNote": "These are sample briefs until client work is ready to publish. Ask for the direction closest to your business.",
     "discussProject": "Discuss a similar project",
-    "seeBrief": "See the system",
+    "seeBrief": "See the brief",
     "studies": {
       "hospitality": {
-        "label": "Concept system",
         "vertical": "Hospitality",
-        "title": "Hospitality Signal System",
-        "problem": "A direct site has to make rooms, location, policies, and booking value easier to trust than an OTA listing.",
-        "conversion": "Direct booking request",
-        "result": "Booking flow blueprint",
-        "modules": [
-          "Room cards with policy context",
-          "Check-in and guest selector",
-          "Location and trust strip"
-        ]
+        "title": "Boutique hotel direct booking concept",
+        "result": "Booking flow blueprint"
       },
       "medical": {
-        "label": "Example build",
         "vertical": "Medical",
-        "title": "Clinic Trust System",
-        "problem": "Patients need treatment clarity, doctor credibility, and language support before they request a consultation.",
-        "conversion": "Consultation request",
-        "result": "Patient inquiry structure",
-        "modules": [
-          "Treatment category content",
-          "Doctor profile and credentials",
-          "FAQ and multilingual intake"
-        ]
+        "title": "Dental clinic multilingual trust site",
+        "result": "Patient inquiry structure"
       },
       "beauty": {
-        "label": "Studio prototype",
         "vertical": "Beauty",
-        "title": "Beauty Appointment System",
-        "problem": "Social attention needs a structured service menu, price context, visual proof, and a clear appointment path.",
-        "conversion": "Appointment request",
-        "result": "Appointment flow prototype",
-        "modules": [
-          "Service menu by category",
-          "Price, time, and artist row",
-          "Gallery and booking CTA"
-        ]
+        "title": "Beauty studio appointment website",
+        "result": "Appointment flow prototype"
       }
     }
   },
@@ -1918,7 +1391,7 @@
     "sectionLabel": "Guides in progress.",
     "heading": "Industry guides for hotels, clinics & studios",
     "subtitle": "Practical notes on booking flows, trust, local SEO, and visual direction for Batumi businesses.",
-    "description": "Planned guides based on the same audit framework used for client projects.",
+    "description": "Planned guides based on the same audit process used for client projects.",
     "allArticles": "View planned guides",
     "articles": {
       "0": {
@@ -1943,20 +1416,300 @@
       "beauty": "Beauty"
     },
     "fieldNotes": "Field notes",
-    "featuredDescription": "Practical notes on room pages, trust signals, booking calls to action, image weight, and local search intent for Batumi hotels."
+    "featuredDescription": "Practical notes on room pages, credible proof, booking calls to action, image weight, and local search intent for Batumi hotels."
+  },
+  "photographyHome": {
+    "eyebrow": "Photography + social content",
+    "heading": "A better website needs images worth stopping for.",
+    "body": "Jasper and his assistant plan business shoots that produce the wide website images, vertical social content, useful details, and human moments your brand needs across every channel.",
+    "outputs": {
+      "0": {
+        "title": "Website",
+        "body": "Hero images and service-page stories"
+      },
+      "1": {
+        "title": "Social",
+        "body": "Reels, Stories, and vertical launches"
+      },
+      "2": {
+        "title": "Everywhere else",
+        "body": "Google, listings, press, and campaigns"
+      }
+    },
+    "primaryCta": "See photography & content",
+    "secondaryCta": "Discuss a shoot",
+    "stage": {
+      "ariaLabel": "Animated contact sheet showing landscape, portrait, and vertical content formats from one shoot",
+      "landscape": "Website hero",
+      "portrait": "Social carousel",
+      "reel": "Vertical reel",
+      "contactSheet": "Studio visual studies / 01-04",
+      "disclosure": "Original studio art-direction examples. Not client work or measured results."
+    },
+    "sceneTitles": {
+      "hospitality": "Hospitality / place",
+      "beauty": "Beauty / service",
+      "clinic": "Clinic / trust",
+      "food": "Food / detail"
+    },
+    "sceneAlts": {
+      "hospitality": "Warm Batumi hotel room prepared for a website and content shoot, with a Black Sea view",
+      "beauty": "Beauty professional preparing a treatment room in warm natural light",
+      "clinic": "Dental team preparing a calm consultation room before a patient arrives",
+      "food": "Chef finishing a plated dish for restaurant website and social content"
+    },
+    "tickerLabel": "Content formats included in shoot planning",
+    "ticker": {
+      "0": "Website hero",
+      "1": "Google profile",
+      "2": "Vertical reels",
+      "3": "Social carousels",
+      "4": "Stories and launches"
+    }
+  },
+  "photographyPage": {
+    "meta": {
+      "title": "Business photography and content shoots in Batumi",
+      "description": "Website-focused photography for Batumi hotels, clinics, beauty studios, restaurants, and local businesses, planned and shot by Jasper with an assistant."
+    },
+    "hero": {
+      "eyebrow": "Photography and content shoots in Batumi",
+      "title": "Show people what it feels like to choose you.",
+      "body": "Jasper and his assistant plan and shoot interiors, teams, services, products, and the details people want to see before they contact or book.",
+      "primaryCta": "Discuss a shoot",
+      "secondaryCta": "View shoot options",
+      "proof": {
+        "0": "Planned for websites and booking pages",
+        "1": "Shot directly by Jasper with an assistant",
+        "2": "Edited for web, Google, and social use"
+      }
+    },
+    "visual": {
+      "eyebrow": "A practical image library",
+      "title": "One shoot. The frames your business actually needs.",
+      "frames": {
+        "place": {
+          "title": "Place",
+          "body": "Wide, clear frames that establish the location, rooms, atmosphere, and customer experience."
+        },
+        "people": {
+          "title": "People",
+          "body": "Natural team portraits and real service moments."
+        },
+        "details": {
+          "title": "Details",
+          "body": "Products, finishes, equipment, food, and small trust cues."
+        }
+      }
+    },
+    "social": {
+      "eyebrow": "One shoot, many selling points",
+      "heading": "Your content should work everywhere customers look.",
+      "body": "We plan scenes in several crops and rhythms during the same shoot. The result is a connected image library instead of one beautiful photograph that only fits one place.",
+      "statement": "The website, feed, Google profile, and next campaign should feel like the same business.",
+      "stage": {
+        "ariaLabel": "Animated contact sheet showing website, social carousel, and vertical reel formats",
+        "landscape": "Website hero",
+        "portrait": "Social carousel",
+        "reel": "Vertical reel",
+        "contactSheet": "Visual direction / four scenes",
+        "disclosure": "Original studio art-direction examples. Not client work or published results."
+      },
+      "tickerLabel": "Planned photography and social content formats",
+      "ticker": {
+        "0": "Website hero",
+        "1": "Google profile",
+        "2": "Vertical reels",
+        "3": "Social carousels",
+        "4": "Stories and launches"
+      },
+      "outputs": {
+        "website": {
+          "channel": "Website",
+          "title": "Wide frames that establish the place",
+          "body": "Homepage heroes, room or service pages, banners, and the visual transitions that make a website feel complete."
+        },
+        "reels": {
+          "channel": "Reels + Stories",
+          "title": "Vertical scenes built for movement",
+          "body": "Short sequences, reveals, service moments, and behind-the-scenes details planned for phone-first viewing."
+        },
+        "feed": {
+          "channel": "Feed + carousel",
+          "title": "Portrait crops that hold attention",
+          "body": "Strong opening images, supporting details, and connected frames ready for useful social posts."
+        },
+        "google": {
+          "channel": "Google + listings",
+          "title": "Clear proof for people already comparing",
+          "body": "Accurate spaces, people, products, and service details that help customers understand what they will find."
+        }
+      }
+    },
+    "shootTypes": {
+      "eyebrow": "Business-focused photography",
+      "heading": "What we can shoot",
+      "body": "Every shoot starts with the pages and customer questions the images need to support. That keeps the session useful and avoids a folder of attractive but unusable photographs.",
+      "items": {
+        "hospitality": {
+          "title": "Hotels and guesthouses",
+          "body": "Rooms, entrances, amenities, breakfast, views, staff, and the details guests compare before choosing where to stay."
+        },
+        "clinics": {
+          "title": "Clinics and practices",
+          "body": "Interiors, team portraits, equipment, consultation settings, and calm service moments handled with clear privacy and consent rules."
+        },
+        "beauty": {
+          "title": "Beauty and wellness",
+          "body": "Treatment spaces, team members, products, textures, and the client journey from arrival to appointment."
+        },
+        "foodProducts": {
+          "title": "Food, products, and local services",
+          "body": "Menu items, retail products, work in progress, service details, and useful frames for websites, Google, and social posts."
+        }
+      }
+    },
+    "deliverables": {
+      "eyebrow": "From brief to delivery",
+      "heading": "More than turning up with a camera",
+      "body": "The work is planned around where each image will be used, so the final selection supports your offer instead of simply decorating it.",
+      "items": {
+        "planning": {
+          "title": "Brief and shot list",
+          "body": "We identify the pages, formats, people, spaces, and priority scenes before shoot day."
+        },
+        "direction": {
+          "title": "On-site direction",
+          "body": "We arrange scenes, guide people, manage details, and keep the session moving calmly."
+        },
+        "editing": {
+          "title": "Careful editing",
+          "body": "The selected photographs receive consistent colour, exposure, crop, and practical retouching."
+        },
+        "delivery": {
+          "title": "Useful file delivery",
+          "body": "You receive organised, web-ready files plus agreed high-resolution versions for other business use."
+        }
+      }
+    },
+    "options": {
+      "eyebrow": "Shoot options",
+      "heading": "Choose the amount of coverage your business needs",
+      "body": "The final schedule, image count, usage rights, and price are confirmed in writing after a short brief.",
+      "includedLabel": "What it covers",
+      "scopeNote": "Exact scope and price are confirmed before the shoot.",
+      "items": {
+        "focused": {
+          "bestForLabel": "Best for",
+          "bestFor": "A focused update at one location",
+          "title": "Focused location shoot",
+          "body": "A compact session for one clear priority, such as refreshed rooms, a new treatment space, a menu, or team portraits.",
+          "included": {
+            "0": "A short planning call and focused shot list",
+            "1": "One location and one main visual objective",
+            "2": "A selected set of edited, web-ready photographs"
+          }
+        },
+        "story": {
+          "bestForLabel": "Best for",
+          "bestFor": "A fuller picture of the business",
+          "title": "Business story shoot",
+          "body": "Broader coverage of the place, people, services, and details customers use to understand and trust the business.",
+          "included": {
+            "0": "A detailed brief covering several website sections",
+            "1": "Multiple scenes with team and service direction",
+            "2": "A varied edited library for web, Google, and social"
+          }
+        },
+        "website": {
+          "bestForLabel": "Best for",
+          "bestFor": "A new website or complete content refresh",
+          "title": "Website content day",
+          "body": "A website-first shoot mapped to hero images, service pages, profiles, booking sections, and reusable supporting content.",
+          "included": {
+            "0": "Page-by-page image planning with the website structure",
+            "1": "Wide, portrait, detail, and vertical compositions",
+            "2": "An organised image library prepared for launch"
+          }
+        }
+      }
+    },
+    "team": {
+      "eyebrow": "A focused two-person crew",
+      "heading": "You work directly with Jasper and his assistant",
+      "body": "A small crew keeps communication direct and the shoot calm. Responsibilities are clear before the session, and any extra specialist support is agreed openly.",
+      "jasper": {
+        "title": "Jasper",
+        "body": "Handles the brief, visual direction, camera work, composition, image selection, editing, and connection to the website project."
+      },
+      "assistant": {
+        "title": "Assistant",
+        "body": "Supports lighting, staging, equipment, scene preparation, detail checks, and an efficient flow on location."
+      }
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "heading": "A clear process before the camera comes out",
+      "steps": {
+        "brief": {
+          "title": "Tell us what you need",
+          "body": "Share the business, location, intended use, timing, and the main problem the images should solve."
+        },
+        "plan": {
+          "title": "Agree the shot plan",
+          "body": "We confirm scenes, people, preparation, schedule, deliverables, rights, and price in writing."
+        },
+        "shoot": {
+          "title": "Shoot on location",
+          "body": "We direct the session, watch the details, and capture both essential and supporting frames."
+        },
+        "deliver": {
+          "title": "Select and deliver",
+          "body": "The final images are edited, organised, and delivered in the formats agreed for your business."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Practical details",
+      "heading": "Photography questions",
+      "items": {
+        "webOnly": {
+          "question": "Do you only shoot images for websites?",
+          "answer": "No. The shoot is planned with the website as a strong foundation, but agreed versions can also be prepared for Google Business Profile, social media, listings, and print use."
+        },
+        "extras": {
+          "question": "Can you arrange models, styling, video, or drone work?",
+          "answer": "Those items are scoped separately and only included when the right people, permissions, equipment, and conditions are confirmed. Nothing is silently added to the quote."
+        },
+        "rights": {
+          "question": "Who can use the final images?",
+          "answer": "Usage rights are written into the proposal before the shoot. The agreement explains where the business may use the images and whether any third-party or campaign use needs separate approval."
+        },
+        "delivery": {
+          "question": "How quickly are photographs delivered?",
+          "answer": "The delivery date is agreed with the scope. A focused session and a full content day require different editing time, so the timetable is confirmed before booking."
+        },
+        "clinics": {
+          "question": "Can you photograph clinics and treatment settings?",
+          "answer": "Yes. Interiors, staff, equipment, and consultation spaces can be photographed. Any patient, client, or treatment image requires clear written consent and an agreed privacy plan."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Batumi and nearby locations",
+      "heading": "Tell us what your business needs to show.",
+      "body": "Send the location, intended use, and a short description of the images you need. We will reply with the questions needed to prepare a clear shoot proposal.",
+      "button": "Discuss your shoot"
+    }
   },
   "trustedBy": {
-    "label": "Built around the systems local businesses actually need",
+    "label": "Built around what local businesses actually need",
     "client0": "Direct booking",
     "client1": "Appointment flows",
     "client2": "Local SEO",
     "client3": "Original photography",
     "client4": "Multilingual pages",
-    "client5": "Launch support"
-  },
-  "testimonials": {
-    "eyebrow": "Client proof",
-    "heading": "Real testimonials"
+    "client5": "Hostinger deployment"
   },
   "ui": {
     "skipToContent": "Skip to content",
@@ -1964,7 +1717,6 @@
     "mainNavigation": "Main navigation",
     "mobileNavigation": "Mobile navigation",
     "openNavigationMenu": "Open navigation menu",
-    "changeLanguage": "Change language",
     "toggleColorTheme": "Toggle color theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
@@ -1979,8 +1731,8 @@
     "locationArea": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond."
   },
   "announcement": {
-    "text": "Manual website audit available",
-    "cta": "Request audit"
+    "text": "Free website audit this month - limited spots",
+    "cta": "Claim yours"
   },
   "availability": {
     "available": "Available for projects",
@@ -1992,5 +1744,319 @@
     "home": "Go home",
     "audit": "Request an audit",
     "contact": "Contact us"
+  },
+  "examplesUi": {
+    "page": {
+      "heading": "Internal example builds",
+      "subtitle": "Sector-specific website examples showing structure, pages, and decisions for Batumi hotels, clinics, salons, and service businesses.",
+      "note": "These are internal examples unless clearly marked otherwise. They are not paid client work, testimonial-backed work, or published business results."
+    },
+    "home": {
+      "sectionLabel": "Internal example builds",
+      "kicker": "Useful examples, clearly disclosed.",
+      "heading": "Internal website examples you can judge honestly",
+      "cta": "View all examples",
+      "note": "These examples show page structure, modules, and design decisions. They do not claim paid client results, testimonials, or business metrics."
+    },
+    "preview": {
+      "screenshotComingSoon": "Screenshot coming soon"
+    },
+    "fields": {
+      "businessType": "Business type represented",
+      "demonstratedProblem": "Problem demonstrated",
+      "pagesModules": "Pages and modules included",
+      "clientLearning": "What a real client can learn",
+      "disclosure": "Disclosure",
+      "features": "Features",
+      "whatItShows": "What it shows"
+    },
+    "proofLine": "{level} proof",
+    "typeLabels": {
+      "realProject": "Real project",
+      "demoBuild": "Internal example",
+      "concept": "Concept",
+      "prototype": "Prototype",
+      "ownSite": "Own site"
+    },
+    "statusLabels": {
+      "live": "Live",
+      "inDevelopment": "In development",
+      "demoOnly": "Not a client result",
+      "private": "Private"
+    },
+    "proofLabels": {
+      "verifiedLive": "Verified live",
+      "demo": "Demo",
+      "concept": "Concept",
+      "privateClient": "Private client",
+      "internal": "Internal"
+    },
+    "sectorLabels": {
+      "hospitality": "Hospitality",
+      "medical": "Medical",
+      "beauty": "Beauty",
+      "studio": "Studio"
+    },
+    "buttons": {
+      "viewWebsite": "View website",
+      "viewDemo": "View demo",
+      "viewRepository": "View repository",
+      "viewExample": "View example",
+      "discussSimilarWebsite": "Discuss a similar website"
+    },
+    "items": {
+      "boutique-hotel-direct-booking-demo": {
+        "title": "Boutique Hotel Direct Booking Demo",
+        "businessType": "Boutique hotel, guesthouse, or aparthotel",
+        "shortDescription": "An internal hotel website example for clearer rooms, offers, policies, and direct booking paths.",
+        "demonstratedProblem": "Hotel visitors often compare rooms, location, policies, and booking options quickly. If those details are scattered, the website pushes them back to OTAs or generic booking pages.",
+        "problem": "Many hotel websites rely on generic galleries and send guests away before they understand the rooms, location, and direct booking benefits.",
+        "solution": "A fast multilingual structure with room-focused content, local SEO, trust details, and a booking path that keeps direct inquiries visible.",
+        "modules": [
+          "Homepage with direct booking prompts",
+          "Room and offer page structure",
+          "Location, policies, and guest FAQ modules",
+          "Local SEO landing page structure",
+          "Contact and booking handoff flow"
+        ],
+        "features": [
+          "Room and offer page structure",
+          "Direct booking calls to action",
+          "Local SEO page hierarchy",
+          "Image-weight and speed planning",
+          "Guest trust content"
+        ],
+        "clientLearning": [
+          "How room content can help guests compare without leaving the site",
+          "How trust details fit into a practical booking flow",
+          "How multilingual hotel pages can be structured before design starts"
+        ],
+        "imageAlt": "Screenshot of the Boutique Hotel Direct Booking Demo website example",
+        "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",
+        "whatItShows": [
+          "How hotel content can support direct bookings",
+          "How multilingual room pages can be organized",
+          "How trust details fit into a practical booking flow"
+        ],
+        "ctaLabel": "Discuss a similar website"
+      },
+      "clinic-trust-website-demo": {
+        "title": "Clinic Trust Website Demo",
+        "businessType": "Clinic, dental practice, or aesthetic medical center",
+        "shortDescription": "An internal clinic website example for treatment clarity, doctor trust, patient questions, and consultation requests.",
+        "demonstratedProblem": "Patients need to understand treatments, practitioners, safety, languages, and next steps before they feel ready to contact a clinic.",
+        "problem": "Clinic websites often make patients hunt for basic trust details: doctor profiles, treatment information, languages, and how to request an appointment.",
+        "solution": "A trust-first structure with clear medical service pages, doctor content, FAQs, structured data, and consultation request paths.",
+        "modules": [
+          "Treatment overview and detail pages",
+          "Doctor profile modules",
+          "Patient FAQ and safety content",
+          "Consultation request flow",
+          "Medical structured data plan"
+        ],
+        "features": [
+          "Doctor and treatment page structure",
+          "Patient FAQ sections",
+          "Consultation request flow",
+          "Medical structured data planning",
+          "Multilingual content hierarchy"
+        ],
+        "clientLearning": [
+          "How treatment pages can answer patient concerns before contact",
+          "How doctor profiles and safety notes can support trust",
+          "How appointment requests can be clearer without making medical claims"
+        ],
+        "imageAlt": "Screenshot of the Clinic Trust Website Demo website example",
+        "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",
+        "whatItShows": [
+          "How treatment pages can build trust",
+          "How patient questions can reduce inquiry friction",
+          "How structured data can support medical search visibility"
+        ],
+        "ctaLabel": "Discuss a similar website"
+      },
+      "beauty-salon-booking-demo": {
+        "title": "Beauty Salon Booking Demo",
+        "businessType": "Beauty studio, salon, medspa, or appointment-led service",
+        "shortDescription": "An internal salon website example for clearer services, prices, proof, and appointment requests.",
+        "demonstratedProblem": "Beauty clients often arrive from Instagram or Google and need quick answers on services, prices, proof, and how to book.",
+        "problem": "Many salons depend on social DMs for pricing, availability, and appointment requests, which creates extra back-and-forth and lost demand.",
+        "solution": "A mobile-first service menu, booking prompts, trust content, and local search structure that supports appointments without hiding basic details.",
+        "modules": [
+          "Mobile-first service menu",
+          "Price and duration modules",
+          "Proof, gallery, and review sections",
+          "Appointment request flow",
+          "Local SEO service pages"
+        ],
+        "features": [
+          "Service and pricing page structure",
+          "Appointment-focused calls to action",
+          "Mobile-first browsing flow",
+          "Review and social proof placement",
+          "Local SEO service pages"
+        ],
+        "clientLearning": [
+          "How a salon can reduce back-and-forth before booking",
+          "How service and price content can work on mobile",
+          "How proof and contact flow can support appointment requests"
+        ],
+        "imageAlt": "Screenshot of the Beauty Salon Booking Demo website example",
+        "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",
+        "whatItShows": [
+          "How services can be organized for faster booking decisions",
+          "How appointment prompts can reduce DM friction",
+          "How local SEO can support salon discovery"
+        ],
+        "ctaLabel": "Discuss a similar website"
+      },
+      "batumi-lighthouse-website": {
+        "title": "Batumi Lighthouse Website",
+        "businessType": "Founder-led web studio",
+        "shortDescription": "The Batumi Lighthouse website itself: an internal studio build for service clarity, multilingual structure, and enquiry flow.",
+        "demonstratedProblem": "A small studio needs to explain who it serves, what it builds, and how to start a conversation without sounding like a generic agency template.",
+        "problem": "A small studio site needs to explain what it builds, who it serves, and how to make contact without relying on decorative agency language.",
+        "solution": "A multilingual Next.js site with centralized brand configuration, structured metadata, sector pages, audit paths, and clear contact routes.",
+        "modules": [
+          "Founder-led homepage structure",
+          "Sector-specific service pages",
+          "Audit request and contact flow",
+          "Multilingual routing and content structure",
+          "SEO metadata and structured data"
+        ],
+        "features": [
+          "Multilingual route structure",
+          "Centralized site configuration",
+          "SEO metadata and structured data",
+          "Audit and lead capture flows",
+          "Reusable design rules"
+        ],
+        "clientLearning": [
+          "How a small service business can explain its offer plainly",
+          "How multilingual pages and SEO basics can be planned together",
+          "How audit and contact paths can be built into the site structure"
+        ],
+        "imageAlt": "Screenshot of the Batumi Lighthouse Website internal example",
+        "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",
+        "whatItShows": [
+          "How the studio structures multilingual service content",
+          "Reusable design rules",
+          "How practical lead paths can be built into a small studio website"
+        ],
+        "ctaLabel": "Discuss a similar website"
+      }
+    }
+  },
+  "templatesCatalog": {
+    "metadataTitle": "Website templates for Batumi businesses",
+    "metadataDescription": "Explore 18 original website templates for hotels, clinics, beauty businesses, restaurants, bars and shops, then discuss a tailored Batumi Lighthouse build.",
+    "eyebrow": "18 original website starting points",
+    "heading": "Choose a strong direction before your project starts.",
+    "intro": "Explore complete, responsive website examples for six business categories. Each one gives us a practical starting point for structure, style and customer journeys.",
+    "disclosure": "Every business shown is fictional. These are internal template demonstrations, not client work, testimonials or published business results.",
+    "all": "All templates",
+    "filter": "Filter by business type",
+    "showing": "Showing {count} templates",
+    "pageCount": "{count} complete pages",
+    "details": "View details",
+    "preview": "Live preview",
+    "internalDemo": "Internal demo",
+    "imageAlt": "{category} website template preview",
+    "openPreview": "Open full preview",
+    "requestTemplate": "Discuss this template",
+    "whatIsIncluded": "A complete starting point",
+    "completeWebsite": "Built beyond the homepage",
+    "customizationNote": "Your final website is adapted to your brand, content, language needs and business goals.",
+    "ctaHeading": "See a direction that fits your business?",
+    "ctaBody": "Send the template name and a short description of your business. I will explain what should stay, what should change and what the build would cost.",
+    "contactInterest": "You are asking about the {name} template. I will use it as a visual and structural starting point, not copy it unchanged.",
+    "included": {
+      "responsive": "Responsive homepage and complete inner-page structure",
+      "navigation": "Accessible desktop and mobile navigation",
+      "forms": "Business-specific booking, enquiry or appointment forms",
+      "seo": "SEO-ready page structure, metadata and configurable content"
+    },
+    "categories": {
+      "hotel": "Hotels",
+      "dentist": "Dental practices",
+      "beauty-salon": "Beauty & wellness",
+      "restaurant": "Restaurants",
+      "bar": "Bars",
+      "shop": "Shops & retail"
+    },
+    "items": {
+      "hotel-01-luxury": {
+        "positioning": "A refined hotel website for premium stays, room comparison, offers and direct booking enquiries.",
+        "signature": "Full-screen hospitality storytelling with a practical stay planner."
+      },
+      "hotel-02-boutique": {
+        "positioning": "An intimate hotel website that makes rooms, character and the surrounding neighborhood easy to explore.",
+        "signature": "Editorial room stories paired with a useful local guide."
+      },
+      "hotel-03-resort": {
+        "positioning": "A destination-led resort website for stays, experiences, packages and group planning.",
+        "signature": "Scenic trip planning across rooms, activities and occasions."
+      },
+      "dentist-01-clinical": {
+        "positioning": "A calm clinical website that helps patients understand treatments, the team and how to request care.",
+        "signature": "A visible emergency pathway and clear treatment guidance."
+      },
+      "dentist-02-premium-cosmetic": {
+        "positioning": "A consultation-led website for cosmetic dentistry, detailed treatment journeys and specialist trust.",
+        "signature": "A staged treatment journey from first question to consultation."
+      },
+      "dentist-03-family": {
+        "positioning": "A welcoming dental website for families, new patients, routine care and urgent questions.",
+        "signature": "A parent-friendly first-visit guide with simple next steps."
+      },
+      "beauty-01-salon": {
+        "positioning": "A fashion-aware salon website for services, stylists, pricing and appointment requests.",
+        "signature": "A clear stylist and service matching experience."
+      },
+      "beauty-02-spa": {
+        "positioning": "A calm wellness website for treatments, rituals, packages, memberships and gift cards.",
+        "signature": "A tactile treatment finder built around time and intention."
+      },
+      "beauty-03-aesthetic-clinic": {
+        "positioning": "A safety-first aesthetic clinic website for treatments, practitioners and consultation planning.",
+        "signature": "A measured consultation path that avoids exaggerated claims."
+      },
+      "restaurant-01-fine-dining": {
+        "positioning": "An atmospheric restaurant website for seasonal menus, chef story, private dining and reservations.",
+        "signature": "A focused tasting-menu journey with strong occasion planning."
+      },
+      "restaurant-02-bistro": {
+        "positioning": "A lively neighborhood restaurant website for menus, daily updates, events and table bookings.",
+        "signature": "A useful tonight-and-events board with local character."
+      },
+      "restaurant-03-fast-casual": {
+        "positioning": "A quick, menu-first website that helps guests choose dine-in, pickup or delivery without friction.",
+        "signature": "An immediate order-mode selector and highly scannable menu."
+      },
+      "bar-01-cocktail": {
+        "positioning": "A distinctive cocktail bar website for drinks, seating, private hire and table reservations.",
+        "signature": "A refined drinks list paired with seating and event choices."
+      },
+      "bar-02-pub": {
+        "positioning": "A warm pub website for food, drinks, live sport, weekly events and group visits.",
+        "signature": "A practical fixtures and events noticeboard for regular guests."
+      },
+      "bar-03-rooftop": {
+        "positioning": "A skyline-led rooftop bar website for reservations, group packages and private events.",
+        "signature": "A clear group planner built around views, occasions and capacity."
+      },
+      "shop-01-fashion": {
+        "positioning": "An editorial fashion shop website for collections, product stories, lookbooks and enquiries.",
+        "signature": "A strong lookbook that connects campaign imagery to products."
+      },
+      "shop-02-lifestyle": {
+        "positioning": "A warm lifestyle shop website for thoughtful products, gifting occasions and curated collections.",
+        "signature": "An occasion-led gift guide with tactile product storytelling."
+      },
+      "shop-03-specialty": {
+        "positioning": "An expert retail website for technical products, specifications, comparisons and buyer questions.",
+        "signature": "A practical comparison tool that makes specialist choices clearer."
+      }
+    }
   }
 }

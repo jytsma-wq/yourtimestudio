@@ -1,61 +1,80 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { Cormorant_Garamond, Noto_Sans_Georgian } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { geistSans, geistMono } from '@/fonts';
-import { launchLocales, type Locale } from '@/lib/i18n/config';
+import { defaultLocale, launchLocales, type Locale } from '@/lib/i18n/config';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { CookieConsent } from '@/components/shared/CookieConsent';
+import { AnnouncementBar } from '@/components/shared/AnnouncementBar';
+import '@/app/globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { WhatsAppFAB } from '@/components/shared/WhatsAppFAB';
 import { BackToTop } from '@/components/shared/BackToTop';
+import { SectionNav } from '@/components/shared/SectionNav';
+import { ContactStrip } from '@/components/shared/ContactStrip';
+import { PageTransition } from '@/components/shared/PageTransition';
+import { AnalyticsEvents } from '@/components/shared/AnalyticsEvents';
 import { siteConfig } from '@/lib/site-config';
-import { localizedAlternates, pageOgImages } from '@/lib/seo/metadata';
-import '@/app/globals.css';
 
-const defaultTitle = `${siteConfig.name} — Website Development Studio in Batumi`;
-const defaultDescription =
-  'Founder-led website development for hotels, clinics, and beauty businesses in Batumi. Booking systems, local SEO, multilingual UX, and conversion-focused design.';
-const brandMarkPng = siteConfig.brand.markPngSrc;
+const displayFont = Cormorant_Garamond({
+  subsets: ['latin', 'cyrillic'],
+  weight: 'variable',
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: defaultTitle,
-  description: defaultDescription,
-  alternates: localizedAlternates(''),
-  icons: {
-    icon: [
-      { url: brandMarkPng, type: 'image/png', sizes: '512x512' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png', sizes: '1024x1024' },
-    ],
-    apple: [
-      { url: brandMarkPng, sizes: '512x512', type: 'image/png' },
-    ],
-  },
-  manifest: '/manifest.json',
-  openGraph: {
-    title: defaultTitle,
-    description: defaultDescription,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: pageOgImages.home,
-        width: 1344,
-        height: 768,
-        alt: defaultTitle,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: defaultTitle,
-    description: defaultDescription,
-    images: [pageOgImages.home],
-  },
-};
+const bodyFont = Noto_Sans_Georgian({
+  subsets: ['latin', 'cyrillic-ext', 'georgian'],
+  weight: 'variable',
+  variable: '--font-body',
+  display: 'swap',
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = launchLocales.includes(locale as Locale)
+    ? (locale as Locale)
+    : defaultLocale;
+  const t = await getTranslations({ locale: safeLocale, namespace: 'metadata' });
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: t('title'),
+      template: `%s | ${siteConfig.name}`,
+    },
+    description: t('description'),
+    icons: {
+      icon: [
+        { url: siteConfig.assets.mark, type: 'image/png', sizes: '512x512' },
+        { url: siteConfig.assets.faviconSvg, type: 'image/svg+xml' },
+        { url: siteConfig.assets.faviconPng, type: 'image/png', sizes: '1024x1024' },
+      ],
+      apple: [
+        { url: siteConfig.assets.mark, sizes: '512x512', type: 'image/png' },
+      ],
+    },
+    manifest: siteConfig.assets.manifest,
+    openGraph: {
+      images: [
+        {
+          url: siteConfig.assets.ogDefault,
+          width: 1344,
+          height: 768,
+          alt: t('title'),
+        },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -79,26 +98,33 @@ export default async function LocaleLayout({
   const ui = await getTranslations('ui');
 
   return (
-    <html lang={locale} className="dark" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-canvas text-ink`}
+        className={`${bodyFont.variable} ${displayFont.variable} antialiased bg-background text-foreground`}
       >
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})()`}
+        </Script>
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-oxide focus:text-white focus:rounded focus:text-sm focus:font-semibold"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-serene-coral focus:text-brand-charcoal focus:rounded-md focus:text-sm focus:font-semibold"
           >
             {ui('skipToContent')}
           </a>
           <div className="flex min-h-screen flex-col">
+            <AnnouncementBar />
             <SiteHeader />
             <main id="main-content" className="flex-1">
-              {children}
+              <PageTransition>{children}</PageTransition>
             </main>
             <SiteFooter locale={locale as Locale} />
           </div>
           <WhatsAppFAB />
           <BackToTop />
+          <SectionNav />
+          <ContactStrip />
+          <AnalyticsEvents />
           <Toaster />
           <CookieConsent />
         </NextIntlClientProvider>

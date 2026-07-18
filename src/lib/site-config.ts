@@ -2,88 +2,30 @@
  * Centralized site configuration — single source of truth for
  * contact details, social links, and brand info used across
  * components, structured data, and API routes.
- *
  */
 
 const brandName = 'Batumi Lighthouse';
 const brandSlug = 'batumi-lighthouse';
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://batumilighthouse.com').replace(/\/+$/, '');
 
-function normalizeHttpUrl(value: string | undefined): string {
-  const raw = value?.trim();
-
-  if (!raw || raw === '#') {
-    return '';
-  }
-
-  try {
-    const url = new URL(raw);
-    return url.protocol === 'https:' || url.protocol === 'http:' ? url.toString() : '';
-  } catch {
-    return '';
-  }
-}
-
-function normalizeWhatsAppNumber(value: string | undefined): string {
-  const normalized = value?.trim().replace(/[^\d+]/g, '') || '';
-
-  return /^\+[1-9]\d{7,14}$/.test(normalized) ? normalized : '';
-}
-
-function normalizeWhatsAppHref(value: string | undefined): string {
-  const href = normalizeHttpUrl(value);
-
-  if (!href) {
-    return '';
-  }
-
-  const { hostname } = new URL(href);
-  return ['wa.me', 'api.whatsapp.com', 'web.whatsapp.com'].includes(hostname) ? href : '';
-}
-
-const whatsappNumber = normalizeWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP);
-const configuredWhatsAppHref = normalizeWhatsAppHref(process.env.NEXT_PUBLIC_WHATSAPP_HREF);
-const derivedWhatsAppHref = whatsappNumber
-  ? `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`
-  : '';
-
 export const siteConfig = {
   name: brandName,
   slug: brandSlug,
-  brand: {
-    displayName: brandName,
-    markSrc: `/brand/${brandSlug}-mark.webp`,
-    markPngSrc: `/brand/${brandSlug}-mark.png`,
-    logoPngSrc: `/brand/${brandSlug}-logo.png`,
-    markAlt: `${brandName} mark`,
-  },
   url: siteUrl,
   description:
-    'Website development studio in Batumi for hotels, clinics, beauty studios, and service businesses.',
+    'Dutch-practical web design, local SEO, and booking-focused websites for serious Batumi businesses.',
 
   contact: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@batumilighthouse.com',
-    // NEXT_PUBLIC_WHATSAPP must be E.164, e.g. +995555123456.
-    // Alternatively set NEXT_PUBLIC_WHATSAPP_HREF to a WhatsApp URL such as https://wa.me/995555123456.
-    whatsapp: whatsappNumber,
-    whatsappHref: configuredWhatsAppHref || derivedWhatsAppHref,
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '',
+    whatsappHref: process.env.NEXT_PUBLIC_WHATSAPP_HREF || '',
     area: 'Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond.',
   },
 
   social: {
-    instagram: normalizeHttpUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
-    linkedin: normalizeHttpUrl(process.env.NEXT_PUBLIC_LINKEDIN_URL),
-    facebook: normalizeHttpUrl(process.env.NEXT_PUBLIC_FACEBOOK_URL),
-  },
-
-  trust: {
-    clientNames: [] as string[],
-    testimonials: [] as Array<{
-      quote: string;
-      name: string;
-      role?: string;
-      company?: string;
-    }>,
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || '',
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || '',
   },
 
   address: {
@@ -100,11 +42,28 @@ export const siteConfig = {
     domain: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN || 'batumilighthouse.com',
   },
 
-  /** Key metrics — truthful, credible */
+  assets: {
+    mark: `/brand/${brandSlug}-mark.png`,
+    logo: `/brand/${brandSlug}-logo.png`,
+    faviconSvg: '/favicon.svg',
+    faviconPng: '/favicon.png',
+    manifest: '/manifest.json',
+    ogDefault: '/og-default.png',
+  },
+
+  /** Colors matching CSS custom properties */
+  colors: {
+    teal: 'var(--teal)',
+    tealLight: 'var(--accent)',
+    navy: 'var(--navy)',
+    rose: 'var(--rose)',
+  },
+
+  /** Key metrics — single source of truth for hero, founder chips, etc. */
   stats: {
-    sectors: { number: 3, suffix: '', labelKey: 'hero.stats.sectors.label' },
-    languages: { number: 4, suffix: '-language', labelKey: 'hero.stats.languages.label' },
-    focus: { number: 100, suffix: '%', labelKey: 'hero.stats.focus.label' },
+    clients: { number: 3, suffix: '', labelKey: 'hero.stats.clients.label' },
+    languages: { number: 4, suffix: '', labelKey: 'hero.stats.languages.label' },
+    countries: { number: 1, suffix: '', labelKey: 'hero.stats.countries.label' },
   },
 
   availability: {

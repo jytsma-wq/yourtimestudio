@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { type Locale, launchLocales } from '@/lib/i18n/config';
-import { generatePageMetadata, pageOgImages } from '@/lib/seo/metadata';
+import { generatePageMetadata } from '@/lib/seo/metadata';
 import { organizationSchema, webSiteSchema, localBusinessSchema } from '@/lib/seo/structured-data';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
-import { ProcessSection } from '@/components/sections/ProcessSection';
-import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection';
 import { ExampleBuildsSection } from '@/components/sections/ExampleBuildsSection';
 import { FounderSection } from '@/components/sections/FounderSection';
 import { PricingSection } from '@/components/sections/PricingSection';
 import { CTABandSection } from '@/components/sections/CTABandSection';
+import { PhotographyShowcaseSection } from '@/components/sections/PhotographyShowcaseSection';
 
 export function generateStaticParams() {
   return launchLocales.map((locale) => ({ locale }));
@@ -28,7 +27,6 @@ export async function generateMetadata({
     description: t('description'),
     path: '',
     locale: locale as Locale,
-    ogImage: pageOgImages.home,
   });
 }
 
@@ -53,41 +51,29 @@ export default async function LocalePage({
         }}
       />
 
-      {/* 01 — Hero: dark, immersive, developer-system mockup */}
       <HeroSection locale={locale as Locale} />
 
-      {/* 02 — Sector systems: three website systems */}
-      <div id="sectors" data-section-name="Solutions">
-        <SectorCardsSection />
+      <div id="photography" data-section-name="Photography">
+        <PhotographyShowcaseSection number="02" />
       </div>
 
-      {/* 03 — Work: concept system previews */}
-      <div id="case-studies" data-section-name="Systems">
-        <CaseStudiesSection />
+      <div id="sectors" data-section-name="Services">
+        <SectorCardsSection locale={locale as Locale} number="03" />
       </div>
 
-      {/* 04 — Example builds: finished internal systems */}
-      <div id="example-builds" data-section-name="Example builds">
-        <ExampleBuildsSection />
+      <div id="examples" data-section-name="Examples">
+        <ExampleBuildsSection number="04" />
       </div>
 
-      {/* 05 — Process: technical build pipeline */}
-      <div id="process" data-section-name="Process">
-        <ProcessSection />
-      </div>
-
-      {/* 06 — Founder: technical authority */}
       <div id="about" data-section-name="About">
-        <FounderSection locale={locale as Locale} />
+        <FounderSection locale={locale as Locale} number="05" />
       </div>
 
-      {/* 07 — Pricing: calm scope comparison */}
       <div id="pricing" data-section-name="Pricing">
-        <PricingSection />
+        <PricingSection locale={locale as Locale} number="06" />
       </div>
 
-      {/* 08 — CTA: strong dark closing */}
-      <CTABandSection />
+      <CTABandSection locale={locale as Locale} />
     </>
   );
 }

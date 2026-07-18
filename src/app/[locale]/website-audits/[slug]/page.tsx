@@ -1,4 +1,8 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { type Locale, launchLocales } from '@/lib/i18n/config';
+import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
@@ -7,34 +11,64 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 import auditData from '@/content/audits/batumi-hotel-website-audit.json';
 
+type LocalizedAuditDetail = {
+  title: string;
+  executiveSummary: string;
+  findings: Array<{
+    title: string;
+    description: string;
+    recommendedFix: string;
+  }>;
+};
+
 function getScoreColor(score: number): string {
-  if (score >= 70) return 'text-success';
-  if (score >= 50) return 'text-sea-bright';
+  if (score >= 70) return 'text-brand-sage-green-darken';
+  if (score >= 50) return 'text-brand-serene-coral-darken';
   return 'text-destructive';
 }
 
 function getScoreBg(score: number): string {
-  if (score >= 70) return 'bg-success/10';
-  if (score >= 50) return 'bg-oxide/10';
+  if (score >= 70) return 'bg-brand-sage-green-darken/10';
+  if (score >= 50) return 'bg-brand-serene-coral/10';
   return 'bg-destructive/10';
 }
 
 function getScoreBarColor(score: number): string {
-  if (score >= 70) return 'bg-success';
-  if (score >= 50) return 'bg-oxide';
+  if (score >= 70) return 'bg-brand-sage-green-darken';
+  if (score >= 50) return 'bg-brand-serene-coral';
   return 'bg-destructive';
 }
 
-const categoryLabels: Record<string, string> = {
-  brand: 'Brand Clarity',
-  speed: 'Performance & Speed',
-  seo: 'Local SEO',
-  content: 'Content Structure',
-  accessibility: 'Accessibility',
-  conversion: 'Conversion UX',
-};
-
 const categoryKeys = ['brand', 'speed', 'seo', 'content', 'accessibility', 'conversion'] as const;
+
+export function generateStaticParams() {
+  return launchLocales.map((locale) => ({
+    locale,
+    slug: 'batumi-hotel-website-audit',
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (slug !== 'batumi-hotel-website-audit') {
+    return {};
+  }
+
+  const t = await getTranslations({ locale, namespace: 'auditPage' });
+  const localizedAudit = t.raw('detail.demo_audit') as LocalizedAuditDetail;
+
+  return generatePageMetadata({
+    title: localizedAudit.title,
+    description: localizedAudit.executiveSummary,
+    path: `/website-audits/${slug}`,
+    locale: locale as Locale,
+  });
+}
 
 export default async function AuditDetailPage({
   params,
@@ -46,23 +80,30 @@ export default async function AuditDetailPage({
 
   const t = await getTranslations('auditPage');
   const tNav = await getTranslations('nav');
+  const localizedAudit = t.raw('detail.demo_audit') as LocalizedAuditDetail;
+  const categoryLabels: Record<string, string> = Object.fromEntries(
+    categoryKeys.map((key) => [key, t(`rubric.items.${key}.name`)])
+  );
 
-  // For now, only the demo audit exists
   if (slug !== 'batumi-hotel-website-audit') {
-    return (
-      <Section>
-        <p>Audit not found.</p>
-      </Section>
-    );
+    notFound();
   }
 
-  const audit = auditData;
+  const audit = {
+    ...auditData,
+    title: localizedAudit.title,
+    executiveSummary: localizedAudit.executiveSummary,
+    findings: auditData.findings.map((finding, index) => ({
+      ...finding,
+      ...localizedAudit.findings[index],
+    })),
+  };
   const sectorTagColor =
     audit.sector === 'hospitality'
-      ? 'bg-sea/10 text-sea-bright'
+      ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
       : audit.sector === 'medical'
-        ? 'bg-sea/10 text-sea-bright'
-        : 'bg-oxide/10 text-oxide-hover';
+        ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
+        : 'bg-brand-serene-coral/10 text-brand-serene-coral-darken';
 
   return (
     <>
@@ -78,11 +119,11 @@ export default async function AuditDetailPage({
         {/* Header */}
         <div className="mb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Badge className={`${sectorTagColor} rounded-md border-0 font-semibold text-xs uppercase tracking-wide`}>
-              {audit.sector.charAt(0).toUpperCase() + audit.sector.slice(1)}
+            <Badge className={`${sectorTagColor} rounded-none border-0 font-semibold text-xs uppercase tracking-wide`}>
+              {t(`sampleFindings.items.${audit.sector}.sector`)}
             </Badge>
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
-              <Calendar className="size-3.5" aria-hidden="true" />
+              <Calendar className="size-3.5" />
               {new Date(audit.date).toLocaleDateString(locale, {
                 year: 'numeric',
                 month: 'long',
@@ -123,7 +164,7 @@ export default async function AuditDetailPage({
             const score = audit.scores[key];
             return (
               <div key={key} className="flex items-center gap-5">
-                <div className={`flex size-14 shrink-0 items-center justify-center rounded-md border border-hairline ${getScoreBg(score)}`}>
+                <div className={`size-14 ${getScoreBg(score)} flex items-center justify-center border border-border shrink-0`}>
                   <span className={`text-xl font-bold ${getScoreColor(score)}`}>
                     {score}
                   </span>
@@ -133,9 +174,9 @@ export default async function AuditDetailPage({
                     <span className="font-medium text-sm">{categoryLabels[key]}</span>
                     <span className="text-muted-foreground text-sm">{score}/100</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-md overflow-hidden">
+                  <div className="h-2 bg-muted rounded-none overflow-hidden">
                     <div
-                      className={`h-full rounded-md ${getScoreBarColor(score)} transition-all`}
+                      className={`h-full rounded-none ${getScoreBarColor(score)} transition-all`}
                       style={{ width: `${score}%` }}
                     />
                   </div>
@@ -157,13 +198,13 @@ export default async function AuditDetailPage({
             const catKey = finding.category;
             const tagColor =
               catKey === 'speed'
-                ? 'bg-oxide/10 text-oxide-hover'
+                ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken'
                 : catKey === 'seo'
-                  ? 'bg-sea/10 text-sea-bright'
+                  ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                   : catKey === 'conversion'
-                    ? 'bg-oxide/10 text-oxide-hover'
+                    ? 'bg-brand-serene-coral/10 text-brand-serene-coral-darken'
                     : catKey === 'content'
-                      ? 'bg-sea/10 text-sea-bright'
+                      ? 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken'
                       : catKey === 'accessibility'
                         ? 'bg-muted text-muted-foreground'
                         : 'bg-muted text-muted-foreground';
@@ -171,10 +212,10 @@ export default async function AuditDetailPage({
             return (
               <div
                 key={index}
-                className="rounded-md border border-hairline bg-surface p-6 transition duration-150 ease-out hover:border-sea/30"
+                className="rounded-none border border-border bg-card p-6 shadow-none"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <Badge className={`${tagColor} rounded-md border-0 text-xs font-semibold uppercase tracking-wide`}>
+                  <Badge className={`${tagColor} rounded-none border-0 text-xs font-semibold uppercase tracking-wide`}>
                     {categoryLabels[catKey] || catKey}
                   </Badge>
                 </div>
@@ -182,8 +223,8 @@ export default async function AuditDetailPage({
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {finding.description}
                 </p>
-                <div className="bg-surface-elevated/50 rounded-md border border-border p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-sea-bright mb-1.5">
+                <div className="bg-brand-gray-100 rounded-none border border-border p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-serene-coral-darken mb-1.5">
                     {t('detail.recommended_fix')}
                   </p>
                   <p className="text-sm leading-relaxed">{finding.recommendedFix}</p>
@@ -203,11 +244,11 @@ export default async function AuditDetailPage({
           <Button
             asChild
             size="lg"
-            className="rounded-md bg-oxide text-white hover:bg-oxide-hover hover:text-white font-medium text-base px-8 h-12 mt-6"
+            className="rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base px-8 h-12 mt-6"
           >
             <Link href="/website-audits">
               {t('detail.cta')}
-              <ArrowRight className="ml-1 size-4" aria-hidden="true" />
+              <ArrowRight className="ml-1 size-4" />
             </Link>
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/lib/i18n/navigation';
 import {
   DollarSign,
   Clock,
@@ -33,7 +34,6 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { TrackedLink } from '@/components/shared/TrackedLink';
 import {
   Accordion,
   AccordionItem,
@@ -42,7 +42,6 @@ import {
 } from '@/components/ui/accordion';
 import type { Locale } from '@/lib/i18n/config';
 import { sectors, type SectorKey } from '@/lib/sector-config';
-import { faqSchema, serviceSchema } from '@/lib/seo/structured-data';
 
 /* ─── Sector icon configuration (kept here — specific to page template layout) ─── */
 const painIcons: Record<SectorKey, LucideIcon[]> = {
@@ -55,12 +54,6 @@ const deliverableIcons: Record<SectorKey, LucideIcon[]> = {
   hospitality: [Bed, ShoppingCart, Globe2, BarChart3, Zap, TrendingUp],
   medical: [Stethoscope, CalendarCheck, Globe2, Code, Star, HelpCircle],
   beauty: [Scissors, CalendarCheck, Tag, Sparkles, Camera, MessageSquare],
-};
-
-const serviceTypes: Record<SectorKey, string> = {
-  hospitality: 'Hospitality web design and direct booking websites',
-  medical: 'Clinic website development',
-  beauty: 'Beauty salon and studio appointment websites',
 };
 
 /* ─── Type helpers ─── */
@@ -137,25 +130,25 @@ export async function SectorPageTemplate({
     },
   };
 
-  const structuredData = [
-    serviceSchema({
-      name: data.hero.title,
-      description: data.hero.subtitle,
-      path: sector.href,
-      locale,
-      serviceType: serviceTypes[sectorKey],
-    }),
-    faqSchema(data.faq.items.map((item) => ({
-      question: item.q,
-      answer: item.a,
-    }))),
-  ];
+  /* ─── FAQ structured data ─── */
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
 
   // Map sector key to the Tailwind bg class for the CTA band
   const ctaBgClass: Record<SectorKey, string> = {
-    hospitality: 'bg-sea',
-    medical: 'bg-sea-bright',
-    beauty: 'bg-oxide',
+    hospitality: 'bg-brand-sage-green-darken',
+    medical: 'bg-brand-sage-green-darken',
+    beauty: 'bg-brand-serene-coral-darken',
   };
 
   return (
@@ -163,7 +156,7 @@ export async function SectorPageTemplate({
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Breadcrumbs */}
@@ -194,25 +187,17 @@ export async function SectorPageTemplate({
             <Button
               asChild
               size="lg"
-              className="bg-oxide text-white hover:bg-oxide-hover"
+              className={`${ctaBgClass[sectorKey]} text-background hover:opacity-90`}
             >
-              <TrackedLink
-                href="/website-audits"
-                eventName="Sector CTA Clicked"
-                eventProps={{ sector: sectorKey, location: 'hero_primary', destination: 'website_audits' }}
-              >
+              <Link href="/website-audits">
                 {data.cta.primary}
-                <ArrowRight className="size-4 ml-1" aria-hidden="true" />
-              </TrackedLink>
+                <ArrowRight className="size-4 ml-1" />
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <TrackedLink
-                href="/pricing"
-                eventName="Sector CTA Clicked"
-                eventProps={{ sector: sectorKey, location: 'hero_secondary', destination: 'pricing' }}
-              >
+              <Link href="/pricing">
                 {data.cta.secondary}
-              </TrackedLink>
+              </Link>
             </Button>
           </div>
         </div>
@@ -232,7 +217,7 @@ export async function SectorPageTemplate({
                   <div
                     className={`size-10 rounded-lg ${sector.bgLight} flex items-center justify-center mb-4`}
                   >
-                    <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
+                    <Icon className={`size-5 ${sector.textClass}`} />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {item.title}
@@ -260,7 +245,7 @@ export async function SectorPageTemplate({
                 <div
                   className={`size-10 shrink-0 rounded-lg ${sector.bgLight} flex items-center justify-center`}
                 >
-                  <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
+                  <Icon className={`size-5 ${sector.textClass}`} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">
@@ -329,7 +314,7 @@ export async function SectorPageTemplate({
 
       {/* ─── 6. CTA Band ─── */}
       <section
-        className={`py-16 md:py-24 px-4 md:px-8 ${ctaBgClass[sectorKey]} text-white`}
+        className={`py-16 md:py-24 px-4 md:px-8 ${ctaBgClass[sectorKey]} text-background`}
       >
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">
@@ -339,30 +324,22 @@ export async function SectorPageTemplate({
             <Button
               asChild
               size="lg"
-              className="bg-paper text-ink-dark hover:bg-paper-soft hover:text-ink-dark"
+              className="bg-background text-foreground hover:bg-background/90"
             >
-              <TrackedLink
-                href="/website-audits"
-                eventName="Sector CTA Clicked"
-                eventProps={{ sector: sectorKey, location: 'footer_primary', destination: 'website_audits' }}
-              >
+              <Link href="/website-audits">
                 {data.cta.primary}
-                <ArrowRight className="size-4 ml-1" aria-hidden="true" />
-              </TrackedLink>
+                <ArrowRight className="size-4 ml-1" />
+              </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white"
+              className="border-background/30 text-background hover:bg-background/10"
             >
-              <TrackedLink
-                href="/pricing"
-                eventName="Sector CTA Clicked"
-                eventProps={{ sector: sectorKey, location: 'footer_secondary', destination: 'pricing' }}
-              >
+              <Link href="/pricing">
                 {data.cta.secondary}
-              </TrackedLink>
+              </Link>
             </Button>
           </div>
         </div>

@@ -34,28 +34,21 @@ export function BackToTop() {
     <button
       onClick={handleClick}
       aria-label={ui('backToTop')}
-      className={`fixed bottom-6 left-6 z-40 hidden h-12 w-12 items-center justify-center rounded-md border border-hairline bg-surface text-ink transition duration-150 ease-out hover:border-sea/40 hover:bg-surface-elevated md:bottom-8 md:left-8 md:flex ${
+      className={`fixed bottom-6 left-6 z-40 hidden h-12 w-12 items-center justify-center rounded-md border border-border bg-card transition-colors duration-150 ease-out hover:text-navy md:bottom-8 md:left-8 md:flex ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 -rotate-90"
-        focusable="false"
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-      >
+      <svg className="absolute inset-0 -rotate-90" width="48" height="48" viewBox="0 0 48 48">
         <circle
           cx="24" cy="24" r={radius}
           fill="none"
-          stroke="var(--primitive-hairline-dark)"
+          stroke="var(--border)"
           strokeWidth="2"
         />
         <circle
           cx="24" cy="24" r={radius}
           fill="none"
-          stroke="var(--primitive-sea-bright)"
+          stroke="var(--teal)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -63,7 +56,7 @@ export function BackToTop() {
           className="transition-[stroke-dashoffset] duration-150 ease-out"
         />
       </svg>
-      <ArrowUp className="size-4 text-ink" aria-hidden="true" />
+      <ArrowUp className="size-4 text-foreground" />
     </button>
   );
 }

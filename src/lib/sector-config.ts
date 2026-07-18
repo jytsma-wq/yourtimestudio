@@ -1,9 +1,9 @@
 /**
  * Centralized sector configuration — single source of truth for
  * sector metadata used across Hero, SectorCards, CaseStudies,
- * SiteHeader, SiteFooter, and SectorPageTemplate.
+ * Testimonials, BlogTeaser, SiteHeader, SiteFooter, and SectorPageTemplate.
  *
- * Updated for Black Sea Digital Systems design direction.
+ * Eliminates duplication of colors, images, blur placeholders, and hrefs.
  */
 
 import {
@@ -18,30 +18,44 @@ import {
 export type SectorKey = 'hospitality' | 'medical' | 'beauty';
 
 export interface SectorMeta {
+  /** Machine key matching translation namespace */
   key: SectorKey;
+  /** Semantic Tailwind text class (e.g. 'text-brand-sage-green-darken') */
   textClass: string;
+  /** Semantic Tailwind dot/background class (e.g. 'bg-brand-sage-green-darken') */
   dotClass: string;
+  /** Semantic Tailwind background-tint class (e.g. 'bg-brand-sage-green-darken/10') */
   bgLight: string;
+  /** Semantic Tailwind border class (e.g. 'border-brand-sage-green/20') */
   borderClass: string;
+  /** CSS custom-property name for inline styles (e.g. 'var(--navy)') */
   cssVar: string;
+  /** Route path for the sector detail page */
   href: string;
+  /** Verticals card image */
   image: string;
+  /** Portfolio/case study image */
   portfolioImage: string;
+  /** Blur placeholder for verticals image */
   blur: string;
+  /** Blur placeholder for portfolio image */
   portfolioBlur: string;
+  /** Object-fit focal point class (e.g. 'object-center') */
   focalPoint: string;
 }
 
+/** Ordered list of all sectors — use this for iteration */
 export const sectorKeys: SectorKey[] = ['hospitality', 'medical', 'beauty'];
 
+/** Full metadata for each sector */
 export const sectors: Record<SectorKey, SectorMeta> = {
   hospitality: {
     key: 'hospitality',
-    textClass: 'text-sea-bright',
-    dotClass: 'bg-sea-bright',
-    bgLight: 'bg-sea/10',
-    borderClass: 'border-sea-bright/20',
-    cssVar: 'var(--primitive-sea-bright)',
+    textClass: 'text-brand-sage-green-darken',
+    dotClass: 'bg-brand-sage-green-darken',
+    bgLight: 'bg-brand-sage-green-darken/10',
+    borderClass: 'border-brand-sage-green/20',
+    cssVar: 'var(--navy)',
     href: '/hospitality-web-design-batumi',
     image: '/images/verticals-hospitality.jpg',
     portfolioImage: '/images/portfolio-hotel.jpg',
@@ -51,11 +65,11 @@ export const sectors: Record<SectorKey, SectorMeta> = {
   },
   medical: {
     key: 'medical',
-    textClass: 'text-sea-bright',
-    dotClass: 'bg-sea',
-    bgLight: 'bg-sea/10',
-    borderClass: 'border-sea/20',
-    cssVar: 'var(--primitive-sea)',
+    textClass: 'text-brand-sage-green-darken',
+    dotClass: 'bg-brand-sage-green-darken',
+    bgLight: 'bg-brand-sage-green-darken/10',
+    borderClass: 'border-brand-sage-green/20',
+    cssVar: 'var(--stone)',
     href: '/medical-websites-batumi',
     image: '/images/verticals-medical.jpg',
     portfolioImage: '/images/portfolio-dental.jpg',
@@ -65,11 +79,11 @@ export const sectors: Record<SectorKey, SectorMeta> = {
   },
   beauty: {
     key: 'beauty',
-    textClass: 'text-oxide-hover',
-    dotClass: 'bg-oxide',
-    bgLight: 'bg-oxide/10',
-    borderClass: 'border-oxide/20',
-    cssVar: 'var(--primitive-oxide)',
+    textClass: 'text-brand-serene-coral-darken',
+    dotClass: 'bg-brand-serene-coral',
+    bgLight: 'bg-brand-serene-coral/10',
+    borderClass: 'border-brand-serene-coral/20',
+    cssVar: 'var(--rose)',
     href: '/beauty-salon-websites-batumi',
     image: '/images/verticals-beauty.jpg',
     portfolioImage: '/images/portfolio-beauty.jpg',
@@ -79,12 +93,14 @@ export const sectors: Record<SectorKey, SectorMeta> = {
   },
 };
 
+/** Get a sector's metadata by key — throws if invalid */
 export function getSector(key: string): SectorMeta {
   const sector = sectors[key as SectorKey];
   if (!sector) throw new Error(`Unknown sector key: ${key}`);
   return sector;
 }
 
+/** Year label for case studies (display only) */
 export const sectorYears: Record<SectorKey, string> = {
   hospitality: '2025',
   medical: '2025',

@@ -1,42 +1,72 @@
 {
   "metadata": {
-    "title": "Batumi Lighthouse — Batum'da Web Sitesi Geliştirme Stüdyosu",
-    "description": "Batum'daki oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için kurucu liderliğinde web sitesi geliştirme."
+    "title": "Batumi Lighthouse - Batum otelleri, klinikleri ve stüdyoları için web siteleri",
+    "description": "Batum'daki oteller, klinikler, stüdyolar ve yerel işletmeler için kurucu liderliğinde web tasarımı, işletme fotoğrafçılığı, sosyal içerik, yerel SEO ve çok dilli siteler."
   },
   "nav": {
     "home": "Ana Sayfa",
-    "solutions": "Çözümler",
+    "solutions": "Hizmetler",
     "hospitality": "Konaklama",
     "medical": "Sağlık",
     "beauty": "Güzellik",
     "audits": "Web Sitesi Denetimi",
+    "hotelsGuesthouses": "Oteller ve pansiyonlar",
+    "clinicsMedical": "Klinikler ve sağlık",
+    "beautyStudios": "Güzellik stüdyoları",
+    "websiteAudit": "Web sitesi denetimi",
+    "photography": "Fotoğraf ve içerik çekimi",
+    "requestAudit": "Denetim iste",
     "work": "Çalışmalar",
     "insights": "Bilgi Bankası",
     "pricing": "Fiyatlar",
     "about": "Hakkımızda",
     "contact": "İletişim",
-    "brand_descriptor": "Web Geliştirme · Batumi"
+    "templates": "Şablonlar"
   },
   "hero": {
-    "eyebrow": "Kurucu liderliğinde Batum web stüdyosu",
-    "title": "Yerel işletmeleri rezervasyon sistemlerine dönüştüren web siteleri.",
-    "subtitle": "Uluslararası müşterileri olan Batum işletmeleri için kurucu liderliğinde web geliştirme, UX yapısı, yerel SEO, çok dilli sayfalar ve rezervasyon akışları.",
+    "eyebrow": "Batum'da kurucu liderliğinde web tasarımı ve geliştirme",
+    "title": "Doğrudan talep isteyen Batum işletmeleri için web siteleri ve özgün içerik.",
+    "subtitle": "Batum'daki oteller, klinikler, güzellik stüdyoları ve yerel işletmelerle doğrudan çalışarak web sitesini kurar, çekimleri planlar ve sosyal içeriği hazırlarım.",
     "cta_primary": "Web sitesi denetimi iste",
-    "cta_secondary": "Fiyat kapsamlarını gör",
+    "cta_secondary": "Çalışmaları gör",
+    "visual_label": "Özgün stüdyo sanat yönetimi / müşteri işi değildir",
+    "visual_alt": "Web sitesi ve içerik çekimi için hazırlanmış, Karadeniz manzaralı sıcak bir Batum otel iç mekânı",
     "getQuote": "Teklif al",
     "proof_band": [
-      "Kurucu liderliğinde geliştirme",
-      "Yerel SEO dahil",
+      "Doğrudan Jasper ile",
+      "Yerel SEO temelleri dahil",
       "Çok dilli yapı",
-      "Rezervasyon odaklı UX"
+      "Rezervasyon ve talep yolları"
     ],
-    "sectionLabel": "Kurucu liderliğinde Batum web stüdyosu.",
-    "title1": "Yerel işletmeleri",
-    "title2": "rezervasyon sistemlerine dönüştüren web siteleri.",
+    "sectionLabel": "Batum'da kurucu liderliğinde web tasarımı ve geliştirme.",
+    "title1": "Web siteleri. Fotoğraf. Sosyal içerik.",
+    "title2": "Daha fazla talep isteyen Batum işletmeleri için.",
+    "trust_line": "Batum'daki Jasper ile doğrudan çalışırsınız. Net kapsam, pratik öneriler ve gereksiz ajans katmanları yok.",
+    "panel_title": "Web sitesi denetimi önizlemesi",
+    "panel_subtitle": "Yeniden yapım önermeden önce kontrol ettiklerim.",
+    "problems_title": "Talepleri genelde ne engeller",
+    "problems": [
+      "Ziyaretçiler teklifi, konumu, fiyatları veya sonraki adımı hızla anlayamaz.",
+      "Güven kanıtları, çok dilli temel yapı ve yerel arama temelleri dağınıktır.",
+      "İletişim, rezervasyon veya randevu yolu insanlardan fazla çaba ister."
+    ],
+    "fixes_title": "Neyi iyileştiririm",
+    "fixes": [
+      "Daha net ana sayfa ve hizmet yapısı.",
+      "Yerel SEO temelleri ve faydalı metadata.",
+      "Ziyaretçiler için çok dilli içerik yolları.",
+      "Tamamlaması daha kolay rezervasyon ve talep akışları."
+    ],
+    "panel_note": "Denetim, tasarım veya geliştirmeye geçmeden önce pratik bir öncelik listesi verir.",
+    "typewriter": {
+      "hotel": "Rezervasyona hazır otel siteleri",
+      "clinic": "Güven odaklı klinik siteleri",
+      "salon": "Randevu odaklı güzellik siteleri"
+    },
     "cards": {
       "hospitality": {
         "name": "Konaklama",
-        "tagline": "Doğrudan rezervasyon sistemleri",
+        "tagline": "Doğrudan rezervasyon yönlendirmesi",
         "priceFrom": "$1,800'den"
       },
       "medical": {
@@ -46,7 +76,7 @@
       },
       "beauty": {
         "name": "Güzellik",
-        "tagline": "Çevrimiçi randevu sistemleri",
+        "tagline": "Online randevu desteği",
         "priceFrom": "$700'den"
       }
     },
@@ -72,99 +102,73 @@
     "meta_services": "Doğrudan rezervasyon / yerel SEO / çok dilli UX",
     "feature_direction": "Özellik yönü",
     "issue": "Sayı 01",
-    "appointment_flow": "Randevu akışı",
-    "command": {
-      "coordinates": "41.6168° N / 41.6367° E",
-      "location": "Batum / Acara",
-      "signal": "Sinyal: rezervasyon odaklı web siteleri"
-    },
-    "signals": {
-      "booking": "Rezervasyon sinyali",
-      "trust": "Güven sinyali",
-      "localSeo": "Yerel SEO sinyali",
-      "multilingual": "Çok dilli sinyal"
-    },
-    "systems": {
-      "hotel": {
-        "title": "Otel Doğrudan Rezervasyon Sistemi",
-        "subtitle": "Dil rotaları ve doğrudan talep akışı olan rezervasyon odaklı otel sitesi.",
-        "sector": "Konaklama"
-      },
-      "clinic": {
-        "title": "Klinik Güven Sistemi",
-        "subtitle": "Tedaviler, doktorlar, başvuru ve hasta soruları için klinik sitesi yapısı.",
-        "sector": "Sağlık"
-      },
-      "beauty": {
-        "title": "Güzellik Randevu Sistemi",
-        "subtitle": "Sosyal trafikli stüdyolar için hizmet menüsü, galeri ve randevu yolu.",
-        "sector": "Güzellik"
-      }
-    }
+    "appointment_flow": "Randevu akışı"
   },
   "sectors": {
-    "heading": "Sektör çözümleri",
-    "subtitle": "İşletmenizin gerçekten nasıl çalıştığına göre tasarlanmış web siteleri — genel şablonlar değil.",
+    "heading": "Daha net talepler isteyen yerel işletmeler için web siteleri",
+    "subtitle": "Batum'daki üç işletme türü için pratik sayfalar kurarım: konaklama yerleri, güven isteyen klinikler ve insanların randevu aldığı stüdyolar.",
     "hospitality": {
-      "title": "Konaklama",
-      "subtitle": "Oteller, pansiyonlar ve apart oteller için doğrudan rezervasyon web siteleri",
-      "pain": "OTA komisyonları kâr marjlarınızı eritiyor mu? Web siteniz Booking.com ile rekabet edemiyor mu?",
+      "title": "Oteller ve pansiyonlar",
+      "subtitle": "Oteller, pansiyonlar ve apart oteller için web siteleri",
+      "pain": "Daha net odalar, teklifler, politikalar ve doğrudan rezervasyon yollarıyla OTA bağımlılığını azaltın.",
       "deliverables": [
-        "Oda ve teklif yönetimi",
-        "Doğrudan rezervasyon entegrasyonu",
-        "Çok dilli misafir yolları",
+        "Oda sayfaları ve teklifler",
+        "Politikalar ve konum detayları",
+        "Doğrudan rezervasyon veya talep yönlendirmesi",
         "Hız optimize edilmiş rezervasyon akışı"
       ],
-      "cta": "Konaklama çözümlerini görün",
-      "tagline": "OTA komisyonları ödemeyi bırakın",
-      "priceFrom": "$2,499'dan başlayan — doğrudan rezervasyon motoru dahil"
+      "cta": "Otel web sitelerini gör",
+      "tagline": "Daha fazla rezervasyonu kendi sitenize getirin",
+      "priceFrom": "$2,499'dan başlayan - rezervasyon yönlendirmesi dahil"
     },
     "medical": {
-      "title": "Sağlık",
-      "subtitle": "Klinikler, diş hekimleri ve estetik merkezleri için güven odaklı web siteleri",
-      "pain": "Hastalar doktorlarınızı bulamıyor mu? Siteniz ilk konsültasyon öncesi güven inşa edemiyor mu?",
+      "title": "Klinikler ve diş hekimleri",
+      "subtitle": "Klinikler, diş hekimleri ve estetik merkezleri için web siteleri",
+      "pain": "Hastalar iletişime geçmeden önce tedavileri, doktorları, güvenliği ve konsültasyon seçeneklerini anlayabilsin.",
       "deliverables": [
-        "Doktor ve tedavi profilleri",
-        "Konsültasyon akışı",
-        "Çok dilli açıklık",
+        "Tedavi ve doktor sayfaları",
+        "Konsültasyon talep akışı",
+        "Güvenlik ve SSS içeriği",
         "Tıbbi SEO için yapılandırılmış veri"
       ],
-      "cta": "Sağlık çözümlerini görün",
+      "cta": "Klinik web sitelerini gör",
       "tagline": "İlk ziyaret öncesi hasta güveni inşa edin",
       "priceFrom": "$1,500'den başlayan — doktor profilleri ve rezervasyon dahil"
     },
     "beauty": {
-      "title": "Güzellik",
-      "subtitle": "Salonlar, medspalar ve stüdyolar için randevu odaklı web siteleri",
-      "pain": "Randevular Instagram DM'lerine mi dağılmış? Net bir hizmet menüsü veya fiyatlandırma yok mu?",
+      "title": "Güzellik stüdyoları ve salonlar",
+      "subtitle": "Salonlar, medspalar ve stüdyolar için web siteleri",
+      "pain": "Instagram ve Google ziyaretçilerini net hizmetler, fiyatlar, kanıt ve iletişim akışıyla randevu taleplerine dönüştürün.",
       "deliverables": [
-        "Hizmet menüsü açıklığı",
-        "Randevu akışı",
-        "Fiyat görünürlüğü",
-        "Promosyon sistemi ve tekrar eden iş"
+        "Hizmet ve fiyat menüsü",
+        "Randevu talep akışı",
+        "Kanıt, galeri ve yorumlar",
+        "Promosyon sayfaları ve tekrar rezervasyon hatırlatmaları"
       ],
-      "cta": "Güzellik çözümlerini görün",
+      "cta": "Güzellik web sitelerini gör",
       "tagline": "DM'lerinizi değil, randevu defterinizi doldurun",
       "priceFrom": "$700'den başlayan — hizmet menüsü ve çevrimiçi randevu dahil"
     },
-    "sectionLabel": "Neler yapıyoruz.",
-    "kicker": "Üç bölüm",
-    "departmentLabel": "Bölüm"
+    "sectionLabel": "Ne inşa ederim.",
+    "kicker": "Üç hizmet alanı",
+    "departmentLabel": "Hizmet",
+    "problemLabel": "İşletme problemi",
+    "builtLabel": "Ne inşa edilir"
   },
   "audit": {
-    "heading": "Web sitesi denetimleri",
-    "subtitle": "İmza niteliğinde müşteri çekme aracınız. Marka netliği, hız, yerel SEO, içerik yapısı, erişilebilirlik ve dönüşüm UX'i hakkında detaylı bir puan kartı alın.",
-    "cta": "Ücretsiz denetim talep edin",
+    "heading": "Web sitesi denetimiyle başlayın",
+    "subtitle": "Mevcut web sitenizi gönderin; netlik, mobil UX, iletişim yolu, yerel SEO, hız, güven ve çok dilli temelleri sade dille inceleyeyim.",
+    "cta": "Web sitesi denetimi iste",
     "categories": {
       "brand": "Marka netliği",
       "speed": "Performans ve hız",
       "seo": "Yerel SEO",
       "content": "İçerik yapısı",
       "accessibility": "Erişilebilirlik",
-      "conversion": "Dönüşüm UX'i"
+      "conversion": "İletişim ve rezervasyon UX'i"
     },
-    "sectionLabel": "Nasıl denetliyoruz.",
-    "panel_kicker": "Şeffaf değerlendirme",
+    "sectionLabel": "Web sitesi denetimi.",
+    "panel_kicker": "Rapor önizlemesi",
     "scorecard_title": "Web sitesi puan kartı",
     "manual_review": "Manuel inceleme",
     "note": "Sahte puanlar ve otomatik boş metin yok. Rapor, güveni, arama görünürlüğünü ve rezervasyonları neyin engellediğini açıklar; ardından düzeltmeleri öncelik sırasına koyar."
@@ -176,608 +180,405 @@
     "sectionLabel": "Nasıl çalışırım.",
     "founder": {
       "sectionLabel": "Nasıl çalışırım.",
-      "heading": "Doğrudan Jasper ile inşa edilir.",
-      "bio": "Ben Jasper Tjeerd IJtsma, Batum merkezli Hollandalı bir web sitesi geliştiricisiyim. Batumi Lighthouse, yerel hizmet işletmeleri için rezervasyon odaklı web siteleri kurduğum odaklı stüdyomdur.",
-      "story": [
-        "Batumi Lighthouse'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
-        "Rezervasyon, yerel SEO, çok dilli UX ve güvenilirliğin önemli olduğu oteller, klinikler, stüdyolar ve hizmet işletmeleri için odaklı web siteleri kurarım.",
-        "Müşteriler yapı ve tasarımdan frontend geliştirme, yayın ve iyileştirmeye kadar doğrudan benimle çalışır; bu da kaliteyi ve sorumluluğu görünür tutar."
-      ],
-      "location": "Batumi merkezli",
-      "since": "Hollandalı kurucu",
-      "cta": "Projeni başlat",
+      "heading": "Doğrudan Jasper ile çalışırsınız.",
+      "bio": "Ben Jasper, Batumi'de yaşayan Hollandalı bir web geliştiricisiyim. Batumi Lighthouse; oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için daha net web siteleri ve daha fazla doğrudan talep üretmeye çalışan küçük stüdyom. Denetim, plan, yapı, tasarım, kod, yerel SEO temeli, yayın ve destek işlerini kişisel olarak yürütürüm.",
+      "location": "Batumi, Gürcistan",
+      "since": "Kurucu liderliğinde stüdyo",
+      "cta": "Mevcut siteni gönder",
+      "secondaryCta": "Stüdyo hakkında oku",
       "statClients": "Ana sektör",
       "statLanguages": "Planlanan dil",
       "statAvailable": "Seçili projeler alıyorum",
-      "imageAlt": "Batumi Lighthouse kurucusunun çalışma alanı"
-    },
-    "operating": {
-      "label": "Çalışma modeli",
-      "heading": "Tanıdan iyileştirmeye tek sorumlu kişi.",
-      "items": {
-        "diagnose": "Diagnose",
-        "structure": "Structure",
-        "design": "Design",
-        "build": "Build",
-        "launch": "Launch",
-        "improve": "Improve"
-      }
-    },
-    "direct": {
-      "label": "Doğrudan yaptıklarım",
-      "items": {
-        "ux": "UX structure",
-        "frontend": "frontend implementation",
-        "localSeo": "local SEO basics",
-        "multilingual": "multilingual setup",
-        "checks": "performance/accessibility checks",
-        "leadFlows": "form and lead flows"
-      }
-    },
-    "not_fake": {
-      "label": "Sahte göstermediklerim",
-      "items": {
-        "numbers": "sahte müşteri sayıları yok",
-        "decoration": "dekorasyon öncelikli web siteleri yok",
-        "templates": "şişirilmiş şablonlar yok",
-        "guarantees": "belirsiz garantiler yok"
-      }
+      "imageAlt": "Batumi Lighthouse çalışma alanı için temsili görsel",
+      "photoNote": "Gerçek ve onaylı bir fotoğraf olmadığı sürece burada kurucu portresi gösterilmez.",
+      "panelLabel": "Kurucu liderliğinde model",
+      "panelHeading": "Jasper'ın kişisel olarak üstlendikleri",
+      "responsibilities": [
+        {
+          "title": "Web sitesi denetimi ve plan",
+          "desc": "Mevcut siteyi, rakipleri, teklifi, dilleri, temel arama yapısını ve ana iletişim ya da rezervasyon yolunu incelerim."
+        },
+        {
+          "title": "Yapı, metin yönü ve tasarım",
+          "desc": "Sayfa sırasını, içerik önceliklerini, CTA'ları ve görsel yönü sizinle birlikte netleştiririm."
+        },
+        {
+          "title": "Next.js geliştirme ve yayın",
+          "desc": "Siteyi geliştirir; responsive düzenleri, metadata'yı, formları, hızı ve yayın kontrol listesini kontrol ederim."
+        },
+        {
+          "title": "Yerel SEO ve teslim",
+          "desc": "Pratik yerel arama temellerini kurar ve yayından sonra neyin güncellenmesi gerektiğini açıklarım."
+        }
+      ],
+      "supportTitle": "Uzman destek ne zaman girer",
+      "supportBody": "Proje daha güçlü fotoğraf, çeviri kontrolü, marka varlıkları veya içerik üretimi gerektirirse bunu açıkça ekler ve kapsamı net tutarım.",
+      "noFakeTitle": "Neyi sahte göstermem",
+      "noFakeBody": "Sahte yorum, uydurma müşteri sonucu, fake metrik, kopya yerleşim, stok logo veya sahte kurucu kanıtı yok. İç örnek, placeholder ya da tahminse açıkça öyle etiketlenir."
     },
     "features": {
-      "sectionLabel": "Bu model neden işler.",
-      "heading": "Küçük stüdyo, senior dikkat",
+      "sectionLabel": "Bu projeniz için ne anlama gelir.",
+      "heading": "Net sorumluluğu olan küçük stüdyo",
       "items": [
         {
           "title": "Tek doğrudan temas",
-          "desc": "Siteyi planlayan, tasarlayan, kodlayan ve yayına alan kişiyle konuşursunuz."
+          "desc": "Satış katmanı veya değişen hesap ekibi yerine Jasper ile konuşursunuz."
         },
         {
-          "title": "Fotoğrafa hazır",
-          "desc": "Sayfalar güçlü özgün görseller etrafında planlanır; gerektiğinde profesyonel fotoğrafçı desteği eklenir."
+          "title": "Önce gerçek içerik",
+          "desc": "Site gerçek odalarınız, tedavileriniz, hizmetleriniz, fiyatlarınız, kanıtlarınız ve politikalarınız etrafında planlanır."
         },
         {
-          "title": "Önce performans",
-          "desc": "Hafif Next.js sayfaları, optimize edilmiş medya ve en baştan net Core Web Vitals hedefleri."
+          "title": "Gerektiğinde uzmanlar",
+          "desc": "Fotoğraf, içerik veya çeviri desteği projeyi iyileştirdiğinde eklenir; belirsiz ajans işi gibi saklanmaz."
         },
         {
-          "title": "Yerel SEO baştan dahil",
-          "desc": "İşletme schema'sı, hizmet sayfaları ve yerel arama metni lansmandan önce planlanır."
+          "title": "Sahte kanıt yok",
+          "desc": "Örnek çalışmalar, tahminler, placeholder'lar ve yayınlanmamış sonuçlar açıkça etiketlenir."
         }
       ],
-      "intro": "Küçük bir stüdyo ancak sorumluluklar görünür olduğunda iyi çalışır. Bunlar doğrudan üstlendiğim parçalar ve uzman desteğinin projeye girdiği yerlerdir."
+      "intro": "Kurucu liderliği pratik olmalıdır. Kararları kimin verdiğini, Jasper'ın hangi parçaları üstlendiğini ve dış desteğin ne zaman gerektiğini bilirsiniz."
     }
   },
   "pricing": {
-    "heading": "Clear website development scopes.",
-    "subtitle": "Typical ranges for founder-led website development, technical setup, content structure, and monthly care. Final proposals are scoped after the business model, content needs, integrations, and launch requirements are reviewed.",
-    "hero_eyebrow": "Pricing system",
-    "hero_note_label": "How ranges work",
-    "hero_note": "These are planning ranges, not one-click packages. A scoped proposal confirms pages, integrations, content responsibilities, timeline, and monthly support before work begins.",
-    "hero_points": [
-      "Setup covers strategy, UX, design, development, launch, and basic SEO.",
-      "Monthly care covers hosting coordination, maintenance, monitoring, and small updates.",
-      "Integrations, photography, and multilingual content are scoped separately when needed."
-    ],
-    "comparison_eyebrow": "Web sitesi paketleri",
-    "comparison_heading": "Web Sitesi Geliştirme Paketleri",
-    "comparison_subtitle": "Rezervasyon, randevu, danışma veya doğrudan talep yolunu netleştirmesi gereken hizmet işletmeleri için üç build kapsamı.",
-    "audit_section_eyebrow": "Diagnostik ürün",
-    "audit_section_heading": "Henüz build için hazır değil misiniz? Denetimle başlayın.",
-    "audit_section_subtitle": "Denetim, tam web sitesi build'ine geçmeden önce net teşhis isteyen işletmeler için ayrı bir teknik ve ticari review ürünüdür.",
+    "heading": "Fiyatlar",
+    "subtitle": "Batumi işletmeleri için tipik başlangıç aralıkları. Son kapsam sayfalara, dillere, içeriğe, entegrasyonlara ve yayın desteğine bağlıdır.",
     "beauty": {
-      "scope_label": "Beauty scope",
-      "name": "Beauty Presence System",
-      "best_fit": "Salons, beauty studios, medspas, nail studios, hair studios, and small local service businesses.",
-      "outcome": "A clearer service menu, trust layer, and appointment path that turns social and search visitors into qualified enquiries.",
-      "setup": "$900-$1,600",
-      "monthly": "$69-$119/mo",
+      "name": "Güzellik stüdyosu web sitesi",
+      "best_fit": "Küçük güzellik salonları, medspalar, tırnak ve saç stüdyoları",
+      "setup": "$700–$1,200",
+      "monthly": "$59–$99/ay",
+      "outcome": "Küçük bir stüdyo için daha net hizmet menüsü, yerel arama temeli ve iletişim ya da randevu yolu.",
       "includes": [
-        "Service menu and pricing structure",
-        "Appointment and WhatsApp request flow",
-        "Gallery, reviews, and location trust sections",
-        "Core pages for services, team, contact, and offers"
+        "5–8 sayfa",
+        "Hizmet menüsü",
+        "Fiyatlandırma alanı",
+        "Temel yerel SEO",
+        "GBP desteği",
+        "İletişim/WhatsApp akışı"
       ],
-      "technical": [
-        "Responsive Next.js build",
-        "Local business schema basics",
-        "Analytics and form tracking setup"
+      "best_upsells": [
+        "Promosyon açılış sayfaları",
+        "Yorum isteme akışı",
+        "Instagram içerik desteği"
       ],
-      "not_included": [
-        "Professional photography production",
-        "Paid advertising management",
-        "Custom booking platform development"
-      ]
+      "scope_note": "Profesyonel fotoğraf, ücretli reklamlar ve gelişmiş randevu yazılımı kurulumu ayrıca kapsamlandırılır."
     },
     "medical": {
-      "scope_label": "Clinic scope",
-      "name": "Clinic Trust Platform",
-      "best_fit": "Dental, aesthetic, wellness, specialist clinics, and practices that need stronger patient trust before contact.",
-      "outcome": "Treatment clarity, doctor credibility, multilingual intake, and a consultation path built around patient confidence.",
-      "setup": "$1,800-$3,200",
-      "monthly": "$119-$199/mo",
+      "name": "Klinik Web Sitesi",
+      "best_fit": "Diş, estetik, sağlıklı yaşam, uzman klinikleri",
+      "setup": "$1,500–$2,750",
+      "monthly": "$99–$189/ay",
+      "outcome": "Tedavi netliği, uzman bilgisi ve daha güvenli talep akışı olan güven odaklı klinik sitesi.",
       "includes": [
-        "Treatment category and detail pages",
-        "Doctor or specialist profile structure",
-        "Consultation request and intake flow",
-        "FAQ, reviews, safety, and trust content blocks"
+        "8–16 sayfa",
+        "Doktor/tedavi şablonları",
+        "Çok dilli yapı",
+        "Konsültasyon formu",
+        "Yapılandırılmış veri",
+        "Değerlendirmeler/SSS katmanı"
       ],
-      "technical": [
-        "Structured data for clinic and services",
-        "Accessible form and validation flow",
-        "Multilingual route architecture"
+      "best_upsells": [
+        "İçerik üretimi",
+        "Tedavi makale kümesi",
+        "Müşteri nitelendirme iş akışı"
       ],
-      "not_included": [
-        "Medical copywriting without source material",
-        "Patient record or CRM implementation",
-        "Regulated claims review by legal counsel"
-      ]
+      "scope_note": "Tıbbi/hukuki inceleme, klinik metin yazımı ve üçüncü taraf hasta sistemleri ayrıca kapsamlandırılır."
     },
     "hospitality": {
-      "scope_label": "Hotel scope",
-      "name": "Hotel Direct Booking Platform",
-      "best_fit": "Boutique hotels, guesthouses, aparthotels, villa operators, and hospitality businesses reducing OTA dependency.",
-      "outcome": "Room clarity, location trust, multilingual search visibility, and a direct booking path that supports higher-intent guests.",
-      "setup": "$2,600-$4,800",
-      "monthly": "$159-$279/mo",
+      "name": "Otel Web Sitesi",
+      "best_fit": "Butik oteller, apart oteller, pansiyonlar, villa işletmecileri",
+      "setup": "$2,000–$4,000",
+      "monthly": "$129–$249/ay",
+      "outcome": "Daha güçlü oda sayfaları, teklifler, yerel bağlam ve rezervasyon yönlendirmesi olan doğrudan talep odaklı otel sitesi.",
       "includes": [
-        "Room, offer, policy, and location pages",
-        "Direct booking CTA and enquiry architecture",
-        "Multilingual guest journey structure",
-        "Trust, amenities, gallery, and local-area content blocks"
+        "10–20 sayfa",
+        "Oda şablonları ve teklifler",
+        "Çok dilli UX",
+        "Doğrudan rezervasyon entegrasyonu",
+        "Performans ve CRO kontrolleri",
+        "PMS/rezervasyon entegrasyon desteği"
       ],
-      "technical": [
-        "Hotel and lodging schema basics",
-        "Performance budget for media-heavy pages",
-        "Booking/PMS integration support layer"
+      "best_upsells": [
+        "Profesyonel fotoğrafçılık",
+        "PMS/rezervasyon entegrasyonları",
+        "Yerel çekim içerikleri",
+        "Ücretli arama açılış sayfaları"
       ],
-      "not_included": [
-        "PMS subscription or third-party booking fees",
-        "Large photo/video production days",
-        "Paid OTA or paid search campaign management"
-      ]
+      "scope_note": "Rezervasyon motoru ücretleri, PMS kuralları, ödemeler ve oda fotoğrafçılığı ayrıca kapsamlandırılır."
     },
-    "audit": {
-      "scope_label": "Diagnostic review",
-      "name": "Website Audit / Technical Review",
-      "best_fit": "Businesses that need a clear diagnosis before redesign, rebuild, SEO work, or performance fixes.",
-      "outcome": "A prioritized report explaining what blocks trust, search visibility, speed, accessibility, and booking action.",
-      "setup": "$250-$650",
-      "monthly": "No monthly plan required",
-      "includes": [
-        "Manual UX and conversion review",
-        "Local SEO and content structure review",
-        "Performance and Core Web Vitals checks",
-        "Prioritized fix list and next-step scope"
-      ],
-      "technical": [
-        "Technical crawl and page review",
-        "Schema and metadata inspection",
-        "Accessibility basics and form checks"
-      ],
-      "not_included": [
-        "Implementation of fixes",
-        "Full redesign concepts",
-        "Ongoing support unless scoped after review"
-      ]
+    "audit_offer": {
+      "kicker": "Kolay ilk adım",
+      "title": "Web sitesi denetimiyle başlayın",
+      "body": "Mevcut sitenizi gönderin; netlik, mobil UX, iletişim yolları, yerel SEO temelleri, hız, güven ve çok dilli yapıyı inceleyeyim.",
+      "cta": "Denetim iste"
     },
-    "cta": "Request a scoped proposal",
-    "setup_label": "Typical setup range",
-    "monthly_label": "Monthly care range",
-    "best_for_label": "Best for",
-    "outcome_label": "Business outcome",
-    "includes_label": "Included modules",
-    "technical_label": "Technical deliverables",
-    "not_included_label": "Dahil değil / optional add-ons",
-    "audit_not_included_label": "Dahil değil",
-    "who_for_label": "Kimler için",
-    "audit_price_label": "Denetim aralığı",
-    "turnaround_label": "Turnaround",
-    "audit_cta": "Web sitesi denetimi iste",
-    "best_upsells_label": "Useful add-ons",
-    "most_popular": "Common scope",
-    "see_full_pricing": "Open full scope details",
-    "guarantee": "No work starts from a vague package. You receive a scoped proposal with deliverables, responsibilities, exclusions, timeline, and care options before any build begins.",
-    "feature_label": "Feature",
+    "cta": "Bu paketi konuşalım",
+    "setup_label": "Tipik kurulum",
+    "monthly_label": "Aylık bakım",
+    "best_for_label": "İçin en iyi",
+    "outcome_label": "Sonuç",
+    "includes_label": "Ne alırsınız",
+    "scope_note_label": "Ayrıca kapsamlandırılır",
+    "best_upsells_label": "En iyi ek satışlar",
+    "sectionLabel": "Yatırım.",
+    "most_popular": "En popüler",
+    "see_full_pricing": "Tüm fiyatlar →",
+    "guarantee": "Sürpriz yok. İş başlamadan önce kapsam, zamanlama ve şeffaf fiyatlarla detaylı bir teklif alırsınız. Aylık planı 30 gün önceden bildirerek iptal edin — web siteniz sizin kalır.",
+    "comparison_heading": "Özellik karşılaştırması",
     "comparison": {
-      "pages": "Custom pages",
-      "service_menu": "Service menu",
-      "local_seo": "Local SEO",
-      "multilingual": "Multilingual support",
-      "booking_integration": "Booking integration",
-      "doctor_profiles": "Doctor / specialist profiles",
-      "structured_data": "Structured data (schema)",
-      "review_system": "Review management",
-      "consultation_form": "Consultation booking",
-      "promo_pages": "Promotional landing pages",
-      "performance_optimization": "Performance optimization",
+      "pages": "Özel sayfalar",
+      "service_menu": "Hizmet menüsü",
+      "local_seo": "Yerel SEO",
+      "multilingual": "Çok dilli destek",
+      "booking_integration": "Rezervasyon entegrasyonu",
+      "doctor_profiles": "Doktor / uzman profilleri",
+      "structured_data": "Yapılandırılmış veri (şema)",
+      "review_system": "Değerlendirme yönetimi",
+      "consultation_form": "Konsültasyon randevusu",
+      "promo_pages": "Promosyon açılış sayfaları",
+      "performance_optimization": "Performans optimizasyonu",
       "gbp_support": "Google Business Profile",
-      "analytics": "Analytics & CRO",
-      "priority_support": "Priority support",
-      "custom_integrations": "Custom integrations"
+      "analytics": "Analitik ve CRO",
+      "priority_support": "Öncelikli destek",
+      "custom_integrations": "Özel entegrasyonlar"
     },
-    "calculator_label": "Scope estimator",
-    "calculator_heading": "Estimate a development scope",
-    "calculator_subtitle": "Use this as a planning estimate for build complexity. The final proposal depends on content, integrations, and launch requirements.",
-    "calculator_note": "The estimator is not a quote. It helps identify whether the project is closer to a small presence build, a trust platform, or an integration-heavy direct booking system.",
-    "calculator_sector": "Business model",
-    "calculator_sector_beauty": "Beauty",
-    "calculator_sector_medical": "Clinic",
-    "calculator_sector_hospitality": "Hotel",
-    "calculator_pages": "Planned pages",
-    "calculator_addons": "Scope variables",
-    "calculator_multilingual": "Multilingual content structure",
-    "calculator_booking": "Booking or PMS integration support",
-    "calculator_seo": "Local SEO content cluster",
-    "calculator_care": "Maintenance / care plan",
-    "calculator_setup": "Estimated setup",
-    "calculator_monthly": "Estimated care",
-    "calculator_cta": "Request a scoped proposal",
-    "sectionLabel": "Pricing."
+    "calculator_heading": "Projenizi tahmin edin",
+    "calculator_subtitle": "İhtiyaçlarınıza göre anında tahmin alın.",
+    "calculator_sector": "Sektörünüz",
+    "calculator_sector_beauty": "Güzellik",
+    "calculator_sector_medical": "Sağlık",
+    "calculator_sector_hospitality": "Konaklama",
+    "calculator_pages": "Sayfa sayısı",
+    "calculator_addons": "Ek özellikler",
+    "calculator_multilingual": "Çok dilli destek",
+    "calculator_booking": "Rezervasyon akışı",
+    "calculator_seo": "SEO paketi",
+    "calculator_priority": "Öncelikli destek",
+    "calculator_setup": "Tahmini kurulum",
+    "calculator_monthly": "Tahmini aylık",
+    "calculator_cta": "Kesin teklif alın",
+    "feature_label": "Özellik"
   },
   "pricingPage": {
-    "add_ons_eyebrow": "Add-ons",
-    "add_ons_heading": "Scope add-ons that change the work.",
-    "add_ons_subtitle": "Add-ons are priced by effort and dependency. They are separated from the base scope so the proposal stays readable.",
+    "add_ons_heading": "Ek özellikler ve seçenekler",
+    "add_ons_subtitle": "Her işletme farklıdır. Bu ek özellikler paketinizi büyüdükçe özelleştirmenize olanak tanır.",
     "add_ons": [
       {
-        "name": "Fotoğraf/içerik desteği",
-        "description": "Oda, tedavi, hizmet, ekip veya lokasyon görselleri için çekim planı, içerik öncelikleri ve koordinasyon.",
-        "price": "Scoped by shoot"
+        "name": "Özel özellikler",
+        "description": "Özel entegrasyonlar, gelişmiş rezervasyon mantığı, üye portalları veya işletmenize özgü herhangi bir şey.",
+        "price": "$250'den başlayan"
       },
       {
-        "name": "Booking/PMS integration support",
-        "description": "Support for connecting booking tools, PMS links, forms, or third-party reservation flows.",
-        "price": "From $350"
+        "name": "Ek sayfalar",
+        "description": "Paketinizin ötesinde daha fazla sayfa mı gerekiyor? Her ek sayfa aynı standartta tasarlanır ve inşa edilir.",
+        "price": "$75–$150/sayfa"
       },
       {
-        "name": "Multilingual content",
-        "description": "Language-route structure and content adaptation for English, Georgian, Russian, or Turkish pages.",
-        "price": "From $250/language"
-      },
-      {
-        "name": "Local SEO content cluster",
-        "description": "Service, treatment, room, or location pages planned around high-intent local search topics.",
-        "price": "From $450"
-      },
-      {
-        "name": "Care / maintenance plan",
-        "description": "Ongoing updates, technical monitoring, small content changes, and launch support after the site is live.",
-        "price": "From $69/mo"
+        "name": "Öncelikli destek",
+        "description": "Aynı gün yanıt süresi, hafta sonu kullanılabilirliği ve acil ihtiyaçlar için özel Slack kanalı.",
+        "price": "$49/ay ek"
       }
     ],
-    "process_eyebrow": "Proposal process",
-    "process_heading": "How the final price is scoped",
-    "process_subtitle": "The proposal is based on the actual site system, not a loose page count. The goal is clarity before design or development starts.",
+    "process_heading": "Nasıl çalışır",
+    "process_subtitle": "İlk görüşmeden yayına alınan web sitesine kadar net, beş adımlı bir süreç.",
     "process_steps": [
       {
-        "title": "Audit",
-        "description": "The current website, business model, content, competitors, and conversion path are reviewed."
+        "title": "Denetim",
+        "description": "Mevcut web varlığınızı, rakiplerinizi ve pazar konumunuzu inceleyerek fırsatları belirlerim."
       },
       {
-        "title": "Fit call",
-        "description": "We clarify goals, users, languages, integrations, content responsibilities, and launch constraints."
+        "title": "Uygunluk görüşmesi",
+        "description": "Hedeflerinizi, zaman çizelgenizi ve bütçenizi anlamak için 30 dakikalık bir görüşme. Satış baskısı yok — sadece dürüst tavsiye."
       },
       {
-        "title": "Scope",
-        "description": "The proposal separates included modules, technical deliverables, exclusions, and optional add-ons."
+        "title": "Teklif",
+        "description": "Kapsam, zaman çizelgesi ve şeffaf fiyatlandırma içeren detaylı bir teklif alırsınız. Gizli ücret yok."
       },
       {
-        "title": "Build",
-        "description": "Design and development move through structured checkpoints so the scope remains controlled."
+        "title": "İnşa",
+        "description": "Sitenizi düzenli kontrollerle tasarlar, geliştirir ve test ederim. Sürecin her adımında ilerlemeyi görürsünüz."
       },
       {
-        "title": "Launch",
-        "description": "The site is tested for forms, responsive behavior, SEO basics, performance, redirects, and care handoff."
+        "title": "Yayın",
+        "description": "Siteniz tam SEO kurulumu, performans optimizasyonu ve sürekli destek dahil yayına girer."
       }
     ],
-    "faq_eyebrow": "Pricing FAQ",
-    "faq_heading": "Common scope questions",
+    "faq_heading": "Fiyatlandırma SSS",
     "faq_items": [
       {
-        "q": "Why are prices shown as ranges?",
-        "a": "The same sector can require very different work depending on page count, content readiness, integrations, languages, and launch risk. The range keeps early planning honest."
+        "q": "Kurulum ücreti tek seferlik bir maliyet mi?",
+        "a": "Evet. Kurulum ücreti tasarım, geliştirme, içerik stratejisi ve yayını kapsar. Gizli maliyet veya sürpriz fatura yoktur."
       },
       {
-        "q": "Is monthly care required?",
-        "a": "Monthly care is recommended for active businesses but not forced into every scope. The proposal separates setup work from ongoing maintenance."
+        "q": "Aylık planı iptal edebilir miyim?",
+        "a": "Aylık plan barındırma, bakım, güvenlik güncellemeleri ve desteği kapsar. 30 gün önceden bildirimle iptal edebilirsiniz — web siteniz sizin kalır."
       },
       {
-        "q": "Can you work with an existing booking tool?",
-        "a": "Yes. Booking and PMS work is scoped after the tool, embed method, forms, redirects, and tracking requirements are known."
+        "q": "Paketler arasında bir şeye ihtiyacım olursa?",
+        "a": "Çoğu müşteri bir paketle başlar ve özelleştirmeler ekler. Uygunluk görüşmesinde tam olarak neye ihtiyacınız olduğunu öneririm — ne daha fazla, ne daha az."
       },
       {
-        "q": "Can the audit happen before a full build?",
-        "a": "Yes. The audit is often the cleanest starting point because it identifies what should be fixed, rebuilt, or left alone."
+        "q": "Ödeme planı sunuyor musunuz?",
+        "a": "Evet. Daha büyük projeler için kurulum ücretini iki veya üç taksitlere bölebilirim. Bunu teklif aşamasında kararlaştıracağız."
       }
-    ],
-    "cta_eyebrow": "Scoped next step",
-    "cta_heading": "Request a scoped proposal.",
-    "cta_subtitle": "Send the business type, current website, required languages, and any booking tools. The reply will focus on scope, not pressure."
+    ]
   },
   "aboutPage": {
-    "hero": {
-      "eyebrow": "Founder-led website development",
-      "title": "Ben Jasper, Batum merkezli Hollandalı bir web geliştiricisiyim.",
-      "subtitle": "Oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleriyle strateji, UX, frontend kodu, yerel SEO temelleri, yayın ve iyileştirme üzerinde doğrudan çalışırım.",
-      "story": [
-        "Batumi Lighthouse'yu, güçlü Batum işletmelerinin yavaş, belirsiz veya genel web siteleri yüzünden çevrim içi güven kaybettiğini gördükten sonra başlattım.",
-        "Rezervasyon, yerel SEO, çok dilli UX ve güvenilirliğin önemli olduğu oteller, klinikler, stüdyolar ve hizmet işletmeleri için odaklı web siteleri kurarım.",
-        "Müşteriler yapı ve tasarımdan frontend geliştirme, yayın ve iyileştirmeye kadar doğrudan benimle çalışır; bu da kaliteyi ve sorumluluğu görünür tutar."
-      ],
-      "panel_label": "Jasper Tjeerd IJtsma / Batumi Lighthouse",
-      "panel_title": "Hollandalı kurucu. Frontend builder. Batum odaklı.",
-      "panel_body": "Stüdyo, fazla account management katmanları olmadan daha net rezervasyon, güven, arama görünürlüğü, çok dilli yapı ve teknik güvenilirlik isteyen yerel hizmet işletmeleri için kuruldu.",
-      "panel_points": [
-        "Batum merkezli Hollandalı kurucu",
-        "Hotels, clinics, studios, and service businesses",
-        "Strateji, UX, kod, SEO, yayın ve iyileştirme"
-      ]
-    },
-    "operating": {
-      "eyebrow": "Operating model",
-      "heading": "A controlled build process from diagnosis to improvement.",
-      "subtitle": "The work is organized as a practical website system, not a loose design pass. Each step exists to reduce ambiguity before code and launch.",
-      "items": {
-        "diagnose": {
-          "title": "Diagnose",
-          "description": "Review the business model, current site, search intent, competitors, trust gaps, and booking path."
-        },
-        "structure": {
-          "title": "Structure",
-          "description": "Map pages, routes, content blocks, calls to action, multilingual needs, and lead flow logic."
-        },
-        "design": {
-          "title": "Design",
-          "description": "Create a high-contrast interface around the real decision path, not decorative layout trends."
-        },
-        "build": {
-          "title": "Build",
-          "description": "Implement responsive pages, forms, structured data, performance budgets, and reusable components."
-        },
-        "launch": {
-          "title": "Launch",
-          "description": "Test forms, metadata, redirects, mobile layouts, analytics basics, and deployment details."
-        },
-        "improve": {
-          "title": "Improve",
-          "description": "Use audit findings, support requests, and content needs to keep the website useful after launch."
-        }
+    "heading": "Stüdyo hakkında",
+    "story_heading": "Hikaye",
+    "story_body_1": "Batumi Lighthouse, Batum'da odaklı çalışan tek kişilik bir web stüdyosu. Projeyi hesap yönetimi katmanlarından geçirmek yerine strateji, UX, kod, SEO, yayın ve destek üzerinde doğrudan çalışırım.",
+    "story_body_2": "Daha güçlü görsellere ihtiyaç duyan projelerde, web sitesini özgün bir çekim listesi etrafında planlar ve profesyonel fotoğrafçı desteği dahil ederim. Amaç basit: site, yeni renklerle boyanmış bir şablon gibi değil, sizin işletmeniz gibi hissettirmeli.",
+    "approach_heading": "Sektöre özel, genel değil",
+    "approach_body": "Genel web siteleri geliştirmiyorum. Otellerin doğrudan rezervasyon almasına, kliniklerin hasta güveni inşa etmesine ve güzellik işletmelerinin randevu defterlerini doldurmasına yardımcı olan sektöre özel sistemler geliştiriyorum. Bu uzmanlık, bilgi mimarisinden SEO stratejisine kadar her kararın işletmenizin gerçekten nasıl çalıştığına dayanmasını sağlar.",
+    "why_batumi_heading": "Neden Batumi?",
+    "why_batumi_body_1": "Batum, konaklama, sağlık ve hizmet işletmeleri için büyüyen bir pazar; ancak birçok yerel web sitesi rezervasyon, güven ve çok dilli iletişimi hâlâ gereğinden zor hale getiriyor.",
+    "why_batumi_body_2": "Ben tam bu boşlukta çalışıyorum: işletmenin daha kolay bulunmasını, anlaşılmasını ve iletişime geçilmesini sağlayan pratik web siteleri.",
+    "process_heading": "Nasıl çalışırım",
+    "process_steps": [
+      {
+        "title": "Denetim",
+        "description": "Mevcut web varlığınızı, rakiplerinizi ve pazar konumunuzu inceleyerek fırsatları belirlerim."
+      },
+      {
+        "title": "Uygunluk görüşmesi",
+        "description": "Hedeflerinizi, zaman çizelgenizi ve bütçenizi anlamak için 30 dakikalık bir görüşme. Satış baskısı yok — sadece dürüst tavsiye."
+      },
+      {
+        "title": "Teklif",
+        "description": "Kapsam, zaman çizelgesi ve şeffaf fiyatlandırma içeren detaylı bir teklif alırsınız. Gizli ücret yok."
+      },
+      {
+        "title": "İnşa",
+        "description": "Sitenizi düzenli kontrollerle tasarlar, geliştirir ve test ederim. Sürecin her adımında ilerlemeyi görürsünüz."
+      },
+      {
+        "title": "Yayın",
+        "description": "Siteniz tam SEO kurulumu, performans optimizasyonu ve sürekli destek dahil yayına girer."
       }
-    },
-    "stack": {
-      "eyebrow": "Technical stack",
-      "heading": "Tools chosen for clear, maintainable website systems.",
-      "subtitle": "The stack is practical: fast pages, structured content, multilingual routing, clear forms, and enough discipline to maintain the site after launch.",
-      "items": {
-        "nextjs": "Next.js",
-        "react": "React",
-        "tailwind": "Tailwind",
-        "routes": "Multilingual routes",
-        "schema": "Structured data",
-        "performance": "Performance checks",
-        "seo": "Local SEO",
-        "forms": "Form / lead flows"
+    ],
+    "tools_heading": "Kullandığım araçlar",
+    "tools_subtitle": "Hız, güvenlik ve sürdürülebilirlik için modern, güvenilir teknoloji ile inşa edilmiştir.",
+    "tools": [
+      {
+        "name": "Next.js",
+        "category": "framework"
+      },
+      {
+        "name": "TypeScript",
+        "category": "language"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "styling"
+      },
+      {
+        "name": "Hostinger",
+        "category": "hosting"
+      },
+      {
+        "name": "Prisma",
+        "category": "database"
+      },
+      {
+        "name": "React Hook Form",
+        "category": "forms"
+      },
+      {
+        "name": "Zod",
+        "category": "validation"
+      },
+      {
+        "name": "next-intl",
+        "category": "i18n"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "animation"
+      },
+      {
+        "name": "Radix UI",
+        "category": "components"
       }
-    },
-    "direct": {
-      "eyebrow": "Direct responsibility",
-      "heading": "What I do directly",
-      "items": {
-        "ux": {
-          "title": "UX structure",
-          "description": "Information architecture, page order, conversion paths, and content hierarchy."
-        },
-        "frontend": {
-          "title": "Frontend implementation",
-          "description": "Next.js, React, Tailwind, responsive layouts, component systems, and integration-ready UI."
-        },
-        "seo": {
-          "title": "Local SEO basics",
-          "description": "Metadata, service/location structure, internal links, schema basics, and search-aligned content."
-        },
-        "multilingual": {
-          "title": "Multilingual setup",
-          "description": "Dil rotaları, çevrilmiş navigasyon, yerelleştirilmiş CTA'lar ve hreflang temelleri."
-        },
-        "checks": {
-          "title": "Performance/accessibility checks",
-          "description": "Readable contrast, labels, focus states, mobile behavior, asset weight, and Core Web Vitals basics."
-        },
-        "lead_flows": {
-          "title": "Form and lead flows",
-          "description": "Rezervasyon, danışma, denetim, iletişim ve WhatsApp yolları gerçek kullanıcı niyetine göre planlanır."
-        }
-      }
-    },
-    "support": {
-      "eyebrow": "Specialist support",
-      "heading": "Specialists enter only where useful.",
-      "subtitle": "The core website system remains founder-led. Specialist support is used for specific production needs, not to hide responsibility.",
-      "items": {
-        "photography": {
-          "title": "Photography",
-          "description": "Original visual work can be planned when rooms, treatments, services, or location proof need stronger assets."
-        },
-        "content": {
-          "title": "Content support",
-          "description": "Content planning, source-material cleanup, and multilingual adaptation can be scoped when the business needs it."
-        }
-      }
-    },
-    "not_fake": {
-      "eyebrow": "What I do not fake",
-      "heading": "No inflated agency signals.",
-      "subtitle": "The site and proposals should make the work clear without pretending there are client results or guarantees that do not exist.",
-      "items": {
-        "numbers": {
-          "title": "No fake client numbers",
-          "description": "No invented client counts, testimonials, conversion lifts, or performance claims."
-        },
-        "decoration": {
-          "title": "No decoration-first design",
-          "description": "Visual choices have to support booking, trust, comprehension, speed, and maintainability."
-        },
-        "templates": {
-          "title": "No bloated templates",
-          "description": "Builds avoid unnecessary page weight, generic sections, and features that do not serve the business."
-        },
-        "guarantees": {
-          "title": "No vague guarantees",
-          "description": "Recommendations are framed as scope, evidence, and tradeoffs rather than broad promises."
-        }
-      }
-    },
-    "cta": {
-      "eyebrow": "Start with diagnosis",
-      "heading": "See what your website should fix first.",
-      "subtitle": "A manual website audit is the cleanest starting point when the next step is not obvious.",
-      "button": "Request website audit"
-    }
+    ],
+    "cta_text": "Web sitenizin ne olabileceğini görmeye hazır mısınız?",
+    "cta_button": "Ücretsiz denetimle başlayın",
+    "image_alt": "Batumi Lighthouse stüdyo işareti",
+    "image_caption": "Batum, Gürcistan merkezli kurucu liderliğinde web stüdyosu"
   },
   "contactPage": {
-    "eyebrow": "Project intake",
-    "heading": "Start with a website audit or scoped project.",
-    "subtitle": "Send the context behind the business, website, goal, budget, and timeline. I will reply with the next practical step: audit, scoped proposal, or focused improvement plan.",
-    "hero_panel": {
-      "label": "Before work starts",
-      "body": "A good project starts with a clear diagnosis and a controlled scope, not vague promises or rushed design work.",
-      "points": [
-        "Manual review before recommendation",
-        "Scope, exclusions, and timeline made explicit",
-        "Built for booking, trust, SEO, and performance"
-      ]
-    },
-    "options_eyebrow": "Contact paths",
-    "options_heading": "Choose the conversation that matches the problem.",
-    "options": [
-      {
-        "title": "Website audit",
-        "description": "For businesses that need a clear diagnosis of trust, booking flow, SEO, speed, and mobile UX before deciding what to build."
-      },
-      {
-        "title": "New website project",
-        "description": "For hotels, clinics, and studios that need a structured website system planned, designed, built, and launched."
-      },
-      {
-        "title": "Existing website improvement",
-        "description": "For websites that already exist but need better conversion paths, clearer content, local SEO, performance, or technical cleanup."
-      }
-    ],
+    "heading": "İletişime geçin",
+    "subtitle": "Projenizden bahsedin; bir iş günü içinde size döneceğim.",
     "form": {
-      "eyebrow": "Intake form",
-      "heading": "Send the project context.",
-      "subtitle": "The fields below keep the first reply focused on scope instead of generic sales questions.",
-      "name": "Your name",
-      "name_placeholder": "Your name",
-      "name_required": "Name is required",
-      "business": "Business name",
-      "business_optional": "optional",
-      "business_required": "Business name is required",
-      "email": "Email address",
-      "email_placeholder": "you@example.com",
-      "email_required": "Email is required",
-      "email_invalid": "Please enter a valid email address",
-      "phone": "Phone / WhatsApp",
-      "phone_optional": "optional",
-      "business_type": "Business type",
-      "business_type_placeholder": "Select business type",
-      "sector": "Business type",
-      "sector_optional": "optional",
-      "sector_required": "Please select a business type",
-      "sector_placeholder": "Select business type",
-      "website": "Current website",
-      "website_optional": "optional",
-      "website_invalid": "Please enter a valid URL, for example https://example.com",
-      "project_goal": "Project goal",
-      "project_goal_placeholder": "Select project goal",
-      "budget": "Budget range",
-      "budget_optional": "optional",
-      "budget_placeholder": "Select budget range",
-      "timeline": "Timeline",
-      "timeline_placeholder": "Select timeline",
-      "language": "Preferred language",
-      "language_optional": "optional",
-      "language_required": "Please select a preferred language",
-      "language_placeholder": "Select preferred language",
-      "message": "Message",
-      "message_placeholder": "Briefly describe what needs to change, what is not working now, and any booking tools, languages, or launch constraints.",
-      "message_required": "Please describe the project or audit request",
-      "message_optional": "optional",
-      "submit": "Send project request",
-      "sending": "Sending request...",
-      "error_title": "Request could not be sent",
-      "error_default": "Could not send your request. Please try again or email me directly.",
-      "success_redirect": "Redirecting...",
-      "success_title": "Request received",
-      "success_body": "Your project request has been received. I will review the context and reply with the next practical step.",
-      "success_meta": "Typical response time: one business day"
+      "name": "Adınız",
+      "name_required": "Ad gerekli",
+      "business": "İşletme adı",
+      "business_optional": "isteğe bağlı",
+      "business_required": "İşletme adı gerekli",
+      "email": "E-posta adresi",
+      "email_required": "E-posta gerekli",
+      "email_invalid": "Lütfen geçerli bir e-posta adresi girin",
+      "phone": "Telefon / WhatsApp",
+      "phone_optional": "isteğe bağlı",
+      "sector": "Sektörünüz",
+      "sector_required": "Lütfen bir sektör seçin",
+      "sector_optional": "isteğe bağlı",
+      "sector_placeholder": "Sektörünüzü seçin",
+      "website": "Mevcut web sitesi URL'si",
+      "website_optional": "isteğe bağlı",
+      "website_invalid": "Lütfen geçerli bir URL girin (örn. https://ornek.com)",
+      "budget": "Aylık bütçe aralığı",
+      "budget_optional": "isteğe bağlı",
+      "budget_placeholder": "Bütçe aralığı seçin",
+      "language": "Tercih edilen dil",
+      "language_required": "Lütfen tercih edilen bir dil seçin",
+      "language_optional": "isteğe bağlı",
+      "language_placeholder": "Tercih edilen dili seçin",
+      "message": "Projeniz hakkında bilgi verin",
+      "message_required": "Lütfen projenizden bahsedin",
+      "message_optional": "isteğe bağlı",
+      "submit": "Talebi gönder",
+      "sending": "Gönderiliyor...",
+      "error_title": "Bir şeyler ters gitti",
+      "error_default": "Talebiniz gönderilemedi. Lütfen tekrar deneyin ya da bana doğrudan e-posta gönderin.",
+      "success_redirect": "Yönlendiriliyor...",
+      "success_title": "Teşekkürler",
+      "success_body": "Talebiniz alındı. Bir iş günü içinde size döneceğim.",
+      "success_meta": "Tipik yanıt süresi: 24 saatten kısa"
     },
     "sectors": [
-      "Hotel / hospitality",
-      "Clinic / medical",
-      "Beauty studio",
-      "Other local business"
+      "Konaklama",
+      "Sağlık",
+      "Güzellik",
+      "Diğer"
     ],
     "budgets": [
-      "Audit / small improvement",
-      "$900-$1,600",
-      "$1,800-$3,200",
-      "$3,200+"
-    ],
-    "project_goals": [
-      "Website audit",
-      "New website project",
-      "Existing website improvement"
-    ],
-    "timelines": [
-      "This month",
-      "1-2 months",
-      "2-3 months",
-      "Flexible / planning"
+      "$500 altı",
+      "$500–$1,000",
+      "$1,000–$2,500",
+      "$2,500 üzeri"
     ],
     "languages": [
-      "English",
-      "Georgian",
-      "Russian",
-      "Turkish"
+      "İngilizce",
+      "Gürcüce",
+      "Rusça",
+      "Türkçe"
     ],
-    "trust": {
-      "eyebrow": "Working context",
-      "heading": "Clear scope before work starts.",
-      "items": [
-        {
-          "title": "Based in Batumi",
-          "description": "Focused on local service businesses that need international-grade web systems."
-        },
-        {
-          "title": "Founder-led",
-          "description": "You work directly with the person planning, designing, coding, and launching the site."
-        },
-        {
-          "title": "Scope first",
-          "description": "Deliverables, exclusions, timeline, and responsibilities are clarified before build work starts."
-        },
-        {
-          "title": "No fake metrics",
-          "description": "Recommendations are based on audit findings, business context, and practical technical constraints."
-        }
-      ]
-    },
-    "info_heading": "Direct contact",
-    "info_email_label": "Email",
+    "info_heading": "Bana ulaşmanın diğer yolları",
+    "info_email_label": "E-posta",
     "info_email": "hello@batumilighthouse.com",
     "info_whatsapp_label": "WhatsApp",
     "info_whatsapp": "",
-    "info_area_label": "Service area",
-    "info_area": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across Adjara and beyond.",
-    "info_whatsapp_fallback": "Use the form and include your WhatsApp number"
+    "info_area_label": "Hizmet alanı",
+    "info_area": "Batum, Gürcistan merkezliyim. Acara bölgesi ve çevresindeki konaklama, sağlık ve güzellik işletmelerine hizmet veriyorum.",
+    "info_whatsapp_fallback": "Formda WhatsApp numaranızı paylaşın"
   },
   "thankYouPage": {
     "heading": "Talebiniz için teşekkürler",
     "body": "Mesajınızı aldım ve bir iş günü içinde size geri döneceğim. Bu arada şu kaynakları yararlı bulabilirsiniz.",
-    "browse_insights": "Web sitesi denetimini incele",
+    "browse_insights": "Bilgi bankasına göz atın",
     "see_pricing": "Fiyatları görün",
-    "insights_description": "Yenileme veya kapsam kararı öncesinde manuel denetimin nasıl çalıştığını görün.",
+    "insights_description": "Web stratejisi, yerel SEO ve sektöre özel dijital tavsiyeler hakkında makaleler okuyun.",
     "pricing_description": "Paketleri karşılaştırın ve işletmeniz için uygun olanı bulun."
   },
   "faq": {
@@ -869,10 +670,41 @@
     ],
     "cta": "Uygunluk görüşmesiyle başlayın"
   },
+  "phoneFirst": {
+    "navLabel": "Telefon odaklı web siteleri",
+    "sectionLabel": "Telefon öncelikli müşteri.",
+    "heading": "Telefon öncelikli müşteri için kuruldu",
+    "intro": "Müşterileriniz telefondan arar, karşılaştırır, karar verir ve iletişime geçer. Web sitenizi, Google profilinizi, görsellerinizi, sosyal bağlantılarınızı ve rezervasyon akışınızı birbirine bağlarım; insanlar sizi anlasın ve sonraki adıma geçsin.",
+    "support": "Bulunması, anlaşılması, güvenilmesi ve iletişim kurulması kolay olun.",
+    "primaryCta": "Web sitesi denetimi talep edin",
+    "secondaryCta": "Web sitesi örneklerini görün",
+    "items": {
+      "website": {
+        "label": "Web sitesi",
+        "description": "Güven, yapı, hizmet sayfaları, fiyat netliği, çok dilli içerik ve dönüşüm odaklı iletişim yolları."
+      },
+      "google": {
+        "label": "Google varlığı",
+        "description": "Yerel keşif, yorumlar, harita görünürlüğü, çalışma saatleri, fotoğraflar ve hizmet bilgileri."
+      },
+      "visuals": {
+        "label": "Fotoğraflar ve kısa videolar",
+        "description": "Web sitesi, Google Business Profile ve sosyal medya için pratik görseller ve kısa formatlı içerik."
+      },
+      "social": {
+        "label": "Sosyal içerik",
+        "description": "İşletmeyi telefonda görünür tutan düzenli görsel kanıt akışı."
+      },
+      "booking": {
+        "label": "Rezervasyon akışı",
+        "description": "Dikkati taleplere, rezervasyonlara, randevulara veya doğrudan rezervasyonlara çeviren net aksiyon çağrıları."
+      }
+    }
+  },
   "about": {
     "heading": "Stüdyo hakkında",
-    "story": "Ben Jasper Tjeerd IJtsma, Batumi'de bulunan Hollandalı bir web geliştiricisiyim. Oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için rezervasyon, yerel SEO, çok dilli UX ve güvenilirliğin önemli olduğu odaklı web siteleri geliştiriyorum. Müşteriler yapı ve tasarımdan frontend geliştirme, yayına alma ve iyileştirmeye kadar doğrudan benimle çalışır.",
-    "approach": "Genel web siteleri geliştirmiyorum. Otellerin doğrudan rezervasyon almasına, kliniklerin hasta güveni inşa etmesine ve güzellik işletmelerinin randevu defterlerini doldurmasına yardımcı olan sektöre özel sistemler geliştiriyorum. Bu uzmanlık, bilgi mimarisinden SEO stratejisine kadar her kararın işletmenizin gerçekten nasıl çalıştığına dayanmasını sağlar.",
+    "story": "Ben Aruba'da büyümüş, şimdi Batumi'de web siteleri geliştiren Hollandalı bir geliştiriciyim. Karayipler bana misafirperverliğin detaylarda olduğunu — ve kalitenin miktardan daha önemli olduğunu öğretti. Her projeye aynı yaklaşımı getiriyorum: odaklı, hassas ve kişisel.",
+    "approach": "Sadece sunum için dekoratif web siteleri yapmam. Yerel arama, net içerik, rezervasyon akışları ve insanların harekete geçmesini sağlayan sayfalar etrafında çalışırım.",
     "why_batumi": "Batumi, Gürcistan'ın en hızlı büyüyen konaklama ve sağlık destinasyonlarından biridir. Yılda 2,7 milyondan fazla Acara bölgesi ziyareti ve ülkedeki en yüksek otel doluluk oranıyla bu şehir, sadece iyi görünen değil, performans gösteren web sitelerine ihtiyaç duyar.",
     "process": [
       "Mevcut web varlığınızı denetleme",
@@ -891,7 +723,7 @@
     "decline": "Reddet"
   },
   "results": {
-    "sectionLabel": "Yayın sistemi.",
+    "sectionLabel": "Yayın desteği.",
     "heading": "Her projenin kapsaması gerekenler",
     "items": {
       "strategy": {
@@ -907,7 +739,7 @@
         "body": "Site genel stok yerine gerçek yerel görseller kullanabilsin diye çekim listeleri ve görsel öncelikleri belirlenir."
       },
       "deployment": {
-        "title": "Teknik yayın hazırlığı",
+        "title": "Hostinger'a hazır yayın",
         "body": "Build çıktısı, yönlendirmeler, meta veriler, analitik onayı ve temel teknik SEO teslimden önce kontrol edilir."
       }
     },
@@ -915,25 +747,14 @@
     "kicker": "Teslim standartları"
   },
   "ctaBand": {
-    "heading": "Mevcut web sitenizi gösterin. Rezervasyonları, güveni ve yerel aramayı neyin engellediğini bulacağım.",
+    "heading": "Mevcut web sitenizi bana gönderin.",
     "primary": "Web sitesi denetimi talep edin",
-    "secondary": "Örnek sistemleri görüntüle",
-    "sectionLabel": "Sinyal teşhisi.",
-    "subtitle": "Odaklı bir denetim ya da yeniden kurulum aynı adımla başlar: sinyal kaybını teşhis etmek.",
-    "panelTitle": "Sinyal haritası",
-    "signals": {
-      "booking": "Rezervasyon",
-      "trust": "Güven",
-      "search": "Yerel arama"
-    },
-    "routes": {
-      "booking": "Denetim rotası",
-      "trust": "Güven bariyeri",
-      "search": "Arama görünürlüğü"
-    }
+    "secondary": "Benimle iletişime geçin",
+    "sectionLabel": "Sonraki adım.",
+    "subtitle": "Rezervasyonları, güveni ve yerel aramayı neyin engellediğini göstereceğim; ardından en net sonraki düzeltmeleri önereceğim."
   },
   "auditDescriptions": {
-    "brand": "Marka mesajınız ziyaretçilere anında net mi?",
+    "brand": "Ziyaretçiler ne sunduğunuzu hemen anlayabiliyor mu?",
     "speed": "Siteniz her cihaz ve bağlantıda hızlı mı yükleniyor?",
     "seo": "Yerel halk ve turistler sizi Google'da bulabiliyor mu?",
     "content": "Bilgileriniz kolay taranabilir şekilde yapılandırılmış mı?",
@@ -941,17 +762,7 @@
     "conversion": "Siteniz ziyaretçileri rezervasyon veya iletişime yönlendiriyor mu?"
   },
   "footer": {
-    "brand_descriptor": "Batumi'de Web Sistemleri Stüdyosu",
-    "tagline": "Batumi'deki oteller, klinikler, güzellik stüdyoları ve yerel hizmetler için denetim odaklı web siteleri.",
-    "positioning": "Rezervasyon, güven ve yerel arama yollarını daha kolay yönlendiren çok dilli web siteleri kuran küçük bir Batumi stüdyosu.",
-    "basedIn": "Batumi, Gürcistan merkezli",
-    "coordinates": "N41.6168 / E41.6367",
-    "contactHeading": "İletişim sinyali",
-    "email": "E-posta",
-    "whatsapp": "WhatsApp",
-    "keyRoutes": "Ana rotalar",
-    "sectorRoutes": "Sektör rotaları",
-    "navigationSignal": "Navigasyon sinyali",
+    "tagline": "Konaklama, sağlık ve güzellik işletmeleri için Batumi web stüdyosu.",
     "solutions": "Çözümler",
     "company": "Şirket",
     "legal": "Yasal",
@@ -972,29 +783,23 @@
     "privacy_heading": "Gizlilik Politikası",
     "terms_heading": "Hizmet Şartları"
   },
-  "legalNotice": {
-    "formText": "Bu formu göndererek Batumi Lighthouse'ın talebinize yanıt vermek için bilgilerinizi saklamasını ve işlemesini kabul edersiniz. Bkz.",
-    "privacy": "Gizlilik Politikası",
-    "and": "ve",
-    "terms": "Hizmet Şartları"
-  },
   "legalPage": {
     "privacy": {
       "heading": "Gizlilik Politikası",
       "last_updated": "Son güncelleme: Mart 2025",
       "intro": "Batumi Lighthouse (\"biz,\" \"bizim\" veya \"bizi\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
       "data_collection_heading": "1. Topladığımız Veriler",
-      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim formu verileri: ad, e-posta adresi, sağlanırsa telefon numarası, işletme türü, web sitesi URL'si, bütçe aralığı, proje hedefleri, zaman çizelgesi ve mesaj içeriği.\n• Denetim talebi verileri: ad, işletme adı, e-posta adresi, sektör, web sitesi URL'si ve sağladığınız isteğe bağlı notlar.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz ve güvenlik verileri: formları kötüye kullanımdan korumak için tarayıcı türü, işletim sistemi, ekran çözünürlüğü, IP kaynaklı istek bilgileri, honeypot sonuçları ve reCAPTCHA doğrulama sinyalleri.\n\nİletişim ve denetim formu gönderimleri veritabanımızda saklanır, talebinize yanıt vermek için kullanılır ve ekibimizin takip edebilmesi için dahili e-posta bildirimlerine dahil edilebilir.",
+      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim bilgileri: bir form gönderdiğinizde veya bizimle iletişime geçtiğinizde ad, e-posta adresi, telefon numarası ve işletme adı.\n• Web sitesi verileri: bir denetim talebi veya soruşturma sırasında sağlanan mevcut web sitesi URL'niz.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz verileri: deneyiminizi optimize etmek için tarayıcı türü, işletim sistemi ve ekran çözünürlüğü.",
       "cookies_heading": "2. Çerezler ve İzleme",
       "cookies_body": "Web sitesinin düzgün çalışmasını sağlamak için gerekli çerezleri kullanıyoruz. Ziyaretçilerin sitemizle nasıl etkileşime girdiğini anlamak için analiz çerezleri de kullanabiliriz. Çerez tercihlerinizi istediğiniz zaman tarayıcı ayarlarınızdan kontrol edebilirsiniz. Reklam çerezi kullanmıyoruz ve verileri üçüncü taraf reklamcılara satmıyoruz.",
       "third_party_heading": "3. Üçüncü Taraf Hizmetleri",
-      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:\n\n• Web sitesini güvenli şekilde sunmak ve form gönderimlerini saklamak için barındırma ve veritabanı sağlayıcıları.\n• İletişim ve denetim talepleri hakkında dahili bildirim göndermek için e-posta teslim sağlayıcıları.\n• Formlarda dolandırıcılık ve spam önleme için Google reCAPTCHA.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikası altında çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşıyoruz.",
+      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:\n\n• Web sitemizi güvenli bir şekilde sunmak için barındırma sağlayıcıları (örn., Hostinger).\n• Soruşturmaları ve denetim taleplerini yönetmek için form işleme araçları.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikası altında çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşıyoruz.",
       "data_rights_heading": "4. Haklarınız",
       "data_rights_body": "Aşağıdaki haklara sahipsiniz:\n\n• Hakkınızda tuttuğumuz kişisel verilerinize erişim.\n• Verilerinizin düzeltilmesi veya silinmesini talep etme.\n• Verilerinizin belirli amaçlarla işlenmesine itiraz etme.\n• Verilerinizin taşınabilir bir formatta kopyasını talep etme.\n\nBu hakları kullanmak için aşağıdaki iletişim bilgilerini kullanın.",
       "data_security_heading": "5. Veri Güvenliği",
-      "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Gönderilen form verilerine erişim, isteklere yanıt vermek, web sitesini işletmek veya hizmeti korumak için buna ihtiyaç duyan kişi ve sistemlerle sınırlıdır. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
+      "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
       "contact_heading": "6. İletişim Bilgileri",
-      "contact_body": "Bu gizlilik politikası, verilerinizi nasıl ele aldığımız veya gönderilen form verilerine erişme, düzeltme ya da silme talebi hakkında sorularınız varsa lütfen bizimle iletişime geçin. Konum: Batumi, Acara, Gürcistan."
+      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@batumilighthouse.com\nKonum: Batumi, Acara, Gürcistan"
     },
     "terms": {
       "heading": "Hizmet Şartları",
@@ -1011,28 +816,26 @@
       "termination_heading": "5. Fesih",
       "termination_body": "• Her iki taraf da 30 günlük yazılı bildirimle hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında tüm ödenmiş teslim edilebilirlerin mülkiyetini sizde kalır. Batumi Lighthouse makul bir devir süresi sağlayacaktır.\n• Fesih nedeninden bağımsız olarak, ödenmemiş ücretler fesih sonrasında da ödenmeye devam eder.",
       "governing_heading": "6. Uygulanacak Hukuk",
-      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.",
-      "contact_heading": "7. İletişim Bilgileri",
-      "contact_body": "Bu şartlar, iletişim formu gönderimleri, denetim talepleri veya proje bilgilerinizin nasıl işlendiği hakkında sorularınız için lütfen bizimle iletişime geçin. Konum: Batumi, Acara, Gürcistan."
+      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.\n\nBu şartlar hakkında sorularınız için hello@batumilighthouse.com adresinden bizimle iletişime geçin."
     }
   },
   "sectorPages": {
     "hospitality": {
       "hero": {
         "eyebrow": "Konaklama",
-        "title": "Odaları dolduran web siteleri — OTA komisyon tabloları değil",
-        "subtitle": "Batumi'deki oteliniz, pansiyonunuz veya apart oteliniz, doğrudan rezervasyonlar sağlayan, misafirlerinizin dilini konuşan ve dürtüsel aramaları yakalayacak kadar hızlı yüklenen bir web sitesini hak ediyor."
+        "title": "Daha fazla doğrudan talep için otel web siteleri",
+        "subtitle": "Batum otelleri, pansiyonları ve apart otelleri için odaları net gösteren, çok dilli misafirlere yardımcı olan ve doğrudan rezervasyon ya da iletişimi kolaylaştıran web siteleri."
       },
       "pains": {
         "heading": "Karşılaştığınız zorluklar",
         "items": [
           {
-            "title": "OTA komisyon sızıntısı",
-            "description": "Booking.com veya Agoda üzerinden yapılan her rezervasyon size %15–25'e mal oluyor. Web siteniz en kârlı kanal olmalı — en pahalı olanı değil."
+            "title": "Üçüncü taraf rezervasyon sitelerine fazla bağımlılık",
+            "description": "Üçüncü taraf rezervasyon siteleri faydalı olabilir, ancak yalnızca onlara bağlı kalmak misafir ilişkisini sahiplenmeyi zorlaştırır. Web siteniz misafirlerin size doğrudan ulaşmasına veya rezervasyon yapmasına yardımcı olmalıdır."
           },
           {
             "title": "Yavaş rezervasyon akışı",
-            "description": "Misafirler 3 saniyeden fazla sürede yüklenen siteleri terk eder. Rezervasyon motorunuz hızlı ve sorunsuz değilse, her gün gelir kaybediyorsunuz."
+            "description": "Yavaş sayfalar ve ağır görseller misafirleri oda karşılaştırmadan uzaklaştırır. Daha hafif sayfalar ve daha net oda içeriği planlarım."
           },
           {
             "title": "Çok dilli içerik yok",
@@ -1040,7 +843,7 @@
           },
           {
             "title": "Zayıf mobil deneyim",
-            "description": "Seyahat aramalarının %60'ından fazlası mobilde gerçekleşiyor. Telefonlar için optimize edilmemiş bir site, dönüşüm sağlamayan bir sitedir."
+            "description": "Birçok misafir otel seçeneklerini telefondan kontrol eder. Siteniz mobilde okunması, karşılaştırması ve iletişim kurması kolay olmalıdır."
           }
         ]
       },
@@ -1053,19 +856,19 @@
           },
           {
             "title": "Doğrudan rezervasyon entegrasyonu",
-            "description": "Misafirlerin kullanılabilirliği kontrol etmesine ve sitenizden doğrudan rezervasyon yapmasına olanak tanıyan, yönlendirme veya komisyon olmadan sorunsuz rezervasyon motoru entegrasyonu."
+            "description": "Tercih ettiğiniz rezervasyon aracını, takvimi veya talep formunu bağlayın; misafirler oda detaylarından sonraki adıma geçebilsin."
           },
           {
             "title": "Çok dilli misafir yolları",
             "description": "Gürcüce, Rusça ve İngilizce tam içerik — böylece her misafir oda detaylarından yerel ipuçlarına kadar ihtiyacını kendi dilinde bulur."
           },
           {
-            "title": "OTA uyumlu fiyat gösterimi",
-            "description": "Oran eşitliği doğru şekilde ele alındı: en iyi oranınız her zaman görünür ve doğrudan rezervasyon avantajınız OTA şartlarını ihlal etmeden net bir şekilde ortaya konur."
+            "title": "Net fiyat ve teklif gösterimi",
+            "description": "Oda fiyatları, paketler ve sezonluk teklifler net gösterilir; rezervasyon kuralları sade dille açıklanır."
           },
           {
             "title": "Hız optimizasyonu",
-            "description": "Tüm sayfalarda 2 saniyenin altında yükleme süreleri. Görsel optimizasyonu, tembel yükleme ve performans izleme ilk günden dahil."
+            "description": "Görsel optimizasyonu, lazy loading ve yayın kontrolleriyle sayfalar gerçek cihazlarda hızlı kalır."
           },
           {
             "title": "Analitik ve CRO",
@@ -1077,12 +880,12 @@
         "heading": "Pratikte bu nasıl görünür",
         "items": [
           {
-            "title": "Bir misafir otelinizi Google'da kendi dilinde bulur, odaları kontrol eder ve doğrudan rezervasyon yapar — OTA komisyonu yok.",
-            "description": "Rusça konuşan bir gezgin 'отель в Батуми' arar, Rusça sayfanıza yönlendirilir, net fiyatlandırmayla odaları gezer ve 2 dakikanın altında rezervasyon yapar. Tam geliri siz tutarsınız."
+            "title": "Misafir otelinizi kendi dilinde bulur, odaları kontrol eder ve doğrudan iletişime geçer ya da rezervasyon yapar.",
+            "description": "Gezgin kendi dilindeki sayfaya gelir, odaları net fiyatlarla karşılaştırır ve fazla kafa karışıklığı olmadan rezervasyon ya da iletişim seçeneğini kullanır."
           },
           {
-            "title": "Sezonsal teklifleriniz misafirlere Booking.com'a bakmadan önce ulaşır.",
-            "description": "Yaz paketiniz için hedeflenmiş bir açılış sayfası mobilde anında yüklenir, fiyat avantajını gösterir ve doğrudan rezervasyon motoruna bağlar — talebi OTA'lardan önce yakalar."
+            "title": "Sezonluk teklifleriniz, misafir başka yerde rezervasyon yapmadan önce daha kolay bulunur.",
+            "description": "Yaz paketi için odaklı bir sayfa mobilde hızlı yüklenir, teklifi açıklar ve rezervasyon ya da talep adımına bağlanır."
           },
           {
             "title": "Tekrar eden misafirler sitenizin çalıştığını hatırladığı için doğrudan rezervasyon yapar.",
@@ -1094,8 +897,8 @@
         "heading": "Konaklama web sitesi SSS",
         "items": [
           {
-            "q": "Booking.com ve diğer OTA'larla entegre olabilir misiniz?",
-            "a": "Evet. Kanal yöneticinizle birlikte çalışan OTA uyumlu web siteleri inşa ediyorum. Doğrudan rezervasyon avantajınız, oran eşitliği anlaşmalarını ihlal etmeden vurgulanır. Sitenizi sıfır komisyon ödediğiniz kanal olarak düşünün."
+            "q": "Sitemi channel manager veya rezervasyon sağlayıcısıyla bağlayabilir misiniz?",
+            "a": "Evet. Channel manager veya rezervasyon araçlarınızla birlikte çalışan bir web sitesi kurabilirim. Kurulumunuzu ve sağlayıcı kurallarını incelemeden fiyat paritesi hakkında iddia oluşturmam."
           },
           {
             "q": "Hangi ödeme işleme sistemlerini destekliyorsunuz?",
@@ -1103,7 +906,7 @@
           },
           {
             "q": "Sezonsal fiyatlandırmayı nasıl ele alıyorsunuz?",
-            "a": "Rezervasyon motorunuz oran mantığını işler — ben web sitesinin fiyatları net bir şekilde sunmasını ve gerçek zamanlı güncellemesini sağlarım. Sezonsal teklifler, son dakika fırsatları ve paket fiyatlandırmaları sayfa yapısına dahildir, böylece misafirler her zaman güncel, doğru fiyatları görür."
+            "a": "Fiyat mantığını rezervasyon aracınız yönetir. Web sitesinin oda ve teklif bilgilerini net göstermesini ve aracınızın sağladığı güncel bilgileri kullanmasını sağlarım."
           },
           {
             "q": "Çok mülklu web sitelerini destekliyor musunuz?",
@@ -1111,7 +914,7 @@
           },
           {
             "q": "Oda içeriğini kendim güncelleyebilir miyim?",
-            "a": "Kesinlikle. Her konaklama sitesi, herhangi bir teknik bilgi olmadan oda açıklamalarını, fotoğrafları, olanakları ve teklifleri güncellemenize olanak tanıyan bir içerik yönetim sistemi içerir. Ayrıca eğitim ve sürekli destek sağlıyorum."
+            "a": "Evet. Bir konaklama sitesi oda açıklamaları, fotoğraflar, olanaklar ve teklifler için basit bir editör içerebilir. Eğitim ve devam desteği de sağlarım."
           }
         ]
       },
@@ -1125,7 +928,7 @@
       "hero": {
         "eyebrow": "Sağlık",
         "title": "İlk konsültasyon öncesi hasta güveni inşa eden web siteleri",
-        "subtitle": "Batumi'deki kliniğinizin, diş hekimliğinizin veya estetik merkezinin hastaları kendinden emin hissettiren bir web sitesine ihtiyacı var — net doktor profilleri, çok dilli açıklık ve araştırmadan randevuya kusursuz bir yol."
+        "subtitle": "Batum kliniği, diş hekimi veya estetik merkezi; hastaların tedavileri, doktorları, dilleri ve randevu talep yolunu anlamasına yardım eden bir web sitesine ihtiyaç duyar."
       },
       "pains": {
         "heading": "Karşılaştığınız zorluklar",
@@ -1157,7 +960,7 @@
           },
           {
             "title": "Konsültasyon randevusu",
-            "description": "Her cihazda çalışan temiz, basit bir konsültasyon talep akışı. Hastalar bir doktor seçer, bir zaman seçer ve gönderir — otomatik onay gönderilir."
+            "description": "Her cihazda çalışan temiz bir konsültasyon talep akışı. Hastalar ilgili hizmeti veya doktoru seçer ve talep gönderir."
           },
           {
             "title": "Çok dilli tıbbi içerik",
@@ -1169,10 +972,10 @@
           },
           {
             "title": "Değerlendirme yönetimi",
-            "description": "Sosyal kanıt inşa eden bir değerlendirme toplama ve gösterme sistemi. Yeni hasta değerlendirmeleri sitenizde görünür ve olumsuz geri bildirim yayınlanmadan önce dikkatinize sunulur."
+            "description": "Yayınlanmadan önce onayınızla, güvenilir hasta geri bildirimlerini göstermeye yardımcı olan yorum toplama ve gösterme seçenekleri."
           },
           {
-            "title": "SSS sistemi",
+            "title": "SSS bölümü",
             "description": "Yapılandırılmış veriye sahip aranabilir bir SSS bölümü — yaygın hasta sorularını yanıtlayarak telefon soruşturmalarını azaltır ve SSS zengin sonuçlarıyla SEO'nuzu iyileştirir."
           }
         ]
@@ -1190,7 +993,7 @@
           },
           {
             "title": "Daha az telefon çağrısı, daha fazla çevrimiçi konsültasyon.",
-            "description": "Net bir SSS sistemi ve çevrimiçi randevu ile hastalar cevapları bulur ve resepsiyonunuzu aramadan randevu alır — personelinizin yüz yüze bakıma odaklanmasını sağlar."
+            "description": "Net SSS'ler ve randevu seçenekleriyle hastalar resepsiyonu aramadan önce cevap bulabilir."
           }
         ]
       },
@@ -1199,23 +1002,23 @@
         "items": [
           {
             "q": "Hasta verisi gizliliğini nasıl ele alıyorsunuz?",
-            "a": "Tüm konsültasyon formları şifreli iletim kullanır ve GDPR ve Gürcistan veri koruma gereksinimlerini göz önünde bulundurarak geliştirme yaparım. Hasta verileri asla web sitesinin kendisinde saklanmaz — doğrudan güvenli uygulama yönetim sisteminize veya e-postanıza gider."
+            "a": "Konsültasyon formları güvenli iletim kullanır. Gizlilik ve veri koruma gerekliliklerini dikkate alarak kurarım. Önceden kararlaştırılıp doğru yapılandırılmadıkça hasta verileri pazarlama sayfalarında saklanmaz."
           },
           {
             "q": "Çok dilli tıbbi içerik oluşturabilir misiniz?",
             "a": "Evet. Gürcüce, Rusça ve İngilizce doğruluğu sağlamak için profesyonel tıbbi çevirmenlerle çalışıyorum. Tıbbi terminoloji hassastır — klinik içerik için asla makine çevirisine güvenmem."
           },
           {
-            "q": "Sigorta veya uygulama yönetim sistemleriyle entegre olabilir misiniz?",
-            "a": "API'ler veya gömülebilir araçlar aracılığıyla çoğu uygulama yönetimi ve planlama sistemiyle entegre olabilirim. Danışmanlığımız sırasında mevcut teknoloji yığınızı inceleyeceğim ve en iyi entegrasyon yaklaşımını önereceğim."
+            "q": "Sigorta veya klinik yazılımıyla entegrasyon yapıyor musunuz?",
+            "a": "API veya gömülebilir widget sağladıklarında klinik yazılımına veya randevu araçlarına bağlanabilirim. Fit call sırasında ne kullandığınızı inceler ve pratik bir seçenek öneririm."
           },
           {
-            "q": "Hangi randevu sistemlerini destekliyorsunuz?",
-            "a": "Özel randevu akışları inşa ederim veya halihazırda kullandığınız sistemlerle entegre olurum — basit bir takvim, bir klinik yönetim platformu veya üçüncü taraf bir planlama aracı olsun. Doğru yaklaşım, uygulamanızın büyüklüğüne ve iş akışına bağlıdır."
+            "q": "Hangi randevu araçlarını destekliyorsunuz?",
+            "a": "Basit bir talep formu kurabilir veya zaten kullandığınız rezervasyon aracını bağlayabilirim. Doğru yaklaşım, kliniğinizin boyutuna ve iş akışına bağlıdır."
           },
           {
             "q": "Tıbbi içerik doğruluğunu nasıl sağlıyorsunuz?",
-            "a": "İçeriği uygulamanız ve uzmanlarınız hakkında sağladığınız bilgilere dayanarak yapılandırıyorum. Tüm tıbbi iddialar, tedavi açıklamaları ve doktor nitelikleri yayınlanmadan önce sizin tarafınızdan gözden geçirilir ve onaylanır. Ben çerçeveyi sağlarım — siz klinik otoriteyi sağlarsınız."
+            "a": "İçeriği sağladığınız bilgilere göre yapılandırırım. Tüm tıbbi iddiaları, tedavi açıklamalarını ve doktor niteliklerini yayından önce siz inceler ve onaylarsınız. Sayfa yapısını ben sağlarım; klinik otorite sizden gelir."
           }
         ]
       },
@@ -1228,27 +1031,27 @@
     "beauty": {
       "hero": {
         "eyebrow": "Güzellik",
-        "title": "Randevu defterinizi dolduran web siteleri — Instagram DM'lerinizi değil",
-        "subtitle": "Batumi'deki salonunuz, medspa veya stüdyonuz hizmetlerinizi sergileyen, fiyatlandırmayı net bir şekilde gösteren ve müşterilerin saniyeler içinde randevu almasını sağlayan bir web sitesini hak ediyor — hepsi telefonlarından."
+        "title": "Daha net hizmetler ve kolay rezervasyon isteyen güzellik stüdyoları için web siteleri",
+        "subtitle": "Batum salonu, medspa veya stüdyosu; hizmetleri ve fiyatları net gösteren, telefondan rezervasyon ya da talebi kolaylaştıran bir web sitesini hak eder."
       },
       "pains": {
         "heading": "Karşılaştığınız zorluklar",
         "items": [
           {
             "title": "Çevrimiçi randevu yok",
-            "description": "Müşteriler sadece DM'ler, telefon aramaları veya walk-in yoluyla randevu alabiliyorsa, randevu kaybediyorsunuz. Çevrimiçi randevu talebi 7/24 yakalar — bir müşteriyle birlikte olsanız bile."
+            "description": "Müşteriler yalnızca DM, telefon veya walk-in ile rezervasyon yapabiliyorsa bazı randevular kaçırılır. Net bir web sitesi onlara talep ya da rezervasyon için başka basit bir yol verir."
           },
           {
             "title": "Dağınık iletişim kanalları",
-            "description": "Instagram DM'leri, WhatsApp, telefon aramaları, walk-in'ler — randevular her yerden geldiğinde şeyler aradan düşer. Tek bir randevu sistemi kaosu ortadan kaldırır."
+            "description": "Instagram DM'leri, WhatsApp, telefonlar ve walk-in talepleri takip etmek zor olabilir. Daha net bir rezervasyon akışı sizin ve müşterileriniz için karışıklığı azaltır."
           },
           {
             "title": "Hizmet menüsü görünürlüğü yok",
             "description": "Potansiyel müşteriler tam hizmet menünüzü ve fiyatlandırmanızı çevrimiçi göremiyorsa, tam olarak ne istediğini — ve ne kadara mal olduğunu — gösteren bir salonu seçerler."
           },
           {
-            "title": "Tekrar eden iş sistemi yok",
-            "description": "İlk kez gelen müşterileri kazanmak pahalıdır. Takipler, promosyonlar ve kolay yeniden randevu için bir sistem olmadan, sürekli yeni müşteri peşinde koşarsınız — mevcut müşterileri elinizde tutmak yerine."
+            "title": "Kolay tekrar rezervasyon yok",
+            "description": "İlk müşteriyi kazanmak zordur. Takip teklifleri, görünür hizmetler ve kolay tekrar rezervasyon müşterilerin geri dönmesine yardımcı olur."
           }
         ]
       },
@@ -1256,12 +1059,12 @@
         "heading": "Neler sunuyorum",
         "items": [
           {
-            "title": "Hizmet menüsü sistemi",
+            "title": "Hizmet menüsü",
             "description": "Açıklamalar, süre ve fiyatlandırma ile net, düzenli bir hizmet menüsü — kategoriye göre aranabilir ve her cihazda güzel şekilde sunulmuş."
           },
           {
             "title": "Çevrimiçi randevu akışı",
-            "description": "Müşteriler bir hizmet seçer, bir stilist veya terapist seçer, bir zaman dilimi belirler ve onaylar — herhangi bir cihazdan bir dakikanın altında."
+            "description": "Müşteriler hizmet seçer, yararlı detayları görür ve mesajlarda arama yapmadan rezervasyon veya talep seçeneğine geçer."
           },
           {
             "title": "Fiyat görünürlüğü",
@@ -1273,11 +1076,11 @@
           },
           {
             "title": "Instagram ve sosyal entegrasyon",
-            "description": "En iyi Instagram paylaşımlarınız sitenize gömülü, otomatik güncellenen sosyal kanıt ve tüm sosyal kanallarınıza net bağlantılar."
+            "description": "Instagram çalışmalarınız yararlı olduğu yerde bağlanabilir veya gömülebilir; sosyal kanallarınıza net bağlantılar eklenir."
           },
           {
-            "title": "Değerlendirme toplama",
-            "description": "Mutlu müşterileri değerlendirme bırakmaya teşvik eden basit bir sistem — hafta hafta yeni müşteriler getiren sosyal kanıtı inşa eder."
+            "title": "Yorum istekleri",
+            "description": "Basit bir takip akışı mutlu müşterilerden yorum isteyebilir ve sitenizde güvenilir geri bildirim göstermenize yardımcı olur."
           }
         ]
       },
@@ -1286,15 +1089,15 @@
         "items": [
           {
             "title": "Bir müşteri hizmet menünüzü görür, bir tedavi seçer ve bir randevu alır — hepsini telefonundan.",
-            "description": "Potansiyel bir müşteri salonunuzu Google'da bulur, net fiyatlandırmayla hizmet menünüzü gezer, bir tedavi seçer ve tercih ettiği stilistle bir slot rezerve eder — tek bir DM veya telefon araması olmadan, iki dakikanın altında."
+            "description": "Potansiyel müşteri salonunuzu Google'da bulur, hizmetleri ve başlangıç fiyatlarını kontrol eder, bir işlem seçer ve önce DM atmadan rezervasyon ya da iletişim seçeneğini kullanır."
           },
           {
             "title": "Instagram takipçileriniz web sitesi ziyaretçilerine, ardından randevu almış müşterilere dönüşür.",
             "description": "Instagram biyografiniz gerçekten dönüşüm sağlayan bir web sitesine bağlanır. Takipçiler işlerinizi görür, fiyatlarınızı kontrol eder ve hemen randevu alır — mesaj göndermek fazla çaba gerektiriyorsa kaydırmaya devam etmek yerine."
           },
           {
-            "title": "Sezonsal promosyonlar otomatik olarak tekrar eden rezervasyonlar sağlar.",
-            "description": "Geri dönen bir müşteri ana sayfadaki sezonsal teklifinizi görür, favori tedavisini özel fiyatla rezerve etmek için tıklar ve saniyeler içinde onaylar — manuel ulaşım gerekmez."
+            "title": "Sezonluk teklifler tekrar rezervasyonu kolaylaştırır.",
+            "description": "Geri dönen müşteri ana sayfada sezonluk teklifi görür, rezervasyon veya talep seçeneğini açar ve sonraki adımı bilir."
           }
         ]
       },
@@ -1302,8 +1105,8 @@
         "heading": "Güzellik web sitesi SSS",
         "items": [
           {
-            "q": "Hangi randevu sistemleriyle entegre oluyorsunuz?",
-            "a": "Fresha, Booksy ve özel çözümler gibi popüler randevu platformlarıyla çalışıyorum. Halihazırda bir randevu sistemi kullanıyorsanız, sorunsuz bir şekilde entegre ederim. Yoksa, salon büyüklüğünüze ve hizmet türünüze en uygun seçeneği öneririm."
+            "q": "Hangi rezervasyon araçlarını bağlarsınız?",
+            "a": "Fresha, Booksy ve basit özel formlarla çalışırım. Zaten bir rezervasyon aracı kullanıyorsanız bağlayabilirim. Kullanmıyorsanız salon boyutu ve hizmetlere göre pratik bir seçenek öneririm."
           },
           {
             "q": "Instagram'ımı web siteme bağlayabilir misiniz?",
@@ -1311,15 +1114,15 @@
           },
           {
             "q": "Hizmet fiyatlandırma gösterimini nasıl ele alıyorsunuz?",
-            "a": "Fiyatlandırma, başlangıç fiyatları, süre ve ilgili notlarla birlikte hizmet menünüzde net bir şekilde gösterilir. Fiyatları istediğiniz zaman içerik yönetim sistemi aracılığıyla güncelleyebilirsiniz — teknik bilgi gerekmez."
+            "a": "Fiyatlar hizmet menüsünde başlangıç fiyatları, süre ve ilgili notlarla net gösterilir. Fiyatları basit bir editör üzerinden güncelleyebilirsiniz."
           },
           {
             "q": "Promosyonları ve sezonsal teklifleri yönetebilir miyim?",
-            "a": "Kesinlikle. Promosyon yönetim sistemi, basit bir panodan teklifler oluşturmanıza, planlamanıza ve kaldırmanıza olanak tanır. Sezonsal paketler, ilk ziyaret indirimleri ve sadakat ödülleri hepsi dakikalar içinde ayarlanabilir."
+            "a": "Evet. Güncelleyebileceğiniz basit bir teklif alanı ekleyebilirim. Sezonluk paketler, ilk ziyaret teklifleri ve sadakat ödülleri tüm siteyi değiştirmeden eklenebilir."
           },
           {
             "q": "Daha fazla değerlendirme almama nasıl yardımcı oluyorsunuz?",
-            "a": "Randevularından sonra müşterilere otomatik takip mesajları göndererek Google veya Facebook değerlendirmesi bırakmasını kolaylaştıran bir değerlendirme toplama sistemi inşa ediyorum. En iyi değerlendirmeler de sosyal kanıt için web sitenizde gösterilir."
+            "a": "Randevulardan sonra basit bir yorum isteme akışı kurabilir ve seçilen yorumları web sitenizde gösterebilirim."
           }
         ]
       },
@@ -1332,155 +1135,112 @@
   },
   "auditPage": {
     "hero": {
-      "eyebrow": "Manuel web sitesi teşhisi",
-      "title": "Rezervasyon, güven, SEO ve hız için manuel web sitesi denetimleri.",
-      "subtitle": "Rezervasyonları, hasta taleplerini, randevu isteklerini, yerel arama görünürlüğünü ve güveni neyin engellediğini açıklayan pratik bir teşhis raporu alırsınız. Her bulgu, önerilen düzeltmeyle birlikte bir iş problemi olarak yazılır.",
-      "cta": "Web sitesi denetimi iste",
-      "secondary_cta": "Raporu önizle",
-      "panel_label": "Denetim başvuru önizlemesi",
-      "panel_kicker": "Teşhis kapsamı",
-      "panel_title": "İncelemenin önce kontrol ettiği alanlar",
-      "panel_note": "Manuel inceleme, öncelikli düzeltmeler ve net sonraki adımlar. Otomatik skor dökümü değil."
+      "eyebrow": "Web sitesi denetimleri",
+      "title": "Web sitenizi tam olarak neyin geri tuttuğunu öğrenin",
+      "subtitle": "Netlik, hız, yerel SEO, içerik yapısı, erişilebilirlik ve iletişim ya da rezervasyon akışı hakkında pratik bir rapor alın."
     },
-    "framework": {
-      "eyebrow": "Teşhis çerçevesi",
-      "heading": "Ziyaretçilerin güvenip aksiyon alıp almayacağını belirleyen sekiz alan.",
-      "subtitle": "Denetim, ilk izlenimden rezervasyona, talebe, aramaya veya randevuya kadar tüm yolu inceler. Amaç daha güzel bir site değil; daha net bir ticari sistemdir.",
+    "rubric": {
+      "heading": "Neleri değerlendiriyoruz",
+      "subtitle": "Her denetim sitenizi altı kritik boyutta puanlar.",
       "items": {
         "brand": {
-          "title": "Marka netliği",
-          "summary": "Anında konumlandırma ve sektör uyumu.",
-          "description": "Ziyaretçinin ilk ekranda kime hizmet verdiğinizi, ne sunduğunuzu ve neden güvenilir olduğunuzu anlayıp anlamadığını kontrol eder."
+          "name": "Marka Netliği",
+          "points": [
+            "İlk izlenim ve görsel kimlik",
+            "Sayfalar arasında tutarlı mesajlaşma",
+            "Rakiplerden farklılaşma"
+          ]
         },
-        "mobile": {
-          "title": "Mobil UX",
-          "summary": "Küçük ekran düzeni ve aksiyonları.",
-          "description": "Menü davranışı, dokunma hedefleri, sayfa hiyerarşisi, sabit aksiyonlar ve mobilde sürtünmesiz ilerleme incelenir."
-        },
-        "booking": {
-          "title": "Rezervasyon / randevu akışı",
-          "summary": "Niyetten talebe giden yol.",
-          "description": "Ziyaretçinin güven kaybettiği, CTA’yı kaçırdığı veya rezervasyon öncesi gereksiz adımlara zorlandığı noktaları bulur."
+        "speed": {
+          "name": "Performans ve Hız",
+          "points": [
+            "Mobil ve masaüstünde sayfa yükleme süresi",
+            "Core Web Vitals (LCP, FID, CLS)",
+            "Görsel ve dosya optimizasyonu"
+          ]
         },
         "seo": {
-          "title": "Yerel SEO",
-          "summary": "Batum niyetine göre görünürlük.",
-          "description": "Yerel sayfa yapısı, metadatalar, hizmet/lokasyon sinyalleri, iç linkler ve Google için içerik kalitesi incelenir."
+          "name": "Yerel SEO",
+          "points": [
+            "Google Business Profile kurulumu",
+            "Yerel anahtar kelime hedefleme",
+            "Yapılandırılmış veri ve meta etiketler"
+          ]
         },
-        "performance": {
-          "title": "Performans / Core Web Vitals",
-          "summary": "Hız ve stabilite sinyalleri.",
-          "description": "Ağır dosyalar, render gecikmeleri, layout shift ve siteyi yavaş hissettiren teknik kararlar kontrol edilir."
-        },
-        "trust": {
-          "title": "Güven sinyalleri",
-          "summary": "İletişimden önce kanıt.",
-          "description": "Eksik yorumlar, politikalar, ekip bilgileri, sertifikalar, konum kanıtı ve işlem güveni için gerekli bilgiler aranır."
-        },
-        "multilingual": {
-          "title": "Çok dilli yapı",
-          "summary": "Uluslararası müşteri hazırlığı.",
-          "description": "Dil route’ları, çevrilmiş navigasyon, yerelleştirilmiş CTA’lar, hreflang temelleri ve diller arasındaki içerik boşlukları incelenir."
+        "content": {
+          "name": "İçerik Yapısı",
+          "points": [
+            "Bilgi hiyerarşisi ve gezinme",
+            "Başlık yapısı ve okunabilirlik",
+            "Çok dilli içerik organizasyonu"
+          ]
         },
         "accessibility": {
-          "title": "Erişilebilirlik temelleri",
-          "summary": "Kullanılabilirlik ve okunabilirlik.",
-          "description": "Kontrast, okunabilir metin, form label’ları, klavye erişimi, focus durumları ve temel screen-reader yapısı kontrol edilir."
+          "name": "Erişilebilirlik",
+          "points": [
+            "WCAG 2.1 uyumluluk temelleri",
+            "Renk kontrastı ve metin okunabilirliği",
+            "Klavye gezinmesi ve ekran okuyucu desteği"
+          ]
+        },
+        "conversion": {
+          "name": "İletişim ve rezervasyon UX'i",
+          "points": [
+            "Rezervasyon ve iletişim akışı netliği",
+            "Aksiyon çağrısı yerleşimi",
+            "Güvenilir kanıt ve güven detayları"
+          ]
         }
       }
     },
-    "report": {
-      "eyebrow": "Örnek rapor önizlemesi",
-      "heading": "Belirsiz skorlara değil, iş etkisine odaklanan bir rapor arayüzü.",
-      "subtitle": "Aşağıdaki format bulguların nasıl yapılandırıldığını gösterir. Skorlar, açıkça örnek olarak etiketlenmedikçe veya gerçek ölçümlü denetime bağlı olmadıkça kullanılmaz.",
-      "interface_label": "Manuel inceleme çıktısı",
-      "interface_title": "Web sitesi teşhis raporu",
-      "example_label": "Örnek format",
-      "columns": {
-        "area": "İnceleme alanı",
-        "issue": "Sorun",
-        "impact": "İş etkisi",
-        "priority": "Öncelik",
-        "fix": "Önerilen düzeltme"
-      },
-      "rows": [
+    "howItWorks": {
+      "heading": "Nasıl çalışır",
+      "steps": [
         {
-          "area": "Rezervasyon akışı",
-          "issue": "Birincil aksiyon birkaç rakip içerik bloğundan sonra görünüyor.",
-          "impact": "Rezervasyona hazır ziyaretçiler sonraki adımı bulamadan sayfayı tarayabilir.",
-          "priority": "Yüksek",
-          "fix": "Rezervasyon CTA’sını ilk ekrana taşıyın ve oda, tedavi veya hizmet bölümlerinden sonra tekrarlayın."
+          "title": "URL'nizi gönderin",
+          "description": "Aşağıdaki formu web sitesi adresiniz ve temel işletme bilgilerinizle doldurun."
         },
         {
-          "area": "Yerel SEO",
-          "issue": "Hizmet sayfaları teklifi Batum arama niyetiyle net bağlamıyor.",
-          "impact": "Arama motorları ve ziyaretçiler zayıf yerel alaka sinyalleri alır.",
-          "priority": "Orta",
-          "fix": "Lokasyon odaklı başlıklar, yapılandırılmış hizmet içeriği ve ilgili sayfalara iç bağlantılar ekleyin."
+          "title": "Sitenizi analiz ederim",
+          "description": "Sitenizi gerçek cihazlar ve yerel arama koşulları kullanarak tüm altı kategoride manuel olarak incelerim."
         },
         {
-          "area": "Güven",
-          "issue": "Politikalar, yorumlar ve işletme detayları dönüşüm yolundan ayrılmış.",
-          "impact": "Ziyaretçi iletişim veya rezervasyon için yeterli güveni hissetmeden önce daha fazla çaba harcar.",
-          "priority": "Odak",
-          "fix": "CTA yanında kompakt güven kanıtı yerleştirin ve form ya da rezervasyon modülü yakınına destekleyici detaylar ekleyin."
+          "title": "Detaylı bir rapor alırsınız",
+          "description": "Hemen uygulayabileceğiniz belirli düzeltmelerle önceliklendirilmiş bir eylem planı alırsınız."
         }
-      ]
+      ],
+      "step_label": "Adım"
     },
-    "sectors": {
-      "eyebrow": "Sektöre özel örnekler",
-      "heading": "Denetim, işletmenizin rezervasyon kazanma biçimine göre değişir.",
-      "subtitle": "Oteller, klinikler ve güzellik stüdyoları lead’leri farklı noktalarda kaybeder. İnceleme, sektörünüz için önemli olan ticari yola odaklanır.",
+    "sampleFindings": {
+      "heading": "Sektöre göre yaygın bulgular",
       "items": {
-        "hotel": {
-          "title": "Otel",
-          "description": "Otel denetimi odaların, konumun, politikaların ve direkt rezervasyon değerinin karşılaştırılmasını kontrol eder.",
-          "checks": [
-            "Oda ve fiyat netliği",
-            "Direkt rezervasyon CTA yerleşimi",
-            "Konum ve politika güven sinyalleri"
-          ]
+        "hospitality": {
+          "sector": "Konaklama",
+          "finding": "Yaygın sorun: otel siteleri oda değerini, rezervasyon adımlarını ve yerel arama temellerini yavaş, görsel ağırlıklı sayfaların arkasında saklar."
         },
-        "clinic": {
-          "title": "Klinik",
-          "description": "Klinik denetimi güven, tedavi netliği, doktor kredibilitesi ve yerel/uluslararası hastalar için talep yoluna odaklanır.",
-          "checks": [
-            "Tedavi sayfası yapısı",
-            "Doktor ve yeterlilik kanıtı",
-            "Konsültasyon talep akışı"
-          ]
+        "medical": {
+          "sector": "Sağlık",
+          "finding": "Yaygın sorun: klinik sitelerinde doktor profilleri, hizmet schema'sı ve uluslararası hastalar için net yollar çoğu zaman eksiktir."
         },
         "beauty": {
-          "title": "Güzellik stüdyosu",
-          "description": "Güzellik stüdyosu denetimi hizmetlerin, fiyatların, müsaitliğin, portföyün ve sosyal trafiğin randevuya gidip gitmediğini kontrol eder.",
-          "checks": [
-            "Hizmet menüsü netliği",
-            "Fiyat ve süre beklentileri",
-            "Instagram’dan randevuya yol"
-          ]
+          "sector": "Güzellik",
+          "finding": "Yaygın sorun: salonlar ve stüdyolar sosyal DM'lere dayanır; web siteleri ise rezervasyonu yeterince görünür yapmaz."
         }
       }
     },
     "form": {
-      "eyebrow": "Denetimi iste",
-      "heading": "Daha net bir rezervasyon yoluna ihtiyaç duyan siteyi gönderin.",
-      "subtitle": "Web sitesi URL’sini ve işletme bağlamını paylaşın. Siteyi manuel inceleyip denetim raporu için sonraki adımları ileteceğim.",
+      "heading": "Ücretsiz denetiminizi talep edin",
+      "subtitle": "Aşağıdaki detayları doldurun, puan kartınızı 3 iş günü içinde teslim edeceğim.",
       "name": "Adınız",
-      "name_required": "Ad zorunludur",
       "business": "İşletme adı",
-      "business_required": "İşletme adı zorunludur",
       "email": "E-posta adresi",
-      "email_required": "E-posta zorunludur",
-      "email_invalid": "Lütfen geçerli bir e-posta adresi girin",
       "sector": "Sektörünüz",
-      "sector_required": "Lütfen bir sektör seçin",
-      "website": "Web sitesi URL’si",
-      "website_required": "Web sitesi URL’si zorunludur",
-      "website_invalid": "Lütfen geçerli bir URL girin, örneğin https://example.com",
+      "website": "Web sitesi URL'si",
+      "website_required": "Web sitesi URL'si gereklidir",
       "message": "Başka bilmem gereken bir şey var mı? (isteğe bağlı)",
-      "submit": "Web sitesi denetimi iste",
+      "submit": "Ücretsiz denetim talep et",
       "sending": "Gönderiliyor...",
-      "success": "Denetim talebiniz alındı. Sonraki adımlarla sizinle iletişime geçeceğim.",
+      "success": "Denetim talebiniz alındı. 3 iş günü içinde sizinle iletişime geçeceğim.",
       "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin veya doğrudan bana e-posta gönderin.",
       "sectors": [
         "Konaklama",
@@ -1489,312 +1249,80 @@
         "Diğer"
       ]
     },
-    "process": {
-      "step": "Adım",
-      "items": {
-        "request": {
-          "title": "Siteyi gönderirsiniz",
-          "description": "Form, doğru dönüşüm yolunu incelemek için URL, sektör ve bağlamı toplar."
-        },
-        "review": {
-          "title": "Manuel olarak incelerim",
-          "description": "Site marka, mobil UX, rezervasyon akışı, yerel SEO, hız, güven, diller ve erişilebilirlik temelleri üzerinden kontrol edilir."
-        },
-        "report": {
-          "title": "Öncelikli düzeltmeler alırsınız",
-          "description": "Çıktı, hızlı düzeltmeleri yapısal problemlerden ayırır; önce neyin iyileştirileceği netleşir."
-        }
-      }
-    },
-    "faq": {
-      "eyebrow": "Talep sonrası",
-      "heading": "Denetim talebinden sonra ne olur?",
-      "items": [
-        {
-          "question": "Bu otomatik mi?",
-          "answer": "Hayır. Otomatik araçlar teknik sinyalleri gösterebilir, ancak final denetim kullanıcı yolculuğu ve iş etkisinin manuel ticari incelemesidir."
-        },
-        {
-          "question": "Raporda siteyi yeniden tasarlar mısınız?",
-          "answer": "Rapor neyin neden düzeltilmesi gerektiğini açıklar. Redesign doğru sonraki adımsa ayrı kapsamlandırılır."
-        },
-        {
-          "question": "Çok dilli siteleri denetleyebilir misiniz?",
-          "answer": "Evet. İnceleme dil route’larını, çevrilmiş navigasyonu, yerelleştirilmiş CTA’ları ve dil sürümleri arasındaki açık boşlukları kapsar."
-        }
-      ]
-    },
     "detail": {
       "cta": "Web sitenizi denetletin",
       "executive_summary": "Yönetici Özeti",
       "scoring": "Puanlama Detayı",
       "findings": "Detaylı Bulgular",
       "recommended_fix": "Önerilen düzeltme",
-      "score_out_of": "/100"
+      "score_out_of": "/100",
+      "not_found": "Denetim bulunamadı.",
+      "demo_audit": {
+        "title": "Batum otel web sitesi denetimi",
+        "executiveSummary": "Batum sahilindeki bu otel web sitesi güçlü bir görsel etkiye sahip, ancak doğrudan rezervasyonu etkileyen temel noktalarda zorlanıyor. Mobil performans çok yavaş hissediliyor, rezervasyon yolu gereğinden fazla adım istiyor ve yerel aramada görünürlük düşük. İyi tarafı şu: Bu sorunlar net önceliklerle düzeltilebilir.",
+        "findings": [
+          {
+            "title": "Mobilde ilk yükleme yavaş hissediliyor",
+            "description": "Ana sayfa mobilde gerekenden daha ağır görünüyor çünkü büyük hero görselleri ve ek scriptler ilk ekran için yarışıyor. Daha hafif görsel ve script kullanımı ilk ziyareti daha hızlı ve güvenilir hissettirir.",
+            "recommendedFix": "Hero görsellerini sıkıştırıp doğru boyutlandırın, gereksiz engelleyici scriptleri kaldırın, kritik olmayan medyayı lazy-load ile yükleyin ve yayından önce sayfayı Core Web Vitals ile test edin."
+          },
+          {
+            "title": "Rezervasyon yolu fazla karar istiyor",
+            "description": "Rezervasyon akışı, ziyaretçiyi net bir sonraki adıma ulaşmadan önce birkaç karar noktasından geçiriyor. Fazla seçim noktası özellikle mobilde güveni azaltabilir ve çıkış oranını artırabilir.",
+            "recommendedFix": "Oda seçimini, politikaları ve rezervasyon ya da iletişim geçişini birbirine yaklaştırın; doğrudan rezervasyon CTA’sını oda ve teklif sayfalarında görünür tutun."
+          },
+          {
+            "title": "Google Business Profile bağlantısı yok",
+            "description": "Otelin Google Business Profile kaydı var, ancak web sitesi buna bağlantı vermiyor ve profildeki NAP (ad, adres, telefon) bilgileri tutarsız. Sayfalarda Schema.org Hotel yapılandırılmış verisi yok. Site “hotel Batumi” gibi aramalarda yerel pakette görünmüyor.",
+            "recommendedFix": "Her oda sayfasına Hotel schema ekleyin, NAP bilgilerini tüm listelerde tutarlı hale getirin ve Google Business Profile bağlantısını site footerına ekleyin."
+          },
+          {
+            "title": "Oda sayfalarında çok dilli içerik eksik",
+            "description": "Oda açıklamaları, misafirlerin kullanması muhtemel dillerde aynı netlikte değil. Rusça veya İngilizce konuşan ziyaretçiler; oda detayları, politikalar ve iletişim seçenekleri anladıkları dilde yoksa siteden ayrılabilir.",
+            "recommendedFix": "Önce İngilizce, Gürcüce ve Rusça oda ve politika içeriklerini tamamlayın; ardından her dil için arama snippetlerini ve iletişim çağrılarını gözden geçirin."
+          },
+          {
+            "title": "Önemli CTA’larda kontrast düşük",
+            "description": "“Book Now” düğmesinde açık arka plan üzerinde düşük kontrastlı metin kullanılıyor; bu da önemli bir aksiyonu okumayı zorlaştırıyor. Oda görsellerinde alt metin yok. Sayfada içeriğe geçiş bağlantısı da bulunmuyor.",
+            "recommendedFix": "Düğme kontrastını WCAG AA seviyesine çıkarın, oda görsellerine açıklayıcı alt metin ekleyin ve sayfanın üstüne ana içeriğe geçiş bağlantısı koyun."
+          }
+        ]
+      }
     }
   },
   "workPage": {
-    "heading": "Oteller, klinikler ve stüdyolar için web sitesi sistemleri.",
-    "subtitle": "Uydurma kanıt veya performans iddiası olmadan stüdyo yöntemini gösteren iç build'ler ve seçilmiş sistemler.",
-    "comingSoon": "Konsept sistem",
+    "heading": "Çalışma yönleri",
+    "subtitle": "Gerçek müşteri işleri yayına hazır olana kadar demo brief'ler ve proje yönleri.",
     "items": [
       {
         "sector": "Konaklama",
-        "title": "Otel Doğrudan Rezervasyon Sistemi",
-        "description": "Odalar, konum kanıtı, çok dilli SEO ve doğrudan rezervasyon yolu için konsept sistem."
+        "title": "Butik otel rezervasyon konsepti",
+        "description": "Batum sahil oteli için doğrudan rezervasyon web sitesi yönü: odalar, güvenilir kanıt, çok dilli SEO ve üçüncü taraf rezervasyon sitelerine daha az bağımlılık."
       },
       {
-        "sector": "Medikal",
-        "title": "Klinik Güven ve Tedavi Sistemi",
-        "description": "Tedavi açıklığı, doktor güveni, SSS ve danışma talepleri için örnek yapı."
+        "sector": "Sağlık",
+        "title": "Diş kliniği web sitesi",
+        "description": "Doktor profilleri, tedavi sayfaları, hasta SSS'leri ve tıbbi arama için yapılandırılmış veriler içeren çok dilli klinik yönü."
       },
       {
         "sector": "Güzellik",
-        "title": "Güzellik Randevu Sistemi",
-        "description": "Hizmetler, fiyat, görsel kanıt ve randevu talepleri için stüdyo prototipi."
+        "title": "Stüdyo randevu akışı",
+        "description": "Talebi sosyal DM'lerden daha net bir hizmet menüsüne ve randevu yoluna taşıyan rezervasyon odaklı güzellik web sitesi yönü."
       }
     ],
-    "hero": {
-      "eyebrow": "Web Sitesi Sistemleri Galerisi",
-      "title": "Oteller, klinikler ve stüdyolar için web sitesi sistemleri.",
-      "subtitle": "Batumi Lighthouse tarafından yerel hizmet işletmeleri için rezervasyon odaklı web sitelerinin nasıl yapılandırıldığını gösteren iç build'ler ve seçilmiş yönler. Uydurma işletme, referans veya performans iddiası yok.",
-      "internal_note": "Aksi açıkça etiketlenmedikçe bunlar örnek sistemler ve iç build'lerdir.",
-      "note_label": "Prototip açıklaması",
-      "note": "Aşağıdaki örnekler iç build'ler ve stüdyo prototipleridir. Yayınlanmış iş sonuçları iddia etmeden mimariyi, modülleri ve dönüşüm mantığını gösterirler.",
-      "future_note": "Yayınlanmış işler; isimleri, görselleri, sonuçları veya referansları yayımlamak için açık izin olduğunda daha sonra eklenebilir.",
-      "proof": [
-        "Şu anda Batumi'de seçilmiş projeler kabul ediliyor.",
-        "Kurucu liderliğinde build'ler. İş başlamadan önce net scope.",
-        "Aşağıdaki iç sistemler stüdyo örnekleridir, uydurma kanıt değildir."
-      ]
-    },
-      "labels": {
-        "problem": "İş problemi",
-        "solution": "Sistem çözümü",
-        "conversion": "Dönüşüm hedefi",
-        "architecture": "Web sitesi mimarisi",
-        "modules": "Temel modüller",
-        "technical": "Teknik katman",
-        "repository": "Repository",
-        "liveSite": "Live site"
-      },
-      "systemIndex": {
-        "eyebrow": "Sistem indeksi",
-        "heading": "Arayüz ekran görüntüleri için hazır örnek sistemler.",
-        "subtitle": "Bu kartlar public repository ve screenshot alanları için hazırlandı. Yerel görüntüler eklenene kadar her sistem boş placeholder yerine teknik fallback görseli kullanır.",
-        "disclosure": "Bu örnekler web sitesi sistemlerini ve arayüz yapısını gösterir. Müşteri iddiaları ve performance sonuçları yalnızca doğrulandığında gösterilir.",
-        "cta": {
-          "eyebrow": "Build sinyali",
-          "heading": "Web siteniz için benzer bir sistem ister misiniz?",
-          "subtitle": "Odaklı bir denetimle başlayın veya benzer bir build için bağlamı gönderin. İlk adım; rezervasyonları, güveni ve yerel aramayı neyin engellediğini teşhis etmektir.",
-          "discussBuild": "Benzer build konuş"
-        }
-      },
-      "status": {
-        "concept": "Konsept",
-        "internalBuild": "İç build",
-        "clientBuild": "Müşteri build"
-      },
-      "viewSystem": "Sistemi görüntüle",
-      "viewRepository": "Repository görüntüle",
-      "viewLiveSite": "Live site görüntüle",
-      "screenshotsComingSoon": "Arayüz ekran görüntüleri bekleniyor",
-      "detail": {
-        "eyebrow": "Örnek sistem",
-        "disclosure": "Açıklama",
-        "structureEyebrow": "Sistem mimarisi",
-        "structureHeading": "Problem, çözüm, modüller ve teknik katman.",
-        "structureBody": "Her örnek pratik bir web sitesi sistemi olarak düzenlenir: net route architecture, conversion modules, technical delivery ve gelecekteki screenshot alanları.",
-        "diagnostic": {
-          "signal": "Sinyal",
-          "system": "Sistem",
-          "output": "Çıktı"
-        },
-        "screenshots": {
-          "eyebrow": "Screenshot galerisi",
-          "heading": "Arayüz görüntüleri",
-          "body": "Desktop, tablet ve mobile görüntüler runtime fetching olmadan yerel screenshot workflow üzerinden eklenebilir.",
-          "desktop": "Desktop",
-          "tablet": "Tablet",
-          "mobile": "Mobile",
-          "fallbackNote": "Screenshots şimdilik eksik. Üretilen sistem görseli, yerel görüntüler eklenene kadar sayfayı kullanılabilir tutar.",
-          "captureLabel": "Arayüz ekran görüntüleri bekleniyor"
-        },
-        "routeArchitecture": "Route architecture",
-        "technicalBuild": "Technical build",
-        "technicalDelivery": "Technical delivery",
-        "technicalReference": "Teknik referans",
-        "stackTags": "Stack etiketleri",
-        "whatThisDemonstrates": "Bu neyi gösterir",
-        "delivery": {
-          "nextjs": {
-            "title": "Next.js",
-            "body": "Static routes ve component structure hızlı production build için hazırdır."
-          },
-          "localSeo": {
-            "title": "Local SEO",
-            "body": "Sayfa niyeti, lokasyon terimleri ve hizmet dili Batumi arama davranışına göre hizalanır."
-          },
-          "structuredData": {
-            "title": "Structured data",
-            "body": "Schema patterns işletme türü ve görünür sayfa içeriği etrafında planlanır."
-          },
-          "multilingualRoutes": {
-            "title": "Multilingual routes",
-            "body": "Yerel ve ziyaretçi kitleler için dil-aware navigation, metadata ve route structure."
-          },
-          "performance": {
-            "title": "Performance",
-            "body": "Görsel, layout ve interaction tercihleri pratik bir performance budget içinde tutulur."
-          }
-        },
-        "externalLinks": "Yayınlanmış linkler",
-        "noPublishedLinks": "Live site ve repository linkleri doğrulanıp yayına hazır olduğunda burada görünecek.",
-        "auditCtaEyebrow": "Web sitesi sinyali",
-        "auditCtaHeading": "Web sitenizde bu düzeyde yapı ister misiniz?",
-        "auditCtaSubtitle": "Odaklı bir denetimle başlayın. İnceleme; rezervasyonları, güveni, yerel aramayı ve sonraki pratik build kararını neyin engellediğini bulur.",
-        "requestAudit": "Web sitesi denetimi talep edin",
-        "contact": "İletişim"
-      },
-      "systems": {
-      "hotel": {
-        "label": "Konsept sistem",
-        "title": "Otel Doğrudan Rezervasyon Sistemi",
-        "summary": "Oda ilgisini doğrudan rezervasyon yoluna dönüştüren; çok dilli içerik, konum kanıtı ve oda seviyesinde karar desteği içeren otel web sitesi mimarisi.",
-        "problem": "Misafirler otelleri hızlı karşılaştırır ve doğrudan site odaları, politikaları, konumu ve rezervasyon değerini netleştirmezse OTA platformlarına geri döner.",
-        "conversion": "Nitelikli misafirleri OTA platformlarına geri göndermeden doğrudan rezervasyon talebine taşımak.",
-        "architecture": [
-          "Konum, odalar ve doğrudan rezervasyon değeri üzerine kurulu ana sayfa.",
-          "Politikalar, olanaklar, galeri ve rezervasyon CTA içeren oda şablonu.",
-          "Batumi seyahat niyeti için çok dilli yerel SEO sayfaları."
-        ],
-        "modules": [
-          "Dil değiştirici",
-          "Oda kartı satırı",
-          "Giriş tarihi seçici",
-          "Güven ve konum şeridi"
-        ],
-        "technical": [
-          "Next.js rotaları",
-          "Yapılandırılmış otel verisi",
-          "Core Web Vitals bütçesi"
-        ]
-      },
-      "clinic": {
-        "label": "Örnek yapı",
-        "title": "Klinik Güven ve Tedavi Sistemi",
-        "summary": "Hastaların tedavileri anlamasına, güveni değerlendirmesine ve temel güven bilgilerini aramadan danışma talebi göndermesine yardım eden klinik web sitesi sistemi.",
-        "problem": "Hastalar kliniğe ulaşmadan önce tedaviler, doktorlar, güvenlik, dil desteği ve sonraki adımlar konusunda açıklık ister.",
-        "conversion": "Tedavi araştırmasını, başvuru yolunun yanında duran güven kanıtıyla danışma talebine dönüştürmek.",
-        "architecture": [
-          "Süreç, risk, hazırlık ve bakım sonrası bilgileri içeren tedavi kategori sayfaları.",
-          "Yetkinlikler, diller ve ilgili tedaviler içeren doktor profil şablonu.",
-          "Danışma formlarına bağlı SSS ve güven katmanı."
-        ],
-        "modules": [
-          "Tedavi kategori kartı",
-          "Doktor profil satırı",
-          "Danışma CTA",
-          "Çok dilli başvuru göstergesi"
-        ],
-        "technical": [
-          "Medikal schema temelleri",
-          "Erişilebilir form akışı",
-          "Yerelleştirilmiş rota yapısı"
-        ]
-      },
-      "beauty": {
-        "label": "Stüdyo prototipi",
-        "title": "Güzellik Randevu Sistemi",
-        "summary": "Sosyal ilgiyi daha net hizmet menüsüne, fiyat bağlamına, görsel kanıta ve randevu talebi akışına taşıyan güzellik stüdyosu web sitesi prototipi.",
-        "problem": "Sosyal kanallar ilgi oluşturur, ancak ziyaretçiler hizmetleri, süreyi, fiyatı veya uygunluğu tek düzenli yerde karşılaştıramaz.",
-        "conversion": "Instagram ve arama ziyaretçilerini hizmete özel yollarla randevu taleplerine dönüştürmek.",
-        "architecture": [
-          "Kategori, fiyat bağlamı, süre ve uzmana göre düzenlenmiş hizmet menüsü.",
-          "Rezervasyon aksiyonuna yakın galeri ve sosyal kanıt.",
-          "Batumi bölgesinde yüksek niyetli güzellik hizmetleri için yerel SEO sayfaları."
-        ],
-        "modules": [
-          "Hizmet menüsü satırı",
-          "Fiyat ve süre mini satırı",
-          "Randevu CTA",
-          "Galeri şeridi"
-        ],
-        "technical": [
-          "Rezervasyon rota deseni",
-          "Görsel optimizasyonu",
-          "Yerel hizmet schema"
-        ]
-      }
-    },
-    "process": {
-      "eyebrow": "Stüdyo yöntemi",
-      "heading": "Bu nasıl sizin web sitenize dönüşür",
-      "subtitle": "Sistem önce diagnostik yapı olarak başlar, sonra net sayfaları, özel içeriği ve test edilmiş rezervasyon yoluyla odaklı web sitesine dönüşür.",
-      "items": {
-        "audit": {
-          "title": "Denetim",
-          "description": "Mevcut web sitesini, iş modelini, rakipleri, arama niyetini ve rezervasyon ya da taleplerin nerede kaybolduğunu incelerim."
-        },
-        "structure": {
-          "title": "Yapı",
-          "description": "Tasarım başlamadan önce sayfa mimarisini, dönüşüm yollarını, çok dilli rotaları ve içerik bloklarını haritalarım."
-        },
-        "design": {
-          "title": "Tasarım",
-          "description": "Arayüzü sektör mantığına göre kurarım: odalar, tedaviler veya hizmetler; güven ve aksiyon yan yana."
-        },
-        "build": {
-          "title": "Geliştirme",
-          "description": "Siteyi Next.js ile responsive düzenler, yapılandırılmış veri, formlar ve performans disipliniyle geliştiririm."
-        },
-        "launch": {
-          "title": "Yayın",
-          "description": "SEO temelleri, analiz kontrolleri, form testleri, yönlendirmeler ve pratik bakım yolu ile yayına alırım."
-        }
-      }
-    },
-    "cta": {
-      "eyebrow": "Kanıtla başlayın",
-      "heading": "Web sitenizin gerçekten ihtiyaç duyduğu sistemi bulun.",
-      "subtitle": "Manuel web sitesi denetimi, yeniden tasarım kapsamı belirlenmeden önce güveni, arama görünürlüğünü ve rezervasyon aksiyonunu engelleyenleri gösterir.",
-      "audit": "Web sitesi denetimi iste",
-      "project": "Projeye başla"
-    }
-  },
-  "work": {
-    "status": {
-      "concept": "Konsept",
-      "internalBuild": "İç build",
-      "clientBuild": "Müşteri build"
-    },
-    "actions": {
-      "viewSystem": "Sistemi görüntüle",
-      "viewRepository": "Repository görüntüle",
-      "viewLiveSite": "Live site görüntüle",
-      "screenshotsComingSoon": "Arayüz ekran görüntüleri bekleniyor"
-    },
-    "labels": {
-      "problem": "İş problemi",
-      "solution": "Sistem çözümü",
-      "modules": "Temel modüller",
-      "technical": "Teknik katman",
-      "repository": "Repository",
-      "liveSite": "Live site",
-      "exampleSystem": "Örnek sistem"
-    }
+    "comingSoon": "Demo brief'i"
   },
   "insightsPage": {
-    "heading": "İçgörüler yalnızca gerçek rehberlerle yayınlanacak",
-    "subtitle": "Makale arşivi, tamamlanmış ve faydalı yazılar hazır olana kadar herkese açık değildir. Şimdilik en pratik sonraki adım; güveni, arama görünürlüğünü ve rezervasyonları neyin engellediğini gösteren manuel web sitesi denetimidir.",
-    "comingSoon": "Henüz yayınlanmış yazı yok",
+    "heading": "İçgörüler hazırlanıyor",
+    "subtitle": "Batum konaklama, sağlık ve güzellik web siteleri için planlanan pratik rehberler.",
+    "comingSoon": "Planlanan rehber",
     "clusters": {
       "hospitality": {
         "label": "Konaklama",
         "posts": [
           {
             "title": "Batum otelleri için doğrudan rezervasyon sayfaları",
-            "description": "Oda sayfaları, güven sinyalleri, rezervasyon CTA'ları ve otel web siteleri için yerel SEO üzerine pratik rehber."
+            "description": "Otel web siteleri için oda sayfaları, güvenilir kanıt, rezervasyon CTA'ları ve yerel SEO hakkında pratik rehber."
           },
           {
             "title": "Otel siteleri için hız kontrol listesi",
@@ -1830,91 +1358,32 @@
       }
     },
     "detail": {
-      "cta": "Boş makale listesi gösterilmiyor",
+      "cta": "Sizin için bu kadar sıkı çalışan bir web sitesi ister misiniz?",
       "ctaLink": "Ücretsiz web sitesi denetimi alın"
     }
   },
-  "homepage": {
-    "exampleBuilds": {
-      "eyebrow": "Tamamlanmış iç build'ler",
-      "heading": "İncelemeye hazır iki tamamlanmış web sitesi sistemi.",
-      "subtitle": "Bu iç build'ler, Batumi Lighthouse'un müşteri projesi yayına çıkmadan önce rezervasyon, güven, çok dilli içerik ve mobil dönüşümü nasıl yapılandırdığını gösterir.",
-      "systemLabel": "Örnek sistem",
-      "screenshotsPending": "Arayüz ekran görüntüleri bekleniyor",
-      "silk": {
-        "badge": "Güzellik randevu sistemi",
-        "description": "Tedaviler, randevu niyeti, güven ve uluslararası ziyaretçi navigasyonu için çok dilli salon web sitesi yapısı."
-      },
-      "grand": {
-        "badge": "Hospitality doğrudan rezervasyon sistemi",
-        "description": "Oda keşfi, konum güveni ve doğrudan rezervasyon ya da enquiry niyeti için butik otel web sitesi yapısı."
-      },
-      "cta": "Örnek sistemi görüntüle"
-    }
-  },
   "caseStudies": {
-    "sectionLabel": "Web sitesi sistemleri galerisi.",
-    "heading": "Örnek sistemler, uydurma kanıt değil",
-    "subtitle": "Gerçek bir yapının başlayabileceği ekranları, akışları ve modülleri gösteren sektör yönleri.",
-    "disclosure": "Yayınlanabilir kanıt hazır olana kadar iç örnekler ve konsept sistemler.",
-    "conversionLabel": "Dönüşüm hedefi",
-    "modulesLabel": "Modüller",
-    "viewGallery": "Web sitesi sistemlerini görüntüle",
-    "viewLink": "Sistemi görüntüle",
-    "moreNote": "Bu önizlemeler iç örnekler ve stüdyo prototipleridir. Sonuç, referans veya metrik iddia etmezler.",
-    "footer": {
-      "signal": "Sinyal",
-      "system": "Sistem",
-      "output": "Çıktı"
-    },
-    "proof": {
-      "items": [
-        "Şu anda Batumi'de seçilmiş projeler kabul ediliyor.",
-        "Kurucu liderliğinde build'ler. İş başlamadan önce net scope.",
-        "Aşağıdaki iç sistemler stüdyo örnekleridir, uydurma kanıt değildir."
-      ]
-    },
+    "sectionLabel": "Demo brief'ler.",
+    "heading": "Uydurma müşteri iddiaları değil, örnek yönler",
+    "viewLink": "Brief'i gör",
+    "moreNote": "Bunlar müşteri işleri yayına hazır olana kadar kullanılan örnek brief'lerdir. İşletmenize en yakın yönü sorun.",
     "discussProject": "Benzer bir projeyi konuş",
-    "seeBrief": "Sistemi gör",
+    "seeBrief": "Brief'i gör",
     "studies": {
       "hospitality": {
-        "label": "Konsept sistem",
         "vertical": "Konaklama",
-        "title": "Konaklama Sinyal Sistemi",
-        "problem": "Doğrudan site; odaları, konumu, politikaları ve rezervasyon değerini OTA listesinden daha güvenilir göstermelidir.",
-        "conversion": "Doğrudan rezervasyon talebi",
-        "result": "Rezervasyon akışı planı",
-        "modules": [
-          "Politika bağlamlı oda kartları",
-          "Giriş tarihi ve misafir seçici",
-          "Konum ve güven şeridi"
-        ]
+        "title": "Butik otel doğrudan rezervasyon konsepti",
+        "result": "Rezervasyon akışı planı"
       },
       "medical": {
-        "label": "Örnek yapı",
-        "vertical": "Medikal",
-        "title": "Klinik Güven Sistemi",
-        "problem": "Hastalar danışma istemeden önce tedavi açıklığı, doktor güveni ve dil desteği arar.",
-        "conversion": "Danışma talebi",
-        "result": "Hasta başvuru yapısı",
-        "modules": [
-          "Tedavi kategori içeriği",
-          "Doktor profili ve yetkinlikler",
-          "SSS ve çok dilli başvuru"
-        ]
+        "vertical": "Sağlık",
+        "title": "Diş kliniği çok dilli güven sitesi",
+        "result": "Hasta talep yapısı"
       },
       "beauty": {
-        "label": "Stüdyo prototipi",
         "vertical": "Güzellik",
-        "title": "Güzellik Randevu Sistemi",
-        "problem": "Sosyal ilgi; yapılandırılmış hizmet menüsü, fiyat bağlamı, görsel kanıt ve net randevu yoluna ihtiyaç duyar.",
-        "conversion": "Randevu talebi",
-        "result": "Randevu akışı prototipi",
-        "modules": [
-          "Kategoriye göre hizmet menüsü",
-          "Fiyat, süre ve uzman satırı",
-          "Galeri ve rezervasyon CTA"
-        ]
+        "title": "Güzellik stüdyosu randevu sitesi",
+        "result": "Randevu akışı prototipi"
       }
     }
   },
@@ -1922,7 +1391,7 @@
     "sectionLabel": "Rehberler hazırlanıyor.",
     "heading": "Oteller, klinikler ve stüdyolar için sektör rehberleri",
     "subtitle": "Batum işletmeleri için rezervasyon akışları, güven, yerel SEO ve görsel yön üzerine pratik notlar.",
-    "description": "Müşteri projelerinde kullanılan aynı denetim çerçevesine dayanan planlı rehberler.",
+    "description": "Müşteri projelerinde kullanılan aynı denetim sürecine dayalı planlanan rehberler.",
     "allArticles": "Planlanan rehberleri gör",
     "articles": {
       "0": {
@@ -1947,20 +1416,300 @@
       "beauty": "Güzellik"
     },
     "fieldNotes": "Saha notları",
-    "featuredDescription": "Batum otelleri için oda sayfaları, güven sinyalleri, rezervasyon CTA'ları, görsel ağırlığı ve yerel arama niyeti üzerine pratik notlar."
+    "featuredDescription": "Batum otelleri için oda sayfaları, güvenilir kanıt, rezervasyon CTA'ları, görsel ağırlığı ve yerel arama niyeti üzerine pratik notlar."
+  },
+  "photographyHome": {
+    "eyebrow": "Fotoğraf + sosyal içerik",
+    "heading": "Daha iyi bir web sitesi, insanların durup bakacağı görsellere ihtiyaç duyar.",
+    "body": "Jasper ve asistanı işletme çekimlerini; tek seansta web sitesi için geniş kareler, dikey sosyal içerik, yararlı ayrıntılar ve doğal insan anları üretecek şekilde planlar.",
+    "outputs": {
+      "0": {
+        "title": "Web sitesi",
+        "body": "Ana görseller ve hizmet sayfası hikâyeleri"
+      },
+      "1": {
+        "title": "Sosyal medya",
+        "body": "Reels, Stories ve dikey lansmanlar"
+      },
+      "2": {
+        "title": "Diğer kanallar",
+        "body": "Google, ilanlar, basın ve kampanyalar"
+      }
+    },
+    "primaryCta": "Fotoğraf ve içeriği görün",
+    "secondaryCta": "Çekimi görüşün",
+    "stage": {
+      "ariaLabel": "Tek çekimden geniş, portre ve dikey içerik formatlarını gösteren hareketli kontak baskı",
+      "landscape": "Web sitesi ana görseli",
+      "portrait": "Sosyal medya karuseli",
+      "reel": "Dikey Reel",
+      "contactSheet": "Stüdyo görsel çalışmaları / 01-04",
+      "disclosure": "Özgün stüdyo sanat yönetimi örnekleri. Müşteri işi veya ölçülmüş sonuç değildir."
+    },
+    "sceneTitles": {
+      "hospitality": "Konaklama / mekân",
+      "beauty": "Güzellik / hizmet",
+      "clinic": "Klinik / güven",
+      "food": "Yemek / ayrıntı"
+    },
+    "sceneAlts": {
+      "hospitality": "Web sitesi ve içerik çekimi için hazırlanmış, Karadeniz manzaralı sıcak bir Batum otel odası",
+      "beauty": "Güzellik uzmanı sıcak doğal ışıkta bakım odasını hazırlıyor",
+      "clinic": "Diş kliniği ekibi hasta gelmeden önce sakin bir muayene odasını hazırlıyor",
+      "food": "Şef restoran web sitesi ve sosyal içerik için tabağın son dokunuşlarını yapıyor"
+    },
+    "tickerLabel": "Çekim planlamasına dahil edilen içerik formatları",
+    "ticker": {
+      "0": "Web sitesi ana görseli",
+      "1": "Google profili",
+      "2": "Dikey Reels",
+      "3": "Sosyal medya karuselleri",
+      "4": "Stories ve lansmanlar"
+    }
+  },
+  "photographyPage": {
+    "meta": {
+      "title": "Batum'da işletme fotoğrafçılığı ve içerik çekimi",
+      "description": "Batum'daki oteller, klinikler, güzellik stüdyoları, restoranlar ve yerel işletmeler için web sitesi odaklı fotoğraf çekimi; Jasper ve asistanı tarafından planlanır ve çekilir."
+    },
+    "hero": {
+      "eyebrow": "Batum'da fotoğraf ve içerik çekimi",
+      "title": "İnsanlara sizi seçmenin nasıl hissettireceğini gösterin.",
+      "body": "Jasper ve asistanı; iç mekânları, ekipleri, hizmetleri, ürünleri ve insanların iletişime geçmeden veya rezervasyon yapmadan önce görmek istediği ayrıntıları planlar ve çeker.",
+      "primaryCta": "Çekimi görüşün",
+      "secondaryCta": "Çekim seçenekleri",
+      "proof": {
+        "0": "Web siteleri ve rezervasyon sayfaları için planlama",
+        "1": "Jasper ve asistanı tarafından doğrudan çekim",
+        "2": "Web, Google ve sosyal medya için düzenleme"
+      }
+    },
+    "visual": {
+      "eyebrow": "Kullanışlı bir görsel arşivi",
+      "title": "Tek çekim. İşletmenizin gerçekten ihtiyaç duyduğu kareler.",
+      "frames": {
+        "place": {
+          "title": "Mekân",
+          "body": "Konumu, odaları, atmosferi ve müşteri deneyimini açıkça gösteren geniş kareler."
+        },
+        "people": {
+          "title": "İnsanlar",
+          "body": "Doğal ekip portreleri ve gerçek hizmet anları."
+        },
+        "details": {
+          "title": "Ayrıntılar",
+          "body": "Ürünler, yüzeyler, ekipman, yemekler ve güven oluşturan küçük işaretler."
+        }
+      }
+    },
+    "social": {
+      "eyebrow": "Tek çekim, birçok satış noktası",
+      "heading": "İçeriğiniz müşterilerin baktığı her yerde çalışmalı.",
+      "body": "Aynı çekimde sahneleri farklı kadraj ve ritimlerle planlarız. Böylece yalnızca tek yere uyan güzel bir fotoğraf yerine bağlantılı bir görsel arşivi oluşur.",
+      "statement": "Web sitesi, sosyal akış, Google profili ve sonraki kampanya aynı işletmeye ait görünmeli.",
+      "stage": {
+        "ariaLabel": "Web sitesi, sosyal karusel ve dikey Reel formatlarını gösteren hareketli kontak baskı",
+        "landscape": "Web sitesi ana görseli",
+        "portrait": "Sosyal medya karuseli",
+        "reel": "Dikey Reel",
+        "contactSheet": "Görsel yön / dört sahne",
+        "disclosure": "Özgün stüdyo sanat yönetimi örnekleri. Müşteri işi veya yayımlanmış sonuç değildir."
+      },
+      "tickerLabel": "Planlanan fotoğraf ve sosyal içerik formatları",
+      "ticker": {
+        "0": "Web sitesi ana görseli",
+        "1": "Google profili",
+        "2": "Dikey Reels",
+        "3": "Sosyal medya karuselleri",
+        "4": "Stories ve lansmanlar"
+      },
+      "outputs": {
+        "website": {
+          "channel": "Web sitesi",
+          "title": "Mekânı anlatan geniş kareler",
+          "body": "Ana sayfa görselleri, oda veya hizmet sayfaları, banner'lar ve web sitesini tamamlayan görsel geçişler."
+        },
+        "reels": {
+          "channel": "Reels + Stories",
+          "title": "Hareket için planlanan dikey sahneler",
+          "body": "Telefon öncelikli izleme için kısa sekanslar, açılışlar, hizmet anları ve kamera arkası ayrıntıları."
+        },
+        "feed": {
+          "channel": "Akış + karusel",
+          "title": "Dikkati tutan portre kadrajları",
+          "body": "Güçlü açılış görselleri, destekleyici ayrıntılar ve kullanışlı sosyal paylaşımlar için bağlantılı kareler."
+        },
+        "google": {
+          "channel": "Google + ilanlar",
+          "title": "Karşılaştırma yapan kişiler için net kanıt",
+          "body": "Müşterilerin ne bulacağını anlamasına yardımcı olan gerçek mekânlar, insanlar, ürünler ve hizmet ayrıntıları."
+        }
+      }
+    },
+    "shootTypes": {
+      "eyebrow": "İşletme odaklı fotoğrafçılık",
+      "heading": "Neleri çekebiliriz",
+      "body": "Her çekim, fotoğrafların desteklemesi gereken sayfalar ve müşteri sorularıyla başlar. Böylece güzel ama kullanılamayan fotoğraflar yerine işinize yarayan bir arşiv elde edersiniz.",
+      "items": {
+        "hospitality": {
+          "title": "Oteller ve pansiyonlar",
+          "body": "Odalar, giriş, olanaklar, kahvaltı, manzaralar, çalışanlar ve konukların konaklama seçerken karşılaştırdığı ayrıntılar."
+        },
+        "clinics": {
+          "title": "Klinikler ve muayenehaneler",
+          "body": "İç mekânlar, ekip portreleri, ekipman, görüşme alanları ve açık gizlilik ile onay kuralları altında sakin hizmet anları."
+        },
+        "beauty": {
+          "title": "Güzellik ve sağlıklı yaşam",
+          "body": "Uygulama alanları, ekip üyeleri, ürünler, dokular ve müşterinin girişten randevuya kadar yaşadığı deneyim."
+        },
+        "foodProducts": {
+          "title": "Yemek, ürün ve yerel hizmetler",
+          "body": "Menü ürünleri, perakende ürünleri, çalışma süreci, hizmet ayrıntıları ve web sitesi, Google ile sosyal medya için kullanışlı kareler."
+        }
+      }
+    },
+    "deliverables": {
+      "eyebrow": "Brief'ten teslimata",
+      "heading": "Kamerayla gelmekten daha fazlası",
+      "body": "Her fotoğrafın nerede kullanılacağı önceden düşünülür. Böylece son seçki yalnızca dekorasyon değil, işletmenizin teklifini destekleyen bir araç olur.",
+      "items": {
+        "planning": {
+          "title": "Brief ve çekim listesi",
+          "body": "Çekim gününden önce sayfaları, formatları, kişileri, mekânları ve öncelikli sahneleri belirleriz."
+        },
+        "direction": {
+          "title": "Çekim günü yönlendirme",
+          "body": "Sahneleri düzenler, kişileri yönlendirir, ayrıntıları kontrol eder ve süreci sakin biçimde ilerletiriz."
+        },
+        "editing": {
+          "title": "Özenli düzenleme",
+          "body": "Seçilen fotoğraflarda tutarlı renk, pozlama, kadraj ve gerekli pratik rötuşlar uygulanır."
+        },
+        "delivery": {
+          "title": "Kullanışlı dosya teslimi",
+          "body": "Düzenli, web'e hazır dosyalar ve diğer işletme kullanımları için kararlaştırılan yüksek çözünürlüklü sürümler teslim edilir."
+        }
+      }
+    },
+    "options": {
+      "eyebrow": "Çekim seçenekleri",
+      "heading": "İşletmenizin ihtiyaç duyduğu kapsamı seçin",
+      "body": "Kesin program, görsel sayısı, kullanım hakları ve fiyat kısa bir brief sonrasında yazılı olarak onaylanır.",
+      "includedLabel": "Neleri kapsar",
+      "scopeNote": "Kesin kapsam ve fiyat çekimden önce onaylanır.",
+      "items": {
+        "focused": {
+          "bestForLabel": "En uygun",
+          "bestFor": "Tek bir konumda hedefli güncelleme",
+          "title": "Odaklı mekân çekimi",
+          "body": "Yenilenmiş odalar, yeni bir uygulama alanı, menü veya ekip portreleri gibi tek ve net bir öncelik için kompakt çekim.",
+          "included": {
+            "0": "Kısa planlama görüşmesi ve odaklı çekim listesi",
+            "1": "Tek konum ve tek ana görsel hedef",
+            "2": "Seçilmiş ve web'e hazır biçimde düzenlenmiş fotoğraflar"
+          }
+        },
+        "story": {
+          "bestForLabel": "En uygun",
+          "bestFor": "İşletmeyi daha kapsamlı anlatmak",
+          "title": "İşletme hikâyesi çekimi",
+          "body": "Müşterilerin işletmeyi anlamasına ve güvenmesine yardımcı olan mekân, insanlar, hizmetler ve ayrıntılar için daha geniş kapsam.",
+          "included": {
+            "0": "Birden fazla web sitesi bölümü için ayrıntılı brief",
+            "1": "Ekip ve hizmet yönlendirmesiyle birden fazla sahne",
+            "2": "Web, Google ve sosyal medya için çeşitli düzenlenmiş görseller"
+          }
+        },
+        "website": {
+          "bestForLabel": "En uygun",
+          "bestFor": "Yeni web sitesi veya tam içerik yenilemesi",
+          "title": "Web sitesi içerik günü",
+          "body": "Ana görseller, hizmet sayfaları, profiller, rezervasyon bölümleri ve tekrar kullanılabilir destek içeriği için web sitesi odaklı çekim.",
+          "included": {
+            "0": "Web sitesi yapısına göre sayfa sayfa görsel planlama",
+            "1": "Geniş, portre, ayrıntı ve dikey kompozisyonlar",
+            "2": "Yayın için hazırlanmış düzenli bir görsel arşivi"
+          }
+        }
+      }
+    },
+    "team": {
+      "eyebrow": "Odaklı iki kişilik ekip",
+      "heading": "Doğrudan Jasper ve asistanıyla çalışırsınız",
+      "body": "Küçük ekip iletişimi doğrudan, çekimi ise sakin tutar. Sorumluluklar çekimden önce netleştirilir; ek uzman desteği gerekiyorsa açıkça kararlaştırılır.",
+      "jasper": {
+        "title": "Jasper",
+        "body": "Brief'i, görsel yönü, kamera kullanımını, kompozisyonu, seçimi, düzenlemeyi ve fotoğrafların web sitesi projesiyle bağlantısını yönetir."
+      },
+      "assistant": {
+        "title": "Asistan",
+        "body": "Işık, sahne düzeni, ekipman, hazırlık, ayrıntı kontrolü ve çekim alanındaki verimli akışa destek olur."
+      }
+    },
+    "process": {
+      "eyebrow": "Nasıl çalışır",
+      "heading": "Kamera çıkmadan önce net bir süreç",
+      "steps": {
+        "brief": {
+          "title": "İhtiyacınızı anlatın",
+          "body": "İşletmeyi, konumu, kullanım amacını, zamanı ve fotoğrafların çözmesi gereken ana sorunu paylaşın."
+        },
+        "plan": {
+          "title": "Çekim planını netleştirin",
+          "body": "Sahneleri, kişileri, hazırlığı, programı, teslimatları, hakları ve fiyatı yazılı olarak onaylarız."
+        },
+        "shoot": {
+          "title": "Mekânda çekim",
+          "body": "Çekimi yönlendirir, ayrıntıları takip eder ve hem ana hem de destekleyici kareleri çekeriz."
+        },
+        "deliver": {
+          "title": "Seçim ve teslim",
+          "body": "Son fotoğraflar düzenlenir, organize edilir ve işletmeniz için kararlaştırılan formatlarda teslim edilir."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Pratik ayrıntılar",
+      "heading": "Fotoğrafçılık soruları",
+      "items": {
+        "webOnly": {
+          "question": "Yalnızca web siteleri için mi çekim yapıyorsunuz?",
+          "answer": "Hayır. Web sitesi planlama için güçlü bir temel oluşturur; kararlaştırılan sürümler Google Business Profile, sosyal medya, ilanlar ve baskı için de hazırlanabilir."
+        },
+        "extras": {
+          "question": "Model, stil, video veya drone çekimi ayarlayabilir misiniz?",
+          "answer": "Bunlar ayrı kapsamlandırılır ve yalnızca doğru kişiler, izinler, ekipman ve koşullar onaylandığında eklenir. Teklife habersiz hiçbir hizmet eklenmez."
+        },
+        "rights": {
+          "question": "Son fotoğrafları kimler kullanabilir?",
+          "answer": "Kullanım hakları çekimden önce teklife yazılır. Anlaşma, işletmenin fotoğrafları nerede kullanabileceğini ve hangi kullanımların ayrı onay gerektirdiğini açıklar."
+        },
+        "delivery": {
+          "question": "Fotoğraflar ne kadar sürede teslim edilir?",
+          "answer": "Teslim tarihi kapsamla birlikte kararlaştırılır. Odaklı bir çekim ile tam içerik günü farklı düzenleme süreleri gerektirir."
+        },
+        "clinics": {
+          "question": "Klinik ve uygulama alanlarını çekebilir misiniz?",
+          "answer": "Evet. İç mekânlar, çalışanlar, ekipman ve görüşme alanları çekilebilir. Hasta, müşteri veya uygulama içeren her görüntü için açık yazılı onay ve kararlaştırılmış bir gizlilik planı gerekir."
+        }
+      }
+    },
+    "cta": {
+      "eyebrow": "Batum ve yakın çevresi",
+      "heading": "İşletmenizin neyi göstermesi gerektiğini anlatın.",
+      "body": "Konumu, kullanım amacını ve ihtiyaç duyduğunuz fotoğrafların kısa açıklamasını gönderin. Net bir çekim teklifi hazırlamak için gereken sorularla size döneriz.",
+      "button": "Çekiminizi görüşün"
+    }
   },
   "trustedBy": {
-    "label": "Yerel işletmelerin gerçekten ihtiyaç duyduğu sistemler",
+    "label": "Yerel işletmelerin gerçekten ihtiyaç duyduğu şeyler etrafında kuruldu",
     "client0": "Doğrudan rezervasyon",
     "client1": "Randevu akışları",
     "client2": "Yerel SEO",
     "client3": "Özgün fotoğraf",
     "client4": "Çok dilli sayfalar",
-    "client5": "Yayın desteği"
-  },
-  "testimonials": {
-    "eyebrow": "Müşteri kanıtı",
-    "heading": "Gerçek referanslar"
+    "client5": "Hostinger yayını"
   },
   "ui": {
     "skipToContent": "İçeriğe geç",
@@ -1968,7 +1717,6 @@
     "mainNavigation": "Ana navigasyon",
     "mobileNavigation": "Mobil navigasyon",
     "openNavigationMenu": "Navigasyon menüsünü aç",
-    "changeLanguage": "Dili değiştir",
     "toggleColorTheme": "Renk temasını değiştir",
     "switchToLight": "Açık moda geç",
     "switchToDark": "Koyu moda geç",
@@ -1983,8 +1731,8 @@
     "locationArea": "Batum, Gürcistan merkezliyim. Acara bölgesi ve çevresindeki konaklama, sağlık ve güzellik işletmelerine hizmet veriyorum."
   },
   "announcement": {
-    "text": "Manuel web sitesi denetimi mevcut",
-    "cta": "Denetim iste"
+    "text": "Bu ay ücretsiz web sitesi denetimi - sınırlı kontenjan",
+    "cta": "Talep et"
   },
   "availability": {
     "available": "Projeler için uygun",
@@ -1996,5 +1744,319 @@
     "home": "Ana sayfaya git",
     "audit": "Denetim iste",
     "contact": "İletişime geç"
+  },
+  "examplesUi": {
+    "page": {
+      "heading": "İç örnek çalışmalar",
+      "subtitle": "Batumi otelleri, klinikleri, salonları ve hizmet işletmeleri için yapı, sayfalar ve kararları gösteren sektörel web sitesi örnekleri.",
+      "note": "Aksi açıkça belirtilmedikçe bunlar iç örneklerdir. Ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir."
+    },
+    "home": {
+      "sectionLabel": "İç örnek çalışmalar",
+      "kicker": "Faydalı örnekler, açıkça belirtilmiş.",
+      "heading": "Dürüstçe değerlendirebileceğiniz web sitesi sistemleri",
+      "cta": "Tüm örnekleri gör",
+      "note": "Bu örnekler sayfa yapısını, modülleri ve tasarım kararlarını gösterir. Ücretli müşteri sonucu, referans veya iş metriği iddia etmez."
+    },
+    "preview": {
+      "screenshotComingSoon": "Ekran görüntüsü yakında"
+    },
+    "fields": {
+      "businessType": "Temsil edilen işletme türü",
+      "demonstratedProblem": "Gösterilen problem",
+      "pagesModules": "Sayfalar ve modüller",
+      "clientLearning": "Gerçek bir müşteri ne öğrenir",
+      "disclosure": "Açıklama",
+      "features": "Özellikler",
+      "whatItShows": "Ne gösteriyor"
+    },
+    "proofLine": "Kanıt: {level}",
+    "typeLabels": {
+      "realProject": "Gerçek proje",
+      "demoBuild": "İç örnek",
+      "concept": "Konsept",
+      "prototype": "Prototip",
+      "ownSite": "Kendi site"
+    },
+    "statusLabels": {
+      "live": "Yayında",
+      "inDevelopment": "Geliştirme aşamasında",
+      "demoOnly": "Müşteri sonucu değil",
+      "private": "Özel"
+    },
+    "proofLabels": {
+      "verifiedLive": "Yayında doğrulandı",
+      "demo": "Demo",
+      "concept": "Konsept",
+      "privateClient": "Özel müşteri",
+      "internal": "İç çalışma"
+    },
+    "sectorLabels": {
+      "hospitality": "Konaklama",
+      "medical": "Medikal",
+      "beauty": "Güzellik",
+      "studio": "Stüdyo"
+    },
+    "buttons": {
+      "viewWebsite": "Web sitesini aç",
+      "viewDemo": "Demoyu aç",
+      "viewRepository": "Depoyu aç",
+      "viewExample": "Örneği gör",
+      "discussSimilarWebsite": "Benzer bir web sitesini konuşalım"
+    },
+    "items": {
+      "boutique-hotel-direct-booking-demo": {
+        "title": "Butik Otel Doğrudan Rezervasyon Demosu",
+        "businessType": "Butik otel, pansiyon veya apart otel",
+        "shortDescription": "Daha net odalar, teklifler, kurallar ve doğrudan rezervasyon yolları için iç otel web sitesi örneği.",
+        "demonstratedProblem": "Otel ziyaretçileri odaları, konumu, kuralları ve rezervasyon seçeneklerini hızlıca karşılaştırır. Bu bilgiler dağınıksa site onları OTA’lara veya genel rezervasyon sayfalarına geri iter.",
+        "problem": "Birçok otel sitesi genel galerilere dayanır ve misafirler odaları, konumu ve doğrudan rezervasyon faydasını anlamadan onları dışarı gönderir.",
+        "solution": "Oda odaklı içerik, yerel SEO, güven unsurları ve doğrudan talepleri görünür tutan rezervasyon yolu ile hızlı çok dilli yapı.",
+        "modules": [
+          "Doğrudan rezervasyon çağrıları olan ana sayfa",
+          "Oda ve teklif sayfası yapısı",
+          "Konum, kurallar ve misafir SSS modülleri",
+          "Yerel SEO açılış sayfası yapısı",
+          "İletişim ve rezervasyon yönlendirme akışı"
+        ],
+        "features": [
+          "Oda ve teklif sayfası yapısı",
+          "Doğrudan rezervasyon çağrıları",
+          "Yerel SEO sayfa hiyerarşisi",
+          "Görsel ağırlığı ve hız planlama",
+          "Misafir güven içeriği"
+        ],
+        "clientLearning": [
+          "Oda içeriği misafirlerin siteden çıkmadan karşılaştırmasına nasıl yardım eder",
+          "Doğrudan rezervasyon çağrıları kurallar ve güven detaylarıyla nasıl yan yana durur",
+          "Çok dilli otel sayfaları tasarımdan önce nasıl yapılandırılır"
+        ],
+        "imageAlt": "Butik Otel Doğrudan Rezervasyon Demosu web sitesi örneğinin ekran görüntüsü",
+        "disclaimer": "İç örnek. Bu ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir.",
+        "whatItShows": [
+          "Otel içeriği doğrudan rezervasyonları nasıl destekler",
+          "Çok dilli oda sayfaları nasıl düzenlenebilir",
+          "Güven unsurları pratik bir rezervasyon akışına nasıl yerleşir"
+        ],
+        "ctaLabel": "Benzer bir web sitesini konuşalım"
+      },
+      "clinic-trust-website-demo": {
+        "title": "Klinik Güven Web Sitesi Demosu",
+        "businessType": "Klinik, diş hekimi veya estetik tıp merkezi",
+        "shortDescription": "Tedavi açıklığı, doktor güveni, hasta soruları ve konsültasyon talepleri için iç klinik web sitesi örneği.",
+        "demonstratedProblem": "Hastalar bir klinikle iletişime geçmeden önce tedavileri, uzmanları, güvenliği, dilleri ve sonraki adımları anlamak ister.",
+        "problem": "Klinik siteleri hastaları çoğu zaman temel güven detaylarını aramaya zorlar: doktor profilleri, tedavi bilgisi, diller ve randevu talep yolu.",
+        "solution": "Net medikal hizmet sayfaları, doktor içeriği, SSS, yapılandırılmış veri ve konsültasyon talep yolları ile güven odaklı yapı.",
+        "modules": [
+          "Tedavi genel bakış ve detay sayfaları",
+          "Doktor profil modülleri",
+          "Hasta SSS ve güvenlik içeriği",
+          "Konsültasyon talep akışı",
+          "Medikal yapılandırılmış veri planı"
+        ],
+        "features": [
+          "Doktor ve tedavi sayfası yapısı",
+          "Hasta SSS bölümleri",
+          "Konsültasyon talep akışı",
+          "Medikal yapılandırılmış veri planlama",
+          "Çok dilli içerik hiyerarşisi"
+        ],
+        "clientLearning": [
+          "Tedavi sayfaları hasta kaygılarını iletişimden önce nasıl cevaplar",
+          "Doktor profilleri ve güvenlik notları güveni nasıl destekler",
+          "Randevu talepleri tıbbi iddia üretmeden nasıl daha net olur"
+        ],
+        "imageAlt": "Klinik Güven Web Sitesi Demosu örneğinin ekran görüntüsü",
+        "disclaimer": "İç örnek. Bu ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir.",
+        "whatItShows": [
+          "Tedavi sayfaları güveni nasıl oluşturur",
+          "Hasta soruları talep sürtünmesini nasıl azaltır",
+          "Yapılandırılmış veri medikal arama görünürlüğünü nasıl destekler"
+        ],
+        "ctaLabel": "Benzer bir web sitesini konuşalım"
+      },
+      "beauty-salon-booking-demo": {
+        "title": "Güzellik Salonu Rezervasyon Demosu",
+        "businessType": "Güzellik stüdyosu, salon, medspa veya randevulu hizmet",
+        "shortDescription": "Daha net hizmetler, fiyatlar, güven kanıtı ve randevu talepleri için iç salon web sitesi örneği.",
+        "demonstratedProblem": "Güzellik müşterileri genellikle Instagram veya Google’dan gelir ve hizmetler, fiyatlar, kanıt ve rezervasyon yolu hakkında hızlı cevap ister.",
+        "problem": "Birçok salon fiyat, uygunluk ve randevu talepleri için sosyal medya DM’lerine dayanır; bu da fazladan yazışma ve kayıp talep yaratır.",
+        "solution": "Temel detayları saklamadan randevuları destekleyen mobil öncelikli hizmet menüsü, rezervasyon çağrıları, güven içeriği ve yerel arama yapısı.",
+        "modules": [
+          "Mobil öncelikli hizmet menüsü",
+          "Fiyat ve süre modülleri",
+          "Kanıt, galeri ve yorum bölümleri",
+          "Randevu talep akışı",
+          "Yerel SEO hizmet sayfaları"
+        ],
+        "features": [
+          "Hizmet ve fiyat sayfası yapısı",
+          "Randevu odaklı çağrılar",
+          "Mobil öncelikli gezinme akışı",
+          "Yorum ve sosyal kanıt yerleşimi",
+          "Yerel SEO hizmet sayfaları"
+        ],
+        "clientLearning": [
+          "Bir salon rezervasyon öncesi yazışmayı nasıl azaltabilir",
+          "Hizmet ve fiyat içeriği mobilde nasıl çalışır",
+          "Kanıt ve iletişim akışı randevu taleplerini nasıl destekler"
+        ],
+        "imageAlt": "Güzellik Salonu Rezervasyon Demosu web sitesi örneğinin ekran görüntüsü",
+        "disclaimer": "İç örnek. Bu ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir.",
+        "whatItShows": [
+          "Hizmetler hızlı rezervasyon kararı için nasıl düzenlenir",
+          "Randevu çağrıları DM sürtünmesini nasıl azaltır",
+          "Yerel SEO salonun keşfedilmesini nasıl destekler"
+        ],
+        "ctaLabel": "Benzer bir web sitesini konuşalım"
+      },
+      "batumi-lighthouse-website": {
+        "title": "Batumi Lighthouse Web Sitesi",
+        "businessType": "Kurucu liderliğinde web stüdyosu",
+        "shortDescription": "Batumi Lighthouse sitesinin kendisi: hizmet netliği, çok dilli yapı ve talep akışı için iç stüdyo çalışması.",
+        "demonstratedProblem": "Küçük bir stüdyo kime hizmet verdiğini, ne inşa ettiğini ve konuşmanın nasıl başlayacağını genel ajans şablonu gibi görünmeden anlatmalıdır.",
+        "problem": "Küçük bir stüdyo sitesi ne inşa ettiğini, kime hizmet verdiğini ve nasıl iletişim kurulacağını süslü ajans dili olmadan anlatmalıdır.",
+        "solution": "Merkezi marka yapılandırması, yapılandırılmış metadata, sektör sayfaları, denetim yolları ve net iletişim rotaları olan çok dilli Next.js sitesi.",
+        "modules": [
+          "Kurucu odaklı ana sayfa yapısı",
+          "Sektöre özel hizmet sayfaları",
+          "Denetim talebi ve iletişim akışı",
+          "Çok dilli rota ve içerik yapısı",
+          "SEO metadata ve yapılandırılmış veri"
+        ],
+        "features": [
+          "Çok dilli rota yapısı",
+          "Merkezi site yapılandırması",
+          "SEO metadata ve yapılandırılmış veri",
+          "Denetim ve talep toplama akışları",
+          "İşlevsel tasarım sistemi"
+        ],
+        "clientLearning": [
+          "Küçük bir hizmet işletmesi teklifini sade şekilde nasıl anlatır",
+          "Çok dilli sayfalar ve SEO temelleri birlikte nasıl planlanır",
+          "Denetim ve iletişim yolları küçük stüdyo sitesine nasıl yerleştirilir"
+        ],
+        "imageAlt": "Batumi Lighthouse iç örnek web sitesinin ekran görüntüsü",
+        "disclaimer": "İç örnek. Bu ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir.",
+        "whatItShows": [
+          "Stüdyo çok dilli hizmet içeriğini nasıl yapılandırır",
+          "Marka ve SEO yapılandırması nasıl merkezileştirilir",
+          "Pratik talep yolları küçük stüdyo sitesinde nasıl kurulabilir"
+        ],
+        "ctaLabel": "Benzer bir web sitesini konuşalım"
+      }
+    }
+  },
+  "templatesCatalog": {
+    "metadataTitle": "Batum işletmeleri için web sitesi şablonları",
+    "metadataDescription": "Oteller, klinikler, güzellik işletmeleri, restoranlar, barlar ve mağazalar için 18 özgün web sitesi şablonunu inceleyin.",
+    "eyebrow": "18 özgün web sitesi başlangıç noktası",
+    "heading": "Proje başlamadan önce güçlü bir yön seçin.",
+    "intro": "Altı iş kategorisi için tamamlanmış, duyarlı web sitesi örneklerini inceleyin. Her biri yapı, stil ve müşteri yolculuğu için pratik bir başlangıç noktası sunar.",
+    "disclosure": "Gösterilen tüm işletmeler kurgusaldır. Bunlar şirket içi şablon demolarıdır; müşteri işi, referans veya yayımlanmış iş sonucu değildir.",
+    "all": "Tüm şablonlar",
+    "filter": "İş türüne göre filtrele",
+    "showing": "{count} şablon gösteriliyor",
+    "pageCount": "{count} tamamlanmış sayfa",
+    "details": "Ayrıntıları gör",
+    "preview": "Canlı önizleme",
+    "internalDemo": "Şirket içi örnek",
+    "imageAlt": "{category} web sitesi şablonu önizlemesi",
+    "openPreview": "Tam önizlemeyi aç",
+    "requestTemplate": "Bu şablonu görüş",
+    "whatIsIncluded": "Eksiksiz bir başlangıç noktası",
+    "completeWebsite": "Ana sayfanın ötesinde",
+    "customizationNote": "Son web sitesi markanıza, içeriğinize, dil ihtiyaçlarınıza ve iş hedeflerinize göre uyarlanır.",
+    "ctaHeading": "İşletmenize uygun bir yön buldunuz mu?",
+    "ctaBody": "Şablon adını ve işletmenizin kısa bir açıklamasını gönderin. Nelerin korunacağını, nelerin değişeceğini ve yapım maliyetini açıklayacağım.",
+    "contactInterest": "{name} şablonuyla ilgileniyorsunuz. Bunu görsel ve yapısal başlangıç noktası olarak kullanacağım; değiştirmeden kopyalamayacağım.",
+    "included": {
+      "responsive": "Duyarlı ana sayfa ve eksiksiz iç sayfa yapısı",
+      "navigation": "Erişilebilir masaüstü ve mobil gezinme",
+      "forms": "İşletmeye özel rezervasyon, talep veya randevu formları",
+      "seo": "SEO'ya hazır sayfa yapısı, meta veriler ve düzenlenebilir içerik"
+    },
+    "categories": {
+      "hotel": "Oteller",
+      "dentist": "Diş klinikleri",
+      "beauty-salon": "Güzellik ve wellness",
+      "restaurant": "Restoranlar",
+      "bar": "Barlar",
+      "shop": "Mağazalar"
+    },
+    "items": {
+      "hotel-01-luxury": {
+        "positioning": "Premium konaklamalar, oda karşılaştırması, teklifler ve doğrudan rezervasyon talepleri için rafine bir otel sitesi.",
+        "signature": "Etkileyici otel anlatımı ve pratik konaklama planlayıcısı."
+      },
+      "hotel-02-boutique": {
+        "positioning": "Odaları, karakteri ve çevredeki mahalleyi keşfetmeyi kolaylaştıran samimi bir otel sitesi.",
+        "signature": "Editoryal oda hikâyeleri ve kullanışlı yerel rehber."
+      },
+      "hotel-03-resort": {
+        "positioning": "Konaklama, deneyim, paket ve grup planlaması için destinasyon odaklı bir resort sitesi.",
+        "signature": "Odalar, aktiviteler ve özel günler için bütünlüklü gezi planlaması."
+      },
+      "dentist-01-clinical": {
+        "positioning": "Hastaların tedavileri, ekibi ve bakım talebini anlamasına yardımcı olan sakin bir klinik sitesi.",
+        "signature": "Görünür acil bakım yolu ve açık tedavi bilgileri."
+      },
+      "dentist-02-premium-cosmetic": {
+        "positioning": "Kozmetik diş hekimliği, ayrıntılı tedavi adımları ve uzman güveni için danışma odaklı bir site.",
+        "signature": "İlk sorudan danışmaya kadar aşamalı tedavi yolculuğu."
+      },
+      "dentist-03-family": {
+        "positioning": "Aileler, yeni hastalar, rutin bakım ve acil sorular için sıcak bir diş kliniği sitesi.",
+        "signature": "Ebeveyn dostu ilk ziyaret rehberi ve açık sonraki adımlar."
+      },
+      "beauty-01-salon": {
+        "positioning": "Hizmetler, uzmanlar, fiyatlar ve randevu talepleri için moda duyarlılığı olan bir salon sitesi.",
+        "signature": "Açık uzman ve hizmet eşleştirme deneyimi."
+      },
+      "beauty-02-spa": {
+        "positioning": "Bakımlar, ritüeller, paketler, üyelikler ve hediye kartları için sakin bir wellness sitesi.",
+        "signature": "Süreye ve amaca göre hazırlanmış dokunsal bakım bulucu."
+      },
+      "beauty-03-aesthetic-clinic": {
+        "positioning": "Tedaviler, uzmanlar ve danışma planlaması için güvenlik odaklı estetik klinik sitesi.",
+        "signature": "Abartılı iddialardan uzak, ölçülü danışma yolu."
+      },
+      "restaurant-01-fine-dining": {
+        "positioning": "Mevsimsel menüler, şef hikâyesi, özel yemekler ve rezervasyonlar için atmosferik restoran sitesi.",
+        "signature": "Odaklı tadım menüsü yolculuğu ve güçlü davet planlaması."
+      },
+      "restaurant-02-bistro": {
+        "positioning": "Menüler, günlük duyurular, etkinlikler ve masa rezervasyonları için canlı mahalle restoranı sitesi.",
+        "signature": "Yerel karakter taşıyan kullanışlı bugün ve etkinlikler panosu."
+      },
+      "restaurant-03-fast-casual": {
+        "positioning": "Misafirlerin mekânda yeme, gel-al veya teslimatı kolayca seçmesini sağlayan hızlı, menü odaklı site.",
+        "signature": "Anında sipariş türü seçimi ve kolay taranan menü."
+      },
+      "bar-01-cocktail": {
+        "positioning": "İçecekler, oturma seçenekleri, özel kiralama ve masa rezervasyonları için özgün kokteyl barı sitesi.",
+        "signature": "Zarif içecek listesi ile oturma ve etkinlik seçenekleri."
+      },
+      "bar-02-pub": {
+        "positioning": "Yemek, içecek, canlı spor, haftalık etkinlikler ve gruplar için sıcak bir pub sitesi.",
+        "signature": "Düzenli misafirler için pratik maç ve etkinlik panosu."
+      },
+      "bar-03-rooftop": {
+        "positioning": "Rezervasyonlar, grup paketleri ve özel etkinlikler için manzara odaklı çatı barı sitesi.",
+        "signature": "Manzara, etkinlik ve kapasiteye göre açık grup planlayıcısı."
+      },
+      "shop-01-fashion": {
+        "positioning": "Koleksiyonlar, ürün hikâyeleri, lookbook ve talepler için editoryal moda mağazası sitesi.",
+        "signature": "Kampanya görsellerini ürünlere bağlayan güçlü lookbook."
+      },
+      "shop-02-lifestyle": {
+        "positioning": "Özenli ürünler, hediye anları ve seçilmiş koleksiyonlar için sıcak bir yaşam tarzı mağazası sitesi.",
+        "signature": "Duruma göre hediye rehberi ve dokunsal ürün anlatımı."
+      },
+      "shop-03-specialty": {
+        "positioning": "Teknik ürünler, özellikler, karşılaştırmalar ve alıcı soruları için uzman perakende sitesi.",
+        "signature": "Uzmanlık gerektiren seçimi netleştiren pratik karşılaştırma."
+      }
+    }
   }
 }

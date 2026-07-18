@@ -5,7 +5,7 @@ import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/button';
-import { ClipboardCheck, DollarSign } from 'lucide-react';
+import { BookOpen, DollarSign } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 
 export async function generateMetadata({
@@ -14,9 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'thankYouPage' });
+
   return generatePageMetadata({
-    title: 'Thank You — Batumi Lighthouse',
-    description: 'Thank you for your inquiry. We will get back to you within one business day.',
+    title: t('heading'),
+    description: t('body'),
     path: '/thank-you',
     locale: locale as Locale,
     noIndex: true,
@@ -34,7 +36,7 @@ export default async function ThankYouPage({
   const t = await getTranslations('thankYouPage');
 
   const breadcrumbItems = [
-    { label: 'Thank You' },
+    { label: t('heading') },
   ];
 
   return (
@@ -47,9 +49,9 @@ export default async function ThankYouPage({
       <Section>
         <div className="max-w-2xl mx-auto text-center">
           {/* Success indicator */}
-          <div className="size-16 flex items-center justify-center bg-oxide/10 border border-border mx-auto mb-8">
+          <div className="size-16 flex items-center justify-center bg-brand-serene-coral/10 border border-border mx-auto mb-8">
             <svg
-              className="size-8 text-sea-bright"
+              className="size-8 text-brand-serene-coral-darken"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -76,11 +78,11 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-md"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
-              <Link href="/website-audits">
-                <div className="size-10 flex items-center justify-center border border-border bg-oxide/10 shrink-0">
-                  <ClipboardCheck className="size-4 text-sea-bright" aria-hidden="true" />
+              <Link href="/insights">
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 shrink-0">
+                  <BookOpen className="size-4 text-brand-serene-coral-darken" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('browse_insights')}</p>
@@ -92,11 +94,11 @@ export default async function ThankYouPage({
             <Button
               asChild
               variant="outline"
-              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-md"
+              className="h-auto py-4 px-5 flex items-center gap-3 justify-start rounded-none"
             >
               <Link href="/pricing">
-                <div className="size-10 flex items-center justify-center border border-border bg-sea/10 shrink-0">
-                  <DollarSign className="size-4 text-sea-bright" aria-hidden="true" />
+                <div className="size-10 flex items-center justify-center border border-border bg-brand-sage-green-darken/10 shrink-0">
+                  <DollarSign className="size-4 text-brand-sage-green-darken" />
                 </div>
                 <div className="text-left">
                   <p className="font-medium text-sm">{t('see_pricing')}</p>
