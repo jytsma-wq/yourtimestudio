@@ -41,40 +41,41 @@ export default async function WorkPage({
 
   return (
     <>
-      <Section>
+      <Section className="pb-12 pt-6 md:pb-16 md:pt-8">
         <Breadcrumbs items={[{ label: tNav('work'), href: '/work' }]} />
 
-        <div className="mb-10 max-w-3xl md:mb-12">
-          <h1 className="editorial-display mb-4 text-4xl md:text-5xl">
-            {labels.page.heading}
-          </h1>
-          <p className="text-lg leading-[1.75] text-muted-foreground md:text-xl">
-            {labels.page.subtitle}
-          </p>
-        </div>
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
+          <div className="max-w-3xl">
+            <h1 className="editorial-display text-4xl md:text-5xl lg:text-6xl">
+              {labels.page.heading}
+            </h1>
+            <p className="mt-5 text-lg leading-[1.7] text-muted-foreground md:text-xl">
+              {labels.page.subtitle}
+            </p>
+          </div>
 
-        <div className="max-w-3xl border-l border-border pl-4">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {labels.page.note}
-          </p>
+          <div className="border-l border-brand-serene-coral pl-5">
+            <p className="text-sm leading-[1.75] text-muted-foreground">
+              {labels.page.note}
+            </p>
+          </div>
         </div>
       </Section>
 
       <Section variant="subtle">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-px border border-border bg-border lg:grid-cols-2">
           {localizedExamples.map((example) => (
             <article
               key={example.id}
-              className="flex min-h-full flex-col overflow-hidden border border-border bg-card"
+              className="group flex min-h-full flex-col overflow-hidden bg-card"
             >
               <ExamplePreviewPanel
                 example={example}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                screenshotPlaceholder={labels.preview.screenshotComingSoon}
-                className="aspect-[16/10] border-b border-border"
+                className="aspect-[16/9] border-b border-border"
               />
 
-              <div className="flex flex-1 flex-col gap-6 p-5 md:p-6">
+              <div className="flex flex-1 flex-col gap-5 p-5 md:p-7">
                 <div className="flex flex-wrap gap-2">
                   <span className="border border-border bg-background px-2.5 py-1 text-xs font-semibold text-foreground">
                     {labels.typeLabels[example.type]}
@@ -96,24 +97,13 @@ export default async function WorkPage({
                   </p>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      {labels.fields.businessType}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {example.businessType}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      {labels.fields.demonstratedProblem}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {example.demonstratedProblem}
-                    </p>
-                  </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    {labels.fields.demonstratedProblem}
+                  </p>
+                  <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">
+                    {example.demonstratedProblem}
+                  </p>
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2">
@@ -122,9 +112,10 @@ export default async function WorkPage({
                       {labels.fields.pagesModules}
                     </p>
                     <ul className="mt-2 space-y-2">
-                      {example.modules.slice(0, 5).map((module) => (
-                        <li key={module} className="text-sm leading-relaxed text-muted-foreground">
-                          {module}
+                      {example.modules.slice(0, 3).map((module) => (
+                        <li key={module} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
+                          <span className="text-brand-serene-coral" aria-hidden="true">+</span>
+                          <span>{module}</span>
                         </li>
                       ))}
                     </ul>
@@ -134,13 +125,9 @@ export default async function WorkPage({
                     <p className="text-sm font-semibold text-foreground">
                       {labels.fields.clientLearning}
                     </p>
-                    <ul className="mt-2 space-y-2">
-                      {example.clientLearning.slice(0, 3).map((item) => (
-                        <li key={item} className="text-sm leading-relaxed text-muted-foreground">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {example.clientLearning[0]}
+                    </p>
                   </div>
                 </div>
 

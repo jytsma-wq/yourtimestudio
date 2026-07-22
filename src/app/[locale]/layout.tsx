@@ -8,12 +8,10 @@ import { defaultLocale, launchLocales, type Locale } from '@/lib/i18n/config';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { CookieConsent } from '@/components/shared/CookieConsent';
-import { AnnouncementBar } from '@/components/shared/AnnouncementBar';
 import '@/app/globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { WhatsAppFAB } from '@/components/shared/WhatsAppFAB';
 import { BackToTop } from '@/components/shared/BackToTop';
-import { SectionNav } from '@/components/shared/SectionNav';
 import { ContactStrip } from '@/components/shared/ContactStrip';
 import { PageTransition } from '@/components/shared/PageTransition';
 import { AnalyticsEvents } from '@/components/shared/AnalyticsEvents';
@@ -113,7 +111,6 @@ export default async function LocaleLayout({
             {ui('skipToContent')}
           </a>
           <div className="flex min-h-screen flex-col">
-            <AnnouncementBar />
             <SiteHeader />
             <main id="main-content" className="flex-1">
               <PageTransition>{children}</PageTransition>
@@ -122,7 +119,6 @@ export default async function LocaleLayout({
           </div>
           <WhatsAppFAB />
           <BackToTop />
-          <SectionNav />
           <ContactStrip />
           <AnalyticsEvents />
           <Toaster />

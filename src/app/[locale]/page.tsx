@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { type Locale, launchLocales } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
@@ -40,8 +41,10 @@ export default async function LocalePage({
 
   return (
     <>
-      <script
+      <Script
+        id="homepage-json-ld"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             organizationSchema(),

@@ -103,7 +103,6 @@ export default async function WorkDetailPage({
           <ExamplePreviewPanel
             example={example}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            screenshotPlaceholder={labels.preview.screenshotComingSoon}
             className="aspect-[16/10] border border-border bg-muted"
           />
         </div>

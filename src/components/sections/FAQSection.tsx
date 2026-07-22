@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Script from 'next/script';
 import {
   Accordion,
   AccordionContent,
@@ -8,11 +9,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-interface FAQSectionProps {
-  locale: string;
-}
-
-export function FAQSection({ locale }: FAQSectionProps) {
+export function FAQSection() {
   const t = useTranslations('faq');
 
   const items = [
@@ -39,8 +36,10 @@ export function FAQSection({ locale }: FAQSectionProps) {
 
   return (
     <>
-      <script
+      <Script
+        id="faq-json-ld"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Accordion type="single" collapsible className="w-full">

@@ -17,8 +17,10 @@ import {
   Building2,
   Stethoscope,
   Sparkles,
+  ArrowDown,
 } from 'lucide-react';
 import { AuditRequestForm } from '@/components/shared/AuditRequestForm';
+import { Button } from '@/components/ui/button';
 
 const rubricItems = [
   { key: 'brand', icon: Eye },
@@ -71,25 +73,59 @@ export default async function WebsiteAuditsPage({
 
   return (
     <>
-      {/* Breadcrumbs */}
-      <Section>
+      <Section className="pb-14 pt-6 md:pb-20 md:pt-8">
         <Breadcrumbs
           items={[
             { label: tNav('audits'), href: '/website-audits' },
           ]}
         />
 
-        {/* Hero */}
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <p className="editorial-kicker mb-3 text-navy">
-            {t('hero.eyebrow')}
-          </p>
-          <h1 className="editorial-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
-            {t('hero.title')}
-          </h1>
-          <p className="text-muted-foreground text-lg md:text-xl leading-[1.75]">
-            {t('hero.subtitle')}
-          </p>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-16">
+          <div className="max-w-3xl">
+            <p className="editorial-kicker text-navy">
+              {t('hero.eyebrow')}
+            </p>
+            <h1 className="editorial-display mt-4 max-w-[13ch] text-4xl font-semibold md:text-5xl lg:text-6xl">
+              {t('hero.title')}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-[1.75] text-muted-foreground md:text-xl">
+              {t('hero.subtitle')}
+            </p>
+            <Button asChild size="lg" className="mt-8 rounded-none bg-foreground text-background hover:bg-navy">
+              <a
+                href="#audit-form"
+                data-analytics-event="audit_page_form_jump_click"
+                data-analytics-section="audit_hero"
+              >
+                {t('form.heading')}
+                <ArrowDown className="size-4" aria-hidden="true" />
+              </a>
+            </Button>
+          </div>
+
+          <aside className="border border-border bg-card" aria-label={t('rubric.heading')}>
+            <div className="border-b border-border px-5 py-4 md:px-6">
+              <p className="text-sm font-semibold text-foreground">{t('rubric.heading')}</p>
+            </div>
+            <ul className="grid grid-cols-2">
+              {rubricItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <li
+                    key={item.key}
+                    className={`flex min-h-20 items-center gap-3 border-border px-4 py-4 md:px-5 ${
+                      index % 2 === 0 ? 'border-r' : ''
+                    } ${index < 4 ? 'border-b' : ''}`}
+                  >
+                    <Icon className="size-4 shrink-0 text-brand-serene-coral-darken" aria-hidden="true" />
+                    <span className="text-sm font-medium leading-snug text-foreground">
+                      {t(`rubric.items.${item.key}.name`)}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
         </div>
       </Section>
 
@@ -174,7 +210,7 @@ export default async function WebsiteAuditsPage({
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-px border border-border bg-border lg:grid-cols-3">
           {sampleFindings.map((finding) => {
             const Icon = finding.icon;
             const colorClass =
@@ -213,7 +249,7 @@ export default async function WebsiteAuditsPage({
       </Section>
 
       {/* Audit Request Form */}
-      <Section>
+      <Section id="audit-form">
         <div className="max-w-2xl mx-auto">
           <div className="text-left mb-10">
             <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">

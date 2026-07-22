@@ -59,7 +59,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <>
       <Script
-        id={`breadcrumb-json-ld-${locale}`}
+        id={`breadcrumb-json-ld-${items.map((item) => item.href || 'current').join('-')}`}
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

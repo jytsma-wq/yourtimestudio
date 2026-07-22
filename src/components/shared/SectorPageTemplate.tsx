@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import Script from 'next/script';
 import { Link } from '@/lib/i18n/navigation';
 import {
   DollarSign,
@@ -154,8 +155,11 @@ export async function SectorPageTemplate({
   return (
     <>
       {/* JSON-LD */}
-      <script
+      <Script
+        id={`sector-faq-json-ld-${sectorKey}`}
+        data-locale={locale}
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 

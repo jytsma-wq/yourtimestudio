@@ -146,7 +146,7 @@ export default function SiteHeader() {
       <div className="mx-auto flex h-[4.5rem] max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-3 text-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+          className="flex min-w-0 items-center gap-2 text-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 sm:gap-3"
           aria-label={siteConfig.name}
         >
           <Image
@@ -154,10 +154,10 @@ export default function SiteHeader() {
             alt=""
             width={40}
             height={40}
-            className="size-10 shrink-0 object-cover"
+            className="size-9 shrink-0 object-cover sm:size-10"
             aria-hidden="true"
           />
-          <span className="truncate text-base font-semibold tracking-normal">{siteConfig.name}</span>
+          <span className="truncate text-sm font-semibold tracking-normal sm:text-base">{siteConfig.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label={ui('mainNavigation')}>

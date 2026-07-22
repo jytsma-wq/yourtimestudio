@@ -4,7 +4,6 @@ import { type Locale } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
 import { Section } from '@/components/shared/Section';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
@@ -35,7 +34,6 @@ export default async function AboutPage({
   setRequestLocale(locale);
 
   const t = await getTranslations('aboutPage');
-  const tFounder = await getTranslations('founder.founder');
   const tNav = await getTranslations('nav');
 
   const breadcrumbItems = [
@@ -51,174 +49,138 @@ export default async function AboutPage({
   ];
 
   const tools = [
-    { name: t('tools.0.name'), category: 'framework' },
-    { name: t('tools.1.name'), category: 'language' },
-    { name: t('tools.2.name'), category: 'styling' },
-    { name: t('tools.3.name'), category: 'hosting' },
-    { name: t('tools.4.name'), category: 'database' },
-    { name: t('tools.5.name'), category: 'forms' },
-    { name: t('tools.6.name'), category: 'validation' },
-    { name: t('tools.7.name'), category: 'i18n' },
-    { name: t('tools.8.name'), category: 'animation' },
-    { name: t('tools.9.name'), category: 'components' },
+    t('tools.0.name'),
+    t('tools.1.name'),
+    t('tools.2.name'),
+    t('tools.3.name'),
+    t('tools.4.name'),
+    t('tools.5.name'),
+    t('tools.6.name'),
+    t('tools.7.name'),
+    t('tools.8.name'),
+    t('tools.9.name'),
   ];
-
-  const categoryColors: Record<string, string> = {
-    framework: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
-    language: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
-    styling: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
-    hosting: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
-    database: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
-    forms: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
-    validation: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
-    i18n: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
-    animation: 'bg-brand-serene-coral/10 text-brand-serene-coral-darken border-brand-serene-coral/20',
-    components: 'bg-brand-sage-green-darken/10 text-brand-sage-green-darken border-brand-sage-green/20',
-  };
 
   return (
     <>
-      {/* Breadcrumbs */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-6">
+      <Section className="pb-16 pt-6 md:pb-24 md:pt-8">
         <Breadcrumbs items={breadcrumbItems} />
-      </div>
 
-      {/* Hero */}
-      <Section>
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="editorial-display text-4xl md:text-5xl mb-6">
-            {t('heading')}
-          </h1>
-        </div>
-      </Section>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-20">
+          <div>
+            <p className="editorial-kicker text-navy">{t('image_caption')}</p>
+            <h1 className="editorial-display mt-4 max-w-[10ch] text-5xl font-medium md:text-6xl lg:text-7xl">
+              {t('heading')}
+            </h1>
 
-      {/* Founder-led proof panel — no staged founder portrait */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="border border-border bg-card p-6 shadow-none md:p-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+            <div className="mt-8 flex items-center gap-4 border-t border-border pt-5">
               <Image
                 src={siteConfig.assets.mark}
                 alt=""
-                width={56}
-                height={56}
-                className="size-14 shrink-0 object-cover"
+                width={48}
+                height={48}
+                className="size-12 shrink-0 object-cover"
                 aria-hidden="true"
               />
               <div>
-                <p className="text-xl font-semibold text-foreground md:text-2xl">{siteConfig.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{t('image_caption')}</p>
+                <p className="font-semibold text-foreground">{siteConfig.name}</p>
+                <p className="mt-1 text-sm text-muted-foreground">Batumi, Adjara, Georgia</p>
               </div>
             </div>
-            <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-muted-foreground">
-              {tFounder('photoNote')}
+          </div>
+
+          <div className="border-l border-brand-serene-coral pl-6 md:pl-8">
+            <p className="font-serif text-2xl leading-[1.35] text-foreground md:text-3xl">
+              {t('story_body_1')}
+            </p>
+            <p className="mt-6 max-w-2xl text-base leading-[1.75] text-muted-foreground md:text-lg">
+              {t('story_body_2')}
+            </p>
+            <Button asChild className="mt-8 rounded-none bg-foreground text-background hover:bg-navy">
+              <Link href="/website-audits">{t('cta_button')}</Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      <Section variant="dark">
+        <div className="grid gap-px border border-background/20 bg-background/20 lg:grid-cols-2">
+          <article className="bg-navy p-6 md:p-9 lg:p-12">
+            <p className="editorial-kicker text-brand-serene-coral">01 / {t('approach_heading')}</p>
+            <h2 className="editorial-display mt-5 max-w-[14ch] text-3xl font-medium text-brand-cream md:text-4xl">
+              {t('approach_heading')}
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-[1.75] text-brand-cream/72">
+              {t('approach_body')}
+            </p>
+          </article>
+
+          <article className="bg-navy p-6 md:p-9 lg:p-12">
+            <p className="editorial-kicker text-brand-serene-coral">02 / {t('why_batumi_heading')}</p>
+            <h2 className="editorial-display mt-5 max-w-[14ch] text-3xl font-medium text-brand-cream md:text-4xl">
+              {t('why_batumi_heading')}
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-[1.75] text-brand-cream/72">
+              <p>{t('why_batumi_body_1')}</p>
+              <p>{t('why_batumi_body_2')}</p>
+            </div>
+          </article>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-16">
+          <div>
+            <p className="editorial-kicker text-navy">{t('story_heading')}</p>
+            <h2 className="editorial-display mt-3 text-3xl font-medium md:text-4xl">
+              {t('process_heading')}
+            </h2>
+          </div>
+
+          <ol className="grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-5">
+            {processSteps.map((step) => (
+              <li key={step.number} className="border-b border-r border-border p-5 md:p-6">
+                <span className="text-sm font-semibold text-brand-serene-coral-darken">{step.number}</span>
+                <h3 className="mt-8 text-lg font-semibold">{step.title}</h3>
+                <p className="mt-3 text-sm leading-[1.7] text-muted-foreground">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
+
+      <Section variant="subtle">
+        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start lg:gap-16">
+          <div>
+            <h2 className="editorial-display text-3xl font-medium md:text-4xl">
+              {t('tools_heading')}
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-[1.75] text-muted-foreground">
+              {t('tools_subtitle')}
             </p>
           </div>
-        </div>
-      </Section>
 
-      {/* The Story */}
-      <Section variant="subtle">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="editorial-display text-2xl md:text-3xl mb-6">
-            {t('story_heading')}
-          </h2>
-          <div className="space-y-4 text-muted-foreground leading-[1.75] text-base md:text-lg">
-            <p>{t('story_body_1')}</p>
-            <p>{t('story_body_2')}</p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Approach */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="editorial-display text-2xl md:text-3xl mb-6">
-            {t('approach_heading')}
-          </h2>
-          <p className="text-muted-foreground leading-[1.75] text-base md:text-lg">
-            {t('approach_body')}
-          </p>
-        </div>
-      </Section>
-
-      {/* Why Batumi */}
-      <Section variant="subtle">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="editorial-display text-2xl md:text-3xl mb-6">
-            {t('why_batumi_heading')}
-          </h2>
-          <div className="space-y-4 text-muted-foreground leading-[1.75] text-base md:text-lg">
-            <p>{t('why_batumi_body_1')}</p>
-            <p>{t('why_batumi_body_2')}</p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Process */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="editorial-display text-2xl md:text-3xl mb-10">
-            {t('process_heading')}
-          </h2>
-
-          <div className="relative">
-            {/* Vertical connector */}
-            <div className="absolute left-6 top-8 bottom-8 w-px bg-border hidden md:block" />
-
-            <div className="space-y-8">
-              {processSteps.map((step, i) => (
-                <div key={i} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-brand-serene-coral/10 border border-brand-serene-coral/30 shrink-0">
-                    <span className="text-brand-serene-coral-darken font-semibold text-sm">{step.number}</span>
-                  </div>
-                  <div className="pt-2">
-                    <h3 className="text-lg font-semibold mb-1">{step.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-[1.75]">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Tools & Stack */}
-      <Section variant="subtle">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="editorial-display text-2xl md:text-3xl mb-3">
-            {t('tools_heading')}
-          </h2>
-          <p className="text-muted-foreground leading-[1.75] mb-8">
-            {t('tools_subtitle')}
-          </p>
-
-          <div className="flex flex-wrap gap-3">
-            {tools.map((tool, i) => (
-              <Badge
-                key={i}
-                variant="outline"
-                className={`px-3 py-1.5 text-sm font-medium ${categoryColors[tool.category] || 'border-border'}`}
-              >
-                {tool.name}
-              </Badge>
+          <ul className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-5">
+            {tools.map((tool) => (
+              <li key={tool} className="flex min-h-20 items-center border-b border-r border-border px-4 py-5 text-sm font-semibold text-foreground">
+                {tool}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl md:text-2xl font-medium mb-6">
+      <Section variant="accent">
+        <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <p className="editorial-display max-w-3xl text-3xl font-medium text-brand-cream md:text-4xl">
             {t('cta_text')}
           </p>
           <Button
             asChild
             size="lg"
-            className="bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white"
+            className="w-fit rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-cream"
           >
             <Link href="/website-audits">
               {t('cta_button')}
