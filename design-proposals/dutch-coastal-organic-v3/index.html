@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Organic V3 design-review prototype for Batumi Lighthouse."
+    >
+    <meta name="robots" content="noindex, nofollow">
+    <title>Batumi Lighthouse — Organic Black Sea V3</title>
+    <link rel="icon" href="assets/batumi-lighthouse-logo.png" type="image/png">
+    <link rel="preload" href="assets/hospitality-scene.webp" as="image" type="image/webp">
+    <link rel="stylesheet" href="styles.css?v=10">
+    <script src="script.js?v=10" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <svg class="organic-definitions" width="0" height="0" aria-hidden="true">
+      <defs>
+        <filter id="brand-logo-invert" color-interpolation-filters="sRGB">
+          <feColorMatrix
+            values="-1 0 0 0 1
+                    0 -1 0 0 1
+                    0 0 -1 0 1
+                    0 0 0 1 0"
+          ></feColorMatrix>
+        </filter>
+        <mask
+          id="brand-logo-mask"
+          x="0"
+          y="0"
+          width="1360"
+          height="520"
+          maskUnits="userSpaceOnUse"
+          style="mask-type: luminance"
+        >
+          <image
+            href="assets/batumi-lighthouse-logo.png"
+            width="1360"
+            height="520"
+            filter="url(#brand-logo-invert)"
+          ></image>
+        </mask>
+        <symbol id="brand-logo-shape" viewBox="0 0 1360 520">
+          <rect width="1360" height="520" fill="currentColor" mask="url(#brand-logo-mask)"></rect>
+        </symbol>
+        <clipPath id="organic-a" clipPathUnits="objectBoundingBox">
+          <path d="M.07,.17 C.15,.02 .37,-.02 .55,.06 C.76,.15 .94,.06 .99,.27 C1.03,.46 .9,.63 .96,.82 C.82,1.02 .57,.94 .36,.99 C.13,1.04 -.03,.85 .02,.63 C.06,.46 -.04,.32 .07,.17 Z"></path>
+        </clipPath>
+        <clipPath id="organic-b" clipPathUnits="objectBoundingBox">
+          <path d="M.18,.03 C.4,-.04 .53,.08 .7,.03 C.91,-.02 1.02,.2 .96,.39 C.91,.56 1.03,.76 .83,.91 C.66,1.04 .5,.92 .32,.98 C.09,1.05 -.02,.83 .05,.63 C.11,.45 -.05,.27 .18,.03 Z"></path>
+        </clipPath>
+        <clipPath id="organic-c" clipPathUnits="objectBoundingBox">
+          <path d="M.04,.29 C.08,.08 .28,-.03 .49,.04 C.66,.1 .86,-.04 .96,.18 C1.05,.39 .9,.53 .97,.72 C1.02,.91 .79,1.03 .58,.96 C.39,.9 .22,1.03 .08,.85 C-.06,.68 .01,.48 .04,.29 Z"></path>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <header class="masthead">
+      <a class="brand brand--lockup" href="#top" aria-label="Batumi Lighthouse home">
+        <svg
+          class="brand__logo"
+          viewBox="0 0 1360 520"
+          aria-hidden="true"
+        >
+          <use href="#brand-logo-shape"></use>
+        </svg>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span>Menu</span>
+        <span class="menu-toggle__lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav id="primary-navigation" class="navigation" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">How I work</a>
+        <a href="#pricing">Pricing</a>
+        <a class="navigation__action" href="#audit">
+          Website audit <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-showcase" aria-hidden="true">
+          <figure class="hero-showcase__slide is-active" data-status="Hotel clarity · direct booking">
+            <img
+              src="assets/hospitality-scene.webp"
+              width="1680"
+              height="945"
+              alt=""
+              fetchpriority="high"
+            >
+          </figure>
+          <figure class="hero-showcase__slide" data-status="Clinic trust · consultation">
+            <img src="assets/clinic-scene.webp" width="1584" height="1056" alt="">
+          </figure>
+          <figure class="hero-showcase__slide" data-status="Beauty services · appointments">
+            <img src="assets/beauty-scene.webp" width="1056" height="1408" alt="">
+          </figure>
+          <div class="hero-showcase__wash"></div>
+        </div>
+
+        <svg class="hero__current" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-40 692C226 538 350 826 608 665C864 505 1006 403 1488 530"></path>
+          <path d="M-60 738C182 618 354 875 626 718C896 562 1108 473 1500 604"></path>
+        </svg>
+
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Founder-led web design + photography · Batumi</p>
+          <h1 id="hero-title">
+            <span>Websites</span>
+            <span>that make</span>
+            <em><span>the next</span> <span>step</span></em>
+            <span><span>feel</span> <span>obvious.</span></span>
+          </h1>
+          <p class="hero__intro">
+            I help Batumi hotels, clinics, and beauty studios turn scattered information into a
+            clear multilingual website with a direct route to contact or booking.
+          </p>
+
+          <div class="hero__actions" role="group" aria-label="Homepage actions">
+            <a class="action-link action-link--primary" href="#work">
+              <span class="action-link__disc" aria-hidden="true">↘</span>
+              <span>See selected work</span>
+            </a>
+            <a class="action-link action-link--text" href="#audit">Request a website audit</a>
+          </div>
+        </div>
+
+        <p class="hero__founder">
+          <strong>Built directly with Jasper</strong>
+          <span>Strategy, design, code, local SEO basics, and launch.</span>
+        </p>
+
+        <p class="hero-showcase__status" aria-hidden="true">
+          <span class="hero-showcase__sector">Hotel clarity · direct booking</span>
+          <span class="hero-showcase__count">01 / 03</span>
+        </p>
+
+        <a class="hero__scroll" href="#opening">
+          <span>Explore</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <section id="opening" class="opening" aria-labelledby="opening-title">
+        <p class="section-kicker reveal">What the work connects</p>
+        <h2 id="opening-title" class="opening__statement reveal">
+          Your offer should move as one story:
+          <span>seen, understood, trusted, contacted.</span>
+        </h2>
+        <div class="opening__flow" aria-label="Connected studio capabilities">
+          <span class="reveal">Website planning</span>
+          <i aria-hidden="true"></i>
+          <span class="reveal">Original imagery</span>
+          <i aria-hidden="true"></i>
+          <span class="reveal">Multilingual pages</span>
+          <i aria-hidden="true"></i>
+          <span class="reveal">Local search basics</span>
+        </div>
+      </section>
+
+      <div class="flow-ribbon" aria-hidden="true">
+        <div class="flow-ribbon__track">
+          <span>Strategy</span><i>✦</i><span>Story</span><i>✦</i><span>Photography</span><i>✦</i>
+          <span>Design</span><i>✦</i><span>Build</span><i>✦</i><span>Launch</span><i>✦</i>
+          <span>Strategy</span><i>✦</i><span>Story</span><i>✦</i><span>Photography</span><i>✦</i>
+          <span>Design</span><i>✦</i><span>Build</span><i>✦</i><span>Launch</span><i>✦</i>
+        </div>
+      </div>
+
+      <section id="services" class="services" aria-labelledby="services-title">
+        <div class="services__intro reveal">
+          <p class="section-kicker">Different visitors. Different decisions.</p>
+          <h2 id="services-title">The structure follows the business.</h2>
+          <p>
+            A hotel guest compares rooms. A patient checks safety and practitioners. A beauty
+            client wants services, prices, proof, and an easy appointment request.
+          </p>
+        </div>
+
+        <div class="sector-stories">
+          <article class="sector-story sector-story--hotel">
+            <figure class="sector-story__media reveal">
+              <img
+                src="assets/hospitality-scene.webp"
+                width="1680"
+                height="945"
+                alt="Art-direction study of a warm Batumi guest room overlooking the Black Sea"
+              >
+            </figure>
+            <div class="sector-story__copy reveal">
+              <span>01</span>
+              <h3>Hotels &amp; guesthouses</h3>
+              <p>
+                Reduce OTA dependence with rooms, offers, policies, location, and direct booking
+                information that guests can understand quickly.
+              </p>
+              <ul>
+                <li>Room and offer pages</li>
+                <li>Multilingual guest information</li>
+                <li>Direct booking handoff</li>
+              </ul>
+              <a href="http://localhost:3000/en/hospitality-web-design-batumi">
+                Explore hospitality websites <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="sector-story sector-story--clinic">
+            <figure class="sector-story__media reveal">
+              <img
+                src="assets/clinic-scene.webp"
+                width="1584"
+                height="1056"
+                alt="Art-direction study of a calm modern dental clinic in Batumi"
+              >
+            </figure>
+            <div class="sector-story__copy reveal">
+              <span>02</span>
+              <h3>Clinics &amp; dental practices</h3>
+              <p>
+                Help patients understand treatments, practitioners, safety, and consultation
+                options before they make contact.
+              </p>
+              <ul>
+                <li>Treatment explanations</li>
+                <li>Doctor and safety information</li>
+                <li>Consultation requests</li>
+              </ul>
+              <a href="http://localhost:3000/en/medical-websites-batumi">
+                Explore clinic websites <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="sector-story sector-story--beauty">
+            <figure class="sector-story__media reveal">
+              <img
+                src="assets/beauty-scene.webp"
+                width="1056"
+                height="1408"
+                alt="Art-direction study of a warm beauty and wellness studio in Batumi"
+              >
+            </figure>
+            <div class="sector-story__copy reveal">
+              <span>03</span>
+              <h3>Beauty studios &amp; salons</h3>
+              <p>
+                Turn Instagram and Google visitors into appointment requests with clear services,
+                prices, proof, and practical contact details.
+              </p>
+              <ul>
+                <li>Service and price structure</li>
+                <li>Original visual direction</li>
+                <li>Appointment flow</li>
+              </ul>
+              <a href="http://localhost:3000/en/beauty-salon-websites-batumi">
+                Explore beauty websites <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="photography" class="photography" aria-labelledby="photography-title">
+        <svg class="photography__shore" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 108C238 182 376 10 646 86C908 160 1104 58 1440 0V180H0Z"></path>
+        </svg>
+
+        <div class="photography__heading reveal">
+          <p class="section-kicker">Photography planned with the website</p>
+          <h2 id="photography-title">Show what a customer needs to believe.</h2>
+          <p>
+            The image brief starts with the page and the decision. That creates a useful set of
+            horizontal, vertical, people, place, service, and detail shots instead of random content.
+          </p>
+        </div>
+
+        <figure class="photography__image reveal">
+          <img
+            src="assets/food-scene.webp"
+            width="1680"
+            height="1120"
+            alt="Art-direction study showing a restaurant table and food story in warm natural light"
+          >
+          <figcaption>Plan the image around the customer’s next question.</figcaption>
+        </figure>
+
+        <ol class="image-journey">
+          <li class="image-journey__place reveal">
+            <span>01</span>
+            <strong>Place</strong>
+            <p>Where am I, and what does it feel like?</p>
+          </li>
+          <li class="image-journey__people reveal">
+            <span>02</span>
+            <strong>People</strong>
+            <p>Who will welcome, treat, or help me?</p>
+          </li>
+          <li class="image-journey__service reveal">
+            <span>03</span>
+            <strong>Service</strong>
+            <p>What exactly happens and what is included?</p>
+          </li>
+          <li class="image-journey__detail reveal">
+            <span>04</span>
+            <strong>Detail</strong>
+            <p>Which small details make the business credible?</p>
+          </li>
+        </ol>
+
+        <svg class="image-journey__line" viewBox="0 0 1200 560" aria-hidden="true">
+          <path d="M32 370C184 42 412 512 612 202C818-116 966 448 1174 112"></path>
+        </svg>
+
+        <p class="photography__integrity reveal">
+          Production photography will only be used with confirmed ownership and consent. No
+          unverified founder, client, or location image is presented as proof in this review.
+        </p>
+      </section>
+
+      <section id="work" class="work" aria-labelledby="work-title">
+        <div class="work__heading reveal">
+          <p class="section-kicker">Selected internal examples</p>
+          <h2 id="work-title">Look at the work, not invented results.</h2>
+          <p>
+            These are working internal demonstrations. They show structure, visual direction, and
+            complete page systems. They are not paid client projects or measured business outcomes.
+          </p>
+        </div>
+
+        <article class="project project--hotel">
+          <a
+            class="project__media reveal"
+            href="http://localhost:3000/template-sites/hotel-01-luxury"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Aurelian House internal hotel website example"
+          >
+            <img
+              src="assets/hotel-luxury.webp"
+              width="1440"
+              height="900"
+              alt="Homepage of the Aurelian House internal luxury hotel website example"
+            >
+          </a>
+          <div class="project__copy reveal">
+            <p>01 · Internal example · Not a client result</p>
+            <h3>Aurelian House</h3>
+            <span>Rooms · Dining · Spa · Experiences · Offers · Booking</span>
+            <a href="http://localhost:3000/template-sites/hotel-01-luxury" target="_blank" rel="noopener">
+              Open the working example <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project project--clinic">
+          <a
+            class="project__media reveal"
+            href="http://localhost:3000/template-sites/dentist-01-clinical"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Clearline Dental Studio internal clinic website example"
+          >
+            <img
+              src="assets/dentist-clinical.webp"
+              width="1440"
+              height="900"
+              alt="Homepage of the Clearline Dental Studio internal clinic website example"
+            >
+          </a>
+          <div class="project__copy reveal">
+            <p>02 · Internal example · Not a client result</p>
+            <h3>Clearline Dental Studio</h3>
+            <span>Treatments · Team · Insurance · Reviews · Emergency · Appointment</span>
+            <a href="http://localhost:3000/template-sites/dentist-01-clinical" target="_blank" rel="noopener">
+              Open the working example <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project project--beauty">
+          <a
+            class="project__media reveal"
+            href="http://localhost:3000/template-sites/beauty-02-spa"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Luma Ritual Spa internal beauty website example"
+          >
+            <img
+              src="assets/beauty-spa.webp"
+              width="1440"
+              height="900"
+              alt="Homepage of the Luma Ritual Spa internal beauty and wellness website example"
+            >
+          </a>
+          <div class="project__copy reveal">
+            <p>03 · Internal example · Not a client result</p>
+            <h3>Luma Ritual Spa</h3>
+            <span>Treatments · Packages · Memberships · Gift cards · Booking</span>
+            <a href="http://localhost:3000/template-sites/beauty-02-spa" target="_blank" rel="noopener">
+              Open the working example <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section id="process" class="process" aria-labelledby="process-title">
+        <div class="process__founder reveal">
+          <svg
+            class="process__logo"
+            viewBox="0 0 1360 520"
+            aria-hidden="true"
+          >
+            <use href="#brand-logo-shape"></use>
+          </svg>
+          <p class="section-kicker">Work directly with Jasper</p>
+          <h2 id="process-title">One person stays accountable from first audit to launch.</h2>
+          <p>
+            I handle the website audit, plan, structure, design, code, local SEO basics, launch,
+            and support. Specialist translation, content, or production help is named when it is
+            actually part of the scope.
+          </p>
+          <a class="action-link action-link--text" href="#audit">Send your current website</a>
+        </div>
+
+        <ol class="process__steps">
+          <li class="reveal">
+            <span>01</span>
+            <h3>See what is unclear.</h3>
+            <p>Audit the offer, pages, mobile use, proof, search basics, and contact route.</p>
+          </li>
+          <li class="reveal">
+            <span>02</span>
+            <h3>Choose what matters.</h3>
+            <p>Agree on the page plan, responsibilities, exclusions, and launch priorities.</p>
+          </li>
+          <li class="reveal">
+            <span>03</span>
+            <h3>Make it tangible.</h3>
+            <p>Design, write, photograph where agreed, build, and test the complete journey.</p>
+          </li>
+          <li class="reveal">
+            <span>04</span>
+            <h3>Launch it clearly.</h3>
+            <p>Publish the working site and hand over a practical maintenance list.</p>
+          </li>
+        </ol>
+
+        <svg class="process__route" viewBox="0 0 1400 580" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M12 310C218 92 344 510 574 278C790 60 1006 526 1388 192"></path>
+        </svg>
+      </section>
+
+      <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <svg class="pricing__wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 88C194 12 386 160 610 90C866 10 1110 122 1440 38V180H0Z"></path>
+        </svg>
+
+        <div class="pricing__intro reveal">
+          <p class="section-kicker">Scope before price</p>
+          <h2 id="pricing-title">Start small enough to make a good decision.</h2>
+          <p>
+            The audit is the low-friction first step. Website scope then depends on pages,
+            languages, content, photography, integrations, and launch support.
+          </p>
+        </div>
+
+        <div class="pricing__paths">
+          <article class="price-path price-path--beauty reveal">
+            <span>01</span>
+            <h3>Beauty studio</h3>
+            <p>Services, prices, proof, practical details, and appointment requests.</p>
+            <strong>Scoped after audit</strong>
+            <a href="#audit">Discuss the project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="price-path price-path--clinic reveal">
+            <span>02</span>
+            <h3>Clinic website</h3>
+            <p>Treatments, practitioners, patient questions, trust, and consultation.</p>
+            <strong>Scoped after audit</strong>
+            <a href="#audit">Discuss the project <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="price-path price-path--hotel reveal">
+            <span>03</span>
+            <h3>Hotel website</h3>
+            <p>Rooms, offers, policies, guest information, and booking handoff.</p>
+            <strong>Scoped after audit</strong>
+            <a href="#audit">Discuss the project <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <p class="pricing__note reveal">
+          Public GEL ranges remain intentionally absent until a canonical commercial price list is
+          approved.
+        </p>
+      </section>
+
+      <section id="audit" class="audit" aria-labelledby="audit-title">
+        <div class="audit__sweep" aria-hidden="true"></div>
+        <div class="audit__copy reveal">
+          <p class="section-kicker">A practical first step</p>
+          <h2 id="audit-title">Send me the website you have now.</h2>
+          <p>
+            I’ll look at clarity, mobile use, local search basics, trust content, languages, and
+            the path to contact or booking.
+          </p>
+          <ul>
+            <li>No automated score presented as expert proof</li>
+            <li>No invented performance or booking promise</li>
+            <li>No obligation to commission a rebuild</li>
+          </ul>
+        </div>
+
+        <form class="audit-form reveal" novalidate>
+          <div class="form-field">
+            <label for="website-url">Current website URL</label>
+            <input
+              id="website-url"
+              name="websiteUrl"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://yourwebsite.ge"
+              required
+              aria-describedby="website-url-error"
+            >
+            <p id="website-url-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-detail">Email or WhatsApp</label>
+            <input
+              id="contact-detail"
+              name="contact"
+              type="text"
+              autocomplete="email"
+              placeholder="you@example.com or +995…"
+              required
+              aria-describedby="contact-detail-error"
+            >
+            <p id="contact-detail-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="audit-note">What should I look at first? <span>(optional)</span></label>
+            <textarea
+              id="audit-note"
+              name="note"
+              rows="3"
+              placeholder="For example: mobile bookings or multilingual pages"
+            ></textarea>
+          </div>
+
+          <button class="form-submit" type="submit">
+            <span class="form-submit__disc" aria-hidden="true">↗</span>
+            <span>Preview audit request</span>
+          </button>
+          <p class="audit-form__privacy">
+            Prototype only: nothing is sent or stored. Production requires server-side validation,
+            spam protection, and the published privacy policy.
+          </p>
+          <p class="audit-form__status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__brand">
+        <a class="brand brand--lockup" href="#top">
+          <svg
+            class="brand__logo"
+            viewBox="0 0 1360 520"
+            role="img"
+            aria-label="Batumi Lighthouse"
+          >
+            <use href="#brand-logo-shape"></use>
+          </svg>
+        </a>
+        <p>Founder-led website development and photography in Batumi, Georgia.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <a href="http://localhost:3000/en/about">About</a>
+        <a href="http://localhost:3000/en/contact">Contact</a>
+        <a href="http://localhost:3000/en/privacy">Privacy</a>
+        <a href="http://localhost:3000/en/terms">Terms</a>
+      </nav>
+
+      <a class="footer__email" href="mailto:hello@batumilighthouse.com">
+        hello@batumilighthouse.com
+      </a>
+
+      <p class="footer__review">Organic Black Sea V3 · Design review only</p>
+    </footer>
+  </body>
+</html>
