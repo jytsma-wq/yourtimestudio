@@ -292,7 +292,11 @@ export default function SiteHeader() {
       </div>
 
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent side="right" className="flex w-full flex-col bg-background p-0 sm:max-w-sm">
+        <SheetContent
+          side="right"
+          closeLabel={ui('close')}
+          className="flex w-full flex-col bg-background p-0 sm:max-w-sm"
+        >
           <SheetHeader className="border-b border-border px-6 py-5">
             <SheetTitle className="flex items-center gap-3 text-left text-base">
               <Image
