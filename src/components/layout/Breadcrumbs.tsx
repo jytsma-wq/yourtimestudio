@@ -64,7 +64,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Breadcrumb className="mb-4">
+      <Breadcrumb className="mb-4" aria-label={ui('breadcrumbNavigation')}>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>

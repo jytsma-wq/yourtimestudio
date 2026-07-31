@@ -8,8 +8,18 @@ const intlMiddleware = createMiddleware({
   localePrefix: 'as-needed',
 });
 
+const INTERNAL_LOCALE_REWRITE_HEADER = 'x-internal-locale-rewrite';
+
 export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  // Rewrites are processed by the proxy a second time in the standalone
+  // server. Let that internal request reach the localized route instead of
+  // sending the default locale back to `/` and creating a redirect loop.
+  if (request.headers.get(INTERNAL_LOCALE_REWRITE_HEADER) === defaultLocale) {
+    return NextResponse.next();
+  }
+
   const isUnlocalizedTemplatePreview =
     pathname === '/preview' ||
     pathname.startsWith('/preview/') ||
@@ -25,16 +35,14 @@ export default function proxy(request: NextRequest) {
   );
 
   if (!hasLocalePrefix) {
-    const headers = new Headers(request.headers);
-    headers.set('X-NEXT-INTL-LOCALE', defaultLocale);
-
     const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname === '/' ? '' : pathname}`;
+    url.pathname = `/${defaultLocale}${pathname}`;
+
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set(INTERNAL_LOCALE_REWRITE_HEADER, defaultLocale);
 
     const response = NextResponse.rewrite(url, {
-      request: {
-        headers,
-      },
+      request: { headers: requestHeaders },
     });
     response.cookies.set('NEXT_LOCALE', defaultLocale, {
       path: '/',

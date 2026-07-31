@@ -62,6 +62,39 @@ function assertNoRawMarkers(text, label) {
   }
 }
 
+function extractPlaceholders(text) {
+  return [...text.matchAll(/\{[^{}]+\}/g)].map((match) => match[0]).sort();
+}
+
+const allowedSharedLocaleValues = new Set([
+  'Google Business Profile',
+  'Next.js',
+  'TypeScript',
+  'Tailwind CSS',
+  'Hostinger',
+  'Prisma',
+  'React Hook Form',
+  'Zod',
+  'next-intl',
+  'Framer Motion',
+  'Radix UI',
+  'hello@batumilighthouse.com',
+  'WhatsApp',
+  'Instagram',
+  'LinkedIn',
+  'Facebook',
+  'Core Web Vitals (LCP, FID, CLS)',
+  'Reels + Stories',
+  'Jasper',
+  'Demo',
+]);
+
+const forbiddenUntranslatedFragments = {
+  ka: ['placeholder', 'follow-up', 'custom forms', 'screen reader', 'channel manager', 'fit call', 'book now', 'feed +'],
+  ru: ['founder-led', 'fake-', 'placeholder', 'account-команд', 'booking engine', 'follow-up', 'lazy loading', 'screen reader', 'hero-изображ', 'book now', 'alt-текст', 'fit call', 'channel manager', 'rate parity', 'beauty-бизнес', 'beauty-студ', 'medspa', 'на email'],
+  tr: ['fake metrik', 'placeholder', 'lazy loading', 'channel manager', 'fit call', 'hero görsel', 'book now', 'alt metin', 'wellness', 'medspa'],
+};
+
 function checkI18nParity() {
   const localeMessages = Object.fromEntries(
     locales.map((locale) => [locale, readJson(`${messageDir}/${locale}.json`)]),
@@ -74,6 +107,34 @@ function checkI18nParity() {
   for (const locale of locales.filter((item) => item !== 'en')) {
     const localeKeys = Object.keys(messages[locale]).sort();
     assert.deepEqual(localeKeys, englishKeys, `${locale} message keys must match English`);
+
+    for (const key of englishKeys) {
+      const englishValue = messages.en[key];
+      const localizedValue = messages[locale][key];
+
+      if (typeof englishValue !== 'string' || typeof localizedValue !== 'string') continue;
+
+      assert.deepEqual(
+        extractPlaceholders(localizedValue),
+        extractPlaceholders(englishValue),
+        `${locale}:${key} placeholders must match English`,
+      );
+
+      if (localizedValue === englishValue && /[A-Za-z]{3}/.test(englishValue)) {
+        assert(
+          allowedSharedLocaleValues.has(englishValue),
+          `${locale}:${key} must not silently fall back to English`,
+        );
+      }
+
+      const normalizedValue = localizedValue.toLocaleLowerCase(locale);
+      for (const fragment of forbiddenUntranslatedFragments[locale]) {
+        assert(
+          !normalizedValue.includes(fragment),
+          `${locale}:${key} contains untranslated fragment "${fragment}"`,
+        );
+      }
+    }
   }
 
   for (const [locale, values] of Object.entries(messages)) {
