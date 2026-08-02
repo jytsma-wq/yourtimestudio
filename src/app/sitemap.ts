@@ -3,7 +3,6 @@ import { launchLocales, defaultLocale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
 import { templateShowcaseEntries } from '@/lib/templates/catalog';
 import { examples } from '@/content/examples';
-import auditData from '@/content/audits/batumi-hotel-website-audit.json';
 
 const siteUrl = siteConfig.url;
 
@@ -13,11 +12,6 @@ const pages = [
   { path: '/medical-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/beauty-salon-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/website-audits', priority: 0.8, changeFrequency: 'monthly' as const },
-  {
-    path: `/website-audits/${auditData.slug}`,
-    priority: 0.7,
-    changeFrequency: 'monthly' as const,
-  },
   { path: '/photography', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/pricing', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -37,15 +31,30 @@ const pages = [
   })),
 ];
 
+function localeUrl(locale: string, path: string): string {
+  return locale === defaultLocale
+    ? `${siteUrl}${path}`
+    : `${siteUrl}/${locale}${path}`;
+}
+
+function languageAlternates(path: string): Record<string, string> {
+  return {
+    ...Object.fromEntries(
+      launchLocales.map((locale) => [locale, localeUrl(locale, path)]),
+    ),
+    'x-default': localeUrl(defaultLocale, path),
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return launchLocales.flatMap((locale) =>
     pages.map((page) => ({
-      url:
-        locale === defaultLocale
-          ? `${siteUrl}${page.path}`
-          : `${siteUrl}/${locale}${page.path}`,
+      url: localeUrl(locale, page.path),
       changeFrequency: page.changeFrequency,
       priority: page.priority,
+      alternates: {
+        languages: languageAlternates(page.path),
+      },
     }))
   );
 }

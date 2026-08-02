@@ -6,8 +6,12 @@ import { notFound } from "next/navigation";
 
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/shared/Section";
+import {
+  buildPreviewHref,
+  parsePreviewLocale
+} from "@/components/templates/template-preview-locale";
 import { Button } from "@/components/ui/button";
-import { defaultLocale, launchLocales, type Locale } from "@/lib/i18n/config";
+import type { Locale } from "@/lib/i18n/config";
 import { Link } from "@/lib/i18n/navigation";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import {
@@ -18,10 +22,6 @@ import {
 type TemplateDetailPageProps = {
   params: Promise<{ locale: string; templateId: string }>;
 };
-
-function getLaunchLocale(value: string): Locale {
-  return launchLocales.includes(value as Locale) ? (value as Locale) : defaultLocale;
-}
 
 export function generateStaticParams() {
   return templateShowcaseEntries.map((entry) => ({ templateId: entry.id }));
@@ -47,6 +47,11 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
   setRequestLocale(locale);
   const entry = getTemplateShowcaseEntry(templateId);
   if (!entry) notFound();
+  const previewHref = buildPreviewHref(
+    entry.id,
+    "",
+    parsePreviewLocale(locale)
+  );
 
   const t = await getTranslations("templatesCatalog");
   const nav = await getTranslations("nav");
@@ -55,8 +60,6 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
   const positioning = t(`items.${entry.id}.positioning`);
   const signature = t(`items.${entry.id}.signature`);
   const included = ["responsive", "navigation", "forms", "seo"] as const;
-  const previewHref = `${entry.previewHref}?locale=${getLaunchLocale(locale)}`;
-
   return (
     <>
       <Section className="pb-10 md:pb-14">

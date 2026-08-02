@@ -1,4 +1,4 @@
-import type { NextRequest } from 'next/server';
+import { isIP } from 'node:net';
 
 type RateLimitOptions = {
   keyPrefix: string;
@@ -11,27 +11,30 @@ type Bucket = {
   resetAt: number;
 };
 
-export const RATE_LIMIT_BUCKET_CAP = 10_000;
-
 const buckets = new Map<string, Bucket>();
-const PRUNE_INTERVAL_MS = 60_000;
-const CAPACITY_PRUNE_INTERVAL_MS = 1_000;
-const SATURATION_RETRY_AFTER_SECONDS = 60;
-let nextPruneAt = 0;
-let nextCapacityPruneAt = 0;
+export const MAX_RATE_LIMIT_BUCKETS = 2_000;
 
-function clientIdentifier(request: NextRequest) {
-  const realIp = request.headers.get('x-real-ip')?.trim().slice(0, 64);
-  const forwardedFor = request.headers
-    .get('x-forwarded-for')
-    ?.split(',')[0]
-    ?.trim()
-    .slice(0, 64);
-
-  return realIp || forwardedFor || 'local';
+function validIp(value: string | undefined) {
+  const candidate = value?.trim();
+  return candidate && candidate.length <= 64 && isIP(candidate) ? candidate.toLowerCase() : null;
 }
 
-function removeExpiredBuckets(now: number) {
+function clientIdentifier(request: Pick<Request, 'headers'>) {
+  // Caddy overwrites X-Real-IP and X-Forwarded-For at the public trust boundary.
+  // If neither trusted proxy header is present, use one shared fail-closed bucket.
+  const realIp = validIp(request.headers.get('x-real-ip') ?? undefined);
+  if (realIp) return realIp;
+
+  const forwardedFor = request.headers.get('x-forwarded-for')?.split(',').reverse();
+  for (const candidate of forwardedFor ?? []) {
+    const ip = validIp(candidate);
+    if (ip) return ip;
+  }
+
+  return 'unknown';
+}
+
+function pruneExpiredBuckets(now: number) {
   for (const [key, bucket] of buckets.entries()) {
     if (bucket.resetAt <= now) {
       buckets.delete(key);
@@ -39,39 +42,29 @@ function removeExpiredBuckets(now: number) {
   }
 }
 
-function pruneExpiredBuckets(now: number) {
-  if (now < nextPruneAt) return;
+function evictOldestBucket() {
+  let oldestKey: string | undefined;
+  let earliestReset = Number.POSITIVE_INFINITY;
 
-  nextPruneAt = now + PRUNE_INTERVAL_MS;
-  nextCapacityPruneAt = now + CAPACITY_PRUNE_INTERVAL_MS;
-  removeExpiredBuckets(now);
-}
-
-function hasRoomForBucket(now: number) {
-  if (buckets.size >= RATE_LIMIT_BUCKET_CAP && now >= nextCapacityPruneAt) {
-    nextCapacityPruneAt = now + CAPACITY_PRUNE_INTERVAL_MS;
-    removeExpiredBuckets(now);
+  for (const [key, bucket] of buckets.entries()) {
+    if (bucket.resetAt < earliestReset) {
+      oldestKey = key;
+      earliestReset = bucket.resetAt;
+    }
   }
 
-  return buckets.size < RATE_LIMIT_BUCKET_CAP;
+  if (oldestKey) buckets.delete(oldestKey);
 }
 
-export function checkRateLimit(request: NextRequest, options: RateLimitOptions) {
+export function checkRateLimit(request: Pick<Request, 'headers'>, options: RateLimitOptions) {
   const now = Date.now();
-  pruneExpiredBuckets(now);
-
   const key = `${options.keyPrefix}:${clientIdentifier(request)}`;
   const existing = buckets.get(key);
 
   if (!existing || existing.resetAt <= now) {
-    if (existing) buckets.delete(key);
-    if (!hasRoomForBucket(now)) {
-      return {
-        limited: true,
-        remaining: 0,
-        resetAt: now + SATURATION_RETRY_AFTER_SECONDS * 1000,
-        retryAfter: SATURATION_RETRY_AFTER_SECONDS,
-      };
+    pruneExpiredBuckets(now);
+    if (!buckets.has(key) && buckets.size >= MAX_RATE_LIMIT_BUCKETS) {
+      evictOldestBucket();
     }
 
     const bucket = { count: 1, resetAt: now + options.windowMs };
@@ -102,4 +95,12 @@ export function checkRateLimit(request: NextRequest, options: RateLimitOptions) 
     resetAt: existing.resetAt,
     retryAfter: 0,
   };
+}
+
+export function resetRateLimitForTests() {
+  buckets.clear();
+}
+
+export function getRateLimitBucketCountForTests() {
+  return buckets.size;
 }

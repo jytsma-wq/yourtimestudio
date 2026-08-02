@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/lib/i18n/navigation';
-import type { Locale } from '@/lib/i18n/config';
+import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
 import { sectors, sectorKeys } from '@/lib/sector-config';
-import { CookieSettingsButton, FooterLocaleLinks } from './FooterControls';
+import { FooterLocaleLinks } from './FooterLocaleLinks';
 
 interface SiteFooterProps {
   locale: Locale;
@@ -112,9 +112,6 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
                     <Link href={link.href} className={linkClass}>{link.label}</Link>
                   </li>
                 ))}
-                <li>
-                  <CookieSettingsButton />
-                </li>
               </ul>
 
               {socialLinks.length > 0 && (

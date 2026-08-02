@@ -16,7 +16,7 @@ model Lead {
   sector            String?   // hospitality, medical, beauty, other
   websiteUrl        String?
   budgetRange       String?
-  preferredLanguage String?   // en, ka, ru
+  preferredLanguage String?   // en, ka, ru, tr
   message           String
   source            String   @default("contact_form") // contact_form, audit_form, cta
   status            String   @default("new") // new, contacted, proposal_sent, won, lost

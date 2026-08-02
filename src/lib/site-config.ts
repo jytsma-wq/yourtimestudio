@@ -32,10 +32,6 @@ export const siteConfig = {
     locality: 'Batumi',
     region: 'Adjara',
     country: 'GE',
-    geo: {
-      latitude: 41.6168,
-      longitude: 41.6367,
-    },
   },
 
   analytics: {
@@ -47,8 +43,14 @@ export const siteConfig = {
     logo: `/brand/${brandSlug}-logo.png`,
     faviconSvg: '/favicon.svg',
     faviconPng: '/favicon.png',
+    favicon16: '/favicon-16.png',
+    favicon32: '/favicon-32.png',
+    favicon48: '/favicon-48.png',
+    appleTouchIcon: '/apple-touch-icon.png',
+    pwaIcon192: '/icon-192.png',
+    pwaIcon512: '/icon-512.png',
     manifest: '/manifest.json',
-    ogDefault: '/og-default.png',
+    ogDefault: '/og-default.jpg',
   },
 
   /** Colors matching CSS custom properties */

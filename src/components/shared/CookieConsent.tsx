@@ -1,18 +1,15 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/site-config';
-import {
-  analyticsAllowedOnCurrentHost,
-  COOKIE_CONSENT_KEY,
-  OPEN_COOKIE_SETTINGS_EVENT,
-} from '@/lib/cookie-consent';
+
+const CONSENT_KEY = `${siteConfig.slug}-cookie-consent`;
 
 function loadAnalytics() {
-  if (!analyticsAllowedOnCurrentHost() || document.getElementById('plausible-script')) return;
+  if (document.getElementById('plausible-script')) return;
 
   const script = document.createElement('script');
   script.id = 'plausible-script';
@@ -22,20 +19,14 @@ function loadAnalytics() {
   document.head.appendChild(script);
 }
 
-function unloadAnalytics() {
-  document.getElementById('plausible-script')?.remove();
-  delete window.plausible;
-}
-
 export function CookieConsent() {
   const t = useTranslations('cookieConsent');
   const [visible, setVisible] = useState(false);
-  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const consentCheck = window.setTimeout(() => {
       try {
-        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        const consent = localStorage.getItem(CONSENT_KEY);
         if (!consent) {
           setVisible(true);
         } else if (consent === 'accepted') {
@@ -46,23 +37,14 @@ export function CookieConsent() {
       }
     }, 0);
 
-    const openSettings = () => {
-      setVisible(true);
-      window.requestAnimationFrame(() => bannerRef.current?.focus());
-    };
-    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, openSettings);
-
-    return () => {
-      window.clearTimeout(consentCheck);
-      window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, openSettings);
-    };
+    return () => window.clearTimeout(consentCheck);
   }, []);
 
   function handleAccept() {
     try {
-      localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+      localStorage.setItem(CONSENT_KEY, 'accepted');
     } catch {
-      // Storage can be unavailable in strict privacy modes; never trap the visitor.
+      // Keep consent session-local when storage is unavailable.
     }
     setVisible(false);
     loadAnalytics();
@@ -70,11 +52,10 @@ export function CookieConsent() {
 
   function handleDecline() {
     try {
-      localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
+      localStorage.setItem(CONSENT_KEY, 'declined');
     } catch {
-      // Storage can be unavailable in strict privacy modes; never trap the visitor.
+      // Hiding the prompt for this page must not depend on storage access.
     }
-    unloadAnalytics();
     setVisible(false);
   }
 
@@ -82,10 +63,8 @@ export function CookieConsent() {
 
   return (
     <div
-      ref={bannerRef}
-      tabIndex={-1}
-      className="fixed bottom-3 left-3 right-3 z-50 md:bottom-6 md:left-6 md:right-auto md:max-w-md"
-      role="region"
+      className="fixed bottom-3 left-3 right-3 z-50 md:bottom-6 md:left-auto md:right-6 md:max-w-md"
+      role="dialog"
       aria-label={t('aria_label')}
     >
       <div className="rounded-md border border-border bg-card p-3 shadow-lg shadow-brand-charcoal/10 md:p-4">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,14 +15,14 @@ import {
 } from '@/components/ui/select';
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
-import { Link } from '@/lib/i18n/navigation';
+import { FormInboxUnavailableNotice } from '@/components/shared/FormInboxUnavailableNotice';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 type FieldErrors = Partial<
   Record<'name' | 'businessName' | 'email' | 'sector' | 'websiteUrl', string>
 >;
 
-export function AuditRequestForm() {
+export function AuditRequestForm({ inboxReady }: { inboxReady: boolean }) {
   const t = useTranslations('auditPage.form');
   const locale = useLocale();
   const [status, setStatus] = useState<FormStatus>('idle');
@@ -32,15 +32,13 @@ export function AuditRequestForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
 
-  const tSectors = useTranslations('contactPage');
-  const tContactForm = useTranslations('contactPage.form');
-  const ui = useTranslations('ui');
-  const footer = useTranslations('footer');
-  const sectors = [tSectors('sectors.0'), tSectors('sectors.1'), tSectors('sectors.2'), tSectors('sectors.3')] as const;
-
   useEffect(() => {
     if (status === 'success') successRef.current?.focus();
   }, [status]);
+
+  const tSectors = useTranslations('contactPage');
+  const tContactForm = useTranslations('contactPage.form');
+  const sectors = [tSectors('sectors.0'), tSectors('sectors.1'), tSectors('sectors.2'), tSectors('sectors.3')] as const;
 
   function validateFields(data: {
     name: string;
@@ -78,16 +76,24 @@ export function AuditRequestForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    if (!inboxReady) {
+      setSubmitError(t('inbox_unavailable'));
+      setStatus('error');
+      return;
+    }
+
+    // Honeypot check
+    if (honeypot) return;
+
     trackEvent('audit_form_submit_attempt', { source: 'audit_form' });
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: String(formData.get('name') || ''),
-      businessName: String(formData.get('businessName') || ''),
-      email: String(formData.get('email') || ''),
-      sector: String(formData.get('sector') || ''),
-      websiteUrl: String(formData.get('websiteUrl') || ''),
-      message: String(formData.get('message') || ''),
-      website_check: honeypot,
+      name: String(formData.get('name') || '').trim(),
+      businessName: String(formData.get('businessName') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      sector: String(formData.get('sector') || '').trim(),
+      websiteUrl: String(formData.get('websiteUrl') || '').trim(),
+      message: String(formData.get('message') || '').trim(),
     };
 
     const errors = validateFields(data);
@@ -97,22 +103,15 @@ export function AuditRequestForm() {
     if (Object.keys(errors).length > 0) {
       trackEvent('audit_form_submit_failure', { reason: 'client_validation' });
       setStatus('idle');
-      const firstInvalidField = (
-        ['name', 'businessName', 'email', 'sector', 'websiteUrl'] as const
-      ).find((field) => Boolean(errors[field]));
-      const fieldIds = {
+      const firstInvalidField = Object.keys(errors)[0] as keyof FieldErrors;
+      const fieldIds: Record<keyof FieldErrors, string> = {
         name: 'audit-name',
         businessName: 'audit-business',
         email: 'audit-email',
         sector: 'audit-sector',
         websiteUrl: 'audit-website',
-      } as const;
-
-      if (firstInvalidField) {
-        window.requestAnimationFrame(() => {
-          document.getElementById(fieldIds[firstInvalidField])?.focus();
-        });
-      }
+      };
+      requestAnimationFrame(() => document.getElementById(fieldIds[firstInvalidField])?.focus());
       return;
     }
 
@@ -154,7 +153,7 @@ export function AuditRequestForm() {
     return (
       <div
         ref={successRef}
-        className="bg-card border border-border rounded-none p-8 text-center outline-none"
+        className="bg-card border border-border rounded-none p-8 text-center"
         role="status"
         aria-live="polite"
         aria-atomic="true"
@@ -171,9 +170,15 @@ export function AuditRequestForm() {
       ref={formRef}
       onSubmit={handleSubmit}
       className="bg-card border border-border rounded-none p-6 md:p-8 space-y-5"
-      aria-busy={status === 'sending'}
       noValidate
     >
+      {!inboxReady ? (
+        <FormInboxUnavailableNotice
+          id="audit-inbox-unavailable"
+          message={t('inbox_unavailable')}
+        />
+      ) : null}
+
       {/* Honeypot — hidden from real users, visible to bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label htmlFor="audit-website-check">Website</label>
@@ -191,16 +196,15 @@ export function AuditRequestForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Name */}
         <div className="space-y-2">
-          <Label htmlFor="audit-name">
-            {t('name')} <span aria-hidden="true">*</span>
-          </Label>
+          <Label htmlFor="audit-name">{t('name')} *</Label>
           <Input
             id="audit-name"
             name="name"
             required
             aria-required="true"
+            maxLength={200}
             autoComplete="name"
-            placeholder="Mariam K."
+            placeholder={t('name_placeholder')}
             aria-invalid={Boolean(fieldErrors.name)}
             aria-describedby={fieldErrors.name ? 'audit-name-error' : undefined}
           />
@@ -213,16 +217,15 @@ export function AuditRequestForm() {
 
         {/* Business Name */}
         <div className="space-y-2">
-          <Label htmlFor="audit-business">
-            {t('business')} <span aria-hidden="true">*</span>
-          </Label>
+          <Label htmlFor="audit-business">{t('business')} *</Label>
           <Input
             id="audit-business"
             name="businessName"
             required
             aria-required="true"
+            maxLength={200}
             autoComplete="organization"
-            placeholder="Seafront Rooms"
+            placeholder={t('business_placeholder')}
             aria-invalid={Boolean(fieldErrors.businessName)}
             aria-describedby={fieldErrors.businessName ? 'audit-business-error' : undefined}
           />
@@ -237,17 +240,16 @@ export function AuditRequestForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Email */}
         <div className="space-y-2">
-          <Label htmlFor="audit-email">
-            {t('email')} <span aria-hidden="true">*</span>
-          </Label>
+          <Label htmlFor="audit-email">{t('email')} *</Label>
           <Input
             id="audit-email"
             name="email"
             type="email"
             required
             aria-required="true"
+            maxLength={300}
             autoComplete="email"
-            placeholder="mariam@example.com"
+            placeholder={t('email_placeholder')}
             aria-invalid={Boolean(fieldErrors.email)}
             aria-describedby={fieldErrors.email ? 'audit-email-error' : undefined}
           />
@@ -260,9 +262,7 @@ export function AuditRequestForm() {
 
         {/* Sector */}
         <div className="space-y-2">
-          <Label htmlFor="audit-sector">
-            {t('sector')} <span aria-hidden="true">*</span>
-          </Label>
+          <Label htmlFor="audit-sector">{t('sector')} *</Label>
           <Select name="sector" required>
             <SelectTrigger
               id="audit-sector"
@@ -291,17 +291,16 @@ export function AuditRequestForm() {
 
       {/* Website URL */}
       <div className="space-y-2">
-        <Label htmlFor="audit-website">
-          {t('website')} <span aria-hidden="true">*</span>
-        </Label>
+        <Label htmlFor="audit-website">{t('website')} *</Label>
         <Input
           id="audit-website"
           name="websiteUrl"
           type="url"
           required
           aria-required="true"
+          maxLength={500}
           autoComplete="url"
-          placeholder="https://yourwebsite.com"
+          placeholder={t('website_placeholder')}
           aria-invalid={Boolean(fieldErrors.websiteUrl)}
           aria-describedby={fieldErrors.websiteUrl ? 'audit-website-error' : undefined}
         />
@@ -319,6 +318,7 @@ export function AuditRequestForm() {
           id="audit-message"
           name="message"
           rows={3}
+          maxLength={5000}
           placeholder=""
         />
       </div>
@@ -330,19 +330,10 @@ export function AuditRequestForm() {
         </div>
       )}
 
-      <p className="text-xs leading-relaxed text-muted-foreground">
-        {ui('formPrivacyNotice')}{' '}
-        <Link
-          href="/privacy"
-          className="font-semibold text-foreground underline underline-offset-4 hover:text-brand-serene-coral-darken"
-        >
-          {footer('privacy')}
-        </Link>
-      </p>
-
       <Button
         type="submit"
-        disabled={status === 'sending'}
+        disabled={!inboxReady || status === 'sending'}
+        aria-describedby={!inboxReady ? 'audit-inbox-unavailable' : undefined}
         className="w-full rounded-none bg-brand-serene-coral text-brand-charcoal hover:bg-brand-serene-coral-darken hover:text-white font-medium text-base h-12"
       >
         {status === 'sending' ? (

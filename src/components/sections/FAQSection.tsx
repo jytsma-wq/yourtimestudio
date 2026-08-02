@@ -1,13 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { serializeJsonLd } from '@/lib/seo/structured-data';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { serializeJsonLd } from '@/lib/seo/structured-data';
 
 export function FAQSection() {
   const t = useTranslations('faq');
@@ -37,7 +37,6 @@ export function FAQSection() {
   return (
     <>
       <script
-        id="faq-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />

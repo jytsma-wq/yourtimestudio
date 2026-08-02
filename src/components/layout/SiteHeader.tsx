@@ -15,7 +15,8 @@ import {
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
-import { getLocaleHref, getLocaleHrefWithContext, persistLocale } from '@/lib/i18n/locale-switch';
+import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
+import { useCurrentUrlSuffix } from '@/lib/i18n/use-current-url-suffix';
 import { sectors } from '@/lib/sector-config';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
@@ -55,15 +56,13 @@ export default function SiteHeader() {
   const ui = useTranslations('ui');
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const { search, hash } = useCurrentUrlSuffix();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [themeReady, setThemeReady] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const solutionsTriggerRef = useRef<HTMLButtonElement>(null);
-  const suppressNextSolutionsFocusRef = useRef(false);
-  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -71,7 +70,7 @@ export default function SiteHeader() {
       try {
         saved = localStorage.getItem('theme');
       } catch {
-        // Private browsing modes can disable storage; the default theme remains usable.
+        // Keep the default theme when storage is unavailable.
       }
       const isDark = saved === 'dark';
       document.documentElement.classList.toggle('dark', isDark);
@@ -102,14 +101,6 @@ export default function SiteHeader() {
     setSolutionsOpen(true);
   }
 
-  function handleSolutionsFocus() {
-    if (suppressNextSolutionsFocusRef.current) {
-      suppressNextSolutionsFocusRef.current = false;
-      return;
-    }
-    openSolutions();
-  }
-
   function closeSolutions(delay = 120) {
     if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
     solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), delay);
@@ -128,14 +119,7 @@ export default function SiteHeader() {
     try {
       localStorage.setItem('theme', next ? 'dark' : 'light');
     } catch {
-      // Theme still changes for the current page when persistence is unavailable.
-    }
-  }
-
-  function handleMobileOpenChange(open: boolean) {
-    setMobileOpen(open);
-    if (!open) {
-      window.requestAnimationFrame(() => mobileTriggerRef.current?.focus());
+      // The theme still applies for this page when storage is unavailable.
     }
   }
 
@@ -203,16 +187,15 @@ export default function SiteHeader() {
                   onKeyDown={(event) => {
                     if (event.key === 'Escape') {
                       event.preventDefault();
+                      document.getElementById('site-services-menu-trigger')?.focus();
                       setSolutionsOpen(false);
-                      suppressNextSolutionsFocusRef.current = true;
-                      queueMicrotask(() => solutionsTriggerRef.current?.focus());
                     }
                   }}
                   onMouseEnter={openSolutions}
                   onMouseLeave={() => closeSolutions()}
                 >
                   <Button
-                    ref={solutionsTriggerRef}
+                    id="site-services-menu-trigger"
                     type="button"
                     variant="ghost"
                     size="sm"
@@ -220,7 +203,7 @@ export default function SiteHeader() {
                     aria-controls="site-services-menu"
                     aria-haspopup="true"
                     onClick={openSolutions}
-                    onFocus={handleSolutionsFocus}
+                    onFocus={openSolutions}
                     className={`${desktopLinkClass(active)} gap-1.5 hover:bg-transparent`}
                   >
                     {t(item.key)}
@@ -316,7 +299,6 @@ export default function SiteHeader() {
           </div>
 
           <Button
-            ref={mobileTriggerRef}
             variant="ghost"
             size="icon"
             className="rounded-full xl:hidden"
@@ -328,7 +310,7 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <Sheet open={mobileOpen} onOpenChange={handleMobileOpenChange}>
+      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent
           side="right"
           closeLabel={ui('close')}
@@ -418,20 +400,9 @@ export default function SiteHeader() {
                 return (
                   <a
                     key={targetLocale}
-                    href={getLocaleHref(pathname, targetLocale)}
+                    href={getLocaleHref(pathname, targetLocale, search, hash)}
                     hrefLang={targetLocale}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      persistLocale(targetLocale);
-                      window.location.assign(
-                        getLocaleHrefWithContext(
-                          pathname,
-                          targetLocale,
-                          window.location.search,
-                          window.location.hash,
-                        ),
-                      );
-                    }}
+                    onClick={() => persistLocale(targetLocale)}
                     aria-label={localeLabels[targetLocale]}
                     aria-current={active ? 'page' : undefined}
                     className={`flex min-h-11 items-center justify-center border-b-2 px-1 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral focus-visible:ring-offset-2 ${

@@ -3,6 +3,10 @@
     "title": "Batumi Lighthouse - Batum otelleri, klinikleri ve stüdyoları için web siteleri",
     "description": "Batum'daki oteller, klinikler, stüdyolar ve yerel işletmeler için kurucu liderliğinde web tasarımı, işletme fotoğrafçılığı, sosyal içerik, yerel SEO ve çok dilli siteler."
   },
+  "locationLabels": {
+    "sectorCaption": "Batum / Acara",
+    "studioAddress": "Batum, Acara, Gürcistan"
+  },
   "nav": {
     "home": "Ana Sayfa",
     "solutions": "Hizmetler",
@@ -53,7 +57,7 @@
     "fixes_title": "Neyi iyileştiririm",
     "fixes": [
       "Daha net ana sayfa ve hizmet yapısı.",
-      "Yerel SEO temelleri ve faydalı metadata.",
+      "Yerel SEO temelleri ve yararlı meta veriler.",
       "Ziyaretçiler için çok dilli içerik yolları.",
       "Tamamlaması daha kolay rezervasyon ve talep akışları."
     ],
@@ -115,7 +119,7 @@
         "Oda sayfaları ve teklifler",
         "Politikalar ve konum detayları",
         "Doğrudan rezervasyon veya talep yönlendirmesi",
-        "Hız optimize edilmiş rezervasyon akışı"
+        "Hız için optimize edilmiş rezervasyon akışı"
       ],
       "cta": "Otel web sitelerini gör",
       "tagline": "Daha fazla rezervasyonu kendi sitenize getirin",
@@ -181,8 +185,8 @@
     "founder": {
       "sectionLabel": "Nasıl çalışırım.",
       "heading": "Doğrudan Jasper ile çalışırsınız.",
-      "bio": "Ben Jasper, Batumi'de yaşayan Hollandalı bir web geliştiricisiyim. Batumi Lighthouse; oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için daha net web siteleri ve daha fazla doğrudan talep üretmeye çalışan küçük stüdyom. Denetim, plan, yapı, tasarım, kod, yerel SEO temeli, yayın ve destek işlerini kişisel olarak yürütürüm.",
-      "location": "Batumi, Gürcistan",
+      "bio": "Ben Jasper, Batum'da yaşayan Hollandalı bir web geliştiricisiyim. Batumi Lighthouse; daha anlaşılır web sitelerine ve daha fazla doğrudan talebe ihtiyaç duyan oteller, klinikler, güzellik stüdyoları ve hizmet işletmeleri için kurduğum küçük stüdyodur. Denetimi, planı, yapıyı, tasarımı, kodu, yerel SEO temellerini, yayını ve desteği bizzat yürütürüm.",
+      "location": "Batum, Gürcistan",
       "since": "Kurucu liderliğinde stüdyo",
       "cta": "Mevcut siteni gönder",
       "secondaryCta": "Stüdyo hakkında oku",
@@ -204,7 +208,7 @@
         },
         {
           "title": "Next.js geliştirme ve yayın",
-          "desc": "Siteyi geliştirir; responsive düzenleri, metadata'yı, formları, hızı ve yayın kontrol listesini kontrol ederim."
+          "desc": "Siteyi geliştirir; mobil uyumlu düzenleri, meta verileri, formları, hızı ve yayın kontrol listesini denetlerim."
         },
         {
           "title": "Yerel SEO ve teslim",
@@ -242,7 +246,7 @@
   },
   "pricing": {
     "heading": "Fiyatlar",
-    "subtitle": "Batumi işletmeleri için tipik başlangıç aralıkları. Son kapsam sayfalara, dillere, içeriğe, entegrasyonlara ve yayın desteğine bağlıdır.",
+    "subtitle": "Batum işletmeleri için tipik başlangıç aralıkları. Son kapsam sayfalara, dillere, içeriğe, entegrasyonlara ve yayın desteğine bağlıdır.",
     "beauty": {
       "name": "Güzellik stüdyosu web sitesi",
       "best_fit": "Küçük güzellik salonları, medikal estetik klinikleri, tırnak stüdyoları ve kuaförler",
@@ -420,7 +424,7 @@
       },
       {
         "q": "Ödeme planı sunuyor musunuz?",
-        "a": "Evet. Daha büyük projeler için kurulum ücretini iki veya üç taksitlere bölebilirim. Bunu teklif aşamasında kararlaştıracağız."
+        "a": "Evet. Daha büyük projelerde kurulum ücretini iki veya üç taksite bölebilirim. Bunu teklif aşamasında kararlaştırırız."
       }
     ]
   },
@@ -431,7 +435,7 @@
     "story_body_2": "Denetimi, sayfa planını, yapıyı, tasarım yönünü, Next.js geliştirmesini, yerel SEO temellerini, yayın öncesi kontrolleri ve desteği bizzat yürütürüm. Proje fotoğrafçılık, çeviri kontrolü, marka çalışması veya daha kapsamlı içerik desteği gerektirirse uygun uzmanı açıkça sürece dahil ederim.",
     "approach_heading": "Açık çalışma, uydurma kanıt yok",
     "approach_body": "Yorum, müşteri logosu, performans ölçümü, vaka sonucu veya başka bir kanıt uydurmam. Çalışma gerçek işletme bilgileriyle başlar: hizmetler, odalar, tedaviler, fiyatlar, politikalar, güven unsurları, diller, arama niyeti ve iletişim ya da rezervasyon yolu.",
-    "why_batumi_heading": "Neden Batumi?",
+    "why_batumi_heading": "Neden Batum?",
     "why_batumi_body_1": "Batum, konaklama, sağlık ve hizmet işletmeleri için büyüyen bir pazar; ancak birçok yerel web sitesi rezervasyon, güven ve çok dilli iletişimi hâlâ gereğinden zor hale getiriyor.",
     "why_batumi_body_2": "Ben tam bu boşlukta çalışıyorum: işletmenin daha kolay bulunmasını, anlaşılmasını ve iletişime geçilmesini sağlayan pratik web siteleri.",
     "process_heading": "Nasıl çalışırım",
@@ -508,7 +512,7 @@
   },
   "contactPage": {
     "heading": "İletişime geçin",
-    "subtitle": "Projenizden bahsedin; bir iş günü içinde size döneceğim.",
+    "subtitle": "Projenizi ve hangi konuda desteğe ihtiyacınız olduğunu anlatın.",
     "form": {
       "name": "Adınız",
       "name_required": "Ad gerekli",
@@ -541,10 +545,11 @@
       "sending": "Gönderiliyor...",
       "error_title": "Bir şeyler ters gitti",
       "error_default": "Talebiniz gönderilemedi. Lütfen tekrar deneyin ya da bana doğrudan e-posta gönderin.",
+      "inbox_unavailable": "Çevrimiçi form geçici olarak kullanılamıyor. Lütfen doğrudan hello@batumilighthouse.com adresine e-posta gönderin.",
       "success_redirect": "Yönlendiriliyor...",
       "success_title": "Teşekkürler",
-      "success_body": "Talebiniz alındı. Bir iş günü içinde size döneceğim.",
-      "success_meta": "Tipik yanıt süresi: 24 saatten kısa"
+      "success_body": "Talebiniz kaydedildi ve incelenecek.",
+      "success_meta": "İncelenmek üzere başarıyla kaydedildi"
     },
     "sectors": [
       "Konaklama",
@@ -575,7 +580,7 @@
   },
   "thankYouPage": {
     "heading": "Talebiniz için teşekkürler",
-    "body": "Mesajınızı aldım ve bir iş günü içinde size geri döneceğim. Bu arada şu kaynakları yararlı bulabilirsiniz.",
+    "body": "Mesajınız kaydedildi ve incelenecek. Bu arada şu kaynakları yararlı bulabilirsiniz.",
     "browse_insights": "Bilgi bankasına göz atın",
     "see_pricing": "Fiyatları görün",
     "insights_description": "Web stratejisi, yerel SEO ve sektöre özel dijital tavsiyeler hakkında makaleler okuyun.",
@@ -589,8 +594,8 @@
         "a": "Çoğu proje kapsama ve içeriğin ne kadar hızlı sağlandığına bağlı olarak 3–6 haftada tamamlanır. Denetim ve teklif aşaması 1–2 hafta, ardından inşa ve yayın 2–4 hafta sürer."
       },
       {
-        "q": "Batumi dışındaki işletmelerle de çalışıyor musunuz?",
-        "a": "Evet. Konaklama, sağlık ve güzellik alanlarında Batumi merkezli işletmelere odaklansam da, Gürcistan genelindeki müşterilerle çalışıyorum ve uluslararası ziyaretçileri hedefleyen çok dilli web sitelerine ihtiyaç duyan projeleri destekleyebilirim."
+        "q": "Batum dışındaki işletmelerle de çalışıyor musunuz?",
+        "a": "Evet. Konaklama, sağlık ve güzellik alanlarında Batum merkezli işletmelere odaklansam da Gürcistan genelindeki müşterilerle çalışıyor ve uluslararası ziyaretçilere yönelik çok dilli web sitesi gereken projeleri destekliyorum."
       },
       {
         "q": "Zaten bir web sitem varsa?",
@@ -613,7 +618,7 @@
   },
   "contact": {
     "heading": "İletişime geçin",
-    "subtitle": "Projenizi anlatın, bir iş günü içinde size geri döneceğim.",
+    "subtitle": "Projenizi ve hangi konuda desteğe ihtiyacınız olduğunu anlatın.",
     "form": {
       "name": "Adınız",
       "business": "İşletme adı",
@@ -675,7 +680,7 @@
     "sectionLabel": "Telefon öncelikli müşteri.",
     "heading": "Telefon öncelikli müşteri için kuruldu",
     "intro": "Müşterileriniz telefondan arar, karşılaştırır, karar verir ve iletişime geçer. Web sitenizi, Google profilinizi, görsellerinizi, sosyal bağlantılarınızı ve rezervasyon akışınızı birbirine bağlarım; insanlar sizi anlasın ve sonraki adıma geçsin.",
-    "support": "Bulunması, anlaşılması, güvenilmesi ve iletişim kurulması kolay olun.",
+    "support": "Kolay bulunur ve anlaşılır olun; güven verin ve iletişim kurmayı kolaylaştırın.",
     "primaryCta": "Web sitesi denetimi talep edin",
     "secondaryCta": "Web sitesi örneklerini görün",
     "items": {
@@ -703,9 +708,9 @@
   },
   "about": {
     "heading": "Stüdyo hakkında",
-    "story": "Ben Aruba'da büyümüş, şimdi Batumi'de web siteleri geliştiren Hollandalı bir geliştiriciyim. Karayipler bana misafirperverliğin detaylarda olduğunu — ve kalitenin miktardan daha önemli olduğunu öğretti. Her projeye aynı yaklaşımı getiriyorum: odaklı, hassas ve kişisel.",
+    "story": "Aruba'da büyümüş, şimdi Batum'da web siteleri geliştiren Hollandalı bir geliştiriciyim. Karayipler bana misafirperverliğin ayrıntılarda olduğunu ve niteliğin nicelikten önemli olduğunu öğretti. Her projeye aynı yaklaşımı taşıyorum: odaklı, özenli ve kişisel.",
     "approach": "Sadece sunum için dekoratif web siteleri yapmam. Yerel arama, net içerik, rezervasyon akışları ve insanların harekete geçmesini sağlayan sayfalar etrafında çalışırım.",
-    "why_batumi": "Batumi, Gürcistan'ın en hızlı büyüyen konaklama ve sağlık destinasyonlarından biridir. Yılda 2,7 milyondan fazla Acara bölgesi ziyareti ve ülkedeki en yüksek otel doluluk oranıyla bu şehir, sadece iyi görünen değil, performans gösteren web sitelerine ihtiyaç duyar.",
+    "why_batumi": "Batum'da konaklama, sağlık, güzellik ve hizmet sektörleri oldukça hareketlidir. Buna rağmen birçok yerel web sitesi; teklifleri karşılaştırmayı, işletmeye güvenmeyi ve doğrudan iletişime geçmeyi hâlâ gereğinden fazla zorlaştırıyor.",
     "process": [
       "Mevcut web varlığınızı denetleme",
       "Hedeflerinizi anlamak için ön görüşme",
@@ -740,7 +745,7 @@
       },
       "deployment": {
         "title": "Hostinger'a hazır yayın",
-        "body": "Build çıktısı, yönlendirmeler, meta veriler, analitik onayı ve temel teknik SEO teslimden önce kontrol edilir."
+        "body": "Derleme çıktısı, yönlendirmeler, meta veriler, analitik onayı ve temel teknik SEO teslimden önce kontrol edilir."
       }
     },
     "subtitle": "Teslim edilen şey sadece daha güzel bir ana sayfa değildir. Görünürlük, güven ve talep akışı üzerine kurulmuş pratik bir lansman paketidir.",
@@ -762,7 +767,7 @@
     "conversion": "Siteniz ziyaretçileri rezervasyon veya iletişime yönlendiriyor mu?"
   },
   "footer": {
-    "tagline": "Konaklama, sağlık ve güzellik işletmeleri için Batumi web stüdyosu.",
+    "tagline": "Konaklama, sağlık ve güzellik işletmeleri için Batum web stüdyosu.",
     "solutions": "Çözümler",
     "company": "Şirket",
     "legal": "Yasal",
@@ -777,7 +782,7 @@
   },
   "thank_you": {
     "heading": "Talebiniz için teşekkürler",
-    "body": "Mesajınızı aldım ve bir iş günü içinde size geri döneceğim. Bu arada şu kaynakları yararlı bulabilirsiniz.",
+    "body": "Mesajınız kaydedildi ve incelenecek. Bu arada şu kaynakları yararlı bulabilirsiniz.",
     "cta": "Bilgi bankasına göz atın"
   },
   "legal": {
@@ -788,36 +793,36 @@
     "privacy": {
       "heading": "Gizlilik Politikası",
       "last_updated": "Son güncelleme: Mart 2025",
-      "intro": "Batumi Lighthouse (\"biz,\" \"bizim\" veya \"bizi\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
+      "intro": "Batumi Lighthouse (\"biz\", \"bizi\" veya \"bizim\") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya özen gösterir. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
       "data_collection_heading": "1. Topladığımız Veriler",
-      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim bilgileri: bir form gönderdiğinizde veya bizimle iletişime geçtiğinizde ad, e-posta adresi, telefon numarası ve işletme adı.\n• Web sitesi verileri: bir denetim talebi veya soruşturma sırasında sağlanan mevcut web sitesi URL'niz.\n• Kullanım verileri: ziyaret edilen sayfalar, sayfalarda geçirilen süre ve gizliliğe saygılı analizler aracılığıyla toplanan genel gezinme kalıpları.\n• Cihaz verileri: deneyiminizi optimize etmek için tarayıcı türü, işletim sistemi ve ekran çözünürlüğü.",
+      "data_collection_body": "Aşağıdaki türlerde kişisel veriler toplayabiliriz:\n\n• İletişim bilgileri: bir form gönderdiğinizde veya bizimle iletişime geçtiğinizde ad, e-posta adresi, telefon numarası ve işletme adı.\n• Web sitesi verileri: bir denetim talebi veya başka bir başvuru sırasında paylaştığınız mevcut web sitesi URL'niz.\n• Kullanım verileri: gizliliğe saygılı analizler aracılığıyla toplanan ziyaret edilen sayfalar, sayfalarda geçirilen süre ve genel gezinme kalıpları.\n• Cihaz verileri: deneyiminizi iyileştirmek için tarayıcı türü, işletim sistemi ve ekran çözünürlüğü.",
       "cookies_heading": "2. Çerezler ve İzleme",
       "cookies_body": "Web sitesinin düzgün çalışmasını sağlamak için gerekli çerezleri kullanıyoruz. Ziyaretçilerin sitemizle nasıl etkileşime girdiğini anlamak için analiz çerezleri de kullanabiliriz. Çerez tercihlerinizi istediğiniz zaman tarayıcı ayarlarınızdan kontrol edebilirsiniz. Reklam çerezi kullanmıyoruz ve verileri üçüncü taraf reklamcılara satmıyoruz.",
       "third_party_heading": "3. Üçüncü Taraf Hizmetleri",
-      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanıyoruz:\n\n• Web sitemizi güvenli bir şekilde sunmak için barındırma sağlayıcıları (örn., Hostinger).\n• Soruşturmaları ve denetim taleplerini yönetmek için form işleme araçları.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikası altında çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşıyoruz.",
+      "third_party_body": "Verilerinizi işleyen aşağıdaki üçüncü taraf hizmetlerini kullanabiliriz:\n\n• Web sitemizi güvenli bir şekilde sunmak için barındırma sağlayıcıları (örn., Hostinger).\n• Başvuruları ve denetim taleplerini yönetmek için form işleme araçları.\n• Web sitesi trafiğini ve performansını anlamak için analiz hizmetleri.\n\nHer üçüncü taraf hizmeti kendi gizlilik politikasına göre çalışır. Yalnızca hizmetin çalışması için gerekli verileri paylaşırız.",
       "data_rights_heading": "4. Haklarınız",
       "data_rights_body": "Aşağıdaki haklara sahipsiniz:\n\n• Hakkınızda tuttuğumuz kişisel verilerinize erişim.\n• Verilerinizin düzeltilmesi veya silinmesini talep etme.\n• Verilerinizin belirli amaçlarla işlenmesine itiraz etme.\n• Verilerinizin taşınabilir bir formatta kopyasını talep etme.\n\nBu hakları kullanmak için aşağıdaki iletişim bilgilerini kullanın.",
       "data_security_heading": "5. Veri Güvenliği",
       "data_security_body": "Kişisel verilerinizi yetkisiz erişime, değişikliğe, ifşaya veya yok edilmeye karşı korumak için uygun teknik ve organizasyonel önlemler uyguluyoruz. Ancak, İnternet üzerinden hiçbir iletim yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz.",
       "contact_heading": "6. İletişim Bilgileri",
-      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@batumilighthouse.com\nKonum: Batumi, Acara, Gürcistan"
+      "contact_body": "Bu gizlilik politikası veya verilerinizi nasıl ele aldığımız hakkında sorularınız varsa, lütfen bizimle iletişime geçin:\n\nE-posta: hello@batumilighthouse.com\nKonum: Batum, Acara, Gürcistan"
     },
     "terms": {
       "heading": "Hizmet Şartları",
       "last_updated": "Son güncelleme: Mart 2025",
       "intro": "Bu Hizmet Şartları, Batumi Lighthouse web sitesi ve hizmetlerinin kullanımını yönetir. Web sitemize erişerek veya hizmetlerimizi kullanarak bu şartları kabul etmiş olursunuz.",
       "services_heading": "1. Hizmetler",
-      "services_body": "Batumi Lighthouse, Gürcistan'ın Batumi şehrinde konaklama, sağlık ve güzellik sektörü web sitelerinde uzmanlaşmış web tasarımı, geliştirme ve dijital danışmanlık hizmetleri sunar. Hizmetlerimiz aşağıdakilerle sınırlı olmamak üzere şunları içerir:\n\n• Web sitesi tasarımı ve geliştirme\n• Arama motoru optimizasyonu (SEO)\n• Web sitesi denetimi ve performans analizi\n• Sürekli web sitesi bakımı ve destek\n• İçerik stratejisi ve metin yazarlığı\n\nHer proje için özel kapsam, teslim edilebilirler ve zaman çizelgesi, her iki tarafın da üzerinde anlaştığı bireysel proje tekliflerinde tanımlanır.",
+      "services_body": "Batumi Lighthouse, Batum'daki işletmelere web tasarımı, geliştirme, yerel SEO ve dijital danışmanlık hizmetleri sunar. Hizmetlerimiz aşağıdakilerle sınırlı olmamak üzere şunları içerir:\n\n• Web sitesi tasarımı ve geliştirme\n• Arama motoru optimizasyonu (SEO)\n• Web sitesi denetimi ve performans analizi\n• Sürekli web sitesi bakımı ve destek\n• İçerik stratejisi ve metin yazarlığı\n\nHer projenin kapsamı, teslimatları ve takvimi, iki tarafın da kabul ettiği projeye özel teklifte tanımlanır.",
       "payment_heading": "2. Ödeme Şartları",
-      "payment_body": "• Kurulum ücretleri, yazılı olarak bir ödeme planı üzerinde anlaşılmadıkça, geliştirme başlamadan önce ödenmesi gereken tek seferlik ücretlerdir.\n• Aylık ücretler barındırma, bakım, güvenlik güncellemeleri ve desteği kapsar. Bunlar yinelenen şekilde önceden faturalandırılır.\n• Daha büyük projeler için ödeme planları teklif aşamasında düzenlenebilir ve yazılı olarak onaylanmalıdır.\n• Aksi belirtilmedikçe tüm fiyatlar USD cinsindendir. Yasayla gerektiğinde Gürcistan KDV'si uygulanabilir.\n• Geç ödemeler, ödenmemiş bakiye clearing edilene kadar hizmetlerin askıya alınmasına neden olabilir.",
+      "payment_body": "• Kurulum ücretleri, yazılı bir ödeme planı kararlaştırılmadıkça geliştirme başlamadan önce ödenmesi gereken tek seferlik ücretlerdir.\n• Aylık ücretler barındırma, bakım, güvenlik güncellemeleri ve desteği kapsar ve düzenli olarak peşin faturalandırılır.\n• Daha büyük projeler için ödeme planı teklif aşamasında düzenlenebilir ve yazılı olarak kararlaştırılmalıdır.\n• Aksi belirtilmedikçe tüm fiyatlar USD cinsindendir. Kanunen gerekli olduğunda Gürcistan KDV'si uygulanabilir.\n• Geciken ödemeler, ödenmemiş bakiye tamamen kapatılana kadar hizmetlerin askıya alınmasına neden olabilir.",
       "ip_heading": "3. Fikri Mülkiyet",
-      "ip_body": "• Tam ödeme sonrasında, projeniz için özel olarak oluşturulan özel web sitesi tasarımı ve içeriğin mülkiyetini alırsınız.\n• Batumi Lighthouse, geliştirme sürecinde kullanılan önceden mevcut araçların, çerçevelerin, kod kitaplıklarının ve yöntemlerin mülkiyetini saklı tutar.\n• Sağladığınız tüm içerik, görsel ve materyallerin üçüncü taraf fikri mülkiyet haklarını ihlal etmemesini sağlamak sizin sorumluluğunuzdadır.\n• Batumi Lighthouse, aksi yazılı olarak kararlaştırılmadıkça tamamlanmış projeyi portföyünde sergileyebilir.",
+      "ip_body": "• Tam ödeme sonrasında, projeniz için özel olarak oluşturulan web sitesi tasarımı ve içeriğin mülkiyetini alırsınız.\n• Batumi Lighthouse, geliştirme sürecinde kullanılan önceden var olan araçların, altyapıların, kod kitaplıklarının ve yöntemlerin mülkiyetini saklı tutar.\n• Sağladığınız tüm içerik, görsel ve materyallerin üçüncü taraf fikri mülkiyet haklarını ihlal etmemesini sağlamak sizin sorumluluğunuzdadır.\n• Batumi Lighthouse, aksi yazılı olarak kararlaştırılmadıkça tamamlanmış projeyi portföyünde sergileyebilir.",
       "liability_heading": "4. Sorumluluğun Sınırlandırılması",
-      "liability_body": "• Batumi Lighthouse, açık veya zımni hiçbir türde garanti olmaksızın hizmetleri \"olduğu gibi\" sunar.\n• Hizmetlerimizin kullanımından kaynaklanan dolaylı, tesadüfi, özel veya sonuçsal zararlardan sorumlu değiliz.\n• Herhangi bir talep için toplam sorumluluğumuz, talebe neden olan belirli hizmet için sizin tarafınızdan ödenen toplam ücretleri aşamaz.\n• Üçüncü taraf hizmet arızalarından (örn., barındırma kesintileri, ödeme geçidi sorunları) kaynaklanan kayıplardan sorumlu değiliz.\n• Hizmetlerimizin kullanımından kaynaklanan gelir, veri veya iş fırsatı kaybından sorumlu değiliz.",
+      "liability_body": "• Batumi Lighthouse, açık veya zımni hiçbir garanti vermeden hizmetleri \"olduğu gibi\" sunar.\n• Hizmetlerimizin kullanımından kaynaklanan dolaylı, arızi, özel veya sonuç olarak ortaya çıkan zararlardan sorumlu değiliz.\n• Herhangi bir talebe ilişkin toplam sorumluluğumuz, talebe neden olan belirli hizmet için ödediğiniz toplam bedeli aşamaz.\n• Üçüncü taraf hizmetlerindeki arızalardan (örn., barındırma kesintileri veya ödeme altyapısı sorunları) kaynaklanan kayıplardan sorumlu değiliz.\n• Hizmetlerimizin kullanımından kaynaklanan gelir, veri veya iş fırsatı kaybından sorumlu değiliz.",
       "termination_heading": "5. Fesih",
-      "termination_body": "• Her iki taraf da 30 günlük yazılı bildirimle hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında tüm ödenmiş teslim edilebilirlerin mülkiyetini sizde kalır. Batumi Lighthouse makul bir devir süresi sağlayacaktır.\n• Fesih nedeninden bağımsız olarak, ödenmemiş ücretler fesih sonrasında da ödenmeye devam eder.",
+      "termination_body": "• Taraflardan her biri 30 gün önceden yazılı bildirimde bulunarak hizmet sözleşmesini feshedebilir.\n• Fesih sonrasında, bedeli tamamen ödenmiş tüm teslimatların mülkiyeti sizde kalır. Batumi Lighthouse makul bir devir süresi sağlar.\n• Fesih nedeni ne olursa olsun, fesih tarihinde ödenmemiş ücretlerin ödenmesi gerekir.",
       "governing_heading": "6. Uygulanacak Hukuk",
-      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakere ile çözümlenecek, çözümlenemezse Gürcistan, Batumi mahkemelerinde karara bağlanacaktır.\n\nBu şartlar hakkında sorularınız için hello@batumilighthouse.com adresinden bizimle iletişime geçin."
+      "governing_body": "Bu şartlar Gürcistan yasalarına tabidir. Herhangi bir anlaşmazlık önce iyi niyetli müzakereyle çözülmeye çalışılır; çözülemezse Batum, Gürcistan'daki mahkemelerde karara bağlanır.\n\nBu şartlarla ilgili sorularınız için hello@batumilighthouse.com adresinden bizimle iletişime geçin."
     }
   },
   "sectorPages": {
@@ -840,7 +845,7 @@
           },
           {
             "title": "Çok dilli içerik yok",
-            "description": "Batumi, Gürcü, Rus, Türk ve uluslararası ziyaretçileri ağırlar. Siteniz sadece bir dil konuşuyorsa, pazarınızın çoğuna görünmezsiniz."
+            "description": "Batum; Gürcü, Rus, Türk ve uluslararası ziyaretçileri ağırlar. Siteniz yalnızca tek dildeyse pazarınızın büyük bir bölümü sizi anlayamaz."
           },
           {
             "title": "Zayıf mobil deneyim",
@@ -948,7 +953,7 @@
           },
           {
             "title": "Çok dilli açıklık yok",
-            "description": "Batumi'nin sağlık turizmi Gürcü, Rus ve uluslararası hastalara hizmet verir. İçerik sadece bir dilde ise, potansiyel hastalarınızın önemli bir kısmına görünmezsiniz."
+            "description": "Batum'un sağlık turizmi Gürcü, Rus ve uluslararası hastalara hizmet verir. İçerik yalnızca tek dildeyse potansiyel hastalarınızın önemli bir bölümü sizi anlayamaz."
           }
         ]
       },
@@ -977,7 +982,7 @@
           },
           {
             "title": "SSS bölümü",
-            "description": "Yapılandırılmış veriye sahip aranabilir bir SSS bölümü — yaygın hasta sorularını yanıtlayarak telefon soruşturmalarını azaltır ve SSS zengin sonuçlarıyla SEO'nuzu iyileştirir."
+            "description": "Yapılandırılmış veriye sahip aranabilir bir SSS bölümü — yaygın hasta sorularını yanıtlayarak telefonla gelen bilgi taleplerini azaltır ve SSS zengin sonuçlarıyla SEO'nuzu iyileştirir."
           }
         ]
       },
@@ -1040,11 +1045,11 @@
         "items": [
           {
             "title": "Çevrimiçi randevu yok",
-            "description": "Müşteriler yalnızca DM, telefon veya walk-in ile rezervasyon yapabiliyorsa bazı randevular kaçırılır. Net bir web sitesi onlara talep ya da rezervasyon için başka basit bir yol verir."
+            "description": "Müşteriler yalnızca DM, telefon veya randevusuz ziyaret yoluyla rezervasyon yapabiliyorsa bazı randevular kaçırılır. Net bir web sitesi onlara talep ya da rezervasyon için başka basit bir yol verir."
           },
           {
             "title": "Dağınık iletişim kanalları",
-            "description": "Instagram DM'leri, WhatsApp, telefonlar ve walk-in talepleri takip etmek zor olabilir. Daha net bir rezervasyon akışı sizin ve müşterileriniz için karışıklığı azaltır."
+            "description": "Instagram DM'lerini, WhatsApp mesajlarını, telefon aramalarını ve randevusuz gelen talepleri takip etmek zor olabilir. Daha net bir rezervasyon akışı sizin ve müşterileriniz için karışıklığı azaltır."
           },
           {
             "title": "Hizmet menüsü görünürlüğü yok",
@@ -1221,7 +1226,7 @@
         },
         "medical": {
           "sector": "Sağlık",
-          "finding": "Yaygın sorun: klinik sitelerinde doktor profilleri, hizmet schema'sı ve uluslararası hastalar için net yollar çoğu zaman eksiktir."
+          "finding": "Yaygın sorun: klinik sitelerinde doktor profilleri, yapılandırılmış hizmet verileri ve uluslararası hastalar için açık yönlendirmeler çoğu zaman eksiktir."
         },
         "beauty": {
           "sector": "Güzellik",
@@ -1231,18 +1236,23 @@
     },
     "form": {
       "heading": "Ücretsiz denetiminizi talep edin",
-      "subtitle": "Aşağıdaki detayları doldurun, puan kartınızı 3 iş günü içinde teslim edeceğim.",
+      "subtitle": "Web sitenizi ve denetim talebinizi inceleyebilmem için aşağıdaki bilgileri doldurun.",
       "name": "Adınız",
+      "name_placeholder": "Meryem K.",
       "business": "İşletme adı",
+      "business_placeholder": "Sahil Odaları",
       "email": "E-posta adresi",
+      "email_placeholder": "meryem@example.com",
       "sector": "Sektörünüz",
       "website": "Web sitesi URL'si",
+      "website_placeholder": "https://ornek.com.tr",
       "website_required": "Web sitesi URL'si gereklidir",
       "message": "Başka bilmem gereken bir şey var mı? (isteğe bağlı)",
       "submit": "Ücretsiz denetim talep et",
       "sending": "Gönderiliyor...",
-      "success": "Denetim talebiniz alındı. 3 iş günü içinde sizinle iletişime geçeceğim.",
+      "success": "Denetim talebiniz kaydedildi ve incelenecek.",
       "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin veya doğrudan bana e-posta gönderin.",
+      "inbox_unavailable": "Çevrimiçi form geçici olarak kullanılamıyor. Lütfen doğrudan hello@batumilighthouse.com adresine e-posta gönderin.",
       "sectors": [
         "Konaklama",
         "Sağlık",
@@ -1258,6 +1268,7 @@
       "recommended_fix": "Önerilen düzeltme",
       "score_out_of": "/100",
       "not_found": "Denetim bulunamadı.",
+      "sample_disclosure": "Kurgusal ve açıklayıcı bir örnektir. Gerçek bir işletmenin değerlendirmesi değildir ve ölçülmüş sonuçlar sunmaz.",
       "demo_audit": {
         "title": "Batum otel web sitesi denetimi",
         "executiveSummary": "Batum sahilindeki bu otel web sitesi güçlü bir görsel etkiye sahip, ancak doğrudan rezervasyonu etkileyen temel noktalarda zorlanıyor. Mobil performans çok yavaş hissediliyor, rezervasyon yolu gereğinden fazla adım istiyor ve yerel aramada görünürlük düşük. İyi tarafı şu: Bu sorunlar net önceliklerle düzeltilebilir.",
@@ -1275,7 +1286,7 @@
           {
             "title": "Google Business Profile bağlantısı yok",
             "description": "Otelin Google Business Profile kaydı var, ancak web sitesi buna bağlantı vermiyor ve profildeki NAP (ad, adres, telefon) bilgileri tutarsız. Sayfalarda Schema.org Hotel yapılandırılmış verisi yok. Site “hotel Batumi” gibi aramalarda yerel pakette görünmüyor.",
-            "recommendedFix": "Her oda sayfasına Hotel schema ekleyin, NAP bilgilerini tüm listelerde tutarlı hale getirin ve Google Business Profile bağlantısını site footerına ekleyin."
+            "recommendedFix": "Her oda sayfasına Hotel şeması ekleyin, NAP bilgilerini tüm listelerde tutarlı tutun ve Google Business Profile bağlantısını site altbilgisine ekleyin."
           },
           {
             "title": "Oda sayfalarında çok dilli içerik eksik",
@@ -1688,7 +1699,7 @@
         },
         "delivery": {
           "question": "Fotoğraflar ne kadar sürede teslim edilir?",
-          "answer": "Teslim tarihi kapsamla birlikte kararlaştırılır. Odaklı bir çekim ile tam içerik günü farklı düzenleme süreleri gerektirir."
+          "answer": "Teslim tarihi kapsamla birlikte kararlaştırılır. Odaklı bir çekim ile tam içerik günü farklı düzenleme süreleri gerektirir; bu nedenle takvim rezervasyondan önce netleştirilir."
         },
         "clinics": {
           "question": "Klinik ve uygulama alanlarını çekebilir misiniz?",
@@ -1755,7 +1766,7 @@
   "examplesUi": {
     "page": {
       "heading": "İç örnek çalışmalar",
-      "subtitle": "Batumi otelleri, klinikleri, salonları ve hizmet işletmeleri için yapı, sayfalar ve kararları gösteren sektörel web sitesi örnekleri.",
+      "subtitle": "Batum'daki oteller, klinikler, salonlar ve hizmet işletmeleri için yapı, sayfa düzeni ve karar akışlarını gösteren sektörel web sitesi örnekleri.",
       "note": "Aksi açıkça belirtilmedikçe bunlar iç örneklerdir. Ücretli müşteri işi, referansla desteklenen çalışma veya yayımlanmış iş sonucu değildir."
     },
     "home": {
@@ -1923,18 +1934,18 @@
         "shortDescription": "Batumi Lighthouse sitesinin kendisi: hizmet netliği, çok dilli yapı ve talep akışı için iç stüdyo çalışması.",
         "demonstratedProblem": "Küçük bir stüdyo kime hizmet verdiğini, ne inşa ettiğini ve konuşmanın nasıl başlayacağını genel ajans şablonu gibi görünmeden anlatmalıdır.",
         "problem": "Küçük bir stüdyo sitesi ne inşa ettiğini, kime hizmet verdiğini ve nasıl iletişim kurulacağını süslü ajans dili olmadan anlatmalıdır.",
-        "solution": "Merkezi marka yapılandırması, yapılandırılmış metadata, sektör sayfaları, denetim yolları ve net iletişim rotaları olan çok dilli Next.js sitesi.",
+        "solution": "Merkezi marka yapılandırması, düzenli meta veriler, sektör sayfaları, denetim yolları ve açık iletişim rotaları olan çok dilli bir Next.js sitesi.",
         "modules": [
           "Kurucu odaklı ana sayfa yapısı",
           "Sektöre özel hizmet sayfaları",
           "Denetim talebi ve iletişim akışı",
           "Çok dilli rota ve içerik yapısı",
-          "SEO metadata ve yapılandırılmış veri"
+          "SEO meta verileri ve yapılandırılmış veri"
         ],
         "features": [
           "Çok dilli rota yapısı",
           "Merkezi site yapılandırması",
-          "SEO metadata ve yapılandırılmış veri",
+          "SEO meta verileri ve yapılandırılmış veri",
           "Denetim ve talep toplama akışları",
           "İşlevsel tasarım sistemi"
         ],
@@ -1956,7 +1967,7 @@
   },
   "templatesCatalog": {
     "metadataTitle": "Batum işletmeleri için web sitesi şablonları",
-    "metadataDescription": "Oteller, klinikler, güzellik işletmeleri, restoranlar, barlar ve mağazalar için 18 özgün web sitesi şablonunu inceleyin.",
+    "metadataDescription": "Oteller, klinikler, güzellik işletmeleri, restoranlar, barlar ve mağazalar için 18 özgün web sitesi şablonunu inceleyin; ardından işletmenize özel bir Batumi Lighthouse projesini görüşelim.",
     "eyebrow": "18 özgün web sitesi başlangıç noktası",
     "heading": "Proje başlamadan önce güçlü bir yön seçin.",
     "intro": "Altı iş kategorisi için tamamlanmış, duyarlı web sitesi örneklerini inceleyin. Her biri yapı, stil ve müşteri yolculuğu için pratik bir başlangıç noktası sunar.",
@@ -1970,7 +1981,7 @@
     "internalDemo": "Şirket içi örnek",
     "imageAlt": "{category} web sitesi şablonu önizlemesi",
     "openPreview": "Tam önizlemeyi aç",
-    "requestTemplate": "Bu şablonu görüş",
+    "requestTemplate": "Bu şablonu görüşelim",
     "whatIsIncluded": "Eksiksiz bir başlangıç noktası",
     "completeWebsite": "Ana sayfanın ötesinde",
     "customizationNote": "Son web sitesi markanıza, içeriğinize, dil ihtiyaçlarınıza ve iş hedeflerinize göre uyarlanır.",
@@ -1978,7 +1989,7 @@
     "ctaBody": "Şablon adını ve işletmenizin kısa bir açıklamasını gönderin. Nelerin korunacağını, nelerin değişeceğini ve yapım maliyetini açıklayacağım.",
     "contactInterest": "{name} şablonuyla ilgileniyorsunuz. Bunu görsel ve yapısal başlangıç noktası olarak kullanacağım; değiştirmeden kopyalamayacağım.",
     "included": {
-      "responsive": "Duyarlı ana sayfa ve eksiksiz iç sayfa yapısı",
+      "responsive": "Mobil uyumlu ana sayfa ve eksiksiz iç sayfa yapısı",
       "navigation": "Erişilebilir masaüstü ve mobil gezinme",
       "forms": "İşletmeye özel rezervasyon, talep veya randevu formları",
       "seo": "SEO'ya hazır sayfa yapısı, meta veriler ve düzenlenebilir içerik"
@@ -2022,7 +2033,7 @@
       },
       "beauty-02-spa": {
         "positioning": "Bakımlar, ritüeller, paketler, üyelikler ve hediye kartları için sakin bir sağlıklı yaşam sitesi.",
-        "signature": "Süreye ve amaca göre hazırlanmış dokunsal bakım bulucu."
+        "signature": "Süreye ve ihtiyaca göre bakım seçimini kolaylaştıran duyusal bir rehber."
       },
       "beauty-03-aesthetic-clinic": {
         "positioning": "Tedaviler, uzmanlar ve danışma planlaması için güvenlik odaklı estetik klinik sitesi.",
@@ -2034,7 +2045,7 @@
       },
       "restaurant-02-bistro": {
         "positioning": "Menüler, günlük duyurular, etkinlikler ve masa rezervasyonları için canlı mahalle restoranı sitesi.",
-        "signature": "Yerel karakter taşıyan kullanışlı bugün ve etkinlikler panosu."
+        "signature": "Yerel karakter taşıyan, bugünün önerilerini ve etkinlikleri gösteren kullanışlı bir pano."
       },
       "restaurant-03-fast-casual": {
         "positioning": "Misafirlerin mekânda yeme, gel-al veya teslimatı kolayca seçmesini sağlayan hızlı, menü odaklı site.",

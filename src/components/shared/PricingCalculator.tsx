@@ -1,7 +1,7 @@
 'use client';
 
-import { useId, useMemo, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { pricingRates, type PricingRateKey } from '@/lib/pricing-config';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
@@ -23,9 +23,6 @@ const addOnOptions: { key: AddOnKey; labelKey: string }[] = [
 
 export function PricingCalculator() {
   const t = useTranslations('pricing');
-  const locale = useLocale();
-  const pagesInputId = useId();
-  const pagesValueId = `${pagesInputId}-value`;
 
   const [sector, setSector] = useState<PricingRateKey>('beauty');
   const [pages, setPages] = useState(5);
@@ -62,16 +59,6 @@ export function PricingCalculator() {
     return total;
   }, [rates, addOns]);
 
-  const currencyFormatter = useMemo(
-    () =>
-      new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency: 'USD',
-        maximumFractionDigits: 0,
-      }),
-    [locale]
-  );
-
   const sectorLabels: Record<PricingRateKey, string> = {
     beauty: t('calculator_sector_beauty'),
     medical: t('calculator_sector_medical'),
@@ -91,57 +78,70 @@ export function PricingCalculator() {
       </div>
 
       {/* Sector selection */}
-      <fieldset className="mb-6 min-w-0">
-        <legend className="mb-3 block text-sm font-medium text-foreground">
+      <fieldset className="mb-6">
+        <legend className="mb-3 text-sm font-medium text-foreground">
           {t('calculator_sector')}
         </legend>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {sectorOptions.map((opt) => (
-            <button
-              key={opt.key}
-              type="button"
-              onClick={() => setSector(opt.key)}
-              aria-pressed={sector === opt.key}
-              className={`relative rounded-md border px-4 py-3 text-sm font-medium transition-colors duration-150 ease-out ${
-                sector === opt.key
-                  ? 'border-navy bg-muted text-foreground'
-                  : 'border-border bg-background text-muted-foreground hover:border-navy hover:bg-muted'
-              }`}
-            >
-              {sectorLabels[opt.key]}
-              {sector === opt.key && (
-                <span
-                  aria-hidden="true"
-                  className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral"
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
+          {sectorOptions.map((opt) => {
+            const inputId = `pricing-calculator-sector-${opt.key}`;
+            const isActive = sector === opt.key;
+
+            return (
+              <div key={opt.key} className="relative min-w-0">
+                <input
+                  id={inputId}
+                  name="pricing-calculator-sector"
+                  type="radio"
+                  value={opt.key}
+                  checked={isActive}
+                  onChange={() => setSector(opt.key)}
+                  className="peer sr-only"
                 />
-              )}
-            </button>
-          ))}
+                <label
+                  htmlFor={inputId}
+                  className={`relative flex min-h-11 cursor-pointer items-center justify-center rounded-md border px-3 py-3 text-center text-sm font-medium leading-snug transition-colors duration-150 ease-out peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 ${
+                    isActive
+                      ? 'border-navy bg-muted text-foreground'
+                      : 'border-border bg-background text-muted-foreground hover:border-navy hover:bg-muted'
+                  }`}
+                >
+                  <span className="min-w-0 break-words">{sectorLabels[opt.key]}</span>
+                  {isActive && (
+                    <span
+                      className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral"
+                      aria-hidden="true"
+                    />
+                  )}
+                </label>
+              </div>
+            );
+          })}
         </div>
       </fieldset>
 
       {/* Page count slider */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
-          <label htmlFor={pagesInputId} className="text-sm font-medium text-foreground">
+          <label htmlFor="pricing-calculator-pages" className="text-sm font-medium text-foreground">
             {t('calculator_pages')}
           </label>
           <output
-            id={pagesValueId}
-            htmlFor={pagesInputId}
+            htmlFor="pricing-calculator-pages"
             className="text-sm font-semibold tabular-nums text-navy"
+            aria-live="polite"
           >
             {pages}
           </output>
         </div>
         <input
-          id={pagesInputId}
+          id="pricing-calculator-pages"
+          name="pricing-calculator-pages"
           type="range"
           min={5}
           max={20}
           value={pages}
           onChange={(e) => setPages(Number(e.target.value))}
-          aria-describedby={pagesValueId}
           className="h-2 w-full cursor-pointer appearance-none rounded-full bg-muted accent-navy"
         />
         <div className="flex justify-between mt-1">
@@ -151,11 +151,11 @@ export function PricingCalculator() {
       </div>
 
       {/* Add-on toggles */}
-      <fieldset className="mb-8 min-w-0">
-        <legend className="mb-3 block text-sm font-medium text-foreground">
+      <div className="mb-8">
+        <p id="pricing-calculator-addons-label" className="mb-3 text-sm font-medium text-foreground">
           {t('calculator_addons')}
-        </legend>
-        <div className="space-y-3">
+        </p>
+        <div className="space-y-3" role="group" aria-labelledby="pricing-calculator-addons-label">
           {addOnOptions.map((opt) => {
             const isActive = addOns.has(opt.key);
             const price = rates[opt.key];
@@ -163,8 +163,9 @@ export function PricingCalculator() {
               <button
                 key={opt.key}
                 type="button"
+                role="switch"
+                aria-checked={isActive}
                 onClick={() => toggleAddOn(opt.key)}
-                aria-pressed={isActive}
                 className={`flex w-full items-center justify-between rounded-md border px-4 py-3 transition-colors duration-150 ease-out ${
                   isActive
                     ? 'border-navy bg-muted'
@@ -190,28 +191,23 @@ export function PricingCalculator() {
                   </span>
                 </div>
                 <span className={`text-sm tabular-nums ${isActive ? 'font-semibold text-navy' : 'text-muted-foreground'}`}>
-                  +{currencyFormatter.format(price)}
+                  +${price}
                 </span>
               </button>
             );
           })}
         </div>
-      </fieldset>
+      </div>
 
       {/* Price display */}
-      <div
-        className="mb-6 border-t border-border pt-6"
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+      <div className="border-t border-border pt-6 mb-6">
+        <div className="grid grid-cols-2 gap-6">
           <div className="rounded-md bg-muted p-4 text-center">
             <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
               {t('calculator_setup')}
             </p>
             <p className="text-2xl font-bold text-foreground tabular-nums">
-              {currencyFormatter.format(setupTotal)}
+              ${setupTotal.toLocaleString()}
             </p>
           </div>
           <div className="rounded-md bg-muted p-4 text-center">
@@ -219,7 +215,7 @@ export function PricingCalculator() {
               {t('calculator_monthly')}
             </p>
             <p className="text-2xl font-bold text-foreground tabular-nums">
-              {currencyFormatter.format(Math.round(monthlyTotal))}
+              ${Math.round(monthlyTotal)}/mo
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
 import { cx } from "./cx";
 
@@ -28,6 +28,14 @@ type ManagedFormProps = {
   className?: string;
 };
 
+type FocusTarget = { type: "field"; name: string } | { type: "success" } | null;
+
+const EMAIL_ADDRESS_PATTERN = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/;
+
+export function isValidEmailAddress(value: string) {
+  return EMAIL_ADDRESS_PATTERN.test(value.trim());
+}
+
 function formatValidationMessage(message: string, field: string, min?: number) {
   return message.replace("{field}", field).replace("{min}", String(min ?? 1));
 }
@@ -49,14 +57,24 @@ export function ManagedForm({
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
-  const formInstanceId = useId();
-  const successRef = useRef<HTMLParagraphElement>(null);
-
-  const fieldId = (name: string) => `${formInstanceId}-${name}-field`;
+  const [focusTarget, setFocusTarget] = useState<FocusTarget>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const successMessageRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (submitted) successRef.current?.focus();
-  }, [submitted]);
+    if (focusTarget?.type === "success") {
+      successMessageRef.current?.focus();
+      return;
+    }
+
+    if (focusTarget?.type === "field") {
+      const field = formRef.current?.elements.namedItem(focusTarget.name);
+
+      if (field instanceof HTMLElement) {
+        field.focus();
+      }
+    }
+  }, [focusTarget]);
 
   function updateValue(name: string, value: string) {
     setValues((current) => ({ ...current, [name]: value }));
@@ -77,7 +95,7 @@ export function ManagedForm({
         nextErrors[field.name] = validationMessages?.required
           ? formatValidationMessage(validationMessages.required, field.label)
           : `${field.label} is required.`;
-      } else if (field.type === "email" && value && !value.includes("@")) {
+      } else if (field.type === "email" && value && !isValidEmailAddress(value)) {
         nextErrors[field.name] = validationMessages?.email ?? "Enter a valid email address.";
       } else if (field.type === "number" && value && Number(value) < 1) {
         nextErrors[field.name] = validationMessages?.numberMin
@@ -92,24 +110,20 @@ export function ManagedForm({
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate();
+    const firstInvalidField = fields.find((field) => nextErrors[field.name]);
     setErrors(nextErrors);
 
-    if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true);
-      return;
-    }
-
-    setSubmitted(false);
-    const firstInvalidField = fields.find((field) => Boolean(nextErrors[field.name]));
     if (firstInvalidField) {
-      window.requestAnimationFrame(() => {
-        document.getElementById(fieldId(firstInvalidField.name))?.focus();
-      });
+      setFocusTarget({ type: "field", name: firstInvalidField.name });
+    } else {
+      setSubmitted(true);
+      setFocusTarget({ type: "success" });
     }
   }
 
   return (
     <form
+      ref={formRef}
       className={cx("border border-[var(--wtf-color-border,#dbe3ef)] p-5", className)}
       onSubmit={handleSubmit}
       noValidate
@@ -128,9 +142,9 @@ export function ManagedForm({
       <div className="mt-6 grid gap-4">
         {fields.map((field) => {
           const error = errors[field.name];
-          const inputId = fieldId(field.name);
-          const helperId = `${formInstanceId}-${field.name}-helper`;
-          const errorId = `${formInstanceId}-${field.name}-error`;
+          const inputId = `${field.name}-field`;
+          const helperId = `${field.name}-helper`;
+          const errorId = `${field.name}-error`;
           const describedBy = [field.helperText ? helperId : null, error ? errorId : null]
             .filter(Boolean)
             .join(" ");
@@ -139,7 +153,6 @@ export function ManagedForm({
             <div key={field.name}>
               <label className="text-sm font-semibold" htmlFor={inputId}>
                 {field.label}
-                {field.required ? <span aria-hidden="true"> *</span> : null}
               </label>
               {field.type === "textarea" ? (
                 <textarea
@@ -218,12 +231,12 @@ export function ManagedForm({
 
       {submitted ? (
         <p
-          ref={successRef}
-          className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)] outline-none"
+          ref={successMessageRef}
           role="status"
           aria-live="polite"
           aria-atomic="true"
           tabIndex={-1}
+          className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)]"
         >
           {successMessage}
         </p>

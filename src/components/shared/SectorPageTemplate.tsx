@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
 import { getTranslations } from 'next-intl/server';
+import { serializeJsonLd } from '@/lib/seo/structured-data';
 import {
   Accessibility,
   ArrowRight,
@@ -45,7 +46,6 @@ import { Link } from '@/lib/i18n/navigation';
 import { getExampleUiLabels } from '@/lib/examples/labels';
 import type { Locale } from '@/lib/i18n/config';
 import { sectors, type SectorKey } from '@/lib/sector-config';
-import { serializeJsonLd } from '@/lib/seo/structured-data';
 
 const painIcons: Record<SectorKey, LucideIcon[]> = {
   hospitality: [DollarSign, Clock, Globe2, Smartphone],
@@ -150,6 +150,7 @@ export async function SectorPageTemplate({
 }: SectorPageTemplateProps) {
   const t = await getTranslations(`sectorPages.${sectorKey}`);
   const tNav = await getTranslations('nav');
+  const tLocations = await getTranslations('locationLabels');
   const exampleLabels = await getExampleUiLabels();
   const sector = sectors[sectorKey];
   const visual = sectorVisuals[sectorKey];
@@ -199,7 +200,6 @@ export async function SectorPageTemplate({
   return (
     <>
       <script
-        id={`sector-faq-json-ld-${sectorKey}`}
         data-locale={locale}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
@@ -259,7 +259,7 @@ export async function SectorPageTemplate({
             <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/44 via-transparent to-transparent" aria-hidden="true" />
             <figcaption className="absolute bottom-0 left-0 right-0 flex items-center justify-between gap-4 border-t border-white/24 bg-brand-charcoal/28 px-5 py-4 text-xs font-semibold text-white backdrop-blur-sm md:px-7">
               <span>{data.hero.eyebrow}</span>
-              <span>Batumi / Adjara</span>
+              <span>{tLocations('sectorCaption')}</span>
             </figcaption>
           </figure>
         </div>

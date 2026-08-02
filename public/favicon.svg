@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#1a2332"/>
-  <text x="16" y="23" text-anchor="middle" fill="#c4841d" font-family="Inter, sans-serif" font-weight="700" font-size="20">B</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Batumi Lighthouse mark">
+  <rect width="512" height="512" fill="#F4F3EF"/>
+  <path d="M256 104 392 392H120L256 104Z" fill="none" stroke="#111714" stroke-width="26" stroke-linejoin="round"/>
+  <path d="m207 220 49-38 49 38v18h-98v-18Z" fill="#111714"/>
+  <path d="M218 238h76v54h-76z" fill="#111714"/>
+  <path d="M230 242h16v38h-16zm36 0h16v38h-16z" fill="#F4F3EF"/>
+  <path d="m220 290-16 86h104l-16-86h-72Z" fill="#111714"/>
+  <path d="M244 338a12 12 0 0 1 24 0v38h-24v-38Z" fill="#F4F3EF"/>
+  <path d="M202 282h108" stroke="#111714" stroke-width="14" stroke-linecap="round"/>
 </svg>

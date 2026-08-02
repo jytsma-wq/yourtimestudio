@@ -2,12 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { type Locale, launchLocales } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
-import {
-  organizationSchema,
-  webSiteSchema,
-  localBusinessSchema,
-  serializeJsonLd,
-} from '@/lib/seo/structured-data';
+import { organizationSchema, serializeJsonLd, webSiteSchema } from '@/lib/seo/structured-data';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
 import { ExampleBuildsSection } from '@/components/sections/ExampleBuildsSection';
@@ -42,17 +37,17 @@ export default async function LocalePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const tMetadata = await getTranslations({ locale, namespace: 'metadata' });
+  const description = tMetadata('description');
 
   return (
     <>
       <script
-        id="homepage-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: serializeJsonLd([
-            organizationSchema(),
+            organizationSchema(description),
             webSiteSchema(),
-            localBusinessSchema(),
           ]),
         }}
       />

@@ -3,6 +3,10 @@
     "title": "Batumi Lighthouse - Clear websites for serious Batumi businesses",
     "description": "Founder-led web design, business photography, social-ready content, local SEO, and multilingual websites for Batumi hotels, clinics, studios, and local businesses."
   },
+  "locationLabels": {
+    "sectorCaption": "Batumi / Adjara",
+    "studioAddress": "Batumi, Adjara, Georgia"
+  },
   "nav": {
     "home": "Home",
     "solutions": "Services",
@@ -508,7 +512,7 @@
   },
   "contactPage": {
     "heading": "Get in touch",
-    "subtitle": "Tell me about your project and I'll get back to you within one business day.",
+    "subtitle": "Tell me about your project and what you need help with.",
     "form": {
       "name": "Your name",
       "name_required": "Name is required",
@@ -541,10 +545,11 @@
       "sending": "Sending...",
       "error_title": "Something went wrong",
       "error_default": "Could not send your inquiry. Please try again or email me directly.",
+      "inbox_unavailable": "The online form is temporarily unavailable. Please email hello@batumilighthouse.com directly.",
       "success_redirect": "Redirecting...",
       "success_title": "Thank you",
-      "success_body": "Your inquiry has been received. I'll get back to you within one business day.",
-      "success_meta": "Typical response time: under 24 hours"
+      "success_body": "Your inquiry has been saved and will be reviewed.",
+      "success_meta": "Saved successfully for review"
     },
     "sectors": [
       "Hospitality",
@@ -575,7 +580,7 @@
   },
   "thankYouPage": {
     "heading": "Thank you for your inquiry",
-    "body": "I've received your message and will get back to you within one business day. In the meantime, you might find these resources useful.",
+    "body": "Your message has been saved and will be reviewed. In the meantime, you might find these resources useful.",
     "browse_insights": "Browse insights",
     "see_pricing": "See pricing",
     "insights_description": "Read articles about web strategy, local SEO, and sector-specific digital advice.",
@@ -613,7 +618,7 @@
   },
   "contact": {
     "heading": "Get in touch",
-    "subtitle": "Tell me about your project and I'll get back to you within one business day.",
+    "subtitle": "Tell me about your project and what you need help with.",
     "form": {
       "name": "Your name",
       "business": "Business name",
@@ -777,7 +782,7 @@
   },
   "thank_you": {
     "heading": "Thank you for your inquiry",
-    "body": "I've received your message and will get back to you within one business day. In the meantime, you might find these resources useful.",
+    "body": "Your message has been saved and will be reviewed. In the meantime, you might find these resources useful.",
     "cta": "Browse insights"
   },
   "legal": {
@@ -1231,18 +1236,23 @@
     },
     "form": {
       "heading": "Request your free audit",
-      "subtitle": "Fill in the details below and I'll deliver your scorecard within 3 business days.",
+      "subtitle": "Fill in the details below so I can review your website and audit request.",
       "name": "Your name",
+      "name_placeholder": "Alex M.",
       "business": "Business name",
+      "business_placeholder": "Seafront Rooms",
       "email": "Email address",
+      "email_placeholder": "alex@example.com",
       "sector": "Your sector",
       "website": "Website URL",
+      "website_placeholder": "https://example.com",
       "website_required": "Website URL is required",
       "message": "Anything else I should know? (optional)",
       "submit": "Request free audit",
       "sending": "Sending...",
-      "success": "Your audit request has been received. I'll be in touch within 3 business days.",
+      "success": "Your audit request has been saved and will be reviewed.",
       "error": "Something went wrong. Please try again or email me directly.",
+      "inbox_unavailable": "The online form is temporarily unavailable. Please email hello@batumilighthouse.com directly.",
       "sectors": [
         "Hospitality",
         "Medical",
@@ -1258,6 +1268,7 @@
       "recommended_fix": "Recommended fix",
       "score_out_of": "/100",
       "not_found": "Audit not found.",
+      "sample_disclosure": "Fictional illustrative sample. This is not an assessment of a real business and does not present measured results.",
       "demo_audit": {
         "title": "Batumi Hotel Website Audit",
         "executiveSummary": "This Batumi seafront hotel website has strong visual appeal but struggles with the fundamentals that drive direct bookings. Mobile performance is critically slow, the booking flow requires too many steps, and the site is nearly invisible in local search results. The good news: these are fixable problems with clear, prioritized actions.",
@@ -1835,7 +1846,7 @@
         ],
         "clientLearning": [
           "How room content can help guests compare without leaving the site",
-          "How trust details fit into a practical booking flow",
+          "How direct booking prompts can sit beside policies and trust details",
           "How multilingual hotel pages can be structured before design starts"
         ],
         "imageAlt": "Screenshot of the Boutique Hotel Direct Booking Demo website example",
@@ -1947,7 +1958,7 @@
         "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",
         "whatItShows": [
           "How the studio structures multilingual service content",
-          "Reusable design rules",
+          "How brand and SEO configuration are centralized",
           "How practical lead paths can be built into a small studio website"
         ],
         "ctaLabel": "Discuss a similar website"
