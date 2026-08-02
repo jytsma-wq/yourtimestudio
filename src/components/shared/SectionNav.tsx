@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface SectionInfo {
   id: string;
@@ -13,6 +14,7 @@ interface SectionInfo {
  * shows the section name. Hidden on mobile (< 1024px).
  */
 export function SectionNav() {
+  const t = useTranslations('ui');
   const [activeSection, setActiveSection] = useState<string>('');
   const [sections, setSections] = useState<SectionInfo[]>([]);
   const [hoveredDot, setHoveredDot] = useState<string | null>(null);
@@ -55,7 +57,7 @@ export function SectionNav() {
   return (
     <nav
       className="fixed right-4 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col gap-3 items-center"
-      aria-label="Section navigation"
+      aria-label={t('sectionNavigation')}
     >
       {sections.map((section) => (
         <button
@@ -66,7 +68,7 @@ export function SectionNav() {
           onMouseEnter={() => setHoveredDot(section.id)}
           onMouseLeave={() => setHoveredDot(null)}
           className="group relative transition-colors duration-150 ease-out"
-          aria-label={`Navigate to ${section.label}`}
+          aria-label={t('navigateToSection', { section: section.label })}
         >
           <span
             className={`section-nav-dot block ${

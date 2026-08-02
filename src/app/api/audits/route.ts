@@ -39,15 +39,15 @@ const apiMessages = {
   ru: {
     nameRequired: 'Укажите имя',
     businessRequired: 'Укажите название бизнеса',
-    emailRequired: 'Укажите email',
-    emailInvalid: 'Некорректный email',
+    emailRequired: 'Укажите адрес электронной почты',
+    emailInvalid: 'Некорректный адрес электронной почты',
     sectorRequired: 'Укажите сферу бизнеса',
     websiteRequired: 'Укажите URL сайта',
     websiteInvalid: 'Некорректный URL',
     botDetected: 'Обнаружен бот',
     rateLimited: 'Слишком много запросов. Попробуйте позже.',
     validationFailed: 'Проверка не пройдена',
-    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую на email.',
+    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую по электронной почте.',
     internalError: 'Внутренняя ошибка сервера',
   },
   tr: {

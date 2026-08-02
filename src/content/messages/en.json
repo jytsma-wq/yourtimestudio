@@ -47,7 +47,7 @@
     "problems_title": "What usually blocks enquiries",
     "problems": [
       "Visitors cannot quickly understand the offer, location, prices, or next step.",
-      "Trust proof, multilingual basics, and local search basics are scattered.",
+      "Trust signals, multilingual basics, and local search basics are scattered.",
       "Contact, booking, or appointment paths ask people to work too hard."
     ],
     "fixes_title": "What I improve",
@@ -137,12 +137,12 @@
     },
     "beauty": {
       "title": "Beauty studios & salons",
-      "subtitle": "Websites for salons, medspas, and studios",
-      "pain": "Turn Instagram and Google visitors into appointment requests with clear services, prices, proof, and contact flow.",
+      "subtitle": "Websites for salons, aesthetic clinics, and studios",
+      "pain": "Turn Instagram and Google visitors into appointment requests with clear services, prices, reviews, and a simple contact flow.",
       "deliverables": [
         "Service and price menu",
         "Appointment request flow",
-        "Proof, gallery, and reviews",
+        "Gallery, reviews, and trust details",
         "Promo pages and rebooking reminders"
       ],
       "cta": "See beauty websites",
@@ -214,7 +214,7 @@
       "supportTitle": "When specialist support enters",
       "supportBody": "If the project needs stronger photography, translation review, brand assets, or content production, I bring that in openly and keep the scope clear.",
       "noFakeTitle": "What I refuse to fake",
-      "noFakeBody": "No fake testimonials, invented client results, fake metrics, copied layouts, stock logos, or staged founder proof. If something is an internal example, placeholder, or estimate, it is labelled that way."
+      "noFakeBody": "No fake testimonials, invented client results, fabricated metrics, copied layouts, stock logos, or staged evidence. Internal examples, placeholders, and estimates are always labelled clearly."
     },
     "features": {
       "sectionLabel": "What this means for your project.",
@@ -226,18 +226,18 @@
         },
         {
           "title": "Real content first",
-          "desc": "The site is planned around your actual rooms, treatments, services, prices, proof, and policies."
+          "desc": "The site is planned around your actual rooms, treatments, services, prices, trust details, and policies."
         },
         {
           "title": "Specialists when useful",
           "desc": "Photography, content, or translation support is added when it improves the project, not hidden inside vague agency work."
         },
         {
-          "title": "No fake proof",
+          "title": "No fabricated evidence",
           "desc": "Example work, estimates, placeholders, and unpublished results are marked clearly."
         }
       ],
-      "intro": "Founder-led should be practical, not romantic. You know who is making the decisions, which parts Jasper owns, and when outside support is needed."
+      "intro": "Founder-led should be practical, not performative. You know who makes the decisions, which parts Jasper handles, and when outside support is needed."
     }
   },
   "pricing": {
@@ -245,7 +245,7 @@
     "subtitle": "Typical starting points for Batumi businesses. Final scope depends on pages, languages, content, integrations, and launch support.",
     "beauty": {
       "name": "Beauty studio website",
-      "best_fit": "Small beauty salons, medspas, nail and hair studios",
+      "best_fit": "Small beauty salons, aesthetic clinics, nail studios, and hair studios",
       "setup": "$700–$1,200",
       "monthly": "$59–$99/mo",
       "outcome": "A clearer service menu, local search foundation, and contact or booking path for a small studio.",
@@ -388,7 +388,7 @@
         "description": "I review your current web presence, competitors, and market position to identify opportunities."
       },
       {
-        "title": "Fit call",
+        "title": "Introductory call",
         "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
       },
       {
@@ -416,7 +416,7 @@
       },
       {
         "q": "What if I need something between packages?",
-        "a": "Most projects start with a package and add customizations. I will propose exactly what you need during the fit call - nothing more, nothing less."
+        "a": "Most projects start with a package and add customizations. During the introductory call, I will recommend exactly what you need—nothing more and nothing less."
       },
       {
         "q": "Do you offer payment plans?",
@@ -429,8 +429,8 @@
     "story_heading": "The story",
     "story_body_1": "I'm Jasper, a Dutch web developer based in Batumi. Batumi Lighthouse is the small studio I use to work directly with local hotels, clinics, beauty studios, and service businesses.",
     "story_body_2": "I personally handle the audit, page plan, structure, design direction, Next.js build, local SEO basics, launch checks, and support. If a project needs photography, translation review, brand work, or deeper content support, I bring in a specialist openly.",
-    "approach_heading": "Plain work, no fake proof",
-    "approach_body": "I do not invent testimonials, client logos, performance numbers, case-study results, or founder proof. The work starts with real business details: services, rooms, treatments, prices, policies, proof, languages, search intent, and the path to contact or book.",
+    "approach_heading": "Plain work, no fabricated evidence",
+    "approach_body": "I do not invent testimonials, client logos, performance numbers, case-study results, or evidence. The work starts with real business details: services, rooms, treatments, prices, policies, trust signals, languages, search intent, and the path to contact or book.",
     "why_batumi_heading": "Why Batumi?",
     "why_batumi_body_1": "Batumi is growing as a hospitality, medical, and service-business market, but many local websites still make booking, trust, and multilingual communication harder than they need to be.",
     "why_batumi_body_2": "That gap is where I work: practical websites that make the business easier to find, easier to understand, and easier to contact.",
@@ -441,7 +441,7 @@
         "description": "I review your current web presence, competitors, and market position to identify opportunities."
       },
       {
-        "title": "Fit call",
+        "title": "Introductory call",
         "description": "A 30-minute call to understand your goals, timeline, and budget. No sales pressure — just honest advice."
       },
       {
@@ -647,17 +647,17 @@
     ]
   },
   "process": {
-    "sectionLabel": "How we work.",
+    "sectionLabel": "How I work.",
     "heading": "From first call to launched website",
     "subtitle": "A clear, four-step process so you always know what happens next.",
     "steps": [
       {
         "title": "Discovery",
-        "description": "We audit your current presence, understand your goals, and map out the project scope."
+        "description": "I audit your current presence, learn your goals, and map out the project scope with you."
       },
       {
         "title": "Design",
-        "description": "Sector-specific design that converts visitors into bookings, patients, or appointments."
+        "description": "Sector-specific design that helps visitors book a stay, request a consultation, or make an appointment."
       },
       {
         "title": "Build",
@@ -668,7 +668,7 @@
         "description": "Your site goes live with full SEO, performance optimization, and ongoing support."
       }
     ],
-    "cta": "Start with a fit call"
+    "cta": "Start with an introductory call"
   },
   "phoneFirst": {
     "navLabel": "Phone-first websites",
@@ -693,7 +693,7 @@
       },
       "social": {
         "label": "Social content",
-        "description": "A steady stream of visual proof that keeps the business visible on the phone."
+        "description": "A steady stream of useful visual content that keeps the business visible on the phone."
       },
       "booking": {
         "label": "Booking flow",
@@ -704,11 +704,11 @@
   "about": {
     "heading": "About the studio",
     "story": "I'm Jasper, a Dutch web developer based in Batumi. Batumi Lighthouse exists for local businesses that need clearer websites, useful content, fast pages, and direct accountability.",
-    "approach": "I build around real business details: local search, clear pages, multilingual content, booking or contact flow, and proof that actually exists.",
+    "approach": "I build around real business details: local search, clear pages, multilingual content, booking or contact flow, and trust signals that actually exist.",
     "why_batumi": "Batumi has a busy hospitality, medical, beauty, and service market. Many local websites still make it too hard to compare offers, trust the business, and make direct contact.",
     "process": [
       "Audit your current web presence",
-      "Fit call to understand your goals",
+      "Introductory call to understand your goals",
       "Custom proposal with clear scope",
       "Build, test, and launch",
       "Ongoing support and optimization"
@@ -1010,7 +1010,7 @@
           },
           {
             "q": "Do you integrate with insurance or practice software?",
-            "a": "I can connect to practice software or scheduling tools when they provide APIs or embeddable widgets. During the fit call, I review what you use and recommend a practical option."
+            "a": "I can connect to practice software or scheduling tools when they provide APIs or embeddable widgets. During the introductory call, I review what you use and recommend a practical option."
           },
           {
             "q": "What appointment tools do you support?",
@@ -1032,7 +1032,7 @@
       "hero": {
         "eyebrow": "Beauty",
         "title": "Websites for beauty studios that need clearer services and easier bookings",
-        "subtitle": "Your Batumi salon, medspa, or studio deserves a website that shows services and prices clearly and makes booking or enquiry easy from a phone."
+        "subtitle": "A Batumi salon, aesthetic clinic, or studio needs a website that shows services and prices clearly and makes booking or enquiry easy from a phone."
       },
       "pains": {
         "heading": "The challenges you're facing",
@@ -1092,7 +1092,7 @@
             "description": "A potential client finds your salon on Google, checks services and starting prices, picks a treatment, and uses your booking or contact option without sending a DM first."
           },
           {
-            "title": "Your Instagram followers become website visitors become booked clients.",
+            "title": "Your Instagram followers become website visitors—and those visitors become booked clients.",
             "description": "Your Instagram bio links to a website that actually converts. Followers see your work, check your prices, and book immediately — instead of scrolling past because messaging feels like too much effort."
           },
           {
@@ -1140,7 +1140,7 @@
       "subtitle": "Get a practical report covering clarity, speed, local SEO, content structure, accessibility, and contact or booking flow."
     },
     "rubric": {
-      "heading": "What we evaluate",
+      "heading": "What I assess",
       "subtitle": "Every audit scores your site across six critical dimensions.",
       "items": {
         "brand": {
@@ -1307,7 +1307,7 @@
       {
         "sector": "Beauty",
         "title": "Studio appointment flow",
-        "description": "A booking-led beauty website direction that moves demand from social DMs into a clearer service menu and appointment path."
+        "description": "A beauty website concept built around bookings, moving enquiries from social messages into a clear service menu and appointment path."
       }
     ],
     "comingSoon": "Demo brief"
@@ -1358,7 +1358,7 @@
       }
     },
     "detail": {
-      "cta": "Want a website that works this hard for you?",
+      "cta": "Want a website that makes the next step this clear?",
       "ctaLink": "Get a free website audit"
     }
   },
@@ -1429,7 +1429,7 @@
       },
       "1": {
         "title": "Social",
-        "body": "Reels, Stories, and vertical launches"
+        "body": "Reels, Stories, and vertical social edits"
       },
       "2": {
         "title": "Everywhere else",
@@ -1464,7 +1464,7 @@
       "1": "Google profile",
       "2": "Vertical reels",
       "3": "Social carousels",
-      "4": "Stories and launches"
+      "4": "Stories and social edits"
     }
   },
   "photographyPage": {
@@ -1521,7 +1521,7 @@
         "1": "Google profile",
         "2": "Vertical reels",
         "3": "Social carousels",
-        "4": "Stories and launches"
+        "4": "Stories and social edits"
       },
       "outputs": {
         "website": {
@@ -1728,7 +1728,11 @@
     "call": "Call",
     "chatOnWhatsApp": "Chat on WhatsApp",
     "location": "Batumi, Adjara, Georgia",
-    "locationArea": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond."
+    "locationArea": "Based in Batumi, Georgia. Serving hospitality, medical, and beauty businesses across the Adjara region and beyond.",
+    "close": "Close",
+    "breadcrumbNavigation": "Breadcrumb navigation",
+    "sectionNavigation": "Section navigation",
+    "navigateToSection": "Go to {section}"
   },
   "announcement": {
     "text": "Free website audit this month - limited spots",
@@ -1770,7 +1774,7 @@
       "features": "Features",
       "whatItShows": "What it shows"
     },
-    "proofLine": "{level} proof",
+    "proofLine": "Evidence: {level}",
     "typeLabels": {
       "realProject": "Real project",
       "demoBuild": "Internal example",
@@ -1877,15 +1881,15 @@
       },
       "beauty-salon-booking-demo": {
         "title": "Beauty Salon Booking Demo",
-        "businessType": "Beauty studio, salon, medspa, or appointment-led service",
-        "shortDescription": "An internal salon website example for clearer services, prices, proof, and appointment requests.",
-        "demonstratedProblem": "Beauty clients often arrive from Instagram or Google and need quick answers on services, prices, proof, and how to book.",
+        "businessType": "Beauty studio, salon, aesthetic clinic, or appointment-led service",
+        "shortDescription": "An internal salon website example for clearer services, prices, trust details, and appointment requests.",
+        "demonstratedProblem": "Beauty clients often arrive from Instagram or Google and need quick answers about services, prices, reviews, and how to book.",
         "problem": "Many salons depend on social DMs for pricing, availability, and appointment requests, which creates extra back-and-forth and lost demand.",
         "solution": "A mobile-first service menu, booking prompts, trust content, and local search structure that supports appointments without hiding basic details.",
         "modules": [
           "Mobile-first service menu",
           "Price and duration modules",
-          "Proof, gallery, and review sections",
+          "Gallery, review, and trust sections",
           "Appointment request flow",
           "Local SEO service pages"
         ],
@@ -1893,13 +1897,13 @@
           "Service and pricing page structure",
           "Appointment-focused calls to action",
           "Mobile-first browsing flow",
-          "Review and social proof placement",
+          "Review and trust-signal placement",
           "Local SEO service pages"
         ],
         "clientLearning": [
           "How a salon can reduce back-and-forth before booking",
           "How service and price content can work on mobile",
-          "How proof and contact flow can support appointment requests"
+          "How trust details and contact flow can support appointment requests"
         ],
         "imageAlt": "Screenshot of the Beauty Salon Booking Demo website example",
         "disclaimer": "Internal example. This is not paid client work, not testimonial-backed work, and not a published business result.",

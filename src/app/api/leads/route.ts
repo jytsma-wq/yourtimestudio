@@ -34,14 +34,14 @@ const apiMessages = {
   },
   ru: {
     nameRequired: 'Укажите имя',
-    emailRequired: 'Укажите email',
-    emailInvalid: 'Некорректный email',
+    emailRequired: 'Укажите адрес электронной почты',
+    emailInvalid: 'Некорректный адрес электронной почты',
     websiteInvalid: 'Некорректный URL',
     messageRequired: 'Укажите сообщение',
     botDetected: 'Обнаружен бот',
     rateLimited: 'Слишком много запросов. Попробуйте позже.',
     validationFailed: 'Проверка не пройдена',
-    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую на email.',
+    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую по электронной почте.',
     internalError: 'Внутренняя ошибка сервера',
   },
   tr: {
