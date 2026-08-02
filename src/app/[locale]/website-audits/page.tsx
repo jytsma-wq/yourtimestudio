@@ -18,6 +18,7 @@ import {
   Stethoscope,
   Sparkles,
   ArrowDown,
+  Plus,
 } from 'lucide-react';
 import { AuditRequestForm } from '@/components/shared/AuditRequestForm';
 import { Button } from '@/components/ui/button';
@@ -129,10 +130,9 @@ export default async function WebsiteAuditsPage({
         </div>
       </Section>
 
-      {/* Scoring Rubric */}
       <Section variant="subtle">
-        <div className="mb-12 grid gap-4 md:mb-16 md:grid-cols-[0.75fr_1.25fr] md:items-end">
-          <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
+        <div className="bl-sector-reveal mb-10 grid gap-4 md:mb-14 md:grid-cols-[0.75fr_1.25fr] md:items-end">
+          <h2 className="editorial-display text-3xl font-semibold md:text-4xl">
             {t('rubric.heading')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl leading-[1.75]">
@@ -140,21 +140,29 @@ export default async function WebsiteAuditsPage({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px border border-border bg-border">
-          {rubricItems.map((item) => {
+        <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {rubricItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
+              <details
                 key={item.key}
-                className="flex flex-col items-start gap-3 rounded-none border border-border bg-card p-6 shadow-none"
+                className="bl-sector-tile group bg-card open:bg-background"
               >
-                <div className="flex size-10 items-center justify-center border border-border bg-muted">
-                  <Icon className="size-5 text-navy" />
-                </div>
-                <h3 className="font-semibold text-base">
-                  {t(`rubric.items.${item.key}.name`)}
-                </h3>
-                <ul className="space-y-1.5">
+                <summary className="flex min-h-36 cursor-pointer list-none flex-col justify-between gap-6 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:min-h-44 md:p-6 [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-start justify-between gap-4">
+                    <span className="text-xs font-semibold text-brand-serene-coral-darken">0{index + 1}</span>
+                    <span className="flex size-9 items-center justify-center border border-border bg-muted">
+                      <Icon className="size-4 text-navy" aria-hidden="true" />
+                    </span>
+                  </span>
+                  <span className="flex items-end justify-between gap-4">
+                    <span className="text-lg font-semibold leading-snug text-foreground">
+                      {t(`rubric.items.${item.key}.name`)}
+                    </span>
+                    <Plus className="size-4 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-45" aria-hidden="true" />
+                  </span>
+                </summary>
+                <ul className="space-y-2 border-t border-border px-5 py-5 md:px-6">
                   {[0, 1, 2].map((i) => (
                     <li
                       key={i}
@@ -165,35 +173,37 @@ export default async function WebsiteAuditsPage({
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
             );
           })}
         </div>
       </Section>
 
-      {/* How It Works */}
       <Section>
-        <div className="text-left mb-12 md:mb-16">
+        <div className="bl-sector-reveal mb-10 text-left md:mb-14">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {t('howItWorks.heading')}
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6 border-y border-border py-6 md:flex-row md:items-stretch md:justify-between md:gap-8 max-w-5xl mx-auto">
+        <div className="bl-sector-flow mx-auto grid max-w-6xl gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
           {howItWorksSteps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="text-left flex-1">
-                <div className="size-10 flex items-center justify-center border border-border bg-brand-serene-coral/10 mb-4">
-                  <Icon className="size-5 text-brand-serene-coral-darken" />
+              <div key={index} className="bl-sector-tile relative min-h-64 bg-card p-6 text-left md:min-h-72 md:p-8">
+                <div className="flex items-start justify-between">
+                  <span className="text-5xl font-semibold text-foreground/12">0{index + 1}</span>
+                  <div className="flex size-11 items-center justify-center border border-border bg-background">
+                    <Icon className="size-5 text-brand-serene-coral-darken" aria-hidden="true" />
+                  </div>
                 </div>
-                <div className="text-brand-serene-coral-darken font-semibold text-sm mb-2">
+                <div className="mt-10 text-sm font-semibold text-brand-serene-coral-darken">
                   {t('howItWorks.step_label')} {index + 1}
                 </div>
-                <h3 className="font-semibold text-lg mb-2">
+                <h3 className="mt-2 text-lg font-semibold">
                   {t(`howItWorks.steps.${index}.title`)}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-[1.75]">
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">
                   {t(`howItWorks.steps.${index}.description`)}
                 </p>
               </div>
@@ -202,44 +212,32 @@ export default async function WebsiteAuditsPage({
         </div>
       </Section>
 
-      {/* Sample Findings */}
       <Section variant="subtle">
-        <div className="text-left mb-12 md:mb-16">
+        <div className="bl-sector-reveal mb-10 text-left md:mb-14">
           <h2 className="editorial-display text-3xl md:text-4xl font-semibold mb-4">
             {t('sampleFindings.heading')}
           </h2>
         </div>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-px border border-border bg-border lg:grid-cols-3">
-          {sampleFindings.map((finding) => {
+          {sampleFindings.map((finding, index) => {
             const Icon = finding.icon;
-            const colorClass =
-              finding.color === 'navy'
-                ? 'bg-muted text-navy'
-                : finding.color === 'stone'
-                  ? 'bg-muted text-navy'
-                  : 'bg-muted text-navy';
-            const tagBgClass =
-              finding.color === 'navy'
-                ? 'bg-muted text-navy'
-                : finding.color === 'stone'
-                  ? 'bg-muted text-navy'
-                  : 'bg-muted text-navy';
 
             return (
               <div
                 key={finding.key}
-                className="flex flex-col gap-4 rounded-none border border-border bg-card p-6 shadow-none"
+                className="bl-sector-tile flex min-h-56 flex-col justify-between gap-8 bg-card p-6 md:p-7"
               >
                 <div className="flex items-center gap-3">
-                  <div className={`size-10 flex items-center justify-center border border-border ${colorClass}`}>
-                    <Icon className="size-4.5" />
+                  <div className="flex size-10 items-center justify-center border border-border bg-muted text-navy">
+                    <Icon className="size-4.5" aria-hidden="true" />
                   </div>
-                  <span className={`text-xs font-semibold uppercase tracking-wide px-2.5 py-1 border border-border ${tagBgClass}`}>
+                  <span className="text-xs font-semibold text-muted-foreground">
+                    0{index + 1} /{' '}
                     {t(`sampleFindings.items.${finding.key}.sector`)}
                   </span>
                 </div>
-                <p className="text-foreground text-sm leading-[1.75]">
+                <p className="text-lg font-medium leading-[1.55] text-foreground">
                   {t(`sampleFindings.items.${finding.key}.finding`)}
                 </p>
               </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import localFont from 'next/font/local';
 import { Cormorant_Garamond, Noto_Sans_Georgian } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
@@ -17,19 +18,33 @@ import { PageTransition } from '@/components/shared/PageTransition';
 import { AnalyticsEvents } from '@/components/shared/AnalyticsEvents';
 import { siteConfig } from '@/lib/site-config';
 
-const displayFont = Cormorant_Garamond({
+const displayFallbackFont = Cormorant_Garamond({
   subsets: ['latin', 'cyrillic'],
   weight: 'variable',
   style: ['normal', 'italic'],
-  variable: '--font-display',
+  variable: '--font-display-fallback',
   display: 'swap',
 });
 
-const bodyFont = Noto_Sans_Georgian({
+const bodyFallbackFont = Noto_Sans_Georgian({
   subsets: ['latin', 'cyrillic-ext', 'georgian'],
   weight: 'variable',
+  variable: '--font-body-fallback',
+  display: 'swap',
+});
+
+const displayFont = localFont({
+  src: '../../assets/fonts/fraunces-latin.woff2',
+  variable: '--font-display',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+});
+
+const bodyFont = localFont({
+  src: '../../assets/fonts/manrope-latin.woff2',
   variable: '--font-body',
   display: 'swap',
+  fallback: ['Arial', 'sans-serif'],
 });
 
 export async function generateMetadata({
@@ -98,7 +113,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${bodyFont.variable} ${displayFont.variable} antialiased bg-background text-foreground`}
+        className={`${bodyFont.variable} ${bodyFallbackFont.variable} ${displayFont.variable} ${displayFallbackFont.variable} antialiased bg-background text-foreground`}
       >
         <Script id="theme-init" strategy="beforeInteractive">
           {`(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})()`}

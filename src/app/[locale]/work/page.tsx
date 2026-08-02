@@ -44,7 +44,7 @@ export default async function WorkPage({
       <Section className="pb-12 pt-6 md:pb-16 md:pt-8">
         <Breadcrumbs items={[{ label: tNav('work'), href: '/work' }]} />
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
+        <div className="bl-sector-reveal mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-16">
           <div className="max-w-3xl">
             <h1 className="editorial-display text-4xl md:text-5xl lg:text-6xl">
               {labels.page.heading}
@@ -67,7 +67,7 @@ export default async function WorkPage({
           {localizedExamples.map((example) => (
             <article
               key={example.id}
-              className="group flex min-h-full flex-col overflow-hidden bg-card"
+              className="bl-sector-tile bl-visual-card group flex min-h-full flex-col overflow-hidden bg-card"
             >
               <ExamplePreviewPanel
                 example={example}

@@ -13,10 +13,10 @@ export function WhatsAppFAB() {
   const whatsappHref = siteConfig.contact.whatsappHref || contactHref;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 hidden flex-col gap-3 md:flex">
+    <div className="fixed bottom-8 right-8 z-50 hidden flex-col gap-3 min-[1536px]:flex">
       <a
         href={`mailto:${siteConfig.contact.email}`}
-        className="hidden size-12 items-center justify-center rounded-md bg-card text-foreground ring-1 ring-border transition-colors duration-150 ease-out hover:text-navy md:flex"
+        className="hidden size-12 items-center justify-center rounded-md bg-card text-foreground ring-1 ring-border transition-colors duration-150 ease-out hover:text-navy min-[1536px]:flex"
         aria-label={ui('sendEmail')}
       >
         <Mail className="size-5" />
@@ -25,7 +25,7 @@ export function WhatsAppFAB() {
       {hasPhone && (
         <a
           href={`tel:${siteConfig.contact.whatsapp.replace(/\s/g, '')}`}
-          className="hidden size-12 items-center justify-center rounded-md bg-navy text-background transition-colors duration-150 ease-out hover:bg-foreground md:flex"
+          className="hidden size-12 items-center justify-center rounded-md bg-navy text-background transition-colors duration-150 ease-out hover:bg-foreground min-[1536px]:flex"
           aria-label={ui('call')}
         >
           <Phone className="size-5" />

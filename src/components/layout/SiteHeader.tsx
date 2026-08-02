@@ -122,45 +122,45 @@ export default function SiteHeader() {
   }
 
   const desktopLinkClass = (active: boolean) =>
-    `h-10 rounded-md px-3 text-sm font-medium normal-case tracking-normal transition-colors ${
+    `h-11 rounded-none border-b-2 px-2 text-sm font-semibold normal-case tracking-normal transition-colors ${
       active
-        ? 'bg-muted text-foreground'
-        : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+        ? 'border-brand-serene-coral text-foreground'
+        : 'border-transparent text-muted-foreground hover:border-border hover:bg-transparent hover:text-foreground'
     }`;
 
   const mobileLinkClass = (active: boolean) =>
-    `flex min-h-12 items-center rounded-md px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+    `flex min-h-12 items-center border-b px-1 py-3 text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
       active
-        ? 'bg-muted text-foreground'
-        : 'text-foreground hover:bg-muted/70 hover:text-foreground'
+        ? 'border-brand-serene-coral text-foreground'
+        : 'border-border text-foreground hover:text-brand-serene-coral-darken'
     }`;
 
   return (
     <header
       className={`sticky top-0 z-40 w-full border-b transition-all duration-300 ${
         scrolled
-          ? 'border-border bg-background/96 shadow-sm backdrop-blur-md'
-          : 'border-border/60 bg-background/88 backdrop-blur-sm'
+          ? 'border-border bg-background/96 shadow-[0_1px_0_rgba(23,60,62,0.08)] backdrop-blur-md'
+          : 'border-transparent bg-background/92 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex h-[4.5rem] max-w-[var(--container-max-width)] items-center justify-between px-[var(--container-padding)]">
+      <div className="mx-auto flex h-[4.75rem] max-w-[86rem] items-center justify-between px-[var(--container-padding)]">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2 text-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 sm:gap-3"
+          className="flex min-w-0 items-center text-foreground transition-opacity hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
           aria-label={siteConfig.name}
         >
           <Image
-            src={siteConfig.assets.mark}
+            src={siteConfig.assets.logo}
             alt=""
-            width={40}
-            height={40}
-            className="size-9 shrink-0 object-cover sm:size-10"
+            width={1360}
+            height={520}
+            loading="eager"
+            className="h-auto w-[10.75rem] shrink-0 mix-blend-multiply dark:invert dark:mix-blend-screen sm:w-[13rem]"
             aria-hidden="true"
           />
-          <span className="truncate text-sm font-semibold tracking-normal sm:text-base">{siteConfig.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label={ui('mainNavigation')}>
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label={ui('mainNavigation')}>
           {navItems.map((item) => {
             const active = isItemActive(item);
 
@@ -185,7 +185,7 @@ export default function SiteHeader() {
                     aria-haspopup="true"
                     onClick={openSolutions}
                     onFocus={openSolutions}
-                    className={`${desktopLinkClass(active)} gap-1.5`}
+                    className={`${desktopLinkClass(active)} gap-1.5 hover:bg-transparent`}
                   >
                     {t(item.key)}
                     <ChevronDown
@@ -199,7 +199,7 @@ export default function SiteHeader() {
                   {solutionsOpen && (
                     <div
                       id="site-services-menu"
-                      className="absolute left-0 top-full z-50 mt-3 w-80 rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-lg shadow-brand-charcoal/10"
+                      className="absolute left-0 top-full z-50 mt-3 w-80 border border-border bg-popover p-3 text-popover-foreground shadow-[0_24px_60px_rgba(23,60,62,0.16)]"
                       onMouseEnter={openSolutions}
                       onMouseLeave={() => closeSolutions()}
                     >
@@ -213,10 +213,10 @@ export default function SiteHeader() {
                               href={child.href}
                               aria-current={childActive ? 'page' : undefined}
                               onClick={() => setSolutionsOpen(false)}
-                              className={`group flex min-h-11 items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                              className={`group flex min-h-11 items-center justify-between border-b border-border px-2 py-2.5 text-sm font-semibold transition-colors last:border-b-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                                 childActive
-                                  ? 'bg-muted text-foreground'
-                                  : 'text-muted-foreground hover:bg-muted/70 hover:text-foreground'
+                                  ? 'text-brand-serene-coral-darken'
+                                  : 'text-muted-foreground hover:text-foreground'
                               }`}
                             >
                               <span>{t(child.key)}</span>
@@ -252,7 +252,7 @@ export default function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ml-2 h-10 rounded-md bg-foreground px-4 text-sm font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
+            className="ml-2 h-10 rounded-full bg-brand-serene-coral px-4 text-sm font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
           >
             <Link
               href="/website-audits"
@@ -270,7 +270,7 @@ export default function SiteHeader() {
             size="icon"
             onClick={toggleTheme}
             aria-label={themeReady ? (dark ? ui('switchToLight') : ui('switchToDark')) : ui('toggleColorTheme')}
-            className="text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
+            className="rounded-full text-muted-foreground transition-colors hover:bg-muted/70 hover:text-foreground"
           >
             {dark ? <Sun className="size-4" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
           </Button>
@@ -282,7 +282,7 @@ export default function SiteHeader() {
           <Button
             variant="ghost"
             size="icon"
-            className="xl:hidden"
+            className="rounded-full xl:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label={ui('openNavigationMenu')}
           >
@@ -292,18 +292,18 @@ export default function SiteHeader() {
       </div>
 
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent side="right" className="flex w-full flex-col bg-background p-0 sm:max-w-sm">
+        <SheetContent side="right" className="flex w-full flex-col bg-background p-0 sm:max-w-md">
           <SheetHeader className="border-b border-border px-6 py-5">
-            <SheetTitle className="flex items-center gap-3 text-left text-base">
+            <SheetTitle className="flex items-center text-left">
               <Image
-                src={siteConfig.assets.mark}
+                src={siteConfig.assets.logo}
                 alt=""
-                width={36}
-                height={36}
-                className="size-9 shrink-0 object-cover"
+                width={1360}
+                height={520}
+                className="h-auto w-48 mix-blend-multiply dark:invert dark:mix-blend-screen"
                 aria-hidden="true"
               />
-              <span>{siteConfig.name}</span>
+              <span className="sr-only">{siteConfig.name}</span>
             </SheetTitle>
             <SheetDescription className="sr-only">{ui('mobileNavigation')}</SheetDescription>
           </SheetHeader>
@@ -314,7 +314,7 @@ export default function SiteHeader() {
                 if (item.children) {
                   return (
                     <div key={item.key} className="py-2">
-                      <p className="px-4 pb-2 text-sm font-semibold text-muted-foreground">
+                      <p className="pb-2 text-sm font-semibold text-muted-foreground">
                         {t(item.key)}
                       </p>
                       <div className="space-y-1">
@@ -359,7 +359,7 @@ export default function SiteHeader() {
             <SheetClose asChild>
               <Button
                 asChild
-                className="h-11 w-full rounded-md bg-foreground text-base font-semibold text-background shadow-none hover:bg-navy dark:bg-brand-cream dark:text-brand-charcoal dark:hover:bg-brand-serene-coral"
+                className="h-12 w-full rounded-full bg-brand-serene-coral text-base font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
               >
                 <Link
                   href="/website-audits"

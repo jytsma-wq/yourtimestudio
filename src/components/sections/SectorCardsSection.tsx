@@ -1,75 +1,81 @@
-import { getTranslations } from 'next-intl/server';
-import { ArrowRight, Check } from 'lucide-react';
-import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/lib/i18n/navigation';
 import { type Locale } from '@/lib/i18n/config';
-import { sectorKeys, sectors } from '@/lib/sector-config';
-import { Section } from '@/components/shared/Section';
+import { sectorKeys, sectors, type SectorKey } from '@/lib/sector-config';
+import styles from './OrganicHome.module.css';
 
 interface SectorCardsSectionProps {
   locale: Locale;
-  /** Large faint section number for background decoration */
   number?: string;
 }
+
+const imageBySector: Record<SectorKey, string> = {
+  hospitality: '/images/studio-scenes/hospitality-hero.webp',
+  medical: '/images/studio-scenes/clinic-story.webp',
+  beauty: '/images/studio-scenes/beauty-studio.webp',
+};
 
 export async function SectorCardsSection({ locale, number }: SectorCardsSectionProps) {
   const t = await getTranslations('sectors');
 
   return (
-    <Section border number={number}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-10 max-w-3xl">
-          <h2 className="editorial-display text-4xl text-foreground md:text-5xl lg:text-6xl">
-            {t('heading')}
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            {t('subtitle')}
-          </p>
+    <section
+      className={`${styles.section} bg-background`}
+      data-locale={locale}
+      data-number={number}
+      aria-labelledby="services-heading"
+    >
+      <div className={styles.sectionInner}>
+        <div className={`${styles.sectionIntro} ${styles.reveal}`}>
+          <div>
+            <p className={styles.sectionKicker}>{t('sectionLabel')}</p>
+            <h2 id="services-heading">{t('heading')}</h2>
+          </div>
+          <p>{t('subtitle')}</p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {sectorKeys.map((sectorKey) => {
+        <div className={styles.sectorStories}>
+          {sectorKeys.map((sectorKey, index) => {
             const sector = sectors[sectorKey];
+            const reverse = index % 2 === 1;
+
             return (
               <article
                 key={sectorKey}
-                className="group flex min-w-0 flex-col overflow-hidden border border-border bg-background transition-colors duration-200 ease-out hover:border-brand-serene-coral/50"
+                className={`${styles.sectorStory} ${
+                  reverse ? styles.sectorStoryReverse : ''
+                }`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                <figure className={`${styles.sectorMedia} ${styles.reveal}`}>
                   <Image
-                    src={sector.image}
-                    alt={t(`${sectorKey}.title`)}
+                    src={imageBySector[sectorKey]}
+                    alt={t(`${sectorKey}.subtitle`)}
                     fill
-                    className={`object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] ${sector.focalPoint}`}
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 760px) 100vw, (max-width: 1024px) 60vw, 58vw"
+                    className={sector.focalPoint}
                     placeholder="blur"
                     blurDataURL={sector.blur}
                   />
-                </div>
+                </figure>
 
-                <div className="flex flex-1 flex-col p-5 md:p-6">
-                  <h3 className="text-2xl font-semibold leading-tight text-foreground">
-                    {t(`${sectorKey}.title`)}
-                  </h3>
-                  <p className="mt-4 text-base leading-relaxed text-foreground">
-                    {t(`${sectorKey}.pain`)}
-                  </p>
+                <div className={`${styles.sectorCopy} ${styles.reveal}`}>
+                  <span className={styles.sectorNumber}>0{index + 1}</span>
+                  <h3>{t(`${sectorKey}.title`)}</h3>
+                  <p>{t(`${sectorKey}.pain`)}</p>
 
-                  <ul className="mt-6 space-y-3">
-                    {[0, 1, 2].map((i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
-                        <Check className={`mt-0.5 size-4 shrink-0 ${sector.textClass}`} aria-hidden="true" />
-                        <span>{t(`${sectorKey}.deliverables.${i}`)}</span>
+                  <ul className={styles.deliverables}>
+                    {[0, 1, 2].map((itemIndex) => (
+                      <li key={itemIndex}>
+                        {t(`${sectorKey}.deliverables.${itemIndex}`)}
                       </li>
                     ))}
                   </ul>
 
-                  <Link
-                    href={sector.href}
-                    className={`mt-7 inline-flex min-h-11 items-center gap-2 self-start border-b border-transparent py-2 text-sm font-semibold no-underline transition-colors duration-150 ease-in-out hover:border-accent ${sector.textClass}`}
-                  >
+                  <Link href={sector.href} className={styles.textLink}>
                     {t(`${sectorKey}.cta`)}
-                    <ArrowRight className="size-4" aria-hidden="true" />
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
                   </Link>
                 </div>
               </article>
@@ -77,6 +83,6 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
           })}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

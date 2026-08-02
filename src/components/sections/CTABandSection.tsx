@@ -1,9 +1,8 @@
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { Link } from '@/lib/i18n/navigation';
 import { type Locale } from '@/lib/i18n/config';
-import { Section } from '@/components/shared/Section';
+import styles from './OrganicHome.module.css';
 
 interface CTABandSectionProps {
   locale: Locale;
@@ -13,46 +12,44 @@ export async function CTABandSection({ locale }: CTABandSectionProps) {
   const t = await getTranslations('ctaBand');
 
   return (
-    <Section variant="accent" className="border-t border-background/15 py-16 md:py-20" id="cta">
-      <div className="mx-auto max-w-4xl text-left">
-        <p className="section-label text-background">{t('sectionLabel')}</p>
-        <h2 className="editorial-display text-4xl md:text-5xl lg:text-6xl mb-5 text-background">
-          {t('heading')}
-        </h2>
-        <p className="text-background text-lg max-w-xl leading-relaxed mb-10">
-          {t('subtitle')}
-        </p>
+    <section
+      id="cta"
+      className={styles.cta}
+      data-locale={locale}
+      aria-labelledby="final-cta-heading"
+    >
+      <div className={styles.ctaLayout}>
+        <div className={styles.reveal}>
+          <p className={styles.sectionKicker}>{t('sectionLabel')}</p>
+          <h2 id="final-cta-heading">{t('heading')}</h2>
+        </div>
+
+        <div className={`${styles.ctaBody} ${styles.reveal}`}>
+          <p>{t('subtitle')}</p>
+          <div className={styles.ctaActions}>
+            <Link
+              href="/website-audits"
+              className={styles.ctaPrimary}
+              data-analytics-event="final_audit_cta_click"
+              data-analytics-section="final_cta"
+            >
+              <span aria-hidden="true">
+                <ArrowDownRight className="size-4" />
+              </span>
+              <span>{t('primary')}</span>
+            </Link>
+            <Link
+              href="/contact"
+              className={styles.ctaSecondary}
+              data-analytics-event="final_contact_cta_click"
+              data-analytics-section="final_cta"
+            >
+              {t('secondary')}
+              <ArrowUpRight className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col sm:flex-row gap-4 justify-start">
-        <Button
-          asChild
-          size="lg"
-          className="h-12 rounded-md bg-background px-8 text-base font-semibold text-navy hover:bg-background/90"
-        >
-          <Link
-            href="/website-audits"
-            data-analytics-event="final_audit_cta_click"
-            data-analytics-section="final_cta"
-          >
-            {t('primary')}
-            <ArrowRight className="ml-1 size-4" aria-hidden="true" />
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="h-12 rounded-md border-background/35 px-8 text-base text-background hover:bg-background/10 hover:text-background"
-        >
-          <Link
-            href="/contact"
-            data-analytics-event="final_contact_cta_click"
-            data-analytics-section="final_cta"
-          >
-            {t('secondary')}
-          </Link>
-        </Button>
-      </div>
-    </Section>
+    </section>
   );
 }

@@ -76,7 +76,7 @@ export default async function PricingPage({
       </div>
 
       <Section>
-        <div className="text-center mb-12 md:mb-16">
+        <div className="bl-sector-reveal mb-12 text-center md:mb-16">
           <h1 className="editorial-display text-4xl md:text-5xl mb-4">
             {t('heading')}
           </h1>
@@ -99,11 +99,11 @@ export default async function PricingPage({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-px border border-border bg-border max-w-4xl mx-auto">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-px border border-border bg-border md:grid-cols-[1.15fr_0.85fr]">
           {addOns.map((addon) => (
             <div
               key={addon.name}
-              className="rounded-none border border-border bg-card p-6 shadow-none"
+              className="bl-sector-tile rounded-none border border-border bg-card p-6 shadow-none"
             >
               <div className="mb-4 flex size-10 items-center justify-center border border-border bg-muted">
                 <addon.Icon className="size-5 text-navy" />
@@ -132,19 +132,18 @@ export default async function PricingPage({
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            <div className="absolute left-5 top-8 bottom-8 w-px bg-border hidden md:block" />
-
-            <div className="space-y-8">
+        <div className="bl-sector-flow mx-auto max-w-6xl overflow-hidden border border-border">
+          <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
               {processSteps.map((step, i) => (
-                <div key={step.title} className="flex items-start gap-4 md:gap-6">
-                  <div className="relative z-10 flex size-10 shrink-0 items-center justify-center border border-border bg-muted">
-                    <step.Icon className="size-5 text-navy" />
+                <div key={step.title} className="bl-sector-tile flex min-h-64 flex-col bg-card p-5 md:p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-3xl font-semibold text-foreground/15">0{i + 1}</span>
+                    <div className="flex size-10 shrink-0 items-center justify-center border border-border bg-muted">
+                      <step.Icon className="size-5 text-navy" aria-hidden="true" />
+                    </div>
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-lg font-semibold mb-1">
-                      <span className="mr-2 text-navy">0{i + 1}</span>
+                  <div className="mt-auto pt-8">
+                    <h3 className="mb-2 text-base font-semibold">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-[1.75]">
@@ -153,7 +152,6 @@ export default async function PricingPage({
                   </div>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </Section>

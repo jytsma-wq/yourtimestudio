@@ -56,12 +56,12 @@ export default async function LocalePage({
 
       <HeroSection locale={locale as Locale} />
 
-      <div id="photography" data-section-name="Photography">
-        <PhotographyShowcaseSection number="02" />
+      <div id="sectors" data-section-name="Services">
+        <SectorCardsSection locale={locale as Locale} number="02" />
       </div>
 
-      <div id="sectors" data-section-name="Services">
-        <SectorCardsSection locale={locale as Locale} number="03" />
+      <div id="photography" data-section-name="Photography">
+        <PhotographyShowcaseSection number="03" />
       </div>
 
       <div id="examples" data-section-name="Examples">
