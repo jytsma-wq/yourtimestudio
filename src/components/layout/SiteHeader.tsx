@@ -1,7 +1,7 @@
 'use client';
 
 import { type FocusEvent, useEffect, useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, ChevronDown, Menu, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,8 @@ import {
 } from '@/components/ui/sheet';
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
+import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
 import { sectors } from '@/lib/sector-config';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
@@ -51,6 +53,7 @@ const navItems: NavItem[] = [
 export default function SiteHeader() {
   const t = useTranslations('nav');
   const ui = useTranslations('ui');
+  const locale = useLocale() as Locale;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -374,8 +377,29 @@ export default function SiteHeader() {
                 </Link>
               </Button>
             </SheetClose>
-            <div className="flex items-center justify-between">
-              <LanguageSwitcher />
+            <div className="grid grid-cols-4 gap-1">
+              {launchLocales.map((targetLocale) => {
+                const active = targetLocale === locale;
+
+                return (
+                  <SheetClose asChild key={targetLocale}>
+                    <a
+                      href={getLocaleHref(pathname, targetLocale)}
+                      hrefLang={targetLocale}
+                      onClick={() => persistLocale(targetLocale)}
+                      aria-label={localeLabels[targetLocale]}
+                      aria-current={active ? 'page' : undefined}
+                      className={`flex min-h-11 items-center justify-center border-b-2 px-1 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral focus-visible:ring-offset-2 ${
+                        active
+                          ? 'border-brand-serene-coral text-foreground'
+                          : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground'
+                      }`}
+                    >
+                      {targetLocale.toUpperCase()}
+                    </a>
+                  </SheetClose>
+                );
+              })}
             </div>
           </div>
         </SheetContent>

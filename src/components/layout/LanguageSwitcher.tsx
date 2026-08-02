@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -9,8 +9,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { usePathname, useRouter } from '@/lib/i18n/navigation';
+import { usePathname } from '@/lib/i18n/navigation';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
+import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
 
 const localeAbbreviations: Record<Locale, string> = {
   en: 'EN',
@@ -21,14 +22,12 @@ const localeAbbreviations: Record<Locale, string> = {
 
 export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
+  const ui = useTranslations('ui');
   const pathname = usePathname();
-  const router = useRouter();
 
   function handleSwitch(newLocale: Locale) {
-    // Using next-intl's router.replace with {locale} properly
-    // updates the NEXT_LOCALE cookie so the middleware won't
-    // redirect the user back to the previous locale.
-    router.replace(pathname, { locale: newLocale });
+    persistLocale(newLocale);
+    window.location.assign(getLocaleHref(pathname, newLocale));
   }
 
   return (
@@ -38,7 +37,7 @@ export default function LanguageSwitcher() {
           variant="outline"
           size="sm"
           className="min-h-11 gap-1.5 rounded-md border-border/60 bg-background/50 px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-brand-serene-coral/40 hover:text-brand-serene-coral-darken hover:bg-brand-serene-coral/5"
-          aria-label={`${localeLabels[locale]} language`}
+          aria-label={ui('selectLanguage')}
         >
           <span className="text-xs font-bold tracking-wider uppercase">{localeAbbreviations[locale]}</span>
           <span className="text-xs text-muted-foreground" aria-hidden="true">▼</span>
