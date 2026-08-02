@@ -41,13 +41,21 @@ export function CookieConsent() {
   }, []);
 
   function handleAccept() {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
+    try {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+    } catch {
+      // Keep consent session-local when storage is unavailable.
+    }
     setVisible(false);
     loadAnalytics();
   }
 
   function handleDecline() {
-    localStorage.setItem(CONSENT_KEY, 'declined');
+    try {
+      localStorage.setItem(CONSENT_KEY, 'declined');
+    } catch {
+      // Hiding the prompt for this page must not depend on storage access.
+    }
     setVisible(false);
   }
 

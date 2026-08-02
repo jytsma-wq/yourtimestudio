@@ -1,10 +1,23 @@
 import { defaultLocale, type Locale } from './config';
 
-export function getLocaleHref(pathname: string, locale: Locale): string {
-  const normalizedPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+function normalizeSuffix(value: string, prefix: '?' | '#'): string {
+  if (!value) return '';
+  return value.startsWith(prefix) ? value : `${prefix}${value}`;
+}
 
-  if (locale === defaultLocale) return normalizedPath;
-  return `/${locale}${normalizedPath === '/' ? '' : normalizedPath}`;
+export function getLocaleHref(
+  pathname: string,
+  locale: Locale,
+  search = '',
+  hash = ''
+): string {
+  const normalizedPath = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  const localizedPath =
+    locale === defaultLocale
+      ? normalizedPath
+      : `/${locale}${normalizedPath === '/' ? '' : normalizedPath}`;
+
+  return `${localizedPath}${normalizeSuffix(search, '?')}${normalizeSuffix(hash, '#')}`;
 }
 
 export function persistLocale(locale: Locale): void {

@@ -3,6 +3,15 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type ChangeEvent } from "react";
 
+import {
+  buildLocalizedDemoHref,
+  buildPreviewHref,
+  previewPageLabel,
+  previewLabels,
+  splitPreviewSuffix,
+  type PreviewLocale
+} from "@/components/templates/template-preview-locale";
+
 type PreviewPage = {
   slug: string;
   label: string;
@@ -12,6 +21,7 @@ type PreviewShellProps = {
   templateId: string;
   brandName: string;
   category: string;
+  initialLocale: PreviewLocale;
   initialSlug: string;
   pages: readonly PreviewPage[];
   catalogHref?: string;
@@ -27,27 +37,34 @@ const deviceWidths: Record<DeviceMode, string> = {
 
 const interceptedDocuments = new WeakSet<Document>();
 
-function previewPath(templateId: string, slug: string) {
-  return `/preview/${templateId}${slug ? `/${slug}` : ""}`;
-}
-
-function templatePath(templateId: string, slug: string) {
-  return `/template-sites/${templateId}${slug ? `/${slug}` : ""}`;
-}
-
 export function PreviewShell({
   templateId,
   brandName,
   category,
+  initialLocale,
   initialSlug,
   pages,
   catalogHref = "/templates"
 }: PreviewShellProps) {
   const [device, setDevice] = useState<DeviceMode>("responsive");
+  const [locale, setLocale] = useState<PreviewLocale>(initialLocale);
   const [currentSlug, setCurrentSlug] = useState(initialSlug);
+  const [frameSrc, setFrameSrc] = useState(
+    buildLocalizedDemoHref(templateId, initialSlug, initialLocale)
+  );
+  const [frameSearch, setFrameSearch] = useState("");
+  const [frameHash, setFrameHash] = useState("");
   const [frameMounted, setFrameMounted] = useState(false);
   const frameRef = useRef<HTMLIFrameElement>(null);
-  const frameSrc = templatePath(templateId, initialSlug);
+  const localeRef = useRef(initialLocale);
+
+  const labels = previewLabels[locale];
+  const localizedCatalogHref =
+    locale === "en" ? catalogHref : `/${locale}${catalogHref}`;
+
+  useEffect(() => {
+    localeRef.current = locale;
+  }, [locale]);
 
   const updateFromFrame = useCallback((frame: HTMLIFrameElement) => {
     const frameWindow = frame.contentWindow;
@@ -57,38 +74,191 @@ export function PreviewShell({
 
     const rawPrefix = `/template-sites/${templateId}`;
     const currentPath = frameWindow.location.pathname;
+    const belongsToTemplate =
+      currentPath === rawPrefix || currentPath.startsWith(`${rawPrefix}/`);
 
-    if (currentPath.startsWith(rawPrefix)) {
-      const nextSlug = currentPath.slice(rawPrefix.length).replace(/^\//, "");
-      setCurrentSlug(nextSlug);
-      window.history.replaceState(null, "", previewPath(templateId, nextSlug));
+    if (belongsToTemplate) {
+      const currentFrameSlug = currentPath.slice(rawPrefix.length).replace(/^\//, "");
+      const suffix = splitPreviewSuffix(
+        frameWindow.location.search,
+        frameWindow.location.hash
+      );
+      setCurrentSlug(currentFrameSlug);
+      setFrameSearch(suffix.demoSearch);
+      setFrameHash(suffix.hash);
+      window.history.replaceState(
+        null,
+        "",
+        buildPreviewHref(
+          templateId,
+          currentFrameSlug,
+          localeRef.current,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
     }
 
     if (interceptedDocuments.has(frameDocument)) return;
     interceptedDocuments.add(frameDocument);
 
     frameDocument.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
       const target = event.target;
       if (!target || typeof (target as Element).closest !== "function") return;
 
-      const anchor = (target as Element).closest("a");
+      const anchor = (target as Element).closest<HTMLAnchorElement>("a");
       if (!anchor || anchor.origin !== window.location.origin) return;
-      if (!anchor.pathname.startsWith(rawPrefix)) return;
+      if (
+        anchor.pathname !== rawPrefix &&
+        !anchor.pathname.startsWith(`${rawPrefix}/`)
+      ) {
+        return;
+      }
+      if (anchor.download || (anchor.target && anchor.target !== "_self")) return;
 
       const clickedCurrentPage = anchor.pathname === currentPath && anchor.hash;
-      if (clickedCurrentPage) return;
+      if (clickedCurrentPage) {
+        event.preventDefault();
+        const currentFrameSlug = currentPath.slice(rawPrefix.length).replace(/^\//, "");
+        const suffix = splitPreviewSuffix(anchor.search, anchor.hash);
+        setFrameSearch(suffix.demoSearch);
+        setFrameHash(suffix.hash);
+
+        if (suffix.demoSearch === frameWindow.location.search) {
+          frameWindow.location.hash = suffix.hash;
+        } else {
+          setFrameSrc(
+            buildLocalizedDemoHref(
+              templateId,
+              currentFrameSlug,
+              localeRef.current,
+              suffix.demoSearch,
+              suffix.hash
+            )
+          );
+        }
+        window.history.pushState(
+          null,
+          "",
+          buildPreviewHref(
+            templateId,
+            currentFrameSlug,
+            localeRef.current,
+            suffix.demoSearch,
+            suffix.hash
+          )
+        );
+        return;
+      }
 
       event.preventDefault();
       const nextSlug = anchor.pathname.slice(rawPrefix.length).replace(/^\//, "");
-      window.location.assign(previewPath(templateId, nextSlug));
+      const suffix = splitPreviewSuffix(anchor.search, anchor.hash);
+      setCurrentSlug(nextSlug);
+      setFrameSearch(suffix.demoSearch);
+      setFrameHash(suffix.hash);
+      setFrameSrc(
+        buildLocalizedDemoHref(
+          templateId,
+          nextSlug,
+          localeRef.current,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
+      window.history.pushState(
+        null,
+        "",
+        buildPreviewHref(
+          templateId,
+          nextSlug,
+          localeRef.current,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
     });
   }, [templateId]);
 
   useEffect(() => {
-    const animationFrame = window.requestAnimationFrame(() => setFrameMounted(true));
+    const animationFrame = window.requestAnimationFrame(() => {
+      const suffix = splitPreviewSuffix(
+        window.location.search,
+        window.location.hash
+      );
+      setLocale(suffix.locale);
+      setFrameSearch(suffix.demoSearch);
+      setFrameHash(suffix.hash);
+      setFrameSrc(
+        buildLocalizedDemoHref(
+          templateId,
+          initialSlug,
+          suffix.locale,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
+      window.history.replaceState(
+        null,
+        "",
+        buildPreviewHref(
+          templateId,
+          initialSlug,
+          suffix.locale,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
+      setFrameMounted(true);
+    });
 
     return () => window.cancelAnimationFrame(animationFrame);
-  }, []);
+  }, [initialSlug, templateId]);
+
+  useEffect(() => {
+    function handlePopState() {
+      const previewPrefix = `/preview/${templateId}`;
+      if (
+        window.location.pathname !== previewPrefix &&
+        !window.location.pathname.startsWith(`${previewPrefix}/`)
+      ) {
+        return;
+      }
+
+      const nextSlug = window.location.pathname.slice(previewPrefix.length).replace(/^\//, "");
+      const suffix = splitPreviewSuffix(
+        window.location.search,
+        window.location.hash
+      );
+      setLocale(suffix.locale);
+      setCurrentSlug(nextSlug);
+      setFrameSearch(suffix.demoSearch);
+      setFrameHash(suffix.hash);
+      setFrameSrc(
+        buildLocalizedDemoHref(
+          templateId,
+          nextSlug,
+          suffix.locale,
+          suffix.demoSearch,
+          suffix.hash
+        )
+      );
+    }
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [templateId]);
 
   useEffect(() => {
     if (!frameMounted) return;
@@ -104,27 +274,39 @@ export function PreviewShell({
   }, [frameMounted, updateFromFrame]);
 
   function changePage(event: ChangeEvent<HTMLSelectElement>) {
-    window.location.assign(previewPath(templateId, event.target.value));
+    const nextSlug = event.target.value;
+    setCurrentSlug(nextSlug);
+    setFrameSearch("");
+    setFrameHash("");
+    setFrameSrc(buildLocalizedDemoHref(templateId, nextSlug, locale));
+    window.history.pushState(
+      null,
+      "",
+      buildPreviewHref(templateId, nextSlug, locale)
+    );
   }
 
   return (
-    <div className="flex h-dvh min-h-[36rem] flex-col overflow-hidden bg-[#ddd9d0] text-[#171714]">
+    <div
+      lang={locale}
+      className="flex h-dvh min-h-[36rem] flex-col overflow-hidden bg-[#ddd9d0] text-[#171714]"
+    >
       <a
         href="#template-preview"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:ring-2 focus:ring-[#c95032]"
       >
-        Skip preview controls
+        {labels.skipControls}
       </a>
 
       <header className="relative z-20 shrink-0 border-b border-black/15 bg-[#f7f5ef]">
         <div className="mx-auto flex min-h-16 max-w-[1600px] flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2 sm:px-5 lg:flex-nowrap">
           <Link
-            href={catalogHref}
+            href={localizedCatalogHref}
             className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c95032] focus-visible:ring-offset-2"
           >
             <span aria-hidden="true">←</span>
-            <span className="hidden sm:inline">All templates</span>
-            <span className="sm:hidden">Back</span>
+            <span className="hidden sm:inline">{labels.allTemplates}</span>
+            <span className="sm:hidden">{labels.back}</span>
           </Link>
 
           <span className="hidden h-8 w-px bg-black/15 sm:block" aria-hidden="true" />
@@ -132,12 +314,12 @@ export function PreviewShell({
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-semibold">{brandName}</p>
             <p className="hidden truncate text-xs capitalize text-stone-500 sm:block">
-              {category.replace("-", " ")} / fictional demonstration
+              {labels.categoryLabels[category] ?? category.replace("-", " ")} / {labels.fictionalDemo}
             </p>
           </div>
 
           <label className="sr-only" htmlFor="preview-page">
-            Preview page
+            {labels.previewPage}
           </label>
           <select
             id="preview-page"
@@ -145,23 +327,23 @@ export function PreviewShell({
             onChange={changePage}
             className="min-h-11 min-w-36 border border-stone-300 bg-white px-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c95032]"
           >
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <option key={page.slug || "home"} value={page.slug}>
-                {page.label}
+                {previewPageLabel(locale, page, index)}
               </option>
             ))}
           </select>
 
           <div
             className="hidden items-center border border-stone-300 bg-white p-1 lg:flex"
-            aria-label="Preview width"
+            aria-label={labels.previewWidth}
             role="group"
           >
             {(
               [
-                ["responsive", "Desktop"],
-                ["tablet", "Tablet"],
-                ["mobile", "Mobile"]
+                ["responsive", labels.desktop],
+                ["tablet", labels.tablet],
+                ["mobile", labels.mobile]
               ] as const
             ).map(([mode, label]) => (
               <button
@@ -180,13 +362,19 @@ export function PreviewShell({
           </div>
 
           <a
-            href={templatePath(templateId, currentSlug)}
+            href={buildLocalizedDemoHref(
+              templateId,
+              currentSlug,
+              locale,
+              frameSearch,
+              frameHash
+            )}
             target="_blank"
             rel="noreferrer"
             className="inline-flex min-h-11 items-center justify-center bg-[#c95032] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#a93622] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c95032] focus-visible:ring-offset-2"
-            title="Open the fictional site without preview controls"
+            title={labels.fullScreenTitle}
           >
-            Full screen{" "}
+            {labels.fullScreen}{" "}
             <span className="ml-2" aria-hidden="true">
               ↗
             </span>
@@ -202,7 +390,7 @@ export function PreviewShell({
           <iframe
             ref={frameRef}
             src={frameSrc}
-            title={`${brandName} website preview`}
+            title={labels.iframeTitle(brandName)}
             className="h-full max-w-full border-0 bg-white shadow-[0_24px_70px_rgba(23,23,20,0.16)] lg:border lg:border-black/10"
             style={{ width: deviceWidths[device] }}
             onLoad={(event) => updateFromFrame(event.currentTarget)}

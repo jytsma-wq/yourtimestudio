@@ -1,10 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import { useMemo, useState } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  buildPreviewHref,
+  parsePreviewLocale
+} from "@/components/templates/template-preview-locale";
 import { Link } from "@/lib/i18n/navigation";
 import type { TemplateShowcaseEntry } from "@/lib/templates/catalog";
 
@@ -34,6 +39,7 @@ type TemplateCatalogProps = {
 };
 
 export function TemplateCatalog({ entries, categories, labels }: TemplateCatalogProps) {
+  const locale = parsePreviewLocale(useLocale());
   const [activeCategory, setActiveCategory] = useState("all");
   const visibleEntries = useMemo(
     () =>
@@ -138,7 +144,7 @@ export function TemplateCatalog({ entries, categories, labels }: TemplateCatalog
                 <div className="flex flex-wrap gap-2">
                   <Button asChild size="sm" variant="outline">
                     <a
-                      href={entry.previewHref}
+                      href={buildPreviewHref(entry.id, "", locale)}
                       data-analytics-event="template_preview_click"
                       data-analytics-section="template_catalog"
                       data-analytics-item={entry.id}

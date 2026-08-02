@@ -22,6 +22,9 @@ import {
 } from 'lucide-react';
 import { AuditRequestForm } from '@/components/shared/AuditRequestForm';
 import { Button } from '@/components/ui/button';
+import { isFormInboxReady } from '@/lib/form-validation';
+
+export const dynamic = 'force-dynamic';
 
 const rubricItems = [
   { key: 'brand', icon: Eye },
@@ -57,7 +60,7 @@ export async function generateMetadata({
     description: t('subtitle'),
     path: '/website-audits',
     locale: locale as Locale,
-    ogImage: '/og-audits.png',
+    ogImage: '/og-audits.jpg',
   });
 }
 
@@ -71,6 +74,7 @@ export default async function WebsiteAuditsPage({
 
   const t = await getTranslations('auditPage');
   const tNav = await getTranslations('nav');
+  const inboxReady = isFormInboxReady();
 
   return (
     <>
@@ -251,7 +255,7 @@ export default async function WebsiteAuditsPage({
               {t('form.subtitle')}
             </p>
           </div>
-          <AuditRequestForm />
+          <AuditRequestForm inboxReady={inboxReady} />
         </div>
       </Section>
     </>

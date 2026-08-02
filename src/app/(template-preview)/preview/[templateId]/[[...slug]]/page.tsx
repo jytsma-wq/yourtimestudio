@@ -2,6 +2,7 @@ import { createSeoMetadata } from "@website-template-factory/ui";
 import { notFound } from "next/navigation";
 
 import { PreviewShell } from "@/components/templates/TemplatePreviewShell";
+import { parsePreviewLocale } from "@/components/templates/template-preview-locale";
 import {
   getTemplateShowcaseEntry,
   templateShowcaseEntries
@@ -14,6 +15,7 @@ type PreviewParams = {
 
 type PreviewPageProps = {
   params: Promise<PreviewParams>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 function joinedSlug(parts?: string[]) {
@@ -51,8 +53,12 @@ export async function generateMetadata({ params }: PreviewPageProps) {
   });
 }
 
-export default async function PreviewPage({ params }: PreviewPageProps) {
+export default async function PreviewPage({
+  params,
+  searchParams
+}: PreviewPageProps) {
   const { templateId, slug } = await params;
+  const previewLocale = parsePreviewLocale((await searchParams).locale);
   const template = getTemplateShowcaseEntry(templateId);
   const pageSlug = joinedSlug(slug);
 
@@ -65,6 +71,7 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
       templateId={template.id}
       brandName={template.brandName}
       category={template.category}
+      initialLocale={previewLocale}
       initialSlug={pageSlug}
       pages={template.pages}
     />

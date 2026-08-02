@@ -4,8 +4,10 @@ import path from 'node:path';
 
 const standaloneDir = '.next/standalone';
 
-if (!existsSync(standaloneDir)) {
-  process.exit(0);
+if (!existsSync(`${standaloneDir}/server.js`)) {
+  throw new Error(
+    'Next.js did not create .next/standalone/server.js. The production server cannot start without it.'
+  );
 }
 
 await mkdir(`${standaloneDir}/.next`, { recursive: true });
@@ -58,3 +60,21 @@ async function repairWindowsDirectorySymlinks(root) {
 }
 
 await repairWindowsDirectorySymlinks(`${standaloneDir}/node_modules`);
+
+const requiredStandalonePaths = [
+  `${standaloneDir}/server.js`,
+  `${standaloneDir}/.next/BUILD_ID`,
+  `${standaloneDir}/.next/required-server-files.json`,
+  `${standaloneDir}/.next/server/app`,
+  `${standaloneDir}/.next/static`,
+  `${standaloneDir}/public`,
+];
+const missingStandalonePaths = requiredStandalonePaths.filter(
+  (requiredPath) => !existsSync(requiredPath),
+);
+
+if (missingStandalonePaths.length > 0) {
+  throw new Error(
+    `Standalone artifact is incomplete. Missing: ${missingStandalonePaths.join(', ')}`,
+  );
+}

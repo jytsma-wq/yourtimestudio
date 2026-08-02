@@ -14,7 +14,7 @@ const fallbackVisuals: Record<ExampleSector, string> = {
   hospitality: '/images/studio-scenes/hospitality-hero.webp',
   medical: '/images/studio-scenes/clinic-story.webp',
   beauty: '/images/studio-scenes/beauty-studio.webp',
-  studio: '/og-default.png',
+  studio: '/og-default.jpg',
 };
 
 export function ExamplePreviewPanel({

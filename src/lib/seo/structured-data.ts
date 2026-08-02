@@ -9,14 +9,14 @@ const sameAs = [
   siteConfig.social.facebook,
 ].filter(Boolean);
 
-export function organizationSchema() {
+export function organizationSchema(description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteUrl,
     logo: logoUrl,
-    description: siteConfig.description,
+    description,
     address: {
       '@type': 'PostalAddress',
       addressLocality: siteConfig.address.locality,
@@ -42,42 +42,6 @@ export function webSiteSchema() {
     url: siteUrl,
     // SearchAction removed: the insights page has no search implementation.
     // Add potentialAction back once a real site search endpoint exists.
-  };
-}
-
-export function localBusinessSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: siteConfig.name,
-    url: siteUrl,
-    logo: logoUrl,
-    description: siteConfig.description,
-    image: `${siteUrl}${siteConfig.assets.ogDefault}`,
-    ...(normalizedPhone ? { telephone: normalizedPhone } : {}),
-    email: siteConfig.contact.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: siteConfig.address.locality,
-      addressRegion: siteConfig.address.region,
-      addressCountry: siteConfig.address.country,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: siteConfig.address.geo?.latitude,
-      longitude: siteConfig.address.geo?.longitude,
-    },
-    priceRange: '$$',
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: siteConfig.address.geo?.latitude,
-        longitude: siteConfig.address.geo?.longitude,
-      },
-      geoRadius: '50000',
-    },
-    ...(sameAs.length ? { sameAs } : {}),
   };
 }
 
@@ -107,4 +71,8 @@ export function faqSchema(items: { question: string; answer: string }[]) {
       },
     })),
   };
+}
+
+export function serializeJsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
 }

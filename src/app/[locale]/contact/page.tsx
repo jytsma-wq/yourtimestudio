@@ -8,6 +8,9 @@ import { ContactForm } from '@/components/shared/ContactForm';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
 import { siteConfig } from '@/lib/site-config';
 import { getTemplateShowcaseEntry } from '@/lib/templates/catalog';
+import { isFormInboxReady } from '@/lib/form-validation';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,
@@ -46,6 +49,7 @@ export default async function ContactPage({
   const requestedTemplate = requestedTemplateId
     ? getTemplateShowcaseEntry(requestedTemplateId)
     : undefined;
+  const inboxReady = isFormInboxReady();
 
   const breadcrumbItems = [
     { label: tNav('contact'), href: '/contact' },
@@ -74,6 +78,7 @@ export default async function ContactPage({
           <div id="contact-form" className="scroll-mt-24 lg:col-span-1">
             <div className="bg-card border border-border rounded-none p-6 md:p-8">
               <ContactForm
+                inboxReady={inboxReady}
                 templateInterest={requestedTemplate ? {
                   id: requestedTemplate.id,
                   label: requestedTemplate.brandName,

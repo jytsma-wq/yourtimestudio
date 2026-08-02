@@ -35,6 +35,7 @@ export default async function AboutPage({
 
   const t = await getTranslations('aboutPage');
   const tNav = await getTranslations('nav');
+  const tLocations = await getTranslations('locationLabels');
 
   const breadcrumbItems = [
     { label: tNav('about'), href: '/about' },
@@ -84,7 +85,9 @@ export default async function AboutPage({
               />
               <div>
                 <p className="font-semibold text-foreground">{siteConfig.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">Batumi, Adjara, Georgia</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {tLocations('studioAddress')}
+                </p>
               </div>
             </div>
           </div>
