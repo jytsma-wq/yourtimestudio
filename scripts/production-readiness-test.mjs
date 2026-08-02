@@ -46,6 +46,13 @@ const templateContentFiles = [
   'packages/content/src/batch-six.ts',
 ];
 
+function hasExactSecuritySource(value, expectedSource) {
+  if (typeof value !== 'string') return false;
+  return value
+    .split(/[\s"'`,;]+/u)
+    .some((candidate) => candidate === expectedSource);
+}
+
 function unwrapExpression(node) {
   let current = node;
 
@@ -545,6 +552,7 @@ function checkEnvExample() {
 
 function checkSecurityConfig() {
   const config = readFileSync('next.config.ts', 'utf8');
+  const plausibleOrigin = 'https://plausible.io';
   const required = [
     'poweredByHeader: false',
     'X-Content-Type-Options',
@@ -565,7 +573,14 @@ function checkSecurityConfig() {
   assert(config.includes("key: 'X-Frame-Options'"), 'X-Frame-Options must be configured');
   assert(config.includes("value: 'DENY'"), 'Normal routes must deny framing');
   assert(config.includes("value: 'SAMEORIGIN'"), 'Raw template routes must allow same-origin framing');
-  assert(config.includes('https://plausible.io'), 'The report-only CSP must allow Plausible');
+  assert(
+    hasExactSecuritySource(config, plausibleOrigin),
+    'The report-only CSP must allow the exact Plausible origin',
+  );
+  assert(
+    !hasExactSecuritySource('script-src https://plausible.io.evil.example', plausibleOrigin),
+    'A hostname containing the Plausible origin must not pass the exact-source check',
+  );
 }
 
 function checkApiRoutesUseHardening() {
@@ -742,7 +757,10 @@ async function checkRouteSmoke(baseUrl) {
   assert(enforcedCsp?.includes("form-action 'self'"), 'Enforced CSP must restrict forms');
   assert(enforcedCsp?.includes("frame-ancestors 'none'"), 'Normal routes must deny framing');
   assert.equal(headerResponse.headers.get('x-frame-options'), 'DENY');
-  assert(reportOnlyCsp?.includes('https://plausible.io'), 'Report-only CSP must allow Plausible');
+  assert(
+    hasExactSecuritySource(reportOnlyCsp, 'https://plausible.io'),
+    'Report-only CSP must allow the exact Plausible origin',
+  );
   assert.equal(headerResponse.headers.get('x-powered-by'), null, 'X-Powered-By must be disabled');
 
   await checkTemplateRouteMatrix(baseUrl);
