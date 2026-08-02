@@ -106,7 +106,10 @@ export function PreviewShell({
   }, [frameMounted, updateFromFrame]);
 
   function changePage(event: ChangeEvent<HTMLSelectElement>) {
-    window.location.assign(previewPath(templateId, event.target.value, previewLocale));
+    const selectedPage = pages[event.currentTarget.selectedIndex];
+    if (!selectedPage) return;
+
+    window.location.assign(previewPath(templateId, selectedPage.slug, previewLocale));
   }
 
   return (
