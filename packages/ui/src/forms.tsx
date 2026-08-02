@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
 import { cx } from "./cx";
 
@@ -28,6 +28,14 @@ type ManagedFormProps = {
   className?: string;
 };
 
+type FocusTarget = { type: "field"; name: string } | { type: "success" } | null;
+
+const EMAIL_ADDRESS_PATTERN = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/;
+
+export function isValidEmailAddress(value: string) {
+  return EMAIL_ADDRESS_PATTERN.test(value.trim());
+}
+
 function formatValidationMessage(message: string, field: string, min?: number) {
   return message.replace("{field}", field).replace("{min}", String(min ?? 1));
 }
@@ -49,6 +57,24 @@ export function ManagedForm({
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [focusTarget, setFocusTarget] = useState<FocusTarget>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const successMessageRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (focusTarget?.type === "success") {
+      successMessageRef.current?.focus();
+      return;
+    }
+
+    if (focusTarget?.type === "field") {
+      const field = formRef.current?.elements.namedItem(focusTarget.name);
+
+      if (field instanceof HTMLElement) {
+        field.focus();
+      }
+    }
+  }, [focusTarget]);
 
   function updateValue(name: string, value: string) {
     setValues((current) => ({ ...current, [name]: value }));
@@ -69,7 +95,7 @@ export function ManagedForm({
         nextErrors[field.name] = validationMessages?.required
           ? formatValidationMessage(validationMessages.required, field.label)
           : `${field.label} is required.`;
-      } else if (field.type === "email" && value && !value.includes("@")) {
+      } else if (field.type === "email" && value && !isValidEmailAddress(value)) {
         nextErrors[field.name] = validationMessages?.email ?? "Enter a valid email address.";
       } else if (field.type === "number" && value && Number(value) < 1) {
         nextErrors[field.name] = validationMessages?.numberMin
@@ -84,15 +110,20 @@ export function ManagedForm({
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate();
+    const firstInvalidField = fields.find((field) => nextErrors[field.name]);
     setErrors(nextErrors);
 
-    if (Object.keys(nextErrors).length === 0) {
+    if (firstInvalidField) {
+      setFocusTarget({ type: "field", name: firstInvalidField.name });
+    } else {
       setSubmitted(true);
+      setFocusTarget({ type: "success" });
     }
   }
 
   return (
     <form
+      ref={formRef}
       className={cx("border border-[var(--wtf-color-border,#dbe3ef)] p-5", className)}
       onSubmit={handleSubmit}
       noValidate
@@ -129,6 +160,8 @@ export function ManagedForm({
                   name={field.name}
                   className="mt-2 min-h-28 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-3 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -139,6 +172,8 @@ export function ManagedForm({
                   name={field.name}
                   className="mt-2 min-h-11 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-2 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -158,6 +193,8 @@ export function ManagedForm({
                   className="mt-2 min-h-11 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-2 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
                   min={field.type === "number" ? 1 : undefined}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -193,7 +230,14 @@ export function ManagedForm({
       </button>
 
       {submitted ? (
-        <p className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)]">
+        <p
+          ref={successMessageRef}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          tabIndex={-1}
+          className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)]"
+        >
           {successMessage}
         </p>
       ) : null}

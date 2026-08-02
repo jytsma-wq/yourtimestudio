@@ -16,7 +16,7 @@ export async function generateMetadata({
     description: t('subtitle'),
     path: '/medical-websites-batumi',
     locale: locale as Locale,
-    ogImage: '/og-medical.png',
+    ogImage: '/og-medical.jpg',
   });
 }
 

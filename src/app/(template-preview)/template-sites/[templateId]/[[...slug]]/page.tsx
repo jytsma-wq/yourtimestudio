@@ -111,6 +111,7 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { TemplateDemoDisclosure } from "@/components/templates/TemplateDemoDisclosure";
+import { parsePreviewLocale } from "@/components/templates/template-preview-locale";
 
 type PageParams = {
   templateId: string;
@@ -119,6 +120,7 @@ type PageParams = {
 
 type PageProps = {
   params: Promise<PageParams>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 function isTemplateId(id: string): id is TemplateId {
@@ -516,8 +518,9 @@ export async function generateMetadata({ params }: PageProps) {
   });
 }
 
-export default async function TemplateRoute({ params }: PageProps) {
+export default async function TemplateRoute({ params, searchParams }: PageProps) {
   const { templateId, slug } = await params;
+  const previewLocale = parsePreviewLocale((await searchParams).locale);
 
   if (!isTemplateId(templateId)) {
     notFound();
@@ -534,7 +537,11 @@ export default async function TemplateRoute({ params }: PageProps) {
     return (
       <>
         {completedRoute.render(joinedSlug)}
-        <TemplateDemoDisclosure templateId={templateId} slug={joinedSlug} />
+        <TemplateDemoDisclosure
+          initialLocale={previewLocale}
+          templateId={templateId}
+          slug={joinedSlug}
+        />
       </>
     );
   }

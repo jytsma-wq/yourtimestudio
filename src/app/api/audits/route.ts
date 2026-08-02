@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
 import { db } from '@/lib/db';
+import { readJsonObjectBody, validateApiRequestMetadata } from '@/lib/api-request';
+import { getAuditSchema, isFormInboxReady } from '@/lib/form-validation';
 import { checkRateLimit } from '@/lib/rate-limit';
 
 type ApiLocale = 'en' | 'ka' | 'ru' | 'tr';
@@ -19,7 +20,7 @@ const apiMessages = {
     botDetected: 'Bot detected',
     rateLimited: 'Too many requests. Please try again later.',
     validationFailed: 'Validation failed',
-    formNotConfigured: 'Form submissions are not configured. Please email me directly.',
+    formNotConfigured: 'Form submissions are not configured. Please email hello@batumilighthouse.com directly.',
     internalError: 'Internal server error',
   },
   ka: {
@@ -33,7 +34,7 @@ const apiMessages = {
     botDetected: 'ბოტი დაფიქსირდა',
     rateLimited: 'ძალიან ბევრი მოთხოვნაა. სცადეთ მოგვიანებით.',
     validationFailed: 'შემოწმება ვერ დასრულდა',
-    formNotConfigured: 'ფორმის გაგზავნა ჯერ არ არის კონფიგურირებული. გთხოვთ, პირდაპირ მომწეროთ ელფოსტაზე.',
+    formNotConfigured: 'ფორმის გაგზავნა ჯერ არ არის კონფიგურირებული. გთხოვთ, პირდაპირ მოგვწეროთ მისამართზე hello@batumilighthouse.com.',
     internalError: 'შიდა სერვერის შეცდომა',
   },
   ru: {
@@ -47,7 +48,7 @@ const apiMessages = {
     botDetected: 'Обнаружен бот',
     rateLimited: 'Слишком много запросов. Попробуйте позже.',
     validationFailed: 'Проверка не пройдена',
-    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую по электронной почте.',
+    formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите напрямую на hello@batumilighthouse.com.',
     internalError: 'Внутренняя ошибка сервера',
   },
   tr: {
@@ -61,7 +62,7 @@ const apiMessages = {
     botDetected: 'Bot algılandı',
     rateLimited: 'Çok fazla istek gönderildi. Lütfen daha sonra tekrar deneyin.',
     validationFailed: 'Doğrulama başarısız oldu',
-    formNotConfigured: 'Form gönderimleri yapılandırılmamış. Lütfen bana doğrudan e-posta gönderin.',
+    formNotConfigured: 'Form gönderimleri yapılandırılmamış. Lütfen doğrudan hello@batumilighthouse.com adresine e-posta gönderin.',
     internalError: 'Sunucu hatası',
   },
 } satisfies Record<ApiLocale, Record<string, string>>;
@@ -76,23 +77,18 @@ function getApiLocale(request: NextRequest): ApiLocale {
     : 'en';
 }
 
-function getAuditSchema(messages: (typeof apiMessages)[ApiLocale]) {
-  return z.object({
-    name: z.string().min(1, messages.nameRequired).max(200),
-    businessName: z.string().min(1, messages.businessRequired).max(200),
-    email: z.string().min(1, messages.emailRequired).email(messages.emailInvalid).max(300),
-    phone: z.string().max(50).optional(),
-    sector: z.string().min(1, messages.sectorRequired).max(100),
-    websiteUrl: z.string().min(1, messages.websiteRequired).url(messages.websiteInvalid).max(500),
-    message: z.string().max(5000).optional(),
-    website_check: z.string().max(0, messages.botDetected).optional(),
-  });
-}
-
 export async function POST(request: NextRequest) {
   const messages = apiMessages[getApiLocale(request)];
 
   try {
+    const requestError = validateApiRequestMetadata(request);
+    if (requestError) {
+      return NextResponse.json(
+        { error: messages.validationFailed },
+        { status: requestError.status }
+      );
+    }
+
     const rateLimit = checkRateLimit(request, {
       keyPrefix: 'audit',
       maxRequests: 3,
@@ -109,14 +105,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
-
-    // Honeypot check — bots fill this field
-    if (body.website_check) {
-      return NextResponse.json({ success: true }, { status: 201 });
+    const bodyResult = await readJsonObjectBody(request);
+    if (!bodyResult.ok) {
+      return NextResponse.json(
+        { error: messages.validationFailed },
+        { status: bodyResult.error.status }
+      );
     }
 
-    const parsed = getAuditSchema(messages).safeParse(body);
+    const parsed = getAuditSchema(messages).safeParse(bodyResult.data);
     if (!parsed.success) {
       const fieldErrors = parsed.error.flatten().fieldErrors;
       const firstError = Object.values(fieldErrors).flat()[0] || messages.validationFailed;
@@ -124,6 +121,18 @@ export async function POST(request: NextRequest) {
     }
 
     const data = parsed.data;
+
+    // Silently accept known honeypot submissions without storing them.
+    if (data.website_check) {
+      return NextResponse.json({ success: true }, { status: 201 });
+    }
+
+    if (!isFormInboxReady()) {
+      return NextResponse.json(
+        { error: messages.formNotConfigured },
+        { status: 503 }
+      );
+    }
 
     const audit = await db.auditRequest.create({
       data: {
@@ -139,7 +148,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, id: audit.id }, { status: 201 });
   } catch (error) {
-    console.error('Audit request error:', error);
+    console.error('Audit request failed');
     const message = error instanceof Error ? error.message : '';
     if (message.includes('DATABASE_URL')) {
       return NextResponse.json(

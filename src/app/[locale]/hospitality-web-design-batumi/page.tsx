@@ -16,7 +16,7 @@ export async function generateMetadata({
     description: t('subtitle'),
     path: '/hospitality-web-design-batumi',
     locale: locale as Locale,
-    ogImage: '/og-hospitality.png',
+    ogImage: '/og-hospitality.jpg',
   });
 }
 

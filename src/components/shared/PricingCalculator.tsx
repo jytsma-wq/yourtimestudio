@@ -78,40 +78,65 @@ export function PricingCalculator() {
       </div>
 
       {/* Sector selection */}
-      <div className="mb-6">
-        <label className="text-sm font-medium text-foreground mb-3 block">
+      <fieldset className="mb-6">
+        <legend className="mb-3 text-sm font-medium text-foreground">
           {t('calculator_sector')}
-        </label>
-        <div className="grid grid-cols-3 gap-3">
-          {sectorOptions.map((opt) => (
-            <button
-              key={opt.key}
-              type="button"
-              onClick={() => setSector(opt.key)}
-              className={`relative rounded-md border px-4 py-3 text-sm font-medium transition-colors duration-150 ease-out ${
-                sector === opt.key
-                  ? 'border-navy bg-muted text-foreground'
-                  : 'border-border bg-background text-muted-foreground hover:border-navy hover:bg-muted'
-              }`}
-            >
-              {sectorLabels[opt.key]}
-              {sector === opt.key && (
-                <span className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral" />
-              )}
-            </button>
-          ))}
+        </legend>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
+          {sectorOptions.map((opt) => {
+            const inputId = `pricing-calculator-sector-${opt.key}`;
+            const isActive = sector === opt.key;
+
+            return (
+              <div key={opt.key} className="relative min-w-0">
+                <input
+                  id={inputId}
+                  name="pricing-calculator-sector"
+                  type="radio"
+                  value={opt.key}
+                  checked={isActive}
+                  onChange={() => setSector(opt.key)}
+                  className="peer sr-only"
+                />
+                <label
+                  htmlFor={inputId}
+                  className={`relative flex min-h-11 cursor-pointer items-center justify-center rounded-md border px-3 py-3 text-center text-sm font-medium leading-snug transition-colors duration-150 ease-out peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 ${
+                    isActive
+                      ? 'border-navy bg-muted text-foreground'
+                      : 'border-border bg-background text-muted-foreground hover:border-navy hover:bg-muted'
+                  }`}
+                >
+                  <span className="min-w-0 break-words">{sectorLabels[opt.key]}</span>
+                  {isActive && (
+                    <span
+                      className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral"
+                      aria-hidden="true"
+                    />
+                  )}
+                </label>
+              </div>
+            );
+          })}
         </div>
-      </div>
+      </fieldset>
 
       {/* Page count slider */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
-          <label className="text-sm font-medium text-foreground">
+          <label htmlFor="pricing-calculator-pages" className="text-sm font-medium text-foreground">
             {t('calculator_pages')}
           </label>
-          <span className="text-sm font-semibold tabular-nums text-navy">{pages}</span>
+          <output
+            htmlFor="pricing-calculator-pages"
+            className="text-sm font-semibold tabular-nums text-navy"
+            aria-live="polite"
+          >
+            {pages}
+          </output>
         </div>
         <input
+          id="pricing-calculator-pages"
+          name="pricing-calculator-pages"
           type="range"
           min={5}
           max={20}
@@ -127,10 +152,10 @@ export function PricingCalculator() {
 
       {/* Add-on toggles */}
       <div className="mb-8">
-        <label className="text-sm font-medium text-foreground mb-3 block">
+        <p id="pricing-calculator-addons-label" className="mb-3 text-sm font-medium text-foreground">
           {t('calculator_addons')}
-        </label>
-        <div className="space-y-3">
+        </p>
+        <div className="space-y-3" role="group" aria-labelledby="pricing-calculator-addons-label">
           {addOnOptions.map((opt) => {
             const isActive = addOns.has(opt.key);
             const price = rates[opt.key];
@@ -138,6 +163,8 @@ export function PricingCalculator() {
               <button
                 key={opt.key}
                 type="button"
+                role="switch"
+                aria-checked={isActive}
                 onClick={() => toggleAddOn(opt.key)}
                 className={`flex w-full items-center justify-between rounded-md border px-4 py-3 transition-colors duration-150 ease-out ${
                   isActive
@@ -148,6 +175,7 @@ export function PricingCalculator() {
                 <div className="flex items-center gap-3">
                   {/* Toggle switch */}
                   <span
+                    aria-hidden="true"
                     className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-200 ${
                       isActive ? 'bg-navy' : 'bg-muted'
                     }`}
@@ -194,14 +222,11 @@ export function PricingCalculator() {
       </div>
 
       {/* CTA */}
-      <Link href="/contact" className="block">
-        <Button
-          size="lg"
-          className="w-full font-semibold"
-        >
+      <Button asChild size="lg" className="w-full font-semibold">
+        <Link href="/contact">
           {t('calculator_cta')}
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     </div>
   );
 }

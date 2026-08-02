@@ -2,9 +2,10 @@ import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/lib/i18n/navigation';
-import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
+import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
 import { sectors, sectorKeys } from '@/lib/sector-config';
+import { FooterLocaleLinks } from './FooterLocaleLinks';
 
 interface SiteFooterProps {
   locale: Locale;
@@ -141,20 +142,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
           <p className="text-xs text-brand-cream/55">
             &copy; {new Date().getFullYear()} {siteConfig.name}. {t('copyright')}
           </p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
-            {launchLocales.map((loc) => (
-              <Link
-                key={loc}
-                href="/"
-                locale={loc}
-                className={`min-h-10 py-3 transition-colors hover:text-brand-serene-coral ${
-                  locale === loc ? 'font-semibold text-brand-serene-coral' : 'text-brand-cream/58'
-                }`}
-              >
-                {localeLabels[loc]}
-              </Link>
-            ))}
-          </div>
+          <FooterLocaleLinks locale={locale} />
         </div>
       </div>
     </footer>

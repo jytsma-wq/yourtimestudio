@@ -16,6 +16,7 @@ import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
 import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
+import { useCurrentUrlSuffix } from '@/lib/i18n/use-current-url-suffix';
 import { sectors } from '@/lib/sector-config';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
@@ -55,6 +56,7 @@ export default function SiteHeader() {
   const ui = useTranslations('ui');
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const { search, hash } = useCurrentUrlSuffix();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(false);
@@ -64,7 +66,12 @@ export default function SiteHeader() {
 
   useEffect(() => {
     queueMicrotask(() => {
-      const saved = localStorage.getItem('theme');
+      let saved: string | null = null;
+      try {
+        saved = localStorage.getItem('theme');
+      } catch {
+        // Keep the default theme when storage is unavailable.
+      }
       const isDark = saved === 'dark';
       document.documentElement.classList.toggle('dark', isDark);
       setDark(isDark);
@@ -109,7 +116,11 @@ export default function SiteHeader() {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('theme', next ? 'dark' : 'light');
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    } catch {
+      // The theme still applies for this page when storage is unavailable.
+    }
   }
 
   function isActive(href: string): boolean {
@@ -174,12 +185,17 @@ export default function SiteHeader() {
                   className="relative"
                   onBlur={handleSolutionsBlur}
                   onKeyDown={(event) => {
-                    if (event.key === 'Escape') setSolutionsOpen(false);
+                    if (event.key === 'Escape') {
+                      event.preventDefault();
+                      document.getElementById('site-services-menu-trigger')?.focus();
+                      setSolutionsOpen(false);
+                    }
                   }}
                   onMouseEnter={openSolutions}
                   onMouseLeave={() => closeSolutions()}
                 >
                   <Button
+                    id="site-services-menu-trigger"
                     type="button"
                     variant="ghost"
                     size="sm"
@@ -384,7 +400,7 @@ export default function SiteHeader() {
                 return (
                   <a
                     key={targetLocale}
-                    href={getLocaleHref(pathname, targetLocale)}
+                    href={getLocaleHref(pathname, targetLocale, search, hash)}
                     hrefLang={targetLocale}
                     onClick={() => persistLocale(targetLocale)}
                     aria-label={localeLabels[targetLocale]}

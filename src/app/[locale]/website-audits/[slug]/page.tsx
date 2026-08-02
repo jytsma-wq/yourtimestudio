@@ -67,6 +67,7 @@ export async function generateMetadata({
     description: localizedAudit.executiveSummary,
     path: `/website-audits/${slug}`,
     locale: locale as Locale,
+    noIndex: true,
   });
 }
 
@@ -118,6 +119,12 @@ export default async function AuditDetailPage({
 
         {/* Header */}
         <div className="mb-10">
+          <div
+            className="mb-6 max-w-3xl border border-brand-serene-coral/45 bg-brand-serene-coral/10 p-4 text-sm leading-relaxed text-foreground"
+            role="note"
+          >
+            {t('detail.sample_disclosure')}
+          </div>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <Badge className={`${sectorTagColor} rounded-none border-0 font-semibold text-xs uppercase tracking-wide`}>
               {t(`sampleFindings.items.${audit.sector}.sector`)}

@@ -16,7 +16,7 @@ export async function generateMetadata({
     description: t('subtitle'),
     path: '/beauty-salon-websites-batumi',
     locale: locale as Locale,
-    ogImage: '/og-beauty.png',
+    ogImage: '/og-beauty.jpg',
   });
 }
 

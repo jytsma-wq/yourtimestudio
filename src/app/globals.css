@@ -112,6 +112,8 @@
 }
 
 :root {
+  --font-display-fallback: "Cormorant Garamond Variable";
+  --font-body-fallback: "Noto Sans Georgian Variable";
   --page-warm: #f4f3ef;
   --card-soft: #fbfaf7;
   --text-readable: #1c2b2d;

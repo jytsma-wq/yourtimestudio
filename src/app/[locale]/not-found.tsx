@@ -11,7 +11,14 @@ export default async function NotFound() {
       <div className="text-center max-w-lg">
         {/* Animated broken browser window SVG */}
         <div className="mb-8 mx-auto w-48 h-36 relative">
-          <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <svg
+            viewBox="0 0 200 150"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+            aria-hidden="true"
+            focusable="false"
+          >
             {/* Browser window */}
             <rect x="10" y="10" width="180" height="130" rx="8" stroke="var(--foreground)" strokeWidth="2" fill="var(--card)" opacity="0.3" />
             {/* Chrome dots */}
@@ -23,19 +30,11 @@ export default async function NotFound() {
             {/* 404 text */}
             <text x="100" y="90" textAnchor="middle" className="text-h1 font-semibold" fill="var(--teal)">404</text>
             {/* Crack lines */}
-            <path d="M85 70 L92 80 L88 90 L95 100" stroke="var(--foreground)" strokeWidth="1.5" opacity="0.3" strokeLinecap="round">
-              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
-            </path>
-            <path d="M115 65 L108 75 L112 85 L105 95" stroke="var(--foreground)" strokeWidth="1.5" opacity="0.3" strokeLinecap="round">
-              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" begin="0.5s" repeatCount="indefinite" />
-            </path>
+            <path d="M85 70 L92 80 L88 90 L95 100" stroke="var(--foreground)" strokeWidth="1.5" opacity="0.3" strokeLinecap="round" />
+            <path d="M115 65 L108 75 L112 85 L105 95" stroke="var(--foreground)" strokeWidth="1.5" opacity="0.3" strokeLinecap="round" />
             {/* Wandering cursor */}
             <g>
-              <circle cx="80" cy="110" r="3" fill="var(--teal)" opacity="0.6">
-                <animate attributeName="cx" values="80;120;95;110;80" dur="8s" repeatCount="indefinite" />
-                <animate attributeName="cy" values="110;100;115;95;110" dur="8s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.6;0.3;0.6;0.4;0.6" dur="8s" repeatCount="indefinite" />
-              </circle>
+              <circle cx="80" cy="110" r="3" fill="var(--teal)" opacity="0.6" />
             </g>
           </svg>
         </div>

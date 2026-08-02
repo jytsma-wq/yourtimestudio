@@ -3,7 +3,6 @@
 import { Link } from '@/lib/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Home } from 'lucide-react';
-import Script from 'next/script';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -14,6 +13,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import type { Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
+import { serializeJsonLd } from '@/lib/seo/structured-data';
 
 export interface BreadcrumbItemData {
   label: string;
@@ -58,11 +58,9 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
 
   return (
     <>
-      <Script
-        id={`breadcrumb-json-ld-${items.map((item) => item.href || 'current').join('-')}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <Breadcrumb className="mb-4" aria-label={ui('breadcrumbNavigation')}>
         <BreadcrumbList>
