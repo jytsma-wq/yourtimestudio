@@ -362,7 +362,7 @@ export default function SiteHeader() {
             </div>
           </nav>
 
-          <div className="space-y-4 border-t border-border px-6 py-5">
+          <div className="space-y-4 border-t border-border px-6 pt-5 pb-20 xl:pb-5">
             <SheetClose asChild>
               <Button
                 asChild
@@ -382,22 +382,21 @@ export default function SiteHeader() {
                 const active = targetLocale === locale;
 
                 return (
-                  <SheetClose asChild key={targetLocale}>
-                    <a
-                      href={getLocaleHref(pathname, targetLocale)}
-                      hrefLang={targetLocale}
-                      onClick={() => persistLocale(targetLocale)}
-                      aria-label={localeLabels[targetLocale]}
-                      aria-current={active ? 'page' : undefined}
-                      className={`flex min-h-11 items-center justify-center border-b-2 px-1 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral focus-visible:ring-offset-2 ${
-                        active
-                          ? 'border-brand-serene-coral text-foreground'
-                          : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground'
-                      }`}
-                    >
-                      {targetLocale.toUpperCase()}
-                    </a>
-                  </SheetClose>
+                  <a
+                    key={targetLocale}
+                    href={getLocaleHref(pathname, targetLocale)}
+                    hrefLang={targetLocale}
+                    onClick={() => persistLocale(targetLocale)}
+                    aria-label={localeLabels[targetLocale]}
+                    aria-current={active ? 'page' : undefined}
+                    className={`flex min-h-11 items-center justify-center border-b-2 px-1 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral focus-visible:ring-offset-2 ${
+                      active
+                        ? 'border-brand-serene-coral text-foreground'
+                        : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground'
+                    }`}
+                  >
+                    {targetLocale.toUpperCase()}
+                  </a>
                 );
               })}
             </div>
