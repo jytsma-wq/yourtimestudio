@@ -773,6 +773,7 @@
     "legal": "Правовая информация",
     "privacy": "Политика конфиденциальности",
     "terms": "Условия использования",
+    "cookieSettings": "Настройки cookie",
     "copyright": "Все права защищены.",
     "social_heading": "Подписывайтесь",
     "instagram": "Instagram",
@@ -1744,7 +1745,8 @@
     "close": "Закрыть",
     "breadcrumbNavigation": "Навигационная цепочка",
     "sectionNavigation": "Навигация по разделам страницы",
-    "navigateToSection": "Перейти к разделу «{section}»"
+    "navigateToSection": "Перейти к разделу «{section}»",
+    "formPrivacyNotice": "Мы используем эти данные только для ответа на ваш запрос."
   },
   "announcement": {
     "text": "Бесплатный аудит сайта в этом месяце - мест мало",

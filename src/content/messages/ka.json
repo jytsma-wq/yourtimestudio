@@ -773,6 +773,7 @@
     "legal": "იურიდიული",
     "privacy": "კონფიდენციალურობის პოლიტიკა",
     "terms": "მომსახურების პირობები",
+    "cookieSettings": "ქუქიების პარამეტრები",
     "copyright": "ყველა უფლება დაცულია.",
     "social_heading": "გამოგვყევით",
     "instagram": "Instagram",
@@ -1744,7 +1745,8 @@
     "close": "დახურვა",
     "breadcrumbNavigation": "ნავიგაციის ჯაჭვი",
     "sectionNavigation": "გვერდის სექციების ნავიგაცია",
-    "navigateToSection": "გადასვლა სექციაზე: {section}"
+    "navigateToSection": "გადასვლა სექციაზე: {section}",
+    "formPrivacyNotice": "ამ მონაცემებს მხოლოდ თქვენს მოთხოვნაზე პასუხისთვის ვიყენებთ."
   },
   "announcement": {
     "text": "უფასო ვებსაიტის აუდიტი ამ თვეში - ადგილები შეზღუდულია",

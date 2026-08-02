@@ -134,6 +134,7 @@ export function TemplateDemoDisclosure({
         <p className="leading-6 text-white/70">{labels.disclosureBody}</p>
         <Link
           href={previewHref}
+          target="_top"
           className="inline-flex min-h-11 shrink-0 items-center font-semibold text-white underline decoration-white/35 underline-offset-4 hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
           {labels.returnToControls}

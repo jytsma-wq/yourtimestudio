@@ -23,7 +23,8 @@ export function BackToTop() {
   }, []);
 
   function handleClick() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const shouldReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: shouldReduceMotion ? 'auto' : 'smooth' });
   }
 
   const radius = 18;
@@ -34,11 +35,11 @@ export function BackToTop() {
     <button
       onClick={handleClick}
       aria-label={ui('backToTop')}
-      className={`fixed bottom-8 left-8 z-40 hidden h-12 w-12 items-center justify-center rounded-md border border-border bg-card transition-colors duration-150 ease-out hover:text-navy min-[1536px]:flex ${
+      className={`fixed bottom-8 left-8 z-40 hidden h-12 w-12 items-center justify-center rounded-md border border-border bg-card transition-colors duration-150 ease-out motion-reduce:transition-none hover:text-navy min-[1536px]:flex ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >
-      <svg className="absolute inset-0 -rotate-90" width="48" height="48" viewBox="0 0 48 48">
+      <svg aria-hidden="true" className="absolute inset-0 -rotate-90" width="48" height="48" viewBox="0 0 48 48">
         <circle
           cx="24" cy="24" r={radius}
           fill="none"
@@ -53,10 +54,10 @@ export function BackToTop() {
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
-          className="transition-[stroke-dashoffset] duration-150 ease-out"
+          className="transition-[stroke-dashoffset] duration-150 ease-out motion-reduce:transition-none"
         />
       </svg>
-      <ArrowUp className="size-4 text-foreground" />
+      <ArrowUp aria-hidden="true" className="size-4 text-foreground" />
     </button>
   );
 }

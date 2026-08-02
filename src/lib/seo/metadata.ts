@@ -35,6 +35,13 @@ export function generatePageMetadata({
 }: MetadataOptions): Metadata {
   const url = localeUrl(locale, path);
   const ogImageUrl = absoluteUrl(ogImage || siteConfig.assets.ogDefault);
+  const ogImagePath = new URL(ogImageUrl).pathname;
+  const isStandardOgImage = /^\/og-[^/]+$/.test(ogImagePath);
+  const openGraphImage = {
+    url: ogImageUrl,
+    alt: title,
+    ...(isStandardOgImage ? { width: 1344, height: 768 } : {}),
+  };
 
   // Build hreflang alternates for all launch locales
   const languages: Record<string, string> = {};
@@ -65,7 +72,7 @@ export function generatePageMetadata({
       siteName: siteConfig.name,
       locale: ogLocaleMap[locale] || 'en_US',
       type: 'website',
-      images: [{ url: ogImageUrl, width: 1344, height: 768 }],
+      images: [openGraphImage],
     },
     twitter: {
       card: 'summary_large_image',

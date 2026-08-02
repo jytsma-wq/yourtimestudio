@@ -686,6 +686,16 @@ function checkTemplateLibrary() {
   ];
   const templateContent = contentFiles.map((file) => readFileSync(file, 'utf8')).join('\n');
   assert(!templateContent.includes('Template buyer review'), 'Template demos must not publish invented buyer reviews');
+
+  const previewShell = readFileSync('src/components/templates/TemplatePreviewShell.tsx', 'utf8');
+  assert(
+    previewShell.includes('pages[event.currentTarget.selectedIndex]'),
+    'Preview page navigation must resolve the selected option through the trusted page inventory',
+  );
+  assert(
+    !previewShell.includes('const nextSlug = event.target.value'),
+    'Preview page navigation must not send a DOM-supplied URL segment into browser history',
+  );
 }
 
 function localizedSitemapPath(locale, path) {

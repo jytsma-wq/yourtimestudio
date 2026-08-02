@@ -773,6 +773,7 @@
     "legal": "Yasal",
     "privacy": "Gizlilik Politikası",
     "terms": "Hizmet Şartları",
+    "cookieSettings": "Çerez ayarları",
     "copyright": "Tüm hakları saklıdır.",
     "social_heading": "Bizi takip edin",
     "instagram": "Instagram",
@@ -1744,7 +1745,8 @@
     "close": "Kapat",
     "breadcrumbNavigation": "Sayfa yolu",
     "sectionNavigation": "Sayfa bölümlerinde gezinme",
-    "navigateToSection": "{section} bölümüne git"
+    "navigateToSection": "{section} bölümüne git",
+    "formPrivacyNotice": "Bu bilgileri yalnızca talebinize yanıt vermek için kullanırız."
   },
   "announcement": {
     "text": "Bu ay ücretsiz web sitesi denetimi - sınırlı kontenjan",

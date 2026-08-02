@@ -60,7 +60,6 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
   const positioning = t(`items.${entry.id}.positioning`);
   const signature = t(`items.${entry.id}.signature`);
   const included = ["responsive", "navigation", "forms", "seo"] as const;
-
   return (
     <>
       <Section className="pb-10 md:pb-14">

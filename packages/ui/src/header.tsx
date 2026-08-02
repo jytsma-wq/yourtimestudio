@@ -31,6 +31,12 @@ export function Header({
         className
       )}
     >
+      <a
+        href="#wtf-main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[calc(var(--wtf-z-overlay,50)+1)] focus:inline-flex focus:min-h-11 focus:items-center focus:bg-[var(--wtf-color-surface,#fff)] focus:px-4 focus:text-sm focus:font-semibold focus:text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
+      >
+        Skip to content
+      </a>
       <Container className="relative flex min-h-16 items-center justify-between gap-4 py-3">
         <a
           href={homeHref}

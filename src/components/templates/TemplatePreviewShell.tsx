@@ -274,7 +274,10 @@ export function PreviewShell({
   }, [frameMounted, updateFromFrame]);
 
   function changePage(event: ChangeEvent<HTMLSelectElement>) {
-    const nextSlug = event.target.value;
+    const selectedPage = pages[event.currentTarget.selectedIndex];
+    if (!selectedPage) return;
+
+    const nextSlug = selectedPage.slug;
     setCurrentSlug(nextSlug);
     setFrameSearch("");
     setFrameHash("");
