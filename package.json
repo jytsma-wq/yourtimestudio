@@ -13,10 +13,12 @@
     "start": "node server.js",
     "test": "node scripts/production-readiness-test.mjs && vitest run packages --passWithNoTests",
     "lint": "eslint .",
+    "pretypecheck": "prisma generate",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "node scripts/ensure-sqlite-file.mjs && prisma migrate deploy",
     "db:reset": "prisma migrate reset"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/select';
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
+import { Link } from '@/lib/i18n/navigation';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 type FieldErrors = Partial<
@@ -29,10 +30,17 @@ export function AuditRequestForm() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [honeypot, setHoneypot] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   const tSectors = useTranslations('contactPage');
   const tContactForm = useTranslations('contactPage.form');
+  const ui = useTranslations('ui');
+  const footer = useTranslations('footer');
   const sectors = [tSectors('sectors.0'), tSectors('sectors.1'), tSectors('sectors.2'), tSectors('sectors.3')] as const;
+
+  useEffect(() => {
+    if (status === 'success') successRef.current?.focus();
+  }, [status]);
 
   function validateFields(data: {
     name: string;
@@ -70,9 +78,6 @@ export function AuditRequestForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Honeypot check
-    if (honeypot) return;
-
     trackEvent('audit_form_submit_attempt', { source: 'audit_form' });
     const formData = new FormData(e.currentTarget);
     const data = {
@@ -82,6 +87,7 @@ export function AuditRequestForm() {
       sector: String(formData.get('sector') || ''),
       websiteUrl: String(formData.get('websiteUrl') || ''),
       message: String(formData.get('message') || ''),
+      website_check: honeypot,
     };
 
     const errors = validateFields(data);
@@ -91,6 +97,22 @@ export function AuditRequestForm() {
     if (Object.keys(errors).length > 0) {
       trackEvent('audit_form_submit_failure', { reason: 'client_validation' });
       setStatus('idle');
+      const firstInvalidField = (
+        ['name', 'businessName', 'email', 'sector', 'websiteUrl'] as const
+      ).find((field) => Boolean(errors[field]));
+      const fieldIds = {
+        name: 'audit-name',
+        businessName: 'audit-business',
+        email: 'audit-email',
+        sector: 'audit-sector',
+        websiteUrl: 'audit-website',
+      } as const;
+
+      if (firstInvalidField) {
+        window.requestAnimationFrame(() => {
+          document.getElementById(fieldIds[firstInvalidField])?.focus();
+        });
+      }
       return;
     }
 
@@ -130,7 +152,14 @@ export function AuditRequestForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-card border border-border rounded-none p-8 text-center" role="status">
+      <div
+        ref={successRef}
+        className="bg-card border border-border rounded-none p-8 text-center outline-none"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        tabIndex={-1}
+      >
         <CheckCircle2 className="size-12 text-brand-sage-green-darken mx-auto mb-4" aria-hidden="true" />
         <p className="text-lg font-medium mb-2">{t('success')}</p>
       </div>
@@ -142,6 +171,7 @@ export function AuditRequestForm() {
       ref={formRef}
       onSubmit={handleSubmit}
       className="bg-card border border-border rounded-none p-6 md:p-8 space-y-5"
+      aria-busy={status === 'sending'}
       noValidate
     >
       {/* Honeypot — hidden from real users, visible to bots */}
@@ -161,11 +191,14 @@ export function AuditRequestForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Name */}
         <div className="space-y-2">
-          <Label htmlFor="audit-name">{t('name')} *</Label>
+          <Label htmlFor="audit-name">
+            {t('name')} <span aria-hidden="true">*</span>
+          </Label>
           <Input
             id="audit-name"
             name="name"
             required
+            aria-required="true"
             autoComplete="name"
             placeholder="Mariam K."
             aria-invalid={Boolean(fieldErrors.name)}
@@ -180,11 +213,14 @@ export function AuditRequestForm() {
 
         {/* Business Name */}
         <div className="space-y-2">
-          <Label htmlFor="audit-business">{t('business')} *</Label>
+          <Label htmlFor="audit-business">
+            {t('business')} <span aria-hidden="true">*</span>
+          </Label>
           <Input
             id="audit-business"
             name="businessName"
             required
+            aria-required="true"
             autoComplete="organization"
             placeholder="Seafront Rooms"
             aria-invalid={Boolean(fieldErrors.businessName)}
@@ -201,12 +237,15 @@ export function AuditRequestForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Email */}
         <div className="space-y-2">
-          <Label htmlFor="audit-email">{t('email')} *</Label>
+          <Label htmlFor="audit-email">
+            {t('email')} <span aria-hidden="true">*</span>
+          </Label>
           <Input
             id="audit-email"
             name="email"
             type="email"
             required
+            aria-required="true"
             autoComplete="email"
             placeholder="mariam@example.com"
             aria-invalid={Boolean(fieldErrors.email)}
@@ -221,11 +260,14 @@ export function AuditRequestForm() {
 
         {/* Sector */}
         <div className="space-y-2">
-          <Label htmlFor="audit-sector">{t('sector')} *</Label>
+          <Label htmlFor="audit-sector">
+            {t('sector')} <span aria-hidden="true">*</span>
+          </Label>
           <Select name="sector" required>
             <SelectTrigger
               id="audit-sector"
               className="w-full"
+              aria-required="true"
               aria-invalid={Boolean(fieldErrors.sector)}
               aria-describedby={fieldErrors.sector ? 'audit-sector-error' : undefined}
             >
@@ -249,12 +291,15 @@ export function AuditRequestForm() {
 
       {/* Website URL */}
       <div className="space-y-2">
-        <Label htmlFor="audit-website">{t('website')} *</Label>
+        <Label htmlFor="audit-website">
+          {t('website')} <span aria-hidden="true">*</span>
+        </Label>
         <Input
           id="audit-website"
           name="websiteUrl"
           type="url"
           required
+          aria-required="true"
           autoComplete="url"
           placeholder="https://yourwebsite.com"
           aria-invalid={Boolean(fieldErrors.websiteUrl)}
@@ -284,6 +329,16 @@ export function AuditRequestForm() {
           <span>{submitError || t('error')}</span>
         </div>
       )}
+
+      <p className="text-xs leading-relaxed text-muted-foreground">
+        {ui('formPrivacyNotice')}{' '}
+        <Link
+          href="/privacy"
+          className="font-semibold text-foreground underline underline-offset-4 hover:text-brand-serene-coral-darken"
+        >
+          {footer('privacy')}
+        </Link>
+      </p>
 
       <Button
         type="submit"

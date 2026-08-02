@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { type Locale, launchLocales } from '@/lib/i18n/config';
 import { generatePageMetadata } from '@/lib/seo/metadata';
-import { organizationSchema, webSiteSchema, localBusinessSchema } from '@/lib/seo/structured-data';
+import {
+  organizationSchema,
+  webSiteSchema,
+  localBusinessSchema,
+  serializeJsonLd,
+} from '@/lib/seo/structured-data';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { SectorCardsSection } from '@/components/sections/SectorCardsSection';
 import { ExampleBuildsSection } from '@/components/sections/ExampleBuildsSection';
@@ -41,12 +45,11 @@ export default async function LocalePage({
 
   return (
     <>
-      <Script
+      <script
         id="homepage-json-ld"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
+          __html: serializeJsonLd([
             organizationSchema(),
             webSiteSchema(),
             localBusinessSchema(),

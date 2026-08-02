@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Script from 'next/script';
 import type { CSSProperties } from 'react';
 import { getTranslations } from 'next-intl/server';
 import {
@@ -46,6 +45,7 @@ import { Link } from '@/lib/i18n/navigation';
 import { getExampleUiLabels } from '@/lib/examples/labels';
 import type { Locale } from '@/lib/i18n/config';
 import { sectors, type SectorKey } from '@/lib/sector-config';
+import { serializeJsonLd } from '@/lib/seo/structured-data';
 
 const painIcons: Record<SectorKey, LucideIcon[]> = {
   hospitality: [DollarSign, Clock, Globe2, Smartphone],
@@ -198,12 +198,11 @@ export async function SectorPageTemplate({
 
   return (
     <>
-      <Script
+      <script
         id={`sector-faq-json-ld-${sectorKey}`}
         data-locale={locale}
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
       />
 
       <div className="mx-auto max-w-[var(--container-max-width)] px-[var(--container-padding)] pt-6 md:pt-8">

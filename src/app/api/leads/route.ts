@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { db } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rate-limit';
+import {
+  isAllowedHttpUrl,
+  readApiJsonBody,
+  validateApiRequestHeaders,
+  type ApiRequestErrorCode,
+} from '@/lib/api-request';
+import { siteConfig } from '@/lib/site-config';
 
 type ApiLocale = 'en' | 'ka' | 'ru' | 'tr';
 
@@ -16,6 +23,9 @@ const apiMessages = {
     messageRequired: 'Message is required',
     botDetected: 'Bot detected',
     rateLimited: 'Too many requests. Please try again later.',
+    originNotAllowed: 'Request origin is not allowed.',
+    unsupportedMediaType: 'Content-Type must be application/json.',
+    payloadTooLarge: 'Request is too large.',
     validationFailed: 'Validation failed',
     formNotConfigured: 'Form submissions are not configured. Please email me directly.',
     internalError: 'Internal server error',
@@ -28,6 +38,9 @@ const apiMessages = {
     messageRequired: 'შეტყობინება აუცილებელია',
     botDetected: 'ბოტი დაფიქსირდა',
     rateLimited: 'ძალიან ბევრი მოთხოვნაა. სცადეთ მოგვიანებით.',
+    originNotAllowed: 'მოთხოვნის წყარო დაშვებული არ არის.',
+    unsupportedMediaType: 'Content-Type უნდა იყოს application/json.',
+    payloadTooLarge: 'მოთხოვნა ძალიან დიდია.',
     validationFailed: 'შემოწმება ვერ დასრულდა',
     formNotConfigured: 'ფორმის გაგზავნა ჯერ არ არის კონფიგურირებული. გთხოვთ, პირდაპირ მომწეროთ ელფოსტაზე.',
     internalError: 'შიდა სერვერის შეცდომა',
@@ -40,6 +53,9 @@ const apiMessages = {
     messageRequired: 'Укажите сообщение',
     botDetected: 'Обнаружен бот',
     rateLimited: 'Слишком много запросов. Попробуйте позже.',
+    originNotAllowed: 'Источник запроса не разрешён.',
+    unsupportedMediaType: 'Content-Type должен быть application/json.',
+    payloadTooLarge: 'Запрос слишком большой.',
     validationFailed: 'Проверка не пройдена',
     formNotConfigured: 'Отправка форм не настроена. Пожалуйста, напишите мне напрямую по электронной почте.',
     internalError: 'Внутренняя ошибка сервера',
@@ -52,6 +68,9 @@ const apiMessages = {
     messageRequired: 'Mesaj gerekli',
     botDetected: 'Bot algılandı',
     rateLimited: 'Çok fazla istek gönderildi. Lütfen daha sonra tekrar deneyin.',
+    originNotAllowed: 'İstek kaynağına izin verilmiyor.',
+    unsupportedMediaType: 'Content-Type application/json olmalıdır.',
+    payloadTooLarge: 'İstek çok büyük.',
     validationFailed: 'Doğrulama başarısız oldu',
     formNotConfigured: 'Form gönderimleri yapılandırılmamış. Lütfen bana doğrudan e-posta gönderin.',
     internalError: 'Sunucu hatası',
@@ -70,24 +89,56 @@ function getApiLocale(request: NextRequest): ApiLocale {
 
 function getLeadSchema(messages: (typeof apiMessages)[ApiLocale]) {
   return z.object({
-    name: z.string().min(1, messages.nameRequired).max(200),
-    businessName: z.string().max(200).optional(),
-    email: z.string().min(1, messages.emailRequired).email(messages.emailInvalid).max(300),
-    phone: z.string().max(50).optional(),
-    sector: z.string().max(100).optional(),
-    websiteUrl: z.string().url(messages.websiteInvalid).optional().or(z.literal('')),
-    budgetRange: z.string().max(100).optional(),
-    preferredLanguage: z.string().max(50).optional(),
-    message: z.string().min(1, messages.messageRequired).max(5000),
-    source: z.string().max(50).optional(),
-    honeypot: z.string().max(0, messages.botDetected).optional(),
-  });
+    name: z.string().trim().min(1, messages.nameRequired).max(200),
+    businessName: z.string().trim().max(200).optional(),
+    email: z.string().trim().min(1, messages.emailRequired).email(messages.emailInvalid).max(300),
+    phone: z.string().trim().max(50).optional(),
+    sector: z.string().trim().max(100).optional(),
+    websiteUrl: z.string()
+      .trim()
+      .max(500, messages.websiteInvalid)
+      .refine((value) => value === '' || isAllowedHttpUrl(value), messages.websiteInvalid)
+      .optional(),
+    budgetRange: z.string().trim().max(100).optional(),
+    preferredLanguage: z.string().trim().max(50).optional(),
+    message: z.string().trim().min(1, messages.messageRequired).max(5000),
+    source: z.string()
+      .trim()
+      .max(50)
+      .refine(
+        (value) => /^(?:contact_form|audit_form|cta|template:[a-z0-9-]{1,40})$/.test(value),
+        messages.validationFailed,
+      )
+      .optional(),
+    honeypot: z.string().trim().max(0, messages.botDetected).optional(),
+  }).strict();
+}
+
+function requestErrorMessage(
+  messages: (typeof apiMessages)[ApiLocale],
+  code: ApiRequestErrorCode,
+) {
+  if (code === 'origin_not_allowed') return messages.originNotAllowed;
+  if (code === 'unsupported_media_type') return messages.unsupportedMediaType;
+  if (code === 'payload_too_large') return messages.payloadTooLarge;
+  return messages.validationFailed;
 }
 
 export async function POST(request: NextRequest) {
   const messages = apiMessages[getApiLocale(request)];
 
   try {
+    const headerValidation = validateApiRequestHeaders(request, {
+      allowedOrigins: [siteConfig.url],
+      allowRequestOrigin: true,
+    });
+    if (!headerValidation.ok) {
+      return NextResponse.json(
+        { error: requestErrorMessage(messages, headerValidation.code) },
+        { status: headerValidation.status },
+      );
+    }
+
     const rateLimit = checkRateLimit(request, {
       keyPrefix: 'lead',
       maxRequests: 5,
@@ -104,7 +155,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
+    const bodyResult = await readApiJsonBody(request);
+    if (!bodyResult.ok) {
+      return NextResponse.json(
+        { error: requestErrorMessage(messages, bodyResult.code) },
+        { status: bodyResult.status },
+      );
+    }
+    const body = bodyResult.body;
 
     // Honeypot check — bots fill this field
     if (body.honeypot) {

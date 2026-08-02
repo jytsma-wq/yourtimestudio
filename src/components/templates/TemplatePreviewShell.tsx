@@ -27,8 +27,9 @@ const deviceWidths: Record<DeviceMode, string> = {
 
 const interceptedDocuments = new WeakSet<Document>();
 
-function previewPath(templateId: string, slug: string) {
-  return `/preview/${templateId}${slug ? `/${slug}` : ""}`;
+function previewPath(templateId: string, slug: string, locale: string) {
+  const path = `/preview/${templateId}${slug ? `/${slug}` : ""}`;
+  return `${path}?locale=${encodeURIComponent(locale)}`;
 }
 
 function templatePath(templateId: string, slug: string) {
@@ -48,6 +49,7 @@ export function PreviewShell({
   const [frameMounted, setFrameMounted] = useState(false);
   const frameRef = useRef<HTMLIFrameElement>(null);
   const frameSrc = templatePath(templateId, initialSlug);
+  const previewLocale = /^\/(ka|ru|tr)\/templates(?:\/|$)/.exec(catalogHref)?.[1] ?? "en";
 
   const updateFromFrame = useCallback((frame: HTMLIFrameElement) => {
     const frameWindow = frame.contentWindow;
@@ -61,7 +63,7 @@ export function PreviewShell({
     if (currentPath.startsWith(rawPrefix)) {
       const nextSlug = currentPath.slice(rawPrefix.length).replace(/^\//, "");
       setCurrentSlug(nextSlug);
-      window.history.replaceState(null, "", previewPath(templateId, nextSlug));
+      window.history.replaceState(null, "", previewPath(templateId, nextSlug, previewLocale));
     }
 
     if (interceptedDocuments.has(frameDocument)) return;
@@ -80,9 +82,9 @@ export function PreviewShell({
 
       event.preventDefault();
       const nextSlug = anchor.pathname.slice(rawPrefix.length).replace(/^\//, "");
-      window.location.assign(previewPath(templateId, nextSlug));
+      window.location.assign(previewPath(templateId, nextSlug, previewLocale));
     });
-  }, [templateId]);
+  }, [previewLocale, templateId]);
 
   useEffect(() => {
     const animationFrame = window.requestAnimationFrame(() => setFrameMounted(true));
@@ -104,7 +106,7 @@ export function PreviewShell({
   }, [frameMounted, updateFromFrame]);
 
   function changePage(event: ChangeEvent<HTMLSelectElement>) {
-    window.location.assign(previewPath(templateId, event.target.value));
+    window.location.assign(previewPath(templateId, event.target.value, previewLocale));
   }
 
   return (
@@ -196,7 +198,8 @@ export function PreviewShell({
 
       <main
         id="template-preview"
-        className="relative flex min-h-0 flex-1 justify-center overflow-hidden p-0 lg:p-4"
+        className="relative flex min-h-0 flex-1 justify-center overflow-hidden p-0 outline-none lg:p-4"
+        tabIndex={-1}
       >
         {frameMounted ? (
           <iframe

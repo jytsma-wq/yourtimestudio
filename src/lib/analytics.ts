@@ -6,13 +6,13 @@ declare global {
   }
 }
 
-const CONSENT_KEY = 'batumi-lighthouse-cookie-consent';
+import { COOKIE_CONSENT_KEY } from '@/lib/cookie-consent';
 
 function hasAnalyticsConsent() {
   if (typeof window === 'undefined') return false;
 
   try {
-    return window.localStorage.getItem(CONSENT_KEY) === 'accepted';
+    return window.localStorage.getItem(COOKIE_CONSENT_KEY) === 'accepted';
   } catch {
     return false;
   }

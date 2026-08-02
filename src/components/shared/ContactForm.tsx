@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -24,9 +24,10 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Locale } from '@/lib/i18n/config';
 import { trackEvent } from '@/lib/analytics';
+import { Link } from '@/lib/i18n/navigation';
 
 type ContactFormProps = {
   templateInterest?: {
@@ -38,9 +39,13 @@ type ContactFormProps = {
 export function ContactForm({ templateInterest }: ContactFormProps) {
   const t = useTranslations('contactPage');
   const templates = useTranslations('templatesCatalog');
+  const ui = useTranslations('ui');
+  const footer = useTranslations('footer');
   const locale = useLocale() as Locale;
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const formSchema = z.object({
     name: z.string().min(1, t('form.name_required')),
@@ -63,7 +68,7 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
     budgetRange: z.string().optional(),
     preferredLanguage: z.string().optional(),
     message: z.string().min(1, t('form.message_required')),
-    honeypot: z.string().max(0),
+    honeypot: z.string(),
   });
 
   type FormValues = z.infer<typeof formSchema>;
@@ -86,10 +91,11 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function onSubmit(data: FormValues) {
-    // Honeypot check
-    if (data.honeypot) return;
+  useEffect(() => {
+    if (submitted) successRef.current?.focus();
+  }, [submitted]);
 
+  async function onSubmit(data: FormValues) {
     const source = templateInterest ? `template:${templateInterest.id}` : 'contact_form';
     trackEvent('contact_form_submit_attempt', { source });
     setSubmitError(null);
@@ -113,6 +119,7 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
           budgetRange: data.budgetRange || undefined,
           preferredLanguage: data.preferredLanguage || undefined,
           message: data.message,
+          honeypot: data.honeypot,
           source,
         }),
       });
@@ -169,12 +176,17 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
     <AnimatePresence mode="wait">
       {submitted ? (
         <motion.div
+          ref={successRef}
           key="success"
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3 }}
-          className="text-center py-12"
+          exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
+          className="py-12 text-center outline-none"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          tabIndex={-1}
         >
           <div className="mx-auto mb-6 w-20 h-20">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -188,8 +200,8 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
                 fill="none"
                 style={{
                   strokeDasharray: 60,
-                  strokeDashoffset: 60,
-                  animation: 'draw-check 0.6s ease-out 0.2s forwards',
+                  strokeDashoffset: shouldReduceMotion ? 0 : 60,
+                  animation: shouldReduceMotion ? 'none' : 'draw-check 0.6s ease-out 0.2s forwards',
                 }}
               />
             </svg>
@@ -204,11 +216,16 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
         <motion.div
           key="form"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
+          exit={shouldReduceMotion ? undefined : { opacity: 0, y: -10 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
         >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
+            <form
+              onSubmit={form.handleSubmit(onSubmit, onInvalid)}
+              className="space-y-6"
+              aria-busy={isSubmitting}
+              noValidate
+            >
               {templateInterest ? (
                 <div className="border border-brand-serene-coral/40 bg-brand-serene-coral/10 p-4 text-sm leading-6 text-foreground">
                   {templates('contactInterest', { name: templateInterest.label })}
@@ -234,12 +251,14 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        {t('form.name')} <span className="text-destructive">*</span>
+                        {t('form.name')} <span aria-hidden="true" className="text-destructive">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder={t('form.name')}
                           autoComplete="name"
+                          required
+                          aria-required="true"
                           {...field}
                         />
                       </FormControl>
@@ -278,13 +297,15 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        {t('form.email')} <span className="text-destructive">*</span>
+                        {t('form.email')} <span aria-hidden="true" className="text-destructive">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           type="email"
                           placeholder={t('form.email')}
                           autoComplete="email"
+                          required
+                          aria-required="true"
                           {...field}
                         />
                       </FormControl>
@@ -435,13 +456,15 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      {t('form.message')} <span className="text-destructive">*</span>
+                      {t('form.message')} <span aria-hidden="true" className="text-destructive">*</span>
                     </FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder={t('form.message')}
                         rows={4}
                         className="resize-y"
+                        required
+                        aria-required="true"
                         {...field}
                       />
                     </FormControl>
@@ -464,6 +487,16 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
                 </div>
               )}
 
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                {ui('formPrivacyNotice')}{' '}
+                <Link
+                  href="/privacy"
+                  className="font-semibold text-foreground underline underline-offset-4 hover:text-brand-serene-coral-darken"
+                >
+                  {footer('privacy')}
+                </Link>
+              </p>
+
               {/* Submit */}
               <Button
                 type="submit"
@@ -473,7 +506,7 @@ export function ContactForm({ templateInterest }: ContactFormProps) {
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="size-4 mr-2 animate-spin" aria-hidden="true" />
+                    <Loader2 className="size-4 mr-2 animate-spin motion-reduce:animate-none" aria-hidden="true" />
                     {t('form.sending')}
                   </>
                 ) : (

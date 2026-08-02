@@ -2,6 +2,7 @@ import { createSeoMetadata } from "@website-template-factory/ui";
 import { notFound } from "next/navigation";
 
 import { PreviewShell } from "@/components/templates/TemplatePreviewShell";
+import { defaultLocale, launchLocales, type Locale } from "@/lib/i18n/config";
 import {
   getTemplateShowcaseEntry,
   templateShowcaseEntries
@@ -14,10 +15,17 @@ type PreviewParams = {
 
 type PreviewPageProps = {
   params: Promise<PreviewParams>;
+  searchParams: Promise<{ locale?: string | string[] }>;
 };
 
 function joinedSlug(parts?: string[]) {
   return parts?.join("/") ?? "";
+}
+
+function getLaunchLocale(value?: string | string[]): Locale {
+  return typeof value === "string" && launchLocales.includes(value as Locale)
+    ? (value as Locale)
+    : defaultLocale;
 }
 
 export function generateStaticParams() {
@@ -51,10 +59,11 @@ export async function generateMetadata({ params }: PreviewPageProps) {
   });
 }
 
-export default async function PreviewPage({ params }: PreviewPageProps) {
-  const { templateId, slug } = await params;
+export default async function PreviewPage({ params, searchParams }: PreviewPageProps) {
+  const [{ templateId, slug }, query] = await Promise.all([params, searchParams]);
   const template = getTemplateShowcaseEntry(templateId);
   const pageSlug = joinedSlug(slug);
+  const locale = getLaunchLocale(query.locale);
 
   if (!template || !template.pages.some((page) => page.slug === pageSlug)) {
     notFound();
@@ -67,6 +76,7 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
       category={template.category}
       initialSlug={pageSlug}
       pages={template.pages}
+      catalogHref={locale === defaultLocale ? "/templates" : `/${locale}/templates`}
     />
   );
 }

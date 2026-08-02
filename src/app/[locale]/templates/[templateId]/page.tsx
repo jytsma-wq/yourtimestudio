@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/shared/Section";
 import { Button } from "@/components/ui/button";
-import type { Locale } from "@/lib/i18n/config";
+import { defaultLocale, launchLocales, type Locale } from "@/lib/i18n/config";
 import { Link } from "@/lib/i18n/navigation";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import {
@@ -18,6 +18,10 @@ import {
 type TemplateDetailPageProps = {
   params: Promise<{ locale: string; templateId: string }>;
 };
+
+function getLaunchLocale(value: string): Locale {
+  return launchLocales.includes(value as Locale) ? (value as Locale) : defaultLocale;
+}
 
 export function generateStaticParams() {
   return templateShowcaseEntries.map((entry) => ({ templateId: entry.id }));
@@ -51,6 +55,7 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
   const positioning = t(`items.${entry.id}.positioning`);
   const signature = t(`items.${entry.id}.signature`);
   const included = ["responsive", "navigation", "forms", "seo"] as const;
+  const previewHref = `${entry.previewHref}?locale=${getLaunchLocale(locale)}`;
 
   return (
     <>
@@ -78,7 +83,7 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
                 <a
-                  href={entry.previewHref}
+                  href={previewHref}
                   data-analytics-event="template_preview_click"
                   data-analytics-section="template_detail"
                   data-analytics-item={entry.id}
@@ -101,7 +106,7 @@ export default async function TemplateDetailPage({ params }: TemplateDetailPageP
           </div>
 
           <a
-            href={entry.previewHref}
+            href={previewHref}
             className="group relative block aspect-[16/10] overflow-hidden border border-border bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={`${t("openPreview")}: ${entry.brandName}`}
           >

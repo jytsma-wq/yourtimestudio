@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { usePathname } from '@/lib/i18n/navigation';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
-import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
+import { getLocaleHrefWithContext, persistLocale } from '@/lib/i18n/locale-switch';
 
 const localeAbbreviations: Record<Locale, string> = {
   en: 'EN',
@@ -27,7 +27,9 @@ export default function LanguageSwitcher() {
 
   function handleSwitch(newLocale: Locale) {
     persistLocale(newLocale);
-    window.location.assign(getLocaleHref(pathname, newLocale));
+    window.location.assign(
+      getLocaleHrefWithContext(pathname, newLocale, window.location.search, window.location.hash),
+    );
   }
 
   return (

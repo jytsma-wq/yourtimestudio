@@ -22,6 +22,7 @@ jobs:
 
     env:
       NEXT_PUBLIC_SITE_URL: https://batumilighthouse.com
+      DATABASE_URL: file:./ci-smoke.db
 
     steps:
       - name: Check out repository
@@ -53,3 +54,23 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Apply database migrations
+        run: pnpm db:migrate:deploy
+
+      - name: Run production server smoke tests
+        run: |
+          pnpm start > /tmp/batumi-lighthouse-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3000/api > /dev/null; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              cat /tmp/batumi-lighthouse-server.log
+              exit 1
+            fi
+            sleep 1
+          done
+          SMOKE_BASE_URL=http://127.0.0.1:3000 pnpm test

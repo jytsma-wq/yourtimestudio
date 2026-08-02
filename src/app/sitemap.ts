@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { launchLocales, defaultLocale } from '@/lib/i18n/config';
 import { siteConfig } from '@/lib/site-config';
 import { templateShowcaseEntries } from '@/lib/templates/catalog';
+import { examples } from '@/content/examples';
+import auditData from '@/content/audits/batumi-hotel-website-audit.json';
 
 const siteUrl = siteConfig.url;
 
@@ -11,20 +13,28 @@ const pages = [
   { path: '/medical-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/beauty-salon-websites-batumi', priority: 0.9, changeFrequency: 'monthly' as const },
   { path: '/website-audits', priority: 0.8, changeFrequency: 'monthly' as const },
+  {
+    path: `/website-audits/${auditData.slug}`,
+    priority: 0.7,
+    changeFrequency: 'monthly' as const,
+  },
   { path: '/photography', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/pricing', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/insights', priority: 0.7, changeFrequency: 'weekly' as const },
   { path: '/work', priority: 0.7, changeFrequency: 'monthly' as const },
+  ...examples.map((example) => ({
+    path: `/work/${example.slug}`,
+    priority: 0.6,
+    changeFrequency: 'monthly' as const,
+  })),
   { path: '/templates', priority: 0.8, changeFrequency: 'monthly' as const },
   ...templateShowcaseEntries.map((template) => ({
     path: `/templates/${template.id}`,
     priority: 0.7,
     changeFrequency: 'monthly' as const,
   })),
-  { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
-  { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,7 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         locale === defaultLocale
           ? `${siteUrl}${page.path}`
           : `${siteUrl}/${locale}${page.path}`,
-      lastModified: new Date(),
       changeFrequency: page.changeFrequency,
       priority: page.priority,
     }))

@@ -768,6 +768,7 @@
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "cookieSettings": "Cookie settings",
     "copyright": "All rights reserved.",
     "social_heading": "Follow us",
     "instagram": "Instagram",
@@ -1733,7 +1734,8 @@
     "close": "Close",
     "breadcrumbNavigation": "Breadcrumb navigation",
     "sectionNavigation": "Section navigation",
-    "navigateToSection": "Go to {section}"
+    "navigateToSection": "Go to {section}",
+    "formPrivacyNotice": "We use these details only to respond to your request."
   },
   "announcement": {
     "text": "Free website audit this month - limited spots",

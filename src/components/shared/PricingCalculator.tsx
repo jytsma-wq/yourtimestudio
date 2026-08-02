@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useId, useMemo, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { pricingRates, type PricingRateKey } from '@/lib/pricing-config';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
@@ -23,6 +23,9 @@ const addOnOptions: { key: AddOnKey; labelKey: string }[] = [
 
 export function PricingCalculator() {
   const t = useTranslations('pricing');
+  const locale = useLocale();
+  const pagesInputId = useId();
+  const pagesValueId = `${pagesInputId}-value`;
 
   const [sector, setSector] = useState<PricingRateKey>('beauty');
   const [pages, setPages] = useState(5);
@@ -59,6 +62,16 @@ export function PricingCalculator() {
     return total;
   }, [rates, addOns]);
 
+  const currencyFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+      }),
+    [locale]
+  );
+
   const sectorLabels: Record<PricingRateKey, string> = {
     beauty: t('calculator_sector_beauty'),
     medical: t('calculator_sector_medical'),
@@ -78,16 +91,17 @@ export function PricingCalculator() {
       </div>
 
       {/* Sector selection */}
-      <div className="mb-6">
-        <label className="text-sm font-medium text-foreground mb-3 block">
+      <fieldset className="mb-6 min-w-0">
+        <legend className="mb-3 block text-sm font-medium text-foreground">
           {t('calculator_sector')}
-        </label>
-        <div className="grid grid-cols-3 gap-3">
+        </legend>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {sectorOptions.map((opt) => (
             <button
               key={opt.key}
               type="button"
               onClick={() => setSector(opt.key)}
+              aria-pressed={sector === opt.key}
               className={`relative rounded-md border px-4 py-3 text-sm font-medium transition-colors duration-150 ease-out ${
                 sector === opt.key
                   ? 'border-navy bg-muted text-foreground'
@@ -96,27 +110,38 @@ export function PricingCalculator() {
             >
               {sectorLabels[opt.key]}
               {sector === opt.key && (
-                <span className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral" />
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full bg-brand-serene-coral"
+                />
               )}
             </button>
           ))}
         </div>
-      </div>
+      </fieldset>
 
       {/* Page count slider */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
-          <label className="text-sm font-medium text-foreground">
+          <label htmlFor={pagesInputId} className="text-sm font-medium text-foreground">
             {t('calculator_pages')}
           </label>
-          <span className="text-sm font-semibold tabular-nums text-navy">{pages}</span>
+          <output
+            id={pagesValueId}
+            htmlFor={pagesInputId}
+            className="text-sm font-semibold tabular-nums text-navy"
+          >
+            {pages}
+          </output>
         </div>
         <input
+          id={pagesInputId}
           type="range"
           min={5}
           max={20}
           value={pages}
           onChange={(e) => setPages(Number(e.target.value))}
+          aria-describedby={pagesValueId}
           className="h-2 w-full cursor-pointer appearance-none rounded-full bg-muted accent-navy"
         />
         <div className="flex justify-between mt-1">
@@ -126,10 +151,10 @@ export function PricingCalculator() {
       </div>
 
       {/* Add-on toggles */}
-      <div className="mb-8">
-        <label className="text-sm font-medium text-foreground mb-3 block">
+      <fieldset className="mb-8 min-w-0">
+        <legend className="mb-3 block text-sm font-medium text-foreground">
           {t('calculator_addons')}
-        </label>
+        </legend>
         <div className="space-y-3">
           {addOnOptions.map((opt) => {
             const isActive = addOns.has(opt.key);
@@ -139,6 +164,7 @@ export function PricingCalculator() {
                 key={opt.key}
                 type="button"
                 onClick={() => toggleAddOn(opt.key)}
+                aria-pressed={isActive}
                 className={`flex w-full items-center justify-between rounded-md border px-4 py-3 transition-colors duration-150 ease-out ${
                   isActive
                     ? 'border-navy bg-muted'
@@ -148,6 +174,7 @@ export function PricingCalculator() {
                 <div className="flex items-center gap-3">
                   {/* Toggle switch */}
                   <span
+                    aria-hidden="true"
                     className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-200 ${
                       isActive ? 'bg-navy' : 'bg-muted'
                     }`}
@@ -163,23 +190,28 @@ export function PricingCalculator() {
                   </span>
                 </div>
                 <span className={`text-sm tabular-nums ${isActive ? 'font-semibold text-navy' : 'text-muted-foreground'}`}>
-                  +${price}
+                  +{currencyFormatter.format(price)}
                 </span>
               </button>
             );
           })}
         </div>
-      </div>
+      </fieldset>
 
       {/* Price display */}
-      <div className="border-t border-border pt-6 mb-6">
-        <div className="grid grid-cols-2 gap-6">
+      <div
+        className="mb-6 border-t border-border pt-6"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <div className="rounded-md bg-muted p-4 text-center">
             <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
               {t('calculator_setup')}
             </p>
             <p className="text-2xl font-bold text-foreground tabular-nums">
-              ${setupTotal.toLocaleString()}
+              {currencyFormatter.format(setupTotal)}
             </p>
           </div>
           <div className="rounded-md bg-muted p-4 text-center">
@@ -187,21 +219,18 @@ export function PricingCalculator() {
               {t('calculator_monthly')}
             </p>
             <p className="text-2xl font-bold text-foreground tabular-nums">
-              ${Math.round(monthlyTotal)}/mo
+              {currencyFormatter.format(Math.round(monthlyTotal))}
             </p>
           </div>
         </div>
       </div>
 
       {/* CTA */}
-      <Link href="/contact" className="block">
-        <Button
-          size="lg"
-          className="w-full font-semibold"
-        >
+      <Button asChild size="lg" className="w-full font-semibold">
+        <Link href="/contact">
           {t('calculator_cta')}
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     </div>
   );
 }

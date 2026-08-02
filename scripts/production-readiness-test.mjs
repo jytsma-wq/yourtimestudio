@@ -1,5 +1,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import ts from 'typescript';
 
 const locales = ['en', 'ka', 'ru', 'tr'];
 const messageDir = 'src/content/messages';
@@ -34,8 +36,357 @@ const requiredRoutes = [
   ),
 ];
 
+const templateContentFiles = [
+  'packages/content/src/index.ts',
+  'packages/content/src/batch-one.ts',
+  'packages/content/src/batch-two.ts',
+  'packages/content/src/batch-three.ts',
+  'packages/content/src/batch-four.ts',
+  'packages/content/src/batch-five.ts',
+  'packages/content/src/batch-six.ts',
+];
+
+function unwrapExpression(node) {
+  let current = node;
+
+  while (
+    ts.isAsExpression(current) ||
+    ts.isSatisfiesExpression(current) ||
+    ts.isParenthesizedExpression(current)
+  ) {
+    current = current.expression;
+  }
+
+  return current;
+}
+
+function propertyName(property) {
+  if (ts.isIdentifier(property.name) || ts.isStringLiteralLike(property.name)) {
+    return property.name.text;
+  }
+
+  return null;
+}
+
+function objectProperty(object, name) {
+  return object.properties.find(
+    (property) => ts.isPropertyAssignment(property) && propertyName(property) === name,
+  );
+}
+
+function stringValue(node) {
+  const value = unwrapExpression(node);
+  return ts.isStringLiteralLike(value) ? value.text : null;
+}
+
+function collectTemplateRouteMatrix() {
+  const templates = [];
+
+  for (const path of templateContentFiles) {
+    const source = ts.createSourceFile(
+      path,
+      readFileSync(path, 'utf8'),
+      ts.ScriptTarget.Latest,
+      true,
+      ts.ScriptKind.TS,
+    );
+
+    for (const statement of source.statements) {
+      if (!ts.isVariableStatement(statement)) continue;
+
+      for (const declaration of statement.declarationList.declarations) {
+        if (!declaration.initializer) continue;
+        const object = unwrapExpression(declaration.initializer);
+        if (!ts.isObjectLiteralExpression(object)) continue;
+
+        const idProperty = objectProperty(object, 'id');
+        const pagesProperty = objectProperty(object, 'pages');
+        if (!idProperty || !pagesProperty) continue;
+
+        const id = stringValue(idProperty.initializer);
+        const pages = unwrapExpression(pagesProperty.initializer);
+        if (!id || !/^(?:hotel|dentist|beauty|restaurant|bar|shop)-/.test(id)) continue;
+        if (!ts.isArrayLiteralExpression(pages)) continue;
+
+        const slugs = pages.elements.map((element) => {
+          const page = unwrapExpression(element);
+
+          if (ts.isCallExpression(page)) {
+            const slug = page.arguments[0] ? stringValue(page.arguments[0]) : null;
+            assert.notEqual(slug, null, `${id} page factory must receive a string slug first`);
+            return slug;
+          }
+
+          assert(ts.isObjectLiteralExpression(page), `${id} page declarations must be objects or factory calls`);
+          const slugProperty = objectProperty(page, 'slug');
+          assert(slugProperty, `${id} page declaration is missing a slug`);
+          const slug = stringValue(slugProperty.initializer);
+          assert.notEqual(slug, null, `${id} page slug must be a string literal`);
+          return slug;
+        });
+
+        templates.push({ id, slugs });
+      }
+    }
+  }
+
+  assert.equal(templates.length, 18, 'The declared route matrix must contain 18 templates');
+  assert.equal(new Set(templates.map((template) => template.id)).size, 18, 'Template ids must be unique');
+  assert.equal(
+    templates.reduce((total, template) => total + template.slugs.length, 0),
+    181,
+    'The declared route matrix must contain 181 template page slugs',
+  );
+
+  for (const template of templates) {
+    assert.equal(
+      new Set(template.slugs).size,
+      template.slugs.length,
+      `${template.id} page slugs must be unique`,
+    );
+  }
+
+  return templates;
+}
+
 function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
+}
+
+function loadTypeScriptModule(path) {
+  const source = readFileSync(path, 'utf8');
+  const output = ts.transpileModule(source, {
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2022,
+    },
+  }).outputText;
+  const testModule = { exports: {} };
+
+  vm.runInNewContext(output, {
+    module: testModule,
+    exports: testModule.exports,
+    URL,
+    TextDecoder,
+  }, { filename: path });
+
+  return testModule.exports;
+}
+
+function checkApiHttpUrlValidation() {
+  const { isAllowedHttpUrl } = loadTypeScriptModule('src/lib/api-request.ts');
+
+  assert.equal(isAllowedHttpUrl('https://example.com/path'), true);
+  assert.equal(isAllowedHttpUrl('http://example.com'), true);
+
+  for (const unsafeUrl of [
+    'javascript:alert(1)',
+    'data:text/html,hello',
+    'ftp://example.com',
+    'file:///etc/passwd',
+    'https://user:secret@example.com',
+    `https://example.com/${'a'.repeat(500)}`,
+  ]) {
+    assert.equal(isAllowedHttpUrl(unsafeUrl), false, `${unsafeUrl.slice(0, 80)} must be rejected`);
+  }
+}
+
+function checkApiRequestHeaderValidation() {
+  const { validateApiRequestHeaders } = loadTypeScriptModule('src/lib/api-request.ts');
+  const makeRequest = (headers) => new Request('https://batumilighthouse.com/api/leads', {
+    method: 'POST',
+    headers,
+    body: '{}',
+  });
+  const options = {
+    allowedOrigins: ['https://batumilighthouse.com'],
+    allowRequestOrigin: false,
+  };
+
+  assert.equal(
+    validateApiRequestHeaders(makeRequest({
+      'content-type': 'application/json; charset=utf-8',
+      origin: 'https://batumilighthouse.com',
+    }), options).ok,
+    true,
+  );
+  assert.equal(
+    validateApiRequestHeaders(makeRequest({
+      'content-type': 'text/plain',
+      origin: 'https://batumilighthouse.com',
+    }), options).code,
+    'unsupported_media_type',
+  );
+  assert.equal(
+    validateApiRequestHeaders(makeRequest({
+      'content-type': 'application/json',
+      origin: 'https://attacker.example',
+    }), options).code,
+    'origin_not_allowed',
+  );
+  assert.equal(
+    validateApiRequestHeaders(makeRequest({
+      'content-length': String(MAX_TEST_BODY_BYTES + 1),
+      'content-type': 'application/json',
+      origin: 'https://batumilighthouse.com',
+    }), options).code,
+    'payload_too_large',
+  );
+
+  const loopbackOptions = {
+    allowedOrigins: ['https://batumilighthouse.com'],
+    allowRequestOrigin: true,
+  };
+  const makeLoopbackRequest = (host, origin) => new Request('http://localhost:3000/api/leads', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      host,
+      origin,
+    },
+    body: '{}',
+  });
+
+  assert.equal(
+    validateApiRequestHeaders(
+      makeLoopbackRequest('127.0.0.1:3000', 'http://127.0.0.1:3000'),
+      loopbackOptions,
+    ).ok,
+    true,
+    'Equivalent loopback aliases must work in local production smoke tests',
+  );
+  assert.equal(
+    validateApiRequestHeaders(
+      makeLoopbackRequest('localhost:3000', 'http://127.0.0.1:3000'),
+      loopbackOptions,
+    ).ok,
+    true,
+    'Loopback origin equivalence must not depend on the Host header alias',
+  );
+  const localBindRequest = new Request('http://0.0.0.0:3000/api/leads', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      host: '127.0.0.1:3000',
+      origin: 'http://127.0.0.1:3000',
+    },
+    body: '{}',
+  });
+  assert.equal(
+    validateApiRequestHeaders(localBindRequest, loopbackOptions).ok,
+    true,
+    'A standalone server bind address must be equivalent to its local browser origin',
+  );
+  assert.equal(
+    validateApiRequestHeaders(
+      makeLoopbackRequest('attacker.example', 'http://attacker.example'),
+      loopbackOptions,
+    ).code,
+    'origin_not_allowed',
+    'An arbitrary Host header must not extend the origin allowlist',
+  );
+}
+
+const MAX_TEST_BODY_BYTES = 16 * 1024;
+
+async function checkApiJsonBodyParsing() {
+  const { readApiJsonBody } = loadTypeScriptModule('src/lib/api-request.ts');
+  const makeRequest = (body) => new Request('https://batumilighthouse.com/api/leads', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body,
+  });
+
+  const valid = await readApiJsonBody(makeRequest('{"name":"Mariam"}'));
+  assert.equal(valid.ok, true);
+  assert.equal(valid.body.name, 'Mariam');
+
+  for (const invalidBody of ['{"name":', 'null', '[]', '"text"']) {
+    const result = await readApiJsonBody(makeRequest(invalidBody));
+    assert.equal(result.ok, false);
+    assert.equal(result.status, 400);
+  }
+
+  const oversized = await readApiJsonBody(
+    makeRequest(JSON.stringify({ message: 'x'.repeat(MAX_TEST_BODY_BYTES) })),
+  );
+  assert.equal(oversized.code, 'payload_too_large');
+  assert.equal(oversized.status, 413);
+
+  let chunksRead = 0;
+  let cancelled = false;
+  const stream = new ReadableStream(
+    {
+      pull(controller) {
+        chunksRead += 1;
+        if (chunksRead <= 4) {
+          controller.enqueue(new Uint8Array(8 * 1024));
+        } else {
+          controller.close();
+        }
+      },
+      cancel() {
+        cancelled = true;
+      },
+    },
+    { highWaterMark: 0 },
+  );
+  const streamed = await readApiJsonBody(new Request(
+    'https://batumilighthouse.com/api/leads',
+    {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: stream,
+      duplex: 'half',
+    },
+  ));
+  assert.equal(streamed.code, 'payload_too_large');
+  assert.equal(cancelled, true, 'Oversized chunked bodies must be cancelled before reading to EOF');
+  assert(chunksRead <= 3, 'At most the chunks needed to cross 16 KiB should be consumed');
+}
+
+function checkRateLimitIdentity() {
+  const { checkRateLimit } = loadTypeScriptModule('src/lib/rate-limit.ts');
+  const options = { keyPrefix: 'identity-test', maxRequests: 1, windowMs: 60_000 };
+  const makeRequest = (userAgent) => ({
+    headers: new Headers({
+      'x-real-ip': '203.0.113.10',
+      'user-agent': userAgent,
+    }),
+  });
+
+  assert.equal(checkRateLimit(makeRequest('browser-a'), options).limited, false);
+  assert.equal(
+    checkRateLimit(makeRequest('browser-b'), options).limited,
+    true,
+    'Changing User-Agent must not bypass an IP rate limit',
+  );
+}
+
+function checkRateLimitBucketCap() {
+  const { checkRateLimit, RATE_LIMIT_BUCKET_CAP } = loadTypeScriptModule('src/lib/rate-limit.ts');
+  assert.equal(RATE_LIMIT_BUCKET_CAP, 10_000);
+
+  const options = { keyPrefix: 'capacity-test', maxRequests: 1, windowMs: 60_000 };
+  const requestFor = (id) => ({
+    headers: new Headers({ 'x-real-ip': `2001:db8::${id.toString(16)}` }),
+  });
+
+  assert.equal(checkRateLimit(requestFor(0), options).limited, false);
+  for (let index = 1; index < RATE_LIMIT_BUCKET_CAP; index += 1) {
+    assert.equal(checkRateLimit(requestFor(index), options).limited, false);
+  }
+
+  assert.equal(
+    checkRateLimit(requestFor(RATE_LIMIT_BUCKET_CAP + 1), options).limited,
+    true,
+    'Unknown identities must be rejected conservatively while all buckets are live',
+  );
+  assert.equal(
+    checkRateLimit(requestFor(0), options).limited,
+    true,
+    'Saturation must not evict an existing active rate-limit bucket',
+  );
 }
 
 function flatten(value, prefix = '', out = {}) {
@@ -206,6 +557,30 @@ function checkSecurityConfig() {
   for (const text of required) {
     assert(config.includes(text), `next.config.ts must include ${text}`);
   }
+
+  assert(
+    config.includes("key: 'Content-Security-Policy',"),
+    'A small enforced Content-Security-Policy must be configured',
+  );
+  assert(config.includes("key: 'X-Frame-Options'"), 'X-Frame-Options must be configured');
+  assert(config.includes("value: 'DENY'"), 'Normal routes must deny framing');
+  assert(config.includes("value: 'SAMEORIGIN'"), 'Raw template routes must allow same-origin framing');
+  assert(config.includes('https://plausible.io'), 'The report-only CSP must allow Plausible');
+}
+
+function checkApiRoutesUseHardening() {
+  for (const path of ['src/app/api/leads/route.ts', 'src/app/api/audits/route.ts']) {
+    const route = readFileSync(path, 'utf8');
+
+    assert(route.includes('validateApiRequestHeaders'), `${path} must validate request headers`);
+    assert(route.includes('readApiJsonBody'), `${path} must parse a size-limited JSON object`);
+    assert(route.includes('isAllowedHttpUrl'), `${path} must restrict submitted URL protocols`);
+    assert(
+      route.includes('allowRequestOrigin: true'),
+      `${path} must accept its exact request origin for safe preview and alias deployments`,
+    );
+    assert(!route.includes('await request.json()'), `${path} must not read an unbounded JSON body`);
+  }
 }
 
 function checkStructuredDataClaims() {
@@ -269,17 +644,76 @@ function checkTemplateLibrary() {
     );
   }
 
-  const contentFiles = [
-    'packages/content/src/index.ts',
-    'packages/content/src/batch-one.ts',
-    'packages/content/src/batch-two.ts',
-    'packages/content/src/batch-three.ts',
-    'packages/content/src/batch-four.ts',
-    'packages/content/src/batch-five.ts',
-    'packages/content/src/batch-six.ts',
-  ];
-  const templateContent = contentFiles.map((file) => readFileSync(file, 'utf8')).join('\n');
+  const templateContent = templateContentFiles.map((file) => readFileSync(file, 'utf8')).join('\n');
   assert(!templateContent.includes('Template buyer review'), 'Template demos must not publish invented buyer reviews');
+  collectTemplateRouteMatrix();
+}
+
+async function runWithConcurrency(items, concurrency, worker) {
+  let cursor = 0;
+  const workerCount = Math.min(concurrency, items.length);
+
+  await Promise.all(
+    Array.from({ length: workerCount }, async () => {
+      while (cursor < items.length) {
+        const index = cursor;
+        cursor += 1;
+        await worker(items[index], index);
+      }
+    }),
+  );
+}
+
+async function checkTemplateRouteMatrix(baseUrl) {
+  const routeMatrix = collectTemplateRouteMatrix().flatMap((template) =>
+    template.slugs.flatMap((slug) => {
+      const suffix = slug ? `/${slug}` : '';
+      return [
+        { kind: 'preview', path: `/preview/${template.id}${suffix}` },
+        { kind: 'raw', path: `/template-sites/${template.id}${suffix}` },
+      ];
+    }),
+  );
+  assert.equal(routeMatrix.length, 362, 'Runtime smoke must cover all 362 preview and raw routes');
+
+  const failures = [];
+  await runWithConcurrency(routeMatrix, 8, async ({ kind, path }) => {
+    try {
+      const response = await fetch(new URL(path, baseUrl), {
+        signal: AbortSignal.timeout(20_000),
+      });
+      assert.equal(response.status, 200, `${path} returned HTTP ${response.status}`);
+
+      const html = await response.text();
+      assert(html.length > 500, `${path} returned unexpectedly small HTML`);
+      assert(/noindex/i.test(html), `${path} must be noindex`);
+      assertNoRawMarkers(html, path);
+
+      const enforcedCsp = response.headers.get('content-security-policy');
+      const xFrameOptions = response.headers.get('x-frame-options');
+      if (kind === 'raw') {
+        assert(
+          enforcedCsp?.includes("frame-ancestors 'self'"),
+          `${path} must enforce same-origin framing`,
+        );
+        assert.equal(xFrameOptions, 'SAMEORIGIN', `${path} must send X-Frame-Options SAMEORIGIN`);
+      } else {
+        assert(
+          enforcedCsp?.includes("frame-ancestors 'none'"),
+          `${path} must deny framing`,
+        );
+        assert.equal(xFrameOptions, 'DENY', `${path} must send X-Frame-Options DENY`);
+      }
+    } catch (error) {
+      failures.push(`${path}: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  });
+
+  assert.equal(
+    failures.length,
+    0,
+    `Template route matrix failures (${failures.length}):\n${failures.slice(0, 12).join('\n')}`,
+  );
 }
 
 async function checkRouteSmoke(baseUrl) {
@@ -301,24 +735,17 @@ async function checkRouteSmoke(baseUrl) {
   assert.equal(headerResponse.headers.get('x-content-type-options'), 'nosniff');
   assert.equal(headerResponse.headers.get('referrer-policy'), 'strict-origin-when-cross-origin');
   assert(headerResponse.headers.get('permissions-policy'), 'Permissions-Policy header must be present');
-  assert(
-    headerResponse.headers.get('content-security-policy-report-only') ||
-      headerResponse.headers.get('content-security-policy'),
-    'CSP or CSP report-only header must be present',
-  );
+  const enforcedCsp = headerResponse.headers.get('content-security-policy');
+  const reportOnlyCsp = headerResponse.headers.get('content-security-policy-report-only');
+  assert(enforcedCsp?.includes("base-uri 'self'"), 'Enforced CSP must restrict base-uri');
+  assert(enforcedCsp?.includes("object-src 'none'"), 'Enforced CSP must disable objects');
+  assert(enforcedCsp?.includes("form-action 'self'"), 'Enforced CSP must restrict forms');
+  assert(enforcedCsp?.includes("frame-ancestors 'none'"), 'Normal routes must deny framing');
+  assert.equal(headerResponse.headers.get('x-frame-options'), 'DENY');
+  assert(reportOnlyCsp?.includes('https://plausible.io'), 'Report-only CSP must allow Plausible');
   assert.equal(headerResponse.headers.get('x-powered-by'), null, 'X-Powered-By must be disabled');
 
-  const previewResponse = await fetch(new URL('/preview/hotel-01-luxury', baseUrl));
-  const previewHtml = await previewResponse.text();
-  assert(previewHtml.includes('noindex'), 'Template preview routes must be noindex');
-
-  const rawTemplateResponse = await fetch(new URL('/template-sites/hotel-01-luxury', baseUrl));
-  const rawTemplateHtml = await rawTemplateResponse.text();
-  assert(rawTemplateHtml.includes('noindex'), 'Raw template routes must be noindex');
-  assert(
-    rawTemplateResponse.headers.get('content-security-policy-report-only')?.includes("frame-ancestors 'self'"),
-    'Raw template routes must allow same-origin preview framing',
-  );
+  await checkTemplateRouteMatrix(baseUrl);
 
   await checkInternalLinks(baseUrl);
   await checkApiValidation(baseUrl);
@@ -359,26 +786,94 @@ async function checkInternalLinks(baseUrl) {
 }
 
 async function checkApiValidation(baseUrl) {
-  const invalidLead = await fetch(new URL('/api/leads', baseUrl), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-locale': 'en' },
-    body: JSON.stringify({}),
-  });
-  assert.equal(invalidLead.status, 400, '/api/leads must reject invalid input');
+  const sameOrigin = new URL(baseUrl).origin;
+  const endpointCases = [
+    {
+      path: '/api/leads',
+      unsafeUrlBody: {
+        name: 'Mariam',
+        email: 'mariam@example.com',
+        message: 'Please contact me',
+        websiteUrl: 'javascript:alert(1)',
+      },
+    },
+    {
+      path: '/api/audits',
+      unsafeUrlBody: {
+        name: 'Mariam',
+        businessName: 'Seafront Rooms',
+        email: 'mariam@example.com',
+        sector: 'Hospitality',
+        websiteUrl: 'file:///etc/passwd',
+      },
+    },
+  ];
+  let requestId = 1;
 
-  const invalidAudit = await fetch(new URL('/api/audits', baseUrl), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-locale': 'en' },
-    body: JSON.stringify({}),
-  });
-  assert.equal(invalidAudit.status, 400, '/api/audits must reject invalid input');
+  for (const { path, unsafeUrlBody } of endpointCases) {
+    const post = (body, headers = {}) => fetch(new URL(path, baseUrl), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-locale': 'en',
+        'x-real-ip': `198.51.100.${requestId++}`,
+        ...headers,
+      },
+      body,
+    });
+
+    const cases = [
+      { label: 'empty object', response: await post('{}'), status: 400 },
+      { label: 'malformed JSON', response: await post('{"name":'), status: 400 },
+      { label: 'null JSON', response: await post('null'), status: 400 },
+      {
+        label: 'unsupported media type',
+        response: await post('{}', { 'Content-Type': 'text/plain' }),
+        status: 415,
+      },
+      {
+        label: 'cross-origin request',
+        response: await post('{}', { Origin: 'https://attacker.example' }),
+        status: 403,
+      },
+      {
+        label: 'same-origin alias request',
+        response: await post('{}', { Origin: sameOrigin }),
+        status: 400,
+      },
+      {
+        label: 'oversized JSON',
+        response: await post(JSON.stringify({ message: 'x'.repeat(MAX_TEST_BODY_BYTES) })),
+        status: 413,
+      },
+      {
+        label: 'unsafe URL protocol',
+        response: await post(JSON.stringify(unsafeUrlBody)),
+        status: 400,
+      },
+    ];
+
+    for (const testCase of cases) {
+      assert.equal(
+        testCase.response.status,
+        testCase.status,
+        `${path} ${testCase.label} returned HTTP ${testCase.response.status}`,
+      );
+    }
+  }
 }
 
 async function main() {
   checkRequiredFiles();
   checkEnvExample();
+  checkApiHttpUrlValidation();
+  checkApiRequestHeaderValidation();
+  await checkApiJsonBodyParsing();
+  checkRateLimitIdentity();
+  checkRateLimitBucketCap();
   checkI18nParity();
   checkSecurityConfig();
+  checkApiRoutesUseHardening();
   checkStructuredDataClaims();
   checkPhotographyNavigation();
   checkPhotographyHomepageShowcase();

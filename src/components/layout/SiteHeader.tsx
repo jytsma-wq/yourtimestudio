@@ -15,7 +15,7 @@ import {
 import { Link, usePathname } from '@/lib/i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import { launchLocales, localeLabels, type Locale } from '@/lib/i18n/config';
-import { getLocaleHref, persistLocale } from '@/lib/i18n/locale-switch';
+import { getLocaleHref, getLocaleHrefWithContext, persistLocale } from '@/lib/i18n/locale-switch';
 import { sectors } from '@/lib/sector-config';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site-config';
@@ -61,10 +61,18 @@ export default function SiteHeader() {
   const [themeReady, setThemeReady] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const solutionsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const solutionsTriggerRef = useRef<HTMLButtonElement>(null);
+  const suppressNextSolutionsFocusRef = useRef(false);
+  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     queueMicrotask(() => {
-      const saved = localStorage.getItem('theme');
+      let saved: string | null = null;
+      try {
+        saved = localStorage.getItem('theme');
+      } catch {
+        // Private browsing modes can disable storage; the default theme remains usable.
+      }
       const isDark = saved === 'dark';
       document.documentElement.classList.toggle('dark', isDark);
       setDark(isDark);
@@ -94,6 +102,14 @@ export default function SiteHeader() {
     setSolutionsOpen(true);
   }
 
+  function handleSolutionsFocus() {
+    if (suppressNextSolutionsFocusRef.current) {
+      suppressNextSolutionsFocusRef.current = false;
+      return;
+    }
+    openSolutions();
+  }
+
   function closeSolutions(delay = 120) {
     if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
     solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), delay);
@@ -109,7 +125,18 @@ export default function SiteHeader() {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('theme', next ? 'dark' : 'light');
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    } catch {
+      // Theme still changes for the current page when persistence is unavailable.
+    }
+  }
+
+  function handleMobileOpenChange(open: boolean) {
+    setMobileOpen(open);
+    if (!open) {
+      window.requestAnimationFrame(() => mobileTriggerRef.current?.focus());
+    }
   }
 
   function isActive(href: string): boolean {
@@ -174,12 +201,18 @@ export default function SiteHeader() {
                   className="relative"
                   onBlur={handleSolutionsBlur}
                   onKeyDown={(event) => {
-                    if (event.key === 'Escape') setSolutionsOpen(false);
+                    if (event.key === 'Escape') {
+                      event.preventDefault();
+                      setSolutionsOpen(false);
+                      suppressNextSolutionsFocusRef.current = true;
+                      queueMicrotask(() => solutionsTriggerRef.current?.focus());
+                    }
                   }}
                   onMouseEnter={openSolutions}
                   onMouseLeave={() => closeSolutions()}
                 >
                   <Button
+                    ref={solutionsTriggerRef}
                     type="button"
                     variant="ghost"
                     size="sm"
@@ -187,7 +220,7 @@ export default function SiteHeader() {
                     aria-controls="site-services-menu"
                     aria-haspopup="true"
                     onClick={openSolutions}
-                    onFocus={openSolutions}
+                    onFocus={handleSolutionsFocus}
                     className={`${desktopLinkClass(active)} gap-1.5 hover:bg-transparent`}
                   >
                     {t(item.key)}
@@ -283,6 +316,7 @@ export default function SiteHeader() {
           </div>
 
           <Button
+            ref={mobileTriggerRef}
             variant="ghost"
             size="icon"
             className="rounded-full xl:hidden"
@@ -294,7 +328,7 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+      <Sheet open={mobileOpen} onOpenChange={handleMobileOpenChange}>
         <SheetContent
           side="right"
           closeLabel={ui('close')}
@@ -386,7 +420,18 @@ export default function SiteHeader() {
                     key={targetLocale}
                     href={getLocaleHref(pathname, targetLocale)}
                     hrefLang={targetLocale}
-                    onClick={() => persistLocale(targetLocale)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      persistLocale(targetLocale);
+                      window.location.assign(
+                        getLocaleHrefWithContext(
+                          pathname,
+                          targetLocale,
+                          window.location.search,
+                          window.location.hash,
+                        ),
+                      );
+                    }}
                     aria-label={localeLabels[targetLocale]}
                     aria-current={active ? 'page' : undefined}
                     className={`flex min-h-11 items-center justify-center border-b-2 px-1 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral focus-visible:ring-offset-2 ${

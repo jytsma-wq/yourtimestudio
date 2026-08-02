@@ -1,13 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Script from 'next/script';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { serializeJsonLd } from '@/lib/seo/structured-data';
 
 export function FAQSection() {
   const t = useTranslations('faq');
@@ -36,11 +36,10 @@ export function FAQSection() {
 
   return (
     <>
-      <Script
+      <script
         id="faq-json-ld"
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
       <Accordion type="single" collapsible className="w-full">
         {items.map((item, i) => (

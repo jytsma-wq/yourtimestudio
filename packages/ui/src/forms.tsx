@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
 
 import { cx } from "./cx";
 
@@ -49,6 +49,14 @@ export function ManagedForm({
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const formInstanceId = useId();
+  const successRef = useRef<HTMLParagraphElement>(null);
+
+  const fieldId = (name: string) => `${formInstanceId}-${name}-field`;
+
+  useEffect(() => {
+    if (submitted) successRef.current?.focus();
+  }, [submitted]);
 
   function updateValue(name: string, value: string) {
     setValues((current) => ({ ...current, [name]: value }));
@@ -88,6 +96,15 @@ export function ManagedForm({
 
     if (Object.keys(nextErrors).length === 0) {
       setSubmitted(true);
+      return;
+    }
+
+    setSubmitted(false);
+    const firstInvalidField = fields.find((field) => Boolean(nextErrors[field.name]));
+    if (firstInvalidField) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(fieldId(firstInvalidField.name))?.focus();
+      });
     }
   }
 
@@ -111,9 +128,9 @@ export function ManagedForm({
       <div className="mt-6 grid gap-4">
         {fields.map((field) => {
           const error = errors[field.name];
-          const inputId = `${field.name}-field`;
-          const helperId = `${field.name}-helper`;
-          const errorId = `${field.name}-error`;
+          const inputId = fieldId(field.name);
+          const helperId = `${formInstanceId}-${field.name}-helper`;
+          const errorId = `${formInstanceId}-${field.name}-error`;
           const describedBy = [field.helperText ? helperId : null, error ? errorId : null]
             .filter(Boolean)
             .join(" ");
@@ -122,6 +139,7 @@ export function ManagedForm({
             <div key={field.name}>
               <label className="text-sm font-semibold" htmlFor={inputId}>
                 {field.label}
+                {field.required ? <span aria-hidden="true"> *</span> : null}
               </label>
               {field.type === "textarea" ? (
                 <textarea
@@ -129,6 +147,8 @@ export function ManagedForm({
                   name={field.name}
                   className="mt-2 min-h-28 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-3 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -139,6 +159,8 @@ export function ManagedForm({
                   name={field.name}
                   className="mt-2 min-h-11 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-2 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -158,6 +180,8 @@ export function ManagedForm({
                   className="mt-2 min-h-11 w-full border border-[var(--wtf-color-border,#dbe3ef)] bg-[var(--wtf-color-surface,#fff)] px-3 py-2 text-sm text-[var(--wtf-color-foreground,#111827)] focus:outline-none focus:ring-2 focus:ring-[var(--wtf-color-accent,#2563eb)]"
                   value={values[field.name] ?? ""}
                   min={field.type === "number" ? 1 : undefined}
+                  required={field.required}
+                  aria-required={field.required || undefined}
                   aria-invalid={Boolean(error)}
                   aria-describedby={describedBy || undefined}
                   onChange={(event) => updateValue(field.name, event.target.value)}
@@ -193,7 +217,14 @@ export function ManagedForm({
       </button>
 
       {submitted ? (
-        <p className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)]">
+        <p
+          ref={successRef}
+          className="mt-4 border border-[var(--wtf-color-success,#15803d)] px-3 py-2 text-sm font-semibold text-[var(--wtf-color-success,#15803d)] outline-none"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          tabIndex={-1}
+        >
           {successMessage}
         </p>
       ) : null}

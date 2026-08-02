@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { useLocale } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { defaultLocale, launchLocales, type Locale } from "@/lib/i18n/config";
 import { Link } from "@/lib/i18n/navigation";
 import type { TemplateShowcaseEntry } from "@/lib/templates/catalog";
 
@@ -33,7 +35,12 @@ type TemplateCatalogProps = {
   };
 };
 
+function getLaunchLocale(value: string): Locale {
+  return launchLocales.includes(value as Locale) ? (value as Locale) : defaultLocale;
+}
+
 export function TemplateCatalog({ entries, categories, labels }: TemplateCatalogProps) {
+  const locale = getLaunchLocale(useLocale());
   const [activeCategory, setActiveCategory] = useState("all");
   const visibleEntries = useMemo(
     () =>
@@ -138,7 +145,7 @@ export function TemplateCatalog({ entries, categories, labels }: TemplateCatalog
                 <div className="flex flex-wrap gap-2">
                   <Button asChild size="sm" variant="outline">
                     <a
-                      href={entry.previewHref}
+                      href={`${entry.previewHref}?locale=${locale}`}
                       data-analytics-event="template_preview_click"
                       data-analytics-section="template_catalog"
                       data-analytics-item={entry.id}

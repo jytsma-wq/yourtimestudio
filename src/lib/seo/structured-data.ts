@@ -9,6 +9,11 @@ const sameAs = [
   siteConfig.social.facebook,
 ].filter(Boolean);
 
+export function serializeJsonLd(data: unknown): string {
+  const json = JSON.stringify(data);
+  return json ? json.replace(/</g, '\\u003c') : '';
+}
+
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
@@ -61,21 +66,6 @@ export function localBusinessSchema() {
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
       addressCountry: siteConfig.address.country,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: siteConfig.address.geo?.latitude,
-      longitude: siteConfig.address.geo?.longitude,
-    },
-    priceRange: '$$',
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: siteConfig.address.geo?.latitude,
-        longitude: siteConfig.address.geo?.longitude,
-      },
-      geoRadius: '50000',
     },
     ...(sameAs.length ? { sameAs } : {}),
   };

@@ -11,24 +11,49 @@ type Bucket = {
   resetAt: number;
 };
 
+export const RATE_LIMIT_BUCKET_CAP = 10_000;
+
 const buckets = new Map<string, Bucket>();
+const PRUNE_INTERVAL_MS = 60_000;
+const CAPACITY_PRUNE_INTERVAL_MS = 1_000;
+const SATURATION_RETRY_AFTER_SECONDS = 60;
+let nextPruneAt = 0;
+let nextCapacityPruneAt = 0;
 
 function clientIdentifier(request: NextRequest) {
-  const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-  const realIp = request.headers.get('x-real-ip')?.trim();
-  const userAgent = request.headers.get('user-agent')?.slice(0, 120) || 'unknown';
+  const realIp = request.headers.get('x-real-ip')?.trim().slice(0, 64);
+  const forwardedFor = request.headers
+    .get('x-forwarded-for')
+    ?.split(',')[0]
+    ?.trim()
+    .slice(0, 64);
 
-  return `${forwardedFor || realIp || 'local'}:${userAgent}`;
+  return realIp || forwardedFor || 'local';
 }
 
-function pruneExpiredBuckets(now: number) {
-  if (buckets.size < 500) return;
-
+function removeExpiredBuckets(now: number) {
   for (const [key, bucket] of buckets.entries()) {
     if (bucket.resetAt <= now) {
       buckets.delete(key);
     }
   }
+}
+
+function pruneExpiredBuckets(now: number) {
+  if (now < nextPruneAt) return;
+
+  nextPruneAt = now + PRUNE_INTERVAL_MS;
+  nextCapacityPruneAt = now + CAPACITY_PRUNE_INTERVAL_MS;
+  removeExpiredBuckets(now);
+}
+
+function hasRoomForBucket(now: number) {
+  if (buckets.size >= RATE_LIMIT_BUCKET_CAP && now >= nextCapacityPruneAt) {
+    nextCapacityPruneAt = now + CAPACITY_PRUNE_INTERVAL_MS;
+    removeExpiredBuckets(now);
+  }
+
+  return buckets.size < RATE_LIMIT_BUCKET_CAP;
 }
 
 export function checkRateLimit(request: NextRequest, options: RateLimitOptions) {
@@ -39,6 +64,16 @@ export function checkRateLimit(request: NextRequest, options: RateLimitOptions) 
   const existing = buckets.get(key);
 
   if (!existing || existing.resetAt <= now) {
+    if (existing) buckets.delete(key);
+    if (!hasRoomForBucket(now)) {
+      return {
+        limited: true,
+        remaining: 0,
+        resetAt: now + SATURATION_RETRY_AFTER_SECONDS * 1000,
+        retryAfter: SATURATION_RETRY_AFTER_SECONDS,
+      };
+    }
+
     const bucket = { count: 1, resetAt: now + options.windowMs };
     buckets.set(key, bucket);
 
