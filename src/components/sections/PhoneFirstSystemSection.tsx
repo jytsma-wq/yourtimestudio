@@ -67,7 +67,7 @@ export async function PhoneFirstSystemSection({
           </div>
 
           <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
-            {systemItems.map((item, index) => {
+            {systemItems.map((item) => {
               const Icon = item.icon;
 
               return (
@@ -77,12 +77,9 @@ export async function PhoneFirstSystemSection({
                     item.key === 'booking' ? 'sm:col-span-2' : ''
                   }`}
                 >
-                  <div className="mb-5 flex items-center justify-between gap-4 border-b border-border pb-4">
-                    <span className="font-sans text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
+                  <div className="mb-5 flex items-center gap-4 border-b border-border pb-4">
                     <span className="flex size-10 items-center justify-center border border-border bg-background text-navy">
-                      <Icon className="size-5" />
+                      <Icon className="size-5" aria-hidden="true" />
                     </span>
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">

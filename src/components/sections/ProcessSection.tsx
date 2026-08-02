@@ -41,15 +41,9 @@ export async function ProcessSection({ locale, number }: ProcessSectionProps) {
             const Icon = stepIcons[i];
             return (
               <FadeInUp key={i} delay={i * 0.12}>
-                <div className="grid gap-4 border-b border-border py-6 last:border-b-0 md:grid-cols-[92px_1fr_1.2fr] md:items-start">
-                  <div className="flex items-center gap-3">
-                    <span className="font-sans text-3xl font-semibold text-muted-foreground">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <Icon className="size-5 text-brand-serene-coral-darken md:hidden" />
-                  </div>
-                  <div className="hidden size-12 items-center justify-center border border-border bg-brand-gray-100 md:flex">
-                    <Icon className="size-5 text-brand-serene-coral-darken" />
+                <div className="grid gap-4 border-b border-border py-6 last:border-b-0 md:grid-cols-[64px_1fr] md:items-start">
+                  <div className="flex size-12 items-center justify-center border border-border bg-brand-gray-100">
+                    <Icon className="size-5 text-brand-serene-coral-darken" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground">{t(`steps.${i}.title`)}</h3>

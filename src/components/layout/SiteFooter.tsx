@@ -44,7 +44,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
     'inline-flex min-h-10 items-center py-1 text-sm text-brand-cream/68 transition-colors hover:text-brand-serene-coral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-serene-coral';
 
   return (
-    <footer className="relative overflow-hidden bg-[#173c3e] text-brand-cream">
+    <footer className="relative overflow-hidden bg-[#1d3033] text-brand-cream">
       <svg
         className="absolute left-0 top-0 h-24 w-full text-background"
         viewBox="0 0 1440 180"
@@ -82,7 +82,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
             <div>
-              <h3 className="font-serif text-xl font-medium text-brand-cream">{t('solutions')}</h3>
+              <h3 className="text-lg font-semibold text-brand-cream">{t('solutions')}</h3>
               <ul className="mt-4 space-y-1">
                 {solutionsLinks.map((link) => (
                   <li key={link.href}>
@@ -93,7 +93,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl font-medium text-brand-cream">{t('company')}</h3>
+              <h3 className="text-lg font-semibold text-brand-cream">{t('company')}</h3>
               <ul className="mt-4 space-y-1">
                 {companyLinks.map((link) => (
                   <li key={link.href}>
@@ -104,7 +104,7 @@ export default async function SiteFooter({ locale }: SiteFooterProps) {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl font-medium text-brand-cream">{t('legal')}</h3>
+              <h3 className="text-lg font-semibold text-brand-cream">{t('legal')}</h3>
               <ul className="mt-4 space-y-1">
                 {legalLinks.map((link) => (
                   <li key={link.href}>

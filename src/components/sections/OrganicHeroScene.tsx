@@ -58,9 +58,9 @@ export function OrganicHeroScene() {
           uniforms: {
             uTime: { value: 0 },
             uPointer: { value: new THREE.Vector2(0, 0) },
-            uSea: { value: new THREE.Color('#79b8b1') },
-            uFoam: { value: new THREE.Color('#fff4e4') },
-            uOxide: { value: new THREE.Color('#ef8c62') },
+            uSea: { value: new THREE.Color('#6f9c9a') },
+            uFoam: { value: new THREE.Color('#edf2ef') },
+            uOxide: { value: new THREE.Color('#b9cfca') },
             uOpacity: { value: reducedMotion ? 0.5 : isMobile ? 0.48 : 0.68 },
           },
           vertexShader: `
@@ -116,9 +116,9 @@ export function OrganicHeroScene() {
         currentGroup.add(current);
 
         const contourMaterials = [
-          new THREE.LineBasicMaterial({ color: '#fff4e4', transparent: true, opacity: 0.42 }),
-          new THREE.LineBasicMaterial({ color: '#ef8c62', transparent: true, opacity: 0.55 }),
-          new THREE.LineBasicMaterial({ color: '#9dd0c9', transparent: true, opacity: 0.34 }),
+          new THREE.LineBasicMaterial({ color: '#edf2ef', transparent: true, opacity: 0.38 }),
+          new THREE.LineBasicMaterial({ color: '#b9cfca', transparent: true, opacity: 0.42 }),
+          new THREE.LineBasicMaterial({ color: '#789f9d', transparent: true, opacity: 0.3 }),
         ];
         const contourLines: Array<Line<BufferGeometry, LineBasicMaterial>> = [];
 
@@ -153,7 +153,7 @@ export function OrganicHeroScene() {
         const particleGeometry = new THREE.BufferGeometry();
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
         const particleMaterial = new THREE.PointsMaterial({
-          color: '#fff4e4',
+          color: '#edf2ef',
           transparent: true,
           opacity: 0.46,
           size: isMobile ? 0.028 : 0.034,

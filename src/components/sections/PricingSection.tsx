@@ -7,17 +7,15 @@ import styles from './OrganicHome.module.css';
 
 interface PricingSectionProps {
   locale: Locale;
-  number?: string;
 }
 
-export async function PricingSection({ locale, number }: PricingSectionProps) {
+export async function PricingSection({ locale }: PricingSectionProps) {
   const t = await getTranslations('pricing');
 
   return (
     <section
       className={styles.pricing}
       data-locale={locale}
-      data-number={number}
       aria-labelledby="pricing-heading"
     >
       <div className={styles.pricingTop}>
@@ -44,12 +42,9 @@ export async function PricingSection({ locale, number }: PricingSectionProps) {
       </div>
 
       <div className={styles.pricingGrid}>
-        {pricingPackages.map((pkg, index) => (
+        {pricingPackages.map((pkg) => (
           <article key={pkg.key} className={`${styles.pricePath} ${styles.reveal}`}>
-            <span className={styles.priceNumber}>
-              0{index + 1}
-              {pkg.prominent ? ` / ${t('most_popular')}` : ''}
-            </span>
+            {pkg.prominent && <span className={styles.priceFlag}>{t('most_popular')}</span>}
 
             <h3>{t(`${pkg.key}.name`)}</h3>
             <p className={styles.priceBestFit}>

@@ -8,7 +8,6 @@ import styles from './OrganicHome.module.css';
 
 interface SectorCardsSectionProps {
   locale: Locale;
-  number?: string;
 }
 
 const imageBySector: Record<SectorKey, string> = {
@@ -17,14 +16,13 @@ const imageBySector: Record<SectorKey, string> = {
   beauty: '/images/studio-scenes/beauty-studio.webp',
 };
 
-export async function SectorCardsSection({ locale, number }: SectorCardsSectionProps) {
+export async function SectorCardsSection({ locale }: SectorCardsSectionProps) {
   const t = await getTranslations('sectors');
 
   return (
     <section
       className={`${styles.section} bg-background`}
       data-locale={locale}
-      data-number={number}
       aria-labelledby="services-heading"
     >
       <div className={styles.sectionInner}>
@@ -61,7 +59,6 @@ export async function SectorCardsSection({ locale, number }: SectorCardsSectionP
                 </figure>
 
                 <div className={`${styles.sectorCopy} ${styles.reveal}`}>
-                  <span className={styles.sectorNumber}>0{index + 1}</span>
                   <h3>{t(`${sectorKey}.title`)}</h3>
                   <p>{t(`${sectorKey}.pain`)}</p>
 

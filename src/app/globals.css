@@ -112,26 +112,26 @@
 }
 
 :root {
-  --page-warm: #f4efe6;
-  --card-soft: #fbf8f1;
-  --text-readable: #173c3e;
-  --body-muted: #59645f;
-  --sea-accent: #245e62;
-  --sea-accent-soft: #d7e3dd;
-  --oxide-accent: #e0784f;
-  --oxide-accent-strong: #9a492f;
-  --line-soft: #d8d0c2;
+  --page-warm: #f4f3ef;
+  --card-soft: #fbfaf7;
+  --text-readable: #1c2b2d;
+  --body-muted: #586361;
+  --sea-accent: #315f63;
+  --sea-accent-soft: #dce6e2;
+  --oxide-accent: #b9cfca;
+  --oxide-accent-strong: #315f63;
+  --line-soft: #d2d8d4;
 
   --brand-serene-coral: var(--oxide-accent);
   --brand-serene-coral-darken: var(--oxide-accent-strong);
-  --brand-sage-green: #b8c8c5;
+  --brand-sage-green: #b9cfca;
   --brand-sage-green-darken: var(--sea-accent);
   --brand-charcoal: var(--text-readable);
   --brand-cream: var(--page-warm);
-  --brand-gray-100: #efe6da;
-  --brand-gray-200: #e5dacb;
+  --brand-gray-100: #e9ece8;
+  --brand-gray-200: #dde2de;
   --brand-gray-300: var(--line-soft);
-  --brand-gray-500: #79766d;
+  --brand-gray-500: #707a77;
   --brand-gray-600: var(--body-muted);
 
   /* ─── Base radius ─── */
@@ -157,7 +157,7 @@
   --muted: var(--brand-gray-100);
   --muted-foreground: var(--brand-gray-600);
 
-  /* ─── Accent — oxide CTA ─── */
+  /* ─── Accent — restrained sea-glass CTA ─── */
   --accent: var(--brand-serene-coral);
   --accent-foreground: var(--brand-charcoal);
 
@@ -317,7 +317,7 @@
     font-family: var(--font-sans);
     line-height: 1.6;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-wrap: break-word;
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
@@ -358,7 +358,11 @@
   html {
     scroll-behavior: smooth;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  [id][data-section-name] {
+    scroll-margin-top: 5.5rem;
   }
 
   /* Selection color — intentionally designed */
@@ -892,15 +896,6 @@
 /* Subtle button movement */
 .magnetic-btn {
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* ─── FAQ styled numbers ─── */
-.faq-number {
-  @apply text-body font-semibold;
-  color: var(--teal);
-  margin-right: 0.5em;
-  min-width: 2em;
-  flex-shrink: 0;
 }
 
 /* Legacy floating chip hook: neutral by default */

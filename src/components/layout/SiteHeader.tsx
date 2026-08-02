@@ -255,7 +255,7 @@ export default function SiteHeader() {
           <Button
             asChild
             size="sm"
-            className="ml-2 h-10 rounded-full bg-brand-serene-coral px-4 text-sm font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
+            className="ml-2 h-10 rounded-md bg-brand-serene-coral px-4 text-sm font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
           >
             <Link
               href="/website-audits"
@@ -366,7 +366,7 @@ export default function SiteHeader() {
             <SheetClose asChild>
               <Button
                 asChild
-                className="h-12 w-full rounded-full bg-brand-serene-coral text-base font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
+                className="h-12 w-full rounded-md bg-brand-serene-coral text-base font-semibold text-brand-charcoal shadow-none hover:bg-foreground hover:text-background"
               >
                 <Link
                   href="/website-audits"

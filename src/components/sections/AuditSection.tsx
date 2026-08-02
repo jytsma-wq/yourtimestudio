@@ -16,12 +16,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/lib/i18n/navigation';
 
 const auditCategories = [
-  { key: 'brand', icon: Eye, score: '01' },
-  { key: 'speed', icon: Gauge, score: '02' },
-  { key: 'seo', icon: MapPin, score: '03' },
-  { key: 'content', icon: LayoutGrid, score: '04' },
-  { key: 'accessibility', icon: Accessibility, score: '05' },
-  { key: 'conversion', icon: MousePointerClick, score: '06' },
+  { key: 'brand', icon: Eye },
+  { key: 'speed', icon: Gauge },
+  { key: 'seo', icon: MapPin },
+  { key: 'content', icon: LayoutGrid },
+  { key: 'accessibility', icon: Accessibility },
+  { key: 'conversion', icon: MousePointerClick },
 ];
 
 interface AuditSectionProps {
@@ -58,26 +58,20 @@ export function AuditSection({ locale, number }: AuditSectionProps) {
         </div>
 
         <div className="border border-border bg-card shadow-none">
-          <div className="grid grid-cols-[1fr_auto] gap-4 border-b border-border p-5 md:p-6">
+          <div className="border-b border-border p-5 md:p-6">
             <div>
               <p className="editorial-kicker text-navy">{t('panel_kicker')}</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">{t('scorecard_title')}</h3>
             </div>
-            <p className="text-right font-sans text-3xl font-semibold text-muted-foreground" aria-hidden="true">
-              /100
-            </p>
           </div>
 
           <div className="divide-y divide-border">
             {auditCategories.map((cat) => {
               const Icon = cat.icon;
               return (
-                <div key={cat.key} className="grid gap-4 p-5 md:grid-cols-[80px_1fr] md:p-6">
+                <div key={cat.key} className="grid gap-4 p-5 md:grid-cols-[64px_1fr] md:p-6">
                   <div className="flex items-center gap-3 md:block">
-                    <p className="font-sans text-sm font-semibold text-muted-foreground" aria-hidden="true">
-                      {cat.score}
-                    </p>
-                    <div className="mt-0 flex size-10 items-center justify-center border border-border bg-background md:mt-4">
+                    <div className="flex size-10 items-center justify-center border border-border bg-background">
                       <Icon className="size-5 text-navy" aria-hidden="true" />
                     </div>
                   </div>

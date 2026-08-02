@@ -41,11 +41,11 @@ export default async function AboutPage({
   ];
 
   const processSteps = [
-    { title: t('process_steps.0.title'), description: t('process_steps.0.description'), number: '01' },
-    { title: t('process_steps.1.title'), description: t('process_steps.1.description'), number: '02' },
-    { title: t('process_steps.2.title'), description: t('process_steps.2.description'), number: '03' },
-    { title: t('process_steps.3.title'), description: t('process_steps.3.description'), number: '04' },
-    { title: t('process_steps.4.title'), description: t('process_steps.4.description'), number: '05' },
+    { title: t('process_steps.0.title'), description: t('process_steps.0.description') },
+    { title: t('process_steps.1.title'), description: t('process_steps.1.description') },
+    { title: t('process_steps.2.title'), description: t('process_steps.2.description') },
+    { title: t('process_steps.3.title'), description: t('process_steps.3.description') },
+    { title: t('process_steps.4.title'), description: t('process_steps.4.description') },
   ];
 
   const tools = [
@@ -104,9 +104,9 @@ export default async function AboutPage({
       </Section>
 
       <Section variant="dark">
-        <div className="grid gap-px border border-background/20 bg-background/20 lg:grid-cols-2">
-          <article className="bg-navy p-6 md:p-9 lg:p-12">
-            <p className="editorial-kicker text-brand-serene-coral">01 / {t('approach_heading')}</p>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <article className="border-t border-background/24 pt-7">
+            <p className="editorial-kicker text-brand-serene-coral">{t('approach_heading')}</p>
             <h2 className="editorial-display mt-5 max-w-[14ch] text-3xl font-medium text-brand-cream md:text-4xl">
               {t('approach_heading')}
             </h2>
@@ -115,8 +115,8 @@ export default async function AboutPage({
             </p>
           </article>
 
-          <article className="bg-navy p-6 md:p-9 lg:p-12">
-            <p className="editorial-kicker text-brand-serene-coral">02 / {t('why_batumi_heading')}</p>
+          <article className="border-t border-background/24 pt-7">
+            <p className="editorial-kicker text-brand-serene-coral">{t('why_batumi_heading')}</p>
             <h2 className="editorial-display mt-5 max-w-[14ch] text-3xl font-medium text-brand-cream md:text-4xl">
               {t('why_batumi_heading')}
             </h2>
@@ -137,11 +137,10 @@ export default async function AboutPage({
             </h2>
           </div>
 
-          <ol className="grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
             {processSteps.map((step) => (
-              <li key={step.number} className="border-b border-r border-border p-5 md:p-6">
-                <span className="text-sm font-semibold text-brand-serene-coral-darken">{step.number}</span>
-                <h3 className="mt-8 text-lg font-semibold">{step.title}</h3>
+              <li key={step.title} className="border-t border-border pt-5">
+                <h3 className="text-lg font-semibold">{step.title}</h3>
                 <p className="mt-3 text-sm leading-[1.7] text-muted-foreground">
                   {step.description}
                 </p>

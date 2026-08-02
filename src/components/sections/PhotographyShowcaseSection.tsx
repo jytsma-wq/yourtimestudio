@@ -4,17 +4,12 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/lib/i18n/navigation';
 import styles from './OrganicHome.module.css';
 
-interface PhotographyShowcaseSectionProps {
-  number?: string;
-}
-
-export async function PhotographyShowcaseSection({ number }: PhotographyShowcaseSectionProps) {
+export async function PhotographyShowcaseSection() {
   const t = await getTranslations('photographyHome');
 
   return (
     <section
       className={styles.photography}
-      data-number={number}
       aria-labelledby="photography-heading"
     >
       <div className={`${styles.photoHeading} ${styles.reveal}`}>

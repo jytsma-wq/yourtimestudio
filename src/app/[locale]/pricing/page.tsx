@@ -134,10 +134,9 @@ export default async function PricingPage({
 
         <div className="bl-sector-flow mx-auto max-w-6xl overflow-hidden border border-border">
           <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
-              {processSteps.map((step, i) => (
+              {processSteps.map((step) => (
                 <div key={step.title} className="bl-sector-tile flex min-h-64 flex-col bg-card p-5 md:p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="text-3xl font-semibold text-foreground/15">0{i + 1}</span>
+                  <div className="flex items-start gap-4">
                     <div className="flex size-10 shrink-0 items-center justify-center border border-border bg-muted">
                       <step.Icon className="size-5 text-navy" aria-hidden="true" />
                     </div>

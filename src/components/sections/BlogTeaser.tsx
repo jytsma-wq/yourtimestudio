@@ -55,17 +55,14 @@ export async function BlogTeaser({ locale: _locale }: BlogTeaserProps) {
           </div>
 
           <div className="border-y border-border">
-            {articleMeta.map((article, index) => {
+            {articleMeta.map((article) => {
               const sector = sectors[article.categoryKey];
               return (
                 <Link
                   key={article.key}
                   href="/insights"
-                  className="group grid gap-4 border-b border-border py-5 last:border-b-0 md:grid-cols-[72px_1fr_auto] md:items-start"
+                  className="group grid gap-4 border-b border-border py-5 last:border-b-0 md:grid-cols-[1fr_auto] md:items-start"
                 >
-                  <span className="font-sans text-3xl font-semibold text-muted-foreground">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
                   <div>
                     <span className={`editorial-kicker ${sector.textClass}`}>
                       {t(`categories.${article.categoryKey}`)}

@@ -64,11 +64,7 @@ export function OrganicHeroMedia({ slides }: OrganicHeroMediaProps) {
       </div>
 
       <p className={styles.heroStatus} aria-hidden="true">
-        <span>{slides[activeIndex]?.label}</span>
-        <span>
-          {String(activeIndex + 1).padStart(2, '0')} /{' '}
-          {String(slides.length).padStart(2, '0')}
-        </span>
+        {slides[activeIndex]?.label}
       </p>
     </>
   );

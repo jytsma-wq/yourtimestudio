@@ -27,7 +27,6 @@ export function PhotographySceneBoard({
     <div className="studio-scene-board" role="group" aria-label={ariaLabel}>
       <div className="studio-scene-board-header" aria-hidden="true">
         <span>{heading}</span>
-        <span>01-04 / BATUMI</span>
       </div>
 
       <div className="studio-scene-board-grid">

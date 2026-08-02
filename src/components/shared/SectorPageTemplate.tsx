@@ -213,9 +213,8 @@ export async function SectorPageTemplate({
       <section className={`mt-4 overflow-hidden ${visual.heroSurface}`}>
         <div className="mx-auto grid min-h-[42rem] max-w-[var(--hero-max-width)] lg:grid-cols-2">
           <div className="bl-sector-hero-copy flex flex-col justify-between px-[var(--container-padding)] py-8 md:py-10 lg:py-12">
-            <div className={`flex items-center justify-between border-b pb-4 text-xs font-semibold uppercase ${visual.heroRule}`}>
+            <div className={`flex items-center border-b pb-4 text-xs font-semibold uppercase ${visual.heroRule}`}>
               <span className={visual.heroAccent}>{data.hero.eyebrow}</span>
-              <span aria-hidden="true">01 / 04</span>
             </div>
 
             <div className="max-w-2xl py-8 lg:py-10">
@@ -270,7 +269,7 @@ export async function SectorPageTemplate({
       <Section className={visual.journeySurface}>
         <div className="bl-sector-reveal grid gap-8 lg:grid-cols-[0.62fr_1.38fr] lg:gap-16">
           <div>
-            <p className={`editorial-kicker ${sector.textClass}`}>02 / 04</p>
+            <p className={`editorial-kicker ${sector.textClass}`}>{data.hero.eyebrow}</p>
             <h2 className="editorial-display mt-4 max-w-[12ch] text-4xl font-medium md:text-5xl">
               {data.pains.heading}
             </h2>
@@ -288,7 +287,6 @@ export async function SectorPageTemplate({
                   <details className="group">
                     <summary className="flex min-h-64 cursor-pointer list-none flex-col p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:p-6 [&::-webkit-details-marker]:hidden">
                       <div className="flex items-center justify-between">
-                        <span className={`text-sm font-semibold ${sector.textClass}`}>0{index + 1}</span>
                         <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
                       </div>
                       <div className="mt-auto flex items-end justify-between gap-4 pt-12">
@@ -312,7 +310,7 @@ export async function SectorPageTemplate({
       <Section>
         <div className="bl-sector-reveal grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-16">
           <div>
-            <p className={`editorial-kicker ${sector.textClass}`}>03 / 04</p>
+            <p className={`editorial-kicker ${sector.textClass}`}>{data.hero.eyebrow}</p>
             <h2 className="editorial-display mt-4 max-w-[13ch] text-4xl font-medium md:text-5xl">
               {data.deliverables.heading}
             </h2>
@@ -348,7 +346,6 @@ export async function SectorPageTemplate({
                     <summary className="flex min-h-52 cursor-pointer list-none flex-col p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:p-6 [&::-webkit-details-marker]:hidden">
                       <div className="flex items-center justify-between">
                         <Icon className={`size-5 ${sector.textClass}`} aria-hidden="true" />
-                        <span className="text-xs font-semibold text-muted-foreground">0{index + 1}</span>
                       </div>
                       <div className="mt-auto flex items-end justify-between gap-4 pt-10">
                         <h3 className="text-lg font-semibold leading-tight text-foreground">
@@ -372,16 +369,15 @@ export async function SectorPageTemplate({
         <div className="mx-auto max-w-[var(--container-max-width)]">
           <div className="bl-sector-reveal grid gap-8 lg:grid-cols-[0.62fr_1.38fr] lg:items-end lg:gap-16">
             <div>
-              <p className="editorial-kicker text-brand-serene-coral">04 / 04</p>
+              <p className="editorial-kicker text-brand-serene-coral">{data.hero.eyebrow}</p>
               <h2 className="editorial-display mt-4 max-w-[12ch] text-4xl font-medium md:text-5xl">
                 {data.outcomes.heading}
               </h2>
             </div>
             <div className="grid border-l border-t border-white/20 md:grid-cols-3">
-              {data.outcomes.items.map((item, index) => (
+              {data.outcomes.items.map((item) => (
                 <article key={item.title} className="bl-sector-tile border-b border-r border-white/20 p-5 md:p-7">
-                  <span className="font-serif text-5xl font-medium text-brand-serene-coral">0{index + 1}</span>
-                  <h3 className="mt-8 text-xl font-semibold leading-tight">{item.title}</h3>
+                  <h3 className="text-xl font-semibold leading-tight">{item.title}</h3>
                   <p className={`mt-3 text-sm leading-[1.7] ${visual.outcomeMuted}`}>
                     {item.description}
                   </p>
@@ -404,12 +400,9 @@ export async function SectorPageTemplate({
             {data.faq.items.map((item, index) => (
               <AccordionItem key={item.q} value={`faq-${index}`}>
                 <AccordionTrigger className="text-left text-base font-semibold md:text-lg">
-                  <span className="flex items-start gap-4">
-                    <span className={`text-sm ${sector.textClass}`}>0{index + 1}</span>
-                    <span>{item.q}</span>
-                  </span>
+                  <span>{item.q}</span>
                 </AccordionTrigger>
-                <AccordionContent className="pl-9 text-muted-foreground">
+                <AccordionContent className="text-muted-foreground">
                   <p className="max-w-3xl leading-[1.75]">{item.a}</p>
                 </AccordionContent>
               </AccordionItem>

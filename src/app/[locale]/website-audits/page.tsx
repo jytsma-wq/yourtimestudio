@@ -141,7 +141,7 @@ export default async function WebsiteAuditsPage({
         </div>
 
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {rubricItems.map((item, index) => {
+          {rubricItems.map((item) => {
             const Icon = item.icon;
             return (
               <details
@@ -150,7 +150,6 @@ export default async function WebsiteAuditsPage({
               >
                 <summary className="flex min-h-36 cursor-pointer list-none flex-col justify-between gap-6 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring md:min-h-44 md:p-6 [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-4">
-                    <span className="text-xs font-semibold text-brand-serene-coral-darken">0{index + 1}</span>
                     <span className="flex size-9 items-center justify-center border border-border bg-muted">
                       <Icon className="size-4 text-navy" aria-hidden="true" />
                     </span>
@@ -192,15 +191,11 @@ export default async function WebsiteAuditsPage({
             return (
               <div key={index} className="bl-sector-tile relative min-h-64 bg-card p-6 text-left md:min-h-72 md:p-8">
                 <div className="flex items-start justify-between">
-                  <span className="text-5xl font-semibold text-foreground/12">0{index + 1}</span>
                   <div className="flex size-11 items-center justify-center border border-border bg-background">
                     <Icon className="size-5 text-brand-serene-coral-darken" aria-hidden="true" />
                   </div>
                 </div>
-                <div className="mt-10 text-sm font-semibold text-brand-serene-coral-darken">
-                  {t('howItWorks.step_label')} {index + 1}
-                </div>
-                <h3 className="mt-2 text-lg font-semibold">
+                <h3 className="mt-10 text-lg font-semibold">
                   {t(`howItWorks.steps.${index}.title`)}
                 </h3>
                 <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">
@@ -220,7 +215,7 @@ export default async function WebsiteAuditsPage({
         </div>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-px border border-border bg-border lg:grid-cols-3">
-          {sampleFindings.map((finding, index) => {
+          {sampleFindings.map((finding) => {
             const Icon = finding.icon;
 
             return (
@@ -233,7 +228,6 @@ export default async function WebsiteAuditsPage({
                     <Icon className="size-4.5" aria-hidden="true" />
                   </div>
                   <span className="text-xs font-semibold text-muted-foreground">
-                    0{index + 1} /{' '}
                     {t(`sampleFindings.items.${finding.key}.sector`)}
                   </span>
                 </div>

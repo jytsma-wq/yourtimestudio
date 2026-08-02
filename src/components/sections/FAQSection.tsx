@@ -46,14 +46,9 @@ export function FAQSection() {
         {items.map((item, i) => (
           <AccordionItem key={i} value={`faq-${i}`}>
             <AccordionTrigger className="text-left text-base md:text-lg font-medium">
-              <span className="flex items-baseline">
-                <span className="faq-number">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span>{item.q}</span>
-              </span>
+              <span>{item.q}</span>
             </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground leading-relaxed pl-[3.2em]">
+            <AccordionContent className="text-muted-foreground leading-relaxed">
               {item.a}
             </AccordionContent>
           </AccordionItem>

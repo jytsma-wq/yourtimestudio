@@ -6,14 +6,13 @@ import { getExampleUiLabels } from '@/lib/examples/labels';
 import { getLocalizedFeaturedExamples } from '@/lib/examples/localized';
 import styles from './OrganicHome.module.css';
 
-export async function ExampleBuildsSection({ number }: { number?: string }) {
+export async function ExampleBuildsSection() {
   const labels = await getExampleUiLabels();
   const examples = await getLocalizedFeaturedExamples();
 
   return (
     <section
       className={`${styles.section} ${styles.examples}`}
-      data-number={number}
       aria-labelledby="examples-heading"
     >
       <div className={styles.sectionInner}>
@@ -52,7 +51,6 @@ export async function ExampleBuildsSection({ number }: { number?: string }) {
 
                 <div className={`${styles.projectCopy} ${styles.reveal}`}>
                   <p className={styles.projectLabels}>
-                    <span>0{index + 1}</span>
                     <span>{labels.proofLabels[example.proofLevel]}</span>
                     <span>{labels.statusLabels[example.status]}</span>
                   </p>

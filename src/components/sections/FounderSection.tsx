@@ -1,36 +1,24 @@
-import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/lib/i18n/navigation';
 import { type Locale } from '@/lib/i18n/config';
-import { siteConfig } from '@/lib/site-config';
 import styles from './OrganicHome.module.css';
 
 interface FounderSectionProps {
   locale: Locale;
-  number?: string;
 }
 
-export async function FounderSection({ locale, number }: FounderSectionProps) {
+export async function FounderSection({ locale }: FounderSectionProps) {
   const t = await getTranslations('founder');
 
   return (
     <section
       className={styles.founder}
       data-locale={locale}
-      data-number={number}
       aria-labelledby="founder-heading"
     >
       <div className={styles.founderLayout}>
         <div className={`${styles.founderCopy} ${styles.reveal}`}>
-          <Image
-            src={siteConfig.assets.logo}
-            alt=""
-            width={1360}
-            height={520}
-            className={styles.founderBrand}
-            aria-hidden="true"
-          />
           <p className={styles.sectionKicker}>{t('founder.sectionLabel')}</p>
           <h2 id="founder-heading">{t('founder.heading')}</h2>
           <p>{t('founder.bio')}</p>

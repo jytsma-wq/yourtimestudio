@@ -175,9 +175,8 @@ export default async function PhotographyPage({
             <p className="mt-5 max-w-2xl text-lg leading-[1.75] text-muted-foreground">{t('shootTypes.body')}</p>
 
             <div className="mt-10 border-y border-border">
-              {shootTypes.map((key, index) => (
-                <article key={key} className="grid gap-3 border-b border-border py-6 last:border-b-0 md:grid-cols-[3rem_0.85fr_1.15fr] md:items-start md:gap-6">
-                  <span className="text-sm font-semibold text-brand-serene-coral-darken" aria-hidden="true">0{index + 1}</span>
+              {shootTypes.map((key) => (
+                <article key={key} className="grid gap-3 border-b border-border py-6 last:border-b-0 md:grid-cols-[0.85fr_1.15fr] md:items-start md:gap-8">
                   <h3 className="font-serif text-2xl font-medium leading-tight md:text-3xl">{t(`shootTypes.items.${key}.title`)}</h3>
                   <p className="leading-[1.75] text-muted-foreground">{t(`shootTypes.items.${key}.body`)}</p>
                 </article>
@@ -193,10 +192,9 @@ export default async function PhotographyPage({
             <p className="mt-4 text-lg leading-[1.75] text-muted-foreground">{t('deliverables.body')}</p>
           </div>
           <div className="mt-9 grid border-y border-border sm:grid-cols-2 lg:grid-cols-4">
-            {deliverables.map((key, index) => (
+            {deliverables.map((key) => (
               <article key={key} className="py-6 sm:border-r sm:border-border sm:px-6 sm:odd:pl-0 lg:odd:pl-6 lg:first:pl-0 lg:last:border-r-0">
-                <span className="text-xs font-semibold text-brand-serene-coral-darken" aria-hidden="true">0{index + 1}</span>
-                <h3 className="mt-4 text-lg font-semibold">{t(`deliverables.items.${key}.title`)}</h3>
+                <h3 className="text-lg font-semibold">{t(`deliverables.items.${key}.title`)}</h3>
                 <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">{t(`deliverables.items.${key}.body`)}</p>
               </article>
             ))}
@@ -243,9 +241,8 @@ export default async function PhotographyPage({
         </div>
 
         <div className="mt-12 border-y border-border">
-          {shootOptions.map((key, index) => (
-            <article key={key} className="grid gap-5 border-b border-border py-7 last:border-b-0 lg:grid-cols-[3rem_0.8fr_1fr_1.05fr] lg:gap-8">
-              <span className="text-sm font-semibold text-brand-serene-coral-darken" aria-hidden="true">0{index + 1}</span>
+          {shootOptions.map((key) => (
+            <article key={key} className="grid gap-5 border-b border-border py-7 last:border-b-0 lg:grid-cols-[0.8fr_1fr_1.05fr] lg:gap-10">
               <div>
                 <p className="text-sm font-semibold text-muted-foreground">{t(`options.items.${key}.bestForLabel`)}</p>
                 <p className="mt-1 text-sm leading-relaxed">{t(`options.items.${key}.bestFor`)}</p>
@@ -277,10 +274,9 @@ export default async function PhotographyPage({
               <h2 className="mt-3 font-serif text-4xl font-medium md:text-5xl">{t('process.heading')}</h2>
             </div>
             <ol className="grid gap-7 sm:grid-cols-2">
-              {processSteps.map((key, index) => (
+              {processSteps.map((key) => (
                 <li key={key} className="border-t border-border pt-4">
-                  <span className="text-xs font-semibold text-brand-serene-coral-darken">0{index + 1}</span>
-                  <h3 className="mt-3 text-lg font-semibold">{t(`process.steps.${key}.title`)}</h3>
+                  <h3 className="text-lg font-semibold">{t(`process.steps.${key}.title`)}</h3>
                   <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">{t(`process.steps.${key}.body`)}</p>
                 </li>
               ))}
