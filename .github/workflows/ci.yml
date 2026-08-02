@@ -22,7 +22,7 @@ jobs:
 
     env:
       NEXT_PUBLIC_SITE_URL: https://batumilighthouse.com
-      DATABASE_URL: file:${{ runner.temp }}/batumi-lighthouse-ci.db
+      DATABASE_URL: file:${{ github.workspace }}/prisma/ci-smoke.db
 
     steps:
       - name: Check out repository
